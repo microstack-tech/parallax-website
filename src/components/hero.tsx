@@ -6,11 +6,11 @@ export function Hero() {
       {/* Background Pattern */}
       {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px]" /> */}
 
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <BlackHoleVisualization />
       </div>
 
-      <div className="relative pt-25 mx-auto pointer-events-none h-screen max-w-7xl px-6 py-16 lg:px-8 overflow-visible">
+      <div className="relative pt-25 mx-auto h-screen max-w-7xl px-6 py-16 lg:px-8 overflow-visible">
         <div className="mx-auto max-w-4xl text-center overflow-visible">
           <div className="absolute w-full z-10 left-0">
             {/* Logo/Brand */}
