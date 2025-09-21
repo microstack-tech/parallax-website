@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function WhitepaperPage() {
   return (
-    <main className="py-16 min-h-screen bg-background">
+    <main className="py-24 min-h-screen bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-row justify-end max-w-6xl w-full pb-8 mx-auto">
           <Button variant={'outline'} asChild>

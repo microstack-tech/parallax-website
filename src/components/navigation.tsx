@@ -20,7 +20,11 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <span className="text-2xl font-bold bg-foreground bg-clip-text text-transparent">
+              <span className="inline-flex items-center gap-2 text-2xl font-bold bg-foreground bg-clip-text text-transparent">
+                <img
+                  src="/parallax_logo_color.svg"
+                  className="h-8 w-auto"
+                />
                 <Link to={"/"}>
                   Parallax
                 </Link>

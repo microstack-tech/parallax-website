@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
@@ -6,15 +6,9 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 
-/**
- * Black Hole Visualization (React + Three.js)
- * - Drop into any React app (Vite/CRA). For Next.js, import dynamically with SSR disabled.
- * - Fills its parent container. Place it in a full-screen wrapper for the same effect as the original page.
- */
 export default function BlackHoleVisualization() {
-  const containerRef = useRef(null);
-  const infoRef = useRef(null);
-  const [autoRotate, setAutoRotate] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const autoRotate = false
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -39,7 +33,7 @@ export default function BlackHoleVisualization() {
     scene.fog = new THREE.FogExp2(0x020104, 0.025);
 
     const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 4000);
-    camera.position.set(-6.5, 5.0, 6.5);
+    camera.position.set(-8, 5.0, 8);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
     renderer.setSize(width, height);
@@ -84,6 +78,7 @@ export default function BlackHoleVisualization() {
     controls.enableDamping = true; controls.dampingFactor = 0.035; controls.rotateSpeed = 0.4;
     controls.autoRotate = autoRotate; controls.autoRotateSpeed = 0.1;
     controls.target.set(0, 0, 0); controls.minDistance = 2.5; controls.maxDistance = 100; controls.enablePan = false; controls.update();
+    controls.enableZoom = false
 
     // ----- Stars -----
     const starGeometry = new THREE.BufferGeometry();
@@ -202,7 +197,7 @@ export default function BlackHoleVisualization() {
     scene.add(accretionDisk);
 
     // ----- Resize -----
-    let resizeTimer; const onResize = () => {
+    let resizeTimer: string | number | NodeJS.Timeout | undefined; const onResize = () => {
       clearTimeout(resizeTimer); resizeTimer = setTimeout(() => {
         ({ width, height } = getSize());
         camera.aspect = width / height; camera.updateProjectionMatrix();
@@ -212,9 +207,6 @@ export default function BlackHoleVisualization() {
       }, 150);
     };
     window.addEventListener("resize", onResize);
-
-    // Hide info after a few seconds
-    const hideInfoTimer = setTimeout(() => { if (infoRef.current) infoRef.current.style.opacity = "0"; }, 5000);
 
     // ----- Animate -----
     const clock = new THREE.Clock();
@@ -236,7 +228,7 @@ export default function BlackHoleVisualization() {
         (blackHoleScreenPosVec3.y + 1) / 2
       );
 
-      controls.autoRotate = autoRotate;
+      controls.autoRotate = false;
       controls.update();
       stars.rotation.y += deltaTime * 0.003; stars.rotation.x += deltaTime * 0.001;
       accretionDisk.rotation.z += deltaTime * 0.005;
@@ -246,7 +238,6 @@ export default function BlackHoleVisualization() {
 
     // ----- Cleanup -----
     return () => {
-      clearTimeout(hideInfoTimer);
       window.removeEventListener("resize", onResize);
       cancelAnimationFrame(rafId);
       controls.dispose();
@@ -254,10 +245,13 @@ export default function BlackHoleVisualization() {
       composer.dispose();
       renderer.dispose();
       starGeometry.dispose();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-expressions
       (starMaterial as any).dispose && (starMaterial as any).dispose();
       diskGeometry.dispose();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-expressions
       (diskMaterial as any).dispose && (diskMaterial as any).dispose();
       eventHorizonGeom.dispose();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-expressions
       (eventHorizonMat as any).dispose && (eventHorizonMat as any).dispose();
       blackHoleGeom.dispose();
       blackHoleMat.dispose();
@@ -269,101 +263,8 @@ export default function BlackHoleVisualization() {
   }, [autoRotate]);
 
   return (
-    <div style={styles.wrapper} className="absolute inset-0">
-      {/* Inline styles for portability; swap to Tailwind/CSS modules if you prefer */}
-      <style>{css}</style>
-      <div ref={containerRef} style={styles.canvasHost} />
-
-      <div id="info" ref={infoRef} style={styles.info}>
-        Black Hole<br />
-        <span style={{ fontSize: 14, opacity: 0.8 }}>Click and drag to rotate view</span>
-      </div>
-
-      <div id="controls" style={styles.panel}>
-        <button
-          id="autoRotateToggle"
-          title="Toggle automatic rotation"
-          onClick={() => setAutoRotate((v) => !v)}
-          style={styles.toggle}
-        >
-          <svg className="rotate-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={styles.icon}>
-            <path d="M23 4v6h-6" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M1 20v-6h6" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <span style={{ verticalAlign: "middle" }}>Auto‑Rotate: {autoRotate ? "ON" : "OFF"}</span>
-        </button>
-      </div>
+    <div className="absolute inset-0 h-screen">
+      <div ref={containerRef} className="absolute top-4 inset-0" />
     </div>
   );
 }
-
-// ---- Styles ----
-const styles = {
-  wrapper: {
-    position: "relative" as const,
-    width: "100%",
-    height: "100vh",
-    overflow: "hidden",
-    background: "radial-gradient(ellipse at center, #0a0a1a 0%, #000002 70%)",
-    color: "#e0e0ff",
-    fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-  },
-  canvasHost: {
-    position: "absolute" as const,
-    inset: 0,
-  },
-  info: {
-    position: "absolute" as const,
-    top: 20,
-    left: 0,
-    right: 0,
-    textAlign: "center" as const,
-    color: "rgba(220, 220, 255, 0.9)",
-    fontSize: 18,
-    letterSpacing: 0.5,
-    pointerEvents: "none" as const,
-    zIndex: 100,
-    textShadow: "0 1px 5px rgba(0,0,0,0.7)",
-    transition: "opacity 2s ease-in-out 1s",
-  },
-  panel: {
-    position: "absolute" as const,
-    bottom: 20,
-    right: 20,
-    backgroundImage: "linear-gradient(145deg, rgba(20, 25, 45, 0.85), rgba(10, 15, 30, 0.9))",
-    backdropFilter: "blur(10px) saturate(160%)",
-    WebkitBackdropFilter: "blur(10px) saturate(160%)",
-    padding: "15px 20px",
-    borderRadius: 10,
-    border: "1px solid rgba(180, 180, 220, 0.15)",
-    color: "rgba(225,225,255,0.9)",
-    fontSize: 14,
-    userSelect: "none" as const,
-    zIndex: 50,
-    boxShadow: "0 6px 20px rgba(0,0,0,0.35), 0 0 0 1px rgba(180,180,220,0.07) inset",
-    boxSizing: "border-box" as const,
-    opacity: 1,
-    transform: "translateY(0)",
-  },
-  toggle: {
-    cursor: "pointer",
-    padding: "8px 5px",
-    display: "flex",
-    alignItems: "center",
-    gap: 8,
-    color: "inherit",
-    fontSize: "inherit",
-    background: "transparent",
-    border: "none",
-  },
-  icon: { width: "1.1em", height: "1.1em", marginRight: 8 },
-} as const;
-
-const css = `
-  @media (max-width: 640px) {
-    #controls { max-width: 150px; }
-    #info { font-size: 16px; top: 15px; }
-    #info span { font-size: 12px; }
-  }
-`;
