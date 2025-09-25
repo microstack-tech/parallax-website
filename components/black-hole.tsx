@@ -31,7 +31,7 @@ export default function BlackHoleVisualization() {
 
     // ----- Scene / Camera / Renderer -----
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x020104, 0.025);
+    scene.fog = new THREE.FogExp2(0x000000, 1);
 
     const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 4000);
     camera.position.set(-8, 5.0, 8);

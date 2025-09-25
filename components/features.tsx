@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Coins, Cpu, Shield, Zap, Users, Lock } from "lucide-react"
+import { Coins, Cpu, HandCoins, Lock, Scale, Shield } from "lucide-react"
 
 const features = [
   {
@@ -18,18 +18,18 @@ const features = [
     description: "Ethash mining ensures decentralization and accessibility via commodity GPUs.",
   },
   {
-    icon: Zap,
+    icon: HandCoins,
     title: "No Fee Burning",
     description: "First-price auction model with all fees going to miners, preserving the 21M cap.",
   },
   {
-    icon: Users,
+    icon: Scale,
     title: "Fair Launch",
     description: "Zero premine, no privileged allocations. Every participant starts at the same line.",
   },
   {
     icon: Lock,
-    title: "Immutable Rules",
+    title: "Immutable Monetary Rules",
     description: "Ossified monetary policy resistant to governance capture and discretionary changes.",
   },
 ]
@@ -52,7 +52,7 @@ export function Features() {
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-primary/10 p-2">
-                    <feature.icon className="h-6 w-6 text-primary" />
+                    <feature.icon strokeWidth={1} className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-lg">{feature.title}</CardTitle>
                 </div>

@@ -3,7 +3,7 @@ import Image from 'next/image'
 export function Footer() {
   return (
     <footer className="relative border-t border-border">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808025_1px,transparent_1px),linear-gradient(to_bottom,#80808025_1px,transparent_1px)] bg-[size:48px_48px]" />
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="text-center">
           <h3 className="text-4xl font-bold text-foreground mb-4">

@@ -75,28 +75,28 @@ export function Community() {
           </Card>
         </div>
 
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold text-foreground mb-6">Stay Updated</h3>
-          <div className="flex justify-center gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
-              <Link href={'https://x.com/prlxchain'} target="_blank">
-                <FaXTwitter />
-                Follow @prlxchain
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary/10 bg-transparent"
-              asChild
-            >
-              <Link href={'https://github.com/microstack-tech/parallax'} target="_blank">
-                <FaGithub className="mr-2 h-4 w-4" />
-                Star on GitHub
-              </Link>
-            </Button>
-          </div>
-        </div>
+        {/* <div className="mt-16 text-center"> */}
+        {/*   <h3 className="text-xl font-semibold text-foreground mb-6">Stay Updated</h3> */}
+        {/*   <div className="flex justify-center gap-4"> */}
+        {/*     <Button size="lg" className="bg-primary hover:bg-primary/90" asChild> */}
+        {/*       <Link href={'https://x.com/prlxchain'} target="_blank"> */}
+        {/*         <FaXTwitter /> */}
+        {/*         Follow @prlxchain */}
+        {/*       </Link> */}
+        {/*     </Button> */}
+        {/*     <Button */}
+        {/*       size="lg" */}
+        {/*       variant="outline" */}
+        {/*       className="border-primary text-primary hover:bg-primary/10 bg-transparent" */}
+        {/*       asChild */}
+        {/*     > */}
+        {/*       <Link href={'https://github.com/microstack-tech/parallax'} target="_blank"> */}
+        {/*         <FaGithub className="mr-2 h-4 w-4" /> */}
+        {/*         Star on GitHub */}
+        {/*       </Link> */}
+        {/*     </Button> */}
+        {/*   </div> */}
+        {/* </div> */}
       </div>
     </section>
   )

@@ -56,10 +56,6 @@ export function Tokenomics() {
                 <span className="text-sm text-muted-foreground">Difficulty Adjustment</span>
                 <span className="text-primary">2016 blocks</span>
               </div>
-              <div className="flex justify-between items-center py-2">
-                <span className="text-sm text-muted-foreground">Block Gas Limit</span>
-                <span className="text-primary">600M gas</span>
-              </div>
             </CardContent>
           </Card>
         </div>
