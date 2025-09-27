@@ -1,7 +1,7 @@
 import PageHeader from "@/components/page-header";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Info, ShieldCheck, TerminalSquare } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Download, Info, ShieldCheck, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 

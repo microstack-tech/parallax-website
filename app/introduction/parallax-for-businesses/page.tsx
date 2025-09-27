@@ -1,6 +1,5 @@
 import GridView from "@/components/grid-view"
 import PageHeader from "@/components/page-header"
-import { Button } from "@/components/ui/button"
 import { Code, DollarSign, Eye, FileText, Lock, Plane, ShieldCheck, Users } from "lucide-react"
 
 const topics = [

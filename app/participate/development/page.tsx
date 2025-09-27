@@ -3,7 +3,6 @@ import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Boxes, LayoutGrid, PackagePlus, Users } from "lucide-react";
 import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
 
 const topics = [
   {
