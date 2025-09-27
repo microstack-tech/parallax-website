@@ -1,0 +1,117 @@
+
+import PageHeader from "@/components/page-header";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { BookOpen, GitBranch, Globe, HeartHandshake, MessageCircle, Users } from "lucide-react";
+import Link from "next/link";
+import { FaGithub, FaTelegram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+const communityTopics = [
+  {
+    icon: Users,
+    title: "Open & Neutral",
+    description:
+      "Parallax is not owned by anyone. No foundation, no company, no CEO, no privileged allocations—just sound money and open participation."
+  },
+  {
+    icon: MessageCircle,
+    title: "Join the Conversation",
+    description:
+      "Discuss protocol design, governance, and new ideas. Your voice shapes the future of programmable cash."
+  },
+  {
+    icon: GitBranch,
+    title: "Contribute Code",
+    description:
+      "Develop the protocol, build dApps, or improve documentation. All skill levels welcome—every contribution matters."
+  },
+  {
+    icon: Globe,
+    title: "Run a Node or Mine",
+    description:
+      "Help secure the network by running a node or mining with commodity hardware. Decentralization starts with you."
+  },
+  {
+    icon: HeartHandshake,
+    title: "Grow the Ecosystem",
+    description:
+      "Share Parallax, educate others, and help build a fair, permissionless financial system."
+  },
+  {
+    icon: BookOpen,
+    title: "Learn & Educate",
+    description:
+      "Explore the whitepaper, join workshops, or create educational content. Knowledge empowers the community."
+  }
+];
+
+const channels = [
+  {
+    name: "@prlxchain",
+    href: "https://x.com/prlxchain",
+    description: "Follow for updates and announcements.",
+    icon: FaXTwitter
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/microstackdev/parallax",
+    description: "Code, issues, and development.",
+    icon: FaGithub,
+  },
+  {
+    name: "Telegram Group",
+    href: "https://t.me/parallaxchain",
+    description: "Chat with the community on our Telegram channel.",
+    icon: FaTelegram,
+  }
+];
+
+export default function CommunityPage() {
+  return (
+    <main>
+      <PageHeader
+        title="Parallax Community"
+        subTitle="Neutral, open, and built by everyone. Join us in shaping the future of programmable cash."
+      />
+
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {communityTopics.map((topic) => (
+            <Card key={topic.title} className="border-border py-10">
+              <CardHeader>
+                <div className="flex flex-col items-center gap-6">
+                  <topic.icon className="h-8 w-8 text-primary" strokeWidth={1} />
+                  <CardTitle className="text-lg text-center">{topic.title}</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base text-center leading-relaxed">{topic.description}</CardDescription>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-6 py-8">
+        <h2 className="text-3xl font-semibold mb-16 text-center">Official Channels</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {channels.map((ch) => (
+            <Link key={ch.name} href={ch.href} target="_blank" rel="noopener" className="block">
+              <Card className="hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-md inline-flex gap-4">
+                    <ch.icon size={24} />
+                    {ch.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{ch.description}</CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

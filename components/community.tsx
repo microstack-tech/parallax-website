@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6"
 
 export function Community() {
   return (
-    <section className="py-24 bg-background">
+    <section className="pb-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Join the Community</h2>
@@ -22,7 +22,7 @@ export function Community() {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="rounded-lg bg-primary/10 p-2">
-                  <Megaphone className="h-6 w-6 text-primary" />
+                  <Megaphone className="h-6 w-6 text-primary" strokeWidth={1} />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Communication Channels</CardTitle>
@@ -50,7 +50,7 @@ export function Community() {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="rounded-lg bg-primary/10 p-2">
-                  <FileText className="h-6 w-6 text-primary" />
+                  <FileText className="h-6 w-6 text-primary" strokeWidth={1} />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Resources</CardTitle>

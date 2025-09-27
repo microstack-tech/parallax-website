@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 export default function Sub() {
   return (
     <section className="relative overflow-visible">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808025_1px,transparent_1px),linear-gradient(to_bottom,#80808025_1px,transparent_1px)] bg-[size:48px_48px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:48px_48px] -z-10" />
       {/* Description */}
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 overflow-visible">
         <div className="mx-auto max-w-4xl text-center overflow-visible">
@@ -33,7 +33,7 @@ export default function Sub() {
               variant="outline"
               asChild
             >
-              <Link href="https://github.com/microstack-tech/parallax/releases" target="_blank">
+              <Link href="/resources/parallax-client">
                 <LucideDownload />
                 Download Parallax Client
               </Link>

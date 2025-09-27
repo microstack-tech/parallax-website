@@ -1,11 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Coins, Cpu, HandCoins, Lock, Scale, Shield } from "lucide-react"
+import { Cpu, Lock, Shield } from "lucide-react"
 
 const features = [
   {
-    icon: Coins,
-    title: "Fixed 21M Supply",
-    description: "Immutable monetary policy with Bitcoin's proven scarcity model and halving schedule.",
+    icon: Lock,
+    title: "Immutable Monetary Rules",
+    description: "Ossified monetary policy resistant to governance capture and discretionary changes.",
   },
   {
     icon: Cpu,
@@ -16,21 +16,6 @@ const features = [
     icon: Shield,
     title: "Proof of Work Security",
     description: "Ethash mining ensures decentralization and accessibility via commodity GPUs.",
-  },
-  {
-    icon: HandCoins,
-    title: "No Fee Burning",
-    description: "First-price auction model with all fees going to miners, preserving the 21M cap.",
-  },
-  {
-    icon: Scale,
-    title: "Fair Launch",
-    description: "Zero premine, no privileged allocations. Every participant starts at the same line.",
-  },
-  {
-    icon: Lock,
-    title: "Immutable Monetary Rules",
-    description: "Ossified monetary policy resistant to governance capture and discretionary changes.",
   },
 ]
 

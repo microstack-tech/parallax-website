@@ -5,7 +5,7 @@ import { useStableVh } from "@/hooks/useStableVh"
 export function Hero() {
   useStableVh()
   return (
-    <section className="relative isolate overflow-hidden bg-black
+    <section className="relative isolate overflow-hidden bg-background
                         min-h-[calc(var(--vh,1vh)*100)]
                         pt-[env(safe-area-inset-top)]
                         pb-[env(safe-area-inset-bottom)]">
