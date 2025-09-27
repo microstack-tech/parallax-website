@@ -67,7 +67,7 @@ export function Navigation() {
     {
       name: "Participate",
       subItems: [
-        { name: "Support Parallax", href: "/participate/support" },
+        { name: "Support Parallax", href: "/participate/support-parallax" },
         { name: "Running a full node", href: "/participate/running-a-full-node" },
         { name: "Development", href: "/participate/development" },
       ],

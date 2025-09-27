@@ -11,7 +11,7 @@ const topics = [
   {
     icon: Waypoints,
     title: "Be the network",
-    description: "Help secure and decentralize Parallax by running a full node. By doing so, you contribute to verifying blocks, propagating transactions, and ensuring the network remains censorship-resistant and resilient. Make sure to open port 32110 TPC/UDP in our router and firewall so that other nodes can connect to you!"
+    description: "Help secure and decentralize Parallax by running a full node. By doing so, you contribute to verifying blocks, propagating transactions, and ensuring the network remains censorship-resistant and resilient. Make sure to open port 32110 TPC/UDP in your router and firewall so that other nodes can connect to you!"
   },
   {
     icon: Pickaxe,
