@@ -23,8 +23,8 @@ export default function Sub() {
               size="lg"
               asChild
             >
-              <Link href="/whitepaper">
-                Read Whitepaper
+              <Link href="/introduction/whitepaper">
+                Read white paper
                 <ArrowRight />
               </Link>
             </Button>
