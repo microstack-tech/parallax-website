@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +21,12 @@ export const metadata: Metadata = {
   description: "Open source protocol for P2P Programmable Cash System",
 };
 
+const PlausibleScript = () => {
+  return (
+    <Script defer data-domain="parallaxchain.org" src="https://plausible.parallaxchain.org/js/script.js"></Script>
+  )
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,6 +40,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <PlausibleScript />
         <ThemeProvider attribute={"class"} defaultTheme="dark">
           <Navigation />
           {children}
