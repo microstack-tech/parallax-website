@@ -3,7 +3,7 @@ import PageHeader from "@/components/page-header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, GitBranch, Globe, HeartHandshake, MessageCircle, Users } from "lucide-react";
 import Link from "next/link";
-import { FaGithub, FaTelegram } from "react-icons/fa";
+import { FaBitcoin, FaDiscord, FaGithub, FaReddit, FaTelegram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const communityTopics = [
@@ -59,11 +59,30 @@ const channels = [
     icon: FaGithub,
   },
   {
-    name: "Telegram Group",
+    name: "Telegram",
     href: "https://t.me/parallaxchain",
-    description: "Chat with the community on our Telegram channel.",
+    description: "Chat with the community on our TG.",
     icon: FaTelegram,
-  }
+  },
+  {
+    name: "BitcoinTalk",
+    href: "https://bitcointalk.org/index.php?topic=5558978",
+    description: "Engage with our BitcoinTalk thread.",
+    icon: FaBitcoin,
+  },
+  {
+    name: "r/ParallaxProtocol",
+    href: "https://www.reddit.com/r/ParallaxProtocol/",
+    description: "Join our Reddit community.",
+    icon: FaReddit,
+  },
+  {
+    name: "Discord",
+    href: "https://discord.gg/QYgSxzqh",
+    description: "Engage with our Discord channel.",
+    icon: FaDiscord,
+  },
+
 ];
 
 export default function CommunityPage() {
