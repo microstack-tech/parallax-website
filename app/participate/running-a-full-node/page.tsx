@@ -64,7 +64,7 @@ export default function RunningFullNodePage() {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link href="https://parallax-4.gitbook.io/parallax-docs/parallax-client/getting-started/installing-the-parallax-client" target="_blank" rel="noopener">
+                <Link href="https://docs.parallaxchain.org/parallax-client/getting-started/installing-client" target="_blank" rel="noopener">
                   Setup Guide
                   <ArrowRight />
                 </Link>

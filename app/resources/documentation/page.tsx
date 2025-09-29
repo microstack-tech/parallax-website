@@ -28,7 +28,7 @@ export default function TechnicalDocumentationPage() {
           </CardContent>
           <div className="flex flex-col h-full justify-end">
             <Button size="lg" asChild>
-              <Link href="https://parallax-4.gitbook.io/parallax-docs/foundational-topics/introduction-to-parallax" target="_blank" rel="noopener">
+              <Link href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/introduction-to-parallax" target="_blank" rel="noopener">
                 More on Foundational Topics
                 <ArrowRight />
               </Link>
@@ -50,7 +50,7 @@ export default function TechnicalDocumentationPage() {
           </CardContent>
           <div className="flex flex-col h-full justify-end">
             <Button size="lg" asChild>
-              <Link href="https://parallax-4.gitbook.io/parallax-docs/parallax-stack/intro-to-the-stack" target="_blank" rel="noopener">
+              <Link href="https://docs.parallaxchain.org/parallax-protocol/parallax-stack/introduction-stack" target="_blank" rel="noopener">
                 More on Parallax Stack
                 <ArrowRight />
               </Link>
@@ -74,7 +74,7 @@ export default function TechnicalDocumentationPage() {
           </CardContent>
           <div className="flex flex-col h-full justify-end">
             <Button size="lg" asChild>
-              <Link href="https://parallax-4.gitbook.io/parallax-docs/advanced/bridges" target="_blank" rel="noopener">
+              <Link href="https://docs.parallaxchain.org/parallax-protocol/advanced/bridges" target="_blank" rel="noopener">
                 More on Advanced Topics
                 <ArrowRight />
               </Link>
@@ -97,7 +97,7 @@ export default function TechnicalDocumentationPage() {
           </CardContent>
           <div className="flex flex-col h-full justify-end">
             <Button size="lg" asChild>
-              <Link href="https://parallax-4.gitbook.io/parallax-docs/parallax-client/getting-started" target="_blank" rel="noopener">
+              <Link href="https://docs.parallaxchain.org/parallax-client/getting-started/introduction" target="_blank" rel="noopener">
                 More on Parallax Client
                 <ArrowRight />
               </Link>
