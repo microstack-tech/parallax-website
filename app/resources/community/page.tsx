@@ -54,7 +54,7 @@ const channels = [
   },
   {
     name: "GitHub",
-    href: "https://github.com/microstackdev/parallax",
+    href: "https://github.com/microstack-tech/parallax",
     description: "Code, issues, and development.",
     icon: FaGithub,
   },
