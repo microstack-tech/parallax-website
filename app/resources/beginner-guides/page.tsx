@@ -31,7 +31,7 @@ export default function BeginnerGuidesPage() {
           <div className="flex flex-col h-full justify-end">
             <Button size="lg" asChild>
               <Link
-                href="https://docs.parallaxchain.org/guides/setup"
+                href="https://docs.parallaxchain.org/guides/client/introduction"
                 target="_blank"
                 rel="noopener"
               >
@@ -60,7 +60,7 @@ export default function BeginnerGuidesPage() {
           <div className="flex flex-col h-full justify-end">
             <Button size="lg" asChild>
               <Link
-                href="https://docs.parallaxchain.org/guides/mining/cpu"
+                href="https://docs.parallaxchain.org/guides/mining/introduction"
                 target="_blank"
                 rel="noopener"
               >
