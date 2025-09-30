@@ -1,7 +1,7 @@
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Pickaxe, SquareTerminal } from "lucide-react";
+import { ArrowRight, Pickaxe, SquareTerminal, Wallet } from "lucide-react";
 import Link from "next/link";
 
 export default function BeginnerGuidesPage() {
@@ -36,6 +36,36 @@ export default function BeginnerGuidesPage() {
                 rel="noopener"
               >
                 View setup guide
+                <ArrowRight />
+              </Link>
+            </Button>
+          </div>
+        </Card>
+
+        {/* Wallet guides */}
+        <Card className="border-border py-10 flex flex-col items-center">
+          <CardHeader className="inline-flex items-center w-full justify-center gap-4">
+            <Wallet className="size-8 text-primary" strokeWidth={1} />
+            <CardTitle className="text-xl text-center">Wallets</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-base text-center mb-4">
+              Learn how to set up and use wallets on Parallax.
+              <br />
+              <br />
+              These guides cover creating and managing accounts, connecting MetaMask,
+              sending and receiving Laxes, verifying transactions,
+              and keeping your wallet safe.
+            </CardDescription>
+          </CardContent>
+          <div className="flex flex-col h-full justify-end">
+            <Button size="lg" asChild>
+              <Link
+                href="https://docs.parallaxchain.org/guides/wallets"
+                target="_blank"
+                rel="noopener"
+              >
+                View wallet guides
                 <ArrowRight />
               </Link>
             </Button>
