@@ -66,7 +66,7 @@ const channels = [
   },
   {
     name: "BitcoinTalk",
-    href: "https://bitcointalk.org/index.php?topic=5558978",
+    href: "https://bitcointalk.org/index.php?topic=5560698",
     description: "Engage with our BitcoinTalk thread.",
     icon: FaBitcoin,
   },
