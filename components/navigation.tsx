@@ -60,7 +60,8 @@ export function Navigation() {
       subItems: [
         { name: "Community", href: "/resources/community" },
         { name: "Branding", href: "/resources/branding" },
-        { name: "Documentation", href: "/resources/documentation" },
+        { name: "Beginner Guides", href: "/resources/beginner-guides" },
+        { name: "Technical Documentation", href: "/resources/technical-documentation" },
         { name: "Parallax Client", href: "/resources/parallax-client" },
       ],
     },

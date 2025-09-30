@@ -8,7 +8,7 @@ export default function TechnicalDocumentationPage() {
   return (
     <main>
       <PageHeader
-        title="Documentation"
+        title="Technical Documentation"
         subTitle="Explore the Parallax protocol, architecture, APIs, and developer guides."
       />
       <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 lg:px-16">

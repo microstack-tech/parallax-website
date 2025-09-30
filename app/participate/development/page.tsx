@@ -49,7 +49,7 @@ export default function DevelopersPage() {
           </Link>
         </Button>
         <Button className="font-medium text-md p-10 w-fit" variant={"outline"} asChild>
-          <Link href={"/resources/documentation"}>
+          <Link href={"/resources/technical-documentation"}>
             Read Documentation
           </Link>
         </Button>

@@ -1,0 +1,77 @@
+import PageHeader from "@/components/page-header";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Pickaxe, SquareTerminal } from "lucide-react";
+import Link from "next/link";
+
+export default function BeginnerGuidesPage() {
+  return (
+    <main>
+      <PageHeader
+        title="Beginner Guides"
+        subTitle="Explore the user-friendly guides on how to run a Parallax node, connect wallets, and start mining."
+      />
+      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 lg:px-16">
+
+        {/* Node guide */}
+        <Card className="border-border py-12 px-4 flex flex-col items-center">
+          <CardHeader className="inline-flex items-center w-full justify-center gap-4">
+            <SquareTerminal className="size-8 text-primary" strokeWidth={1} />
+            <CardTitle className="text-xl text-center">Run a Parallax node</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-base text-center mb-4">
+              Step-by-step guides on downloading and running the Parallax client on your machine.
+              <br />
+              <br />
+              Learn how to connect MetaMask to your local node so you can create addresses,
+              manage your laxes, and interact with the network directly.
+            </CardDescription>
+          </CardContent>
+          <div className="flex flex-col h-full justify-end">
+            <Button size="lg" asChild>
+              <Link
+                href="https://docs.parallaxchain.org/guides/setup"
+                target="_blank"
+                rel="noopener"
+              >
+                View setup guide
+                <ArrowRight />
+              </Link>
+            </Button>
+          </div>
+        </Card>
+
+        {/* Mining guides */}
+        <Card className="border-border py-10 flex flex-col items-center">
+          <CardHeader className="inline-flex items-center w-full justify-center gap-4">
+            <Pickaxe className="size-8 text-primary" strokeWidth={1} />
+            <CardTitle className="text-xl text-center">Mining</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-base text-center mb-4">
+              Learn how to mine laxes with our beginner guides.
+              <br />
+              <br />
+              Get started with the built-in CPU miner, set up GPU mining with ethminer,
+              and join a mining pool to combine your hashpower with others for more consistent rewards.
+            </CardDescription>
+          </CardContent>
+          <div className="flex flex-col h-full justify-end">
+            <Button size="lg" asChild>
+              <Link
+                href="https://docs.parallaxchain.org/guides/mining/cpu"
+                target="_blank"
+                rel="noopener"
+              >
+                View mining guides
+                <ArrowRight />
+              </Link>
+            </Button>
+          </div>
+        </Card>
+
+      </section>
+    </main>
+  );
+}

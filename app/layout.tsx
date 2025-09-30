@@ -43,8 +43,10 @@ export default function RootLayout({
         <PlausibleScript />
         <ThemeProvider attribute={"class"} defaultTheme="dark">
           <Navigation />
-          {children}
-          <Footer />
+          <div className="flex flex-col justify-between min-h-screen">
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
