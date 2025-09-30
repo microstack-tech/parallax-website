@@ -1,7 +1,7 @@
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, Info, ShieldCheck, TerminalSquare } from "lucide-react";
+import { ArrowRight, Download, Info, ShieldCheck, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
@@ -90,6 +90,12 @@ export default function ParallaxClientPage() {
                 <Link href="https://github.com/microstack-tech/parallax/releases/latest" target="_blank" rel="noopener">
                   <Download className="mr-2 h-5 w-5" />
                   Download Latest Release
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
+                  Setup guide
+                  <ArrowRight />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
