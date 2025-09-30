@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileText, Megaphone } from "lucide-react"
+import { Book, FileText, Megaphone } from "lucide-react"
 import Link from "next/link"
-import { FaGithub, FaTelegramPlane } from "react-icons/fa"
+import { FaBitcoin, FaDiscord, FaGithub, FaReddit, FaTelegramPlane } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 
 export function Community() {
@@ -40,7 +40,25 @@ export function Community() {
               <Button variant="ghost" className="w-full justify-start" asChild>
                 <Link href={"https://t.me/parallaxchain"} target="_blank">
                   <FaTelegramPlane className="mr-2 h-4 w-4" />
-                  Join our Telegram channel
+                  Join our Telegram group
+                </Link>
+              </Button>
+              <Button variant="ghost" className="w-full justify-start" asChild>
+                <Link href={"https://bitcointalk.org/index.php?topic=5560698.0"} target="_blank">
+                  <FaBitcoin className="mr-2 h-4 w-4" />
+                  Participate in our BitcoinTalk thread
+                </Link>
+              </Button>
+              <Button variant="ghost" className="w-full justify-start" asChild>
+                <Link href={"https://www.reddit.com/r/ParallaxProtocol/"} target="_blank">
+                  <FaReddit className="mr-2 h-4 w-4" />
+                  Join r/ParallaxProtocol
+                </Link>
+              </Button>
+              <Button variant="ghost" className="w-full justify-start" asChild>
+                <Link href={"https://discord.gg/QYgSxzqh"} target="_blank">
+                  <FaDiscord className="mr-2 h-4 w-4" />
+                  Join our Discord channel
                 </Link>
               </Button>
             </CardContent>
@@ -68,7 +86,19 @@ export function Community() {
               <Button variant="ghost" className="w-full justify-start" asChild>
                 <Link href={"https://github.com/microstack-tech/parallax"} target="_blank">
                   <FaGithub className="mr-2 h-4 w-4" />
-                  View Source Code
+                  {`Browse our GitHub repositories`}
+                </Link>
+              </Button>
+              <Button variant="ghost" className="w-full justify-start" asChild>
+                <Link href={"https://docs.parallaxchain.org/guides"} target="_blank">
+                  <Book className="mr-2 h-4 w-4" />
+                  {`Get started with Beginner Guides`}
+                </Link>
+              </Button>
+              <Button variant="ghost" className="w-full justify-start" asChild>
+                <Link href={"https://docs.parallaxchain.org"} target="_blank">
+                  <Book className="mr-2 h-4 w-4" />
+                  {`Read our Technical Documentation`}
                 </Link>
               </Button>
             </CardContent>
