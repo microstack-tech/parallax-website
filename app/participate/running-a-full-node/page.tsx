@@ -39,7 +39,7 @@ export default function RunningFullNodePage() {
           {nodeTopics.map((topic) => (
             <Card key={topic.title} className="border-border py-10 flex flex-col">
               <CardHeader className="flex flex-col justify-center items-center gap-8">
-                <topic.icon className="h-8 w-8 text-primary mb-4" />
+                <topic.icon className="size-8 text-primary mb-4" strokeWidth={1} />
                 <CardTitle className="text-lg text-center mb-2">{topic.title}</CardTitle>
               </CardHeader>
               <CardContent>

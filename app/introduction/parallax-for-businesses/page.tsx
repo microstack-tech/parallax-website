@@ -1,6 +1,8 @@
 import GridView from "@/components/grid-view"
 import PageHeader from "@/components/page-header"
-import { Code, DollarSign, Eye, FileText, Lock, Plane, ShieldCheck, Users } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Code, DollarSign, Eye, FileText, Lock, Plane, ShieldCheck, Users } from "lucide-react"
+import Link from "next/link"
 
 const topics = [
   {
@@ -55,6 +57,16 @@ export default function ParallaxForBusinesses() {
       <GridView
         items={topics}
       />
+      <div className="mb-8 text-center">
+        <div className="flex justify-center gap-4">
+          <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
+            <Link href={'/introduction/getting-started'}>
+              Get started with Parallax
+              <ArrowRight />
+            </Link>
+          </Button>
+        </div>
+      </div>
     </>
   )
 }

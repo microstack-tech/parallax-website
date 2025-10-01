@@ -1,5 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Cpu, Lock, Shield } from "lucide-react"
+import { ArrowRight, Cpu, Lock, Shield } from "lucide-react"
+import { Button } from "./ui/button"
+import Link from "next/link"
 
 const features = [
   {
@@ -47,6 +49,17 @@ export function Features() {
               </CardContent>
             </Card>
           ))}
+        </div>
+      </div>
+
+      <div className="mt-24 text-center">
+        <div className="flex justify-center gap-4">
+          <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
+            <Link href={'/introduction/getting-started'}>
+              Get started with Parallax
+              <ArrowRight />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

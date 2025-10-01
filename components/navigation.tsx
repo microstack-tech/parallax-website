@@ -48,7 +48,7 @@ export function Navigation() {
     {
       name: "Introduction",
       subItems: [
-        // { name: "Getting Started", href: "/introduction/getting-started" },
+        { name: "Getting Started", href: "/introduction/getting-started" },
         { name: "How it works", href: "/introduction/how-it-works" },
         { name: "Individuals", href: "/introduction/parallax-for-individuals" },
         { name: "Businesses", href: "/introduction/parallax-for-businesses" },

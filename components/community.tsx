@@ -104,17 +104,6 @@ export function Community() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="mt-16 text-center">
-          <div className="flex justify-center gap-4">
-            <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
-              <Link href={'/resources/beginner-guides'}>
-                Get started with Beginner Guides
-                <ArrowRight />
-              </Link>
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   )

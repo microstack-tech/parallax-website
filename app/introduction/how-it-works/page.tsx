@@ -1,7 +1,9 @@
 
 import GridView from "@/components/grid-view";
 import PageHeader from "@/components/page-header";
-import { Cpu, Database, Key, Rabbit, Wallet } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Cpu, Database, Key, Rabbit, Wallet } from "lucide-react";
+import Link from "next/link";
 
 const topics = [
   {
@@ -39,6 +41,16 @@ export default function ParallaxHowItWorks() {
         subTitle="This is a question often surrounded by confusion, so here's a quick explanation!"
       />
       <GridView items={topics} />
+      <div className="mb-8 text-center">
+        <div className="flex justify-center gap-4">
+          <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
+            <Link href={'https://docs.parallaxchain.org'} target="_blank">
+              Learn more about Parallax
+              <ArrowRight />
+            </Link>
+          </Button>
+        </div>
+      </div>
     </>
   );
 }

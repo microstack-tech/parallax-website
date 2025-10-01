@@ -3,17 +3,15 @@
 import PageHeader from "@/components/page-header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, BookOpen, Building, Download, Eye, Scale, Store, Wallet } from "lucide-react"
-import { notFound } from "next/navigation"
+import { ArrowRight, BookOpen, Building, Eye, HandCoins, Scale, Store, Wallet } from "lucide-react"
+import Link from "next/link"
 import { useState } from "react"
 
 export default function GettingStarted() {
   const [activeTab, setActiveTab] = useState<"use" | "accept">("use")
 
-  notFound()
-
   return (
-    <main className="bg-background text-foreground">
+    <>
       <PageHeader
         title="Getting Started with Parallax"
         subTitle=" Using Parallax to transact is easy and accessible to everyone. Experience Bitcoin's monetary policy with Ethereum's programmability. "
@@ -59,8 +57,10 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" >
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" asChild>
+                  <Link href={"https://docs.parallaxchain.org"} target="_blank">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -79,8 +79,10 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" >
-                  Choose Wallet <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" asChild>
+                  <Link href={"/wallets"}>
+                    Choose a Wallet <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -89,7 +91,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <Download className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <HandCoins className="h-6 w-6 text-primary" strokeWidth={1} />
                   </div>
                   <CardTitle className="text-xl">3. Get Parallax</CardTitle>
                 </div>
@@ -99,11 +101,13 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="inline-flex gap-4">
-                <Button variant="outline" >
-                  Mining <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" asChild>
+                  <Link href={"https://docs.parallaxchain.org/guides/mining"} target="_blank">
+                    Mining <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
-                <Button variant="outline" >
-                  Exchanges <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" disabled>
+                  Exchanges List Coming Soon
                 </Button>
               </CardContent>
             </Card>
@@ -122,8 +126,8 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" >
-                  Find Merchants <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" disabled>
+                  Merchant Directory Coming Soon
                 </Button>
               </CardContent>
             </Card>
@@ -146,8 +150,10 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" >
-                  Business Guide <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" asChild>
+                  <Link href={"https://docs.parallaxchain.org"} target="_blank">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -166,8 +172,8 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" >
-                  Setup Payments <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" disabled>
+                  Processing Payments Guide Coming Soon
                 </Button>
               </CardContent>
             </Card>
@@ -186,8 +192,10 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" >
-                  Tax Resources <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" asChild>
+                  <Link href={"https://en.bitcoin.it/wiki/Tax_compliance"} target="_blank">
+                    Tax Resources <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -206,8 +214,8 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" >
-                  List Business <ArrowRight className="ml-2 h-4 w-4" />
+                <Button variant="outline" disabled>
+                  Merchant Directory Coming Soon
                 </Button>
               </CardContent>
             </Card>
@@ -223,16 +231,22 @@ export default function GettingStarted() {
               Bitcoin with the flexibility of smart contracts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                Download Wallet
+              <Button size="lg" asChild>
+                <Link href={"/wallets"}>
+                  Choose a Wallet
+                  <ArrowRight />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline">
-                Read Documentation
+              <Button size="lg" variant="outline" asChild>
+                <Link href={"https://docs.parallaxchain.org/guides/wallets"} target="_blank">
+                  Read Documentation
+                  <ArrowRight />
+                </Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
-    </main>
+    </>
   )
 }
