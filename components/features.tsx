@@ -16,8 +16,8 @@ const features = [
   },
   {
     icon: Shield,
-    title: "Proof of Work Security",
-    description: "Ethash mining ensures decentralization and accessibility via commodity GPUs.",
+    title: "Proof of Work",
+    description: "XHash mining ensures decentralization and accessibility via commodity CPUs & GPUs.",
   },
 ]
 

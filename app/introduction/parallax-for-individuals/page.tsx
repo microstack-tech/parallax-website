@@ -13,7 +13,7 @@ const topics = [
   {
     icon: Shield,
     title: "Security and Control",
-    description: "Cryptographic signatures and Ethash Proof of Work secure your transactions, giving you full control over your money with proper wallet protection."
+    description: "Cryptographic signatures and XHash proof-of-work secure your transactions, giving you full control over your money with proper wallet protection."
   },
   {
     icon: Globe,

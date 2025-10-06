@@ -13,7 +13,7 @@ const topics = [
   {
     icon: ShieldCheck,
     title: "Protection Against Fraud",
-    description: "Parallax transactions are irreversible, secured by Ethash Proof of Work, eliminating chargeback fraud risks and reducing costs for merchants compared to credit cards or PayPal."
+    description: "Parallax transactions are irreversible, secured by XHash proof-of-work, eliminating chargeback fraud risks and reducing costs for merchants compared to credit cards or PayPal."
   },
   {
     icon: Plane,

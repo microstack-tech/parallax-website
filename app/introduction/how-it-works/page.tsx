@@ -24,7 +24,7 @@ const topics = [
   {
     icon: Cpu,
     title: "Processing & Mining",
-    description: "Miners secure Parallax by packaging transactions into blocks and competing with Ethash Proof-of-Work. This keeps the network fair and decentralized."
+    description: "Miners secure Parallax by packaging transactions into blocks and competing with XHash Proof-of-Work. This keeps the network fair and decentralized."
   },
   {
     icon: Rabbit,

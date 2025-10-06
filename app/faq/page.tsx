@@ -35,7 +35,7 @@ const faqData = {
     {
       question: "What consensus mechanism does Parallax use?",
       answer:
-        "Parallax uses Proof of Work (PoW) consensus with Ethash mining algorithm, making it GPU-friendly unlike Bitcoin's ASIC-dominated SHA-256. This ensures broader mining participation while maintaining the security benefits of PoW.",
+        "Parallax uses Proof of Work (PoW) consensus with XHash mining algorithm, making it GPU-friendly unlike Bitcoin's ASIC-dominated SHA-256. This ensures broader mining participation while maintaining the security benefits of PoW.",
     },
     {
       question: "Is Parallax EVM compatible?",
@@ -52,7 +52,7 @@ const faqData = {
     {
       question: "How can I mine Parallax?",
       answer:
-        "Parallax uses Ethash mining algorithm, so you can mine with GPUs using existing Ethereum mining software. Simply point your miner to a Parallax mining pool with the appropriate configuration. CPU mining is also possible but less efficient.",
+        "Parallax uses XHash mining algorithm, so you can mine with CPUs and GPUs using the built-in Parallax client miner or an external GPU miner. Simply point your miner to a Parallax mining pool with the appropriate configuration.",
     },
     {
       question: "What is the mining reward schedule?",
@@ -62,7 +62,7 @@ const faqData = {
     {
       question: "Can I use my Ethereum mining rig?",
       answer:
-        "Yes! Since Parallax uses the Ethash algorithm, existing Ethereum mining rigs can mine Parallax without hardware changes. Simply update your mining software configuration to point to Parallax pools.",
+        "Yes! Since Parallax uses the XHash algorithm which is based on Ethash, existing Ethereum mining rigs can mine Parallax without hardware changes. Simply update your mining software configuration to point to Parallax pools.",
     },
   ],
   economics: [
