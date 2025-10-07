@@ -46,7 +46,7 @@ const communityTopics = [
   }
 ];
 
-const channels = [
+const oficialChannels = [
   {
     name: "@prlxchain",
     href: "https://x.com/prlxchain",
@@ -54,22 +54,25 @@ const channels = [
     icon: FaXTwitter
   },
   {
+    name: "BitcoinTalk",
+    href: "https://bitcointalk.org/index.php?topic=5560698",
+    description: "Engage with our BitcoinTalk thread.",
+    icon: FaBitcoin,
+  },
+  {
     name: "GitHub",
     href: "https://github.com/microstack-tech",
     description: "Code, issues, and development.",
     icon: FaGithub,
   },
+];
+
+const communityChannels = [
   {
     name: "Telegram",
     href: "https://t.me/parallaxchain",
     description: "Chat with the community on our TG.",
     icon: FaTelegram,
-  },
-  {
-    name: "BitcoinTalk",
-    href: "https://bitcointalk.org/index.php?topic=5560698",
-    description: "Engage with our BitcoinTalk thread.",
-    icon: FaBitcoin,
   },
   {
     name: "r/ParallaxProtocol",
@@ -83,8 +86,7 @@ const channels = [
     description: "Engage with our Discord channel.",
     icon: FaDiscord,
   },
-
-];
+]
 
 export default function CommunityPage() {
   return (
@@ -94,12 +96,31 @@ export default function CommunityPage() {
         subTitle="Neutral, open, and built by everyone. Join us in shaping the future of programmable cash."
       />
 
-      <section className="mx-auto max-w-7xl px-6 sm:px-8 py-8">
+      <section className="flex flex-col gap-8 mx-auto text-center max-w-7xl px-6 sm:px-8 py-8">
+        <h2 className="text-2xl">
+          Official Channels
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {channels.map((ch) => (
+          {oficialChannels.map((ch) => (
             <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
               <Link href={ch.href} target="_blank" rel="noopener" className="block">
-                <ch.icon />
+                <ch.icon className="size-6 mr-4" />
+                {ch.name}
+              </Link>
+            </Button>
+          ))}
+        </div>
+      </section>
+
+      <section className="flex flex-col mt-4 gap-8 mx-auto text-center max-w-7xl px-6 sm:px-8 py-8">
+        <h2 className="text-2xl">
+          Community Channels
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {communityChannels.map((ch) => (
+            <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
+              <Link href={ch.href} target="_blank" rel="noopener" className="block">
+                <ch.icon className="size-6 mr-4" />
                 {ch.name}
               </Link>
             </Button>
