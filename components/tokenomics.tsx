@@ -76,7 +76,7 @@ export function Tokenomics() {
           <Button size={"2xl"} className="w-full max-w-[24rem] px-6" asChild>
             <Link href={"https://parallaxchain.org/introduction/whitepaper"}>
               <div className="flex flex-row items-center w-full justify-between">
-                <label>Read whitepaper</label>
+                <div>Read whitepaper</div>
                 <ArrowRight className="size-6" strokeWidth={1.5} />
               </div>
             </Link>
