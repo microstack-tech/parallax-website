@@ -14,7 +14,7 @@ export default function TechnicalDocumentationPage() {
       <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 sm:px-8">
         <Card className="border-border py-12 px-4 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
-            <Blocks className="size-8 text-primary" strokeWidth={1} />
+            <Blocks className="size-8 text-primary" strokeWidth={1.5} />
             <CardTitle className="text-xl text-center">Foundational Topics</CardTitle>
           </CardHeader>
           <CardContent>
@@ -37,7 +37,7 @@ export default function TechnicalDocumentationPage() {
         </Card>
         <Card className="border-border py-10 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
-            <SquareTerminal className="size-8 text-primary" strokeWidth={1} />
+            <SquareTerminal className="size-8 text-primary" strokeWidth={1.5} />
             <CardTitle className="text-xl text-center">Parallax Stack</CardTitle>
           </CardHeader>
           <CardContent>
@@ -60,7 +60,7 @@ export default function TechnicalDocumentationPage() {
 
         <Card className="border-border py-10 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
-            <Layers className="size-8 text-primary" strokeWidth={1} />
+            <Layers className="size-8 text-primary" strokeWidth={1.5} />
             <CardTitle className="text-xl text-center">Advanced</CardTitle>
           </CardHeader>
           <CardContent>
@@ -84,7 +84,7 @@ export default function TechnicalDocumentationPage() {
 
         <Card className="border-border py-10 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
-            <Server className="size-8 text-primary" strokeWidth={1} />
+            <Server className="size-8 text-primary" strokeWidth={1.5} />
             <CardTitle className="text-xl text-center">Parallax Client</CardTitle>
           </CardHeader>
           <CardContent>

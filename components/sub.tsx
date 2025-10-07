@@ -11,9 +11,6 @@ export default function Sub() {
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 overflow-visible">
         <div className="mx-auto max-w-4xl text-center overflow-visible">
           <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-3xl mx-auto text-pretty">
-            {/* Parallax is a timechain protocol that unites Bitcoin's immutability and monetary discipline with Ethereum's */}
-            {/* programmability. Operating under Bitcoin's fixed rules with a capped 21 million supply, Parallax extends */}
-            {/* these foundations with the Ethereum Virtual Machine. */}
             {`Parallax uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of coins is carried out collectively by the network. Parallax is open-source; its design is public, nobody owns or controls Parallax and everyone can take part.`}
           </p>
 
@@ -43,10 +40,10 @@ export default function Sub() {
           {/* Social Links */}
           <div className="mt-8 flex justify-center gap-6">
             <Link href="https://x.com/prlxchain" target="_blank" className="text-muted-foreground hover:text-blue-400 transition-colors">
-              <FaXTwitter className="h-6 w-6" strokeWidth={1} />
+              <FaXTwitter className="h-6 w-6" strokeWidth={1.5} />
             </Link>
             <Link href="https://github.com/microstack-tech" target="_blank" className="text-muted-foreground hover:text-blue-400 transition-colors">
-              <FaGithub className="h-6 w-6" strokeWidth={1} />
+              <FaGithub className="h-6 w-6" strokeWidth={1.5} />
             </Link>
           </div>
         </div>

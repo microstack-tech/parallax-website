@@ -20,13 +20,13 @@ export default function WhitepaperPage() {
             </Button>
           </div>
           <div className="flex flex-col gap-4 bg-card ring-4 max-w-7xl ring-muted/10 rounded-md font-sans text-foreground/90 border px-8 py-12 mx-auto items-start">
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               Abstract
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Parallax is a timechain protocol that unites Bitcoin’s immutability and monetary discipline with Ethereum’s programmability. Operating under Bitcoin’s fixed rules — Proof of Work, ten-minute blocks, halving cycles, and a capped 21 million supply — Parallax extends these foundations with the Ethereum Virtual Machine. By adopting XHash mining — a modified Ethash variant designed to obsolete existing ASICs — and rejecting premine or privileged allocations, it launches as a fair and neutral experiment in programmable cash: scarce, decentralized, and permissionless.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               1. Introduction
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -36,7 +36,7 @@ export default function WhitepaperPage() {
               {`Parallax bridges this gap. It preserves Bitcoin's monetary rules while adopting Ethereum's virtual machine for programmability. To further strengthen accessibility and decentralization, Parallax employs the XHash Proof of Work function — a modified Ethash variant that preserves Ethash’s memory-hard properties while making existing ASICs obsolete.`}
             </p>
 
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               2. Motivation and Problem Statement
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -48,7 +48,7 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               To realize this synthesis of scarcity and expressiveness, Parallax defines explicit system parameters that mirror Bitcoin’s discipline while supporting Ethereum-level programmability.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               3. System Parameters
             </h2>
             <div className="my-6 w-full overflow-visible">
@@ -147,7 +147,7 @@ export default function WhitepaperPage() {
                 </tbody>
               </table>
             </div>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               4. Comparative Analysis
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -279,7 +279,7 @@ export default function WhitepaperPage() {
                 </tbody>
               </table>
             </div>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               5. Genesis Block
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -291,16 +291,16 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               This design choice reinforces transparency, credibility, and neutrality from the very first block.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               6. Consensus and Timechain
             </h2>
-            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold">
               Block Structure
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               {`Parallax adopts Bitcoin's timechain structure, modified to include an EVM execution payload. Each block consists of a block header with the hash, nonce, Merkle root, and timestamp, followed by transactions and their execution receipts. The transactions themselves follow Ethereum’s account-based format, allowing developers to use familiar tools.`}
             </p>
-            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold">
               Proof of Work
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -322,7 +322,7 @@ export default function WhitepaperPage() {
               </code>
               is the current network difficulty target.
             </p>
-            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold">
               Block Interval and Difficulty Adjustment
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -345,7 +345,7 @@ export default function WhitepaperPage() {
                 {`t_expected = expected time for 2016 blocks (2016 * 600 seconds)`}
               </code>.
             </p>
-            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold">
               Emission Schedule
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -368,13 +368,13 @@ export default function WhitepaperPage() {
                 {`lim h→∞ S(h) = 21,000,000`}
               </code>.
             </p>
-            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold">
               Coinbase Maturity
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Parallax enforces a coinbase maturity period identical to Bitcoin’s. Newly mined coins (block rewards) cannot be spent until 100 additional blocks have been added on top of the block that issued them. With Parallax’s 10-minute block interval, this corresponds to roughly 16–17 hours of confirmation time. This rule ensures that rewards are only spendable once the probability of a chain reorganization invalidating the block is negligible. It strengthens network security by aligning miner incentives with long-term chain stability and prevents immediate liquidation of block rewards while reorg risk remains relatively high
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               7. Execution Layer
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -389,13 +389,13 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               The account-based state model is retained in full, meaning Parallax supports the same type of contracts, balances, and execution semantics as Ethereum, while grounding them in Bitcoin’s monetary discipline.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               8. Tokenomics
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Parallax inherits its monetary design directly from Bitcoin. All coins must be mined via Proof of Work, with no pre-mine or privileged allocations. The block reward schedule mirrors Bitcoin exactly, beginning at 50 coins and halving every 210,000 blocks until issuance reaches zero. Transaction fees are paid entirely to miners and never burned, ensuring that total supply cannot fall below 21 million. This ossified monetary design distinguishes Parallax from more adaptive protocols and provides long-term predictability for users and institutions.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               9. Security Model
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -407,7 +407,7 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Propagation and block size considerations are also central to Parallax’s security model. By conservatively capping throughput at around one million gas per second, Parallax ensures that nodes remain accessible to individuals and smaller operators, preventing excessive centralization pressures. The combination of fixed supply, cumulative Proof of Work, and fair miner incentives forms a trust-minimized foundation resistant to governance manipulation.
             </p>
-            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold tracking-tight">
+            <h3 className="pt-4 scroll-m-20 text-2xl font-semibold">
               Energy Considerations
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -419,7 +419,7 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               By embedding its security in physical reality while aligning incentives with renewable energy, Parallax strengthens both its decentralization and its credibility as a sustainable timechain.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               10. Use Cases
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -428,7 +428,7 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               As second-layer solutions emerge, neutrality at the base layer becomes paramount. Without ossified monetary rules and permissionless consensus, Layer 2 systems inherit governance and centralization risks. By anchoring programmability to a neutral Proof of Work timechain, Parallax aspires to serve as a settlement layer with the same credibility Bitcoin offers to money.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               11. Governance Philosophy
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -443,7 +443,7 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Parallax recognizes Bitcoin as the ultimate form of digital sound money, with unmatched credibility in its fixed monetary rules and long-term immutability. The role of Parallax is not to compete with Bitcoin, but to experiment with extending Bitcoin’s monetary discipline into a programmable environment. By combining Bitcoin’s ethos of scarcity with Ethereum’s expressiveness, Parallax offers a complementary system that explores what is possible when neutrality, decentralization, and programmability are brought together.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               12. The Primacy of Proof of Work
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
@@ -464,13 +464,13 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Parallax rejects such trade-offs. Its design respects and extends Satoshi’s vision by preserving Proof of Work as the only credible foundation for a decentralized, permissionless timechain. All programmability, throughput, and application-layer innovations must operate within this boundary: decentralization first, convenience second. With sufficient network maturity, the drawbacks of slow block intervals can be mitigated through the use of Layer 2 settlement solutions, ensuring scalability without sacrificing the core guarantees of permissionless decentralization.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
               13. Conclusion
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Parallax is an experiment in extending Bitcoin’s monetary ethos into a programmable environment. Its neutrality, ossified monetary policy, and reliance on Proof of Work ensure that it cannot be captured or co-opted. The future of the protocol will rest in the hands of its community — developers, miners, and users alike — to discover what becomes possible when scarcity, decentralization, and programmability converge.
             </p>
-            <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
+            <h2 className="border-b pb-2 text-3xl w-full font-semibold first:mt-0">
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Parallax will follow a transparent release process to ensure fairness and neutrality:

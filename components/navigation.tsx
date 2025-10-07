@@ -80,7 +80,7 @@ export function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const newOpacity = Math.min(scrollY / 300, 0.9);
+      const newOpacity = Math.min(scrollY / 300, 1);
       setOpacity(newOpacity);
     };
 
@@ -90,7 +90,7 @@ export function Navigation() {
 
   return (
     <nav
-      className="fixed top-0 py-3 px-8 left-0 right-0 z-50 transition-opacity duration-300"
+      className="fixed top-0 py-2 md:py-4 px-6 sm:px-8 left-0 right-0 z-50 transition-opacity duration-300"
       style={{
         backgroundColor: `rgba(0, 0, 0, ${opacity})`
       }}
@@ -100,16 +100,14 @@ export function Navigation() {
         <div className="flex items-center">
           <div className="flex-shrink-0">
             <Link href="/" className="cursor-pointer">
-              <span className="inline-flex items-center font-sans gap-2 text-2xl font-bold bg-foreground bg-clip-text text-transparent">
-                <Image
-                  src="/parallax_logo_color.svg"
-                  className="size-10 w-auto"
-                  width={200}
-                  height={200}
-                  alt="Parallax Logo"
-                  priority
-                />
-              </span>
+              <Image
+                src="/parallax_logo_color_dark.svg"
+                className="size-10 md:size-12 w-auto"
+                width={200}
+                height={200}
+                alt="Parallax Logo"
+                priority
+              />
             </Link>
           </div>
         </div>
@@ -122,7 +120,7 @@ export function Navigation() {
                 item.subItems ? (
                   <NavigationMenuItem key={`desk_${item.name}`}>
                     <NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
-                    <NavigationMenuContent className="min-w-[13rem]">
+                    <NavigationMenuContent className="min-w-[15rem]">
                       {item.subItems.map((sub) => (
                         <ListItem
                           key={`desk_sub_${item.name}_${sub.name}`}
@@ -157,9 +155,9 @@ export function Navigation() {
             aria-expanded={isOpen}
             aria-controls="mobile-nav"
             onClick={() => setIsOpen((v) => !v)}
-            className="inline-flex items-center justify-center p-2"
+            className="inline-flex items-center justify-center"
           >
-            {isOpen ? <X className="size-8" strokeWidth={1.5} /> : <Menu className="size-8" strokeWidth={1.5} />}
+            {isOpen ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
           </Button>
         </div>
       </div>
@@ -172,14 +170,14 @@ export function Navigation() {
             <button
               aria-label="Close menu"
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 top-16 bg-black/50 md:hidden z-[9998]"
+              className="fixed inset-0 top-14 bg-black/50 md:hidden z-[9998]"
             />
             {/* Panel */}
             <div
               id="mobile-nav"
               role="dialog"
               aria-modal="true"
-              className="fixed inset-x-0 top-16 bottom-0 md:hidden z-[9999] bg-background/95 backdrop-blur border-t border-border overflow-y-auto overscroll-contain"
+              className="fixed inset-x-0 top-14 bottom-0 md:hidden z-[9999] bg-background/95 backdrop-blur border-t border-border overflow-y-auto overscroll-contain"
               style={{ WebkitOverflowScrolling: "touch" }}
             >
               <div className="mx-auto pb-20 max-w-6xl px-4 sm:px-6 lg:px-8 py-3">

@@ -78,7 +78,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <BookOpen className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <BookOpen className="h-6 w-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl">1. Inform Yourself</CardTitle>
                 </div>
@@ -98,7 +98,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <Wallet className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <Wallet className="h-6 w-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl">2. Choose Your Wallet</CardTitle>
                 </div>
@@ -118,7 +118,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <HandCoins className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <HandCoins className="h-6 w-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl">3. Get Parallax</CardTitle>
                 </div>
@@ -141,7 +141,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <Store className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <Store className="h-6 w-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl">4. Spend Parallax</CardTitle>
                 </div>
@@ -163,7 +163,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <BookOpen className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <BookOpen className="h-6 w-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl">1. Inform Yourself</CardTitle>
                 </div>
@@ -183,7 +183,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <Building className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <Building className="h-6 w-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl">2. Processing Payments</CardTitle>
                 </div>
@@ -201,7 +201,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <Scale className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <Scale className="h-6 w-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl">3. Accounting & Taxes</CardTitle>
                 </div>
@@ -221,7 +221,7 @@ export default function GettingStarted() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2">
-                    <Eye className="h-6 w-6 text-primary" strokeWidth={1} />
+                    <Eye className="h-6 w-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl">4. Gain Visibility</CardTitle>
                 </div>

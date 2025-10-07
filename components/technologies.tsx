@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Cpu, Layers, Lock, Shield } from "lucide-react"
+import { ArrowRight, BrainCircuit, Cpu, Layers, Lock } from "lucide-react"
 import Link from "next/link"
 import { Button } from "./ui/button"
 
@@ -29,7 +29,7 @@ const features = [
     ],
   },
   {
-    icon: Shield,
+    icon: BrainCircuit,
     title: "Nakamoto Consensus",
     description: [
       "Parallax adheres to the Nakamoto consensus model, where the heaviest valid chain — defined by cumulative proof-of-work — determines canonical state.",

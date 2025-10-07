@@ -43,7 +43,7 @@ const topics = [
   {
     icon: Code,
     title: "Programmable Transactions",
-    description: "Utilize the Ethereum Virtual Machine to create smart contracts for automated payments or decentralized applications, all backed by Parallax’s fixed 21M coin supply and Bitcoin-like halving cycles."
+    description: "Utilize the Parallax Virtual Machine to create smart contracts for automated payments or decentralized applications, all backed by Parallax’s fixed 21M coin supply and Bitcoin-like halving cycles."
   },
 ]
 

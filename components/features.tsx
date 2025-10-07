@@ -75,7 +75,7 @@ export function Features() {
               <Card key={feature.title} className="h-[16rem]">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <feature.icon strokeWidth={1} className="size-8 text-primary" />
+                    <feature.icon strokeWidth={1.5} className="size-8 text-primary" />
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
                   </div>
                 </CardHeader>

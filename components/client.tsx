@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Download, Info, ShieldCheck, TerminalSquare } from "lucide-react";
+import { ArrowRight, CircleSlash, Download, Hexagon, ShieldCheck, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
@@ -16,7 +16,7 @@ const clientFeatures = [
     description: "Run a full node to validate transactions, mine blocks, and help secure the Parallax network."
   },
   {
-    icon: Info,
+    icon: FaGithub,
     title: "Open Source",
     description: "The client is fully open source. Review, audit, and contribute to the codebase on GitHub."
   }
@@ -35,25 +35,27 @@ export default function Client() {
           </div>
           <div className="flex flex-col sm:flex-row gap-8 mt-24 justify-center">
             <Card className="border-border py-10 flex flex-col">
-              <CardHeader className="flex flex-col justify-center items-center gap-8">
-                <CardTitle className="text-xl text-center">
-                  Decentralized
-                </CardTitle>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <Hexagon className="size-8" strokeWidth={1.5} />
+                  <CardTitle className="text-xl">Decentralized</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-center mb-2">
+                <CardDescription className="text-base mb-2">
                   It is these users who keep Parallax decentralized. They individually run their own Parallax full nodes, and each of those full nodes separately follows the exact same rules to decide which block chain is valid.
                 </CardDescription>
               </CardContent>
             </Card>
             <Card className="border-border py-10 flex flex-col">
-              <CardHeader className="flex flex-col justify-center items-center gap-8">
-                <CardTitle className="text-xl text-center">
-                  No voting
-                </CardTitle>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <CircleSlash className="size-8" strokeWidth={1.5} />
+                  <CardTitle className="text-xl">No Voting</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-center mb-2">
+                <CardDescription className="text-base mb-2">
                   {`There's no voting or other corruptible process involved: there's just individual software following identical rules—"math"—to evaluate identical blocks and coming to identical conclusions about which block chain is valid.`}
                 </CardDescription>
               </CardContent>
@@ -61,7 +63,7 @@ export default function Client() {
           </div>
           <Card className="my-8 border-0 bg-transparent py-8 flex flex-col">
             <CardContent>
-              <CardDescription className="text-base text-center mb-4">
+              <CardDescription className="text-base text-left mb-4">
                 {`This shared agreement (called consensus) allows people like you to only accept valid transactions, enforcing Parallax's rules against even the most powerful miners.`}
               </CardDescription>
             </CardContent>
@@ -69,17 +71,19 @@ export default function Client() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {clientFeatures.map((feature) => (
               <Card key={feature.title} className="border-border py-10 flex flex-col">
-                <CardHeader className="flex flex-col justify-center items-center gap-8">
-                  <feature.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
-                  <CardTitle className="text-xl text-center">{feature.title}</CardTitle>
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <feature.icon className="size-8" strokeWidth={1.5} />
+                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base text-center mb-2">{feature.description}</CardDescription>
+                  <CardDescription className="text-base mb-2">{feature.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <Card className="mt-24 border-border rounded-none bg-transparent py-10 flex flex-col">
+          <Card className="mt-24 border-0 rounded-none bg-transparent py-10 flex flex-col">
             <CardHeader>
               <CardTitle className="text-xl text-center mb-2">Download the Parallax Client</CardTitle>
             </CardHeader>

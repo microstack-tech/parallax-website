@@ -19,7 +19,7 @@ export function Footer() {
           </h3>
 
           <div className="pt-6">
-            <p className="text-xs text-muted-foreground">© Parallax Project 2025 Released under MIT license</p>
+            <p className="text-sm text-muted-foreground">© Parallax Project 2025 Released under MIT license</p>
           </div>
         </div>
       </div>

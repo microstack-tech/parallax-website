@@ -16,7 +16,7 @@ export default function BeginnerGuidesPage() {
         {/* Node guide */}
         <Card className="border-border py-12 px-4 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
-            <SquareTerminal className="size-8 text-primary" strokeWidth={1} />
+            <SquareTerminal className="size-8 text-primary" strokeWidth={1.5} />
             <CardTitle className="text-xl text-center">Run a Parallax node</CardTitle>
           </CardHeader>
           <CardContent>
@@ -45,7 +45,7 @@ export default function BeginnerGuidesPage() {
         {/* Wallet guides */}
         <Card className="border-border py-10 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
-            <Wallet className="size-8 text-primary" strokeWidth={1} />
+            <Wallet className="size-8 text-primary" strokeWidth={1.5} />
             <CardTitle className="text-xl text-center">Wallets</CardTitle>
           </CardHeader>
           <CardContent>
@@ -75,7 +75,7 @@ export default function BeginnerGuidesPage() {
         {/* Mining guides */}
         <Card className="border-border py-10 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
-            <Pickaxe className="size-8 text-primary" strokeWidth={1} />
+            <Pickaxe className="size-8 text-primary" strokeWidth={1.5} />
             <CardTitle className="text-xl text-center">Mining</CardTitle>
           </CardHeader>
           <CardContent>

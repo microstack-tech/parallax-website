@@ -5,7 +5,7 @@ export function Tokenomics() {
     <section className="py-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{`Bitcoin's Proven Economics`}</h2>
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">{`Bitcoin's Proven Economics`}</h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
             {`Parallax inherits Bitcoin's time-tested monetary design, ensuring long-term predictability and resistance to
             inflation.`}

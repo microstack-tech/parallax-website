@@ -68,7 +68,7 @@ export default function ParallaxClientPage() {
           {clientFeatures.map((feature) => (
             <Card key={feature.title} className="border-border py-10 flex flex-col">
               <CardHeader className="flex flex-col justify-center items-center gap-8">
-                <feature.icon className="h-8 w-8 text-primary" strokeWidth={1} />
+                <feature.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
                 <CardTitle className="text-xl text-center">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>

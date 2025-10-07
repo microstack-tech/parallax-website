@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, BookOpenCheck, NotebookText } from "lucide-react"
 import Link from "next/link"
 
 export function Documentation() {
@@ -8,7 +8,7 @@ export function Documentation() {
     <section className="py-24 bg-[#0D0D0D] px-6 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-7xl text-center">
-          <h2 className="text-3xl tracking-tight text-foreground sm:text-4xl">Documentation</h2>
+          <h2 className="text-3xl text-foreground sm:text-4xl">Documentation</h2>
           <p className="mt-8 text-base text-muted-foreground text-pretty">
             Find beginner guides and in-depth technical documentation about the Parallax protocol and reference client.
           </p>
@@ -18,6 +18,7 @@ export function Documentation() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
+                <BookOpenCheck className="size-8" strokeWidth={1.5} />
                 <CardTitle className="text-xl">Beginner Guides</CardTitle>
               </div>
             </CardHeader>
@@ -37,6 +38,7 @@ export function Documentation() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
+                <NotebookText className="size-8" strokeWidth={1.5} />
                 <CardTitle className="text-xl">Technical Documentation</CardTitle>
               </div>
             </CardHeader>

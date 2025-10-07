@@ -28,7 +28,7 @@ export function Hero() {
 
       <div className="absolute flex flex-col justify-evenly h-full w-full px-6 sm:px-8 items-center">
         <div className="flex flex-col items-center sm:items-start w-full max-w-7xl">
-          <h1 className="text-6xl font-sans sm:text-9xl font-bold tracking-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)] sm:-ml-2">
+          <h1 className="text-6xl font-sans sm:text-9xl font-bold tracking-tight sm:-ml-2">
             <span className="bg-gradient-to-r mx-0 from-white to-white/70 bg-clip-text text-transparent pr-1.5">
               Parallax
             </span>
@@ -41,7 +41,7 @@ export function Hero() {
           {`Parallax uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of coins is carried out collectively by the network. Parallax is open-source; its design is public, nobody owns or controls Parallax and everyone can take part.`}
         </p>
         <div className="flex flex-col gap-4 justify-between sm:flex-row w-full max-w-7xl">
-          <Button size={"2xl"} className="w-full max-w-[24rem] rounded-none px-6 bg-cyan-400" asChild>
+          <Button size={"2xl"} className="w-full max-w-[25rem] rounded-none px-6 bg-cyan-400" asChild>
             <Link href={"/introduction/getting-started"}>
               <div className="flex flex-row items-center w-full justify-between">
                 Get started with Parallax
@@ -49,7 +49,7 @@ export function Hero() {
               </div>
             </Link>
           </Button>
-          <div className="flex flex-row justify-evenly gap-4">
+          <div className="flex flex-row justify-between gap-4">
             <Button size={"2xl"} className="w-fit rounded-none px-4 bg-background border text-foreground hover:text-background transition-colors" asChild>
               <Link href={"https://x.com/prlxchain"}>
                 <div>
@@ -88,7 +88,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
     </section>
   )
 }

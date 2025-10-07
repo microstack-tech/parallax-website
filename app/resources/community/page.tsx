@@ -113,7 +113,7 @@ export default function CommunityPage() {
             <Card key={topic.title} className="border-border py-10">
               <CardHeader>
                 <div className="flex flex-col items-center gap-6">
-                  <topic.icon className="h-8 w-8 text-primary" strokeWidth={1} />
+                  <topic.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
                   <CardTitle className="text-lg text-center">{topic.title}</CardTitle>
                 </div>
               </CardHeader>

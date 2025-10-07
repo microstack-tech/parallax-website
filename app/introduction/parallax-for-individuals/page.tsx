@@ -38,7 +38,7 @@ const topics = [
   {
     icon: Code,
     title: "Programmable Money",
-    description: "Leverage the Ethereum Virtual Machine to create smart contracts and automate payments, backed by a fixed 21M coin supply and Bitcoin-like halving cycles."
+    description: "Leverage the Parallax Virtual Machine to create smart contracts and automate payments, backed by a fixed 21M coin supply and Bitcoin-like halving cycles."
   },
 ]
 

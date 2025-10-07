@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { UsersRound } from "lucide-react"
 import Link from "next/link"
 import { FaGithub } from "react-icons/fa"
 
@@ -8,14 +9,14 @@ export function Community() {
     <section className="py-24 bg-background px-6 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-7xl text-center">
-          <h2 className="text-3xl tracking-tight text-foreground sm:text-4xl">Built by the Community</h2>
+          <h2 className="text-3xl text-foreground sm:text-4xl">Built by the Community</h2>
         </div>
 
         <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
-                <div className="rounded-md bg-cyan-800/40 p-2">
+                <div className="rounded-md bg-cyan-800/40 p-2 border">
                   <FaGithub className="size-8 text-primary" strokeWidth={1.5} />
                 </div>
                 <CardTitle className="text-xl">Open Source</CardTitle>
@@ -29,8 +30,8 @@ export function Community() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
-                <div className="rounded-md bg-cyan-800/40 p-2">
-                  <FaGithub className="size-8 text-primary" strokeWidth={1.5} />
+                <div className="rounded-md bg-cyan-800/40 p-2 border">
+                  <UsersRound className="size-8 text-primary" strokeWidth={1.5} />
                 </div>
                 <CardTitle className="text-xl">Community Driven</CardTitle>
               </div>
