@@ -10,8 +10,8 @@ export default function WhitepaperPage() {
         title="Parallax: A New Perspective on Programmable Cash"
       />
       <main className="py-8 min-h-screen bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-row justify-end max-w-6xl w-full pb-8 mx-auto">
+        <div className="container mx-auto px-6 sm:px-8">
+          <div className="flex flex-row justify-end max-w-7xl w-full pb-8 mx-auto">
             <Button variant={'outline'} asChild>
               <Link href={"https://github.com/microstack-tech/parallax-whitepaper"} target="_blank">
                 <FaGithub />
@@ -19,7 +19,7 @@ export default function WhitepaperPage() {
               </Link>
             </Button>
           </div>
-          <div className="flex flex-col gap-4 bg-card ring-4 max-w-6xl ring-muted/10 rounded-md border px-8 py-12 mx-auto items-start">
+          <div className="flex flex-col gap-4 bg-card ring-4 max-w-7xl ring-muted/10 rounded-md font-sans text-foreground/90 border px-8 py-12 mx-auto items-start">
             <h2 className="border-b pb-2 text-3xl w-full font-semibold tracking-tight first:mt-0">
               Abstract
             </h2>
@@ -159,7 +159,7 @@ export default function WhitepaperPage() {
             <p className="leading-7 [&:not(:first-child)]:mt-2">
               Parallax is positioned between these two. Like Bitcoin, it has a fixed supply of 21 million coins, with issuance governed by halving cycles and an immutable schedule. Like Ethereum, it offers a Turing-complete execution environment, compatible with existing developer tools and smart contracts. But unlike Ethereum, Parallax rejects supply burning and adaptive monetary policy, ensuring that programmability does not come at the cost of predictable monetary rules.
             </p>
-            <div className="my-6 w-full overflow-visible">
+            <div className="my-6 w-full overflow-x-scroll">
               <table className="w-full">
                 <thead>
                   <tr className="even:bg-muted/40 m-0 border-t p-0">

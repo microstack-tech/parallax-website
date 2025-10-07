@@ -39,21 +39,21 @@ export default function DevelopersPage() {
         title="Developers"
         subTitle="Parallax is fully open source and welcomes contributions from developers of all backgrounds"
       />
-      <GridView
-        items={topics}
-      />
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mx-auto mb-16">
-        <Button className="font-medium text-md p-10 w-fit" asChild>
+        <Button className="w-fit" size={'2xl'} asChild>
           <Link href={"https://github.com/microstack-tech"} target="_blank">
             Explore our GitHub
           </Link>
         </Button>
-        <Button className="font-medium text-md p-10 w-fit" variant={"outline"} asChild>
+        <Button className="w-fit" size={"2xl"} variant={"outline"} asChild>
           <Link href={"/resources/technical-documentation"}>
             Read Documentation
           </Link>
         </Button>
       </div>
+      <GridView
+        items={topics}
+      />
     </>
   );
 }

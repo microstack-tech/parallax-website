@@ -23,10 +23,42 @@ interface NavItem {
   subItems?: { name: string; href?: string }[]
 }
 
+const navItems: NavItem[] = [
+  {
+    name: "Introduction",
+    subItems: [
+      { name: "Getting Started", href: "/introduction/getting-started" },
+      { name: "How it works", href: "/introduction/how-it-works" },
+      { name: "Individuals", href: "/introduction/parallax-for-individuals" },
+      { name: "Businesses", href: "/introduction/parallax-for-businesses" },
+      { name: "White paper", href: "/introduction/whitepaper" },
+    ],
+  },
+  {
+    name: "Resources",
+    subItems: [
+      { name: "Community", href: "/resources/community" },
+      { name: "Branding", href: "/resources/branding" },
+      { name: "Beginner Guides", href: "/resources/beginner-guides" },
+      { name: "Technical Documentation", href: "/resources/technical-documentation" },
+      { name: "Parallax Client", href: "/resources/parallax-client" },
+    ],
+  },
+  {
+    name: "Participate",
+    subItems: [
+      { name: "Support Parallax", href: "/participate/support-parallax" },
+      { name: "Running a full node", href: "/participate/running-a-full-node" },
+      { name: "Development", href: "/participate/development" },
+    ],
+  },
+  { name: "FAQ", href: "/faq" },
+]
+
 export function Navigation() {
+  const [opacity, setOpacity] = useState(0);
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  console.log(pathname)
 
   // Lock body scroll on mobile sheet
   useEffect(() => {
@@ -44,104 +76,91 @@ export function Navigation() {
     }
   }, [isOpen])
 
-  const navItems: NavItem[] = [
-    {
-      name: "Introduction",
-      subItems: [
-        { name: "Getting Started", href: "/introduction/getting-started" },
-        { name: "How it works", href: "/introduction/how-it-works" },
-        { name: "Individuals", href: "/introduction/parallax-for-individuals" },
-        { name: "Businesses", href: "/introduction/parallax-for-businesses" },
-        { name: "White paper", href: "/introduction/whitepaper" },
-      ],
-    },
-    {
-      name: "Resources",
-      subItems: [
-        { name: "Community", href: "/resources/community" },
-        { name: "Branding", href: "/resources/branding" },
-        { name: "Beginner Guides", href: "/resources/beginner-guides" },
-        { name: "Technical Documentation", href: "/resources/technical-documentation" },
-        { name: "Parallax Client", href: "/resources/parallax-client" },
-      ],
-    },
-    {
-      name: "Participate",
-      subItems: [
-        { name: "Support Parallax", href: "/participate/support-parallax" },
-        { name: "Running a full node", href: "/participate/running-a-full-node" },
-        { name: "Development", href: "/participate/development" },
-      ],
-    },
-    { name: "FAQ", href: "/faq" },
-  ]
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const newOpacity = Math.min(scrollY / 300, 0.9);
+      setOpacity(newOpacity);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center mx-auto max-w-6xl justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <Link href="/">
-                <span className="inline-flex items-center gap-2 text-2xl font-bold bg-foreground bg-clip-text text-transparent">
-                  <Image
-                    src="/parallax_logo_color.svg"
-                    className="h-8 w-auto"
-                    width={200}
-                    height={200}
-                    alt="Parallax Logo"
-                    priority
-                  />
-                  Parallax
-                </span>
+    <nav
+      className="fixed top-0 py-3 px-8 left-0 right-0 z-50 transition-opacity duration-300"
+      style={{
+        backgroundColor: `rgba(0, 0, 0, ${opacity})`
+      }}
+    >
+      <div className="flex items-center mx-auto max-w-7xl justify-between">
+        {/* Logo */}
+        <div className="flex items-center">
+          <div className="flex-shrink-0">
+            <Link href="/" className="cursor-pointer">
+              <span className="inline-flex items-center font-sans gap-2 text-2xl font-bold bg-foreground bg-clip-text text-transparent">
+                <Image
+                  src="/parallax_logo_color.svg"
+                  className="size-10 w-auto"
+                  width={200}
+                  height={200}
+                  alt="Parallax Logo"
+                  priority
+                />
+              </span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Desktop menu */}
+        <div className="hidden md:block">
+          <NavigationMenu viewport={false} delayDuration={0}>
+            <NavigationMenuList>
+              {navItems.map((item) =>
+                item.subItems ? (
+                  <NavigationMenuItem key={`desk_${item.name}`}>
+                    <NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
+                    <NavigationMenuContent className="min-w-[13rem]">
+                      {item.subItems.map((sub) => (
+                        <ListItem
+                          key={`desk_sub_${item.name}_${sub.name}`}
+                          href={sub.href ?? "#"}
+                          title={sub.name}
+                        />
+                      ))}
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ) : (
+                  <NavigationMenuItem key={`desk_${item.name}`}>
+                    <NavigationMenuLink asChild>
+                      <Link href={item.href ?? "#"}>{item.name}</Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                )
+              )}
+            </NavigationMenuList>
+            <Button className="ml-16 px-8" asChild>
+              <Link href={"/introduction/getting-started"}>
+                Get Started
               </Link>
-            </div>
-          </div>
-
-          {/* Desktop menu */}
-          <div className="hidden md:block">
-            <NavigationMenu viewport={false} delayDuration={0}>
-              <NavigationMenuList>
-                {navItems.map((item) =>
-                  item.subItems ? (
-                    <NavigationMenuItem key={`desk_${item.name}`}>
-                      <NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
-                      <NavigationMenuContent className="min-w-[13rem]">
-                        {item.subItems.map((sub) => (
-                          <ListItem
-                            key={`desk_sub_${item.name}_${sub.name}`}
-                            href={sub.href ?? "#"}
-                            title={sub.name}
-                          />
-                        ))}
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  ) : (
-                    <NavigationMenuItem key={`desk_${item.name}`}>
-                      <NavigationMenuLink asChild>
-                        <Link href={item.href ?? "#"}>{item.name}</Link>
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  )
-                )}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              aria-expanded={isOpen}
-              aria-controls="mobile-nav"
-              onClick={() => setIsOpen((v) => !v)}
-              className="inline-flex items-center justify-center p-2"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
-          </div>
+          </NavigationMenu>
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <Button
+            variant="ghost"
+            size="sm"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setIsOpen((v) => !v)}
+            className="inline-flex items-center justify-center p-2"
+          >
+            {isOpen ? <X className="size-8" strokeWidth={1.5} /> : <Menu className="size-8" strokeWidth={1.5} />}
+          </Button>
         </div>
       </div>
 

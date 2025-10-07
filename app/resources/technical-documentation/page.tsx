@@ -11,7 +11,7 @@ export default function TechnicalDocumentationPage() {
         title="Technical Documentation"
         subTitle="Explore the Parallax protocol, architecture, APIs, and developer guides."
       />
-      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 lg:px-16">
+      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 sm:px-8">
         <Card className="border-border py-12 px-4 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
             <Blocks className="size-8 text-primary" strokeWidth={1} />
@@ -27,7 +27,7 @@ export default function TechnicalDocumentationPage() {
             </CardDescription>
           </CardContent>
           <div className="flex flex-col h-full justify-end">
-            <Button size="lg" asChild>
+            <Button size="xl" asChild>
               <Link href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/introduction-to-parallax" target="_blank" rel="noopener">
                 More on Foundational Topics
                 <ArrowRight />
@@ -49,7 +49,7 @@ export default function TechnicalDocumentationPage() {
             </CardDescription>
           </CardContent>
           <div className="flex flex-col h-full justify-end">
-            <Button size="lg" asChild>
+            <Button size="xl" asChild>
               <Link href="https://docs.parallaxchain.org/parallax-protocol/parallax-stack/introduction-stack" target="_blank" rel="noopener">
                 More on Parallax Stack
                 <ArrowRight />
@@ -73,7 +73,7 @@ export default function TechnicalDocumentationPage() {
             </CardDescription>
           </CardContent>
           <div className="flex flex-col h-full justify-end">
-            <Button size="lg" asChild>
+            <Button size="xl" asChild>
               <Link href="https://docs.parallaxchain.org/parallax-protocol/advanced/bridges" target="_blank" rel="noopener">
                 More on Advanced Topics
                 <ArrowRight />
@@ -96,7 +96,7 @@ export default function TechnicalDocumentationPage() {
             </CardDescription>
           </CardContent>
           <div className="flex flex-col h-full justify-end">
-            <Button size="lg" asChild>
+            <Button size="xl" asChild>
               <Link href="https://docs.parallaxchain.org/parallax-client/getting-started/introduction" target="_blank" rel="noopener">
                 More on Parallax Client
                 <ArrowRight />

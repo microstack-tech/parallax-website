@@ -34,7 +34,7 @@ export default function RunningFullNodePage() {
         title="Running a Full Node"
         subTitle="Help secure Parallax and participate in the network by running your own node."
       />
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
+      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
           {nodeTopics.map((topic) => (
             <Card key={topic.title} className="border-border py-10 flex flex-col">
@@ -56,14 +56,14 @@ export default function RunningFullNodePage() {
             <CardDescription className="text-base text-center">
               Ready to run a full node? Download the Parallax Client and follow our step-by-step guide.
             </CardDescription>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button variant="default" size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
+              <Button variant="default" size="xl" asChild>
                 <Link href="https://github.com/microstack-tech/parallax/releases/latest" target="_blank" rel="noopener">
                   <Download className="mr-2 h-5 w-5" />
                   Download Parallax Client
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" size="xl" asChild>
                 <Link href="https://docs.parallaxchain.org/guides/client/introduction" target="_blank" rel="noopener">
                   Setup Guide
                   <ArrowRight />

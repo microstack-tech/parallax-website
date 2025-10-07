@@ -11,7 +11,7 @@ export default function BeginnerGuidesPage() {
         title="Beginner Guides"
         subTitle="Explore the user-friendly guides on how to run a Parallax node, connect wallets, and start mining."
       />
-      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 lg:px-16">
+      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 sm:px-8">
 
         {/* Node guide */}
         <Card className="border-border py-12 px-4 flex flex-col items-center">
@@ -29,7 +29,7 @@ export default function BeginnerGuidesPage() {
             </CardDescription>
           </CardContent>
           <div className="flex flex-col h-full justify-end">
-            <Button size="lg" asChild>
+            <Button size="xl" asChild>
               <Link
                 href="https://docs.parallaxchain.org/guides/client/introduction"
                 target="_blank"
@@ -59,7 +59,7 @@ export default function BeginnerGuidesPage() {
             </CardDescription>
           </CardContent>
           <div className="flex flex-col h-full justify-end">
-            <Button size="lg" asChild>
+            <Button size="xl" asChild>
               <Link
                 href="https://docs.parallaxchain.org/guides/wallets"
                 target="_blank"
@@ -88,7 +88,7 @@ export default function BeginnerGuidesPage() {
             </CardDescription>
           </CardContent>
           <div className="flex flex-col h-full justify-end">
-            <Button size="lg" asChild>
+            <Button size="xl" asChild>
               <Link
                 href="https://docs.parallaxchain.org/guides/mining/introduction"
                 target="_blank"

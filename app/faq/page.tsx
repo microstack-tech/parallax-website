@@ -105,64 +105,62 @@ export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState("general")
 
   return (
-    <>
+    <div>
       <PageHeader
         title="Frequently Asked Questions"
         subTitle="Find answers to recurring questions about Parallax"
       />
       {/* FAQ Content */}
-      <section className="relative py-32 bg-transparent z-10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Sidebar Navigation */}
-            <div className="lg:w-64 flex-shrink-0">
-              <div className="sticky top-24">
-                <nav className="space-y-2">
-                  {faqCategories.map((category) => (
-                    <Button
-                      key={category.id}
-                      onClick={() => setActiveCategory(category.id)}
-                      variant={'ghost'}
-                      className={`w-full text-base py-5 cursor-pointer justify-start text-left ${activeCategory === category.id
-                        ? "bg-primary text-primary-foreground"
-                        : ""
-                        }`}
-                    >
-                      {category.name}
-                    </Button>
-                  ))}
-                </nav>
-              </div>
+      <section className="flex mt-24 bg-transparent z-10 px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8 mx-auto max-w-7xl">
+          {/* Sidebar Navigation */}
+          <div className="lg:w-64 flex-shrink-0">
+            <div className="sticky top-24">
+              <nav className="space-y-2">
+                {faqCategories.map((category) => (
+                  <Button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    variant={'ghost'}
+                    className={`w-full text-base py-5 cursor-pointer justify-start text-left ${activeCategory === category.id
+                      ? "bg-primary text-primary-foreground"
+                      : ""
+                      }`}
+                  >
+                    {category.name}
+                  </Button>
+                ))}
+              </nav>
             </div>
+          </div>
 
-            {/* FAQ Content */}
-            <div className="flex-1">
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold text-primary capitalize mb-6">
-                  {faqCategories.find((cat) => cat.id === activeCategory)?.name}
-                </h2>
+          {/* FAQ Content */}
+          <div className="flex-1">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-primary capitalize mb-6">
+                {faqCategories.find((cat) => cat.id === activeCategory)?.name}
+              </h2>
 
-                {faqData[activeCategory as keyof typeof faqData]?.map((faq, index) => {
-                  const questionId = `${activeCategory}-${index}`
+              {faqData[activeCategory as keyof typeof faqData]?.map((faq, index) => {
+                const questionId = `${activeCategory}-${index}`
 
-                  return (
-                    <div key={questionId} className="overflow-hidden">
-                      <h3 className="inline-flex items-center gap-4 px-4 py-4 font-semibold text-foreground text-balance text-lg">
-                        <LucideChevronRight />
-                        {faq.question}
-                      </h3>
+                return (
+                  <div key={questionId} className="overflow-hidden">
+                    <h3 className="inline-flex items-center gap-4 px-4 py-4 font-semibold text-foreground text-balance text-lg">
+                      <LucideChevronRight />
+                      {faq.question}
+                    </h3>
 
-                      <div className="px-6 pb-4 border-t border-border">
-                        <div className="pt-4 text-base text-muted-foreground leading-relaxed">{faq.answer}</div>
-                      </div>
+                    <div className="px-6 pb-4 border-t border-border">
+                      <div className="pt-4 text-base text-muted-foreground leading-relaxed">{faq.answer}</div>
                     </div>
-                  )
-                })}
-              </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

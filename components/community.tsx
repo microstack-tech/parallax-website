@@ -1,109 +1,63 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Book, FileText, Megaphone } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
-import { FaBitcoin, FaDiscord, FaGithub, FaReddit, FaTelegramPlane } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
+import { FaGithub } from "react-icons/fa"
 
 export function Community() {
   return (
-    <section className="pb-24 bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Join the Community</h2>
-          <p className="mt-4 text-lg text-muted-foreground text-pretty">
-            Parallax is a community-driven project. Follow our progress and participate in the fair launch of
-            programmable cash.
-          </p>
+    <section className="py-24 bg-background px-6 sm:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl text-center">
+          <h2 className="text-3xl tracking-tight text-foreground sm:text-4xl">Built by the Community</h2>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
-          <Card className="border-border hover:shadow-lg transition-shadow">
+        <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2">
+          <Card>
             <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="rounded-lg bg-primary/10 p-2">
-                  <Megaphone className="h-6 w-6 text-primary" strokeWidth={1} />
+              <div className="flex items-center gap-4">
+                <div className="rounded-md bg-cyan-800/40 p-2">
+                  <FaGithub className="size-8 text-primary" strokeWidth={1.5} />
                 </div>
-                <div>
-                  <CardTitle className="text-lg">Communication Channels</CardTitle>
-                  <CardDescription>Stay updated with latest news</CardDescription>
-                </div>
+                <CardTitle className="text-xl">Open Source</CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="space-y-3">
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"https://x.com/prlxchain"} target="_blank">
-                  <FaXTwitter className="mr-2 h-4 w-4" />
-                  Follow @prlxchain
-                </Link>
-              </Button>
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"https://t.me/parallaxchain"} target="_blank">
-                  <FaTelegramPlane className="mr-2 h-4 w-4" />
-                  Join our Telegram group
-                </Link>
-              </Button>
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"https://bitcointalk.org/index.php?topic=5560698.0"} target="_blank">
-                  <FaBitcoin className="mr-2 h-4 w-4" />
-                  Participate in our BitcoinTalk thread
-                </Link>
-              </Button>
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"https://www.reddit.com/r/ParallaxProtocol/"} target="_blank">
-                  <FaReddit className="mr-2 h-4 w-4" />
-                  Join r/ParallaxProtocol
-                </Link>
-              </Button>
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"https://discord.gg/QYgSxzqh"} target="_blank">
-                  <FaDiscord className="mr-2 h-4 w-4" />
-                  Join our Discord channel
-                </Link>
-              </Button>
+            <CardContent className="space-y-3 text-base text-muted-foreground">
+              {`All code is open source and available on GitHub. Contribute to the protocol's development and help shape the future of Parallax.`}
             </CardContent>
           </Card>
 
-          <Card className="border-border hover:shadow-lg transition-shadow">
+          <Card>
             <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="rounded-lg bg-primary/10 p-2">
-                  <FileText className="h-6 w-6 text-primary" strokeWidth={1} />
+              <div className="flex items-center gap-4">
+                <div className="rounded-md bg-cyan-800/40 p-2">
+                  <FaGithub className="size-8 text-primary" strokeWidth={1.5} />
                 </div>
-                <div>
-                  <CardTitle className="text-lg">Resources</CardTitle>
-                  <CardDescription>Learn more about Parallax</CardDescription>
-                </div>
+                <CardTitle className="text-xl">Community Driven</CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="space-y-3">
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"/whitepaper"}>
-                  <FileText className="mr-2 h-4 w-4" />
-                  Read the Whitepaper
-                </Link>
-              </Button>
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"https://github.com/microstack-tech/parallax"} target="_blank">
-                  <FaGithub className="mr-2 h-4 w-4" />
-                  {`Browse our GitHub repositories`}
-                </Link>
-              </Button>
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"https://docs.parallaxchain.org/guides"} target="_blank">
-                  <Book className="mr-2 h-4 w-4" />
-                  {`Get started with Beginner Guides`}
-                </Link>
-              </Button>
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <Link href={"https://docs.parallaxchain.org"} target="_blank">
-                  <Book className="mr-2 h-4 w-4" />
-                  {`Read our Technical Documentation`}
-                </Link>
-              </Button>
+            <CardContent className="space-y-3 text-base text-muted-foreground">
+              {`Decisions are made collectively by the community. No single entity controls the direction of the protocol.`}
             </CardContent>
           </Card>
         </div>
+        <div className="flex flex-row mt-8 justify-center mx-auto">
+          <Link href={"/resources/community"} className="sm:max-w-1/2">
+            <Card className="bg-cyan-400/5">
+              <CardHeader>
+                <CardTitle className="text-xl text-center">Join Our Community</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-8 space-y-3 text-base text-muted-foreground">
+                {`Connect with users, developers, miners and pool operators. Get support, share ideas, and stay updated on the latest developments.`}
+                <div className="flex flex-row w-full justify-center">
+                  <Button className="w-fit" size={"xl"}>
+                    Explore Communities
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
+
       </div>
     </section>
   )

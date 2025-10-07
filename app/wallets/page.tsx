@@ -45,6 +45,30 @@ export default function Page() {
         subTitle="Choose the right wallet to manage your Laxes, connect to dapps, and explore the Parallax ecosystem securely."
       />
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
+        <Card className="border-border py-10 mb-8 bg-background flex flex-col">
+          <CardHeader>
+            <CardTitle className="text-2xl text-center mb-2">Run your own Parallax client</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-base text-center">
+              For optimal privacy we recommend that you run your own Parallax client for wallet interactions.
+            </CardDescription>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Button variant="default" size="xl" asChild>
+                <Link href="/resources/parallax-client">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Parallax Client
+                </Link>
+              </Button>
+              <Button variant="outline" size="xl" asChild>
+                <Link href="https://docs.parallaxchain.org/guides/client/introduction" target="_blank" rel="noopener">
+                  Setup Guide
+                  <ArrowRight />
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {wallets.map((wallet) => (
             <Card key={wallet.name} className="border-border py-10 flex flex-col">
@@ -67,30 +91,6 @@ export default function Page() {
             </Card>
           ))}
         </div>
-        <Card className="border-border py-10 mt-8 bg-background flex flex-col">
-          <CardHeader>
-            <CardTitle className="text-xl text-center mb-2">Run your own Parallax client</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <CardDescription className="text-base text-center">
-              For optimal privacy we recommend that you run your own Parallax client for wallet interactions.
-            </CardDescription>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button variant="default" size="lg" asChild>
-                <Link href="/resources/parallax-client">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Parallax Client
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="https://docs.parallaxchain.org/guides/client/introduction" target="_blank" rel="noopener">
-                  Setup Guide
-                  <ArrowRight />
-                </Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
         <Card className="border-border py-10 mt-8">
           <CardHeader>
             <CardTitle className="text-xl text-center mb-4">Add Parallax to your wallet</CardTitle>
@@ -145,7 +145,7 @@ export default function Page() {
                   https://explorer.parallaxchain.org
                 </label>
               </div>
-              <Button variant={"outline"} className="text-base" asChild>
+              <Button size={"xl"} asChild>
                 <Link href={"https://docs.parallaxchain.org/guides/wallets/metamask"} target="_blank">
                   Guide on MetaMask setup
                   <ArrowRight />

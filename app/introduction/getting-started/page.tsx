@@ -3,9 +3,10 @@
 import PageHeader from "@/components/page-header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, BookOpen, Building, Eye, HandCoins, Scale, Store, Wallet } from "lucide-react"
+import { ArrowRight, BookOpen, Building, Download, Eye, HandCoins, Scale, Store, Wallet } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import { FaGithub } from "react-icons/fa"
 
 export default function GettingStarted() {
   const [activeTab, setActiveTab] = useState<"use" | "accept">("use")
@@ -16,9 +17,39 @@ export default function GettingStarted() {
         title="Getting Started with Parallax"
         subTitle=" Using Parallax to transact is easy and accessible to everyone. Experience Bitcoin's monetary policy with Ethereum's programmability. "
       />
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-6 sm:px-8 max-w-7xl py-16">
+        <Card className="border-border py-10 flex flex-col">
+          <CardHeader>
+            <CardTitle className="text-xl text-center mb-2">Download the Parallax Client</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-base text-center mb-4">
+              The Parallax Client is available for Linux, Windows, and macOS. Download the latest release below or visit our GitHub for source code and instructions.
+            </CardDescription>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
+              <Button variant="default" size="xl" asChild>
+                <Link href="https://github.com/microstack-tech/parallax/releases/latest" target="_blank" rel="noopener">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Latest Release
+                </Link>
+              </Button>
+              <Button variant="outline" size="xl" asChild>
+                <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
+                  Setup guide
+                  <ArrowRight />
+                </Link>
+              </Button>
+              <Button variant="outline" size="xl" asChild>
+                <Link href="https://github.com/microstack-tech/parallax" target="_blank" rel="noopener">
+                  <FaGithub />
+                  View on GitHub
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
         {/* Navigation Tabs */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center my-24">
           <div className="flex gap-2 bg-background border rounded-lg p-2">
             <button
               onClick={() => setActiveTab("use")}
@@ -56,13 +87,11 @@ export default function GettingStarted() {
                   you start using Parallax, learn about its unique features and security considerations.`}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Button variant="outline" asChild>
-                  <Link href={"https://docs.parallaxchain.org"} target="_blank">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
+                <Link href={"https://docs.parallaxchain.org"} target="_blank">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </Card>
 
             <Card className="group hover:shadow-lg transition-all duration-300">
@@ -78,13 +107,11 @@ export default function GettingStarted() {
                   apps for everyday use or desktop wallets for advanced features.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Button variant="outline" asChild>
-                  <Link href={"/wallets"}>
-                    Choose a Wallet <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
+                <Link href={"/wallets"}>
+                  Choose a Wallet <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </Card>
 
             <Card className="group hover:shadow-lg transition-all duration-300">
@@ -100,16 +127,14 @@ export default function GettingStarted() {
                   options are available to suit your needs.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="inline-flex gap-4">
-                <Button variant="outline" asChild>
-                  <Link href={"https://docs.parallaxchain.org/guides/mining"} target="_blank">
-                    Mining <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button variant="outline" disabled>
-                  Exchanges List Coming Soon
-                </Button>
-              </CardContent>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
+                <Link href={"https://docs.parallaxchain.org/guides/mining"} target="_blank">
+                  Mining <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" disabled>
+                Exchanges List Coming Soon
+              </Button>
             </Card>
 
             <Card className="group hover:shadow-lg transition-all duration-300">
@@ -125,11 +150,9 @@ export default function GettingStarted() {
                   automated payments and complex transactions.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Button variant="outline" disabled>
-                  Merchant Directory Coming Soon
-                </Button>
-              </CardContent>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" disabled>
+                Merchant Directory Coming Soon
+              </Button>
             </Card>
           </div>
         )}
@@ -149,13 +172,11 @@ export default function GettingStarted() {
                   unique features will help you leverage its full potential for your business.`}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Button variant="outline" asChild>
-                  <Link href={"https://docs.parallaxchain.org"} target="_blank">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
+                <Link href={"https://docs.parallaxchain.org"} target="_blank">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </Card>
 
             <Card className="group hover:shadow-lg transition-all duration-300">
@@ -171,11 +192,9 @@ export default function GettingStarted() {
                   programmable payment logic.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Button variant="outline" disabled>
-                  Processing Payments Guide Coming Soon
-                </Button>
-              </CardContent>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" disabled>
+                Processing Payments Guide Coming Soon
+              </Button>
             </Card>
 
             <Card className="group hover:shadow-lg transition-all duration-300">
@@ -191,13 +210,11 @@ export default function GettingStarted() {
                   proper financial management.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Button variant="outline" asChild>
-                  <Link href={"https://en.bitcoin.it/wiki/Tax_compliance"} target="_blank">
-                    Tax Resources <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
+                <Link href={"https://en.bitcoin.it/wiki/Tax_compliance"} target="_blank">
+                  Tax Resources <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </Card>
 
             <Card className="group hover:shadow-lg transition-all duration-300">
@@ -213,37 +230,32 @@ export default function GettingStarted() {
                   users worldwide.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Button variant="outline" disabled>
-                  Merchant Directory Coming Soon
-                </Button>
-              </CardContent>
+              <Button variant="outline" size={"lg"} className="w-fit ml-6" disabled>
+                Merchant Directory Coming Soon
+              </Button>
             </Card>
           </div>
         )}
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="border rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-4">Ready to Start?</h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Join the Parallax network and experience the future of blockchain technology. Combine the security of
-              Bitcoin with the flexibility of smart contracts.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link href={"/wallets"}>
-                  Choose a Wallet
-                  <ArrowRight />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href={"https://docs.parallaxchain.org/guides/wallets"} target="_blank">
-                  Read Documentation
-                  <ArrowRight />
-                </Link>
-              </Button>
-            </div>
+        <div className="text-center border rounded-2xl p-8">
+          <h2 className="text-2xl font-bold mb-4">Ready to Start?</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Join the Parallax network and experience the future of blockchain technology. Combine the security of
+            Bitcoin with the flexibility of smart contracts.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="xl" asChild>
+              <Link href={"/wallets"}>
+                Choose a Wallet
+                <ArrowRight />
+              </Link>
+            </Button>
+            <Button size="xl" variant="outline" asChild>
+              <Link href={"https://docs.parallaxchain.org/guides/wallets"} target="_blank">
+                Wallet Setup Guide
+                <ArrowRight />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

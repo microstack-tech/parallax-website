@@ -1,5 +1,6 @@
 
 import PageHeader from "@/components/page-header";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, GitBranch, Globe, HeartHandshake, MessageCircle, Users } from "lucide-react";
 import Link from "next/link";
@@ -93,7 +94,20 @@ export default function CommunityPage() {
         subTitle="Neutral, open, and built by everyone. Join us in shaping the future of programmable cash."
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
+      <section className="mx-auto max-w-7xl px-6 sm:px-8 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {channels.map((ch) => (
+            <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
+              <Link href={ch.href} target="_blank" rel="noopener" className="block">
+                <ch.icon />
+                {ch.name}
+              </Link>
+            </Button>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {communityTopics.map((topic) => (
             <Card key={topic.title} className="border-border py-10">
@@ -111,26 +125,6 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-8">
-        <h2 className="text-3xl font-semibold mb-16 text-center">Official Channels</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {channels.map((ch) => (
-            <Link key={ch.name} href={ch.href} target="_blank" rel="noopener" className="block">
-              <Card className="hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-md inline-flex gap-4">
-                    <ch.icon size={24} />
-                    {ch.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{ch.description}</CardDescription>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </section>
     </main>
   );
 }

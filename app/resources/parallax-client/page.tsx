@@ -30,7 +30,7 @@ export default function ParallaxClientPage() {
         title="Parallax Client"
         subTitle="Download and run the official Parallax node software. Help secure the network and participate in consensus."
       />
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
+      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
         <div className="flex flex-col sm:flex-row gap-8 justify-center">
           <Card className="border-border py-10 flex flex-col">
             <CardHeader className="flex flex-col justify-center items-center gap-8">
@@ -85,20 +85,20 @@ export default function ParallaxClientPage() {
             <CardDescription className="text-base text-center mb-4">
               The Parallax Client is available for Linux, Windows, and macOS. Download the latest release below or visit our GitHub for source code and instructions.
             </CardDescription>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button variant="default" size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
+              <Button variant="default" size="xl" asChild>
                 <Link href="https://github.com/microstack-tech/parallax/releases/latest" target="_blank" rel="noopener">
                   <Download className="mr-2 h-5 w-5" />
                   Download Latest Release
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" size="xl" asChild>
                 <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
                   Setup guide
                   <ArrowRight />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" size="xl" asChild>
                 <Link href="https://github.com/microstack-tech/parallax" target="_blank" rel="noopener">
                   <FaGithub />
                   View on GitHub

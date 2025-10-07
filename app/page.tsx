@@ -1,14 +1,16 @@
+import Client from "@/components/client";
 import { Community } from "@/components/community";
-import { Features } from "@/components/features";
+import { Documentation } from "@/components/documentation";
 import { Hero } from "@/components/hero";
-import Sub from "@/components/sub";
+import { Technologies } from "@/components/technologies";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Sub />
-      <Features />
+      <Technologies />
+      <Client />
+      <Documentation />
       <Community />
     </>
   );
