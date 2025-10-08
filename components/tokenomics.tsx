@@ -66,8 +66,8 @@ export function Tokenomics() {
                 <span className="text-primary">2016 blocks</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-border">
-                <span className="text-sm text-muted-foreground">DAG Regeneration Rate</span>
-                <span className="text-primary">720 blocks</span>
+                <span className="text-sm text-muted-foreground">Coinbase Maturity</span>
+                <span className="text-primary">100 blocks</span>
               </div>
             </CardContent>
           </Card>
