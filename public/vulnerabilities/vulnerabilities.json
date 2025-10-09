@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "name": "DoS via malicious p2p message",
+    "uid": "PRLX-2025-01",
+    "summary": "A vulnerable node can be made to consume unbounded amounts of memory when handling specially crafted p2p messages sent from an attacker node.",
+    "description": "The p2p handler spawned a new goroutine to respond to ping requests. By flooding a node with ping requests, an unbounded number of goroutines can be created, leading to resource exhaustion and potentially crash due to OOM.",
+    "links": [
+      "https://github.com/microstack-tech/parallax/security/advisories/GHSA-7ww4-x27h-p6hf"
+    ],
+    "introduced": "v0.1.0",
+    "fixed": "v0.1.4",
+    "published": "2025-10-09",
+    "severity": "High",
+    "CVE": "CVE-2023-40591",
+    "check": "(Parallax\\/v0\\.1\\.[0-3]\\-.*)$"
+  },
+  {
+    "name": "DoS via malicious p2p message",
+    "uid": "PRLX-2025-02",
+    "summary": "A vulnerable node can be made to consume very large amounts of memory when handling specially crafted p2p messages sent from an attacker node.",
+    "description": "A vulnerable node can be made to consume very large amounts of memory when handling specially crafted p2p messages sent from an attacker node. Full details will be available at the Github security [advisory](https://github.com/ethereum/go-ethereum/security/advisories/GHSA-4xc9-8hmq-j652)",
+    "links": [
+      "https://github.com/microstack-tech/parallax/security/advisories/GHSA-xc79-566c-j4qx"
+    ],
+    "introduced": "v0.1.0",
+    "fixed": "v0.1.4",
+    "published": "2025-10-09",
+    "severity": "High",
+    "CVE": "CVE-2024-32972",
+    "check": "(Parallax\\/v0\\.1\\.[0-3]\\-.*)$"
+  }
+]
