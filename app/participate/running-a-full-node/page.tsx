@@ -1,7 +1,8 @@
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Server, ShieldCheck, Download, Info, ArrowRight } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChevronRight, Download, ExternalLink, Info, Server, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 const nodeTopics = [
@@ -29,12 +30,12 @@ const nodeTopics = [
 
 export default function RunningFullNodePage() {
   return (
-    <main>
+    <MainMotion>
       <PageHeader
         title="Running a Full Node"
         subTitle="Help secure Parallax and participate in the network by running your own node."
       />
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
+      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
           {nodeTopics.map((topic) => (
             <Card key={topic.title} className="border-border py-10 flex flex-col">
@@ -66,13 +67,13 @@ export default function RunningFullNodePage() {
               <Button variant="outline" size="xl" asChild>
                 <Link href="https://docs.parallaxchain.org/guides/client/introduction" target="_blank" rel="noopener">
                   Setup Guide
-                  <ArrowRight />
+                  <ExternalLink />
                 </Link>
               </Button>
             </div>
           </CardContent>
         </Card>
       </section>
-    </main>
+    </MainMotion>
   );
 }

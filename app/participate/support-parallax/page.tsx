@@ -1,4 +1,5 @@
 import GridView from "@/components/grid-view"
+import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
 import { BookOpen, Code, Heart, Megaphone, Pickaxe, Radio, Server, SquareTerminal, Waypoints } from "lucide-react"
 
@@ -52,7 +53,7 @@ const topics = [
 
 export default function ParallaxForIndividuals() {
   return (
-    <>
+    <MainMotion>
       <PageHeader
         title="Support Parallax"
         subTitle="Parallax was born from a small community and it is still in its infancy phase. There are lots of things you can do to support it and help others learns more"
@@ -60,6 +61,6 @@ export default function ParallaxForIndividuals() {
       <GridView
         items={topics}
       />
-    </>
+    </MainMotion>
   )
 }

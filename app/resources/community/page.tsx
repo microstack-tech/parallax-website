@@ -1,4 +1,5 @@
 
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -90,13 +91,13 @@ const communityChannels = [
 
 export default function CommunityPage() {
   return (
-    <main>
+    <MainMotion>
       <PageHeader
         title="Parallax Community"
         subTitle="Neutral, open, and built by everyone. Join us in shaping the future of programmable cash."
       />
 
-      <section className="flex flex-col gap-8 mx-auto text-center max-w-7xl px-6 sm:px-8 py-8">
+      <section className="flex flex-col gap-8 mx-auto text-center max-w-7xl px-6 sm:px-8 xl:px-0 py-8">
         <h2 className="text-2xl">
           Official Channels
         </h2>
@@ -112,7 +113,7 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      <section className="flex flex-col mt-4 gap-8 mx-auto text-center max-w-7xl px-6 sm:px-8 py-8">
+      <section className="flex flex-col mt-4 gap-8 mx-auto text-center max-w-7xl px-6 sm:px-8 xl:px-0 py-8">
         <h2 className="text-2xl">
           Community Channels
         </h2>
@@ -128,7 +129,7 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
+      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {communityTopics.map((topic) => (
             <Card key={topic.title} className="border-border py-10">
@@ -146,6 +147,6 @@ export default function CommunityPage() {
         </div>
       </section>
 
-    </main>
+    </MainMotion>
   );
 }

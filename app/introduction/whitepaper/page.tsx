@@ -1,3 +1,4 @@
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -5,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 
 export default function WhitepaperPage() {
   return (
-    <>
+    <MainMotion>
       <PageHeader
         title="Parallax: A New Perspective on Programmable Cash"
       />
@@ -492,6 +493,6 @@ export default function WhitepaperPage() {
           </div>
         </div>
       </main>
-    </>
+    </MainMotion>
   )
 }

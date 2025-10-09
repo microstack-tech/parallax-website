@@ -1,7 +1,8 @@
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Download } from "lucide-react";
+import { ChevronRight, Download, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,7 +40,7 @@ const wallets = [
 ]
 export default function Page() {
   return (
-    <main>
+    <MainMotion>
       <PageHeader
         title="Wallets on Parallax"
         subTitle="Choose the right wallet to manage your Laxes, connect to dapps, and explore the Parallax ecosystem securely."
@@ -63,7 +64,7 @@ export default function Page() {
               <Button variant="outline" size="xl" asChild>
                 <Link href="https://docs.parallaxchain.org/guides/client/introduction" target="_blank" rel="noopener">
                   Setup Guide
-                  <ArrowRight />
+                  <ExternalLink />
                 </Link>
               </Button>
             </div>
@@ -83,7 +84,7 @@ export default function Page() {
                   <Button variant="outline" className="text-base" asChild>
                     <Link href={wallet.url} target="_blank">
                       {`Get ${wallet.name}`}
-                      <ArrowRight />
+                      <ChevronRight />
                     </Link>
                   </Button>
                 </div>
@@ -148,13 +149,13 @@ export default function Page() {
               <Button size={"xl"} asChild>
                 <Link href={"https://docs.parallaxchain.org/guides/wallets/metamask"} target="_blank">
                   Guide on MetaMask setup
-                  <ArrowRight />
+                  <ExternalLink />
                 </Link>
               </Button>
             </div>
           </CardContent>
         </Card>
       </section>
-    </main>
+    </MainMotion>
   )
 }

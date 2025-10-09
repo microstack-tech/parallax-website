@@ -1,17 +1,18 @@
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Blocks, Layers, Server, SquareTerminal } from "lucide-react";
+import { Blocks, ChevronRight, ExternalLink, Layers, Server, SquareTerminal } from "lucide-react";
 import Link from "next/link";
 
 export default function TechnicalDocumentationPage() {
   return (
-    <main>
+    <MainMotion>
       <PageHeader
         title="Technical Documentation"
         subTitle="Explore the Parallax protocol, architecture, APIs, and developer guides."
       />
-      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 sm:px-8">
+      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <Card className="border-border py-12 px-4 flex flex-col items-center">
           <CardHeader className="inline-flex items-center w-full justify-center gap-4">
             <Blocks className="size-8 text-primary" strokeWidth={1.5} />
@@ -30,7 +31,7 @@ export default function TechnicalDocumentationPage() {
             <Button size="xl" asChild>
               <Link href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/introduction-to-parallax" target="_blank" rel="noopener">
                 More on Foundational Topics
-                <ArrowRight />
+                <ExternalLink />
               </Link>
             </Button>
           </div>
@@ -52,7 +53,7 @@ export default function TechnicalDocumentationPage() {
             <Button size="xl" asChild>
               <Link href="https://docs.parallaxchain.org/parallax-protocol/parallax-stack/introduction-stack" target="_blank" rel="noopener">
                 More on Parallax Stack
-                <ArrowRight />
+                <ExternalLink />
               </Link>
             </Button>
           </div>
@@ -76,7 +77,7 @@ export default function TechnicalDocumentationPage() {
             <Button size="xl" asChild>
               <Link href="https://docs.parallaxchain.org/parallax-protocol/advanced/bridges" target="_blank" rel="noopener">
                 More on Advanced Topics
-                <ArrowRight />
+                <ExternalLink />
               </Link>
             </Button>
           </div>
@@ -99,12 +100,12 @@ export default function TechnicalDocumentationPage() {
             <Button size="xl" asChild>
               <Link href="https://docs.parallaxchain.org/parallax-client/getting-started/introduction" target="_blank" rel="noopener">
                 More on Parallax Client
-                <ArrowRight />
+                <ExternalLink />
               </Link>
             </Button>
           </div>
         </Card>
       </section>
-    </main>
+    </MainMotion>
   );
 }

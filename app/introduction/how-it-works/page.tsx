@@ -1,8 +1,9 @@
 
 import GridView from "@/components/grid-view";
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cpu, Database, Key, Rabbit, Wallet } from "lucide-react";
+import { ChevronRight, Cpu, Database, ExternalLink, Key, Rabbit, Wallet } from "lucide-react";
 import Link from "next/link";
 
 const topics = [
@@ -35,7 +36,7 @@ const topics = [
 
 export default function ParallaxHowItWorks() {
   return (
-    <>
+    <MainMotion>
       <PageHeader
         title="How does Parallax work?"
         subTitle="This is a question often surrounded by confusion, so here's a quick explanation!"
@@ -44,13 +45,13 @@ export default function ParallaxHowItWorks() {
       <div className="mb-8 text-center">
         <div className="flex justify-center gap-4 mb-24">
           <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
-            <Link href={'https://docs.parallaxchain.org'} target="_blank">
+            <Link href={'/core-protocol/overview'}>
               Learn more about Parallax
-              <ArrowRight />
+              <ChevronRight />
             </Link>
           </Button>
         </div>
       </div>
-    </>
+    </MainMotion>
   );
 }

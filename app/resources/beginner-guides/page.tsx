@@ -1,17 +1,18 @@
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Pickaxe, SquareTerminal, Wallet } from "lucide-react";
+import { ChevronRight, ExternalLink, Pickaxe, SquareTerminal, Wallet } from "lucide-react";
 import Link from "next/link";
 
 export default function BeginnerGuidesPage() {
   return (
-    <main>
+    <MainMotion>
       <PageHeader
         title="Beginner Guides"
         subTitle="Explore the user-friendly guides on how to run a Parallax node, connect wallets, and start mining."
       />
-      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 sm:px-8">
+      <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
 
         {/* Node guide */}
         <Card className="border-border py-12 px-4 flex flex-col items-center">
@@ -36,7 +37,7 @@ export default function BeginnerGuidesPage() {
                 rel="noopener"
               >
                 View setup guide
-                <ArrowRight />
+                <ExternalLink />
               </Link>
             </Button>
           </div>
@@ -66,7 +67,7 @@ export default function BeginnerGuidesPage() {
                 rel="noopener"
               >
                 View wallet guides
-                <ArrowRight />
+                <ExternalLink />
               </Link>
             </Button>
           </div>
@@ -95,13 +96,13 @@ export default function BeginnerGuidesPage() {
                 rel="noopener"
               >
                 View mining guides
-                <ArrowRight />
+                <ExternalLink />
               </Link>
             </Button>
           </div>
         </Card>
 
       </section>
-    </main>
+    </MainMotion>
   );
 }

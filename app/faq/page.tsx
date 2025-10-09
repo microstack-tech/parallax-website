@@ -1,5 +1,6 @@
 "use client"
 
+import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
 import { Button } from "@/components/ui/button"
 import { LucideChevronRight } from "lucide-react"
@@ -105,7 +106,7 @@ export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState("general")
 
   return (
-    <div>
+    <MainMotion>
       <PageHeader
         title="Frequently Asked Questions"
         subTitle="Find answers to recurring questions about Parallax"
@@ -161,6 +162,6 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
-    </div>
+    </MainMotion>
   )
 }

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, CircleSlash, Download, Hexagon, ShieldCheck, TerminalSquare } from "lucide-react";
+import { ChevronRight, CircleSlash, Download, ExternalLink, Hexagon, ShieldCheck, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
@@ -101,7 +101,7 @@ export default function Client() {
                 <Button variant="outline" size="xl" asChild>
                   <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
                     Setup guide
-                    <ArrowRight />
+                    <ExternalLink />
                   </Link>
                 </Button>
                 <Button variant="outline" size="xl" asChild>

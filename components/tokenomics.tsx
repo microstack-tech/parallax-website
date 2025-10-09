@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "./ui/button"
+import { Bolt, ChevronRight, HandCoins } from "lucide-react"
 import Link from "next/link"
-import { ArrowRight, Bolt, HandCoins } from "lucide-react"
+import { Button } from "./ui/button"
 
 export function Tokenomics() {
   return (
@@ -15,7 +15,7 @@ export function Tokenomics() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2">
           <Card className="border-border">
             <CardHeader>
               <div className="flex items-center gap-4 mb-4">
@@ -77,7 +77,7 @@ export function Tokenomics() {
             <Link href={"https://parallaxchain.org/introduction/whitepaper"}>
               <div className="flex flex-row items-center w-full justify-between">
                 <div>Read whitepaper</div>
-                <ArrowRight className="size-6" strokeWidth={1.5} />
+                <ChevronRight className="size-6" strokeWidth={1.5} />
               </div>
             </Link>
           </Button>
@@ -93,9 +93,9 @@ export function Tokenomics() {
               </p>
               <div className="flex flex-row w-full justify-center">
                 <Button className="w-fit" size={"xl"} asChild>
-                  <Link href={"https://docs.parallaxchain.org/parallax-protocol/foundational-topics/consensus/algorithms/xhash"}>
+                  <Link href={"/core-protocol/xhash"}>
                     XHash Technical Details
-                    <ArrowRight />
+                    <ChevronRight />
                   </Link>
                 </Button>
               </div>

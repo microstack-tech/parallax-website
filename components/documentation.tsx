@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, BookOpenCheck, NotebookText } from "lucide-react"
+import { BookOpenCheck, ExternalLink, NotebookText } from "lucide-react"
 import Link from "next/link"
 
 export function Documentation() {
@@ -26,9 +26,9 @@ export function Documentation() {
               {`Step-by-step beginner guides on downloading and running the Parallax client, learn how to set up and use wallets, and dive deeper on how to mine on the Parallax network.`}
               <div className="flex flex-row w-full justify-center mt-8">
                 <Button className="w-fit" size={"xl"} asChild>
-                  <Link href={"https://docs.parallaxchain.org/guides"}>
+                  <Link href={"https://docs.parallaxchain.org/guides"} target="_blank">
                     Beginner Guides
-                    <ArrowRight />
+                    <ExternalLink />
                   </Link>
                 </Button>
               </div>
@@ -46,9 +46,9 @@ export function Documentation() {
               {`Explore the core building blocks of Parallax, dive into the developer stack, go beyond the basics with in-depth technical topics and learn how to run, configure and interact with the Parallax client.`}
               <div className="flex flex-row w-full justify-center mt-8">
                 <Button className="w-fit" size={"xl"} asChild>
-                  <Link href={"https://docs.parallaxchain.org"}>
+                  <Link href={"https://docs.parallaxchain.org"} target="_blank">
                     Technical Documentation
-                    <ArrowRight />
+                    <ExternalLink />
                   </Link>
                 </Button>
               </div>

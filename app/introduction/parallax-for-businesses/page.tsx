@@ -1,7 +1,8 @@
 import GridView from "@/components/grid-view"
+import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Code, DollarSign, Eye, FileText, Lock, Plane, ShieldCheck, Users } from "lucide-react"
+import { ChevronRight, Code, DollarSign, Eye, FileText, Lock, Plane, ShieldCheck, Users } from "lucide-react"
 import Link from "next/link"
 
 const topics = [
@@ -49,7 +50,7 @@ const topics = [
 
 export default function ParallaxForBusinesses() {
   return (
-    <>
+    <MainMotion>
       <PageHeader
         title="Parallax for Businesses"
         subTitle="Parallax is a very secure and inexpensive way to handle payments."
@@ -62,12 +63,12 @@ export default function ParallaxForBusinesses() {
           <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
             <Link href={'/introduction/getting-started'}>
               Get started with Parallax
-              <ArrowRight />
+              <ChevronRight />
             </Link>
           </Button>
         </div>
       </div>
-    </>
+    </MainMotion>
   )
 }
 

@@ -1,11 +1,11 @@
 'use client'
-import { ArrowRight } from "lucide-react"
+import { useStableVh } from "@/hooks/useStableVh"
+import { ChevronRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { FaBitcoin, FaGithub, FaReddit, FaTelegramPlane } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { Button } from "./ui/button"
-import Link from "next/link"
-import { useStableVh } from "@/hooks/useStableVh"
 
 export function Hero() {
   useStableVh()
@@ -45,7 +45,7 @@ export function Hero() {
             <Link href={"/introduction/getting-started"}>
               <div className="flex flex-row items-center w-full justify-between">
                 Get started with Parallax
-                <ArrowRight className="size-6" strokeWidth={1.5} />
+                <ChevronRight className="size-6" strokeWidth={1.5} />
               </div>
             </Link>
           </Button>

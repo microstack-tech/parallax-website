@@ -1,7 +1,8 @@
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Download, Info, ShieldCheck, TerminalSquare } from "lucide-react";
+import { ChevronRight, Download, ExternalLink, Info, ShieldCheck, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
@@ -25,12 +26,12 @@ const clientFeatures = [
 
 export default function ParallaxClientPage() {
   return (
-    <main>
+    <MainMotion>
       <PageHeader
         title="Parallax Client"
         subTitle="Download and run the official Parallax node software. Help secure the network and participate in consensus."
       />
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
+      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <div className="flex flex-col sm:flex-row gap-8 justify-center">
           <Card className="border-border py-10 flex flex-col">
             <CardHeader className="flex flex-col justify-center items-center gap-8">
@@ -95,7 +96,7 @@ export default function ParallaxClientPage() {
               <Button variant="outline" size="xl" asChild>
                 <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
                   Setup guide
-                  <ArrowRight />
+                  <ExternalLink />
                 </Link>
               </Button>
               <Button variant="outline" size="xl" asChild>
@@ -108,6 +109,6 @@ export default function ParallaxClientPage() {
           </CardContent>
         </Card>
       </section>
-    </main>
+    </MainMotion>
   );
 }

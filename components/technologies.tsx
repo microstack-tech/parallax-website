@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, BrainCircuit, Cpu, Layers, Lock } from "lucide-react"
+import { BrainCircuit, ChevronRight, Cpu, Layers, Lock } from "lucide-react"
 import Link from "next/link"
 import { Button } from "./ui/button"
 
@@ -70,10 +70,10 @@ export function Technologies() {
         </div>
         <div className="flex flex-row justify-center mt-24">
           <Button size={"2xl"} className="w-full max-w-[24rem] px-6" asChild>
-            <Link href={"https://docs.parallaxchain.org"}>
+            <Link href={"/core-protocol/overview"}>
               <div className="flex flex-row items-center w-full justify-between">
                 <div>Learn more</div>
-                <ArrowRight className="size-6" strokeWidth={1.5} />
+                <ChevronRight className="size-6" strokeWidth={1.5} />
               </div>
             </Link>
           </Button>

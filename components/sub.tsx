@@ -1,4 +1,4 @@
-import { ArrowRight, LucideDownload } from "lucide-react";
+import { ChevronRight, LucideDownload } from "lucide-react";
 import Link from "next/link";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { Button } from "./ui/button";
@@ -22,7 +22,7 @@ export default function Sub() {
             >
               <Link href="/introduction/whitepaper">
                 Read white paper
-                <ArrowRight />
+                <ChevronRight />
               </Link>
             </Button>
             <Button

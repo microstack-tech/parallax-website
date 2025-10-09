@@ -1,3 +1,4 @@
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -39,12 +40,12 @@ function getPngPath(svgPath: string) {
 
 export default function BrandingPage() {
   return (
-    <main>
+    <MainMotion>
       <PageHeader
         title="Parallax Branding"
         subTitle="Download official Parallax logos for use in media, presentations, and integrations."
       />
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
+      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {logos.map((logo) => (
             <Card key={logo.name} className="border-border py-10 flex flex-col">
@@ -70,6 +71,6 @@ export default function BrandingPage() {
           ))}
         </div>
       </section>
-    </main>
+    </MainMotion>
   );
 }

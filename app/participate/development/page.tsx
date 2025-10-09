@@ -1,4 +1,5 @@
 import GridView from "@/components/grid-view";
+import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Boxes, LayoutGrid, PackagePlus, Users } from "lucide-react";
@@ -34,7 +35,7 @@ const topics = [
 
 export default function DevelopersPage() {
   return (
-    <>
+    <MainMotion>
       <PageHeader
         title="Developers"
         subTitle="Parallax is fully open source and welcomes contributions from developers of all backgrounds"
@@ -54,6 +55,6 @@ export default function DevelopersPage() {
       <GridView
         items={topics}
       />
-    </>
+    </MainMotion>
   );
 }

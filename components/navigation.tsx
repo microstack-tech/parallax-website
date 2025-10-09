@@ -35,6 +35,17 @@ const navItems: NavItem[] = [
     ],
   },
   {
+    name: "Core Protocol",
+    subItems: [
+      { name: "Overview", href: "/core-protocol/overview" },
+      { name: "Protocol Architecture", href: "/core-protocol/architecture" },
+      { name: "Block Reward & Halving", href: "/core-protocol/block-reward-and-halving" },
+      { name: "Coinbase Maturity Scheduling", href: "/core-protocol/coinbase-maturity" },
+      { name: "Difficulty Algorithm", href: "/core-protocol/difficulty-and-forkchoice" },
+      { name: "XHash Internals", href: "/core-protocol/xhash" },
+    ],
+  },
+  {
     name: "Resources",
     subItems: [
       { name: "Community", href: "/resources/community" },
