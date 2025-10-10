@@ -19,6 +19,7 @@ import {
 import { Separator } from "./ui/separator"
 import { useTheme } from "next-themes"
 import { ModeToggle } from "./theme-toggle"
+import { motion } from "framer-motion"
 
 interface NavItem {
   name: string
@@ -72,9 +73,15 @@ export function Navigation() {
   const { theme } = useTheme()
 
   useEffect(() => {
+    if (isOpen) {
+      const bgColor = theme === 'light' ? `rgba(255,255,255,1)` : `rgba(0,0,0,1)`
+      setBgColor(bgColor)
+      return
+    }
+
     const bgColor = theme === 'light' ? `rgba(255,255,255,${opacity})` : `rgba(0,0,0,${opacity})`
     setBgColor(bgColor)
-  }, [theme, opacity])
+  }, [theme, opacity, isOpen])
 
   // Lock body scroll on mobile sheet
   useEffect(() => {
@@ -182,13 +189,14 @@ export function Navigation() {
 
         {/* Mobile menu button */}
         <div className="md:hidden">
+          <ModeToggle />
           <Button
             variant="ghost"
             size="sm"
             aria-expanded={isOpen}
             aria-controls="mobile-nav"
             onClick={() => setIsOpen((v) => !v)}
-            className="inline-flex items-center justify-center"
+            className="ml-4 inline-flex items-center justify-center"
           >
             {isOpen ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
           </Button>
@@ -216,42 +224,52 @@ export function Navigation() {
               <div className="mx-auto pb-20 max-w-6xl px-4 sm:px-6 lg:px-8 py-3">
                 {navItems.map((item) =>
                   item.subItems ? (
-                    <div key={`mob_${item.name}`} className="mb-2">
-                      <div className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-accent-foreground">
-                        {item.name}
-                      </div>
-                      <div className="flex pl-4 flex-col">
-                        {item.subItems.map((sub) => {
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className="flex flex-col gap-0"
+                      key={`mob_${item.name}`}
+                    >
+                      <div className="mb-2">
+                        <div className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-accent-foreground">
+                          {item.name}
+                        </div>
+                        <div className="flex pl-4 flex-col">
+                          {item.subItems.map((sub) => {
 
-                          if (sub.name === "###") {
+                            if (sub.name === "###") {
+                              return (
+                                <Separator
+                                  className="bg-muted-foreground/15 my-1.5 ml-2"
+                                  key={`desk_sub_${item.name}_${sub.name}`}
+                                />
+                              )
+                            }
+
                             return (
-                              <Separator
-                                className="bg-muted-foreground/15 my-1.5 ml-2"
-                                key={`desk_sub_${item.name}_${sub.name}`}
-                              />
+                              <Link
+                                key={`mob_sub_${item.name}_${sub.name}`}
+                                href={sub.href ?? "#"}
+                                className={cn("ml-2 px-4 py-2 text-base font-medium text-accent-foreground/70 hover:text-foreground hover:bg-muted transition-colors border-l", {
+                                  "bg-primary text-primary-foreground": sub.href === pathname,
+                                })}
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {sub.name}
+                              </Link>
                             )
-                          }
-
-                          return (
-                            <Link
-                              key={`mob_sub_${item.name}_${sub.name}`}
-                              href={sub.href ?? "#"}
-                              className={cn("ml-2 px-4 py-2 text-base font-medium text-accent-foreground/70 hover:text-foreground hover:bg-muted transition-colors border-l", {
-                                "bg-primary text-primary-foreground": sub.href === pathname,
-                              })}
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {sub.name}
-                            </Link>
-                          )
-                        })}
+                          })}
+                        </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ) : (
                     <Link
                       key={`mob_${item.name}`}
                       href={item.href ?? "#"}
-                      className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-accent-foreground hover:text-foreground hover:bg-muted transition-colors"
+                      className={cn("flex items-center gap-2 px-3 py-2 text-base font-medium text-accent-foreground hover:text-foreground hover:bg-muted transition-colors", {
+                        "bg-primary text-primary-foreground": item.href === pathname,
+                      })}
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -263,7 +281,7 @@ export function Navigation() {
           </>,
           document.body
         )}
-    </nav>
+    </nav >
   )
 }
 
