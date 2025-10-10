@@ -164,7 +164,7 @@ SelectBest(tips):
   );
 
   const ParamsTable = () => (
-    <Card className="border-muted-foreground/10">
+    <Card>
       <CardHeader>
         <CardTitle className="text-xl">Consensus Parameters</CardTitle>
       </CardHeader>
@@ -251,7 +251,7 @@ SelectBest(tips):
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card className="border-muted-foreground/10">
+            <Card className="border min-w-0">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <s.icon className="h-5 w-5" />
@@ -259,28 +259,33 @@ SelectBest(tips):
                 </div>
                 <p className="pt-2 text-sm text-muted-foreground">{s.tagline}</p>
               </CardHeader>
-              <CardContent className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-                <ul className="space-y-3 text-sm leading-relaxed">
+
+              <CardContent className="grid min-w-0 gap-6 md:grid-cols-[1.1fr_0.9fr]">
+                <ul className="min-w-0 space-y-3 text-sm leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <span className="mt-2 inline-block size-1.5 min-w-1.5 rounded-full bg-foreground/60" />
+                      <span className="mt-2 inline-block h-1.5 w-1.5 min-w-1.5 rounded-full bg-foreground/60" />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}
                 </ul>
 
-                {s.code && (
-                  <div className="rounded-xl border bg-muted/30 p-4">
-                    <div className="mb-2 flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs">
-                        <Link2 className="h-3.5 w-3.5" />
-                        <span className="font-medium">{s.codeTitle}</span>
-                      </div>
-                      <Badge variant="outline" className="rounded-full">pseudocode</Badge>
+                <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
+                  <div className="mb-2 flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs">
+                      <ChevronRight className="h-3.5 w-3.5" />
+                      <span className="font-medium">{s.codeTitle}</span>
                     </div>
-                    <pre className="overflow-x-auto rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm"><code>{s.code}</code></pre>
+                    <Badge variant="outline" className="rounded-full">pseudocode</Badge>
                   </div>
-                )}
+
+                  {/* scrollable code without forcing container width */}
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                    <code className="block max-w-full">
+                      {s.code}
+                    </code>
+                  </pre>
+                </div>
               </CardContent>
             </Card>
           </motion.section>

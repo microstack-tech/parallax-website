@@ -154,7 +154,7 @@ schedKeyAmt(height):
   }, []);
 
   const ParamsTable = () => (
-    <Card className="border-muted-foreground/10">
+    <Card>
       <CardHeader>
         <CardTitle className="text-xl">Monetary Parameters</CardTitle>
       </CardHeader>
@@ -296,7 +296,7 @@ schedKeyAmt(height):
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card className="border-muted-foreground/10">
+            <Card className="border min-w-0">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <s.icon className="h-5 w-5" />
@@ -304,8 +304,9 @@ schedKeyAmt(height):
                 </div>
                 <p className="pt-2 text-sm text-muted-foreground">{s.tagline}</p>
               </CardHeader>
-              <CardContent className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-                <ul className="space-y-3 text-sm leading-relaxed">
+
+              <CardContent className="grid min-w-0 gap-6 md:grid-cols-[1.1fr_0.9fr]">
+                <ul className="min-w-0 space-y-3 text-sm leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
                       <span className="mt-2 inline-block h-1.5 w-1.5 min-w-1.5 rounded-full bg-foreground/60" />
@@ -314,7 +315,7 @@ schedKeyAmt(height):
                   ))}
                 </ul>
 
-                <div className="rounded-xl border bg-muted/30 p-4">
+                <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs">
                       <ChevronRight className="h-3.5 w-3.5" />
@@ -322,7 +323,13 @@ schedKeyAmt(height):
                     </div>
                     <Badge variant="outline" className="rounded-full">pseudocode</Badge>
                   </div>
-                  <pre className="overflow-x-auto rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm"><code>{s.code}</code></pre>
+
+                  {/* scrollable code without forcing container width */}
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                    <code className="block max-w-full">
+                      {s.code}
+                    </code>
+                  </pre>
                 </div>
               </CardContent>
             </Card>

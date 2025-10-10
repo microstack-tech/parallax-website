@@ -30,7 +30,7 @@ export default function Page() {
         code: `Finalize(header, state):
   h = header.number
   R = calcBlockReward(h)
-  M = config.XHash.CoinbaseMaturityBlocks
+  M = 100 blocks
   if R > 0:
     putScheduledPayout(state, h + M, header.coinbase, R)
   if due(h):
@@ -45,7 +45,6 @@ export default function Page() {
         title: "State Keys & Lockbox Address",
         tagline: "Two storage slots per unlock height under a reserved system address.",
         bullets: [
-          "Lockbox address: 0x0000000000000000000000000000000000000042.",
           "For a given unlock height H: store address at schedKeyAddr(H) and amount at schedKeyAmt(H).",
           "Both keys are derived by keccak256 of a fixed ASCII prefix plus H encoded as big‑endian uint64.",
           "Presence is keyed off the amount slot; payout clears both slots to reclaim trie space.",
@@ -124,7 +123,7 @@ U+1: nothing due for U anymore
         title: "Configuration",
         tagline: "Where the maturity parameter lives and how clients consume it.",
         bullets: [
-          "Maturity M is defined in params.ChainConfig.XHash.CoinbaseMaturityBlocks.",
+          "Maturity M is defined as 100 blocks",
           "Clients must display both ‘pending’ (scheduled) and ‘spendable’ balances for miners.",
           "Explorers can show upcoming unlocks by scanning for non‑zero schedKeyAmt(h).",
           "Wallets should warn miners that reward UTXOs (account credits) are not available until height U.",
@@ -140,21 +139,18 @@ U+1: nothing due for U anymore
   );
 
   const ParamsTable = () => (
-    <Card className="border-muted-foreground/10">
+    <Card className="min-w-0">
       <CardHeader>
         <CardTitle className="text-xl">Maturity Parameters</CardTitle>
-        <p className="text-sm text-muted-foreground">
-          Grounded in <code>xhash/consensus.go</code> and chain config.
-        </p>
       </CardHeader>
       <CardContent>
-        <Table>
+        <Table className="text-sm">
           <TableHeader>
             <TableRow>
-              <TableHead>Parameter</TableHead>
-              <TableHead>Symbol</TableHead>
-              <TableHead>Value / Source</TableHead>
-              <TableHead>Notes</TableHead>
+              <TableHead className="whitespace-nowrap">Parameter</TableHead>
+              <TableHead className="whitespace-nowrap">Symbol</TableHead>
+              <TableHead className="whitespace-nowrap">Value / Source</TableHead>
+              <TableHead className="whitespace-nowrap">Notes</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -164,17 +160,27 @@ U+1: nothing due for U anymore
               <TableCell>100 blocks</TableCell>
               <TableCell>Bitcoin-like coinbase maturity</TableCell>
             </TableRow>
+
             <TableRow>
               <TableCell>Lockbox address</TableCell>
               <TableCell>—</TableCell>
-              <TableCell>0x0000000000000000000000000000000000000042</TableCell>
+              <TableCell>
+                <span className="font-mono break-all text-xs">
+                  0x0000000000000000000000000000000000000042
+                </span>
+              </TableCell>
               <TableCell>Reserved system account</TableCell>
             </TableRow>
+
             <TableRow>
               <TableCell>Key prefixes</TableCell>
               <TableCell>—</TableCell>
-              <TableCell>{`"maturity:addr:", "maturity:amt:"`}</TableCell>
-              <TableCell>Keccak256(prefix || big‑endian height)</TableCell>
+              <TableCell>
+                <span className="font-mono break-all text-xs">
+                  {"\"maturity:addr:\", \"maturity:amt:\""}
+                </span>
+              </TableCell>
+              <TableCell>Keccak256(prefix || big-endian height)</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -224,7 +230,7 @@ U+1: nothing due for U anymore
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card className="border-muted-foreground/10">
+            <Card className="border min-w-0">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <s.icon className="h-5 w-5" />
@@ -232,8 +238,9 @@ U+1: nothing due for U anymore
                 </div>
                 <p className="pt-2 text-sm text-muted-foreground">{s.tagline}</p>
               </CardHeader>
-              <CardContent className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-                <ul className="space-y-3 text-sm leading-relaxed">
+
+              <CardContent className="grid min-w-0 gap-6 md:grid-cols-[1.1fr_0.9fr]">
+                <ul className="min-w-0 space-y-3 text-sm leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
                       <span className="mt-2 inline-block h-1.5 w-1.5 min-w-1.5 rounded-full bg-foreground/60" />
@@ -242,15 +249,21 @@ U+1: nothing due for U anymore
                   ))}
                 </ul>
 
-                <div className="rounded-xl border bg-muted/30 p-4">
+                <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs">
-                      <Link2 className="h-3.5 w-3.5" />
+                      <ChevronRight className="h-3.5 w-3.5" />
                       <span className="font-medium">{s.codeTitle}</span>
                     </div>
                     <Badge variant="outline" className="rounded-full">pseudocode</Badge>
                   </div>
-                  <pre className="overflow-x-auto rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm"><code>{s.code}</code></pre>
+
+                  {/* scrollable code without forcing container width */}
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                    <code className="block max-w-full">
+                      {s.code}
+                    </code>
+                  </pre>
                 </div>
               </CardContent>
             </Card>
@@ -268,7 +281,7 @@ U+1: nothing due for U anymore
         </Button>
         <Button asChild size={"xl"}>
           <Link href="/core-protocol/difficulty-and-forkchoice">
-            Difficulty Algorithm & Fork-choice Rules
+            Difficulty Algorithm
             <ChevronRight />
           </Link>
         </Button>
