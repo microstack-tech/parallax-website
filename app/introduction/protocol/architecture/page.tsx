@@ -248,13 +248,13 @@ best = argmax(chains, sum(block.work for block in chain))
       {/* Links to related docs */}
       <div className="mt-24 flex flex-wrap items-center justify-between gap-4">
         <Button asChild size={"xl"} variant={"outline"}>
-          <Link href="/core-protocol/overview">
+          <Link href="/introduction/protocol/overview">
             <ChevronLeft />
             Protocol Overview
           </Link>
         </Button>
         <Button asChild size={"xl"}>
-          <Link href="/core-protocol/block-reward-and-halving">
+          <Link href="/introduction/protocol/block-reward-and-halving">
             Block Reward & Halving
             <ChevronRight />
           </Link>

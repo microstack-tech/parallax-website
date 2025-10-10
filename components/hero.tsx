@@ -6,6 +6,7 @@ import Link from "next/link"
 import { FaBitcoin, FaGithub, FaReddit, FaTelegramPlane } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { Button } from "./ui/button"
+import Countdown from "./countdown"
 
 export function Hero() {
   useStableVh()
@@ -27,12 +28,15 @@ export function Hero() {
       </div>
 
       <div className="absolute flex flex-col justify-evenly h-full w-full px-6 sm:px-8 items-center">
-        <div className="flex flex-col items-center sm:items-start w-full max-w-7xl">
-          <h1 className="text-6xl font-sans sm:text-9xl font-bold tracking-tight sm:-ml-2">
-            <span className="bg-gradient-to-r mx-0 from-white to-white/70 bg-clip-text text-transparent pr-1.5">
-              Parallax
-            </span>
-          </h1>
+        <div className="flex flex-col items-center md:items-start w-full max-w-7xl">
+          <div className="flex flex-col md:flex-row justify-between items-center px-2 w-full">
+            <h1 className="text-6xl font-sans sm:text-9xl font-bold tracking-tight sm:-ml-2">
+              <span className="bg-gradient-to-r mx-0 from-white to-white/70 bg-clip-text text-transparent pr-1.5">
+                Parallax
+              </span>
+            </h1>
+            <Countdown />
+          </div>
           <p className="mt-6 sm:px-0 text-lg sm:text-2xl text-muted-foreground font-medium text-center">
             The open source protocol for P2P Programmable Cash System
           </p>

@@ -15,35 +15,35 @@ export default function Page() {
       title: "Protocol Architecture",
       description:
         "How Parallax unifies cryptography, deterministic computation, proof-of-work timekeeping, and Nakamoto consensus into a cohesive protocol stack.",
-      href: "/core-protocol/architecture",
+      href: "/introduction/protocol/architecture",
     },
     {
       icon: Coins,
       title: "Block Reward & Halving",
       description:
         "Bitcoin-like issuance: 50 → 25 → 12.5 … every 210,000 blocks, asymptotically approaching 21M with clear visuals and parameters.",
-      href: "/core-protocol/block-reward-and-halving",
+      href: "/introduction/protocol/block-reward-and-halving",
     },
     {
       icon: Clock,
       title: "Coinbase Maturity Scheduling",
       description:
         "How miner subsidies are escrowed on-chain and released at a fixed maturity height via the lockbox state mechanism.",
-      href: "/core-protocol/coinbase-maturity",
+      href: "/introduction/protocol/coinbase-maturity",
     },
     {
       icon: Gauge,
       title: "Difficulty Algorithm & Fork-choice Rules",
       description:
         "Epoch-anchored difficulty retargeting and cumulative-work fork selection, including Median-Time-Past checks and epoch anchors.",
-      href: "/core-protocol/difficulty-and-forkchoice",
+      href: "/introduction/protocol/difficulty-and-forkchoice",
     },
     {
       icon: Hash,
       title: "XHash (Proof-of-Work)",
       description:
         "Parallax’s memory-hard PoW based on Ethash-style Hashimoto with Parallax-specific seal hash, target mapping, and epoch/DAG handling.",
-      href: "/core-protocol/xhash",
+      href: "/introduction/protocol/xhash",
     },
   ];
 
@@ -57,8 +57,8 @@ export default function Page() {
         className="mb-10 flex flex-col gap-6"
       >
         <PageHeader
-          title="Core Protocol"
-          subTitle="The Core Protocol section explains the base rules of Parallax — cryptographic primitives, deterministic execution, proof-of-work (XHash), and the consensus logic that defines canonical history."
+          title="Parallax Protocol"
+          subTitle="This section explains the base rules of the Parallax protocol — cryptographic primitives, deterministic execution, proof-of-work (XHash), and the consensus logic that defines canonical history."
         />
 
         <Card className="border-muted-foreground/10">

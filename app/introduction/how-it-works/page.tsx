@@ -45,7 +45,7 @@ export default function ParallaxHowItWorks() {
       <div className="mb-8 text-center">
         <div className="flex justify-center gap-4 mb-24">
           <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
-            <Link href={'/core-protocol/overview'}>
+            <Link href={'/introduction/protocol/overview'}>
               Learn more about Parallax
               <ChevronRight />
             </Link>

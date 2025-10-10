@@ -93,7 +93,7 @@ export function Tokenomics() {
               </p>
               <div className="flex flex-row w-full justify-center">
                 <Button className="w-fit" size={"xl"} asChild>
-                  <Link href={"/core-protocol/xhash"}>
+                  <Link href={"/introduction/protocol/xhash"}>
                     XHash Technical Details
                     <ChevronRight />
                   </Link>

@@ -271,7 +271,7 @@ else:
       {/* Links to related docs */}
       <div className="mt-24 flex flex-wrap items-center justify-between gap-4">
         <Button asChild size={"xl"} variant={"outline"}>
-          <Link href="/core-protocol/difficulty-and-forkchoice">
+          <Link href="/introduction/protocol/difficulty-and-forkchoice">
             <ChevronLeft />
             Difficulty Algorithm & Fork-choice Rules
           </Link>

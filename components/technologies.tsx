@@ -70,7 +70,7 @@ export function Technologies() {
         </div>
         <div className="flex flex-row justify-center mt-24">
           <Button size={"2xl"} className="w-full max-w-[24rem] px-6" asChild>
-            <Link href={"/core-protocol/overview"}>
+            <Link href={"/introduction/protocol/overview"}>
               <div className="flex flex-row items-center w-full justify-between">
                 <div>Learn more</div>
                 <ChevronRight className="size-6" strokeWidth={1.5} />

@@ -16,6 +16,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger
 } from "./ui/navigation-menu"
+import { Separator } from "./ui/separator"
 
 interface NavItem {
   name: string
@@ -32,17 +33,9 @@ const navItems: NavItem[] = [
       { name: "Individuals", href: "/introduction/parallax-for-individuals" },
       { name: "Businesses", href: "/introduction/parallax-for-businesses" },
       { name: "White paper", href: "/introduction/whitepaper" },
-    ],
-  },
-  {
-    name: "Core Protocol",
-    subItems: [
-      { name: "Overview", href: "/core-protocol/overview" },
-      { name: "Protocol Architecture", href: "/core-protocol/architecture" },
-      { name: "Block Reward & Halving", href: "/core-protocol/block-reward-and-halving" },
-      { name: "Coinbase Maturity Scheduling", href: "/core-protocol/coinbase-maturity" },
-      { name: "Difficulty Algorithm", href: "/core-protocol/difficulty-and-forkchoice" },
-      { name: "XHash Internals", href: "/core-protocol/xhash" },
+      { name: "###" },
+      { name: "Parallax Protocol", href: "/introduction/protocol/overview" },
+
     ],
   },
   {
@@ -53,6 +46,9 @@ const navItems: NavItem[] = [
       { name: "Beginner Guides", href: "/resources/beginner-guides" },
       { name: "Technical Documentation", href: "/resources/technical-documentation" },
       { name: "Parallax Client", href: "/resources/parallax-client" },
+      { name: "###" },
+      { name: "Block Explorer", href: "#" },
+      { name: "Faucet", href: "#" },
     ],
   },
   {
@@ -132,13 +128,26 @@ export function Navigation() {
                   <NavigationMenuItem key={`desk_${item.name}`}>
                     <NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
                     <NavigationMenuContent className="min-w-[15rem]">
-                      {item.subItems.map((sub) => (
-                        <ListItem
-                          key={`desk_sub_${item.name}_${sub.name}`}
-                          href={sub.href ?? "#"}
-                          title={sub.name}
-                        />
-                      ))}
+                      {item.subItems.map((sub) => {
+
+                        if (sub.name === "###") {
+                          return (
+                            <Separator
+                              className="bg-muted-foreground/50 mb-0.5"
+                              key={`desk_sub_${item.name}_${sub.name}`}
+                            />
+                          )
+                        }
+
+                        return (
+                          <ListItem
+                            key={`desk_sub_${item.name}_${sub.name}`}
+                            href={sub.href ?? "#"}
+                            title={sub.name}
+                          />
+                        )
+                      }
+                      )}
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 ) : (
@@ -199,18 +208,30 @@ export function Navigation() {
                         {item.name}
                       </div>
                       <div className="flex pl-4 flex-col">
-                        {item.subItems.map((sub) => (
-                          <Link
-                            key={`mob_sub_${item.name}_${sub.name}`}
-                            href={sub.href ?? "#"}
-                            className={cn("px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors", {
-                              "bg-primary text-primary-foreground": sub.href === pathname,
-                            })}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
+                        {item.subItems.map((sub) => {
+
+                          if (sub.name === "###") {
+                            return (
+                              <Separator
+                                className="bg-muted-foreground/20 my-2"
+                                key={`desk_sub_${item.name}_${sub.name}`}
+                              />
+                            )
+                          }
+
+                          return (
+                            <Link
+                              key={`mob_sub_${item.name}_${sub.name}`}
+                              href={sub.href ?? "#"}
+                              className={cn("px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors", {
+                                "bg-primary text-primary-foreground": sub.href === pathname,
+                              })}
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {sub.name}
+                            </Link>
+                          )
+                        })}
                       </div>
                     </div>
                   ) : (
@@ -240,9 +261,11 @@ function ListItem({
 }: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
   return (
     <NavigationMenuLink asChild>
-      <Link href={href}>
+      <Link href={href} className={cn({
+        "text-muted/70 pointer-events-none": href === "#"
+      })}>
         <div className="text-sm leading-none font-medium">{title}</div>
-        <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+        <p className={"text-muted-foreground line-clamp-2 text-sm leading-snug"}>
           {children}
         </p>
       </Link>

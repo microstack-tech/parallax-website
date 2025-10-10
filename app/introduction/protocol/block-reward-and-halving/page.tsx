@@ -349,13 +349,13 @@ schedKeyAmt(height):
       {/* Links to related docs */}
       <div className="mt-24 flex flex-wrap items-center justify-between gap-4">
         <Button asChild size={"xl"} variant={"outline"}>
-          <Link href="/core-protocol/overview">
+          <Link href="/introduction/protocol/overview">
             <ChevronLeft />
             Protocol Architecture
           </Link>
         </Button>
         <Button asChild size={"xl"}>
-          <Link href="/core-protocol/coinbase-maturity">
+          <Link href="/introduction/protocol/coinbase-maturity">
             Coinbase Maturity Scheduling
             <ChevronRight />
           </Link>

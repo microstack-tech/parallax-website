@@ -59,7 +59,7 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
-                <Link href={"/core-protocol/overview"}>
+                <Link href={"/introduction/protocol/overview"}>
                   Learn More <ChevronRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -144,7 +144,7 @@ export default function GettingStarted() {
                 </CardDescription>
               </CardHeader>
               <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
-                <Link href={"/core-protocol/overview"}>
+                <Link href={"/introduction/protocol/overview"}>
                   Learn More <ChevronRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
