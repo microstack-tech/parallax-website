@@ -41,7 +41,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-mono antialiased`}
       >
         <PlausibleScript />
-        <ThemeProvider attribute={"class"} defaultTheme="dark">
+        <ThemeProvider attribute={"class"} enableSystem={true} defaultTheme="system">
           <Navigation />
           <div className="flex flex-col justify-between min-h-screen">
             {children}

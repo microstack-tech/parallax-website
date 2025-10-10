@@ -18,6 +18,7 @@ import {
 } from "./ui/navigation-menu"
 import { Separator } from "./ui/separator"
 import { useTheme } from "next-themes"
+import { ModeToggle } from "./theme-toggle"
 
 interface NavItem {
   name: string
@@ -173,6 +174,9 @@ export function Navigation() {
                 Get Started
               </Link>
             </Button>
+            <div className="ml-2">
+              <ModeToggle />
+            </div>
           </NavigationMenu>
         </div>
 
