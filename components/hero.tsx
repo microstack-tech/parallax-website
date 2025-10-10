@@ -20,7 +20,7 @@ export function Hero() {
         <div className="relative h-full w-full">
           <Image
             alt="background lines"
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full invert-100 dark:invert-0"
             fill
             src="/background-lines.svg"
           />
@@ -31,13 +31,13 @@ export function Hero() {
         <div className="flex flex-col items-center md:items-start w-full max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center px-2 w-full">
             <h1 className="text-6xl font-sans sm:text-9xl font-bold tracking-tight sm:-ml-2">
-              <span className="bg-gradient-to-r mx-0 from-white to-white/70 bg-clip-text text-transparent pr-1.5">
+              <span className="bg-gradient-to-r mx-0 from-foreground to-foreground/80 bg-clip-text text-transparent pr-1.5">
                 Parallax
               </span>
             </h1>
             <Countdown />
           </div>
-          <p className="mt-6 sm:px-0 text-lg sm:text-2xl text-muted-foreground font-medium text-center">
+          <p className="mt-6 sm:px-0 text-lg sm:text-2xl text-muted-foreground text-center">
             The open source protocol for P2P Programmable Cash System
           </p>
         </div>
@@ -65,13 +65,6 @@ export function Hero() {
               <Link href={"https://t.me/parallaxchain"}>
                 <div>
                   <FaTelegramPlane className="size-6" />
-                </div>
-              </Link>
-            </Button>
-            <Button size={"2xl"} className="w-fit rounded-none px-4 bg-background border text-foreground hover:text-background transition-colors" asChild>
-              <Link href={"https://www.reddit.com/r/ParallaxProtocol/"}>
-                <div>
-                  <FaReddit className="size-6" />
                 </div>
               </Link>
             </Button>

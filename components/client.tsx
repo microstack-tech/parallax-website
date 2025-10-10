@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronRight, CircleSlash, Download, ExternalLink, Hexagon, ShieldCheck, TerminalSquare } from "lucide-react";
+import { BookOpen, CircleSlash, Download, ExternalLink, Hexagon, ShieldCheck, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
@@ -25,9 +25,9 @@ const clientFeatures = [
 export default function Client() {
   return (
     <>
-      <section className="relative py-24 bg-[#18181A] z-10 px-6 sm:px-8">
+      <section className="relative py-24 bg-muted/40 dark:bg-[#18181A] z-10 px-6 sm:px-8">
         <div className="mx-auto max-w-7xl w-fit pt-0">
-          <div className="mx-auto w-full text-center">
+          <div className="mx-auto max-w-7xl text-center">
             <h2 className="text-3xl text-foreground sm:text-4xl">The Parallax Client</h2>
             <p className="mt-8 text-base text-muted-foreground text-pretty">
               Download and run the reference Parallax node software. Help secure the network and participate in consensus.
@@ -61,9 +61,9 @@ export default function Client() {
               </CardContent>
             </Card>
           </div>
-          <Card className="my-8 border-0 bg-transparent py-8 flex flex-col">
+          <Card className="my-8 border-0 px-0 bg-transparent py-8 flex flex-col">
             <CardContent>
-              <CardDescription className="text-base text-left mb-4">
+              <CardDescription className="text-base text-center mb-4">
                 {`This shared agreement (called consensus) allows people like you to only accept valid transactions, enforcing Parallax's rules against even the most powerful miners.`}
               </CardDescription>
             </CardContent>
@@ -83,7 +83,7 @@ export default function Client() {
               </Card>
             ))}
           </div>
-          <Card className="mt-24 border-0 rounded-none bg-transparent py-10 flex flex-col">
+          <Card className="mt-24 px-0 border-0 rounded-none bg-transparent py-10 flex flex-col">
             <CardHeader>
               <CardTitle className="text-xl text-center mb-2">Download the Parallax Client</CardTitle>
             </CardHeader>
@@ -95,18 +95,19 @@ export default function Client() {
                 <Button variant="default" size="xl" asChild>
                   <Link href="https://github.com/microstack-tech/parallax/releases/latest" target="_blank" rel="noopener">
                     <Download className="mr-2 h-5 w-5" />
-                    Download Latest Release
+                    Download
                   </Link>
                 </Button>
                 <Button variant="outline" size="xl" asChild>
                   <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
+                    <BookOpen className="mr-2" />
                     Setup guide
                     <ExternalLink />
                   </Link>
                 </Button>
                 <Button variant="outline" size="xl" asChild>
                   <Link href="https://github.com/microstack-tech/parallax" target="_blank" rel="noopener">
-                    <FaGithub />
+                    <FaGithub className="mr-2" />
                     View on GitHub
                   </Link>
                 </Button>

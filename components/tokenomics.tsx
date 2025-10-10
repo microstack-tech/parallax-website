@@ -7,7 +7,7 @@ export function Tokenomics() {
   return (
     <section className="py-24 bg-background px-6 sm:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-7xl text-center">
           <h2 className="text-3xl text-foreground sm:text-4xl">{`Bitcoin's Proven Economics`}</h2>
           <p className="mt-4 text-base text-muted-foreground text-pretty">
             {`Parallax inherits Bitcoin's time-tested monetary design, ensuring long-term predictability and resistance to
@@ -82,7 +82,8 @@ export function Tokenomics() {
             </Link>
           </Button>
         </div>
-        <div className="flex flex-row mt-24 justify-center mx-auto">
+
+        <div className="flex flex-row mt-24 justify-center">
           <Card className="bg-cyan-400/5 sm:max-w-1/2">
             <CardHeader>
               <CardTitle className="text-xl text-center">XHash Proof of Work Algorithm</CardTitle>
@@ -94,7 +95,7 @@ export function Tokenomics() {
               <div className="flex flex-row w-full justify-center">
                 <Button className="w-fit" size={"xl"} asChild>
                   <Link href={"/introduction/protocol/xhash"}>
-                    XHash Technical Details
+                    Learn more
                     <ChevronRight />
                   </Link>
                 </Button>

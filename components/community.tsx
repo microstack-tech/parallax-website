@@ -16,8 +16,8 @@ export function Community() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
-                <div className="rounded-md bg-cyan-800/40 p-2 border">
-                  <FaGithub className="size-8 text-primary" strokeWidth={1.5} />
+                <div className="rounded-md bg-cyan-400 p-2 border">
+                  <FaGithub className="size-8 text-background" strokeWidth={1.5} />
                 </div>
                 <CardTitle className="text-xl">Open Source</CardTitle>
               </div>
@@ -30,8 +30,8 @@ export function Community() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
-                <div className="rounded-md bg-cyan-800/40 p-2 border">
-                  <UsersRound className="size-8 text-primary" strokeWidth={1.5} />
+                <div className="rounded-md bg-cyan-400 p-2 border">
+                  <UsersRound className="size-8 text-background" strokeWidth={1.5} />
                 </div>
                 <CardTitle className="text-xl">Community Driven</CardTitle>
               </div>

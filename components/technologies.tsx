@@ -40,7 +40,7 @@ const features = [
 
 export function Technologies() {
   return (
-    <section className="relative py-24 bg-[#0D0D0D] z-10 px-6 sm:px-8">
+    <section className="relative py-24 bg-muted/60 dark:bg-[#0D0D0D] z-10 px-6 sm:px-8">
       <div className="mx-auto max-w-7xl w-fit pt-0">
         <div className="mx-auto w-full text-center">
           <h2 className="text-3xl text-foreground sm:text-4xl">Technologies used in Parallax</h2>

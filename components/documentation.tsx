@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export function Documentation() {
   return (
-    <section className="py-24 bg-[#0D0D0D] px-6 sm:px-8">
+    <section className="py-24 bg-muted/60 dark:bg-[#0D0D0D] px-6 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-7xl text-center">
           <h2 className="text-3xl text-foreground sm:text-4xl">Documentation</h2>

@@ -17,6 +17,7 @@ import {
   NavigationMenuTrigger
 } from "./ui/navigation-menu"
 import { Separator } from "./ui/separator"
+import { useTheme } from "next-themes"
 
 interface NavItem {
   name: string
@@ -65,7 +66,14 @@ const navItems: NavItem[] = [
 export function Navigation() {
   const [opacity, setOpacity] = useState(0);
   const [isOpen, setIsOpen] = useState(false)
+  const [bgColor, setBgColor] = useState<string>(``)
   const pathname = usePathname()
+  const { theme } = useTheme()
+
+  useEffect(() => {
+    const bgColor = theme === 'light' ? `rgba(255,255,255,${opacity})` : `rgba(0,0,0,${opacity})`
+    setBgColor(bgColor)
+  }, [theme, opacity])
 
   // Lock body scroll on mobile sheet
   useEffect(() => {
@@ -95,11 +103,12 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
   return (
     <nav
       className="fixed top-0 py-2 md:py-4 px-6 sm:px-8 left-0 right-0 z-50 transition-opacity duration-300"
       style={{
-        backgroundColor: `rgba(0, 0, 0, ${opacity})`
+        backgroundColor: bgColor
       }}
     >
       <div className="flex items-center mx-auto max-w-7xl justify-between">
@@ -133,7 +142,7 @@ export function Navigation() {
                         if (sub.name === "###") {
                           return (
                             <Separator
-                              className="bg-muted-foreground/50 mb-0.5"
+                              className="bg-muted-foreground/15 my-1.5"
                               key={`desk_sub_${item.name}_${sub.name}`}
                             />
                           )
@@ -204,7 +213,7 @@ export function Navigation() {
                 {navItems.map((item) =>
                   item.subItems ? (
                     <div key={`mob_${item.name}`} className="mb-2">
-                      <div className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-muted-foreground">
+                      <div className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-accent-foreground">
                         {item.name}
                       </div>
                       <div className="flex pl-4 flex-col">
@@ -213,7 +222,7 @@ export function Navigation() {
                           if (sub.name === "###") {
                             return (
                               <Separator
-                                className="bg-muted-foreground/20 my-2"
+                                className="bg-muted-foreground/15 my-1.5 ml-2"
                                 key={`desk_sub_${item.name}_${sub.name}`}
                               />
                             )
@@ -223,7 +232,7 @@ export function Navigation() {
                             <Link
                               key={`mob_sub_${item.name}_${sub.name}`}
                               href={sub.href ?? "#"}
-                              className={cn("px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors", {
+                              className={cn("ml-2 px-4 py-2 text-base font-medium text-accent-foreground/70 hover:text-foreground hover:bg-muted transition-colors border-l", {
                                 "bg-primary text-primary-foreground": sub.href === pathname,
                               })}
                               onClick={() => setIsOpen(false)}
@@ -238,7 +247,7 @@ export function Navigation() {
                     <Link
                       key={`mob_${item.name}`}
                       href={item.href ?? "#"}
-                      className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-accent-foreground hover:text-foreground hover:bg-muted transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -262,7 +271,7 @@ function ListItem({
   return (
     <NavigationMenuLink asChild>
       <Link href={href} className={cn({
-        "text-muted/70 pointer-events-none": href === "#"
+        "text-foreground/50 pointer-events-none": href === "#"
       })}>
         <div className="text-sm leading-none font-medium">{title}</div>
         <p className={"text-muted-foreground line-clamp-2 text-sm leading-snug"}>
