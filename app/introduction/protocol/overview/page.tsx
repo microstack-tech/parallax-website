@@ -120,7 +120,7 @@ export default function Page() {
               </CardHeader>
               <CardContent className="flex flex-col justify-between h-full">
                 {topic.description}
-                <div className="inline-flex w-full justify-end">
+                <div className="inline-flex w-full justify-end mt-8">
                   <Button variant={"secondary"} asChild>
                     <Link href={topic.href}>
                       Read more <ChevronRight className="ml-1 h-4 w-4" />

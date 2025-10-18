@@ -309,7 +309,7 @@ schedKeyAmt(height):
                   ))}
                 </ul>
 
-                <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
+                <div className="min-w-0 rounded-xl border bg-muted shadow-inner p-4">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
@@ -319,7 +319,7 @@ schedKeyAmt(height):
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed shadow-xs border overscroll-x-contain [-webkit-overflow-scrolling:touch]">
                     <code className="block max-w-full">
                       {s.code}
                     </code>

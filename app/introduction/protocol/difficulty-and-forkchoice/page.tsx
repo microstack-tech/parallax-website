@@ -270,7 +270,7 @@ SelectBest(tips):
                   ))}
                 </ul>
 
-                <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
+                <div className="min-w-0 rounded-xl border bg-muted p-4 shadow-inner">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
@@ -280,7 +280,7 @@ SelectBest(tips):
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed border shadow-xs overscroll-x-contain [-webkit-overflow-scrolling:touch]">
                     <code className="block max-w-full">
                       {s.code}
                     </code>
@@ -302,7 +302,7 @@ SelectBest(tips):
         </p>
         <div className="grid gap-3 md:grid-cols-5">
           {["Validate", "Check Epoch Anchor", "Compute Difficulty", "Accumulate Work", "Select Heaviest"].map((step, idx) => (
-            <div key={step} className="rounded-xl border bg-card p-4 text-center shadow-sm">
+            <div key={step} className="rounded-xl border bg-card p-4 text-center">
               <div className="text-2xl font-semibold">{idx + 1}</div>
               <div className="mt-2">{step}</div>
             </div>
