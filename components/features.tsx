@@ -59,43 +59,26 @@ const features = [
 
 export function Features() {
   return (
-    <section className="relative py-24 bg-[#0D0D0D] z-10 px-8 sm:px-0">
+    <section className="relative py-24 z-10 px-6 border-b sm:px-8">
       <div className="mx-auto max-w-6xl w-fit pt-0">
-        <div className="mx-auto w-full text-center bg-black border p-8">
-          <h2 className="text-3xl text-foreground sm:text-4xl">Bridging Two Worlds</h2>
-          <p className="mt-8 text-lg text-muted-foreground text-pretty">
-            Parallax combines the best of Bitcoin and Ethereum, creating a unique protocol that offers both monetary
-            predictability and programmable functionality.
+        <div className="mx-auto w-full text-center">
+          <h2 className="text-3xl text-foreground sm:text-4xl">Bridging two Worlds</h2>
+          <p className="mt-8 text-base text-muted-foreground text-pretty">
+            Parallax combines Bitcoin’s uncompromising monetary discipline with Ethereum’s programmable smart contract ecosystem, creating a network where sound money meets expressive computation. By uniting immutable monetary rules, full EVM compatibility, and proof-of-work security, Parallax bridges the gap between economic resilience and developer freedom—without sacrificing decentralization.
           </p>
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mx-auto mt-24 grid max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature) => (
-            <div key={feature.title} className="flex flex-col gap-2">
-              <Card key={feature.title} className="h-[16rem]">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <feature.icon strokeWidth={1.5} className="size-8 text-primary" />
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="flex flex-col gap-4 text-md text-left leading-relaxed">
-                    {feature.description[0]}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              <div className="px-4">
-                <Separator />
-              </div>
-              <Card className="h-[16rem] bg-black">
-                <CardContent>
-                  <CardDescription className="flex flex-col gap-4 text-left leading-relaxed text-cyan-500 font-mono">
-                    {feature.sub}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </div>
+            <Card key={feature.title}>
+              <CardHeader>
+                <feature.icon strokeWidth={1.5} />
+                <CardTitle>{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {feature.description[0]}
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

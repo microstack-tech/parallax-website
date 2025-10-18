@@ -2,6 +2,7 @@
 import Client from "@/components/client";
 import { Community } from "@/components/community";
 import { Documentation } from "@/components/documentation";
+import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Technologies } from "@/components/technologies";
 import { Tokenomics } from "@/components/tokenomics";
@@ -17,6 +18,7 @@ export default function Home() {
         className="flex flex-col gap-0"
       >
         <Hero />
+        <Features />
         <Technologies />
         <Tokenomics />
         <Client />
