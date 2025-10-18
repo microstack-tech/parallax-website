@@ -48,12 +48,12 @@ export default function BrandingPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {logos.map((logo) => (
-            <Card key={logo.name} className="border-border py-10 flex flex-col">
+            <Card key={logo.name}>
               <CardHeader>
-                <CardTitle className="text-xl text-center mb-4">{logo.name}</CardTitle>
+                <CardTitle>{logo.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex justify-center mb-12">
+                <div className="flex justify-center mb-8">
                   <Image src={logo.preview} alt={logo.name} width={200} height={200} className="rounded p-2" />
                 </div>
                 <div className="flex gap-4 justify-center">

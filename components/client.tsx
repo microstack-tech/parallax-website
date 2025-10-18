@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, CircleSlash, Download, ExternalLink, Hexagon, ShieldCheck, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
@@ -25,7 +25,7 @@ const clientFeatures = [
 export default function Client() {
   return (
     <>
-      <section className="relative py-24 bg-muted/40 dark:bg-[#18181A] z-10 px-6 sm:px-8">
+      <section className="relative py-24 border-b z-10 px-6 sm:px-8">
         <div className="mx-auto max-w-7xl w-fit pt-0">
           <div className="mx-auto max-w-7xl text-center">
             <h2 className="text-3xl text-foreground sm:text-4xl">The Parallax Client</h2>
@@ -34,80 +34,72 @@ export default function Client() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-8 mt-24 justify-center">
-            <Card className="border-border py-10 flex flex-col">
+            <Card className="flex flex-col">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <Hexagon className="size-8" strokeWidth={1.5} />
-                  <CardTitle className="text-xl">Decentralized</CardTitle>
+                  <Hexagon className="size-6" strokeWidth={1.5} />
+                  <CardTitle>Decentralized</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base mb-2">
-                  It is these users who keep Parallax decentralized. They individually run their own Parallax full nodes, and each of those full nodes separately follows the exact same rules to decide which block chain is valid.
-                </CardDescription>
+                Users running a node are the ones keepping Parallax decentralized. They individually run their own Parallax full nodes, and each of those full nodes separately follows the exact same rules to decide which block chain is valid.
               </CardContent>
             </Card>
-            <Card className="border-border py-10 flex flex-col">
+            <Card className="flex flex-col">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <CircleSlash className="size-8" strokeWidth={1.5} />
-                  <CardTitle className="text-xl">No Voting</CardTitle>
+                  <CircleSlash className="size-6" strokeWidth={1.5} />
+                  <CardTitle>No Voting</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base mb-2">
-                  {`There's no voting or other corruptible process involved: there's just individual software following identical rules—"math"—to evaluate identical blocks and coming to identical conclusions about which block chain is valid.`}
-                </CardDescription>
+                {`There's no voting or other corruptible process involved: there's just individual software following identical rules—"math"—to evaluate identical blocks and coming to identical conclusions about which block chain is valid.`}
               </CardContent>
             </Card>
           </div>
-          <Card className="my-8 border-0 px-0 bg-transparent py-8 flex flex-col">
-            <CardContent>
-              <CardDescription className="text-base text-center mb-4">
-                {`This shared agreement (called consensus) allows people like you to only accept valid transactions, enforcing Parallax's rules against even the most powerful miners.`}
-              </CardDescription>
-            </CardContent>
-          </Card>
+          <div className="px-2 py-16 text-center text-muted-foreground">
+            {`This shared agreement (called consensus) allows people like you to only accept valid transactions, enforcing Parallax's rules against even the most powerful miners.`}
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {clientFeatures.map((feature) => (
-              <Card key={feature.title} className="border-border py-10 flex flex-col">
+              <Card key={feature.title} className="flex flex-col">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <feature.icon className="size-8" strokeWidth={1.5} />
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                    <feature.icon className="size-6" strokeWidth={1.5} />
+                    <CardTitle>{feature.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base mb-2">{feature.description}</CardDescription>
+                  {feature.description}
                 </CardContent>
               </Card>
             ))}
           </div>
-          <Card className="mt-24 px-0 border-0 rounded-none bg-transparent py-10 flex flex-col">
+          <Card className="flex flex-col">
             <CardHeader>
-              <CardTitle className="text-xl text-center mb-2">Download the Parallax Client</CardTitle>
+              <CardTitle className="text-lg text-center">Download the Parallax Client</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-base text-center mb-4">
+              <div>
                 The Parallax Client is available for Linux, Windows, and macOS. Download the latest release below or visit our GitHub for source code and instructions.
-              </CardDescription>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <Button variant="default" size="xl" asChild>
+                <Button variant="default" asChild>
                   <Link href="https://github.com/microstack-tech/parallax/releases/latest" target="_blank" rel="noopener">
-                    <Download className="mr-2 h-5 w-5" />
+                    <Download className="h-5 w-5" />
                     Download
                   </Link>
                 </Button>
-                <Button variant="outline" size="xl" asChild>
+                <Button variant="outline" asChild>
                   <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
-                    <BookOpen className="mr-2" />
+                    <BookOpen />
                     Setup guide
                     <ExternalLink />
                   </Link>
                 </Button>
-                <Button variant="outline" size="xl" asChild>
+                <Button variant="outline" asChild>
                   <Link href="https://github.com/microstack-tech/parallax" target="_blank" rel="noopener">
-                    <FaGithub className="mr-2" />
+                    <FaGithub />
                     View on GitHub
                   </Link>
                 </Button>

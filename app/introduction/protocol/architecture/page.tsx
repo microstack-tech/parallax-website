@@ -8,7 +8,6 @@ import {
   ChevronRight,
   Cpu,
   Layers,
-  Link2,
   Lock
 } from "lucide-react";
 import Link from "next/link";
@@ -17,7 +16,7 @@ import { useMemo } from "react";
 import PageHeader from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 export default function Page() {
@@ -116,14 +115,15 @@ best = argmax(chains, sum(block.work for block in chain))
   );
 
   const HowItFits = () => (
-    <Card className="border min-w-0">
-      <CardHeader className="space-y-1">
-        <CardTitle className="text-xl">How the pieces fit together</CardTitle>
-        <p className="text-sm text-muted-foreground">
-          Parallax weaves cryptography, deterministic execution, proof-of-work timekeeping, and
-          neutral fork-choice into a single verifiable pipeline.
-        </p>
+    <Card>
+      <CardHeader>
+        <ChevronRight className="size-6" strokeWidth={1.5} />
+        <CardTitle>How the pieces fit together</CardTitle>
       </CardHeader>
+      <CardDescription>
+        Parallax weaves cryptography, deterministic execution, proof-of-work timekeeping, and
+        neutral fork-choice into a single verifiable pipeline.
+      </CardDescription>
       <CardContent className="grid min-w-0 gap-4 md:grid-cols-4">
         {[
           { label: "Cryptography", desc: "ECDSA decides who may act (valid authorship)." },
@@ -136,7 +136,7 @@ best = argmax(chains, sum(block.work for block in chain))
               <CheckCircle2 className="h-4 w-4" />
               <span className="font-medium">{x.label}</span>
             </div>
-            <p className="mt-2 text-sm text-muted-foreground">{x.desc}</p>
+            <p className="mt-2 text-muted-foreground">{x.desc}</p>
           </div>
         ))}
       </CardContent>
@@ -144,7 +144,7 @@ best = argmax(chains, sum(block.work for block in chain))
   );
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-0 pb-24 overflow-x-hidden">
+    <div className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-0 pb-8 overflow-x-hidden">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -186,20 +186,19 @@ best = argmax(chains, sum(block.work for block in chain))
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24 min-w-0"
           >
-            <Card className="border min-w-0">
+            <Card>
               <CardHeader>
-                <div className="flex items-center gap-3">
-                  <s.icon className="h-5 w-5" />
-                  <CardTitle className="text-2xl">{s.title}</CardTitle>
-                </div>
-                <p className="pt-2 text-sm text-muted-foreground">{s.tagline}</p>
+                <s.icon className="size-6" strokeWidth={1.5} />
+                <CardTitle>{s.title}</CardTitle>
               </CardHeader>
-
+              <CardDescription>
+                {s.tagline}
+              </CardDescription>
               <CardContent className="grid min-w-0 gap-6 md:grid-cols-[1.1fr_0.9fr]">
-                <ul className="min-w-0 space-y-3 text-sm leading-relaxed">
+                <ul className="min-w-0 space-y-3 leading-relaxed">
                   {s.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2">
-                      <span className="mt-2 inline-block h-1.5 w-1.5 min-w-1.5 rounded-full bg-foreground/60" />
+                    <li key={b} className="flex items-center gap-2">
+                      <ChevronRight className="size-4 min-w-4 mt-1.5" strokeWidth={1.5} />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}
@@ -207,7 +206,7 @@ best = argmax(chains, sum(block.work for block in chain))
 
                 <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
                   <div className="mb-2 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs">
+                    <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
                       <span className="font-medium">{s.codeTitle}</span>
                     </div>
@@ -215,7 +214,7 @@ best = argmax(chains, sum(block.work for block in chain))
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
                     <code className="block max-w-full">
                       {s.code}
                     </code>
@@ -230,7 +229,7 @@ best = argmax(chains, sum(block.work for block in chain))
       {/* Interplay Diagram (textual) */}
       <div className="mt-10 grid min-w-0 gap-4 rounded-2xl border p-6">
         <h2 className="text-xl font-semibold">End-to-end flow</h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground">
           A signed transaction enters the mempool → the miner proposes a block → the PVM executes
           deterministically → the header commits to state/receipts → XHash proves work → the network
           adopts the heaviest valid chain. Scarcity (21M, halvings) underpins all execution.
@@ -239,21 +238,21 @@ best = argmax(chains, sum(block.work for block in chain))
           {["Sign", "Execute", "Commit", "Prove", "Select"].map((step, idx) => (
             <div key={step} className="min-w-0 rounded-xl border bg-card p-4 text-center shadow-sm">
               <div className="text-2xl font-semibold">{idx + 1}</div>
-              <div className="mt-2 text-sm">{step}</div>
+              <div className="mt-2">{step}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Links to related docs */}
-      <div className="mt-24 flex flex-wrap items-center justify-between gap-4">
-        <Button asChild size={"xl"} variant={"outline"}>
+      <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
+        <Button asChild variant={"secondary"}>
           <Link href="/introduction/protocol/overview">
             <ChevronLeft />
             Protocol Overview
           </Link>
         </Button>
-        <Button asChild size={"xl"}>
+        <Button asChild>
           <Link href="/introduction/protocol/block-reward-and-halving">
             Block Reward & Halving
             <ChevronRight />

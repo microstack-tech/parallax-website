@@ -6,7 +6,6 @@ import {
   ChevronRight,
   Gauge,
   GitFork,
-  Link2,
   ShieldCheck,
   TimerReset,
   TriangleAlert
@@ -17,7 +16,7 @@ import { useMemo } from "react";
 import PageHeader from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -166,7 +165,8 @@ SelectBest(tips):
   const ParamsTable = () => (
     <Card>
       <CardHeader>
-        <CardTitle className="text-xl">Consensus Parameters</CardTitle>
+        <ChevronRight strokeWidth={1.5} />
+        <CardTitle>Consensus Parameters</CardTitle>
       </CardHeader>
       <CardContent>
         <Table>
@@ -210,7 +210,7 @@ SelectBest(tips):
   );
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-0 pb-24">
+    <div className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-0 pb-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -251,20 +251,20 @@ SelectBest(tips):
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card className="border min-w-0">
+            <Card>
               <CardHeader>
-                <div className="flex items-center gap-3">
-                  <s.icon className="h-5 w-5" />
-                  <CardTitle className="text-2xl">{s.title}</CardTitle>
+                <div className="flex items-center gap-4">
+                  <s.icon className="size-6" />
+                  <CardTitle>{s.title}</CardTitle>
                 </div>
-                <p className="pt-2 text-sm text-muted-foreground">{s.tagline}</p>
               </CardHeader>
+              <CardDescription>{s.tagline}</CardDescription>
 
               <CardContent className="grid min-w-0 gap-6 md:grid-cols-[1.1fr_0.9fr]">
-                <ul className="min-w-0 space-y-3 text-sm leading-relaxed">
+                <ul className="min-w-0 space-y-3 leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <span className="mt-2 inline-block h-1.5 w-1.5 min-w-1.5 rounded-full bg-foreground/60" />
+                      <ChevronRight className="size-4 min-w-4 mt-1.5" strokeWidth={1.5} />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}
@@ -272,7 +272,7 @@ SelectBest(tips):
 
                 <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
                   <div className="mb-2 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs">
+                    <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
                       <span className="font-medium">{s.codeTitle}</span>
                     </div>
@@ -280,7 +280,7 @@ SelectBest(tips):
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
                     <code className="block max-w-full">
                       {s.code}
                     </code>
@@ -295,7 +295,7 @@ SelectBest(tips):
       {/* Flow Summary */}
       <div className="mt-10 grid gap-4 rounded-2xl border p-6">
         <h2 className="text-xl font-semibold">End‑to‑end selection flow</h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground">
           Headers are checked for Extra size, time (MTP & future drift), epoch‑anchor invariants,
           exact difficulty, gas limits/EIPs, height increment, and PoW seal. Valid blocks extend
           ChainWork, and the heaviest tip is canonical.
@@ -304,21 +304,21 @@ SelectBest(tips):
           {["Validate", "Check Epoch Anchor", "Compute Difficulty", "Accumulate Work", "Select Heaviest"].map((step, idx) => (
             <div key={step} className="rounded-xl border bg-card p-4 text-center shadow-sm">
               <div className="text-2xl font-semibold">{idx + 1}</div>
-              <div className="mt-2 text-sm">{step}</div>
+              <div className="mt-2">{step}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Links to related docs */}
-      <div className="mt-24 flex flex-wrap items-center justify-between gap-4">
-        <Button asChild size={"xl"} variant={"outline"}>
+      <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
+        <Button asChild variant={"secondary"}>
           <Link href="/introduction/protocol/coinbase-maturity">
             <ChevronLeft />
             Coinbase Maturity Scheduling
           </Link>
         </Button>
-        <Button asChild size={"xl"}>
+        <Button asChild>
           <Link href="/introduction/protocol/xhash">
             XHash
             <ChevronRight />

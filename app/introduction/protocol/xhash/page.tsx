@@ -3,11 +3,11 @@
 import PageHeader from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Cpu, ExternalLink, Hash, Layers, Link2, ShieldCheck, TimerReset } from "lucide-react";
+import { ChevronLeft, ChevronRight, Cpu, ExternalLink, Hash, Layers, ShieldCheck, TimerReset } from "lucide-react";
 import Link from "next/link";
 import { useMemo } from "react";
 
@@ -132,13 +132,14 @@ else:
   );
 
   const ParamsTable = () => (
-    <Card className="border-muted-foreground/10">
+    <Card>
       <CardHeader>
-        <CardTitle className="text-xl">Consensus‑Relevant Details</CardTitle>
-        <p className="text-sm text-muted-foreground">
-          As reflected by <code>xhash/consensus.go</code> and Parallax chain config.
-        </p>
+        <ChevronRight strokeWidth={1.5} />
+        <CardTitle>Consensus‑Relevant Details</CardTitle>
       </CardHeader>
+      <CardDescription>
+        As reflected by <code>xhash/consensus.go</code> and Parallax chain config.
+      </CardDescription>
       <CardContent>
         <Table>
           <TableHeader>
@@ -186,7 +187,7 @@ else:
   );
 
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-8 xl:px-0 pb-24">
+    <div className="mx-auto max-w-6xl px-4 sm:px-8 xl:px-0 pb-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -227,20 +228,18 @@ else:
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card className="border min-w-0">
+            <Card>
               <CardHeader>
-                <div className="flex items-center gap-3">
-                  <s.icon className="h-5 w-5" />
-                  <CardTitle className="text-2xl">{s.title}</CardTitle>
-                </div>
-                <p className="pt-2 text-sm text-muted-foreground">{s.tagline}</p>
+                <s.icon strokeWidth={1.5} />
+                <CardTitle>{s.title}</CardTitle>
               </CardHeader>
+              <CardDescription>{s.tagline}</CardDescription>
 
               <CardContent className="grid min-w-0 gap-6 md:grid-cols-[1.1fr_0.9fr]">
-                <ul className="min-w-0 space-y-3 text-sm leading-relaxed">
+                <ul className="min-w-0 space-y-3 leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <span className="mt-2 inline-block h-1.5 w-1.5 min-w-1.5 rounded-full bg-foreground/60" />
+                      <ChevronRight className="size-4 min-w-4 mt-1.5" strokeWidth={1.5} />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}
@@ -248,7 +247,7 @@ else:
 
                 <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
                   <div className="mb-2 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs">
+                    <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
                       <span className="font-medium">{s.codeTitle}</span>
                     </div>
@@ -256,7 +255,7 @@ else:
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
                     <code className="block max-w-full">
                       {s.code}
                     </code>
@@ -269,14 +268,14 @@ else:
       </div>
 
       {/* Links to related docs */}
-      <div className="mt-24 flex flex-wrap items-center justify-between gap-4">
-        <Button asChild size={"xl"} variant={"outline"}>
+      <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
+        <Button asChild variant={"secondary"}>
           <Link href="/introduction/protocol/difficulty-and-forkchoice">
             <ChevronLeft />
             Difficulty Algorithm & Fork-choice Rules
           </Link>
         </Button>
-        <Button asChild size={"xl"}>
+        <Button asChild>
           <Link href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/consensus/algorithms/xhash" target="_blank">
             XHash Specification
             <ExternalLink />

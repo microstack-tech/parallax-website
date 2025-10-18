@@ -23,7 +23,7 @@ const topics = [
   },
   {
     icon: BookOpen,
-    title: "Help improve documentation and guides",
+    title: "Help improve documentation",
     description: "Write guides, tutorials, and documentation to help others learn and build. Make Parallax accessible to everyone."
   },
   {

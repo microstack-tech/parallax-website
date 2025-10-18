@@ -3,7 +3,7 @@
 import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Building, ChevronRight, Download, ExternalLink, Eye, HandCoins, Scale, Store, Wallet } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
@@ -21,25 +21,21 @@ export default function GettingStarted() {
       <section className="container mx-auto px-6 sm:px-8 xl:px-0 max-w-7xl py-0">
         {/* Navigation Tabs */}
         <div className="flex justify-center my-16">
-          <div className="flex gap-2 bg-background border rounded-lg p-2">
-            <button
+          <div className="flex flex-col md:flex-row gap-2 bg-muted border rounded-lg p-2">
+            <Button
+              size={"xl"}
               onClick={() => setActiveTab("use")}
-              className={`px-6 py-3 rounded-md font-medium transition-colors ${activeTab === "use"
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "text-muted-foreground cursor-pointer hover:text-foreground"
-                }`}
+              variant={activeTab === "use" ? "default" : "secondary"}
             >
               How to use Parallax
-            </button>
-            <button
+            </Button>
+            <Button
+              size={"xl"}
               onClick={() => setActiveTab("accept")}
-              className={`px-6 py-3 rounded-md font-medium transition-colors ${activeTab === "accept"
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "text-muted-foreground cursor-pointer hover:text-foreground"
-                }`}
+              variant={activeTab === "accept" ? "default" : "secondary"}
             >
               How to accept Parallax
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -47,83 +43,89 @@ export default function GettingStarted() {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <Card className="group transition-all duration-300">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2">
-                    <BookOpen className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <CardTitle className="text-xl">1. Inform Yourself</CardTitle>
+                <div className="flex items-center gap-4">
+                  <BookOpen className="size-6" strokeWidth={1.5} />
+                  <CardTitle>1. Inform Yourself</CardTitle>
                 </div>
-                <CardDescription>
-                  {`Parallax combines Bitcoin's proven monetary policy with Ethereum's smart contract capabilities. Before
-                  you start using Parallax, learn about its unique features and security considerations.`}
-                </CardDescription>
               </CardHeader>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
-                <Link href={"/introduction/protocol/overview"}>
-                  Learn More <ChevronRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <CardContent>
+                {`Parallax combines Bitcoin's proven monetary policy with Ethereum's smart contract capabilities. Before
+                  you start using Parallax, learn about its unique features and security considerations.`}
+                <div className="inline-flex w-full justify-end mt-8">
+                  <Button variant="secondary" asChild>
+                    <Link href={"/introduction/protocol/overview"}>
+                      Learn More <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
 
             <Card className="group transition-all duration-300">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2">
-                    <Wallet className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <CardTitle className="text-xl">2. Choose Your Wallet</CardTitle>
+                <div className="flex items-center gap-3">
+                  <Wallet className="size-6" strokeWidth={1.5} />
+                  <CardTitle>2. Choose Your Wallet</CardTitle>
                 </div>
-                <CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
                   Free Parallax wallets are available for all major operating systems and devices. Choose from mobile
                   apps for everyday use or desktop wallets for advanced features.
-                </CardDescription>
-              </CardHeader>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
-                <Link href={"/wallets"}>
-                  Choose a Wallet <ChevronRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                </div>
+                <div className="inline-flex w-full justify-end mt-8">
+                  <Button variant="secondary" asChild>
+                    <Link href={"/wallets"}>
+                      Choose a Wallet <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
 
             <Card className="group transition-all duration-300">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2">
-                    <HandCoins className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <CardTitle className="text-xl">3. Get Parallax</CardTitle>
+                <div className="flex items-center gap-3">
+                  <HandCoins className="size-6" strokeWidth={1.5} />
+                  <CardTitle>3. Get Parallax</CardTitle>
                 </div>
-                <CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
                   You can get Parallax by accepting it as payment, mining it, or purchasing it from exchanges. Multiple
                   options are available to suit your needs.
-                </CardDescription>
-              </CardHeader>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
-                <Link href={"https://docs.parallaxchain.org/guides/mining"} target="_blank">
-                  Mining <ExternalLink className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" disabled>
-                Exchanges List Coming Soon
-              </Button>
+                </div>
+                <div className="flex flex-col md:flex-row w-full justify-end mt-8 gap-4">
+                  <Button variant="secondary" asChild>
+                    <Link href={"https://docs.parallaxchain.org/guides/mining"} target="_blank">
+                      Mining <ExternalLink className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button variant="secondary" disabled>
+                    Exchanges List Coming Soon
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
 
             <Card className="group transition-all duration-300">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2">
-                    <Store className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <CardTitle className="text-xl">4. Spend Parallax</CardTitle>
+                <div className="flex items-center gap-3">
+                  <Store className="size-6" strokeWidth={1.5} />
+                  <CardTitle>4. Spend Parallax</CardTitle>
                 </div>
-                <CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
                   A growing number of services and merchants are accepting Parallax worldwide. Use smart contracts for
                   automated payments and complex transactions.
-                </CardDescription>
-              </CardHeader>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" disabled>
-                Merchant Directory Coming Soon
-              </Button>
+                </div>
+                <div className="inline-flex w-full justify-end mt-8 gap-2">
+                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" disabled>
+                    Merchant Directory Coming Soon
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
           </div>
         )}
@@ -132,104 +134,110 @@ export default function GettingStarted() {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <Card className="group transition-all duration-300">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2">
-                    <BookOpen className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <CardTitle className="text-xl">1. Inform Yourself</CardTitle>
+                <div className="flex items-center gap-3">
+                  <BookOpen className="size-6" strokeWidth={1.5} />
+                  <CardTitle>1. Inform Yourself</CardTitle>
                 </div>
-                <CardDescription>
-                  {`Parallax doesn't require merchants to change their habits significantly. However, understanding its
-                  unique features will help you leverage its full potential for your business.`}
-                </CardDescription>
               </CardHeader>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
-                <Link href={"/introduction/protocol/overview"}>
-                  Learn More <ChevronRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <CardContent>
+                {`Parallax doesn't require merchants to change their habits significantly. However, understanding its
+                  unique features will help you leverage its full potential for your business.`}
+                <div className="inline-flex w-full justify-end mt-8 gap-2">
+                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" asChild>
+                    <Link href={"/introduction/protocol/overview"}>
+                      Learn More <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
 
             <Card className="group transition-all duration-300">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2">
-                    <Building className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <CardTitle className="text-xl">2. Processing Payments</CardTitle>
+                <div className="flex items-center gap-3">
+                  <Building className="size-6" strokeWidth={1.5} />
+                  <CardTitle>2. Processing Payments</CardTitle>
                 </div>
-                <CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
                   Set up Parallax payment processing for your business. Benefit from low fees, fast transactions, and
                   programmable payment logic.
-                </CardDescription>
-              </CardHeader>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" disabled>
-                Processing Payments Guide Coming Soon
-              </Button>
+                </div>
+                <div className="inline-flex w-full justify-end mt-8 gap-2">
+                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" disabled>
+                    Payments Guide Coming Soon
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
 
             <Card className="group transition-all duration-300">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2">
-                    <Scale className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <CardTitle className="text-xl">3. Accounting & Taxes</CardTitle>
+                <div className="flex items-center gap-3">
+                  <Scale className="size-6" strokeWidth={1.5} />
+                  <CardTitle>3. Accounting & Taxes</CardTitle>
                 </div>
-                <CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
                   Understand the accounting and tax implications of accepting Parallax. Access tools and resources for
                   proper financial management.
-                </CardDescription>
-              </CardHeader>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" asChild>
-                <Link href={"https://en.bitcoin.it/wiki/Tax_compliance"} target="_blank">
-                  Tax Resources <ExternalLink className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                </div>
+                <div className="inline-flex w-full justify-end mt-8 gap-2">
+                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" asChild>
+                    <Link href={"https://en.bitcoin.it/wiki/Tax_compliance"} target="_blank">
+                      Tax Resources <ExternalLink className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
 
             <Card className="group transition-all duration-300">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2">
-                    <Eye className="h-6 w-6 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <CardTitle className="text-xl">4. Gain Visibility</CardTitle>
+                <div className="flex items-center gap-3">
+                  <Eye className="size-6" strokeWidth={1.5} />
+                  <CardTitle>4. Gain Visibility</CardTitle>
                 </div>
-                <CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
                   Promote your business in the Parallax ecosystem. Join directories and communities to reach Parallax
                   users worldwide.
-                </CardDescription>
-              </CardHeader>
-              <Button variant="outline" size={"lg"} className="w-fit ml-6" disabled>
-                Merchant Directory Coming Soon
-              </Button>
+                </div>
+                <div className="inline-flex w-full justify-end mt-8 gap-2">
+                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" disabled>
+                    Merchant Directory Coming Soon
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
           </div>
         )}
 
-        <Card className="border-border py-10 flex flex-col">
+        <Card>
           <CardHeader>
-            <CardTitle className="text-xl text-center mb-2">Download the Parallax Client</CardTitle>
+            <CardTitle className="text-center w-full">Download the Parallax Client</CardTitle>
           </CardHeader>
           <CardContent>
-            <CardDescription className="text-base text-center mb-4">
+            <div className="text-base text-center">
               The Parallax Client is available for Linux, Windows, and macOS. Download the latest release below or visit our GitHub for source code and instructions.
-            </CardDescription>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
-              <Button variant="default" size="xl" asChild>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Button asChild>
                 <Link href="https://github.com/microstack-tech/parallax/releases/latest" target="_blank" rel="noopener">
                   <Download className="mr-2 h-5 w-5" />
                   Download Latest Release
                 </Link>
               </Button>
-              <Button variant="outline" size="xl" asChild>
+              <Button variant={"secondary"} asChild>
                 <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
                   Setup guide
                   <ExternalLink />
                 </Link>
               </Button>
-              <Button variant="outline" size="xl" asChild>
+              <Button variant={"secondary"} asChild>
                 <Link href="https://github.com/microstack-tech/parallax" target="_blank" rel="noopener">
                   <FaGithub />
                   View on GitHub
@@ -239,27 +247,31 @@ export default function GettingStarted() {
           </CardContent>
         </Card>
 
-        <div className="text-center border rounded-2xl p-8 mt-8 mb-24">
-          <h2 className="text-2xl font-bold mb-4">Ready to Start?</h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Join the Parallax network and experience the future of blockchain technology. Combine the security of
-            Bitcoin with the flexibility of smart contracts.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="xl" asChild>
-              <Link href={"/wallets"}>
-                Choose a Wallet
-                <ChevronRight />
-              </Link>
-            </Button>
-            <Button size="xl" variant="outline" asChild>
-              <Link href={"https://docs.parallaxchain.org/guides/wallets"} target="_blank">
-                Wallet Setup Guide
-                <ExternalLink />
-              </Link>
-            </Button>
-          </div>
-        </div>
+        <Card className="mt-8">
+          <CardHeader>
+            <CardTitle className="text-center w-full">Ready to Start?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-base text-center">
+              Join the Parallax network and experience the future of blockchain technology. Combine the security of
+              Bitcoin with the flexibility of smart contracts.
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Button asChild>
+                <Link href={"/wallets"}>
+                  Choose a Wallet
+                  <ChevronRight />
+                </Link>
+              </Button>
+              <Button variant="secondary" asChild>
+                <Link href={"https://docs.parallaxchain.org/guides/wallets"} target="_blank">
+                  Wallet Setup Guide
+                  <ExternalLink />
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </section>
     </MainMotion>
   )

@@ -46,22 +46,22 @@ export default function Page() {
         subTitle="Choose the right wallet to manage your Laxes, connect to dapps, and explore the Parallax ecosystem securely."
       />
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
-        <Card className="border-border py-10 mb-8 bg-background flex flex-col">
+        <Card>
           <CardHeader>
-            <CardTitle className="text-2xl text-center mb-2">Run your own Parallax client</CardTitle>
+            <CardTitle className="text-center">Run your own Parallax client</CardTitle>
           </CardHeader>
           <CardContent>
-            <CardDescription className="text-base text-center">
+            <div className="text-base text-center">
               For optimal privacy we recommend that you run your own Parallax client for wallet interactions.
-            </CardDescription>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button variant="default" size="xl" asChild>
+              <Button variant="default" asChild>
                 <Link href="/resources/parallax-client">
                   <Download className="mr-2 h-5 w-5" />
                   Download Parallax Client
                 </Link>
               </Button>
-              <Button variant="outline" size="xl" asChild>
+              <Button variant="secondary" asChild>
                 <Link href="https://docs.parallaxchain.org/guides/client/introduction" target="_blank" rel="noopener">
                   Setup Guide
                   <ExternalLink />
@@ -70,18 +70,18 @@ export default function Page() {
             </div>
           </CardContent>
         </Card>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-8">
           {wallets.map((wallet) => (
-            <Card key={wallet.name} className="border-border py-10 flex flex-col">
+            <Card key={wallet.name}>
               <CardHeader>
-                <CardTitle className="text-xl text-center mb-4">{wallet.name}</CardTitle>
+                <CardTitle className="text-center">{wallet.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex justify-center mb-12">
+                <div className="flex justify-center mb-4">
                   <Image src={wallet.image} alt={wallet.name} width={200} height={200} className=" rounded-2xl" />
                 </div>
                 <div className="flex gap-4 justify-center">
-                  <Button variant="outline" className="text-base" asChild>
+                  <Button variant="secondary" className="text-base" asChild>
                     <Link href={wallet.url} target="_blank">
                       {`Get ${wallet.name}`}
                       <ChevronRight />
@@ -92,14 +92,14 @@ export default function Page() {
             </Card>
           ))}
         </div>
-        <Card className="border-border py-10 mt-8">
+        <Card>
           <CardHeader>
-            <CardTitle className="text-xl text-center mb-4">Add Parallax to your wallet</CardTitle>
-            <CardDescription className="text-center text-base">Make sure to add Parallax as a custom network on wallets that support EVM-based chains. </CardDescription>
+            <CardTitle className="text-center w-full">Add Parallax to your wallet</CardTitle>
           </CardHeader>
+          <CardDescription className="text-center text-sm">Make sure to add Parallax as a custom network on wallets that support EVM-based chains. </CardDescription>
           <CardContent className="flex flex-col items-center">
-            <div className="flex flex-col gap-4 w-full max-w-2xl">
-              <div className="flex flex-row justify-between bg-background p-2 px-4 rounded-md border">
+            <div className="flex flex-col gap-4 w-full max-w-xl">
+              <div className="flex flex-row justify-between py-2 border-b">
                 <label className="">
                   Network Name
                 </label>
@@ -107,7 +107,7 @@ export default function Page() {
                   Parallax
                 </label>
               </div>
-              <div className="flex flex-row justify-between bg-background p-2 px-4 rounded-md border">
+              <div className="flex flex-row justify-between py-2 border-b">
                 <label className="">
                   RPC URL
                 </label>
@@ -122,7 +122,7 @@ export default function Page() {
                   </label>
                 </div>
               </div>
-              <div className="flex flex-row justify-between bg-background p-2 px-4 rounded-md border">
+              <div className="flex flex-row justify-between py-2 border-b">
                 <label className="">
                   Chain ID
                 </label>
@@ -130,7 +130,7 @@ export default function Page() {
                   2110
                 </label>
               </div>
-              <div className="flex flex-row justify-between bg-background p-2 px-4 rounded-md border">
+              <div className="flex flex-row justify-between py-2 border-b">
                 <label className="">
                   Symbol
                 </label>
@@ -138,7 +138,7 @@ export default function Page() {
                   LAX
                 </label>
               </div>
-              <div className="flex flex-row justify-between bg-background p-2 px-4 rounded-md border">
+              <div className="flex flex-row justify-between py-2 border-b">
                 <label className="">
                   Explorer URL
                 </label>
@@ -146,7 +146,7 @@ export default function Page() {
                   https://explorer.parallaxchain.org
                 </label>
               </div>
-              <Button size={"xl"} asChild>
+              <Button asChild>
                 <Link href={"https://docs.parallaxchain.org/guides/wallets/metamask"} target="_blank">
                   Guide on MetaMask setup
                   <ExternalLink />

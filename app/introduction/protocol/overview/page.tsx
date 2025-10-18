@@ -2,7 +2,7 @@
 
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
 import { ChevronRight, Gauge, Layers, Hash, Coins, Clock, BookOpen, ExternalLink } from "lucide-react";
@@ -33,7 +33,7 @@ export default function Page() {
     },
     {
       icon: Gauge,
-      title: "Difficulty Algorithm & Fork-choice Rules",
+      title: "Difficulty Algorithm & Fork-choice",
       description:
         "Epoch-anchored difficulty retargeting and cumulative-work fork selection, including Median-Time-Past checks and epoch anchors.",
       href: "/introduction/protocol/difficulty-and-forkchoice",
@@ -61,18 +61,19 @@ export default function Page() {
           subTitle="This section explains the base rules of the Parallax protocol — cryptographic primitives, deterministic execution, proof-of-work (XHash), and the consensus logic that defines canonical history."
         />
 
-        <Card className="border-muted-foreground/10">
+        <Card>
           <CardHeader>
-            <CardTitle className="text-xl">Purpose of this section</CardTitle>
-            <p className="text-sm text-muted-foreground pt-1">
-              Parallax merges Bitcoin’s ossified monetary discipline with Ethereum-style
-              programmability. These documents detail how Parallax maintains a fixed supply and
-              predictable issuance while enforcing deterministic execution and open, work-based
-              consensus.
-            </p>
+            <ChevronRight className="size-6" strokeWidth={1.5} />
+            <CardTitle>Purpose of this section</CardTitle>
           </CardHeader>
+          <CardDescription className="text-sm text-muted-foreground pt-1">
+            Parallax merges Bitcoin’s ossified monetary discipline with Ethereum-style
+            programmability. These documents detail how Parallax maintains a fixed supply and
+            predictable issuance while enforcing deterministic execution and open, work-based
+            consensus.
+          </CardDescription>
           <CardContent>
-            <ul className="list-disc list-inside text-sm text-muted-foreground leading-relaxed">
+            <ul className="list-disc list-inside">
               <li>
                 <strong>Cryptographic Soundness:</strong> Transactions and state transitions are
                 authorized with ECDSA (secp256k1).
@@ -90,7 +91,8 @@ export default function Page() {
                 the greatest cumulative work.
               </li>
             </ul>
-            <p className="text-sm mt-6 text-muted-foreground leading-relaxed mb-4">
+            <p className="inline-flex items-center mt-6 gap-2">
+              <ChevronRight className="size-4" strokeWidth={1.5} />
               These pages target developers, miners, and researchers seeking a precise understanding
               of Parallax at the protocol layer.
             </p>
@@ -117,43 +119,25 @@ export default function Page() {
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col justify-between h-full">
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {topic.description}
-                </p>
-                <Button asChild className="mt-4 w-fit">
-                  <Link href={topic.href}>
-                    Read more <ChevronRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </Button>
+                {topic.description}
+                <div className="inline-flex w-full justify-end">
+                  <Button variant={"secondary"} asChild>
+                    <Link href={topic.href}>
+                      Read more <ChevronRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </motion.div>
         ))}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.3, delay: 6 * 0.05 }}
-        >
-          <Card className="bg-cyan-400/5 h-full">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <BookOpen className="h-5 w-5 min-w-fit min-h-fit" />
-                <CardTitle className="text-xl">Technical Documentation</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="flex flex-col justify-between h-full">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Find additional in-depth technical details about the Parallax protocol in our dedicated documentation portal.
-              </p>
-              <Button asChild className="mt-4 w-fit">
-                <Link href={"https://docs.parallaxchain.org"}>
-                  Technical Documentation <ExternalLink className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
+      </div>
+      <div className="flex justify-center w-full mt-16">
+        <Button size={"xl"} asChild>
+          <Link href={"https://docs.parallaxchain.org"}>
+            Explore Technical Documentation <ExternalLink className="ml-1 h-4 w-4" />
+          </Link>
+        </Button>
       </div>
     </div>
   );

@@ -69,18 +69,23 @@ export function Navigation() {
   const [opacity, setOpacity] = useState(0);
   const [isOpen, setIsOpen] = useState(false)
   const [bgColor, setBgColor] = useState<string>(``)
+  const [borderColor, setBorderColor] = useState<string>(``)
   const pathname = usePathname()
   const { theme } = useTheme()
 
   useEffect(() => {
     if (isOpen) {
-      const bgColor = theme === 'light' ? `rgba(255,255,255,1)` : `rgba(0,0,0,1)`
+      const bgColor = theme === 'light' ? `rgba(250,250,251,1)` : `rgba(17,17,19,1)`
+      const borderColor = theme === 'light' ? `rgba(230,230,230,1)` : `rgba(37,37,37,1)`
       setBgColor(bgColor)
+      setBorderColor(borderColor)
       return
     }
 
-    const bgColor = theme === 'light' ? `rgba(255,255,255,${opacity})` : `rgba(0,0,0,${opacity})`
+    const bgColor = theme === 'light' ? `rgba(250,250,251,${opacity})` : `rgba(17,17,19,${opacity})`
+    const borderColor = theme === 'light' ? `rgba(230,230,230,${opacity})` : `rgba(37,37,37,${opacity})`
     setBgColor(bgColor)
+    setBorderColor(borderColor)
   }, [theme, opacity, isOpen])
 
   // Lock body scroll on mobile sheet
@@ -114,9 +119,10 @@ export function Navigation() {
 
   return (
     <nav
-      className="fixed top-0 py-2 md:py-4 px-6 sm:px-8 left-0 right-0 z-50 transition-opacity duration-300"
+      className="fixed top-0 py-2 md:py-4 px-6 sm:px-8 left-0 right-0 z-50 transition-opacity duration-300 border-b border-transparent"
       style={{
-        backgroundColor: bgColor
+        backgroundColor: bgColor,
+        borderColor: borderColor,
       }}
     >
       <div className="flex items-center mx-auto max-w-7xl justify-between">
@@ -207,18 +213,12 @@ export function Navigation() {
       {typeof window !== "undefined" && isOpen &&
         createPortal(
           <>
-            {/* Backdrop */}
-            <button
-              aria-label="Close menu"
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 top-14 bg-black/50 md:hidden z-[9998]"
-            />
             {/* Panel */}
             <div
               id="mobile-nav"
               role="dialog"
               aria-modal="true"
-              className="fixed inset-x-0 top-14 bottom-0 md:hidden z-[9999] bg-background/95 backdrop-blur border-t border-border overflow-y-auto overscroll-contain"
+              className="fixed inset-x-0 top-14 bottom-0 md:hidden z-50 bg-background border-t border-border overflow-y-auto overscroll-contain"
               style={{ WebkitOverflowScrolling: "touch" }}
             >
               <div className="mx-auto pb-20 max-w-6xl px-4 sm:px-6 lg:px-8 py-3">

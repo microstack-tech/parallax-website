@@ -2,7 +2,7 @@
 import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, GitBranch, Globe, HeartHandshake, MessageCircle, Users } from "lucide-react";
 import Link from "next/link";
 import { FaBitcoin, FaDiscord, FaGithub, FaReddit, FaTelegram } from "react-icons/fa";
@@ -103,7 +103,7 @@ export default function CommunityPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {oficialChannels.map((ch) => (
-            <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
+            <Button key={ch.name} variant={"secondary"} size={"2xl"} asChild>
               <Link href={ch.href} target="_blank" rel="noopener" className="block">
                 <ch.icon className="size-6 mr-4" />
                 {ch.name}
@@ -119,7 +119,7 @@ export default function CommunityPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {communityChannels.map((ch) => (
-            <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
+            <Button key={ch.name} variant={"secondary"} size={"2xl"} asChild>
               <Link href={ch.href} target="_blank" rel="noopener" className="block">
                 <ch.icon className="size-6 mr-4" />
                 {ch.name}
@@ -132,15 +132,15 @@ export default function CommunityPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {communityTopics.map((topic) => (
-            <Card key={topic.title} className="border-border py-10">
+            <Card key={topic.title}>
               <CardHeader>
-                <div className="flex flex-col items-center gap-6">
-                  <topic.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
+                <div className="flex flex-row items-center gap-4">
+                  <topic.icon className="size-6" strokeWidth={1.5} />
                   <CardTitle className="text-lg text-center">{topic.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-center leading-relaxed">{topic.description}</CardDescription>
+                {topic.description}
               </CardContent>
             </Card>
           ))}

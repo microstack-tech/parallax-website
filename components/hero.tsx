@@ -3,15 +3,15 @@ import { useStableVh } from "@/hooks/useStableVh"
 import { ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { FaBitcoin, FaGithub, FaReddit, FaTelegramPlane } from "react-icons/fa"
+import { FaBitcoin, FaGithub, FaTelegramPlane } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
-import { Button } from "./ui/button"
 import Countdown from "./countdown"
+import { Button } from "./ui/button"
 
 export function Hero() {
   useStableVh()
   return (
-    <section className="relative isolate overflow-hidden bg-background
+    <section className="relative isolate overflow-hidden bg-muted
                         min-h-[calc(var(--vh,1vh)*100)]
                         pt-[env(safe-area-inset-top)]
                         pb-[env(safe-area-inset-bottom)]">
@@ -45,7 +45,7 @@ export function Hero() {
           {`Parallax uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of coins is carried out collectively by the network. Parallax is open-source; its design is public, nobody owns or controls Parallax and everyone can take part.`}
         </p>
         <div className="flex flex-col gap-4 justify-between sm:flex-row w-full max-w-7xl">
-          <Button size={"2xl"} className="w-full max-w-[25rem] rounded-none px-6 bg-cyan-400" asChild>
+          <Button size={"2xl"} className="w-full max-w-[25rem] px-6" asChild>
             <Link href={"/introduction/getting-started"}>
               <div className="flex flex-row items-center w-full justify-between">
                 Get started with Parallax
@@ -54,28 +54,28 @@ export function Hero() {
             </Link>
           </Button>
           <div className="flex flex-row justify-between gap-4">
-            <Button size={"2xl"} className="w-fit rounded-none px-4 bg-background border text-foreground hover:text-background transition-colors" asChild>
+            <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
               <Link href={"https://x.com/prlxchain"}>
                 <div>
                   <FaXTwitter className="size-6" />
                 </div>
               </Link>
             </Button>
-            <Button size={"2xl"} className="w-fit rounded-none px-4 bg-background border text-foreground hover:text-background transition-colors" asChild>
+            <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
               <Link href={"https://t.me/parallaxchain"}>
                 <div>
                   <FaTelegramPlane className="size-6" />
                 </div>
               </Link>
             </Button>
-            <Button size={"2xl"} className="w-fit rounded-none px-4 bg-background border text-foreground hover:text-background transition-colors" asChild>
+            <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
               <Link href={"https://bitcointalk.org/index.php?topic=5560698"}>
                 <div>
                   <FaBitcoin className="size-6" />
                 </div>
               </Link>
             </Button>
-            <Button size={"2xl"} className="w-fit rounded-none px-4 bg-background border text-foreground hover:text-background transition-colors" asChild>
+            <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
               <Link href={"https://github.com/microstack-tech"}>
                 <div>
                   <FaGithub className="size-6" />

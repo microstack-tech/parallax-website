@@ -36,7 +36,7 @@ export default function Countdown() {
 
   return (
     <div className="flex flex-col items-end">
-      <span className="text-xs sm:text-base font-mono text-cyan-400 mt-2 sm:mt-0 sm:ml-4 select-none tracking-tight text-right max-w-[24rem]">
+      <span className="text-xs sm:text-base font-mono text-primary mt-2 sm:mt-0 sm:ml-4 select-none tracking-tight text-right max-w-[24rem]">
         {timeLeft}
       </span>
     </div>

@@ -3,7 +3,7 @@
 import PageHeader from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { motion } from "framer-motion";
@@ -156,7 +156,8 @@ schedKeyAmt(height):
   const ParamsTable = () => (
     <Card>
       <CardHeader>
-        <CardTitle className="text-xl">Monetary Parameters</CardTitle>
+        <ChevronRight className="size-6" strokeWidth={1.5} />
+        <CardTitle>Monetary Parameters</CardTitle>
       </CardHeader>
       <CardContent>
         <Table>
@@ -202,16 +203,14 @@ schedKeyAmt(height):
   const Charts = () => (
     <div className="grid gap-6 md:grid-cols-2">
       {/* Cumulative supply */}
-      <Card className="border-muted-foreground/10">
+      <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
-            <LineChartIcon className="h-5 w-5" />
-            <CardTitle className="text-xl">Cumulative Supply by Epoch</CardTitle>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Sum of all issued rewards up to each halving epoch (LAX units).
-          </p>
+          <LineChartIcon />
+          <CardTitle>Cumulative Supply by Epoch</CardTitle>
         </CardHeader>
+        <CardDescription>
+          Sum of all issued rewards up to each halving epoch (LAX units).
+        </CardDescription>
         <CardContent className="h-[320px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={epochs} margin={{ top: 8, right: 12, left: 4, bottom: 8 }}>
@@ -228,14 +227,12 @@ schedKeyAmt(height):
 
 
       {/* Per-block reward */}
-      <Card className="border-muted-foreground/10">
+      <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
-            <BarChart4 className="h-5 w-5" />
-            <CardTitle className="text-xl">Per‑block Reward (step)</CardTitle>
-          </div>
-          <p className="text-sm text-muted-foreground">Reward in LAX per block at each epoch.</p>
+          <BarChart4 />
+          <CardTitle>Per‑block Reward (step)</CardTitle>
         </CardHeader>
+        <CardDescription>Reward in LAX per block at each epoch.</CardDescription>
         <CardContent className="h-[320px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={epochs} margin={{ top: 8, right: 12, left: 4, bottom: 8 }}>
@@ -252,7 +249,7 @@ schedKeyAmt(height):
   );
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-0 pb-24">
+    <div className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-0 pb-8">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -296,20 +293,17 @@ schedKeyAmt(height):
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card className="border min-w-0">
+            <Card>
               <CardHeader>
-                <div className="flex items-center gap-3">
-                  <s.icon className="h-5 w-5" />
-                  <CardTitle className="text-2xl">{s.title}</CardTitle>
-                </div>
-                <p className="pt-2 text-sm text-muted-foreground">{s.tagline}</p>
+                <s.icon className="size-6" />
+                <CardTitle>{s.title}</CardTitle>
               </CardHeader>
-
+              <CardDescription>{s.tagline}</CardDescription>
               <CardContent className="grid min-w-0 gap-6 md:grid-cols-[1.1fr_0.9fr]">
-                <ul className="min-w-0 space-y-3 text-sm leading-relaxed">
+                <ul className="min-w-0 space-y-3 leading-relaxed">
                   {s.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2">
-                      <span className="mt-2 inline-block h-1.5 w-1.5 min-w-1.5 rounded-full bg-foreground/60" />
+                    <li key={b} className="flex items-center gap-2">
+                      <ChevronRight className="size-4 min-w-4 mt-1.5" strokeWidth={1.5} />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}
@@ -317,7 +311,7 @@ schedKeyAmt(height):
 
                 <div className="min-w-0 rounded-xl border bg-muted/30 p-4">
                   <div className="mb-2 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs">
+                    <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
                       <span className="font-medium">{s.codeTitle}</span>
                     </div>
@@ -325,7 +319,7 @@ schedKeyAmt(height):
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-xs leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed shadow-sm overscroll-x-contain [-webkit-overflow-scrolling:touch]">
                     <code className="block max-w-full">
                       {s.code}
                     </code>
@@ -339,7 +333,7 @@ schedKeyAmt(height):
 
       <div className="mt-10 grid gap-4 rounded-2xl border p-6">
         <h2 className="text-xl font-semibold">Emission Summary</h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground">
           Parallax’s issuance is fully deterministic. Rewards halve every 210,000 blocks until they
           converge toward zero. Every coin in circulation is traceable to on-chain mining output,
           making Parallax a fair-launch, work-secured network with no premine or hidden subsidies.
@@ -347,14 +341,14 @@ schedKeyAmt(height):
       </div>
 
       {/* Links to related docs */}
-      <div className="mt-24 flex flex-wrap items-center justify-between gap-4">
-        <Button asChild size={"xl"} variant={"outline"}>
-          <Link href="/introduction/protocol/overview">
+      <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
+        <Button asChild variant={"secondary"}>
+          <Link href="/introduction/protocol/architecture">
             <ChevronLeft />
             Protocol Architecture
           </Link>
         </Button>
-        <Button asChild size={"xl"}>
+        <Button asChild>
           <Link href="/introduction/protocol/coinbase-maturity">
             Coinbase Maturity Scheduling
             <ChevronRight />

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BrainCircuit, ChevronRight, Cpu, Layers, Lock } from "lucide-react"
 import Link from "next/link"
 import { Button } from "./ui/button"
@@ -40,7 +40,7 @@ const features = [
 
 export function Technologies() {
   return (
-    <section className="relative py-24 bg-muted/60 dark:bg-[#0D0D0D] z-10 px-6 sm:px-8">
+    <section className="relative py-24 z-10 px-6 border-b sm:px-8">
       <div className="mx-auto max-w-7xl w-fit pt-0">
         <div className="mx-auto w-full text-center">
           <h2 className="text-3xl text-foreground sm:text-4xl">Technologies used in Parallax</h2>
@@ -55,21 +55,21 @@ export function Technologies() {
             <Card key={feature.title} className="">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <feature.icon className="size-8" strokeWidth={1.5} />
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  <feature.icon className="size-6" strokeWidth={1.5} />
+                  <CardTitle className="text-lg">{feature.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="flex flex-col gap-4 text-md text-left leading-relaxed">
+                <div className="flex flex-col gap-4 text-md text-left leading-relaxed">
                   <p>{feature.description[0]}</p>
                   <p>{feature.description[1]}</p>
-                </CardDescription>
+                </div>
               </CardContent>
             </Card>
           ))}
         </div>
         <div className="flex flex-row justify-center mt-24">
-          <Button size={"2xl"} className="w-full max-w-[24rem] px-6" asChild>
+          <Button size={"xl"} className="w-full max-w-[24rem] px-6" asChild>
             <Link href={"/introduction/protocol/overview"}>
               <div className="flex flex-row items-center w-full justify-between">
                 <div>Learn more</div>

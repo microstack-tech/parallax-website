@@ -124,7 +124,7 @@ export default function FAQPage() {
                     onClick={() => setActiveCategory(category.id)}
                     variant={'ghost'}
                     className={`w-full text-base py-5 cursor-pointer justify-start text-left ${activeCategory === category.id
-                      ? "bg-primary text-primary-foreground"
+                      ? "bg-primary text-primary-foreground font-semibold"
                       : ""
                       }`}
                   >
@@ -138,7 +138,7 @@ export default function FAQPage() {
           {/* FAQ Content */}
           <div className="flex-1">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold text-primary capitalize mb-6">
+              <h2 className="text-3xl font-bold text-foreground capitalize mb-6">
                 {faqCategories.find((cat) => cat.id === activeCategory)?.name}
               </h2>
 
