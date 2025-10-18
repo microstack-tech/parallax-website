@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Bolt, ChevronRight, HandCoins } from "lucide-react"
 import Link from "next/link"
 import { Button } from "./ui/button"
+import { Separator } from "./ui/separator"
 
 export function Tokenomics() {
   return (
@@ -26,20 +27,23 @@ export function Tokenomics() {
             <CardDescription>
               {`Block rewards follow Bitcoin's exact halving pattern`}
             </CardDescription>
-            <CardContent className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-border">
+            <CardContent className="space-y-2">
+              <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Initial Block Reward</span>
                 <span>50 coins</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-border">
+              <Separator />
+              <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Halving Interval</span>
                 <span>210,000 blocks (~4 years)</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-border">
+              <Separator />
+              <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Maximum Supply</span>
                 <span>21,000,000 coins</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b">
+              <Separator />
+              <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Premine</span>
                 <span>0 coins</span>
               </div>
@@ -54,20 +58,23 @@ export function Tokenomics() {
             <CardDescription>
               Core protocol settings optimized for decentralization
             </CardDescription>
-            <CardContent className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-border">
+            <CardContent className="space-y-2">
+              <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Consensus Mechanism</span>
                 <span>Proof of Work</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-border">
+              <Separator />
+              <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Block Interval</span>
                 <span>10 minutes</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-border">
+              <Separator />
+              <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Difficulty Adjustment</span>
                 <span>2016 blocks</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-border">
+              <Separator />
+              <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Coinbase Maturity</span>
                 <span>100 blocks</span>
               </div>
