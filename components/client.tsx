@@ -90,14 +90,14 @@ export default function Client() {
                     Download
                   </Link>
                 </Button>
-                <Button variant="outline" asChild>
+                <Button variant="secondary" asChild>
                   <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
                     <BookOpen />
                     Setup guide
                     <ExternalLink />
                   </Link>
                 </Button>
-                <Button variant="outline" asChild>
+                <Button variant="secondary" asChild>
                   <Link href="https://github.com/microstack-tech/parallax" target="_blank" rel="noopener">
                     <FaGithub />
                     View on GitHub
