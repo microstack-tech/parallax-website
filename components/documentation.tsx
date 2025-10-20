@@ -18,7 +18,7 @@ export function Documentation() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
-                <BookOpenCheck className="size-6" strokeWidth={1.5} />
+                <BookOpenCheck className="size-6" />
                 <CardTitle>Beginner Guides</CardTitle>
               </div>
             </CardHeader>
@@ -38,7 +38,7 @@ export function Documentation() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
-                <NotebookText className="size-6" strokeWidth={1.5} />
+                <NotebookText className="size-6" />
                 <CardTitle>Technical Documentation</CardTitle>
               </div>
             </CardHeader>

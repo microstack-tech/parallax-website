@@ -141,7 +141,7 @@ U+1: nothing due for U anymore
   const ParamsTable = () => (
     <Card>
       <CardHeader>
-        <ChevronRight strokeWidth={1.5} />
+        <ChevronRight />
         <CardTitle className="text-xl">Maturity Parameters</CardTitle>
       </CardHeader>
       <CardContent>
@@ -233,7 +233,7 @@ U+1: nothing due for U anymore
           >
             <Card>
               <CardHeader>
-                <s.icon strokeWidth={1.5} />
+                <s.icon />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>{s.tagline}</CardDescription>
@@ -241,7 +241,7 @@ U+1: nothing due for U anymore
                 <ul className="min-w-0 space-y-3 leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <ChevronRight className="size-4 min-w-4 mt-1.5" strokeWidth={1.5} />
+                      <ChevronRight className="size-4 min-w-4 mt-1.5" />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}

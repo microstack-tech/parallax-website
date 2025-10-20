@@ -20,7 +20,7 @@ export function Tokenomics() {
           <Card className="border-border">
             <CardHeader>
               <div className="flex items-center gap-4">
-                <HandCoins strokeWidth={1.5} className="size-6" />
+                <HandCoins className="size-6" />
                 <CardTitle>Emission Schedule</CardTitle>
               </div>
             </CardHeader>
@@ -52,7 +52,7 @@ export function Tokenomics() {
 
           <Card>
             <CardHeader>
-              <Bolt strokeWidth={1.5} className="size-6" />
+              <Bolt className="size-6" />
               <CardTitle>Network Parameters</CardTitle>
             </CardHeader>
             <CardDescription>
@@ -86,7 +86,7 @@ export function Tokenomics() {
             <Link href={"https://parallaxchain.org/introduction/whitepaper"}>
               <div className="flex flex-row items-center w-full justify-between">
                 <div>Read whitepaper</div>
-                <ChevronRight className="size-6" strokeWidth={1.5} />
+                <ChevronRight className="size-6" />
               </div>
             </Link>
           </Button>

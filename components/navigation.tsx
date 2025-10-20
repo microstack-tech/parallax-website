@@ -204,7 +204,7 @@ export function Navigation() {
             onClick={() => setIsOpen((v) => !v)}
             className="ml-4 inline-flex items-center justify-center"
           >
-            {isOpen ? <X className="size-6" strokeWidth={1.5} /> : <Menu className="size-6" strokeWidth={1.5} />}
+            {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
           </Button>
         </div>
       </div>

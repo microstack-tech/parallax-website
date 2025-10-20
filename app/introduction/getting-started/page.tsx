@@ -43,7 +43,7 @@ export default function GettingStarted() {
             <Card className="group transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <BookOpen className="size-6" strokeWidth={1.5} />
+                  <BookOpen className="size-6" />
                   <CardTitle>1. Inform Yourself</CardTitle>
                 </div>
               </CardHeader>
@@ -63,7 +63,7 @@ export default function GettingStarted() {
             <Card className="group transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Wallet className="size-6" strokeWidth={1.5} />
+                  <Wallet className="size-6" />
                   <CardTitle>2. Choose Your Wallet</CardTitle>
                 </div>
               </CardHeader>
@@ -85,7 +85,7 @@ export default function GettingStarted() {
             <Card className="group transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <HandCoins className="size-6" strokeWidth={1.5} />
+                  <HandCoins className="size-6" />
                   <CardTitle>3. Get Parallax</CardTitle>
                 </div>
               </CardHeader>
@@ -110,7 +110,7 @@ export default function GettingStarted() {
             <Card className="group transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Store className="size-6" strokeWidth={1.5} />
+                  <Store className="size-6" />
                   <CardTitle>4. Spend Parallax</CardTitle>
                 </div>
               </CardHeader>
@@ -134,7 +134,7 @@ export default function GettingStarted() {
             <Card className="group transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <BookOpen className="size-6" strokeWidth={1.5} />
+                  <BookOpen className="size-6" />
                   <CardTitle>1. Inform Yourself</CardTitle>
                 </div>
               </CardHeader>
@@ -154,7 +154,7 @@ export default function GettingStarted() {
             <Card className="group transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Building className="size-6" strokeWidth={1.5} />
+                  <Building className="size-6" />
                   <CardTitle>2. Processing Payments</CardTitle>
                 </div>
               </CardHeader>
@@ -174,7 +174,7 @@ export default function GettingStarted() {
             <Card className="group transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Scale className="size-6" strokeWidth={1.5} />
+                  <Scale className="size-6" />
                   <CardTitle>3. Accounting & Taxes</CardTitle>
                 </div>
               </CardHeader>
@@ -196,7 +196,7 @@ export default function GettingStarted() {
             <Card className="group transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Eye className="size-6" strokeWidth={1.5} />
+                  <Eye className="size-6" />
                   <CardTitle>4. Gain Visibility</CardTitle>
                 </div>
               </CardHeader>

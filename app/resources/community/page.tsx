@@ -135,7 +135,7 @@ export default function CommunityPage() {
             <Card key={topic.title}>
               <CardHeader>
                 <div className="flex flex-row items-center gap-4">
-                  <topic.icon className="size-6" strokeWidth={1.5} />
+                  <topic.icon className="size-6" />
                   <CardTitle className="text-lg text-center">{topic.title}</CardTitle>
                 </div>
               </CardHeader>

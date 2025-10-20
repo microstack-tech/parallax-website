@@ -40,10 +40,10 @@ export default function Sub() {
           {/* Social Links */}
           <div className="mt-8 flex justify-center gap-6">
             <Link href="https://x.com/prlxchain" target="_blank" className="text-muted-foreground hover:text-blue-400 transition-colors">
-              <FaXTwitter className="h-6 w-6" strokeWidth={1.5} />
+              <FaXTwitter className="h-6 w-6" />
             </Link>
             <Link href="https://github.com/microstack-tech" target="_blank" className="text-muted-foreground hover:text-blue-400 transition-colors">
-              <FaGithub className="h-6 w-6" strokeWidth={1.5} />
+              <FaGithub className="h-6 w-6" />
             </Link>
           </div>
         </div>

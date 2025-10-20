@@ -74,7 +74,7 @@ export function Features() {
           {features.map((feature) => (
             <Card key={feature.title}>
               <CardHeader>
-                <feature.icon strokeWidth={1.5} />
+                <feature.icon />
                 <CardTitle>{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
@@ -88,7 +88,7 @@ export function Features() {
           <Card className="border-border">
             <CardHeader>
               <div className="flex items-center gap-4">
-                <HandCoins strokeWidth={1.5} className="size-6" />
+                <HandCoins className="size-6" />
                 <CardTitle>Emission Schedule</CardTitle>
               </div>
             </CardHeader>
@@ -120,7 +120,7 @@ export function Features() {
 
           <Card>
             <CardHeader>
-              <Bolt strokeWidth={1.5} className="size-6" />
+              <Bolt className="size-6" />
               <CardTitle>Network Parameters</CardTitle>
             </CardHeader>
             <CardDescription>
@@ -152,7 +152,7 @@ export function Features() {
 
         <Card className="mt-8">
           <CardHeader>
-            <BookOpenText strokeWidth={1.5} />
+            <BookOpenText />
             <CardTitle>Whitepaper</CardTitle>
           </CardHeader>
           <CardDescription>
@@ -169,7 +169,7 @@ export function Features() {
               <Button variant={"secondary"} asChild className="w-full sm:w-fit">
                 <Link href={"https://parallaxchain.org/introduction/whitepaper"}>
                   Read Whitepaper
-                  <ChevronRight strokeWidth={1.5} />
+                  <ChevronRight />
                 </Link>
               </Button>
             </div>

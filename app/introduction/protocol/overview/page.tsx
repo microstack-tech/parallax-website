@@ -63,7 +63,7 @@ export default function Page() {
 
         <Card>
           <CardHeader>
-            <ChevronRight className="size-6" strokeWidth={1.5} />
+            <ChevronRight className="size-6" />
             <CardTitle>Purpose of this section</CardTitle>
           </CardHeader>
           <CardDescription className="text-sm text-muted-foreground pt-1">
@@ -92,7 +92,7 @@ export default function Page() {
               </li>
             </ul>
             <p className="inline-flex items-center mt-6 gap-2">
-              <ChevronRight className="size-4" strokeWidth={1.5} />
+              <ChevronRight className="size-4" />
               These pages target developers, miners, and researchers seeking a precise understanding
               of Parallax at the protocol layer.
             </p>

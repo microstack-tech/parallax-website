@@ -15,7 +15,7 @@ export default function TechnicalDocumentationPage() {
       <section className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <Card>
           <CardHeader>
-            <Blocks className="size-6" strokeWidth={1.5} />
+            <Blocks className="size-6" />
             <CardTitle>Foundational Topics</CardTitle>
           </CardHeader>
           <CardContent>
@@ -38,7 +38,7 @@ export default function TechnicalDocumentationPage() {
         </Card>
         <Card>
           <CardHeader>
-            <SquareTerminal className="size-6" strokeWidth={1.5} />
+            <SquareTerminal className="size-6" />
             <CardTitle>Parallax Stack</CardTitle>
           </CardHeader>
           <CardContent>
@@ -61,7 +61,7 @@ export default function TechnicalDocumentationPage() {
 
         <Card>
           <CardHeader>
-            <Layers strokeWidth={1.5} />
+            <Layers />
             <CardTitle>Advanced</CardTitle>
           </CardHeader>
           <CardContent>
@@ -85,7 +85,7 @@ export default function TechnicalDocumentationPage() {
 
         <Card>
           <CardHeader>
-            <Server strokeWidth={1.5} />
+            <Server />
             <CardTitle>Parallax Client</CardTitle>
           </CardHeader>
           <CardContent>

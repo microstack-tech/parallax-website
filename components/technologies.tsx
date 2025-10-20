@@ -59,7 +59,7 @@ export function Technologies() {
             <Card key={feature.title} className="">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <feature.icon className="size-6" strokeWidth={1.5} />
+                  <feature.icon className="size-6" />
                   <CardTitle className="text-lg">{feature.title}</CardTitle>
                 </div>
               </CardHeader>

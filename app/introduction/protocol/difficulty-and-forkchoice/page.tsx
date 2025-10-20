@@ -165,7 +165,7 @@ SelectBest(tips):
   const ParamsTable = () => (
     <Card>
       <CardHeader>
-        <ChevronRight strokeWidth={1.5} />
+        <ChevronRight />
         <CardTitle>Consensus Parameters</CardTitle>
       </CardHeader>
       <CardContent>
@@ -264,7 +264,7 @@ SelectBest(tips):
                 <ul className="min-w-0 space-y-3 leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <ChevronRight className="size-4 min-w-4 mt-1.5" strokeWidth={1.5} />
+                      <ChevronRight className="size-4 min-w-4 mt-1.5" />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}

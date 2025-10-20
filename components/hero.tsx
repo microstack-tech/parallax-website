@@ -49,7 +49,7 @@ export function Hero() {
             <Link href={"/introduction/getting-started"}>
               <div className="flex flex-row items-center w-full justify-between">
                 Get started with Parallax
-                <ChevronRight className="size-6" strokeWidth={1.5} />
+                <ChevronRight className="size-6" />
               </div>
             </Link>
           </Button>

@@ -35,7 +35,7 @@ export default function ParallaxClientPage() {
         <div className="flex flex-col sm:flex-row gap-8 justify-center">
           <Card>
             <CardHeader>
-              <Hexagon className="size-6" strokeWidth={1.5} />
+              <Hexagon className="size-6" />
               <CardTitle>Decentralized</CardTitle>
             </CardHeader>
             <CardContent>
@@ -44,7 +44,7 @@ export default function ParallaxClientPage() {
           </Card>
           <Card>
             <CardHeader>
-              <CircleSlash className="size-6" strokeWidth={1.5} />
+              <CircleSlash className="size-6" />
               <CardTitle>No voting</CardTitle>
             </CardHeader>
             <CardContent>
@@ -59,7 +59,7 @@ export default function ParallaxClientPage() {
           {clientFeatures.map((feature) => (
             <Card key={feature.title}>
               <CardHeader>
-                <feature.icon className="size-6" strokeWidth={1.5} />
+                <feature.icon className="size-6" />
                 <CardTitle>{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>

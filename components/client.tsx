@@ -37,7 +37,7 @@ export default function Client() {
             <Card className="flex flex-col">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <Hexagon className="size-6" strokeWidth={1.5} />
+                  <Hexagon className="size-6" />
                   <CardTitle>Decentralized</CardTitle>
                 </div>
               </CardHeader>
@@ -48,7 +48,7 @@ export default function Client() {
             <Card className="flex flex-col">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <CircleSlash className="size-6" strokeWidth={1.5} />
+                  <CircleSlash className="size-6" />
                   <CardTitle>No Voting</CardTitle>
                 </div>
               </CardHeader>
@@ -65,7 +65,7 @@ export default function Client() {
               <Card key={feature.title} className="flex flex-col">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <feature.icon className="size-6" strokeWidth={1.5} />
+                    <feature.icon className="size-6" />
                     <CardTitle>{feature.title}</CardTitle>
                   </div>
                 </CardHeader>

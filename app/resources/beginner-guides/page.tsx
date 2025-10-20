@@ -17,7 +17,7 @@ export default function BeginnerGuidesPage() {
         {/* Node guide */}
         <Card>
           <CardHeader>
-            <SquareTerminal className="size-6" strokeWidth={1.5} />
+            <SquareTerminal className="size-6" />
             <CardTitle>Run a Parallax node</CardTitle>
           </CardHeader>
           <CardContent>
@@ -46,7 +46,7 @@ export default function BeginnerGuidesPage() {
         {/* Wallet guides */}
         <Card>
           <CardHeader>
-            <Wallet className="size-6" strokeWidth={1.5} />
+            <Wallet className="size-6" />
             <CardTitle>Wallets</CardTitle>
           </CardHeader>
           <CardContent>
@@ -76,7 +76,7 @@ export default function BeginnerGuidesPage() {
         {/* Mining guides */}
         <Card>
           <CardHeader>
-            <Pickaxe className="size-6" strokeWidth={1.5} />
+            <Pickaxe className="size-6" />
             <CardTitle>Mining</CardTitle>
           </CardHeader>
           <CardContent>

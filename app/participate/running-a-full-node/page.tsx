@@ -40,7 +40,7 @@ export default function RunningFullNodePage() {
           {nodeTopics.map((topic) => (
             <Card key={topic.title}>
               <CardHeader>
-                <topic.icon strokeWidth={1.5} />
+                <topic.icon />
                 <CardTitle>{topic.title}</CardTitle>
               </CardHeader>
               <CardContent>

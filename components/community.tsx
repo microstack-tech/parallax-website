@@ -15,7 +15,7 @@ export function Community() {
         <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2">
           <Card>
             <CardHeader>
-              <FaGithub className="size-6" strokeWidth={1.5} />
+              <FaGithub className="size-6" />
               <CardTitle>Open Source</CardTitle>
             </CardHeader>
             <CardContent>
@@ -23,7 +23,7 @@ export function Community() {
               <div className="inline-flex w-full justify-end mt-8">
                 <Button variant="secondary" asChild className="w-full sm:w-fit">
                   <Link href={"https://github.com/microstack-tech"}>
-                    <FaGithub strokeWidth={1.5} />
+                    <FaGithub />
                     GitHub
                   </Link>
                 </Button>
@@ -33,7 +33,7 @@ export function Community() {
 
           <Card>
             <CardHeader>
-              <UsersRound className="size-6" strokeWidth={1.5} />
+              <UsersRound className="size-6" />
               <CardTitle>Community Driven</CardTitle>
             </CardHeader>
             <CardContent>
@@ -45,7 +45,7 @@ export function Community() {
               <div className="inline-flex w-full justify-end mt-8">
                 <Button variant="secondary" asChild className="w-full sm:w-fit">
                   <Link href="https://bitcointalk.org/index.php?topic=5560698" target="_blank">
-                    <FaBitcoin strokeWidth={1.5} />
+                    <FaBitcoin />
                     BitcoinTalk
                   </Link>
                 </Button>
@@ -56,7 +56,7 @@ export function Community() {
         <div className="flex flex-row mt-8 justify-center mx-auto">
           <Card className="sm:max-w-1/2">
             <CardHeader>
-              <MessageCircleMore strokeWidth={1.5} />
+              <MessageCircleMore />
               <CardTitle className="text-center">Join Our Community</CardTitle>
             </CardHeader>
             <CardContent>

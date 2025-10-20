@@ -15,7 +15,7 @@ export default function GridView({ items }: { items: GridViewItem[] }) {
           {items.map((item) => (
             <Card key={item.title}>
               <CardHeader className="flex justify-start items-center gap-4">
-                <item.icon className="size-6" strokeWidth={1.5} />
+                <item.icon className="size-6" />
                 <CardTitle>{item.title}</CardTitle>
               </CardHeader>
               <CardContent>

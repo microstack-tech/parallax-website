@@ -117,7 +117,7 @@ best = argmax(chains, sum(block.work for block in chain))
   const HowItFits = () => (
     <Card>
       <CardHeader>
-        <ChevronRight className="size-6" strokeWidth={1.5} />
+        <ChevronRight className="size-6" />
         <CardTitle>How the pieces fit together</CardTitle>
       </CardHeader>
       <CardDescription>
@@ -188,7 +188,7 @@ best = argmax(chains, sum(block.work for block in chain))
           >
             <Card>
               <CardHeader>
-                <s.icon className="size-6" strokeWidth={1.5} />
+                <s.icon className="size-6" />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>
@@ -198,7 +198,7 @@ best = argmax(chains, sum(block.work for block in chain))
                 <ul className="min-w-0 space-y-3 leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-2">
-                      <ChevronRight className="size-4 min-w-4 mt-1.5" strokeWidth={1.5} />
+                      <ChevronRight className="size-4 min-w-4 mt-1.5" />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}

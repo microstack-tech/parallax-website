@@ -134,7 +134,7 @@ else:
   const ParamsTable = () => (
     <Card>
       <CardHeader>
-        <ChevronRight strokeWidth={1.5} />
+        <ChevronRight />
         <CardTitle>Consensus‑Relevant Details</CardTitle>
       </CardHeader>
       <CardDescription>
@@ -230,7 +230,7 @@ else:
           >
             <Card>
               <CardHeader>
-                <s.icon strokeWidth={1.5} />
+                <s.icon />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>{s.tagline}</CardDescription>
@@ -239,7 +239,7 @@ else:
                 <ul className="min-w-0 space-y-3 leading-relaxed">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <ChevronRight className="size-4 min-w-4 mt-1.5" strokeWidth={1.5} />
+                      <ChevronRight className="size-4 min-w-4 mt-1.5" />
                       <span className="text-muted-foreground">{b}</span>
                     </li>
                   ))}
