@@ -312,13 +312,13 @@ SelectBest(tips):
 
       {/* Links to related docs */}
       <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
-        <Button asChild variant={"secondary"}>
+        <Button asChild variant={"secondary"} className="w-full sm:w-fit">
           <Link href="/introduction/protocol/coinbase-maturity">
             <ChevronLeft />
             Coinbase Maturity Scheduling
           </Link>
         </Button>
-        <Button asChild>
+        <Button asChild className="w-full sm:w-fit">
           <Link href="/introduction/protocol/xhash">
             XHash
             <ChevronRight />

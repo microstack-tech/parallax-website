@@ -48,7 +48,7 @@ export default function Page() {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-0 pb-24">
+    <div className="mx-auto max-w-7xl px-4 sm:px-8 xl:px-0 pb-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -121,7 +121,7 @@ export default function Page() {
               <CardContent className="flex flex-col justify-between h-full">
                 {topic.description}
                 <div className="inline-flex w-full justify-end mt-8">
-                  <Button variant={"secondary"} asChild>
+                  <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                     <Link href={topic.href}>
                       Read more <ChevronRight className="ml-1 h-4 w-4" />
                     </Link>
@@ -133,7 +133,7 @@ export default function Page() {
         ))}
       </div>
       <div className="flex justify-center w-full mt-16">
-        <Button size={"xl"} asChild>
+        <Button size={"xl"} className="w-full sm:w-fit" asChild>
           <Link href={"https://docs.parallaxchain.org"}>
             Explore Technical Documentation <ExternalLink className="ml-1 h-4 w-4" />
           </Link>

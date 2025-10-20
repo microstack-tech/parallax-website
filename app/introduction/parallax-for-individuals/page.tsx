@@ -54,8 +54,8 @@ export default function ParallaxForIndividuals() {
         items={topics}
       />
       <div className="mb-8 text-center">
-        <div className="flex justify-center gap-4">
-          <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
+        <div className="flex justify-center gap-4 px-6">
+          <Button className="w-full sm:w-fit" asChild>
             <Link href={'/introduction/getting-started'}>
               Get started with Parallax
               <ChevronRight />

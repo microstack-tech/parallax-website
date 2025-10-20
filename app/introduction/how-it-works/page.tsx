@@ -43,8 +43,8 @@ export default function ParallaxHowItWorks() {
       />
       <GridView items={topics} />
       <div className="mb-8 text-center">
-        <div className="flex justify-center gap-4 mb-24">
-          <Button className="has-[>svg]:px-8 py-8 text-base" asChild>
+        <div className="flex justify-center gap-4 mb-8 px-6">
+          <Button className="w-full sm:w-fit" asChild>
             <Link href={'/introduction/protocol/overview'}>
               Learn more about Parallax
               <ChevronRight />

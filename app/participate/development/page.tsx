@@ -4,6 +4,7 @@ import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Boxes, LayoutGrid, PackagePlus, Users } from "lucide-react";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 const topics = [
   {
@@ -40,14 +41,16 @@ export default function DevelopersPage() {
         title="Developers"
         subTitle="Parallax is fully open source and welcomes contributions from developers of all backgrounds"
       />
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mx-auto mb-16">
-        <Button className="w-fit" size={'2xl'} asChild>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mx-auto mb-16 px-6">
+        <Button variant={"secondary"} className="w-full sm:w-fit" size={'xl'} asChild>
           <Link href={"https://github.com/microstack-tech"} target="_blank">
+            <FaGithub />
             Explore our GitHub
           </Link>
         </Button>
-        <Button className="w-fit" size={"2xl"} variant={"outline"} asChild>
+        <Button variant={"secondary"} className="w-full sm:w-fit" size={'xl'} asChild>
           <Link href={"/resources/technical-documentation"}>
+            <BookOpen />
             Read Documentation
           </Link>
         </Button>

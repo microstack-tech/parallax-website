@@ -69,7 +69,7 @@ export function Technologies() {
                   <p>{feature.description[1]}</p>
                 </div>
                 <div className="inline-flex w-full justify-end mt-8">
-                  <Button variant={"secondary"} asChild>
+                  <Button variant={"secondary"} asChild className="w-full sm:w-fit">
                     <Link href={feature.url}>
                       Learn more
                       <ChevronRight />

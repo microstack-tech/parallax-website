@@ -269,13 +269,13 @@ else:
 
       {/* Links to related docs */}
       <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
-        <Button asChild variant={"secondary"}>
+        <Button asChild variant={"secondary"} className="w-full sm:w-fit">
           <Link href="/introduction/protocol/difficulty-and-forkchoice">
             <ChevronLeft />
             Difficulty Algorithm & Fork-choice Rules
           </Link>
         </Button>
-        <Button asChild>
+        <Button asChild className="w-full sm:w-fit">
           <Link href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/consensus/algorithms/xhash" target="_blank">
             XHash Specification
             <ExternalLink />

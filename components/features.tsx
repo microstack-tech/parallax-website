@@ -166,12 +166,10 @@ export function Features() {
               Parallax is a timechain protocol that unites Bitcoin’s immutability and monetary discipline with Ethereum’s programmability. Operating under Bitcoin’s fixed rules — Proof of Work, ten-minute blocks, halving cycles, and a capped 21 million supply — Parallax extends these foundations with the Ethereum Virtual Machine. By adopting XHash mining — a modified Ethash variant designed to obsolete existing ASICs — and rejecting premine or privileged allocations, it launches as a fair and neutral experiment in programmable cash: scarce, decentralized, and permissionless.
             </p>
             <div className="inline-flex w-full justify-end mt-8">
-              <Button variant={"secondary"} asChild>
+              <Button variant={"secondary"} asChild className="w-full sm:w-fit">
                 <Link href={"https://parallaxchain.org/introduction/whitepaper"}>
-                  <div className="flex flex-row items-center w-full justify-between">
-                    <div>Read Whitepaper</div>
-                    <ChevronRight className="size-6" strokeWidth={1.5} />
-                  </div>
+                  Read Whitepaper
+                  <ChevronRight strokeWidth={1.5} />
                 </Link>
               </Button>
             </div>

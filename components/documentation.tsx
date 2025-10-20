@@ -25,7 +25,7 @@ export function Documentation() {
             <CardContent className="space-y-3 text-base text-muted-foreground">
               {`Step-by-step beginner guides on downloading and running the Parallax client, learn how to set up and use wallets, and dive deeper on how to mine on the Parallax network.`}
               <div className="inline-flex w-full justify-end mt-8">
-                <Button variant={"secondary"} asChild>
+                <Button variant={"secondary"} asChild className="w-full sm:w-fit">
                   <Link href={"https://docs.parallaxchain.org/guides"} target="_blank">
                     Beginner Guides
                     <ExternalLink />
@@ -45,7 +45,7 @@ export function Documentation() {
             <CardContent className="space-y-3 text-base text-muted-foreground">
               {`Explore the core building blocks of Parallax, dive into the developer stack, go beyond the basics with in-depth technical topics and learn how to run, configure and interact with the Parallax client.`}
               <div className="inline-flex w-full justify-end mt-8">
-                <Button variant={"secondary"} asChild>
+                <Button variant={"secondary"} asChild className="w-full sm:w-fit">
                   <Link href={"https://docs.parallaxchain.org"} target="_blank">
                     Technical Documentation
                     <ExternalLink />

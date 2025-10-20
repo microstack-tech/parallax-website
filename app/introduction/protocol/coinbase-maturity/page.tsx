@@ -271,13 +271,13 @@ U+1: nothing due for U anymore
 
       {/* Links to related docs */}
       <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
-        <Button asChild variant={"secondary"}>
+        <Button asChild variant={"secondary"} className="w-full sm:w-fit">
           <Link href="/introduction/protocol/block-reward-and-halving">
             <ChevronLeft />
             Block Reward & Halving
           </Link>
         </Button>
-        <Button asChild>
+        <Button asChild className="w-full sm:w-fit">
           <Link href="/introduction/protocol/difficulty-and-forkchoice">
             Difficulty Algorithm
             <ChevronRight />

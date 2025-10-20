@@ -4,10 +4,9 @@ import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, Building, ChevronRight, Download, ExternalLink, Eye, HandCoins, Scale, Store, Wallet } from "lucide-react"
+import { BookOpen, Building, ChevronRight, ExternalLink, Eye, HandCoins, Scale, Store, Wallet } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
-import { FaGithub } from "react-icons/fa"
 
 export default function GettingStarted() {
   const [activeTab, setActiveTab] = useState<"use" | "accept">("use")
@@ -21,7 +20,7 @@ export default function GettingStarted() {
       <section className="container mx-auto px-6 sm:px-8 xl:px-0 max-w-7xl py-0">
         {/* Navigation Tabs */}
         <div className="flex justify-center my-16">
-          <div className="flex flex-col md:flex-row gap-2 bg-muted border rounded-lg p-2">
+          <div className="flex flex-col sm:flex-row gap-2 bg-muted border rounded-lg p-2">
             <Button
               size={"xl"}
               onClick={() => setActiveTab("use")}
@@ -52,7 +51,7 @@ export default function GettingStarted() {
                 {`Parallax combines Bitcoin's proven monetary policy with Ethereum's smart contract capabilities. Before
                   you start using Parallax, learn about its unique features and security considerations.`}
                 <div className="inline-flex w-full justify-end mt-8">
-                  <Button variant="secondary" asChild>
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
                     <Link href={"/introduction/protocol/overview"}>
                       Learn More <ChevronRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -74,7 +73,7 @@ export default function GettingStarted() {
                   apps for everyday use or desktop wallets for advanced features.
                 </div>
                 <div className="inline-flex w-full justify-end mt-8">
-                  <Button variant="secondary" asChild>
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
                     <Link href={"/wallets"}>
                       Choose a Wallet <ChevronRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -96,12 +95,12 @@ export default function GettingStarted() {
                   options are available to suit your needs.
                 </div>
                 <div className="flex flex-col md:flex-row w-full justify-end mt-8 gap-4">
-                  <Button variant="secondary" asChild>
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
                     <Link href={"https://docs.parallaxchain.org/guides/mining"} target="_blank">
                       Mining <ExternalLink className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Button variant="secondary" disabled>
+                  <Button variant="secondary" disabled className="w-full sm:w-fit">
                     Exchanges List Coming Soon
                   </Button>
                 </div>
@@ -121,7 +120,7 @@ export default function GettingStarted() {
                   automated payments and complex transactions.
                 </div>
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
-                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" disabled>
+                  <Button variant="secondary" disabled className="w-full sm:w-fit">
                     Merchant Directory Coming Soon
                   </Button>
                 </div>
@@ -143,7 +142,7 @@ export default function GettingStarted() {
                 {`Parallax doesn't require merchants to change their habits significantly. However, understanding its
                   unique features will help you leverage its full potential for your business.`}
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
-                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" asChild>
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
                     <Link href={"/introduction/protocol/overview"}>
                       Learn More <ChevronRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -165,7 +164,7 @@ export default function GettingStarted() {
                   programmable payment logic.
                 </div>
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
-                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" disabled>
+                  <Button variant="secondary" disabled className="w-full sm:w-fit">
                     Payments Guide Coming Soon
                   </Button>
                 </div>
@@ -185,7 +184,7 @@ export default function GettingStarted() {
                   proper financial management.
                 </div>
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
-                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" asChild>
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
                     <Link href={"https://en.bitcoin.it/wiki/Tax_compliance"} target="_blank">
                       Tax Resources <ExternalLink className="ml-2 h-4 w-4" />
                     </Link>
@@ -207,7 +206,7 @@ export default function GettingStarted() {
                   users worldwide.
                 </div>
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
-                  <Button variant="secondary" size={"lg"} className="w-fit ml-6" disabled>
+                  <Button variant="secondary" disabled className="w-full sm:w-fit">
                     Merchant Directory Coming Soon
                   </Button>
                 </div>

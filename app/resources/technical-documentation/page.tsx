@@ -27,7 +27,7 @@ export default function TechnicalDocumentationPage() {
               the network.
             </div>
             <div className="inline-flex w-full justify-end mt-8">
-              <Button asChild>
+              <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/introduction-to-parallax" target="_blank" rel="noopener">
                   More on Foundational Topics
                   <ExternalLink />
@@ -49,7 +49,7 @@ export default function TechnicalDocumentationPage() {
               you build, test, and scale dapps on Parallax.
             </div>
             <div className="inline-flex w-full justify-end mt-8">
-              <Button asChild>
+              <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link href="https://docs.parallaxchain.org/parallax-protocol/parallax-stack/introduction-stack" target="_blank" rel="noopener">
                   More on Parallax Stack
                   <ExternalLink />
@@ -73,7 +73,7 @@ export default function TechnicalDocumentationPage() {
               how information flows through Parallax.
             </div>
             <div className="inline-flex w-full justify-end mt-8">
-              <Button asChild>
+              <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link href="https://docs.parallaxchain.org/parallax-protocol/advanced/bridges" target="_blank" rel="noopener">
                   More on Advanced Topics
                   <ExternalLink />
@@ -96,7 +96,7 @@ export default function TechnicalDocumentationPage() {
               to operate a secure and reliable Parallax node.
             </div>
             <div className="inline-flex w-full justify-end mt-8">
-              <Button asChild>
+              <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link href="https://docs.parallaxchain.org/parallax-client/getting-started/introduction" target="_blank" rel="noopener">
                   More on Parallax Client
                   <ExternalLink />

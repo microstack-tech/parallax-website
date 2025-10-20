@@ -29,7 +29,7 @@ export default function BeginnerGuidesPage() {
               manage your laxes, and interact with the network directly.
             </div>
             <div className="inline-flex w-full justify-end mt-8">
-              <Button className="w-fit" asChild>
+              <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link
                   href="https://docs.parallaxchain.org/guides/client/introduction"
                   target="_blank"
@@ -59,7 +59,7 @@ export default function BeginnerGuidesPage() {
               and keeping your wallet safe.
             </div>
             <div className="inline-flex w-full justify-end mt-8">
-              <Button asChild>
+              <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link
                   href="https://docs.parallaxchain.org/guides/wallets"
                   target="_blank"
@@ -88,7 +88,7 @@ export default function BeginnerGuidesPage() {
               and join a mining pool to combine your hashpower with others for more consistent rewards.
             </div>
             <div className="inline-flex w-full justify-end mt-8">
-              <Button asChild>
+              <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link
                   href="https://docs.parallaxchain.org/guides/mining/introduction"
                   target="_blank"
