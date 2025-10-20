@@ -156,7 +156,7 @@ schedKeyAmt(height):
   const ParamsTable = () => (
     <Card>
       <CardHeader>
-        <ChevronRight className="size-6" strokeWidth={1.5} />
+        <ChevronRight strokeWidth={1.5} />
         <CardTitle>Monetary Parameters</CardTitle>
       </CardHeader>
       <CardContent>
@@ -191,7 +191,11 @@ schedKeyAmt(height):
             <TableRow>
               <TableCell>Lockbox address</TableCell>
               <TableCell>—</TableCell>
-              <TableCell>0x0000000000000000000000000000000000000042</TableCell>
+              <TableCell>
+                <span className="font-mono break-all text-xs">
+                  0x0000000000000000000000000000000000000042
+                </span>
+              </TableCell>
               <TableCell>State location for maturity records</TableCell>
             </TableRow>
           </TableBody>

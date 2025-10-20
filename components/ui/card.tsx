@@ -7,7 +7,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col rounded-2xl py-1",
+        "bg-card text-card-foreground flex flex-col rounded-2xl py-1 justify-between",
         className
       )}
       {...props}
@@ -25,9 +25,6 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
       )}
       {...props}
     />
-
-    //          <CardHeader className="inline-flex items-center w-full justify-start gap-4">
-
   )
 }
 

@@ -1,8 +1,11 @@
 "use client"
 
 import * as React from "react"
+import { Table as TTable, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
 
 import { cn } from "@/lib/utils"
+import { TableHTMLAttributes } from "react"
+import { TdProps } from "react-super-responsive-table/dist/esm/types"
 
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
@@ -10,7 +13,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
       data-slot="table-container"
       className="relative w-full overflow-x-auto"
     >
-      <table
+      <TTable
         data-slot="table"
         className={cn("w-full caption-bottom text-sm", className)}
         {...props}
@@ -21,7 +24,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
 
 function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   return (
-    <thead
+    <Thead
       data-slot="table-header"
       className={cn("[&_tr]:border-b", className)}
       {...props}
@@ -31,7 +34,7 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
 
 function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
   return (
-    <tbody
+    <Tbody
       data-slot="table-body"
       className={cn("[&_tr:last-child]:border-0", className)}
       {...props}
@@ -54,10 +57,10 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
 
 function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
   return (
-    <tr
+    <Tr
       data-slot="table-row"
       className={cn(
-        "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+        "data-[state=selected]:bg-muted border-b transition-colors",
         className
       )}
       {...props}
@@ -65,9 +68,9 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
   )
 }
 
-function TableHead({ className, ...props }: React.ComponentProps<"th">) {
+function TableHead({ className, ...props }: TableHTMLAttributes<HTMLTableCellElement>) {
   return (
-    <th
+    <Th
       data-slot="table-head"
       className={cn(
         "text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
@@ -78,9 +81,9 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
   )
 }
 
-function TableCell({ className, ...props }: React.ComponentProps<"td">) {
+function TableCell({ className, ...props }: TdProps & React.TdHTMLAttributes<HTMLTableCellElement>) {
   return (
-    <td
+    <Td
       data-slot="table-cell"
       className={cn(
         "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
