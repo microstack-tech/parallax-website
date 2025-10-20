@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronRight, UsersRound } from "lucide-react"
+import { ChevronRight, MessageCircleMore, UsersRound } from "lucide-react"
 import Link from "next/link"
-import { FaGithub } from "react-icons/fa"
+import { FaBitcoin, FaGithub } from "react-icons/fa"
 
 export function Community() {
   return (
@@ -15,36 +15,53 @@ export function Community() {
         <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2">
           <Card>
             <CardHeader>
-              <div className="flex items-center gap-4">
-                <FaGithub className="size-6" strokeWidth={1.5} />
-                <CardTitle>Open Source</CardTitle>
-              </div>
+              <FaGithub className="size-6" strokeWidth={1.5} />
+              <CardTitle>Open Source</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-base text-muted-foreground">
+            <CardContent>
               {`All code is open source and available on GitHub. Contribute to the protocol's development and help shape the future of Parallax.`}
+              <div className="inline-flex w-full justify-end mt-8">
+                <Button variant={"secondary"} asChild>
+                  <Link href={"https://parallaxchain.org/introduction/whitepaper"}>
+                    <FaGithub strokeWidth={1.5} />
+                    GitHub
+                  </Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <div className="flex items-center gap-4">
-                <UsersRound className="size-6" strokeWidth={1.5} />
-                <CardTitle>Community Driven</CardTitle>
-              </div>
+              <UsersRound className="size-6" strokeWidth={1.5} />
+              <CardTitle>Community Driven</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-base text-muted-foreground">
-              {`Decisions are made collectively by the community. No single entity controls the direction of the protocol.`}
+            <CardContent>
+              <p>
+                Parallax is guided by a truly decentralized community. No single entity
+                can dictate its future—every voice matters. Join the conversation and
+                help shape the protocol in our official BitcoinTalk thread.
+              </p>
+              <div className="inline-flex w-full justify-end mt-8">
+                <Button variant="secondary" asChild>
+                  <Link href="https://bitcointalk.org/index.php?topic=5560698" target="_blank">
+                    <FaBitcoin strokeWidth={1.5} />
+                    BitcoinTalk
+                  </Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
         <div className="flex flex-row mt-8 justify-center mx-auto">
           <Card className="sm:max-w-1/2">
             <CardHeader>
+              <MessageCircleMore strokeWidth={1.5} />
               <CardTitle className="text-center">Join Our Community</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col gap-8 space-y-3 text-base text-muted-foreground">
+            <CardContent>
               {`Connect with users, developers, miners and pool operators. Get support, share ideas, and stay updated on the latest developments.`}
-              <div className="inline-flex w-full justify-end">
+              <div className="inline-flex w-full justify-end mt-8">
                 <Button asChild>
                   <Link href={"/resources/community"}>
                     Explore Communities

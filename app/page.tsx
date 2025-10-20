@@ -5,7 +5,6 @@ import { Documentation } from "@/components/documentation";
 import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Technologies } from "@/components/technologies";
-import { Tokenomics } from "@/components/tokenomics";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
         <Hero />
         <Features />
         <Technologies />
-        <Tokenomics />
         <Client />
         <Documentation />
         <Community />

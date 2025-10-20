@@ -216,37 +216,6 @@ export default function GettingStarted() {
           </div>
         )}
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-center w-full">Download the Parallax Client</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-base text-center">
-              The Parallax Client is available for Linux, Windows, and macOS. Download the latest release below or visit our GitHub for source code and instructions.
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button asChild>
-                <Link href="https://github.com/microstack-tech/parallax/releases/latest" target="_blank" rel="noopener">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Latest Release
-                </Link>
-              </Button>
-              <Button variant={"secondary"} asChild>
-                <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
-                  Setup guide
-                  <ExternalLink />
-                </Link>
-              </Button>
-              <Button variant={"secondary"} asChild>
-                <Link href="https://github.com/microstack-tech/parallax" target="_blank" rel="noopener">
-                  <FaGithub />
-                  View on GitHub
-                </Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
         <Card className="mt-8">
           <CardHeader>
             <CardTitle className="text-center w-full">Ready to Start?</CardTitle>

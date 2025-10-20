@@ -68,7 +68,7 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn("flex flex-col justify-between px-6 py-6 border h-full text-muted-foreground bg-background mx-1 rounded-xl shadow-2xs leading-relaxed", className)}
+      className={cn("flex flex-col justify-between px-6 py-6 h-full text-muted-foreground bg-background mx-1 rounded-xl shadow-xs leading-relaxed inset-shadow-2xs inset-shadow-white/20 border", className)}
       {...props}
     />
   )

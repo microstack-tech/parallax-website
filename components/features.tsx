@@ -1,6 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Cpu, Lock, Shield } from "lucide-react"
+import { Bolt, BookOpenText, ChevronRight, Cpu, HandCoins, Lock, Shield } from "lucide-react"
 import { Separator } from "./ui/separator"
+import { Button } from "./ui/button"
+import Link from "next/link"
 
 const features = [
   {
@@ -81,6 +83,100 @@ export function Features() {
             </Card>
           ))}
         </div>
+
+        <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2">
+          <Card className="border-border">
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <HandCoins strokeWidth={1.5} className="size-6" />
+                <CardTitle>Emission Schedule</CardTitle>
+              </div>
+            </CardHeader>
+            <CardDescription>
+              {`Block rewards follow Bitcoin's exact halving pattern`}
+            </CardDescription>
+            <CardContent className="space-y-2">
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm text-muted-foreground">Initial Block Reward</span>
+                <span>50 coins</span>
+              </div>
+              <Separator />
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm text-muted-foreground">Halving Interval</span>
+                <span>210,000 blocks (~4 years)</span>
+              </div>
+              <Separator />
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm text-muted-foreground">Maximum Supply</span>
+                <span>21,000,000 coins</span>
+              </div>
+              <Separator />
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm text-muted-foreground">Premine</span>
+                <span>0 coins</span>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <Bolt strokeWidth={1.5} className="size-6" />
+              <CardTitle>Network Parameters</CardTitle>
+            </CardHeader>
+            <CardDescription>
+              Core protocol settings optimized for decentralization
+            </CardDescription>
+            <CardContent className="space-y-2">
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm text-muted-foreground">Consensus Mechanism</span>
+                <span>Proof of Work</span>
+              </div>
+              <Separator />
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm text-muted-foreground">Block Interval</span>
+                <span>10 minutes</span>
+              </div>
+              <Separator />
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm text-muted-foreground">Difficulty Adjustment</span>
+                <span>2016 blocks</span>
+              </div>
+              <Separator />
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm text-muted-foreground">Coinbase Maturity</span>
+                <span>100 blocks</span>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card className="mt-8">
+          <CardHeader>
+            <BookOpenText strokeWidth={1.5} />
+            <CardTitle>Whitepaper</CardTitle>
+          </CardHeader>
+          <CardDescription>
+            Parallax: A New Perspective on Programmable Cash
+          </CardDescription>
+          <CardContent>
+            <h2 className="border-b pb-2 text-lg w-full font-semibold first:mt-0">
+              Abstract
+            </h2>
+            <p className="leading-7 [&:not(:first-child)]:mt-2 text-sm">
+              Parallax is a timechain protocol that unites Bitcoin’s immutability and monetary discipline with Ethereum’s programmability. Operating under Bitcoin’s fixed rules — Proof of Work, ten-minute blocks, halving cycles, and a capped 21 million supply — Parallax extends these foundations with the Ethereum Virtual Machine. By adopting XHash mining — a modified Ethash variant designed to obsolete existing ASICs — and rejecting premine or privileged allocations, it launches as a fair and neutral experiment in programmable cash: scarce, decentralized, and permissionless.
+            </p>
+            <div className="inline-flex w-full justify-end mt-8">
+              <Button variant={"secondary"} asChild>
+                <Link href={"https://parallaxchain.org/introduction/whitepaper"}>
+                  <div className="flex flex-row items-center w-full justify-between">
+                    <div>Read Whitepaper</div>
+                    <ChevronRight className="size-6" strokeWidth={1.5} />
+                  </div>
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   )

@@ -11,6 +11,7 @@ const features = [
       "Parallax employs elliptic curve digital signatures (ECDSA over secp256k1) to authenticate transactions and enforce ownership at the protocol level.",
       "Each signature provides non-repudiation and cryptographic assurance that only the holder of the private key corresponding to a public address can authorize state transitions.",
     ],
+    url: "/introduction/protocol/architecture#digital-signatures",
   },
   {
     icon: Cpu,
@@ -19,6 +20,7 @@ const features = [
       "Parallax integrates a fully deterministic Virtual Machine (PVM) execution layer for state transitions and contract computation.",
       "It inherits the Ethereum execution semantics — gas accounting, opcode compatibility, and Merkle Patricia Trie state management — while operating under Bitcoin-like monetary constraints.",
     ],
+    url: "/introduction/protocol/architecture#pvm",
   },
   {
     icon: Layers,
@@ -27,6 +29,7 @@ const features = [
       "Parallax functions as a decentralized timestamp server, where each block commits to the hash of its predecessor — forming an immutable chain of cryptographically verifiable time events.",
       "Proof-of-Work transforms time itself into a scarce computational resource, preventing backdating and enforcing an objective ordering of events without trusted authorities.",
     ],
+    url: "/introduction/protocol/architecture#timestamp-server",
   },
   {
     icon: BrainCircuit,
@@ -35,6 +38,7 @@ const features = [
       "Parallax adheres to the Nakamoto consensus model, where the heaviest valid chain — defined by cumulative proof-of-work — determines canonical state.",
       "Consensus emerges organically through probabilistic finality: each block built atop another increases the cost of reversal exponentially with depth.",
     ],
+    url: "/introduction/protocol/architecture#nakamoto-consensus",
   }
 ]
 
@@ -64,19 +68,17 @@ export function Technologies() {
                   <p>{feature.description[0]}</p>
                   <p>{feature.description[1]}</p>
                 </div>
+                <div className="inline-flex w-full justify-end mt-8">
+                  <Button variant={"secondary"} asChild>
+                    <Link href={feature.url}>
+                      Learn more
+                      <ChevronRight />
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
-        </div>
-        <div className="flex flex-row justify-center mt-24">
-          <Button size={"xl"} className="w-full max-w-[24rem] px-6" asChild>
-            <Link href={"/introduction/protocol/overview"}>
-              <div className="flex flex-row items-center w-full justify-between">
-                <div>Learn more</div>
-                <ChevronRight className="size-6" strokeWidth={1.5} />
-              </div>
-            </Link>
-          </Button>
         </div>
       </div>
     </section>
