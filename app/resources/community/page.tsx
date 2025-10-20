@@ -103,7 +103,7 @@ export default function CommunityPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {oficialChannels.map((ch) => (
-            <Button key={ch.name} variant={"secondary"} size={"2xl"} asChild>
+            <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
               <Link href={ch.href} target="_blank" rel="noopener" className="block">
                 <ch.icon className="size-6 mr-4" />
                 {ch.name}
@@ -119,7 +119,7 @@ export default function CommunityPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {communityChannels.map((ch) => (
-            <Button key={ch.name} variant={"secondary"} size={"2xl"} asChild>
+            <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
               <Link href={ch.href} target="_blank" rel="noopener" className="block">
                 <ch.icon className="size-6 mr-4" />
                 {ch.name}
