@@ -61,7 +61,7 @@ export default function TechnicalDocumentationPage() {
 
         <Card>
           <CardHeader>
-            <Layers className="size-8" strokeWidth={1.5} />
+            <Layers strokeWidth={1.5} />
             <CardTitle>Advanced</CardTitle>
           </CardHeader>
           <CardContent>
@@ -85,7 +85,7 @@ export default function TechnicalDocumentationPage() {
 
         <Card>
           <CardHeader>
-            <Server className="size-8" strokeWidth={1.5} />
+            <Server strokeWidth={1.5} />
             <CardTitle>Parallax Client</CardTitle>
           </CardHeader>
           <CardContent>
