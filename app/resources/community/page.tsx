@@ -83,7 +83,7 @@ const communityChannels = [
   },
   {
     name: "Discord",
-    href: "https://discord.gg/QYgSxzqh",
+    href: "https://discord.gg/85SvRxWEja",
     description: "Engage with our Discord channel.",
     icon: FaDiscord,
   },
