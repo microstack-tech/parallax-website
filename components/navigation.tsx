@@ -52,6 +52,9 @@ const navItems: NavItem[] = [
       { name: "###" },
       { name: "Block Explorer", href: "https://explorer.parallaxchain.org" },
       { name: "Faucet", href: "#" },
+      { name: "###" },
+      { name: "Mining Pools", href: "/mining-pools" },
+      { name: "Exchanges", href: "/exchanges" },
     ],
   },
   {
@@ -151,13 +154,13 @@ export function Navigation() {
                   <NavigationMenuItem key={`desk_${item.name}`}>
                     <NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
                     <NavigationMenuContent className="min-w-[15rem]">
-                      {item.subItems.map((sub) => {
+                      {item.subItems.map((sub, i) => {
 
                         if (sub.name === "###") {
                           return (
                             <Separator
                               className="bg-muted-foreground/15 my-1.5"
-                              key={`desk_sub_${item.name}_${sub.name}`}
+                              key={`desk_sub_${i}`}
                             />
                           )
                         }
@@ -236,13 +239,13 @@ export function Navigation() {
                           {item.name}
                         </div>
                         <div className="flex pl-4 flex-col">
-                          {item.subItems.map((sub) => {
+                          {item.subItems.map((sub, i) => {
 
                             if (sub.name === "###") {
                               return (
                                 <Separator
                                   className="bg-muted-foreground/15 my-1.5 ml-2"
-                                  key={`desk_sub_${item.name}_${sub.name}`}
+                                  key={`desk_sub_${i}`}
                                 />
                               )
                             }
