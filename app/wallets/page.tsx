@@ -113,12 +113,7 @@ export default function Page() {
                 </label>
                 <div className="flex flex-col gap-2 text-right">
                   <label className="text-muted-foreground">
-                    Public Parallax RPC URL; OR
-                  </label>
-                  <label className="text-muted-foreground">
-                    http://127.0.0.1:8545
-                    <br />
-                    (if running local Parallax client)
+                    https://rpc.parallaxchain.org
                   </label>
                 </div>
               </div>
