@@ -43,5 +43,12 @@ export const pools: Pool[] = [
     capabilities: ['PPLNS', 'SOLO'],
     protocols: ['stratum1+tcp'],
   },
+  {
+    name: "K1Pool",
+    url: "https://k1pool.com/pool/lax",
+    location: ['north-america', 'europe', 'asia'],
+    capabilities: ['PPLNS', 'SOLO'],
+    protocols: ['stratum1+tcp'],
+  },
 ]
 
