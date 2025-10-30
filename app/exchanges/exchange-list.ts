@@ -23,5 +23,10 @@ export const exchanges: Exchange[] = [
     url: "https://rabid-rabbit.org/",
     location: ['international'],
   },
+  {
+    name: "BITGoGet",
+    url: "https://bitgoget.com",
+    location: ['asia', 'international'],
+  },
 ]
 
