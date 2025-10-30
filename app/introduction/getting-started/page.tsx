@@ -100,8 +100,11 @@ export default function GettingStarted() {
                       Mining <ExternalLink className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Button variant="secondary" disabled className="w-full sm:w-fit">
-                    Exchanges List Coming Soon
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
+                    <Link href={"/exchanges"}>
+                      Exchanges
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
               </CardContent>
