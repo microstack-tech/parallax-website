@@ -20,12 +20,12 @@ export const continents: Continents = [
 export const exchanges: Exchange[] = [
   {
     name: "Rabid Rabbit",
-    url: "https://rabid-rabbit.org/",
+    url: "https://rabid-rabbit.org/account/trade/LAX-USDT",
     location: ['international'],
   },
   {
     name: "BITGoGet",
-    url: "https://bitgoget.com",
+    url: "https://bitgoget.com/crypto/detail/lax",
     location: ['asia', 'international'],
   },
 ]
