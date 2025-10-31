@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useState } from "react"
 import { Continent, continents, Pool, pools } from "./pool-list"
+import { cn } from "@/lib/utils"
 
 const PoolsCmp = ({ pool }: { pool: Pool }) => {
   return (
@@ -58,12 +59,14 @@ export default function MiningPoolsPage() {
                   onClick={() => setActiveCategory('all')}
                   variant={'ghost'}
                   className={`flex flex-row w-full text-base py-5 cursor-pointer justify-between text-left ${activeCategory === 'all'
-                    ? "bg-primary text-primary-foreground font-semibold"
+                    ? "bg-primary text-primary-foreground font-semibold hover:bg-primary hover:text-white"
                     : ""
                     }`}
                 >
                   All
-                  <Badge variant={'outline'}>
+                  <Badge variant={'outline'} className={cn("text-foreground", {
+                    "text-background border-background/25": activeCategory === 'all'
+                  })}>
                     {pools.length}
                   </Badge>
                 </Button>
@@ -72,13 +75,14 @@ export default function MiningPoolsPage() {
                     key={continent.id}
                     onClick={() => setActiveCategory(continent.id)}
                     variant={'ghost'}
-                    className={`flex flex-row w-full text-base py-5 cursor-pointer justify-between text-left ${activeCategory === continent.id
-                      ? "bg-primary text-primary-foreground font-semibold"
-                      : ""
-                      }`}
+                    className={cn(`flex flex-row w-full text-base py-5 cursor-pointer justify-between text-left`, {
+                      "bg-primary text-primary-foreground font-semibold hover:bg-primary hover:text-white": activeCategory === continent.id
+                    })}
                   >
                     {continent.name}
-                    <Badge variant={'outline'}>
+                    <Badge variant={'outline'} className={cn("text-foreground", {
+                      "text-background border-background/25": activeCategory === continent.id
+                    })}>
                       {pools.filter(p => p.location.find(c => c === continent.id)).length}
                     </Badge>
                   </Button>

@@ -124,7 +124,7 @@ export default function FAQPage() {
                     onClick={() => setActiveCategory(category.id)}
                     variant={'ghost'}
                     className={`w-full text-base py-5 cursor-pointer justify-start text-left ${activeCategory === category.id
-                      ? "bg-primary text-primary-foreground font-semibold"
+                      ? "bg-primary text-primary-foreground font-semibold hover:bg-primary hover:text-white"
                       : ""
                       }`}
                   >

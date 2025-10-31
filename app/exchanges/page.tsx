@@ -9,6 +9,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Continent, continents, Exchange, exchanges } from "./exchange-list"
 import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
 
 const ExchangeCmp = ({ exchange }: { exchange: Exchange }) => {
   return (
@@ -62,12 +63,14 @@ export default function ExchangePage() {
                     onClick={() => setActiveCategory(continent.id)}
                     variant={'ghost'}
                     className={`flex flex-row w-full text-base py-5 cursor-pointer justify-between text-left ${activeCategory === continent.id
-                      ? "bg-primary text-primary-foreground font-semibold"
+                      ? "bg-primary text-primary-foreground font-semibold hover:bg-primary hover:text-white"
                       : ""
                       }`}
                   >
                     {continent.name}
-                    <Badge variant={'outline'}>
+                    <Badge variant={'outline'} className={cn("text-foreground", {
+                      "text-background border-background/25": activeCategory === continent.id
+                    })}>
                       {exchanges.filter(e => e.location.find(c => c === continent.id)).length}
                     </Badge>
                   </Button>
