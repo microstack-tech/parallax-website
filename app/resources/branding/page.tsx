@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const logos = [
   {
-    name: "Parallax Logo (no bg)",
+    name: "Parallax Logo",
     files: [
       { type: "SVG", path: "/parallax_logo_color.svg" },
       { type: "PNG", path: "/parallax_logo_color.svg", png: true },
@@ -16,7 +16,7 @@ const logos = [
     preview: "/parallax_logo_color.svg"
   },
   {
-    name: "Parallax Logo (light bg)",
+    name: "Parallax Logo",
     files: [
       { type: "SVG", path: "/parallax_logo_color_dark.svg" },
       { type: "PNG", path: "/parallax_logo_color_dark.svg", png: true },
@@ -24,12 +24,12 @@ const logos = [
     preview: "/parallax_logo_color_dark.svg"
   },
   {
-    name: "Parallax Logo (dark bg)",
+    name: "Parallax Logo",
     files: [
-      { type: "SVG", path: "/parallax_logo_color_light.svg" },
-      { type: "PNG", path: "/parallax_logo_color_light.svg", png: true },
+      { type: "SVG", path: "/parallax_logo_color_blue.svg" },
+      { type: "PNG", path: "/parallax_logo_color_blue.svg", png: true },
     ],
-    preview: "/parallax_logo_color_light.svg"
+    preview: "/parallax_logo_color_blue.svg"
   },
 ]
 
@@ -47,8 +47,8 @@ export default function BrandingPage() {
       />
       <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 xl:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {logos.map((logo) => (
-            <Card key={logo.name}>
+          {logos.map((logo, i) => (
+            <Card key={`${logo.name}_${i}`}>
               <CardHeader>
                 <CardTitle>{logo.name}</CardTitle>
               </CardHeader>
