@@ -26,7 +26,7 @@ export const pools: Pool[] = [
     name: "COOLPOOL.Top",
     url: "https://coolpool.top/pool/prlx",
     location: ['north-america', 'europe', 'asia'],
-    capabilities: ['PPLNS', 'SOLO'],
+    capabilities: ['PPLNS'],
     protocols: ['stratum1+tcp'],
   },
   {
@@ -47,7 +47,14 @@ export const pools: Pool[] = [
     name: "K1Pool",
     url: "https://k1pool.com/pool/lax",
     location: ['north-america', 'europe', 'asia'],
-    capabilities: ['PPLNS', 'SOLO'],
+    capabilities: ['PPLNS'],
+    protocols: ['stratum1+tcp'],
+  },
+  {
+    name: "GTPool",
+    url: "https://gtpool.io/",
+    location: ['north-america', 'europe', 'asia'],
+    capabilities: ['PPLNS'],
     protocols: ['stratum1+tcp'],
   },
 ]
