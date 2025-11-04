@@ -28,5 +28,10 @@ export const exchanges: Exchange[] = [
     url: "https://bitgoget.com/crypto/detail/lax",
     location: ['asia', 'international'],
   },
+  {
+    name: "Exbitron",
+    url: "https://app.exbitron.com/exchange/?market=LAX-USDT",
+    location: ['international'],
+  },
 ]
 
