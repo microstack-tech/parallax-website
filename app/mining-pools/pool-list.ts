@@ -57,5 +57,12 @@ export const pools: Pool[] = [
     capabilities: ['PPLNS'],
     protocols: ['stratum1+tcp'],
   },
+  {
+    name: "BlazeMiners",
+    url: "https://blazeminers.com/pools/lax1",
+    location: ['north-america'],
+    capabilities: ['PPLNS'],
+    protocols: ['stratum1+tcp'],
+  },
 ]
 
