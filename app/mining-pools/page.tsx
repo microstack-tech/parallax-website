@@ -24,13 +24,6 @@ const PoolsCmp = ({ pool }: { pool: Pool }) => {
               </div>
             ))}
           </Badge>
-          <Badge variant={'secondary'} className="font-semibold">
-            {pool.protocols.map((p, i) => (
-              <div key={`${pool.name}_${p}`}>
-                {p.concat(pool.protocols.length - 1 === i ? '' : ' | ')}
-              </div>
-            ))}
-          </Badge>
         </div>
       </div>
     </Link >
