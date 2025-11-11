@@ -33,5 +33,10 @@ export const exchanges: Exchange[] = [
     url: "https://app.exbitron.com/exchange/?market=LAX-USDT",
     location: ['international'],
   },
+  {
+    name: "SafeTrade",
+    url: "https://safetrade.com/exchange/LAX-USDT",
+    location: ['international'],
+  },
 ]
 
