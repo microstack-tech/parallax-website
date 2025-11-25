@@ -11,7 +11,7 @@ export async function GET() {
     const payload = {
       jsonrpc: "2.0",
       id: 1,
-      method: "eth_getTotalSupply",
+      method: "eth_getCirculatingSupply",
       params: []
     };
 
@@ -80,3 +80,4 @@ export async function GET() {
     );
   }
 }
+
