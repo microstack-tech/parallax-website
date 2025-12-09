@@ -22,7 +22,7 @@ export function Community() {
               {`All code is open source and available on GitHub. Contribute to the protocol's development and help shape the future of Parallax.`}
               <div className="inline-flex w-full justify-end mt-8">
                 <Button variant="secondary" asChild className="w-full sm:w-fit">
-                  <Link href={"https://github.com/microstack-tech"}>
+                  <Link href={"https://github.com/parallax-blockchain"}>
                     <FaGithub />
                     GitHub
                   </Link>

@@ -14,7 +14,7 @@ export default function WhitepaperPage() {
         <div className="container mx-auto px-6 sm:px-8">
           <div className="flex flex-row justify-end max-w-7xl w-full pb-8 mx-auto">
             <Button variant={'outline'} asChild>
-              <Link href={"https://github.com/microstack-tech/parallax-whitepaper"} target="_blank">
+              <Link href={"https://github.com/parallax-blockchain/parallax-whitepaper"} target="_blank">
                 <FaGithub />
                 View on Github
               </Link>

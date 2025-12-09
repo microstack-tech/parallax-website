@@ -62,7 +62,7 @@ const oficialChannels = [
   },
   {
     name: "GitHub",
-    href: "https://github.com/microstack-tech",
+    href: "https://github.com/parallax-blockchain",
     description: "Code, issues, and development.",
     icon: FaGithub,
   },

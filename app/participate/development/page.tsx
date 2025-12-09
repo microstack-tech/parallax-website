@@ -43,7 +43,7 @@ export default function DevelopersPage() {
       />
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mx-auto mb-16 px-6">
         <Button variant={"secondary"} className="w-full sm:w-fit" size={'xl'} asChild>
-          <Link href={"https://github.com/microstack-tech"} target="_blank">
+          <Link href={"https://github.com/parallax-blockchain"} target="_blank">
             <FaGithub />
             Explore our GitHub
           </Link>
