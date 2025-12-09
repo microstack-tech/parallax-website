@@ -19,16 +19,6 @@ export const continents: Continents = [
 
 export const exchanges: Exchange[] = [
   {
-    name: "Rabid Rabbit",
-    url: "https://rabid-rabbit.org/account/trade/LAX-USDT",
-    location: ['international'],
-  },
-  {
-    name: "BITGoGet",
-    url: "https://bitgoget.com/crypto/detail/lax",
-    location: ['asia', 'international'],
-  },
-  {
     name: "Exbitron",
     url: "https://app.exbitron.com/exchange/?market=LAX-USDT",
     location: ['international'],
@@ -36,6 +26,11 @@ export const exchanges: Exchange[] = [
   {
     name: "SafeTrade",
     url: "https://safetrade.com/exchange/LAX-USDT",
+    location: ['international'],
+  },
+  {
+    name: "NonKYC",
+    url: "https://nonkyc.io/market/LAX_USDT",
     location: ['international'],
   },
 ]
