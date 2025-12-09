@@ -42,7 +42,7 @@ export default function Sub() {
             <Link href="https://x.com/prlxchain" target="_blank" className="text-muted-foreground hover:text-blue-400 transition-colors">
               <FaXTwitter className="h-6 w-6" />
             </Link>
-            <Link href="https://github.com/parallax-blockchain" target="_blank" className="text-muted-foreground hover:text-blue-400 transition-colors">
+            <Link href="https://github.com/ParallaxProtocol" target="_blank" className="text-muted-foreground hover:text-blue-400 transition-colors">
               <FaGithub className="h-6 w-6" />
             </Link>
           </div>

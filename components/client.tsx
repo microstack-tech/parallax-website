@@ -85,7 +85,7 @@ export default function Client() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <Button variant="default" asChild>
-                  <Link href="https://github.com/parallax-blockchain/parallax/releases/latest" target="_blank" rel="noopener">
+                  <Link href="https://github.com/ParallaxProtocol/parallax/releases/latest" target="_blank" rel="noopener">
                     <Download className="h-5 w-5" />
                     Download
                   </Link>
@@ -98,7 +98,7 @@ export default function Client() {
                   </Link>
                 </Button>
                 <Button variant="secondary" asChild>
-                  <Link href="https://github.com/parallax-blockchain/parallax" target="_blank" rel="noopener">
+                  <Link href="https://github.com/ParallaxProtocol/parallax" target="_blank" rel="noopener">
                     <FaGithub />
                     View on GitHub
                   </Link>

@@ -76,7 +76,7 @@ export function Hero() {
               </Link>
             </Button>
             <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
-              <Link href={"https://github.com/parallax-blockchain"}>
+              <Link href={"https://github.com/ParallaxProtocol"}>
                 <div>
                   <FaGithub className="size-6" />
                 </div>
