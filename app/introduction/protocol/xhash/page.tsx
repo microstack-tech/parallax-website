@@ -19,11 +19,11 @@ export default function Page() {
         icon: Hash,
         title: "Overview",
         tagline:
-          "XHash is Parallax’s Proof‑of‑Work engine: Ethash‑style Hashimoto (light/full) with Parallax‑specific consensus wiring, difficulty mapping, and epoch handling.",
+          "XHash is Parallax’s Proof-of-Work engine: Ethash-style Hashimoto (light/full) with Parallax-specific consensus wiring, ASERT-based difficulty mapping, and epoch handling.",
         bullets: [
-          "Mining evaluates Hashimoto over a header seal hash and 64‑bit nonce, using either a cache (light) or dataset (full).",
+          "Mining evaluates Hashimoto over a header seal hash and 64-bit nonce, using either a cache (light) or dataset (full).",
           "Verification checks MixDigest equality and compares the result to a target derived from difficulty: target = ⌊(2^256−1)/D⌋.",
-          "Seal hash uses Legacy Keccak‑256 over an RLP list of specific header fields.",
+          "Seal hash uses Legacy Keccak-256 over an RLP list of specific header fields.",
         ],
         codeTitle: "SealHash",
         code: `SealHash(header):
@@ -51,12 +51,12 @@ export default function Page() {
         id: "mining-loop",
         icon: Cpu,
         title: "Mining Loop",
-        tagline: "Hashimoto‑light/full with 64‑bit nonce search and little‑endian target compare in the inner loop.",
+        tagline: "Hashimoto-light/full with 64-bit nonce search and little-endian target compare in the inner loop.",
         bullets: [
           "Miners iterate nonce ∈ [0..2^64−1], computing (digest, result) = hashimoto(cache/dataset, sealHash, nonce).",
           "MixDigest must match the header field exactly; result must be ≤ target.",
-          "Full miners use the per‑epoch dataset; light verifiers/nodes can validate with caches (no full DAG).",
-          "Dataset/cache regenerate on epoch boundaries (e.g., every 720 blocks)",
+          "Full miners use the per-epoch dataset; light verifiers/nodes can validate with caches (no full DAG).",
+          "Dataset/cache regenerate on epoch boundaries (e.g., every 720 blocks).",
         ],
         codeTitle: "Nonce search (pseudocode)",
         code: `mine(header, cacheOrDataset):
@@ -77,8 +77,7 @@ export default function Page() {
         bullets: [
           "Size of Extra ≤ MaximumExtraDataSize.",
           "Time ≤ now + 300s and Time > MTP(parent) (median of last 11).",
-          "EpochStartTime invariants: set on retarget boundary; otherwise equal to parent’s EpochStartTime.",
-          "Exact difficulty match: CalcNakamotoDifficulty(config, parent).",
+          "Difficulty must match the consensus difficulty engine (ASERT) for the given parent and header.",
           "PoW seal: MixDigest equality and XHash(header) ≤ target(two256m1 / D).",
         ],
         codeTitle: "verifySeal (conceptual)",
@@ -100,7 +99,7 @@ export default function Page() {
         tagline: "Regeneration cadence and miner compatibility notes.",
         bullets: [
           "Epoch number is derived from block height; cache/dataset sizes depend on epoch via datasetSize(height).",
-          "Parallax uses shorter epochs than legacy Ethash (e.g., 720‑block epochs) to fit ~5‑day regeneration at 10‑minute blocks.",
+          "Parallax uses shorter epochs than legacy Ethash (e.g., 720-block epochs) to fit ~5-day regeneration at 10-minute blocks.",
           "Nodes keep caches to make verification light; full DAG not required to validate headers.",
         ],
         codeTitle: "Regeneration trigger",
@@ -112,19 +111,18 @@ export default function Page() {
       {
         id: "retarget-anchors",
         icon: TimerReset,
-        title: "Difficulty & Epoch Anchors",
-        tagline: "Interaction between PoW and the difficulty schedule.",
+        title: "Difficulty & Anchors",
+        tagline: "Interaction between PoW and the ASERT difficulty schedule.",
         bullets: [
-          "Retarget every 2016 blocks.",
-          "On a boundary: header.EpochStartTime = header.Time; otherwise, propagate parent’s value.",
-          "CalcNakamotoDifficulty(config, parent) derives the next difficulty; PoW simply enforces it via the target check.",
-          "These rules are enforced in header verification before fork‑choice.",
+          "Difficulty is computed by the ASERT scheduler; XHash simply enforces the chosen difficulty via the target check.",
+          "Consensus maintains an ASERT anchor (height, parentTime, target) and uses header metadata (e.g., EpochStartTime or dedicated fields) to reconstruct the anchor context.",
+          "CalcAsertDifficulty(config, anchor, parent, header) derives the expected difficulty for the header.",
+          "Difficulty and anchor invariants are enforced in header verification before fork-choice.",
         ],
-        codeTitle: "Anchor invariants",
-        code: `if height % R == 0:
-  require(h.EpochStartTime == h.Time)
-else:
-  require(h.EpochStartTime == parent.EpochStartTime)
+        codeTitle: "Difficulty invariants (conceptual)",
+        code: `verifyDifficulty(h, parent, anchor):
+  expected = CalcAsertDifficulty(config, anchor, parent, h)
+  require(h.Difficulty == expected)
 `,
       },
     ],
@@ -135,7 +133,7 @@ else:
     <Card>
       <CardHeader>
         <ChevronRight />
-        <CardTitle>Consensus‑Relevant Details</CardTitle>
+        <CardTitle>Consensus-Relevant Details</CardTitle>
       </CardHeader>
       <CardDescription>
         As reflected by <code>xhash/consensus.go</code> and Parallax chain config.
@@ -152,7 +150,7 @@ else:
           <TableBody>
             <TableRow>
               <TableCell>Hash function (seal)</TableCell>
-              <TableCell>Legacy Keccak‑256</TableCell>
+              <TableCell>Legacy Keccak-256</TableCell>
               <TableCell>RLP over specific header fields</TableCell>
             </TableRow>
             <TableRow>
@@ -168,17 +166,17 @@ else:
             <TableRow>
               <TableCell>MTP</TableCell>
               <TableCell>Median of last 11</TableCell>
-              <TableCell>Enforced: Time &gt; MTP(parent); Future drift ≤ 300s</TableCell>
+              <TableCell>Enforced: Time &gt; MTP(parent); future drift ≤ 300s</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Epoch length</TableCell>
-              <TableCell>Config‑defined (e.g., 720 blocks)</TableCell>
+              <TableCell>Config-defined (e.g., 720 blocks)</TableCell>
               <TableCell>Determines cache/DAG regeneration cadence</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Retarget interval</TableCell>
-              <TableCell>2016 blocks</TableCell>
-              <TableCell>Bitcoin-like retarget interval</TableCell>
+              <TableCell>Difficulty algorithm</TableCell>
+              <TableCell>ASERT (per-block, anchor-based)</TableCell>
+              <TableCell>aserti3-2d; consensus computes D, XHash enforces it via PoW</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -197,7 +195,7 @@ else:
       >
         <PageHeader
           title="XHash"
-          subTitle="The memory‑hard Proof‑of‑Work used by Parallax. Ethash‑style Hashimoto with Parallax’s consensus rules, difficulty mapping, and epoch handling."
+          subTitle="The memory-hard Proof-of-Work used by Parallax. Ethash-style Hashimoto with Parallax’s ASERT-based difficulty, consensus rules, and epoch handling."
         />
 
         <nav className="flex flex-wrap justify-center items-center gap-2 text-sm">
@@ -251,7 +249,9 @@ else:
                       <ChevronRight className="h-3.5 w-3.5" />
                       <span className="font-medium">{s.codeTitle}</span>
                     </div>
-                    <Badge variant="outline" className="rounded-full">pseudocode</Badge>
+                    <Badge variant="outline" className="rounded-full">
+                      pseudocode
+                    </Badge>
                   </div>
 
                   {/* scrollable code without forcing container width */}
@@ -276,7 +276,10 @@ else:
           </Link>
         </Button>
         <Button asChild className="w-full sm:w-fit">
-          <Link href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/consensus/algorithms/xhash" target="_blank">
+          <Link
+            href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/consensus/algorithms/xhash"
+            target="_blank"
+          >
             XHash Specification
             <ExternalLink />
           </Link>

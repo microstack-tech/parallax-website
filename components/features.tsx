@@ -11,16 +11,6 @@ const features = [
     description: [
       "Ossified monetary policy resistant to governance capture and discretionary changes.",
     ],
-    sub: (
-      <>
-        <label className="font-semibold underline">Immutable Monetary Rules:</label>
-        <ul className="list-disc pl-3">
-          <li>Maximum supply of 21M coins</li>
-          <li>Emission of 50 coins per block</li>
-          <li>Halves every 210,000 blocks</li>
-        </ul>
-      </>
-    )
   },
   {
     icon: Cpu,
@@ -28,34 +18,14 @@ const features = [
     description: [
       "Deploy Ethereum smart contracts with existing tools like Hardhat and Foundry.",
     ],
-    sub: (
-      <>
-        <label className="font-semibold underline">Ethereum Ecosystem Unlocked:</label>
-        <ul className="list-disc pl-3">
-          <li>Compatible with existing Ethereum smart contracts</li>
-          <li>Web3 wallets</li>
-          <li>Web3 tooling</li>
-        </ul>
-      </>
-    )
   },
   {
     icon: Shield,
     title: "Proof of Work",
     description: [
       "XHash mining ensures decentralization and accessibility via commodity CPUs & GPUs.",
-      "Parallax implements the Nakamoto consensus with 10-minutes block target, difficulty is adjusted every 2016 blocks and fork-choice rules based on proof-of-work weight."
+      "Parallax implements the Nakamoto consensus with 10-minutes block target, difficulty is adjusted by the ASERT algorithm and fork-choice rules based on proof-of-work weight."
     ],
-    sub: (
-      <>
-        <label className="font-semibold underline">Parallax implements the Nakamoto consensus:</label>
-        <ul className="list-disc pl-3">
-          <li>10-minute block timings</li>
-          <li>Difficulty adjusted every 2016 blocks</li>
-          <li>Fork-choice rules based on proof-of-work weight</li>
-        </ul>
-      </>
-    )
   },
 ]
 
@@ -138,8 +108,8 @@ export function Features() {
               </div>
               <Separator />
               <div className="flex justify-between items-center py-2">
-                <span className="text-sm text-muted-foreground">Difficulty Adjustment</span>
-                <span>2016 blocks</span>
+                <span className="text-sm text-muted-foreground">Difficulty Adjustment Algorithm</span>
+                <span>ASERT</span>
               </div>
               <Separator />
               <div className="flex justify-between items-center py-2">

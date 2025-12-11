@@ -28,21 +28,21 @@ export default function Page() {
         icon: Gauge,
         title: "Overview",
         tagline:
-          "XHash difficulty retargets on fixed block boundaries (epoch anchors) and fork choice selects the valid chain with the greatest cumulative work.",
+          "Parallax targets 10-minute blocks using XHash Proof of Work and a per-block ASERT difficulty algorithm, after an initial BTC-style DAA phase.",
         bullets: [
-          "Retarget occurs every 2016 blocks.",
-          "Each retarget epoch has an anchor time recorded in headers (EpochStartTime).",
-          "Median‑Time‑Past (MTP, median of last 11) guards timestamp validity; a block’s time must be strictly greater than parent MTP.",
-          "Nodes reject headers more than +300s in the future, and verify PoW with target = ⌊(2^256−1)/D⌋.",
+          "From genesis up to block 17,559 Parallax used a Bitcoin-style 2016-block difficulty adjustment window (BTC-style DAA).",
+          "PIP-0002 (Migration from BTC-Style Difficulty Adjustment Algorithm to ASERT) activated ASERT at block 17,560.",
+          "ASERT (aserti3-2d, as used by Bitcoin Cash) adjusts difficulty every block relative to a fixed anchor, converging smoothly toward the 600 s target under hashrate shocks.",
+          "Median-Time-Past (MTP, median of last 11) guards timestamp validity; nodes reject headers more than +300s in the future and verify PoW with target = ⌊(2^256−1)/D⌋.",
         ],
       },
       {
         id: "target-and-difficulty",
         icon: Gauge,
         title: "Target ↔ Difficulty",
-        tagline: "Work threshold mapping used by XHash verification.",
+        tagline: "Work threshold mapping used by XHash verification (common to both BTC-DAA and ASERT eras).",
         bullets: [
-          "Let TWO256M1 = 2^256 − 1. The header is valid iff XHash(header) ≤ target, where target = ⌊TWO256M1 / D⌋.",
+          "Let TWO256M1 = 2^256 − 1. The header is valid if XHash(header) ≤ target, where target = ⌊TWO256M1 / D⌋.",
           "Higher difficulty D ⇒ smaller target ⇒ harder block.",
           "Header.MixDigest must equal the computed digest from hashimoto (light/full paths).",
           "Difficulty must be strictly positive; zero/negative is invalid.",
@@ -57,40 +57,45 @@ valid    = BigIntFromBytes(result) <= target
       {
         id: "retargeting",
         icon: TimerReset,
-        title: "Retargeting via Epoch Anchors",
-        tagline: "Difficulty is derived at fixed block intervals using epoch start times.",
+        title: "Difficulty Adjustment: BTC-Style DAA → ASERT",
+        tagline: "Historical 2016-block windows, modern per-block ASERT relative to an anchor.",
         bullets: [
-          "Let R = 2016 blocks.",
-          "If height % R == 0: header.EpochStartTime = header.Time (start a new epoch).",
-          "Else: header.EpochStartTime = parent.EpochStartTime (propagate the current anchor).",
-          "CalcNakamotoDifficulty() implements the Nakamoto‑style difficulty adjustment using these anchors.",
+          "Genesis → block 17,559: CalcNakamotoDifficulty() implements a Bitcoin-style 2016-block window using epoch anchors.",
+          "Block 17,560 and later: CalcAsertDifficulty() implements aserti3-2d using a fixed anchor {anchorHeight, anchorParentTime, anchorTarget}.",
+          "ASERT uses the height offset Δh and elapsed time Δt relative to the anchor to push difficulty toward the 600 s target with a 2-day half-life.",
+          "Historical blocks keep their original BTC-style DAA difficulty and are still validated under those rules; forward-looking adjustment is entirely ASERT-based.",
         ],
-        codeTitle: "Header preparation & check (from consensus.go semantics)",
-        code: `// Prepare (when building a block)
-if height % R == 0:
-  header.EpochStartTime = header.Time
-else:
-  header.EpochStartTime = parent.EpochStartTime
+        codeTitle: "Height-dependent difficulty selection (conceptual)",
+        code: `// Difficulty selection by era
+CalcDifficulty(config, anchor, parent, header):
+  if height(header) < 17560:
+    // BTC-style DAA: 2016-block window with epoch anchors
+    return CalcNakamotoDifficulty(config, parent)
+  else:
+    // ASERT: per-block retarget relative to fixed anchor
+    return CalcAsertDifficulty(config, anchor, parent, header)
 
-header.Difficulty = CalcNakamotoDifficulty(config, parent)
-
-// Verify (when receiving a header)
-if height % R == 0:
-  require(header.EpochStartTime == header.Time)
-else:
-  require(header.EpochStartTime == parent.EpochStartTime)
+// ASERT core idea (fixed-point, aserti3-2d)
+CalcAsertDifficulty(config, anchor, parent, header):
+  Δh = height(header) - anchor.height
+  Δt = header.Time - anchor.parentTime   // seconds
+  // τ = 600 s target, T_half = 172800 s (2 days)
+  e  = ((Δt - Δh * τ) * RADIX) / T_half  // fixed-point exponent
+  target = anchor.target * 2^e           // via cubic approximation in integer math
+  target = clamp(target, 1, maxTarget)
+  return DifficultyFromTarget(target)
 `,
       },
       {
         id: "median-time-past",
         icon: TimerReset,
-        title: "Median‑Time‑Past (MTP)",
-        tagline: "Timestamp sanity for validity and anti‑warp defenses.",
+        title: "Median-Time-Past (MTP)",
+        tagline: "Timestamp sanity for validity and time-warp resistance.",
         bullets: [
           "MTP(parent) = median of the last 11 block timestamps ending at parent.",
           "Validity requires header.Time > MTP(parent) (strict inequality).",
-          "Future‑drift bound: header.Time ≤ now + 300s.",
-          "MTP is used for validity checks; the retarget algorithm itself relies on epoch anchors.",
+          "Future-drift bound: header.Time ≤ now + 300s.",
+          "Under ASERT, elapsed time relative to the anchor is driven by timestamps constrained by MTP, which prevents classic long-range time-warp attacks against the difficulty algorithm.",
         ],
         codeTitle: "MTP computation",
         code: `MTP(n):
@@ -103,12 +108,12 @@ else:
         id: "fork-choice",
         icon: GitFork,
         title: "Fork Choice Rule",
-        tagline: "Heaviest valid chain by cumulative work.",
+        tagline: "Heaviest valid chain by cumulative work, independent of the active difficulty era.",
         bullets: [
           "Maintain ChainWork[tip] = ChainWork[parent] + Work(block).",
           "Work(block) is a monotone function of target/difficulty; any consistent definition yields equivalent ordering.",
           "Select the valid tip with greatest ChainWork; ties can be broken lexicographically by tip hash.",
-          "Invalid headers (time, PoW, difficulty/epoch rules) are excluded before fork choice.",
+          "Invalid headers (time, PoW, BTC-DAA/ASERT rules) are excluded before fork choice.",
         ],
         codeTitle: "Cumulative work (conceptual)",
         code: `Work(block):
@@ -124,12 +129,12 @@ SelectBest(tips):
         id: "reorgs-finality",
         icon: ShieldCheck,
         title: "Reorgs & Probabilistic Finality",
-        tagline: "Depth‑based assurances instead of absolute finality.",
+        tagline: "Depth-based assurances instead of absolute finality.",
         bullets: [
           "Confirmation depth k lowers reorg probability exponentially with k.",
-          "Wallets/UIs choose k by value at risk (e.g., 6‑conf defaults for high‑value).",
+          "Wallets/UIs choose k by value at risk (e.g., 6-conf defaults for high-value).",
           "Nodes can implement practical guards (e.g., max reorg depth) to avoid DoS from pathological peers.",
-          "Miner economics disfavor long reorgs absent majority hashpower collusion.",
+          "ASERT’s smoother, per-block difficulty response reduces the incentive for oscillation-driven or opportunistic long reorgs compared to large-window BTC-style DAA.",
         ],
         codeTitle: "Reorg handling (conceptual)",
         code: `OnNewTip(candidate):
@@ -142,9 +147,9 @@ SelectBest(tips):
         id: "attacks-and-mitigations",
         icon: TriangleAlert,
         title: "Attacks & Mitigations",
-        tagline: "Key vectors relevant to the Parallax protocol specification.",
+        tagline: "Key vectors relevant to the Parallax difficulty design.",
         bullets: [
-          "Time‑warp: strict MTP enforcement and epoch‑anchor checks mitigate manipulation.",
+          "Time-warp: strict MTP enforcement plus ASERT’s per-block feedback (no long static windows) mitigate the classic BTC-style 2016-block time-warp manipulation.",
           "Future timestamp skew: reject headers more than +300s ahead of local time.",
           "MixDigest spoofing: header.MixDigest must match hashimoto output (light/full).",
         ],
@@ -154,7 +159,9 @@ SelectBest(tips):
   require(h.Time <= now() + 300)
   require(h.Time > MTP(parent))
   require(h.Difficulty > 0)
-  // epoch anchor invariants per height % R
+  // difficulty rules depend on height:
+  //   < 17560: BTC-style DAA epoch invariants
+  //   ≥ 17560: ASERT anchor-based invariants
   // PoW: MixDigest match & XHash(h) <= targetFrom(D)
 `,
       },
@@ -183,7 +190,7 @@ SelectBest(tips):
               <TableCell>Target block interval</TableCell>
               <TableCell>τ</TableCell>
               <TableCell>600 s</TableCell>
-              <TableCell>Bitcoin‑like target</TableCell>
+              <TableCell>Bitcoin-like target</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Future time drift bound</TableCell>
@@ -198,10 +205,12 @@ SelectBest(tips):
               <TableCell>Median of last 11 timestamps</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Retarget interval</TableCell>
-              <TableCell>R</TableCell>
-              <TableCell>2016 blocks</TableCell>
-              <TableCell>Bitcoin-like retarget</TableCell>
+              <TableCell>Difficulty algorithm history</TableCell>
+              <TableCell>—</TableCell>
+              <TableCell>BTC-style DAA → ASERT</TableCell>
+              <TableCell>
+                BTC-style 2016-block windows from genesis–17,559; ASERT (aserti3-2d) for blocks ≥ 17,560 (PIP-0002).
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -220,7 +229,7 @@ SelectBest(tips):
       >
         <PageHeader
           title="Difficulty Algorithm & Fork-choice Rules"
-          subTitle="A precise walk‑through of Parallax’s difficulty retargeting (XHash) and the Nakamoto fork‑choice rule based on cumulative work."
+          subTitle="A precise walk-through of Parallax’s difficulty adjustment history — BTC-style DAA from genesis, the ASERT upgrade at block 17,560 (PIP-0002), and the Nakamoto fork-choice rule based on cumulative work."
         />
 
         <nav className="flex flex-wrap justify-center items-center gap-2 text-sm">
@@ -294,14 +303,14 @@ SelectBest(tips):
 
       {/* Flow Summary */}
       <div className="mt-10 grid gap-4 rounded-2xl border p-6">
-        <h2 className="text-xl font-semibold">End‑to‑end selection flow</h2>
+        <h2 className="text-xl font-semibold">End-to-end selection flow</h2>
         <p className="text-muted-foreground">
-          Headers are checked for Extra size, time (MTP & future drift), epoch‑anchor invariants,
-          exact difficulty, gas limits/EIPs, height increment, and PoW seal. Valid blocks extend
-          ChainWork, and the heaviest tip is canonical.
+          Headers are checked for Extra size, time (MTP & future drift), era-specific difficulty rules
+          (BTC-style DAA for early blocks, ASERT for height ≥ 17,560), gas limits/EIPs, height increment,
+          and PoW seal. Valid blocks extend ChainWork, and the heaviest tip is canonical.
         </p>
         <div className="grid gap-3 md:grid-cols-5">
-          {["Validate", "Check Epoch Anchor", "Compute Difficulty", "Accumulate Work", "Select Heaviest"].map((step, idx) => (
+          {["Validate", "Check Anchor / Era", "Compute Difficulty (DAA/ASERT)", "Accumulate Work", "Select Heaviest"].map((step, idx) => (
             <div key={step} className="rounded-xl border bg-card p-4 text-center">
               <div className="text-2xl font-semibold">{idx + 1}</div>
               <div className="mt-2">{step}</div>
