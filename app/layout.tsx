@@ -3,7 +3,6 @@ import { Navigation } from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import "./table.css";
 
@@ -22,12 +21,6 @@ export const metadata: Metadata = {
   description: "Open source protocol for P2P Programmable Cash System",
 };
 
-const PlausibleScript = () => {
-  return (
-    <Script defer data-domain="parallaxchain.org" src="https://plausible.parallaxchain.org/js/script.js"></Script>
-  )
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,7 +34,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PlausibleScript />
         <ThemeProvider attribute={"class"} enableSystem={true} defaultTheme="system">
           <Navigation />
           <div className="flex flex-col justify-between min-h-screen">
