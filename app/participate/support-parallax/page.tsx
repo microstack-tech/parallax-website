@@ -1,7 +1,64 @@
 import GridView from "@/components/grid-view"
 import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
+import { Button } from "@/components/ui/button"
 import { BookOpen, Code, Heart, Megaphone, Pickaxe, Radio, Server, SquareTerminal, Waypoints } from "lucide-react"
+import Link from "next/link"
+
+const BTC_DONATION_ADDRESS = "bc1qmlwnufa0ux3janw04dlld0w0v3tkv05snjmr8m"
+const EVM_DONATION_ADDRESS = "0xa4Ff25A2814649F672e4abad49E45AB824E5988c"
+const PATREON_URL = "https://www.patreon.com/ParallaxChainProtocol"
+
+function DonationsSection() {
+  return (
+    <div className="mt-16 max-w-7xl mx-auto text-center space-y-8">
+      <h2 className="text-4xl">Donate to Support Parallax</h2>
+
+      <p className="text-lg text-muted-foreground">
+        Parallax is a community-driven project with no VC funding, no premine,
+        and no company behind it. Donations help us keep the website online,
+        maintain public infrastructure, and continue active protocol
+        development.
+      </p>
+
+      <div className="space-y-6">
+        <div className="flex flex-col items-center justify-center p-6 rounded-xl border bg-card">
+          <h3 className="text-xl font-medium text-foreground">Bitcoin (BTC)</h3>
+          <p className="text-sm text-muted-foreground">Bitcoin donations</p>
+          <code className="flex w-fit mt-8 bg-background border p-4 rounded-lg text-sm text-muted-foreground break-all">
+            {BTC_DONATION_ADDRESS}
+          </code>
+        </div>
+
+        <div className="flex flex-col items-center justify-center p-6 rounded-xl border bg-card">
+          <h3 className="text-xl font-medium text-foreground">EVM Address</h3>
+          <p className="text-sm text-muted-foreground">Any token on EVM-compatible networks</p>
+          <code className="flex w-fit mt-8 bg-background border p-4 rounded-lg text-sm text-muted-foreground break-all">
+            {EVM_DONATION_ADDRESS}
+          </code>
+        </div>
+      </div>
+
+      <p className="text-lg text-muted-foreground">
+        Prefer not to use crypto?
+        <br />
+        You can support Parallax via Patreon and contribute using traditional
+        payment methods.
+      </p>
+
+      <Button
+        size={"xl"}
+      >
+        <Link
+          href={PATREON_URL}
+          target="_blank"
+        >
+          Support on Patreon
+        </Link>
+      </Button>
+    </div>
+  );
+}
 
 const topics = [
   {
@@ -61,6 +118,7 @@ export default function ParallaxForIndividuals() {
       <GridView
         items={topics}
       />
+      <DonationsSection />
     </MainMotion>
   )
 }
