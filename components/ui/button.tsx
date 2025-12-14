@@ -5,17 +5,17 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center border justify-center rounded-md gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 cursor-pointer dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center border justify-center rounded-none gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 cursor-pointer dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-b dark:bg-gradient-to-t from-primary/80 to-primary text-white font-semibold hover:bg-primary shadow inset-shadow-2xs inset-shadow-white/20",
+        default: "bg-foreground text-background font-semibold hover:underline",
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-background/30 dark:border-input dark:hover:bg-input/50",
+          "border bg-background hover:bg-accent hover:text-accent-foreground dark:bg-background/30 dark:border-input dark:hover:bg-input/50",
         secondary:
-          "bg-gradient-to-b from-background to-muted text-secondary-foreground font-semibold hover:bg-muted shadow-xs inset-shadow-2xs inset-shadow-white/20",
+          "bg-background text-foreground font-semibold hover:underline border-foreground",
         ghost:
           "hover:bg-accent border-none hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",

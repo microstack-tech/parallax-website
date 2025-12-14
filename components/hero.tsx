@@ -11,7 +11,7 @@ import { Button } from "./ui/button"
 export function Hero() {
   useStableVh()
   return (
-    <section className="relative isolate overflow-hidden bg-muted
+    <section className="relative isolate overflow-hidden
                         min-h-[calc(var(--vh,1vh)*100)]
                         pt-[env(safe-area-inset-top)]
                         pb-[env(safe-area-inset-bottom)]">
@@ -28,61 +28,27 @@ export function Hero() {
       </div>
 
       <div className="absolute flex flex-col justify-evenly h-full w-full px-6 sm:px-8 items-center">
-        <div className="flex flex-col items-center md:items-start w-full max-w-7xl">
-          <div className="flex flex-col md:flex-row justify-between items-center px-2 w-full">
-            <h1 className="text-6xl font-sans sm:text-9xl font-bold tracking-tight sm:-ml-2">
-              <span className="bg-gradient-to-r mx-0 from-foreground to-foreground/80 bg-clip-text text-transparent pr-1.5">
-                Parallax
-              </span>
+        <div className="flex flex-col items-center w-full max-w-7xl">
+          <div className="flex flex-col items-center px-2 w-full">
+            <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-center">
+              $LAX is programmable gold.
             </h1>
-            <Countdown />
           </div>
           <p className="mt-6 sm:px-0 text-lg sm:text-2xl text-muted-foreground text-center">
-            The open source protocol for P2P Programmable Cash System
+            Secured by Physics.
           </p>
         </div>
-        <p className="text-sm sm:text-2xl leading-8 text-muted-foreground max-w-7xl text-justify">
-          {`Parallax uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of coins is carried out collectively by the network. Parallax is open-source; its design is public, nobody owns or controls Parallax and everyone can take part.`}
-        </p>
-        <div className="flex flex-col gap-4 justify-between sm:flex-row w-full max-w-7xl">
-          <Button size={"2xl"} className="w-full max-w-[25rem] px-6" asChild>
-            <Link href={"/introduction/getting-started"}>
-              <div className="flex flex-row items-center w-full justify-between">
-                Get started with Parallax
-                <ChevronRight className="size-6" />
-              </div>
+        <div className="flex flex-col gap-4 justify-between items-center sm:flex-row w-full max-w-4xl">
+          <Button size={"2xl"} className="w-full max-w-[15rem] px-6" asChild>
+            <Link href={"/participate/running-a-full-node"}>
+              Run a node
             </Link>
           </Button>
-          <div className="flex flex-row justify-between gap-4">
-            <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
-              <Link href={"https://x.com/prlxchain"}>
-                <div>
-                  <FaXTwitter className="size-6" />
-                </div>
-              </Link>
-            </Button>
-            <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
-              <Link href={"https://t.me/parallaxchain"}>
-                <div>
-                  <FaTelegramPlane className="size-6" />
-                </div>
-              </Link>
-            </Button>
-            <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
-              <Link href={"https://bitcointalk.org/index.php?topic=5560698"}>
-                <div>
-                  <FaBitcoin className="size-6" />
-                </div>
-              </Link>
-            </Button>
-            <Button size={"2xl"} variant={"secondary"} className="w-fit px-4" asChild>
-              <Link href={"https://github.com/ParallaxProtocol"}>
-                <div>
-                  <FaGithub className="size-6" />
-                </div>
-              </Link>
-            </Button>
-          </div>
+          <Button size={"2xl"} variant={"secondary"} className="w-full border-2 max-w-[15rem] px-6" asChild>
+            <Link href={"https://docs.parallaxchain.org"}>
+              Read the Docs
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

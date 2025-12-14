@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -17,9 +18,7 @@ import {
   NavigationMenuTrigger
 } from "./ui/navigation-menu"
 import { Separator } from "./ui/separator"
-import { useTheme } from "next-themes"
-import { ModeToggle } from "./theme-toggle"
-import { motion } from "framer-motion"
+import { FaGithub } from "react-icons/fa"
 
 interface NavItem {
   name: string
@@ -52,9 +51,6 @@ const navItems: NavItem[] = [
       { name: "###" },
       { name: "Block Explorer", href: "https://explorer.parallaxchain.org" },
       { name: "Faucet", href: "#" },
-      { name: "###" },
-      { name: "Mining Pools", href: "/mining-pools" },
-      { name: "Exchanges", href: "/exchanges" },
     ],
   },
   {
@@ -74,7 +70,7 @@ export function Navigation() {
   const [bgColor, setBgColor] = useState<string>(``)
   const [borderColor, setBorderColor] = useState<string>(``)
   const pathname = usePathname()
-  const { theme } = useTheme()
+  const theme = 'light'
 
   useEffect(() => {
     if (isOpen) {
@@ -134,7 +130,7 @@ export function Navigation() {
           <div className="flex-shrink-0">
             <Link href="/" className="cursor-pointer">
               <Image
-                src="/parallax_logo_color_dark.svg"
+                src="/parallax_logo_rounded.svg"
                 className="size-10 md:size-12 w-auto"
                 width={200}
                 height={200}
@@ -190,15 +186,16 @@ export function Navigation() {
                 Get Started
               </Link>
             </Button>
-            <div className="ml-2">
-              <ModeToggle />
-            </div>
+            <Button variant={"secondary"} className="ml-2" asChild>
+              <Link href={'https://github.com/ParallaxProtocol/parallax'} target="_blank">
+                <FaGithub />
+              </Link>
+            </Button>
           </NavigationMenu>
         </div>
 
         {/* Mobile menu button */}
         <div className="md:hidden">
-          <ModeToggle />
           <Button
             variant="ghost"
             size="sm"

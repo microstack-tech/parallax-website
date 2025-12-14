@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Parallax | Open source P2P Programmable Cash System",
+  title: "Parallax Protocol",
   description: "Open source protocol for P2P Programmable Cash System",
 };
 
@@ -34,13 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute={"class"} enableSystem={true} defaultTheme="system">
-          <Navigation />
-          <div className="flex flex-col justify-between min-h-screen">
-            {children}
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <Navigation />
+        <div className="flex flex-col justify-between min-h-screen">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

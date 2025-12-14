@@ -10,6 +10,14 @@ const logos = [
   {
     name: "Parallax Logo",
     files: [
+      { type: "SVG", path: "/parallax_logo_rounded.svg" },
+      { type: "PNG", path: "/parallax_logo_rounded.svg", png: true },
+    ],
+    preview: "/parallax_logo_rounded.svg"
+  },
+  {
+    name: "Parallax Logo",
+    files: [
       { type: "SVG", path: "/parallax_logo_color.svg" },
       { type: "PNG", path: "/parallax_logo_color.svg", png: true },
     ],
@@ -22,14 +30,6 @@ const logos = [
       { type: "PNG", path: "/parallax_logo_color_dark.svg", png: true },
     ],
     preview: "/parallax_logo_color_dark.svg"
-  },
-  {
-    name: "Parallax Logo",
-    files: [
-      { type: "SVG", path: "/parallax_logo_color_blue.svg" },
-      { type: "PNG", path: "/parallax_logo_color_blue.svg", png: true },
-    ],
-    preview: "/parallax_logo_color_blue.svg"
   },
 ]
 
