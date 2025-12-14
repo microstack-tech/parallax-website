@@ -74,14 +74,14 @@ export function Navigation() {
 
   useEffect(() => {
     if (isOpen) {
-      const bgColor = theme === 'light' ? `rgba(250,250,251,1)` : `rgba(17,17,19,1)`
+      const bgColor = theme === 'light' ? `rgba(255,255,255,1)` : `rgba(17,17,19,1)`
       const borderColor = theme === 'light' ? `rgba(230,230,230,1)` : `rgba(37,37,37,1)`
       setBgColor(bgColor)
       setBorderColor(borderColor)
       return
     }
 
-    const bgColor = theme === 'light' ? `rgba(250,250,251,${opacity})` : `rgba(17,17,19,${opacity})`
+    const bgColor = theme === 'light' ? `rgba(255,255,255,${opacity})` : `rgba(17,17,19,${opacity})`
     const borderColor = theme === 'light' ? `rgba(230,230,230,${opacity})` : `rgba(37,37,37,${opacity})`
     setBgColor(bgColor)
     setBorderColor(borderColor)

@@ -14,7 +14,7 @@ export function Parallax() {
         <div className="mt-14 grid items-start gap-10 sm:mt-16 lg:grid-cols-[420px_1fr] lg:gap-14">
           {/* Image */}
           <figure className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
-            <div className="relative aspect-[1000/652] w-full overflow-hidden rounded-lg border">
+            <div className="relative aspect-[1000/652] w-full overflow-hidden border">
               <Image
                 src="/the-death-of-socrates.png"
                 alt="The Death of Socrates"
