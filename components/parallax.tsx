@@ -30,8 +30,22 @@ export function Parallax() {
           </figure>
 
           {/* Text */}
-          <div className="mx-auto max-w-prose text-justify text-base leading-relaxed text-muted-foreground sm:leading-8 lg:mx-0 lg:text-left lg:text-lg lg:leading-9">
-            Parallax uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of coins is carried out collectively by the network. Parallax is open-source; its design is public, nobody owns or controls Parallax and everyone can take part.
+          <div className="mx-auto max-w-prose text-justify text-base leading-relaxed text-muted-foreground sm:leading-8 lg:mx-0 lg:text-left lg:text-lg lg:leading-9 space-y-4">
+            <p>
+              Parallax uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of coins is carried out collectively by the network. Parallax is open-source; its design is public, nobody owns or controls Parallax and everyone can take part.
+            </p>
+            <p>
+              The Death of Socrates captures a refusal to trade truth for convenience. Socrates accepts his fate not out of obedience, but because abandoning principle would invalidate reason itself.
+            </p>
+            <p>
+              Parallax follows the same logic. A monetary system has legitimacy only if its rules cannot be bent by power or popularity. Instead of trust, committees, or narrative consensus, Parallax anchors value in irreversible physical cost.
+            </p>
+            <p>
+              Where Socrates trusted reason over rulers, Parallax trusts physics over institutions.
+            </p>
+            <p className="italic">
+              Programmable gold secured by physics.
+            </p>
           </div>
         </div>
       </div>
