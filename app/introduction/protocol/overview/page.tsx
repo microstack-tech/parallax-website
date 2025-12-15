@@ -134,7 +134,7 @@ export default function Page() {
       </div>
       <div className="flex justify-center w-full mt-16">
         <Button size={"xl"} className="w-full sm:w-fit" asChild>
-          <Link href={"https://docs.parallaxchain.org"}>
+          <Link href={"https://docs.parallaxprotocol.org"}>
             Explore Technical Documentation <ExternalLink className="ml-1 h-4 w-4" />
           </Link>
         </Button>

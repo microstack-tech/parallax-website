@@ -31,7 +31,7 @@ export default function BeginnerGuidesPage() {
             <div className="inline-flex w-full justify-end mt-8">
               <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link
-                  href="https://docs.parallaxchain.org/guides/client/introduction"
+                  href="https://docs.parallaxprotocol.org/guides/client/introduction"
                   target="_blank"
                   rel="noopener"
                 >
@@ -61,7 +61,7 @@ export default function BeginnerGuidesPage() {
             <div className="inline-flex w-full justify-end mt-8">
               <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link
-                  href="https://docs.parallaxchain.org/guides/wallets"
+                  href="https://docs.parallaxprotocol.org/guides/wallets"
                   target="_blank"
                   rel="noopener"
                 >
@@ -90,7 +90,7 @@ export default function BeginnerGuidesPage() {
             <div className="inline-flex w-full justify-end mt-8">
               <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
                 <Link
-                  href="https://docs.parallaxchain.org/guides/mining/introduction"
+                  href="https://docs.parallaxprotocol.org/guides/mining/introduction"
                   target="_blank"
                   rel="noopener"
                 >

@@ -65,7 +65,7 @@ export default function RunningFullNodePage() {
                 </Link>
               </Button>
               <Button variant="secondary" asChild>
-                <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
+                <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
                   Setup Guide
                   <ExternalLink />
                 </Link>

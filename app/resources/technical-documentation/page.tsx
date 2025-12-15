@@ -28,7 +28,7 @@ export default function TechnicalDocumentationPage() {
             </div>
             <div className="inline-flex w-full justify-end mt-8">
               <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
-                <Link href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/introduction-to-parallax" target="_blank" rel="noopener">
+                <Link href="https://docs.parallaxprotocol.org/parallax-protocol/foundational-topics/introduction-to-parallax" target="_blank" rel="noopener">
                   More on Foundational Topics
                   <ExternalLink />
                 </Link>
@@ -50,7 +50,7 @@ export default function TechnicalDocumentationPage() {
             </div>
             <div className="inline-flex w-full justify-end mt-8">
               <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
-                <Link href="https://docs.parallaxchain.org/parallax-protocol/parallax-stack/introduction-stack" target="_blank" rel="noopener">
+                <Link href="https://docs.parallaxprotocol.org/parallax-protocol/parallax-stack/introduction-stack" target="_blank" rel="noopener">
                   More on Parallax Stack
                   <ExternalLink />
                 </Link>
@@ -74,7 +74,7 @@ export default function TechnicalDocumentationPage() {
             </div>
             <div className="inline-flex w-full justify-end mt-8">
               <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
-                <Link href="https://docs.parallaxchain.org/parallax-protocol/advanced/bridges" target="_blank" rel="noopener">
+                <Link href="https://docs.parallaxprotocol.org/parallax-protocol/advanced/bridges" target="_blank" rel="noopener">
                   More on Advanced Topics
                   <ExternalLink />
                 </Link>
@@ -97,7 +97,7 @@ export default function TechnicalDocumentationPage() {
             </div>
             <div className="inline-flex w-full justify-end mt-8">
               <Button variant={"secondary"} className="w-full sm:w-fit" asChild>
-                <Link href="https://docs.parallaxchain.org/parallax-client/getting-started/introduction" target="_blank" rel="noopener">
+                <Link href="https://docs.parallaxprotocol.org/parallax-client/getting-started/introduction" target="_blank" rel="noopener">
                   More on Parallax Client
                   <ExternalLink />
                 </Link>

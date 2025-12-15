@@ -137,7 +137,7 @@ export function Features() {
             </p>
             <div className="inline-flex w-full justify-end mt-8">
               <Button variant={"secondary"} asChild className="w-full sm:w-fit">
-                <Link href={"https://parallaxchain.org/introduction/whitepaper"}>
+                <Link href={"/introduction/whitepaper"}>
                   Read Whitepaper
                   <ChevronRight />
                 </Link>

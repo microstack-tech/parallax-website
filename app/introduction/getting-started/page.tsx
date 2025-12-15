@@ -96,7 +96,7 @@ export default function GettingStarted() {
                 </div>
                 <div className="flex flex-col md:flex-row w-full justify-end mt-8 gap-4">
                   <Button variant="secondary" asChild className="w-full sm:w-fit">
-                    <Link href={"https://docs.parallaxchain.org/guides/mining"} target="_blank">
+                    <Link href={"https://docs.parallaxprotocol.org/guides/mining"} target="_blank">
                       Mining <ExternalLink className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -235,7 +235,7 @@ export default function GettingStarted() {
                 </Link>
               </Button>
               <Button variant="secondary" asChild>
-                <Link href={"https://docs.parallaxchain.org/guides/wallets"} target="_blank">
+                <Link href={"https://docs.parallaxprotocol.org/guides/wallets"} target="_blank">
                   Wallet Setup Guide
                   <ExternalLink />
                 </Link>

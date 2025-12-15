@@ -45,7 +45,7 @@ export function Hero() {
             </Link>
           </Button>
           <Button size={"2xl"} variant={"secondary"} className="w-full border-2 max-w-[15rem] px-6" asChild>
-            <Link href={"https://docs.parallaxchain.org"}>
+            <Link href={"https://docs.parallaxprotocol.org"}>
               Read the Docs
             </Link>
           </Button>

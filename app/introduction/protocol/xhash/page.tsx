@@ -277,7 +277,7 @@ export default function Page() {
         </Button>
         <Button asChild className="w-full sm:w-fit">
           <Link
-            href="https://docs.parallaxchain.org/parallax-protocol/foundational-topics/consensus/algorithms/xhash"
+            href="https://docs.parallaxprotocol.org/parallax-protocol/foundational-topics/consensus/algorithms/xhash"
             target="_blank"
           >
             XHash Specification

@@ -91,7 +91,7 @@ export default function Client() {
                   </Link>
                 </Button>
                 <Button variant="secondary" asChild>
-                  <Link href="https://docs.parallaxchain.org/guides/client/setup" target="_blank" rel="noopener">
+                  <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
                     <BookOpen />
                     Setup guide
                     <ExternalLink />

@@ -62,7 +62,7 @@ export default function Page() {
                 </Link>
               </Button>
               <Button variant="secondary" asChild>
-                <Link href="https://docs.parallaxchain.org/guides/client/introduction" target="_blank" rel="noopener">
+                <Link href="https://docs.parallaxprotocol.org/guides/client/introduction" target="_blank" rel="noopener">
                   Setup Guide
                   <ExternalLink />
                 </Link>
@@ -113,7 +113,7 @@ export default function Page() {
                 </label>
                 <div className="flex flex-col gap-2 text-right">
                   <label className="text-muted-foreground">
-                    https://rpc.parallaxchain.org
+                    https://rpc.parallaxprotocol.org
                   </label>
                 </div>
               </div>
@@ -138,11 +138,11 @@ export default function Page() {
                   Explorer URL
                 </label>
                 <label className="text-muted-foreground">
-                  https://explorer.parallaxchain.org
+                  https://explorer.parallaxprotocol.org
                 </label>
               </div>
               <Button asChild>
-                <Link href={"https://docs.parallaxchain.org/guides/wallets/metamask"} target="_blank">
+                <Link href={"https://docs.parallaxprotocol.org/guides/wallets/metamask"} target="_blank">
                   Guide on MetaMask setup
                   <ExternalLink />
                 </Link>
