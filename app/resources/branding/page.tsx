@@ -8,28 +8,44 @@ import Link from "next/link";
 
 const logos = [
   {
-    name: "Parallax Logo",
+    name: "Parallax Logo - Square",
     files: [
-      { type: "SVG", path: "/parallax_logo_rounded.svg" },
-      { type: "PNG", path: "/parallax_logo_rounded.svg", png: true },
+      { type: "SVG", path: "/new_parallax_logo_square.svg" },
+      { type: "PNG", path: "/new_parallax_logo_square.svg", png: true },
     ],
-    preview: "/parallax_logo_rounded.svg"
+    preview: "/new_parallax_logo_square.svg"
   },
   {
-    name: "Parallax Logo",
+    name: "Parallax Logo - Square White",
     files: [
-      { type: "SVG", path: "/parallax_logo_color.svg" },
-      { type: "PNG", path: "/parallax_logo_color.svg", png: true },
+      { type: "SVG", path: "/new_parallax_logo_square_white.svg" },
+      { type: "PNG", path: "/new_parallax_logo_square_white.svg", png: true },
     ],
-    preview: "/parallax_logo_color.svg"
+    preview: "/new_parallax_logo_square_white.svg"
   },
   {
-    name: "Parallax Logo",
+    name: "Parallax Logo - Rounded",
     files: [
-      { type: "SVG", path: "/parallax_logo_color_dark.svg" },
-      { type: "PNG", path: "/parallax_logo_color_dark.svg", png: true },
+      { type: "SVG", path: "/new_parallax_logo_rounded.svg" },
+      { type: "PNG", path: "/new_parallax_logo_rounded.svg", png: true },
     ],
-    preview: "/parallax_logo_color_dark.svg"
+    preview: "/new_parallax_logo_rounded.svg"
+  },
+  {
+    name: "Parallax Logo - Rounded White",
+    files: [
+      { type: "SVG", path: "/new_parallax_logo_rounded_white.svg" },
+      { type: "PNG", path: "/new_parallax_logo_rounded_white.svg", png: true },
+    ],
+    preview: "/new_parallax_logo_rounded_white.svg"
+  },
+  {
+    name: "Parallax Logo - Transparent",
+    files: [
+      { type: "SVG", path: "/new_parallax_logo_transparent.svg" },
+      { type: "PNG", path: "/new_parallax_logo_transparent.svg", png: true },
+    ],
+    preview: "/new_parallax_logo_transparent.svg"
   },
 ]
 

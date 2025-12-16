@@ -8,7 +8,7 @@ export function Footer() {
           <h3 className="text-4xl font-bold text-foreground mb-4">
             <span className="inline-flex items-center gap-2 font-sans">
               <Image
-                src="/parallax_logo_rounded.svg"
+                src="/new_parallax_logo_square.svg"
                 className="h-10 w-auto"
                 alt="Parallax logo"
                 width={200}

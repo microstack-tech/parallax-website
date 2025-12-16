@@ -44,7 +44,7 @@ const navItems: NavItem[] = [
     name: "Resources",
     subItems: [
       { name: "Community", href: "/resources/community" },
-      { name: "Branding", href: "/resources/branding" },
+      { name: "Brand Assets", href: "/resources/branding" },
       { name: "Beginner Guides", href: "/resources/beginner-guides" },
       { name: "Technical Documentation", href: "/resources/technical-documentation" },
       { name: "Parallax Client", href: "/resources/parallax-client" },
@@ -130,7 +130,7 @@ export function Navigation() {
           <div className="flex-shrink-0">
             <Link href="/" className="cursor-pointer">
               <Image
-                src="/parallax_logo_rounded.svg"
+                src="/new_parallax_logo_square.svg"
                 className="size-10 md:size-12 w-auto"
                 width={200}
                 height={200}
