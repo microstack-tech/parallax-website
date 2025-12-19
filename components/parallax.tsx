@@ -43,9 +43,6 @@ export function Parallax() {
             <p>
               Where Socrates trusted reason over rulers, Parallax trusts physics over institutions.
             </p>
-            <p className="italic">
-              Programmable gold secured by physics.
-            </p>
           </div>
         </div>
       </div>
