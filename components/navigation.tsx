@@ -30,6 +30,7 @@ const navItems: NavItem[] = [
   {
     name: "Introduction",
     subItems: [
+      { name: "The Parallax Doctrine", href: "/introduction/doctrine" },
       { name: "Getting Started", href: "/introduction/getting-started" },
       { name: "How it works", href: "/introduction/how-it-works" },
       { name: "Individuals", href: "/introduction/parallax-for-individuals" },

@@ -18,9 +18,9 @@ export default function Home() {
         className="flex flex-col gap-0"
       >
         <Hero />
-        <UseCases />
         <Parallax />
         <SoundMoney />
+        <UseCases />
         <Client />
         <Documentation />
         <Community />

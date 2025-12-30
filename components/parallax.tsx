@@ -1,4 +1,7 @@
 import Image from "next/image"
+import { Button } from "./ui/button"
+import { LucideChevronRight } from "lucide-react"
+import Link from "next/link"
 
 export function Parallax() {
   return (
@@ -30,7 +33,7 @@ export function Parallax() {
           </figure>
 
           {/* Text */}
-          <div className="mx-auto max-w-prose text-justify text-base leading-relaxed text-muted-foreground sm:leading-8 lg:mx-0 lg:text-left lg:text-lg lg:leading-9 space-y-4">
+          <div className="mx-auto max-w-prose text-justify text-base leading-relaxed text-foreground/60 sm:leading-8 lg:mx-0 lg:text-left lg:text-md lg:leading-9 space-y-4 bg-card border ring-4 p-8 ring-muted/10">
             <p>
               Parallax uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of coins is carried out collectively by the network. Parallax is open-source; its design is public, nobody owns or controls Parallax and everyone can take part.
             </p>
@@ -43,6 +46,14 @@ export function Parallax() {
             <p>
               Where Socrates trusted reason over rulers, Parallax trusts physics over institutions.
             </p>
+            <div className="flex w-full justify-end mt-8">
+              <Button size={"xl"} className="w-full sm:w-fit" asChild>
+                <Link href={"/introduction/doctrine"}>
+                  Read the Parallax Doctrine
+                  <LucideChevronRight />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
