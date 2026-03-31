@@ -24,7 +24,10 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Parallax Protocol",
+  title: {
+    default: "Parallax Protocol",
+    template: "%s | Parallax Protocol",
+  },
   description: "Open source protocol for P2P Programmable Cash System",
 };
 
