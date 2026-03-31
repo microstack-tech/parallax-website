@@ -170,9 +170,9 @@ SelectBest(tips):
   );
 
   const ParamsTable = () => (
-    <Card>
+    <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
       <CardHeader>
-        <ChevronRight />
+        <ChevronRight className="text-gold" />
         <CardTitle>Consensus Parameters</CardTitle>
       </CardHeader>
       <CardContent>
@@ -260,10 +260,10 @@ SelectBest(tips):
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card>
+            <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <s.icon className="size-6" />
+                  <s.icon className="size-6 text-gold" />
                   <CardTitle>{s.title}</CardTitle>
                 </div>
               </CardHeader>
@@ -303,6 +303,7 @@ SelectBest(tips):
 
       {/* Flow Summary */}
       <div className="mt-10 grid gap-4 border border-border p-6">
+        <span className="font-mono text-xs uppercase tracking-widest text-gold">Pipeline</span>
         <h2 className="text-xl font-semibold">End-to-end selection flow</h2>
         <p className="text-muted-foreground">
           Headers are checked for Extra size, time (MTP & future drift), era-specific difficulty rules
@@ -327,7 +328,7 @@ SelectBest(tips):
             Coinbase Maturity Scheduling
           </Link>
         </Button>
-        <Button asChild className="w-full sm:w-fit">
+        <Button asChild className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90">
           <Link href="/introduction/protocol/xhash">
             XHash
             <ChevronRight />

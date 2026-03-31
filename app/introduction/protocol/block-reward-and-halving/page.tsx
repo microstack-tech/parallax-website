@@ -154,9 +154,9 @@ schedKeyAmt(height):
   }, []);
 
   const ParamsTable = () => (
-    <Card>
+    <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
       <CardHeader>
-        <ChevronRight />
+        <ChevronRight className="text-gold" />
         <CardTitle>Monetary Parameters</CardTitle>
       </CardHeader>
       <CardContent>
@@ -207,9 +207,9 @@ schedKeyAmt(height):
   const Charts = () => (
     <div className="grid gap-6 md:grid-cols-2">
       {/* Cumulative supply */}
-      <Card>
+      <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
         <CardHeader>
-          <LineChartIcon />
+          <LineChartIcon className="text-gold" />
           <CardTitle>Cumulative Supply by Epoch</CardTitle>
         </CardHeader>
         <CardDescription>
@@ -231,9 +231,9 @@ schedKeyAmt(height):
 
 
       {/* Per-block reward */}
-      <Card>
+      <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
         <CardHeader>
-          <BarChart4 />
+          <BarChart4 className="text-gold" />
           <CardTitle>Per‑block Reward (step)</CardTitle>
         </CardHeader>
         <CardDescription>Reward in LAX per block at each epoch.</CardDescription>
@@ -297,9 +297,9 @@ schedKeyAmt(height):
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card>
+            <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
               <CardHeader>
-                <s.icon className="size-6" />
+                <s.icon className="size-6 text-gold" />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>{s.tagline}</CardDescription>
@@ -336,6 +336,7 @@ schedKeyAmt(height):
       </div>
 
       <div className="mt-10 grid gap-4 border border-border p-6">
+        <span className="font-mono text-xs uppercase tracking-widest text-gold">Summary</span>
         <h2 className="text-xl font-semibold">Emission Summary</h2>
         <p className="text-muted-foreground">
           Parallax’s issuance is fully deterministic. Rewards halve every 210,000 blocks until they
@@ -352,7 +353,7 @@ schedKeyAmt(height):
             Protocol Architecture
           </Link>
         </Button>
-        <Button asChild className="w-full sm:w-fit">
+        <Button asChild className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90">
           <Link href="/introduction/protocol/coinbase-maturity">
             Coinbase Maturity Scheduling
             <ChevronRight />

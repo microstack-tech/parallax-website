@@ -115,9 +115,9 @@ best = argmax(chains, sum(block.work for block in chain))
   );
 
   const HowItFits = () => (
-    <Card>
+    <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
       <CardHeader>
-        <ChevronRight className="size-6" />
+        <ChevronRight className="size-6 text-gold" />
         <CardTitle>How the pieces fit together</CardTitle>
       </CardHeader>
       <CardDescription>
@@ -186,9 +186,9 @@ best = argmax(chains, sum(block.work for block in chain))
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24 min-w-0"
           >
-            <Card>
+            <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
               <CardHeader>
-                <s.icon className="size-6" />
+                <s.icon className="size-6 text-gold" />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>
@@ -228,6 +228,7 @@ best = argmax(chains, sum(block.work for block in chain))
 
       {/* Interplay Diagram (textual) */}
       <div className="mt-10 grid min-w-0 gap-4 border border-border p-6">
+        <span className="font-mono text-xs uppercase tracking-widest text-gold">Pipeline</span>
         <h2 className="text-xl font-semibold">End-to-end flow</h2>
         <p className="text-muted-foreground">
           A signed transaction enters the mempool → the miner proposes a block → the PVM executes
@@ -252,7 +253,7 @@ best = argmax(chains, sum(block.work for block in chain))
             Protocol Overview
           </Link>
         </Button>
-        <Button asChild className="w-full sm:w-fit">
+        <Button asChild className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90">
           <Link href="/introduction/protocol/block-reward-and-halving">
             Block Reward & Halving
             <ChevronRight />

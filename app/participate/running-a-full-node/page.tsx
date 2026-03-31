@@ -51,7 +51,7 @@ export default function RunningFullNodePage() {
         </div>
 
         <div className="bg-surface-elevated border border-border p-8 sm:p-12 text-center">
-          <h3 className="text-xl font-semibold text-foreground mb-3">Get started</h3>
+          <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Get started</h3>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Ready to run a full node? Download the Parallax Client and follow our step-by-step guide.
           </p>

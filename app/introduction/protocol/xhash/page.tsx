@@ -130,9 +130,9 @@ export default function Page() {
   );
 
   const ParamsTable = () => (
-    <Card>
+    <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
       <CardHeader>
-        <ChevronRight />
+        <ChevronRight className="text-gold" />
         <CardTitle>Consensus-Relevant Details</CardTitle>
       </CardHeader>
       <CardDescription>
@@ -226,9 +226,9 @@ export default function Page() {
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card>
+            <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
               <CardHeader>
-                <s.icon />
+                <s.icon className="text-gold" />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>{s.tagline}</CardDescription>
@@ -275,7 +275,7 @@ export default function Page() {
             Difficulty Algorithm & Fork-choice Rules
           </Link>
         </Button>
-        <Button asChild className="w-full sm:w-fit">
+        <Button asChild className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90">
           <Link
             href="https://docs.parallaxprotocol.org/parallax-protocol/foundational-topics/consensus/algorithms/xhash"
             target="_blank"

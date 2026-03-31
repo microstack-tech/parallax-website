@@ -47,7 +47,7 @@ export default function Page() {
       />
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
         <div className="bg-surface-elevated border border-border p-8 sm:p-12 text-center">
-          <h3 className="text-xl font-semibold text-foreground mb-3">Run your own Parallax client</h3>
+          <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Run your own Parallax client</h3>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             For optimal privacy we recommend that you run your own Parallax client for wallet interactions.
           </p>
@@ -89,7 +89,7 @@ export default function Page() {
           ))}
         </div>
         <div className="bg-surface-elevated border border-border p-8 sm:p-12">
-          <h3 className="text-xl font-semibold text-foreground text-center mb-3">Add Parallax to your wallet</h3>
+          <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground text-center mb-3">Add Parallax to your wallet</h3>
           <p className="text-center text-sm text-muted-foreground mb-8">Make sure to add Parallax as a custom network on wallets that support EVM-based chains.</p>
           <div className="flex flex-col items-center">
             <div className="flex flex-col gap-4 w-full max-w-xl">

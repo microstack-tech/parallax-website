@@ -139,9 +139,9 @@ U+1: nothing due for U anymore
   );
 
   const ParamsTable = () => (
-    <Card>
+    <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
       <CardHeader>
-        <ChevronRight />
+        <ChevronRight className="text-gold" />
         <CardTitle className="text-xl">Maturity Parameters</CardTitle>
       </CardHeader>
       <CardContent>
@@ -231,9 +231,9 @@ U+1: nothing due for U anymore
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card>
+            <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
               <CardHeader>
-                <s.icon />
+                <s.icon className="text-gold" />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>{s.tagline}</CardDescription>
@@ -277,7 +277,7 @@ U+1: nothing due for U anymore
             Block Reward & Halving
           </Link>
         </Button>
-        <Button asChild className="w-full sm:w-fit">
+        <Button asChild className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90">
           <Link href="/introduction/protocol/difficulty-and-forkchoice">
             Difficulty Algorithm
             <ChevronRight />

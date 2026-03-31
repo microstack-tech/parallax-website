@@ -225,7 +225,7 @@ export default function GettingStarted() {
         )}
 
         <div className="mt-8 bg-surface-elevated border border-border p-8 sm:p-12 text-center">
-          <h3 className="text-xl font-semibold text-foreground mb-3">Ready to Start?</h3>
+          <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Ready to Start?</h3>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Join the Parallax network and experience the future of blockchain technology. Combine the security of
             Bitcoin with the flexibility of smart contracts.

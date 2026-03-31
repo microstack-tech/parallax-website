@@ -36,7 +36,7 @@ export default function ParallaxClientPage() {
           <div className="pr-0 sm:pr-10 sm:border-r border-border pb-8 sm:pb-0">
             <div className="flex items-center gap-3 mb-4">
               <Hexagon className="size-5 text-gold" />
-              <h3 className="text-lg font-semibold text-foreground">Decentralized</h3>
+              <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">Decentralized</h3>
             </div>
             <p className="text-base text-muted-foreground leading-relaxed">
               It is these users who keep Parallax decentralized. They individually run their own Parallax full nodes, and each of those full nodes separately follows the exact same rules to decide which block chain is valid.
@@ -45,7 +45,7 @@ export default function ParallaxClientPage() {
           <div className="pl-0 sm:pl-10 pt-8 sm:pt-0 border-t sm:border-t-0 border-border">
             <div className="flex items-center gap-3 mb-4">
               <CircleSlash className="size-5 text-gold" />
-              <h3 className="text-lg font-semibold text-foreground">No voting</h3>
+              <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">No voting</h3>
             </div>
             <p className="text-base text-muted-foreground leading-relaxed">
               {`There's no voting or other corruptible process involved: there's just individual software following identical rules—"math"—to evaluate identical blocks and coming to identical conclusions about which block chain is valid.`}
@@ -74,7 +74,7 @@ export default function ParallaxClientPage() {
         </div>
 
         <div className="bg-surface-elevated border border-border p-8 sm:p-12 text-center">
-          <h3 className="text-xl font-semibold text-foreground mb-3">Download Parallax Client</h3>
+          <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Download Parallax Client</h3>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             The Parallax Client is available for Linux, Windows, and macOS. Download the latest release below or visit our GitHub for source code and instructions.
           </p>
