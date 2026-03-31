@@ -1,3 +1,4 @@
+"use client"
 import GridView from "@/components/grid-view"
 import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
@@ -60,7 +61,7 @@ export default function ParallaxForBusinesses() {
       />
       <div className="mb-8 text-center">
         <div className="flex justify-center gap-4 px-6">
-          <Button className="w-full sm:w-fit" asChild>
+          <Button className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
             <Link href={'/introduction/getting-started'}>
               Get started with Parallax
               <ChevronRight />

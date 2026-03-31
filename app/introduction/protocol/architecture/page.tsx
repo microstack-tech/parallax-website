@@ -131,7 +131,7 @@ best = argmax(chains, sum(block.work for block in chain))
           { label: "Timestamp Server", desc: "Establishes when actions occur (ordered by PoW)." },
           { label: "Nakamoto", desc: "Selects which history prevails (heaviest chain)." },
         ].map((x) => (
-          <div key={x.label} className="min-w-0 rounded-2xl border p-4">
+          <div key={x.label} className="min-w-0 border border-border p-4">
             <div className="flex items-center gap-2 text-foreground font-semibold">
               <CheckCircle2 className="h-4 w-4" />
               <span className="font-medium">{x.label}</span>
@@ -204,7 +204,7 @@ best = argmax(chains, sum(block.work for block in chain))
                   ))}
                 </ul>
 
-                <div className="min-w-0 rounded-xl border bg-muted shadow-inner p-4">
+                <div className="min-w-0 border border-border bg-surface-elevated p-4">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
@@ -214,7 +214,7 @@ best = argmax(chains, sum(block.work for block in chain))
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed shadow-xs border overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre bg-background p-4 text-sm leading-relaxed shadow-xs border overscroll-x-contain [-webkit-overflow-scrolling:touch]">
                     <code className="block max-w-full">
                       {s.code}
                     </code>
@@ -227,7 +227,7 @@ best = argmax(chains, sum(block.work for block in chain))
       </div>
 
       {/* Interplay Diagram (textual) */}
-      <div className="mt-10 grid min-w-0 gap-4 rounded-2xl border p-6">
+      <div className="mt-10 grid min-w-0 gap-4 border border-border p-6">
         <h2 className="text-xl font-semibold">End-to-end flow</h2>
         <p className="text-muted-foreground">
           A signed transaction enters the mempool → the miner proposes a block → the PVM executes
@@ -236,7 +236,7 @@ best = argmax(chains, sum(block.work for block in chain))
         </p>
         <div className="grid min-w-0 gap-3 md:grid-cols-5">
           {["Sign", "Execute", "Commit", "Prove", "Select"].map((step, idx) => (
-            <div key={step} className="min-w-0 rounded-xl border bg-card p-4 text-center">
+            <div key={step} className="min-w-0 border border-border bg-card/50 backdrop-blur-sm p-4 text-center">
               <div className="text-2xl font-semibold">{idx + 1}</div>
               <div className="mt-2">{step}</div>
             </div>

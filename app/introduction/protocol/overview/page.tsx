@@ -114,7 +114,7 @@ export default function Page() {
             <Card className="border-muted-foreground/10 h-full">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <topic.icon className="h-5 w-5 min-w-fit min-h-fit" />
+                  <topic.icon className="h-5 w-5 min-w-fit min-h-fit text-gold" />
                   <CardTitle className="text-xl">{topic.title}</CardTitle>
                 </div>
               </CardHeader>
@@ -133,7 +133,7 @@ export default function Page() {
         ))}
       </div>
       <div className="flex justify-center w-full mt-16">
-        <Button size={"xl"} className="w-full sm:w-fit" asChild>
+        <Button size={"xl"} className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
           <Link href={"https://docs.parallaxprotocol.org"}>
             Explore Technical Documentation <ExternalLink className="ml-1 h-4 w-4" />
           </Link>

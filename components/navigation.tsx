@@ -19,6 +19,8 @@ import {
 } from "./ui/navigation-menu"
 import { Separator } from "./ui/separator"
 import { FaGithub } from "react-icons/fa"
+import { useTheme } from "next-themes"
+import { Moon, Sun } from "lucide-react"
 
 interface NavItem {
   name: string
@@ -66,27 +68,13 @@ const navItems: NavItem[] = [
 ]
 
 export function Navigation() {
-  const [opacity, setOpacity] = useState(0);
+  const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [bgColor, setBgColor] = useState<string>(``)
-  const [borderColor, setBorderColor] = useState<string>(``)
   const pathname = usePathname()
-  const theme = 'light'
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    if (isOpen) {
-      const bgColor = theme === 'light' ? `rgba(255,255,255,1)` : `rgba(17,17,19,1)`
-      const borderColor = theme === 'light' ? `rgba(230,230,230,1)` : `rgba(37,37,37,1)`
-      setBgColor(bgColor)
-      setBorderColor(borderColor)
-      return
-    }
-
-    const bgColor = theme === 'light' ? `rgba(255,255,255,${opacity})` : `rgba(17,17,19,${opacity})`
-    const borderColor = theme === 'light' ? `rgba(230,230,230,${opacity})` : `rgba(37,37,37,${opacity})`
-    setBgColor(bgColor)
-    setBorderColor(borderColor)
-  }, [theme, opacity, isOpen])
+  useEffect(() => { setMounted(true) }, [])
 
   // Lock body scroll on mobile sheet
   useEffect(() => {
@@ -104,42 +92,45 @@ export function Navigation() {
     }
   }, [isOpen])
 
-
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const newOpacity = Math.min(scrollY / 300, 1);
-      setOpacity(newOpacity);
-    };
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  const showBg = scrolled || isOpen
+  const isHome = pathname === "/"
+  // On the homepage, force white text over the black hole hero until user scrolls
+  const heroOverlay = isHome && !scrolled && !isOpen
 
   return (
     <nav
-      className="fixed top-0 py-2 md:py-4 px-6 sm:px-8 left-0 right-0 z-50 transition-opacity duration-300 border-b border-transparent"
-      style={{
-        backgroundColor: bgColor,
-        borderColor: borderColor,
-      }}
+      className={cn(
+        "fixed top-0 py-2 md:py-4 px-6 sm:px-8 left-0 right-0 z-50 transition-all duration-300 border-b",
+        showBg
+          ? "bg-background/80 backdrop-blur-md border-border"
+          : "bg-transparent border-transparent",
+        heroOverlay && "nav-hero-overlay"
+      )}
     >
       <div className="flex items-center mx-auto max-w-7xl justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="flex-shrink-0">
-            <Link href="/" className="cursor-pointer">
-              <Image
-                src="/new_parallax_logo_square.svg"
-                className="size-10 md:size-12 w-auto"
-                width={200}
-                height={200}
-                alt="Parallax Logo"
-                priority
-              />
-            </Link>
-          </div>
+          <Link href="/" className="cursor-pointer flex items-center gap-3">
+            <Image
+              src={mounted && (resolvedTheme === 'dark' || heroOverlay) ? "/new_parallax_logo_square_white.svg" : "/new_parallax_logo_square.svg"}
+              className="size-10 md:size-12 w-auto"
+              width={200}
+              height={200}
+              alt="Parallax Logo"
+              priority
+            />
+            <span className="hidden lg:inline text-lg font-semibold font-sans">
+              Parallax
+            </span>
+          </Link>
         </div>
 
         {/* Desktop menu */}
@@ -182,16 +173,28 @@ export function Navigation() {
                 )
               )}
             </NavigationMenuList>
-            <Button className="ml-16 px-8" asChild>
-              <Link href={"/introduction/getting-started"}>
-                Get Started
-              </Link>
-            </Button>
-            <Button variant={"secondary"} className="ml-2" asChild>
-              <Link href={'https://github.com/ParallaxProtocol/parallax'} target="_blank">
-                <FaGithub />
-              </Link>
-            </Button>
+            <div className="flex items-center gap-2 ml-12">
+              <Button className="px-8 bg-gold !text-gold-foreground hover:bg-gold/90" asChild>
+                <Link href={"/introduction/getting-started"}>
+                  Get Started
+                </Link>
+              </Button>
+              <Button variant={"secondary"} className={cn(heroOverlay && "!bg-white/10 !border-white/20 border !text-white [&_*]:!text-white")} asChild>
+                <Link href={'https://github.com/ParallaxProtocol/parallax'} target="_blank">
+                  <FaGithub />
+                </Link>
+              </Button>
+              <Button
+                variant={"secondary"}
+                size="icon"
+                className={cn(heroOverlay && "!bg-white/10 !border-white/20 border !text-white [&_*]:!text-white")}
+                onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+              >
+                <Sun className="size-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                <Moon className="absolute size-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </div>
           </NavigationMenu>
         </div>
 
@@ -277,6 +280,21 @@ export function Navigation() {
                     </Link>
                   )
                 )}
+
+                {/* Theme toggle */}
+                <div className="mt-6 px-3">
+                  <Separator className="bg-muted-foreground/15 mb-4" />
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="flex items-center gap-2 text-base font-medium text-accent-foreground"
+                    onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+                  >
+                    <Sun className="size-5 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                    <Moon className="absolute size-5 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                    {mounted && resolvedTheme === 'dark' ? 'Light mode' : 'Dark mode'}
+                  </Button>
+                </div>
               </div>
             </div>
           </>,

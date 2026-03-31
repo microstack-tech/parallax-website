@@ -1,7 +1,7 @@
 import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, ExternalLink, Info, Server, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
@@ -40,7 +40,7 @@ export default function RunningFullNodePage() {
           {nodeTopics.map((topic) => (
             <Card key={topic.title}>
               <CardHeader>
-                <topic.icon />
+                <topic.icon className="size-6 text-gold" />
                 <CardTitle>{topic.title}</CardTitle>
               </CardHeader>
               <CardContent>
@@ -49,30 +49,27 @@ export default function RunningFullNodePage() {
             </Card>
           ))}
         </div>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-center w-full">Get started</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-base text-center">
-              Ready to run a full node? Download the Parallax Client and follow our step-by-step guide.
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button asChild>
-                <Link href="https://github.com/ParallaxProtocol/parallax/releases/latest" target="_blank" rel="noopener">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Parallax Client
-                </Link>
-              </Button>
-              <Button variant="secondary" asChild>
-                <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
-                  Setup Guide
-                  <ExternalLink />
-                </Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+
+        <div className="bg-surface-elevated border border-border p-8 sm:p-12 text-center">
+          <h3 className="text-xl font-semibold text-foreground mb-3">Get started</h3>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            Ready to run a full node? Download the Parallax Client and follow our step-by-step guide.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+              <Link href="https://github.com/ParallaxProtocol/parallax/releases/latest" target="_blank" rel="noopener">
+                <Download className="mr-2 h-5 w-5" />
+                Download Parallax Client
+              </Link>
+            </Button>
+            <Button variant="secondary" asChild>
+              <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
+                Setup Guide
+                <ExternalLink />
+              </Link>
+            </Button>
+          </div>
+        </div>
       </section>
     </MainMotion>
   );

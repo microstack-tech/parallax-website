@@ -279,7 +279,7 @@ SelectBest(tips):
                   ))}
                 </ul>
 
-                <div className="min-w-0 rounded-xl border bg-muted p-4 shadow-inner">
+                <div className="min-w-0 border border-border bg-surface-elevated p-4">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
@@ -289,7 +289,7 @@ SelectBest(tips):
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed border shadow-xs overscroll-x-contain [-webkit-overflow-scrolling:touch]">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre bg-background p-4 text-sm leading-relaxed border shadow-xs overscroll-x-contain [-webkit-overflow-scrolling:touch]">
                     <code className="block max-w-full">
                       {s.code}
                     </code>
@@ -302,7 +302,7 @@ SelectBest(tips):
       </div>
 
       {/* Flow Summary */}
-      <div className="mt-10 grid gap-4 rounded-2xl border p-6">
+      <div className="mt-10 grid gap-4 border border-border p-6">
         <h2 className="text-xl font-semibold">End-to-end selection flow</h2>
         <p className="text-muted-foreground">
           Headers are checked for Extra size, time (MTP & future drift), era-specific difficulty rules
@@ -311,7 +311,7 @@ SelectBest(tips):
         </p>
         <div className="grid gap-3 md:grid-cols-5">
           {["Validate", "Check Anchor / Era", "Compute Difficulty (DAA/ASERT)", "Accumulate Work", "Select Heaviest"].map((step, idx) => (
-            <div key={step} className="rounded-xl border bg-card p-4 text-center">
+            <div key={step} className="border border-border bg-card/50 backdrop-blur-sm p-4 text-center">
               <div className="text-2xl font-semibold">{idx + 1}</div>
               <div className="mt-2">{step}</div>
             </div>

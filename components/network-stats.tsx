@@ -1,0 +1,302 @@
+'use client'
+import { useEffect, useRef, useState } from "react"
+import { FadeIn } from "./fade-in"
+import { cn } from "@/lib/utils"
+import Link from "next/link"
+import { ExternalLink } from "lucide-react"
+import { useInView, useMotionValue, useSpring, motion } from "framer-motion"
+
+type Stats = {
+  total_blocks: string
+  total_transactions: string
+  total_addresses: string
+  average_block_time: number
+  transactions_today: string
+  price_usd: number | null
+  price_change_24h: number | null
+  market_cap_usd: number | null
+  total_volume_usd: number | null
+  circulating_supply: number | null
+  max_supply: number | null
+}
+
+function formatNumber(value: string | number): string {
+  const num = typeof value === "string" ? parseInt(value, 10) : value
+  if (isNaN(num)) return "—"
+  return num.toLocaleString()
+}
+
+function formatBlockTime(ms: number): string {
+  const seconds = Math.round(ms / 1000)
+  const minutes = Math.floor(seconds / 60)
+  const remaining = seconds % 60
+  if (minutes === 0) return `${seconds}s`
+  return `${minutes}m ${remaining}s`
+}
+
+function formatPrice(usd: number): string {
+  if (usd >= 1) return `$${usd.toFixed(2)}`
+  if (usd >= 0.01) return `$${usd.toFixed(4)}`
+  return `$${usd.toFixed(6)}`
+}
+
+function formatUsd(usd: number): string {
+  if (usd >= 1_000_000) return `$${(usd / 1_000_000).toFixed(2)}M`
+  if (usd >= 1_000) return `$${(usd / 1_000).toFixed(1)}K`
+  return `$${usd.toFixed(0)}`
+}
+
+function formatSupply(circulating: number, max: number): string {
+  const fmt = (n: number) => {
+    if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`
+    if (n >= 1_000) return `${(n / 1_000).toFixed(0)}K`
+    return n.toLocaleString()
+  }
+  return `${fmt(circulating)} / ${fmt(max)}`
+}
+
+// Animated counter that counts up from 0 to target
+function AnimatedValue({
+  value,
+  formatFn,
+}: {
+  value: number
+  formatFn: (n: number) => string
+}) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true, margin: "-50px" })
+  const motionValue = useMotionValue(0)
+  const springValue = useSpring(motionValue, { duration: 1500, bounce: 0 })
+  const [display, setDisplay] = useState(formatFn(0))
+
+  useEffect(() => {
+    if (inView) {
+      motionValue.set(value)
+    }
+  }, [inView, value, motionValue])
+
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      setDisplay(formatFn(latest))
+    })
+    return unsubscribe
+  }, [springValue, formatFn])
+
+  return <span ref={ref}>{display}</span>
+}
+
+// For values that aren't purely numeric (like block time, supply ratio)
+function AnimatedText({ text }: { text: string }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true, margin: "-50px" })
+
+  return (
+    <motion.span
+      ref={ref}
+      initial={{ opacity: 0, y: 8 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5 }}
+    >
+      {text}
+    </motion.span>
+  )
+}
+
+type StatItem = {
+  key: string
+  label: string
+  // Returns the raw number for animation, or null if unavailable
+  rawValue?: (stats: Stats) => number | null
+  format: (stats: Stats) => string | null
+  // Format a raw number (for animated counter)
+  formatRaw?: (n: number) => string
+  // Whether this item can be count-animated
+  animatable?: boolean
+  suffix?: (stats: Stats) => React.ReactNode
+}
+
+const marketItems: StatItem[] = [
+  {
+    key: "price",
+    label: "LAX Price",
+    format: (s) => s.price_usd != null ? formatPrice(s.price_usd) : null,
+    rawValue: (s) => s.price_usd,
+    formatRaw: (n) => formatPrice(n),
+    animatable: true,
+    suffix: (s) => {
+      if (s.price_change_24h == null) return null
+      const positive = s.price_change_24h >= 0
+      return (
+        <span className={cn("text-xs font-mono", positive ? "text-green-500" : "text-red-500")}>
+          {positive ? "+" : ""}{s.price_change_24h.toFixed(1)}%
+        </span>
+      )
+    },
+  },
+  {
+    key: "market_cap",
+    label: "Market Cap",
+    format: (s) => s.market_cap_usd != null ? formatUsd(s.market_cap_usd) : null,
+    rawValue: (s) => s.market_cap_usd,
+    formatRaw: (n) => formatUsd(n),
+    animatable: true,
+  },
+  {
+    key: "volume",
+    label: "24h Volume",
+    format: (s) => s.total_volume_usd != null ? formatUsd(s.total_volume_usd) : null,
+    rawValue: (s) => s.total_volume_usd,
+    formatRaw: (n) => formatUsd(n),
+    animatable: true,
+  },
+  {
+    key: "supply",
+    label: "Circulating Supply",
+    format: (s) => s.circulating_supply != null && s.max_supply != null
+      ? formatSupply(s.circulating_supply, s.max_supply)
+      : null,
+  },
+]
+
+const networkItems: StatItem[] = [
+  {
+    key: "total_blocks",
+    label: "Blocks",
+    format: (s) => formatNumber(s.total_blocks),
+    rawValue: (s) => parseInt(s.total_blocks, 10) || null,
+    formatRaw: (n) => Math.round(n).toLocaleString(),
+    animatable: true,
+  },
+  {
+    key: "total_transactions",
+    label: "Transactions",
+    format: (s) => formatNumber(s.total_transactions),
+    rawValue: (s) => parseInt(s.total_transactions, 10) || null,
+    formatRaw: (n) => Math.round(n).toLocaleString(),
+    animatable: true,
+  },
+  {
+    key: "total_addresses",
+    label: "Addresses",
+    format: (s) => formatNumber(s.total_addresses),
+    rawValue: (s) => parseInt(s.total_addresses, 10) || null,
+    formatRaw: (n) => Math.round(n).toLocaleString(),
+    animatable: true,
+  },
+  {
+    key: "average_block_time",
+    label: "Avg Block Time",
+    format: (s) => formatBlockTime(s.average_block_time),
+  },
+  {
+    key: "transactions_today",
+    label: "Txns Today",
+    format: (s) => formatNumber(s.transactions_today),
+    rawValue: (s) => parseInt(s.transactions_today, 10) || null,
+    formatRaw: (n) => Math.round(n).toLocaleString(),
+    animatable: true,
+  },
+]
+
+function StatGrid({ items, stats, columns }: { items: StatItem[], stats: Stats, columns: string }) {
+  const visible = items.filter((item) => item.format(stats) != null)
+  if (visible.length === 0) return null
+
+  return (
+    <div className={cn("grid gap-px bg-border", columns)}>
+      {visible.map((item) => {
+        const raw = item.animatable && item.rawValue && item.formatRaw
+          ? item.rawValue(stats)
+          : null
+
+        return (
+          <div
+            key={item.key}
+            className="bg-background flex flex-col items-center justify-center py-8 px-4"
+          >
+            <div className="flex items-baseline gap-2">
+              <span className="text-xl sm:text-2xl font-semibold text-foreground font-mono tabular-nums">
+                {raw != null && item.formatRaw ? (
+                  <AnimatedValue value={raw} formatFn={item.formatRaw} />
+                ) : (
+                  <AnimatedText text={item.format(stats)!} />
+                )}
+              </span>
+              {item.suffix?.(stats)}
+            </div>
+            <span className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">
+              {item.label}
+            </span>
+          </div>
+        )
+      })}
+      {/* Fill empty grid cell so bg-border doesn't bleed through */}
+      {visible.length % 2 !== 0 && <div className="bg-background sm:hidden" />}
+    </div>
+  )
+}
+
+export function NetworkStats() {
+  const [stats, setStats] = useState<Stats | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function load() {
+      try {
+        const res = await fetch("/api/network_stats")
+        if (!res.ok) return
+        const data = await res.json()
+        if (!cancelled) setStats(data)
+      } catch {
+        // silently fail — stats are non-critical
+      }
+    }
+
+    load()
+    const interval = setInterval(load, 60_000)
+    return () => { cancelled = true; clearInterval(interval) }
+  }, [])
+
+  if (!stats) return null
+
+  const hasMarket = marketItems.some((item) => item.format(stats) != null)
+
+  return (
+    <section className="py-16 px-6 sm:px-8">
+      <div className="mx-auto max-w-7xl space-y-12">
+        <FadeIn>
+          <div className="text-center mb-6">
+            <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">
+              Live Network
+            </p>
+          </div>
+          <StatGrid items={networkItems} stats={stats} columns="grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" />
+          <div className="flex justify-center mt-4">
+            <Link href="https://explorer.parallaxprotocol.org" target="_blank" rel="noopener" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors inline-flex items-center gap-1.5">
+              Block Explorer
+              <ExternalLink className="size-3" />
+            </Link>
+          </div>
+        </FadeIn>
+
+        {hasMarket && (
+          <FadeIn delay={0.1}>
+            <div className="text-center mb-6">
+              <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                Market
+              </p>
+            </div>
+            <StatGrid items={marketItems} stats={stats} columns="grid-cols-2 lg:grid-cols-4" />
+            <div className="flex justify-center mt-4">
+              <Link href="https://www.coingecko.com/en/coins/parallax-2" target="_blank" rel="noopener" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors inline-flex items-center gap-1.5">
+                CoinGecko
+                <ExternalLink className="size-3" />
+              </Link>
+            </div>
+          </FadeIn>
+        )}
+      </div>
+    </section>
+  )
+}

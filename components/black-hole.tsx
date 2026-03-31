@@ -7,12 +7,18 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 
-export default function BlackHoleVisualization() {
+interface BlackHoleProps {
+  interactive?: boolean;
+}
+
+export default function BlackHoleVisualization({ interactive = true }: BlackHoleProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const autoRotate = false
 
   useEffect(() => {
     if (!containerRef.current) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth < 768;
 
     // ----- Constants -----
     const BLACK_HOLE_RADIUS = 1.3;
@@ -48,7 +54,9 @@ export default function BlackHoleVisualization() {
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
 
-    const bloomPass = new UnrealBloomPass(new THREE.Vector2(width, height), 0.8, 0.7, 0.8);
+    const TARGET_BLOOM_STRENGTH = 1.2;
+    const FADE_DURATION = 3.0; // seconds
+    const bloomPass = new UnrealBloomPass(new THREE.Vector2(width, height), 0, 0.8, 0.5);
     composer.addPass(bloomPass);
 
     const lensingShader = {
@@ -77,13 +85,18 @@ export default function BlackHoleVisualization() {
     // ----- Controls -----
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true; controls.dampingFactor = 0.035; controls.rotateSpeed = 0.4;
-    controls.autoRotate = autoRotate; controls.autoRotateSpeed = 0.1;
     controls.target.set(0, 0, 0); controls.minDistance = 2.5; controls.maxDistance = 100; controls.enablePan = false; controls.update();
-    controls.enableZoom = false
+    controls.enableZoom = false;
+
+    if (!interactive) {
+      controls.enabled = false;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.05;
+    }
 
     // ----- Stars -----
     const starGeometry = new THREE.BufferGeometry();
-    const starCount = 150000;
+    const starCount = isMobile ? 80000 : 150000;
     const starPositions = new Float32Array(starCount * 3);
     const starColors = new Float32Array(starCount * 3);
     const starSizes = new Float32Array(starCount);
@@ -138,7 +151,7 @@ export default function BlackHoleVisualization() {
       uniforms: { uTime: { value: 0 }, uCameraPosition: { value: camera.position } },
       vertexShader: `varying vec3 vNormal; varying vec3 vPosition; void main(){ vNormal=normalize(normalMatrix*normal); vPosition=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
       fragmentShader: `
-        uniform float uTime; uniform vec3 uCameraPosition; varying vec3 vNormal; varying vec3 vPosition; void main(){ vec3 viewDirection=normalize(uCameraPosition - vPosition); float fresnel=1.0 - abs(dot(vNormal,viewDirection)); fresnel=pow(fresnel,2.5); vec3 glowColor=vec3(1.0,0.4,0.1); float pulse=sin(uTime*2.5)*0.15+0.85; gl_FragColor=vec4(glowColor*fresnel*pulse, fresnel*0.4); }
+        uniform float uTime; uniform vec3 uCameraPosition; varying vec3 vNormal; varying vec3 vPosition; void main(){ vec3 viewDirection=normalize(uCameraPosition - vPosition); float fresnel=1.0 - abs(dot(vNormal,viewDirection)); fresnel=pow(fresnel,2.5); vec3 glowColor=vec3(1.0,0.5,0.15); float pulse=sin(uTime*2.5)*0.15+0.85; gl_FragColor=vec4(glowColor*fresnel*pulse, fresnel*0.4); }
       `,
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -159,11 +172,11 @@ export default function BlackHoleVisualization() {
     const diskMaterial = new THREE.ShaderMaterial({
       uniforms: {
         uTime: { value: 0.0 },
-        uColorHot: { value: new THREE.Color(0xffffff) },
-        uColorMid1: { value: new THREE.Color(0xff7733) },
-        uColorMid2: { value: new THREE.Color(0xff4477) },
-        uColorMid3: { value: new THREE.Color(0x7744ff) },
-        uColorOuter: { value: new THREE.Color(0x4477ff) },
+        uColorHot: { value: new THREE.Color(0xfff8ee) },
+        uColorMid1: { value: new THREE.Color(0xffcc66) },
+        uColorMid2: { value: new THREE.Color(0xdd7733) },
+        uColorMid3: { value: new THREE.Color(0x993311) },
+        uColorOuter: { value: new THREE.Color(0x331100) },
         uNoiseScale: { value: 2.5 },
         uFlowSpeed: { value: 0.22 },
         uDensity: { value: 1.3 },
@@ -213,29 +226,50 @@ export default function BlackHoleVisualization() {
     const clock = new THREE.Clock();
     const blackHoleScreenPosVec3 = new THREE.Vector3();
     let rafId = 0;
-    const animate = () => {
-      rafId = requestAnimationFrame(animate);
-      const elapsedTime = clock.getElapsedTime();
-      const deltaTime = clock.getDelta();
 
-      diskMaterial.uniforms.uTime.value = elapsedTime;
-      starMaterial.uniforms.uTime.value = elapsedTime;
-      eventHorizonMat.uniforms.uTime.value = elapsedTime;
+    if (prefersReducedMotion && !interactive) {
+      // Render a single static frame
+      diskMaterial.uniforms.uTime.value = 2.0;
+      starMaterial.uniforms.uTime.value = 2.0;
+      eventHorizonMat.uniforms.uTime.value = 2.0;
       eventHorizonMat.uniforms.uCameraPosition.value.copy(camera.position);
-
       blackHoleScreenPosVec3.copy(blackHoleMesh.position).project(camera);
       lensingPass.uniforms.blackHoleScreenPos.value.set(
         (blackHoleScreenPosVec3.x + 1) / 2,
         (blackHoleScreenPosVec3.y + 1) / 2
       );
-
-      controls.autoRotate = false;
       controls.update();
-      stars.rotation.y += deltaTime * 0.003; stars.rotation.x += deltaTime * 0.001;
-      accretionDisk.rotation.z += deltaTime * 0.005;
-      composer.render(deltaTime);
-    };
-    animate();
+      composer.render(0.016);
+    } else {
+      const animate = () => {
+        rafId = requestAnimationFrame(animate);
+        const elapsedTime = clock.getElapsedTime();
+        const deltaTime = clock.getDelta();
+
+        // Fade in bloom over first few seconds
+        const fadeProgress = Math.min(elapsedTime / FADE_DURATION, 1.0);
+        const eased = fadeProgress * fadeProgress * (3 - 2 * fadeProgress); // smoothstep
+        bloomPass.strength = TARGET_BLOOM_STRENGTH * eased;
+        renderer.toneMappingExposure = 1.2 * eased;
+
+        diskMaterial.uniforms.uTime.value = elapsedTime;
+        starMaterial.uniforms.uTime.value = elapsedTime;
+        eventHorizonMat.uniforms.uTime.value = elapsedTime;
+        eventHorizonMat.uniforms.uCameraPosition.value.copy(camera.position);
+
+        blackHoleScreenPosVec3.copy(blackHoleMesh.position).project(camera);
+        lensingPass.uniforms.blackHoleScreenPos.value.set(
+          (blackHoleScreenPosVec3.x + 1) / 2,
+          (blackHoleScreenPosVec3.y + 1) / 2
+        );
+
+        controls.update();
+        stars.rotation.y += deltaTime * 0.003; stars.rotation.x += deltaTime * 0.001;
+        accretionDisk.rotation.z += deltaTime * 0.005;
+        composer.render(deltaTime);
+      };
+      animate();
+    }
 
     // ----- Cleanup -----
     return () => {
@@ -261,7 +295,7 @@ export default function BlackHoleVisualization() {
         renderer.domElement.parentNode.removeChild(renderer.domElement);
       }
     };
-  }, [autoRotate]);
+  }, [interactive]);
 
   return (
     <div ref={containerRef} className="absolute h-full w-full inset-0 z-0" />

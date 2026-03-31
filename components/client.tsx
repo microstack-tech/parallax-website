@@ -1,113 +1,87 @@
+'use client'
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, CircleSlash, Download, ExternalLink, Hexagon, ShieldCheck, TerminalSquare } from "lucide-react";
+import { BookOpen, Download, ExternalLink, Hexagon, CircleSlash } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-
-const clientFeatures = [
-  {
-    icon: ShieldCheck,
-    title: "Security & Privacy",
-    description: "Security anchored in XHash Proof of Work and cryptographic signatures. Every transaction is independently verifiable by any node on the network."
-  },
-  {
-    icon: TerminalSquare,
-    title: "Full Node",
-    description: "Run a full node to validate transactions, mine blocks, and help secure the Parallax network."
-  },
-  {
-    icon: FaGithub,
-    title: "Open Source",
-    description: "The client is fully open source. Review, audit, and contribute to the codebase on GitHub."
-  }
-];
+import { FadeIn } from "./fade-in";
 
 export default function Client() {
   return (
-    <>
-      <section className="relative py-24 border-b z-10 px-6 sm:px-8">
-        <div className="mx-auto max-w-7xl">
+    <section className="relative py-24 z-10 px-6 sm:px-8">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
           <div className="mx-auto max-w-7xl text-center">
+            <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">Software</p>
             <h2 className="text-3xl text-foreground sm:text-4xl">The Parallax Client</h2>
             <p className="mt-8 text-base text-muted-foreground text-pretty">
               Download and run the reference Parallax node software. Help secure the network and participate in consensus.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-8 mt-24 justify-center">
-            <Card className="flex flex-col">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <Hexagon className="size-6" />
-                  <CardTitle>Decentralized</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
+        </FadeIn>
+
+        {/* Two concept columns */}
+        <FadeIn delay={0.1}>
+          <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 gap-0">
+            <div className="pr-0 sm:pr-10 sm:border-r border-border pb-8 sm:pb-0">
+              <div className="flex items-center gap-3 mb-4">
+                <Hexagon className="size-5 text-gold" />
+                <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">Decentralized</h3>
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
                 Users running a node are the ones keeping Parallax decentralized. They individually run their own Parallax full nodes, and each of those full nodes separately follows the exact same rules to decide which block chain is valid.
-              </CardContent>
-            </Card>
-            <Card className="flex flex-col">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <CircleSlash className="size-6" />
-                  <CardTitle>No Voting</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
+              </p>
+            </div>
+            <div className="pl-0 sm:pl-10 pt-8 sm:pt-0 border-t sm:border-t-0 border-border">
+              <div className="flex items-center gap-3 mb-4">
+                <CircleSlash className="size-5 text-gold" />
+                <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">No Voting</h3>
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
                 {`There's no voting or other corruptible process involved: there's just individual software following identical rules—"math"—to evaluate identical blocks and coming to identical conclusions about which block chain is valid.`}
-              </CardContent>
-            </Card>
+              </p>
+            </div>
           </div>
-          <div className="py-12 border-l-2 pl-6 text-muted-foreground">
-            {`This shared agreement (called consensus) allows people like you to only accept valid transactions, enforcing Parallax's rules against even the most powerful miners.`}
+        </FadeIn>
+
+        {/* Blockquote */}
+        <FadeIn delay={0.15}>
+          <blockquote className="my-16 border-l-2 border-gold pl-8 py-2">
+            <p className="text-lg italic text-muted-foreground leading-relaxed">
+              {`This shared agreement (called consensus) allows people like you to only accept valid transactions, enforcing Parallax's rules against even the most powerful miners.`}
+            </p>
+          </blockquote>
+        </FadeIn>
+
+        {/* Download CTA banner */}
+        <FadeIn delay={0.2}>
+          <div className="bg-surface-elevated border border-border rounded-sm p-8 sm:p-12 text-center">
+            <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Download the Parallax Client</h3>
+            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+              Available for Linux, Windows, and macOS. Download the latest release or visit GitHub for source code and instructions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+                <Link href="https://github.com/ParallaxProtocol/parallax/releases/latest" target="_blank" rel="noopener">
+                  <Download className="h-5 w-5" />
+                  Download
+                </Link>
+              </Button>
+              <Button variant="secondary" asChild>
+                <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
+                  <BookOpen />
+                  Setup guide
+                </Link>
+              </Button>
+              <Button variant="secondary" asChild>
+                <Link href="https://github.com/ParallaxProtocol/parallax" target="_blank" rel="noopener">
+                  <FaGithub />
+                  GitHub
+                </Link>
+              </Button>
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {clientFeatures.map((feature) => (
-              <Card key={feature.title} className="flex flex-col">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <feature.icon className="size-6" />
-                    <CardTitle>{feature.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  {feature.description}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <Card className="flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-lg text-center">Download the Parallax Client</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div>
-                The Parallax Client is available for Linux, Windows, and macOS. Download the latest release below or visit our GitHub for source code and instructions.
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <Button variant="default" asChild>
-                  <Link href="https://github.com/ParallaxProtocol/parallax/releases/latest" target="_blank" rel="noopener">
-                    <Download className="h-5 w-5" />
-                    Download
-                  </Link>
-                </Button>
-                <Button variant="secondary" asChild>
-                  <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
-                    <BookOpen />
-                    Setup guide
-                    <ExternalLink />
-                  </Link>
-                </Button>
-                <Button variant="secondary" asChild>
-                  <Link href="https://github.com/ParallaxProtocol/parallax" target="_blank" rel="noopener">
-                    <FaGithub />
-                    View on GitHub
-                  </Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-    </>
+        </FadeIn>
+      </div>
+    </section>
   );
 }

@@ -103,7 +103,7 @@ export default function CommunityPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {oficialChannels.map((ch) => (
-            <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
+            <Button key={ch.name} variant={"outline"} size={"2xl"} className="hover:border-gold/30 hover:text-gold transition-all" asChild>
               <Link href={ch.href} target="_blank" rel="noopener" className="block">
                 <ch.icon className="size-6 mr-4" />
                 {ch.name}
@@ -119,7 +119,7 @@ export default function CommunityPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {communityChannels.map((ch) => (
-            <Button key={ch.name} variant={"outline"} size={"2xl"} asChild>
+            <Button key={ch.name} variant={"outline"} size={"2xl"} className="hover:border-gold/30 hover:text-gold transition-all" asChild>
               <Link href={ch.href} target="_blank" rel="noopener" className="block">
                 <ch.icon className="size-6 mr-4" />
                 {ch.name}
@@ -135,7 +135,7 @@ export default function CommunityPage() {
             <Card key={topic.title}>
               <CardHeader>
                 <div className="flex flex-row items-center gap-4">
-                  <topic.icon className="size-6" />
+                  <topic.icon className="size-6 text-gold" />
                   <CardTitle className="text-lg text-center">{topic.title}</CardTitle>
                 </div>
               </CardHeader>

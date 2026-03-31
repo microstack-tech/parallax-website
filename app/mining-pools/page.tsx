@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 
 const PoolsCmp = ({ pool }: { pool: Pool }) => {
   return (
-    <Link href={pool.url} target="_blank" className="flex flex-col rounded-2xl border bg-muted overflow-hidden" >
+    <Link href={pool.url} target="_blank" className="flex flex-col border bg-card/50 backdrop-blur-sm overflow-hidden hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300" >
       <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 px-8 py-4 font-semibold text-foreground text-balance text-lg">
         <div>
           {pool.name}
@@ -51,14 +51,13 @@ export default function MiningPoolsPage() {
                 <Button
                   onClick={() => setActiveCategory('all')}
                   variant={'ghost'}
-                  className={`flex flex-row w-full text-base py-5 cursor-pointer justify-between text-left ${activeCategory === 'all'
-                    ? "bg-primary text-primary-foreground font-semibold hover:bg-primary hover:text-white"
-                    : ""
-                    }`}
+                  className={cn(`flex flex-row w-full text-base py-5 cursor-pointer justify-between text-left`, {
+                    "bg-gold/10 text-gold font-semibold hover:bg-gold/15 hover:text-gold border-l-2 border-gold": activeCategory === 'all'
+                  })}
                 >
                   All
                   <Badge variant={'outline'} className={cn("text-foreground", {
-                    "text-background border-background/25": activeCategory === 'all'
+                    "text-gold border-gold/25": activeCategory === 'all'
                   })}>
                     {pools.length}
                   </Badge>
@@ -69,12 +68,12 @@ export default function MiningPoolsPage() {
                     onClick={() => setActiveCategory(continent.id)}
                     variant={'ghost'}
                     className={cn(`flex flex-row w-full text-base py-5 cursor-pointer justify-between text-left`, {
-                      "bg-primary text-primary-foreground font-semibold hover:bg-primary hover:text-white": activeCategory === continent.id
+                      "bg-gold/10 text-gold font-semibold hover:bg-gold/15 hover:text-gold border-l-2 border-gold": activeCategory === continent.id
                     })}
                   >
                     {continent.name}
                     <Badge variant={'outline'} className={cn("text-foreground", {
-                      "text-background border-background/25": activeCategory === continent.id
+                      "text-gold border-gold/25": activeCategory === continent.id
                     })}>
                       {pools.filter(p => p.location.find(c => c === continent.id)).length}
                     </Badge>

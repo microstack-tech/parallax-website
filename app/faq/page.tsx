@@ -124,7 +124,7 @@ export default function FAQPage() {
                     onClick={() => setActiveCategory(category.id)}
                     variant={'ghost'}
                     className={`w-full text-base py-5 cursor-pointer justify-start text-left ${activeCategory === category.id
-                      ? "bg-primary text-primary-foreground font-semibold hover:bg-primary hover:text-white"
+                      ? "bg-gold/10 text-gold font-semibold hover:bg-gold/15 hover:text-gold border-l-2 border-gold"
                       : ""
                       }`}
                   >
@@ -148,7 +148,7 @@ export default function FAQPage() {
                 return (
                   <div key={questionId} className="overflow-hidden">
                     <h3 className="inline-flex items-center gap-4 px-4 py-4 font-semibold text-foreground text-balance text-lg">
-                      <LucideChevronRight />
+                      <LucideChevronRight className="text-gold" />
                       {faq.question}
                     </h3>
 

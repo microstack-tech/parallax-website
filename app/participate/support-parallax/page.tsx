@@ -1,3 +1,4 @@
+"use client"
 import GridView from "@/components/grid-view"
 import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
@@ -11,7 +12,7 @@ const PATREON_URL = "https://www.patreon.com/ParallaxChainProtocol"
 
 function DonationsSection() {
   return (
-    <div className="mt-16 max-w-7xl mx-auto text-center space-y-8">
+    <div className="mt-16 max-w-7xl mx-auto text-center space-y-8 px-6 sm:px-8">
       <h2 className="text-4xl">Donate to Support Parallax</h2>
 
       <p className="text-lg text-muted-foreground">
@@ -22,18 +23,18 @@ function DonationsSection() {
       </p>
 
       <div className="space-y-6">
-        <div className="flex flex-col items-center justify-center p-6 rounded-xl border bg-card">
+        <div className="flex flex-col items-center justify-center p-6 border border-border bg-card/50 backdrop-blur-sm border-l-2 border-l-gold">
           <h3 className="text-xl font-medium text-foreground">Bitcoin (BTC)</h3>
           <p className="text-sm text-muted-foreground">Bitcoin donations</p>
-          <code className="flex w-fit mt-8 bg-background border p-4 rounded-lg text-sm text-muted-foreground break-all">
+          <code className="flex w-fit mt-8 bg-surface-elevated border border-border p-4 text-sm text-muted-foreground break-all font-mono">
             {BTC_DONATION_ADDRESS}
           </code>
         </div>
 
-        <div className="flex flex-col items-center justify-center p-6 rounded-xl border bg-card">
+        <div className="flex flex-col items-center justify-center p-6 border border-border bg-card/50 backdrop-blur-sm border-l-2 border-l-gold">
           <h3 className="text-xl font-medium text-foreground">EVM Address</h3>
           <p className="text-sm text-muted-foreground">Any token on EVM-compatible networks</p>
-          <code className="flex w-fit mt-8 bg-background border p-4 rounded-lg text-sm text-muted-foreground break-all">
+          <code className="flex w-fit mt-8 bg-surface-elevated border border-border p-4 text-sm text-muted-foreground break-all font-mono">
             {EVM_DONATION_ADDRESS}
           </code>
         </div>
@@ -48,6 +49,8 @@ function DonationsSection() {
 
       <Button
         size={"xl"}
+        className="bg-gold text-gold-foreground hover:bg-gold/90"
+        asChild
       >
         <Link
           href={PATREON_URL}
@@ -79,7 +82,7 @@ const topics = [
   {
     icon: Code,
     title: "Development",
-    description: "Contribute to the open-source codebase. Whether it’s core protocol improvements, tooling, or dApp development, your skills can shape the future of Parallax. We welcome contributions in Go, TypeScript, and beyond."
+    description: "Contribute to the open-source codebase. Whether it's core protocol improvements, tooling, or dApp development, your skills can shape the future of Parallax. We welcome contributions in Go, TypeScript, and beyond."
   },
   {
     icon: Megaphone,

@@ -8,6 +8,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -37,6 +38,11 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-gold-muted: var(--gold-muted);
+  --color-glow-purple: var(--glow-purple);
+  --color-surface-elevated: var(--surface-elevated);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -45,25 +51,31 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.98 0.005 80);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(0.9854 0.0013 286.38);
+  --card: oklch(0.96 0.005 80);
   --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.98 0.005 80);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.5573 0.2543 283.67);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(1 0 0);
+  --secondary: oklch(0.98 0.005 80);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.9854 0.0013 286.38);
+  --muted: oklch(0.94 0.005 80);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --accent: oklch(0.95 0.005 80);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0 0 0 / 10%);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
+  --gold: #f7931a;
+  --gold-foreground: oklch(1 0 0);
+  --gold-muted: rgb(247 147 26 / 15%);
+  --glow-purple: oklch(0.5573 0.2543 283.67 / 20%);
+  --surface-elevated: oklch(0.94 0.005 80);
   --chart-1: oklch(0.646 0.222 41.116);
+
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
@@ -79,24 +91,29 @@
 }
 
 .dark {
-  --background: oklch(0 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.1785 0.0041 285.98);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.35 0.0077 285.76);
-  --popover-foreground: oklch(0.985 0 0);
+  --background: oklch(0.06 0.015 265);
+  --foreground: oklch(0.93 0.005 80);
+  --card: oklch(0.12 0.012 265);
+  --card-foreground: oklch(0.93 0.005 80);
+  --popover: oklch(0.14 0.015 265);
+  --popover-foreground: oklch(0.93 0.005 80);
   --primary: oklch(0.5573 0.2543 283.67);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.2238 0.0077 285.76);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.1785 0.0041 285.98);
-  --muted-foreground: oklch(0.7507 0.0142 286.05);
-  --accent: oklch(0.3 0.0077 285.76);
-  --accent-foreground: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.95 0 0);
+  --secondary: oklch(0.16 0.012 265);
+  --secondary-foreground: oklch(0.93 0.005 80);
+  --muted: oklch(0.15 0.015 265);
+  --muted-foreground: oklch(0.6 0.01 265);
+  --accent: oklch(0.25 0.02 265);
+  --accent-foreground: oklch(0.93 0.005 80);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 5%);
+  --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
+  --gold: #f7931a;
+  --gold-foreground: oklch(0.15 0.03 60);
+  --gold-muted: rgb(247 147 26 / 15%);
+  --glow-purple: oklch(0.5573 0.2543 283.67 / 20%);
+  --surface-elevated: oklch(0.14 0.015 265);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -117,6 +134,21 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Force white text on top-level nav items over the hero black hole.
+   Targets triggers, direct links, logo text, and hamburger — NOT dropdown content.
+   Excludes hovered/open triggers so the accent background remains readable. */
+.nav-hero-overlay > div > div > a,
+.nav-hero-overlay > div > div > a *,
+.nav-hero-overlay [data-slot="navigation-menu-trigger"]:not(:hover):not([data-state="open"]),
+.nav-hero-overlay [data-slot="navigation-menu-trigger"]:not(:hover):not([data-state="open"]) *,
+.nav-hero-overlay [data-slot="navigation-menu-list"] > [data-slot="navigation-menu-item"] > [data-slot="navigation-menu-link"],
+.nav-hero-overlay > div > div:last-child button {
+  color: white;
 }

@@ -243,7 +243,7 @@ export default function Page() {
                   ))}
                 </ul>
 
-                <div className="min-w-0 rounded-xl border bg-muted p-4 shadow-inner">
+                <div className="min-w-0 border border-border bg-surface-elevated p-4">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm">
                       <ChevronRight className="h-3.5 w-3.5" />
@@ -255,7 +255,7 @@ export default function Page() {
                   </div>
 
                   {/* scrollable code without forcing container width */}
-                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre rounded-lg bg-background p-4 text-sm leading-relaxed overscroll-x-contain [-webkit-overflow-scrolling:touch] border shadow-xs">
+                  <pre className="w-full max-w-full overflow-x-auto whitespace-pre bg-background p-4 text-sm leading-relaxed overscroll-x-contain [-webkit-overflow-scrolling:touch] border shadow-xs">
                     <code className="block max-w-full">
                       {s.code}
                     </code>

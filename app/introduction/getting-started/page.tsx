@@ -20,10 +20,13 @@ export default function GettingStarted() {
       <section className="container mx-auto px-6 sm:px-8 xl:px-0 max-w-7xl py-0">
         {/* Navigation Tabs */}
         <div className="flex justify-center my-16">
-          <div className="flex flex-col sm:flex-row gap-2 bg-muted border rounded-lg p-2">
+          <div className="flex flex-col sm:flex-row gap-2 bg-surface-elevated border border-border p-2">
             <Button
               size={"xl"}
               onClick={() => setActiveTab("use")}
+              className={activeTab === "use"
+                ? "bg-gold text-gold-foreground hover:bg-gold/90"
+                : ""}
               variant={activeTab === "use" ? "default" : "secondary"}
             >
               How to use Parallax
@@ -31,6 +34,9 @@ export default function GettingStarted() {
             <Button
               size={"xl"}
               onClick={() => setActiveTab("accept")}
+              className={activeTab === "accept"
+                ? "bg-gold text-gold-foreground hover:bg-gold/90"
+                : ""}
               variant={activeTab === "accept" ? "default" : "secondary"}
             >
               How to accept Parallax
@@ -40,10 +46,10 @@ export default function GettingStarted() {
 
         {activeTab === "use" && (
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <Card className="group transition-all duration-300">
+            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <BookOpen className="size-6" />
+                  <BookOpen className="size-6 text-gold" />
                   <CardTitle>1. Inform Yourself</CardTitle>
                 </div>
               </CardHeader>
@@ -60,10 +66,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300">
+            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Wallet className="size-6" />
+                  <Wallet className="size-6 text-gold" />
                   <CardTitle>2. Choose Your Wallet</CardTitle>
                 </div>
               </CardHeader>
@@ -82,10 +88,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300">
+            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <HandCoins className="size-6" />
+                  <HandCoins className="size-6 text-gold" />
                   <CardTitle>3. Get Parallax</CardTitle>
                 </div>
               </CardHeader>
@@ -110,10 +116,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300">
+            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Store className="size-6" />
+                  <Store className="size-6 text-gold" />
                   <CardTitle>4. Spend Parallax</CardTitle>
                 </div>
               </CardHeader>
@@ -134,10 +140,10 @@ export default function GettingStarted() {
 
         {activeTab === "accept" && (
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <Card className="group transition-all duration-300">
+            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <BookOpen className="size-6" />
+                  <BookOpen className="size-6 text-gold" />
                   <CardTitle>1. Inform Yourself</CardTitle>
                 </div>
               </CardHeader>
@@ -154,10 +160,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300">
+            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Building className="size-6" />
+                  <Building className="size-6 text-gold" />
                   <CardTitle>2. Processing Payments</CardTitle>
                 </div>
               </CardHeader>
@@ -174,10 +180,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300">
+            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Scale className="size-6" />
+                  <Scale className="size-6 text-gold" />
                   <CardTitle>3. Accounting & Taxes</CardTitle>
                 </div>
               </CardHeader>
@@ -196,10 +202,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300">
+            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Eye className="size-6" />
+                  <Eye className="size-6 text-gold" />
                   <CardTitle>4. Gain Visibility</CardTitle>
                 </div>
               </CardHeader>
@@ -218,31 +224,27 @@ export default function GettingStarted() {
           </div>
         )}
 
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle className="text-center w-full">Ready to Start?</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-base text-center">
-              Join the Parallax network and experience the future of blockchain technology. Combine the security of
-              Bitcoin with the flexibility of smart contracts.
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button asChild>
-                <Link href={"/wallets"}>
-                  Choose a Wallet
-                  <ChevronRight />
-                </Link>
-              </Button>
-              <Button variant="secondary" asChild>
-                <Link href={"https://docs.parallaxprotocol.org/guides/wallets"} target="_blank">
-                  Wallet Setup Guide
-                  <ExternalLink />
-                </Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="mt-8 bg-surface-elevated border border-border p-8 sm:p-12 text-center">
+          <h3 className="text-xl font-semibold text-foreground mb-3">Ready to Start?</h3>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            Join the Parallax network and experience the future of blockchain technology. Combine the security of
+            Bitcoin with the flexibility of smart contracts.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+              <Link href={"/wallets"}>
+                Choose a Wallet
+                <ChevronRight />
+              </Link>
+            </Button>
+            <Button variant="secondary" asChild>
+              <Link href={"https://docs.parallaxprotocol.org/guides/wallets"} target="_blank">
+                Wallet Setup Guide
+                <ExternalLink />
+              </Link>
+            </Button>
+          </div>
+        </div>
       </section>
     </MainMotion>
   )

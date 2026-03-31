@@ -1,3 +1,4 @@
+"use client"
 import GridView from "@/components/grid-view";
 import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";

@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link"
 import {
   BookText,
@@ -18,6 +19,8 @@ import {
 import MainMotion from "./main-motion"
 import PageHeader from "./page-header"
 import { Button } from "./ui/button"
+import { motion } from "framer-motion"
+import { FadeIn } from "./fade-in"
 
 type Axiom = {
   id: string
@@ -154,7 +157,7 @@ export function Doctrine() {
           title="The Parallax Doctrine"
           subTitle="Axioms and commentary defining the constraints under which Parallax exists, independent of adoption, relevance or success."
         />
-        <section className="flex flex-col gap-4 bg-card ring-4 max-w-7xl ring-muted/10 rounded-md font-sans text-foreground/90 border px-8 py-12 mx-auto items-start">
+        <section className="flex flex-col gap-4 bg-card/50 backdrop-blur-sm max-w-7xl border border-border rounded-sm font-sans text-foreground/90 px-8 py-12 mx-auto items-start">
           <div className="mx-auto">
             <header className="text-center">
               <div className="flex flex-wrap items-center justify-center gap-3">
@@ -193,7 +196,7 @@ export function Doctrine() {
               </div>
             </header>
 
-            <div className="mt-12 border-t" />
+            <div className="mt-12 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
             <section className="mt-12 space-y-10">
               <div className="space-y-4">
@@ -214,7 +217,7 @@ export function Doctrine() {
                 </p>
               </div>
 
-              <div className="mt-12 border-t" />
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">Purpose</h3>
@@ -231,7 +234,7 @@ export function Doctrine() {
                 </p>
               </div>
 
-              <div className="mt-12 border-t" />
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">On Scope and Intent</h3>
@@ -249,60 +252,66 @@ export function Doctrine() {
                 </p>
               </div>
 
-              <div className="mt-12 border-t" />
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-              <div className="space-y-12">
+              <div className="space-y-16">
                 {AXIOMS.map(({ id, title, subtitle, commentary }) => (
-                  <article key={id} className="scroll-mt-24" id={`axiom-${id}`}>
-                    <div className="flex items-start gap-4">
-                      <div className="min-w-0">
-                        <h4 className="text-xl font-semibold leading-snug text-foreground">
-                          <span>Axiom {id} — </span>
-                          {title}
-                        </h4>
-
-                        <p className="mt-3 text-base text-foreground/90 leading-relaxed">{subtitle}</p>
-
-                        <div className="mt-6 border p-6 bg-popover">
-                          <div className="flex items-center gap-2 text-sm font-medium text-foreground">
-                            <span className="inline-flex size-6 items-center justify-center bg-muted/30">
-                              <ScrollText className="size-4" />
+                  <FadeIn key={id}>
+                    <article className="scroll-mt-24" id={`axiom-${id}`}>
+                      <div className="flex items-start gap-4">
+                        <div className="min-w-0">
+                          <h4 className="text-xl font-semibold leading-snug text-foreground">
+                            <span className="text-2xl font-serif text-gold mr-2">
+                              {id}
                             </span>
-                            Commentary
-                          </div>
-                          <div className="mt-3 text-foreground/80">
-                            <Paragraphs text={commentary} />
+                            {title}
+                          </h4>
+
+                          <p className="mt-3 text-base text-foreground/90 leading-relaxed">{subtitle}</p>
+
+                          <div className="mt-6 border-l-2 border-gold bg-card/50 p-6">
+                            <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+                              <span className="inline-flex size-6 items-center justify-center">
+                                <ScrollText className="size-4 text-gold" />
+                              </span>
+                              Commentary
+                            </div>
+                            <div className="mt-3 text-foreground/80">
+                              <Paragraphs text={commentary} />
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div className="mt-12 border-t" />
-                  </article>
+                      <div className="mt-16 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                    </article>
+                  </FadeIn>
                 ))}
               </div>
 
-              <div className="space-y-4 pt-2">
-                <h3 className="text-xl font-semibold text-foreground">Closing</h3>
+              <FadeIn>
+                <div className="space-y-4 pt-2">
+                  <h3 className="text-xl font-semibold text-foreground">Closing</h3>
 
-                <p className="text-base leading-relaxed">
-                  Parallax does not ask to be believed.
-                </p>
+                  <p className="text-base leading-relaxed">
+                    Parallax does not ask to be believed.
+                  </p>
 
-                <p className="text-base leading-relaxed">
-                  If any axiom is false, Parallax will fail — and that failure is acceptable.
-                </p>
+                  <p className="text-base leading-relaxed">
+                    If any axiom is false, Parallax will fail — and that failure is acceptable.
+                  </p>
 
-                <p className="text-base leading-relaxed">
-                  Reality is the arbiter. <br />
-                  Cost is the signal. <br />
-                  Time is the filter.
-                </p>
+                  <p className="text-base leading-relaxed">
+                    Reality is the arbiter. <br />
+                    Cost is the signal. <br />
+                    Time is the filter.
+                  </p>
 
-                <p className="text-base leading-relaxed">
-                  Parallax is not designed to be liked, upgraded, or governed — only to remain correct.
-                </p>
-              </div>
+                  <p className="text-base leading-relaxed">
+                    Parallax is not designed to be liked, upgraded, or governed — only to remain correct.
+                  </p>
+                </div>
+              </FadeIn>
             </section>
           </div>
         </section>
