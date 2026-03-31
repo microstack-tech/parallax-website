@@ -179,15 +179,16 @@ export function Navigation() {
                   Get Started
                 </Link>
               </Button>
-              <Button variant={"secondary"} className={cn(heroOverlay && "!bg-white/10 !border-white/20 border !text-white [&_*]:!text-white")} asChild>
+              <Button variant={heroOverlay ? "ghost" : "secondary"} className={cn(heroOverlay && "text-white [&_*]:text-white hover:bg-white/10")} style={heroOverlay ? { border: '1px solid rgba(255,255,255,0.15)' } : undefined} asChild>
                 <Link href={'https://github.com/ParallaxProtocol/parallax'} target="_blank">
                   <FaGithub />
                 </Link>
               </Button>
               <Button
-                variant={"secondary"}
+                variant={heroOverlay ? "ghost" : "secondary"}
                 size="icon"
-                className={cn(heroOverlay && "!bg-white/10 !border-white/20 border !text-white [&_*]:!text-white")}
+                className={cn(heroOverlay && "text-white [&_*]:text-white hover:bg-white/10")}
+                style={heroOverlay ? { border: '1px solid rgba(255,255,255,0.15)' } : undefined}
                 onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
               >
                 <Sun className="size-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
