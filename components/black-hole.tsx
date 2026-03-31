@@ -151,7 +151,7 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
       uniforms: { uTime: { value: 0 }, uCameraPosition: { value: camera.position } },
       vertexShader: `varying vec3 vNormal; varying vec3 vPosition; void main(){ vNormal=normalize(normalMatrix*normal); vPosition=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
       fragmentShader: `
-        uniform float uTime; uniform vec3 uCameraPosition; varying vec3 vNormal; varying vec3 vPosition; void main(){ vec3 viewDirection=normalize(uCameraPosition - vPosition); float fresnel=1.0 - abs(dot(vNormal,viewDirection)); fresnel=pow(fresnel,2.5); vec3 glowColor=vec3(1.0,0.5,0.15); float pulse=sin(uTime*2.5)*0.15+0.85; gl_FragColor=vec4(glowColor*fresnel*pulse, fresnel*0.4); }
+        uniform float uTime; uniform vec3 uCameraPosition; varying vec3 vNormal; varying vec3 vPosition; void main(){ vec3 viewDirection=normalize(uCameraPosition - vPosition); float fresnel=1.0 - abs(dot(vNormal,viewDirection)); fresnel=pow(fresnel,2.5); vec3 glowColor=vec3(0.0,0.8,0.5); float pulse=sin(uTime*2.5)*0.15+0.85; gl_FragColor=vec4(glowColor*fresnel*pulse, fresnel*0.4); }
       `,
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -194,7 +194,7 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
           float normalizedRadius = smoothstep(${DISK_INNER_RADIUS.toFixed(2)}, ${DISK_OUTER_RADIUS.toFixed(2)}, vRadius);
           float spiral = vAngle*3.0 - (1.0/(normalizedRadius+0.1))*2.0; vec2 noiseUv=vec2(vUv.x + uTime*uFlowSpeed*(2.0/(vRadius*0.3+1.0)) + sin(spiral)*0.1, vUv.y*0.8 + cos(spiral)*0.1);
           float n1=snoise(vec3(noiseUv*uNoiseScale, uTime*0.15)); float n2=snoise(vec3(noiseUv*uNoiseScale*3.0+0.8, uTime*0.22)); float n3=snoise(vec3(noiseUv*uNoiseScale*6.0+1.5, uTime*0.3)); float noiseVal=(n1*0.45+n2*0.35+n3*0.2); noiseVal=(noiseVal+1.0)*0.5;
-          vec3 color=uColorOuter; color=mix(color,uColorMid3,smoothstep(0.0,0.25,normalizedRadius)); color=mix(color,uColorMid2,smoothstep(0.2,0.55,normalizedRadius)); color=mix(color,uColorMid1,smoothstep(0.5,0.75,normalizedRadius)); color=mix(color,uColorHot,smoothstep(0.7,0.95,normalizedRadius));
+          vec3 color=uColorOuter; color=mix(color,uColorMid3,smoothstep(0.0,0.3,normalizedRadius)); color=mix(color,uColorMid2,smoothstep(0.3,0.6,normalizedRadius)); color=mix(color,uColorMid1,smoothstep(0.7,0.85,normalizedRadius)); color=mix(color,uColorHot,smoothstep(0.88,0.98,normalizedRadius));
           color *= (0.5 + noiseVal*1.0); float brightness=pow(1.0 - normalizedRadius, 1.0)*3.5 + 0.5; brightness *= (0.3 + noiseVal * 2.2); float pulse=sin(uTime*1.8 + normalizedRadius*12.0 + vAngle*2.0)*0.15 + 0.85; brightness *= pulse;
           float alpha=uDensity*(0.2 + noiseVal*0.9); alpha*=smoothstep(0.0,0.15,normalizedRadius); alpha *= (1.0 - smoothstep(0.85,1.0,normalizedRadius)); alpha=clamp(alpha,0.0,1.0);
           gl_FragColor=vec4(color*brightness, alpha);
