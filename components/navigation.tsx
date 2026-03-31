@@ -284,16 +284,13 @@ export function Navigation() {
                 {/* Theme toggle */}
                 <div className="mt-6 px-3">
                   <Separator className="bg-muted-foreground/15 mb-4" />
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="flex items-center gap-2 text-base font-medium text-accent-foreground"
+                  <button
+                    className="flex items-center gap-3 px-3 py-2 text-base font-medium text-accent-foreground cursor-pointer"
                     onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
                   >
-                    <Sun className="size-5 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                    <Moon className="absolute size-5 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                    {mounted && resolvedTheme === 'dark' ? 'Light mode' : 'Dark mode'}
-                  </Button>
+                    {mounted && resolvedTheme === 'dark' ? <Sun className="size-5 shrink-0" /> : <Moon className="size-5 shrink-0" />}
+                    <span>{mounted && resolvedTheme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+                  </button>
                 </div>
               </div>
             </div>
