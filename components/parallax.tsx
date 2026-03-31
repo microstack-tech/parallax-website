@@ -58,7 +58,7 @@ export function Parallax() {
                 Where Socrates trusted reason over rulers, Parallax trusts physics over institutions.
               </p>
               <div className="flex w-full justify-end mt-8">
-                <Button size={"xl"} className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+                <Button className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
                   <Link href={"/introduction/doctrine"}>
                     Read the Parallax Doctrine
                     <LucideChevronRight />

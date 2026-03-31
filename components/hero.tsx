@@ -88,12 +88,12 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.0 }}
         >
-          <Button size={"2xl"} className="w-full max-w-[15rem] px-6 bg-gold text-gold-foreground hover:bg-gold/90 font-mono uppercase tracking-[0.15em] text-sm" asChild>
+          <Button size={"2xl"} className="w-full max-w-[15rem] px-6 bg-gold text-gold-foreground hover:bg-gold/90 text-sm" asChild>
             <Link href={"/participate/running-a-full-node"}>
               Run a node
             </Link>
           </Button>
-          <Button size={"2xl"} variant={"secondary"} className="w-full border border-white/20 max-w-[15rem] px-6 bg-white/5 text-white hover:bg-white/10 font-mono uppercase tracking-[0.15em] text-sm" asChild>
+          <Button size={"2xl"} variant={"secondary"} className="w-full border border-white/20 max-w-[15rem] px-6 bg-white/5 text-white hover:bg-white/10 text-sm" asChild>
             <Link href={"https://docs.parallaxprotocol.org"}>
               Read the Docs
             </Link>
