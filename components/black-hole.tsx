@@ -90,9 +90,13 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
 
     if (!interactive) {
       controls.enabled = false;
-      controls.autoRotate = true;
-      controls.autoRotateSpeed = 0.05;
+      controls.autoRotate = false;
     }
+
+    // Store initial camera position for oscillation
+    const initialCamPos = camera.position.clone();
+    const OSCILLATE_DEGREES = -4;
+    const OSCILLATE_SPEED = 0.15; // full cycle speed
 
     // ----- Stars -----
     const starGeometry = new THREE.BufferGeometry();
@@ -251,6 +255,17 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
         const eased = fadeProgress * fadeProgress * (3 - 2 * fadeProgress); // smoothstep
         bloomPass.strength = TARGET_BLOOM_STRENGTH * eased;
         renderer.toneMappingExposure = 1.2 * eased;
+
+        // Oscillate camera back and forth
+        if (!interactive) {
+          const angle = Math.sin(elapsedTime * OSCILLATE_SPEED) * (OSCILLATE_DEGREES * Math.PI / 180);
+          const radius = initialCamPos.length();
+          const baseAngle = Math.atan2(initialCamPos.x, initialCamPos.z);
+          camera.position.x = radius * Math.sin(baseAngle + angle) * Math.cos(Math.atan2(initialCamPos.y, Math.sqrt(initialCamPos.x ** 2 + initialCamPos.z ** 2)));
+          camera.position.z = radius * Math.cos(baseAngle + angle) * Math.cos(Math.atan2(initialCamPos.y, Math.sqrt(initialCamPos.x ** 2 + initialCamPos.z ** 2)));
+          camera.position.y = initialCamPos.y;
+          camera.lookAt(0, 0, 0);
+        }
 
         diskMaterial.uniforms.uTime.value = elapsedTime;
         starMaterial.uniforms.uTime.value = elapsedTime;
