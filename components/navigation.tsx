@@ -174,7 +174,7 @@ export function Navigation() {
               )}
             </NavigationMenuList>
             <div className="flex items-center gap-2 ml-12">
-              <Button className="px-8 bg-gold !text-gold-foreground hover:bg-gold/90" asChild>
+              <Button className="px-8 bg-gold !text-gold-foreground hover:bg-gold/90 font-mono uppercase tracking-[0.15em] text-xs" asChild>
                 <Link href={"/introduction/getting-started"}>
                   Get Started
                 </Link>
