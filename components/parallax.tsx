@@ -6,15 +6,15 @@ import Link from "next/link"
 export function Parallax() {
   return (
     <section className="relative z-10 border-b px-6 py-24 sm:px-8">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <h2 className="text-3xl text-foreground sm:text-4xl">Parallax Protocol</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground">
-            The open source protocol for P2P Programmable Cash System
+          <p className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground">
+            A monetary system with legitimacy only if its rules cannot be bent.
           </p>
         </div>
 
-        <div className="mt-14 grid items-start gap-10 sm:mt-16 lg:grid-cols-[420px_1fr] lg:gap-14">
+        <div className="mt-24 grid items-start gap-10 lg:grid-cols-[420px_1fr] lg:gap-14">
           {/* Image */}
           <figure className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
             <div className="relative aspect-[1000/652] w-full overflow-hidden border">
@@ -35,7 +35,7 @@ export function Parallax() {
           {/* Text */}
           <div className="mx-auto max-w-prose text-justify text-base leading-relaxed text-foreground/60 sm:leading-8 lg:mx-0 lg:text-left lg:text-md lg:leading-9 space-y-4 bg-card border ring-4 p-8 ring-muted/10">
             <p>
-              Parallax uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of coins is carried out collectively by the network. Parallax is open-source; its design is public, nobody owns or controls Parallax and everyone can take part.
+              Parallax combines a fixed monetary supply and Proof of Work settlement with full smart contract programmability. Every coin must be mined. Every rule is executed without discretion. No premine, no foundation, no privileged accounts.
             </p>
             <p>
               The Death of Socrates captures a refusal to trade truth for convenience. Socrates accepts his fate not out of obedience, but because abandoning principle would invalidate reason itself.

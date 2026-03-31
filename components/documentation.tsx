@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpenCheck, ExternalLink, NotebookText } from "lucide-react"
+import { BookOpenCheck, ExternalLink, FileText, NotebookText } from "lucide-react"
 import Link from "next/link"
 
 export function Documentation() {
@@ -14,7 +14,7 @@ export function Documentation() {
           </p>
         </div>
 
-        <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
@@ -49,6 +49,25 @@ export function Documentation() {
                   <Link href={"https://docs.parallaxprotocol.org"} target="_blank">
                     Technical Documentation
                     <ExternalLink />
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <FileText className="size-6" />
+                <CardTitle>Whitepaper</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-3 text-base text-muted-foreground">
+              {`The technical specification for the Parallax protocol. Monetary design, consensus mechanism, and network architecture.`}
+              <div className="inline-flex w-full justify-end mt-8">
+                <Button variant={"secondary"} asChild className="w-full sm:w-fit">
+                  <Link href={"/introduction/whitepaper"}>
+                    Whitepaper
                   </Link>
                 </Button>
               </div>

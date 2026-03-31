@@ -8,7 +8,7 @@ const clientFeatures = [
   {
     icon: ShieldCheck,
     title: "Security & Privacy",
-    description: "The Parallax Client is designed for robust security and privacy, using cryptographic signatures and decentralized consensus."
+    description: "Security anchored in XHash Proof of Work and cryptographic signatures. Every transaction is independently verifiable by any node on the network."
   },
   {
     icon: TerminalSquare,
@@ -26,7 +26,7 @@ export default function Client() {
   return (
     <>
       <section className="relative py-24 border-b z-10 px-6 sm:px-8">
-        <div className="mx-auto max-w-7xl w-fit pt-0">
+        <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-7xl text-center">
             <h2 className="text-3xl text-foreground sm:text-4xl">The Parallax Client</h2>
             <p className="mt-8 text-base text-muted-foreground text-pretty">
@@ -42,7 +42,7 @@ export default function Client() {
                 </div>
               </CardHeader>
               <CardContent>
-                Users running a node are the ones keepping Parallax decentralized. They individually run their own Parallax full nodes, and each of those full nodes separately follows the exact same rules to decide which block chain is valid.
+                Users running a node are the ones keeping Parallax decentralized. They individually run their own Parallax full nodes, and each of those full nodes separately follows the exact same rules to decide which block chain is valid.
               </CardContent>
             </Card>
             <Card className="flex flex-col">
@@ -57,7 +57,7 @@ export default function Client() {
               </CardContent>
             </Card>
           </div>
-          <div className="px-2 py-16 text-center text-muted-foreground">
+          <div className="py-12 border-l-2 pl-6 text-muted-foreground">
             {`This shared agreement (called consensus) allows people like you to only accept valid transactions, enforcing Parallax's rules against even the most powerful miners.`}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">

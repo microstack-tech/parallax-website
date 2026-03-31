@@ -17,8 +17,7 @@ export function SoundMoney() {
           <p className="mt-8 text-base text-muted-foreground text-pretty">
             Parallax is programmable gold, secured by physics. A fixed supply,
             Proof of Work settlement layer where scarcity is enforced by energy,
-            not committees, built for people who value time, purchasing power,
-            and irreversible finality.
+            not committees.
           </p>
         </div>
 
@@ -31,7 +30,7 @@ export function SoundMoney() {
               </div>
             </CardHeader>
             <CardContent className="space-y-3 text-base text-muted-foreground">
-              {`A finite and predictable emission schedule inspired by Bitcoin. No monetary discretion and no hidden inflation. The rules for supply are encoded in the protocol, not set by committees.`}
+              {`A finite and predictable emission schedule identical to Bitcoin's. No monetary discretion and no hidden inflation. The rules for supply are encoded in the protocol, not set by committees.`}
             </CardContent>
           </Card>
 
@@ -55,7 +54,7 @@ export function SoundMoney() {
               </div>
             </CardHeader>
             <CardContent className="space-y-3 text-base text-muted-foreground">
-              {`Hashrate ties the currency to real world energy and silicon. Attacking the chain requires burning the same physics that protect it, anchoring Parallaxs monetary integrity in measurable cost rather than social trust.`}
+              {`Hashrate ties the currency to real world energy and silicon. Attacking the chain requires burning the same physics that protect it, anchoring Parallax's monetary integrity in measurable cost rather than social trust.`}
             </CardContent>
           </Card>
 
@@ -63,7 +62,7 @@ export function SoundMoney() {
             <CardHeader>
               <div className="flex items-center gap-4">
                 <Hourglass className="size-6" />
-                <CardTitle>Settlement First Blocks</CardTitle>
+                <CardTitle>Settlement-First Blocks</CardTitle>
               </div>
             </CardHeader>
             <CardContent className="space-y-3 text-base text-muted-foreground">

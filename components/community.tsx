@@ -9,7 +9,7 @@ export function Community() {
     <section className="py-24 px-6 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-7xl text-center">
-          <h2 className="text-3xl text-foreground sm:text-4xl">Built by the Community</h2>
+          <h2 className="text-3xl text-foreground sm:text-4xl">Open Development</h2>
         </div>
 
         <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2">
@@ -19,7 +19,7 @@ export function Community() {
               <CardTitle>Open Source</CardTitle>
             </CardHeader>
             <CardContent>
-              {`All code is open source and available on GitHub. Contribute to the protocol's development and help shape the future of Parallax.`}
+              {`All code is open source and available on GitHub. Review, audit, and contribute to the protocol's development.`}
               <div className="inline-flex w-full justify-end mt-8">
                 <Button variant="secondary" asChild className="w-full sm:w-fit">
                   <Link href={"https://github.com/ParallaxProtocol"}>
@@ -38,9 +38,9 @@ export function Community() {
             </CardHeader>
             <CardContent>
               <p>
-                Parallax is guided by a truly decentralized community. No single entity
-                can dictate its future—every voice matters. Join the conversation and
-                help shape the protocol in our official BitcoinTalk thread.
+                Parallax has no foundation, no governing body, and no privileged contributors.
+                Development happens in the open. The protocol&apos;s rules do not change by
+                popular demand.
               </p>
               <div className="inline-flex w-full justify-end mt-8">
                 <Button variant="secondary" asChild className="w-full sm:w-fit">
@@ -54,10 +54,10 @@ export function Community() {
           </Card>
         </div>
         <div className="flex flex-row mt-8 justify-center mx-auto">
-          <Card className="sm:max-w-1/2">
+          <Card className="sm:max-w-xl">
             <CardHeader>
               <MessageCircleMore />
-              <CardTitle className="text-center">Join Our Community</CardTitle>
+              <CardTitle>Join Our Community</CardTitle>
             </CardHeader>
             <CardContent>
               {`Connect with users, developers, miners and pool operators. Get support, share ideas, and stay updated on the latest developments.`}

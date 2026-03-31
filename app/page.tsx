@@ -5,7 +5,6 @@ import { Documentation } from "@/components/documentation";
 import { Hero } from "@/components/hero";
 import { Parallax } from "@/components/parallax";
 import { SoundMoney } from "@/components/sound-money";
-import { UseCases } from "@/components/use-cases";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
         <Hero />
         <Parallax />
         <SoundMoney />
-        <UseCases />
         <Client />
         <Documentation />
         <Community />

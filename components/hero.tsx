@@ -1,11 +1,7 @@
 'use client'
 import { useStableVh } from "@/hooks/useStableVh"
-import { ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { FaBitcoin, FaGithub, FaTelegramPlane } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
-import Countdown from "./countdown"
 import { Button } from "./ui/button"
 
 export function Hero() {
@@ -30,14 +26,17 @@ export function Hero() {
       <div className="absolute flex flex-col justify-evenly h-full w-full px-6 sm:px-8 items-center">
         <div className="flex flex-col items-center w-full max-w-7xl">
           <div className="flex flex-col items-center px-2 w-full">
-            <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-center">
-              $LAX is programmable gold.
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-semibold tracking-tight text-center">
+              Parallax
             </h1>
           </div>
           <p className="mt-6 sm:px-0 text-lg sm:text-2xl text-muted-foreground text-center">
-            Secured by Physics.
+            A peer-to-peer programmable cash system.
           </p>
         </div>
+        <p className="text-lg sm:text-2xl text-muted-foreground text-center">
+          Secured by Physics.
+        </p>
         <div className="flex flex-col gap-4 justify-between items-center sm:flex-row w-full max-w-4xl">
           <Button size={"2xl"} className="w-full max-w-[15rem] px-6" asChild>
             <Link href={"/participate/running-a-full-node"}>
