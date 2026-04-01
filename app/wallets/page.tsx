@@ -1,4 +1,3 @@
-import AddNetworkPopup from "@/components/add-network-popup";
 import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
@@ -72,7 +71,6 @@ export default function Page() {
         subTitle="Choose the right wallet to manage your Laxes, connect to dapps, and explore the Parallax ecosystem securely."
       />
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
-        <AddNetworkPopup />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {wallets.map((wallet) => (
             <Card key={wallet.name} className="group hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">

@@ -1,3 +1,4 @@
+import AddNetworkPopup from "@/components/add-network-popup";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 import { ScrollProgress, ScrollToTop } from "@/components/scroll-utilities";
@@ -52,6 +53,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </div>
+          <AddNetworkPopup />
           {/* Global noise grain texture */}
           <svg
             className="fixed inset-0 w-full h-full pointer-events-none opacity-[0.015] dark:opacity-[0.02] z-[100]"
