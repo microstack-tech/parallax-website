@@ -7,9 +7,9 @@ import { FadeIn } from "./fade-in"
 const channels = [
   { name: "GitHub", href: "https://github.com/ParallaxProtocol", icon: FaGithub },
   { name: "BitcoinTalk", href: "https://bitcointalk.org/index.php?topic=5560698", icon: FaBitcoin },
-  { name: "X / Twitter", href: "https://x.com/ParallaxProto", icon: FaXTwitter },
-  { name: "Discord", href: "https://discord.gg/parallax", icon: FaDiscord },
-  { name: "Telegram", href: "https://t.me/parallaxprotocol", icon: FaTelegram },
+  { name: "X / Twitter", href: "https://x.com/prlxchain", icon: FaXTwitter },
+  { name: "Discord", href: "https://discord.gg/4Z4R3aAU3B", icon: FaDiscord },
+  { name: "Telegram", href: "https://t.me/parallaxchain", icon: FaTelegram },
   { name: "Reddit", href: "https://reddit.com/r/parallaxprotocol", icon: FaReddit },
 ]
 

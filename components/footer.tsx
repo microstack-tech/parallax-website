@@ -19,9 +19,9 @@ const footerLinks = {
   Community: [
     { name: "GitHub", href: "https://github.com/ParallaxProtocol", external: true },
     { name: "BitcoinTalk", href: "https://bitcointalk.org/index.php?topic=5560698", external: true },
-    { name: "X / Twitter", href: "https://x.com/ParallaxProto", external: true },
-    { name: "Discord", href: "https://discord.gg/parallax", external: true },
-    { name: "Telegram", href: "https://t.me/parallaxprotocol", external: true },
+    { name: "X / Twitter", href: "https://x.com/prlxchain", external: true },
+    { name: "Discord", href: "https://discord.gg/4Z4R3aAU3B", external: true },
+    { name: "Telegram", href: "https://t.me/parallaxchain", external: true },
   ],
 }
 
