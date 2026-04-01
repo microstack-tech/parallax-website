@@ -55,6 +55,11 @@ const jsonLd = {
       logo: "https://parallaxprotocol.org/new_parallax_logo_square.svg",
       sameAs: [
         "https://github.com/ParallaxProtocol",
+        "https://x.com/prlxchain",
+        "https://discord.gg/4Z4R3aAU3B",
+        "https://t.me/parallaxchain",
+        "https://reddit.com/r/parallaxprotocol",
+        "https://bitcointalk.org/index.php?topic=5560698",
       ],
     },
     {
