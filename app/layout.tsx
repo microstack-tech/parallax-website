@@ -30,6 +30,40 @@ export const metadata: Metadata = {
     template: "%s | Parallax Protocol",
   },
   description: "Open source protocol for P2P Programmable Cash System",
+  metadataBase: new URL("https://parallaxprotocol.org"),
+  openGraph: {
+    type: "website",
+    siteName: "Parallax Protocol",
+    title: "Parallax Protocol",
+    description: "A peer-to-peer programmable cash system. Bitcoin's monetary discipline meets Ethereum's programmability.",
+    url: "https://parallaxprotocol.org",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Parallax Protocol",
+    description: "A peer-to-peer programmable cash system. Bitcoin's monetary discipline meets Ethereum's programmability.",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "Parallax Protocol",
+      url: "https://parallaxprotocol.org",
+      logo: "https://parallaxprotocol.org/new_parallax_logo_square.svg",
+      sameAs: [
+        "https://github.com/ParallaxProtocol",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      name: "Parallax Protocol",
+      url: "https://parallaxprotocol.org",
+      description: "A peer-to-peer programmable cash system combining Bitcoin's sound money with Ethereum's programmability.",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -45,6 +79,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <ScrollProgress />
           <ScrollToTop />

@@ -1,5 +1,6 @@
 import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronRight, Download, ExternalLink } from "lucide-react";
@@ -11,11 +12,13 @@ const wallets = [
     name: "MetaMask",
     image: "/wallets/metamask.png",
     url: "https://metamask.io",
+    recommended: true,
   },
   {
     name: "Coinbase Wallet",
     image: "/wallets/base.png",
     url: "https://wallet.coinbase.com",
+    recommended: true,
   },
   {
     name: "Rabby Wallet",
@@ -31,6 +34,7 @@ const wallets = [
     name: "Trust Wallet",
     image: "/wallets/trust.png",
     url: "https://trustwallet.com",
+    recommended: true,
   },
   {
     name: "CTRL Wallet",
@@ -73,7 +77,12 @@ export default function Page() {
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {wallets.map((wallet) => (
-            <Card key={wallet.name} className="group hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
+            <Card key={wallet.name} className="group relative hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
+              {"recommended" in wallet && wallet.recommended && (
+                <Badge className="absolute top-3 right-3 bg-gold/15 text-gold border-gold/30 hover:bg-gold/20 text-[0.65rem] font-medium">
+                  Beginner friendly
+                </Badge>
+              )}
               <CardHeader>
                 <CardTitle className="text-center">{wallet.name}</CardTitle>
               </CardHeader>

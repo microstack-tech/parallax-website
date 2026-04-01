@@ -98,6 +98,18 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
     const OSCILLATE_DEGREES = -4;
     const OSCILLATE_SPEED = 0.15; // full cycle speed
 
+    // Mouse parallax for non-interactive mode
+    const mouseTarget = { x: 0, y: 0 };
+    const mouseCurrent = { x: 0, y: 0 };
+    const MOUSE_PARALLAX_STRENGTH = 0.7;
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (interactive) return;
+      mouseTarget.x = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseTarget.y = (e.clientY / window.innerHeight - 0.5) * 2;
+    };
+    window.addEventListener("mousemove", onMouseMove);
+
     // ----- Stars -----
     const starGeometry = new THREE.BufferGeometry();
     const starCount = isMobile ? 80000 : 150000;
@@ -256,14 +268,20 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
         bloomPass.strength = TARGET_BLOOM_STRENGTH * eased;
         renderer.toneMappingExposure = 1.2 * eased;
 
-        // Oscillate camera back and forth
+        // Oscillate camera back and forth + mouse parallax
         if (!interactive) {
+          // Lerp mouse for smooth tracking
+          mouseCurrent.x += (mouseTarget.x - mouseCurrent.x) * 0.05;
+          mouseCurrent.y += (mouseTarget.y - mouseCurrent.y) * 0.05;
+
           const angle = Math.sin(elapsedTime * OSCILLATE_SPEED) * (OSCILLATE_DEGREES * Math.PI / 180);
           const radius = initialCamPos.length();
           const baseAngle = Math.atan2(initialCamPos.x, initialCamPos.z);
-          camera.position.x = radius * Math.sin(baseAngle + angle) * Math.cos(Math.atan2(initialCamPos.y, Math.sqrt(initialCamPos.x ** 2 + initialCamPos.z ** 2)));
-          camera.position.z = radius * Math.cos(baseAngle + angle) * Math.cos(Math.atan2(initialCamPos.y, Math.sqrt(initialCamPos.x ** 2 + initialCamPos.z ** 2)));
-          camera.position.y = initialCamPos.y;
+          const elevationAngle = Math.atan2(initialCamPos.y, Math.sqrt(initialCamPos.x ** 2 + initialCamPos.z ** 2));
+          camera.position.x = radius * Math.sin(baseAngle + angle) * Math.cos(elevationAngle) + mouseCurrent.x * MOUSE_PARALLAX_STRENGTH;
+          camera.position.z = radius * Math.cos(baseAngle + angle) * Math.cos(elevationAngle);
+          camera.position.y = initialCamPos.y - mouseCurrent.y * MOUSE_PARALLAX_STRENGTH * 0.6;
+
           camera.lookAt(0, 0, 0);
         }
 
@@ -288,6 +306,7 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
 
     // ----- Cleanup -----
     return () => {
+      window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
       cancelAnimationFrame(rafId);
       controls.dispose();

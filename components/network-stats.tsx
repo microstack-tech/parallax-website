@@ -258,7 +258,29 @@ export function NetworkStats() {
     return () => { cancelled = true; clearInterval(interval) }
   }, [])
 
-  if (!stats) return null
+  if (!stats) return (
+    <section className="py-16 px-6 sm:px-8">
+      <div className="mx-auto max-w-7xl space-y-12">
+        <div>
+          <div className="text-center mb-6">
+            <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">
+              Live Network
+            </p>
+          </div>
+          <div className="grid gap-px bg-border grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div key={i} className="bg-background flex flex-col items-center justify-center py-8 px-4">
+                <div className="h-7 w-24 bg-muted animate-pulse rounded" />
+                <div className="mt-3 h-3 w-16 bg-muted animate-pulse rounded" />
+              </div>
+            ))}
+            {/* Fill empty cell on mobile */}
+            <div className="bg-background sm:hidden" />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 
   const hasMarket = marketItems.some((item) => item.format(stats) != null)
 
