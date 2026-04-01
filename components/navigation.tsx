@@ -51,6 +51,7 @@ const navItems: NavItem[] = [
       { name: "Beginner Guides", href: "/resources/beginner-guides" },
       { name: "Technical Documentation", href: "/resources/technical-documentation" },
       { name: "Parallax Client", href: "/resources/parallax-client" },
+      { name: "Wallets", href: "/wallets" },
       { name: "###" },
       { name: "Block Explorer", href: "https://explorer.parallaxprotocol.org" },
       { name: "Faucet", href: "#" },
