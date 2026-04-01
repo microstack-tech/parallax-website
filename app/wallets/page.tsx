@@ -79,29 +79,29 @@ export default function Page() {
         <AddNetworkSection />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {wallets.map((wallet) => (
-            <Card key={wallet.name} className="group relative hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
-              {"recommended" in wallet && wallet.recommended && (
-                <Badge className="absolute top-3 right-3 bg-gold/15 text-gold border-gold/30 hover:bg-gold/20 text-[0.65rem] font-medium">
-                  Beginner friendly
-                </Badge>
-              )}
-              <CardHeader>
-                <CardTitle className="text-center">{wallet.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-center mb-4">
-                  <Image src={wallet.image} alt={wallet.name} width={200} height={200} className="rounded-2xl" />
-                </div>
-                <div className="flex gap-4 justify-center">
-                  <Button variant="secondary" className="text-base" asChild>
-                    <Link href={wallet.url} target="_blank">
+            <Link key={wallet.name} href={wallet.url} target="_blank" className="block">
+              <Card className="group relative h-full hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300 cursor-pointer">
+                {"recommended" in wallet && wallet.recommended && (
+                  <Badge className="absolute top-3 right-3 bg-gold/15 text-gold border-gold/30 hover:bg-gold/20 text-[0.65rem] font-medium">
+                    Beginner friendly
+                  </Badge>
+                )}
+                <CardHeader>
+                  <CardTitle className="text-center">{wallet.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex justify-center mb-4">
+                    <Image src={wallet.image} alt={wallet.name} width={200} height={200} className="rounded-2xl" />
+                  </div>
+                  <div className="flex gap-4 justify-center">
+                    <span className="inline-flex items-center text-base text-muted-foreground group-hover:text-foreground transition-colors">
                       {`Get ${wallet.name}`}
-                      <ChevronRight />
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                      <ChevronRight className="ml-1 h-4 w-4" />
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
         <div className="bg-surface-elevated border border-border p-8 sm:p-12 text-center">
