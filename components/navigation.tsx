@@ -25,7 +25,7 @@ import { Moon, Sun } from "lucide-react"
 interface NavItem {
   name: string
   href?: string
-  subItems?: { name: string; href?: string }[]
+  subItems?: { name: string; href?: string; badge?: string }[]
 }
 
 const navItems: NavItem[] = [
@@ -54,7 +54,7 @@ const navItems: NavItem[] = [
       { name: "Wallets", href: "/wallets" },
       { name: "###" },
       { name: "Block Explorer", href: "https://explorer.parallaxprotocol.org" },
-      { name: "Faucet", href: "https://faucet.parallaxprotocol.org" },
+      { name: "Faucet", href: "https://faucet.parallaxprotocol.org", badge: "New" },
     ],
   },
   {
@@ -159,6 +159,7 @@ export function Navigation() {
                             key={`desk_sub_${item.name}_${sub.name}`}
                             href={sub.href ?? "#"}
                             title={sub.name}
+                            badge={sub.badge}
                           />
                         )
                       }
@@ -263,6 +264,11 @@ export function Navigation() {
                                 onClick={() => setIsOpen(false)}
                               >
                                 {sub.name}
+                                {sub.badge && (
+                                  <span className="ml-2 inline-flex bg-gold px-1.5 py-0.5 text-[10px] font-sans font-semibold leading-none text-gold-foreground uppercase">
+                                    {sub.badge}
+                                  </span>
+                                )}
                               </Link>
                             )
                           })}
@@ -307,13 +313,21 @@ function ListItem({
   title,
   children,
   href,
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+  badge,
+}: React.ComponentPropsWithoutRef<"li"> & { href: string; badge?: string }) {
   return (
     <NavigationMenuLink asChild>
       <Link href={href} className={cn({
         "text-foreground/50 pointer-events-none": href === "#"
       })}>
-        <div className="text-sm leading-none font-medium">{title}</div>
+        <div className="text-sm leading-none font-medium flex items-center justify-between gap-2">
+          <span className="group-hover/navlink:underline">{title}</span>
+          {badge && (
+            <span className="bg-gold px-1.5 py-0.5 text-[10px] font-sans font-semibold leading-none text-gold-foreground uppercase inline-block">
+              {badge}
+            </span>
+          )}
+        </div>
         <p className={"text-muted-foreground line-clamp-2 text-sm leading-snug"}>
           {children}
         </p>
