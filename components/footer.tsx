@@ -14,6 +14,7 @@ const footerLinks = {
     { name: "Beginner Guides", href: "/resources/beginner-guides" },
     { name: "Block Explorer", href: "https://explorer.parallaxprotocol.org", external: true },
     { name: "Parallax Client", href: "/resources/parallax-client" },
+    { name: "Wallets", href: "/wallets" },
     { name: "Brand Assets", href: "/resources/branding" },
   ],
   Community: [
