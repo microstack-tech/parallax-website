@@ -1,3 +1,4 @@
+import AddNetworkSection from "@/components/add-network-section";
 import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +22,12 @@ const wallets = [
     recommended: true,
   },
   {
+    name: "Trust Wallet",
+    image: "/wallets/trust.png",
+    url: "https://trustwallet.com",
+    recommended: true,
+  },
+  {
     name: "Rabby Wallet",
     image: "/wallets/rabby.png",
     url: "https://rabby.io",
@@ -29,12 +36,6 @@ const wallets = [
     name: "Atomic Wallet",
     image: "/wallets/atomic.png",
     url: "https://atomicwallet.io",
-  },
-  {
-    name: "Trust Wallet",
-    image: "/wallets/trust.png",
-    url: "https://trustwallet.com",
-    recommended: true,
   },
   {
     name: "CTRL Wallet",
@@ -75,6 +76,7 @@ export default function Page() {
         subTitle="Choose the right wallet to manage your Laxes, connect to dapps, and explore the Parallax ecosystem securely."
       />
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
+        <AddNetworkSection />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {wallets.map((wallet) => (
             <Card key={wallet.name} className="group relative hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">

@@ -1,19 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { addParallaxNetwork, checkParallaxAdded, STORAGE_KEY } from "@/lib/parallax-network";
 import { Plus, X } from "lucide-react";
 import { useEffect, useState } from "react";
-
-const PARALLAX_CHAIN_ID = "0x83E";
-const STORAGE_KEY = "parallax-network-added";
-
-declare global {
-  interface Window {
-    ethereum?: {
-      request: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
-    };
-  }
-}
 
 export default function AddNetworkPopup() {
   const [visible, setVisible] = useState(false);
@@ -23,44 +13,15 @@ export default function AddNetworkPopup() {
     if (!window.ethereum) return;
     if (localStorage.getItem(STORAGE_KEY)) return;
 
-    // Check if Parallax is already added by trying to switch to it
-    window.ethereum
-      .request({ method: "wallet_switchEthereumChain", params: [{ chainId: PARALLAX_CHAIN_ID }] })
-      .then(() => {
-        // Chain exists — mark as added, don't show popup
-        localStorage.setItem(STORAGE_KEY, "true");
-      })
-      .catch((err: unknown) => {
-        const error = err as { code?: number };
-        if (error.code === 4902) {
-          // Chain not added — show the popup
-          setVisible(true);
-        }
-        // Other errors (user rejected switch, etc.) — don't show popup
-      });
+    checkParallaxAdded().then((added) => {
+      if (!added) setVisible(true);
+    });
   }, []);
 
-  async function addNetwork() {
-    if (!window.ethereum) return;
-
+  async function handleAdd() {
     setStatus("adding");
     try {
-      await window.ethereum.request({
-        method: "wallet_addEthereumChain",
-        params: [
-          {
-            chainId: PARALLAX_CHAIN_ID,
-            chainName: "Parallax",
-            nativeCurrency: {
-              name: "Lax",
-              symbol: "LAX",
-              decimals: 18,
-            },
-            rpcUrls: ["https://rpc.parallaxprotocol.org"],
-            blockExplorerUrls: ["https://explorer.parallaxprotocol.org"],
-          },
-        ],
-      });
+      await addParallaxNetwork();
       setStatus("success");
       localStorage.setItem(STORAGE_KEY, "true");
       setTimeout(() => setVisible(false), 2000);
@@ -94,7 +55,7 @@ export default function AddNetworkPopup() {
       <div className="flex flex-col items-center gap-3">
         <Button
           className="bg-gold text-gold-foreground hover:bg-gold/90 w-full"
-          onClick={addNetwork}
+          onClick={handleAdd}
           disabled={status === "adding"}
         >
           <Plus className="mr-2 h-5 w-5" />
