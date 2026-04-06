@@ -30,6 +30,13 @@ export default function Client() {
               <p className="text-base text-muted-foreground leading-relaxed">
                 Users running a node are the ones keeping Parallax decentralized. They individually run their own Parallax full nodes, and each of those full nodes separately follows the exact same rules to decide which block chain is valid.
               </p>
+              <Link
+                href="/resources/network-atlas"
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.15em] text-muted-foreground/70 hover:text-foreground transition-colors"
+              >
+                See the live node map
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
             <div className="pl-0 sm:pl-10 pt-8 sm:pt-0 border-t sm:border-t-0 border-border">
               <div className="flex items-center gap-3 mb-4">

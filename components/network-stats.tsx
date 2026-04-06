@@ -294,10 +294,14 @@ export function NetworkStats() {
             </p>
           </div>
           <StatGrid items={networkItems} stats={stats} columns="grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" />
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center items-center gap-4 mt-4">
             <Link href="https://explorer.parallaxprotocol.org" target="_blank" rel="noopener" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors inline-flex items-center gap-1.5">
               Block Explorer
               <ExternalLink className="size-3" />
+            </Link>
+            <span className="text-xs text-muted-foreground/30" aria-hidden="true">·</span>
+            <Link href="/resources/network-atlas" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors">
+              Network Atlas
             </Link>
           </div>
         </FadeIn>
