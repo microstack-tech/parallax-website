@@ -1,9 +1,10 @@
 'use client'
 import { Button } from "@/components/ui/button";
-import { BookOpen, Download, ExternalLink, Hexagon, CircleSlash } from "lucide-react";
+import { BookOpen, Hexagon, CircleSlash } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FadeIn } from "./fade-in";
+import ClientDownloadButton from "./client-download-button";
 
 export default function Client() {
   return (
@@ -66,13 +67,8 @@ export default function Client() {
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
               Available for Linux, Windows, and macOS. Download the latest release or visit GitHub for source code and instructions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
-                <Link href="https://github.com/ParallaxProtocol/parallax/releases/latest" target="_blank" rel="noopener">
-                  <Download className="h-5 w-5" />
-                  Download
-                </Link>
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <ClientDownloadButton />
               <Button variant="secondary" asChild>
                 <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
                   <BookOpen />
