@@ -4,19 +4,20 @@ import Link from 'next/link'
 const footerLinks = {
   Protocol: [
     { name: "Doctrine", href: "/introduction/doctrine" },
-    { name: "Whitepaper", href: "/introduction/whitepaper" },
     { name: "How It Works", href: "/introduction/how-it-works" },
-    { name: "Getting Started", href: "/introduction/getting-started" },
-    { name: "Protocol Overview", href: "/introduction/protocol/overview" },
     { name: "vs Bitcoin & Ethereum", href: "/compare" },
+    { name: "Whitepaper", href: "/introduction/whitepaper" },
+    { name: "Protocol Overview", href: "/introduction/protocol/overview" },
+    { name: "Getting Started", href: "/introduction/getting-started" },
   ],
   Resources: [
-    { name: "Documentation", href: "https://docs.parallaxprotocol.org", external: true },
     { name: "Beginner Guides", href: "/resources/beginner-guides" },
-    { name: "Block Explorer", href: "https://explorer.parallaxprotocol.org", external: true },
+    { name: "Documentation", href: "https://docs.parallaxprotocol.org", external: true },
     { name: "Parallax Client", href: "/resources/parallax-client" },
-    { name: "Network Atlas", href: "/resources/network-atlas" },
     { name: "Wallets", href: "/wallets" },
+    { name: "Exchanges", href: "/exchanges" },
+    { name: "Block Explorer", href: "https://explorer.parallaxprotocol.org", external: true },
+    { name: "Network Atlas", href: "/resources/network-atlas" },
     { name: "Brand Assets", href: "/resources/branding" },
   ],
   Community: [
