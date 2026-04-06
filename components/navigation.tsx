@@ -55,6 +55,7 @@ const navItems: NavItem[] = [
       { name: "###" },
       { name: "Block Explorer", href: "https://explorer.parallaxprotocol.org" },
       { name: "Faucet", href: "https://faucet.parallaxprotocol.org", badge: "New" },
+      { name: "Network Atlas", href: "/resources/network-atlas", badge: "New" },
     ],
   },
   {
