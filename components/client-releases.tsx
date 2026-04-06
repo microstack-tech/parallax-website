@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
 
 const RELEASES_API = "https://api.github.com/repos/ParallaxProtocol/parallax/releases?per_page=10";
-const MAX_OLDER = 3;
+const MAX_RELEASES = 4;
 
 type Asset = {
   name: string;
@@ -49,23 +49,19 @@ export default async function ClientReleases() {
   const releases = await fetchReleases();
   if (!releases || releases.length === 0) return null;
 
-  // Skip the latest non-prerelease since the download CTA above already covers it.
   const latestStableIndex = releases.findIndex((r) => !r.prerelease && !r.draft);
-  const older = releases
-    .filter((_, i) => i !== latestStableIndex)
-    .filter((r) => !r.draft)
-    .slice(0, MAX_OLDER);
+  const visible = releases.filter((r) => !r.draft).slice(0, MAX_RELEASES);
 
-  if (older.length === 0) return null;
+  if (visible.length === 0) return null;
 
   return (
     <div className="mt-20">
       <div className="flex items-center gap-3 mb-8">
-        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">Previous Releases</h3>
+        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">Recent Releases</h3>
         <div className="flex-1 h-px bg-border" />
       </div>
       <p className="text-muted-foreground mb-8 max-w-2xl">
-        Earlier versions of the Parallax client. Always prefer the latest release unless you have a specific reason to run an older build.
+        Recent versions of the Parallax client. Always prefer the latest release unless you have a specific reason to run an older build.
       </p>
 
       <div className="border border-border">
@@ -76,10 +72,11 @@ export default async function ClientReleases() {
           <div className="col-span-2 text-right">Link</div>
         </div>
 
-        {older.map((release) => {
+        {visible.map((release) => {
           const binaryAssets = release.assets.filter(
             (a) => a.name.endsWith(".tar.gz") || a.name.endsWith(".zip"),
           );
+          const isLatestStable = releases.indexOf(release) === latestStableIndex;
           return (
             <div
               key={release.tag_name}
@@ -87,6 +84,11 @@ export default async function ClientReleases() {
             >
               <div className="sm:col-span-3 flex items-center gap-2">
                 <span className="font-mono text-sm text-foreground">{release.tag_name}</span>
+                {isLatestStable && (
+                  <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-gold border border-gold/40 px-1.5 py-0.5">
+                    Latest
+                  </span>
+                )}
                 {release.prerelease && (
                   <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-gold border border-gold/40 px-1.5 py-0.5">
                     Pre
@@ -98,7 +100,7 @@ export default async function ClientReleases() {
               </div>
               <div className="sm:col-span-4 text-xs text-muted-foreground">
                 {binaryAssets.length > 0 ? (
-                  <span>{binaryAssets.length} binaries</span>
+                  <span>{binaryAssets.length} artifacts</span>
                 ) : (
                   <span className="italic">source only</span>
                 )}
