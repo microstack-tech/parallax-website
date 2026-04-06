@@ -64,7 +64,7 @@ const navItems: NavItem[] = [
     subItems: [
       { name: "Support Parallax", href: "/participate/support-parallax" },
       { name: "Running a full node", href: "/participate/running-a-full-node" },
-      { name: "Mining Pools", href: "/mining-pools" },
+      { name: "Mining Pools", href: "https://miningpoolstats.stream/parallax" },
       { name: "Development", href: "/participate/development" },
     ],
   },

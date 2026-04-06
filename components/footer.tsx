@@ -1,3 +1,4 @@
+import { LineChart } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -88,6 +89,23 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8">
           <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
+
+          {/* Data attribution */}
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <LineChart className="size-3.5 text-muted-foreground" />
+            <p className="text-xs text-muted-foreground">
+              Market data provided by{" "}
+              <Link
+                href="https://www.coingecko.com/en/coins/parallax-2"
+                target="_blank"
+                rel="noopener"
+                className="hover:text-foreground transition-colors underline underline-offset-4"
+              >
+                CoinGecko
+              </Link>
+            </p>
+          </div>
+
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
               © Parallax Protocol 2026
