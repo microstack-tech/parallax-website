@@ -1,6 +1,7 @@
 import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
 import CountriesTable from "@/components/network-atlas/countries-table"
+import HostingTable from "@/components/network-atlas/hosting-table"
 import NodesSummary from "@/components/network-atlas/nodes-summary"
 import WorldMap from "@/components/network-atlas/world-map"
 import { getNodes, type NodesPayload } from "@/lib/nodes"
@@ -42,7 +43,10 @@ export default async function NetworkAtlasPage() {
             <div className="bg-surface-elevated border border-border p-4 sm:p-6">
               <WorldMap nodes={data.nodes} />
             </div>
-            <CountriesTable nodes={data.nodes} />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <CountriesTable nodes={data.nodes} />
+              <HostingTable nodes={data.nodes} />
+            </div>
             <p className="text-xs text-muted-foreground text-center">
               Updated every 30 minutes · Source: <code className="font-mono">all.mainnet.prlxdisc.org</code> ·
               Geolocation by ip-api.com

@@ -18,6 +18,10 @@ export type Node = {
   lon: number
   country: string
   countryCode: string
+  /** Autonomous System number, e.g. "AS16276". Empty if unknown. */
+  asn: string
+  /** Human-readable AS owner, e.g. "OVH SAS". Empty if unknown. */
+  asOrg: string
 }
 
 export type NodesPayload = {
@@ -32,6 +36,8 @@ type GeoEntry = {
   lon: number
   country: string
   countryCode: string
+  asn: string
+  asOrg: string
 }
 
 type CacheEntry = { value: NodesPayload; expires: number }
@@ -113,6 +119,18 @@ async function fetchEnrTree(): Promise<string[]> {
 }
 
 /**
+ * Split ip-api's `as` field ("AS16276 OVH SAS") into the ASN identifier and
+ * the operator name. Returns empty strings if the input is missing or doesn't
+ * match the expected shape.
+ */
+function parseAsField(value: string): { asn: string; asOrg: string } {
+  if (!value) return { asn: "", asOrg: "" }
+  const m = value.match(/^(AS\d+)\s*(.*)$/)
+  if (!m) return { asn: "", asOrg: value.trim() }
+  return { asn: m[1], asOrg: m[2].trim() }
+}
+
+/**
  * Geolocate up to 100 IPs per call via ip-api.com's free batch endpoint.
  * No API key required. Rate limit is 15 req/min from a single source IP — at
  * one batch per 30-min refresh we are nowhere near it.
@@ -127,7 +145,7 @@ async function geolocate(ips: string[]): Promise<Map<string, GeoEntry>> {
   for (const chunk of chunks) {
     try {
       const res = await fetch(
-        "http://ip-api.com/batch?fields=status,country,countryCode,lat,lon,query",
+        "http://ip-api.com/batch?fields=status,country,countryCode,lat,lon,query,as",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -143,15 +161,22 @@ async function geolocate(ips: string[]): Promise<Map<string, GeoEntry>> {
         lon?: number
         country?: string
         countryCode?: string
+        as?: string
       }>
       for (const entry of arr) {
         if (entry.status !== "success" || !entry.query) continue
         if (typeof entry.lat !== "number" || typeof entry.lon !== "number") continue
+        // ip-api returns `as` as a single string like "AS16276 OVH SAS".
+        // Split into ASN + org so the client can group/display them
+        // independently.
+        const { asn, asOrg } = parseAsField(entry.as ?? "")
         out.set(entry.query, {
           lat: entry.lat,
           lon: entry.lon,
           country: entry.country ?? "",
           countryCode: entry.countryCode ?? "",
+          asn,
+          asOrg,
         })
       }
     } catch {
@@ -189,6 +214,8 @@ async function fetchNodes(): Promise<NodesPayload> {
       lon: g.lon,
       country: g.country,
       countryCode: g.countryCode,
+      asn: g.asn,
+      asOrg: g.asOrg,
     })
   }
 
