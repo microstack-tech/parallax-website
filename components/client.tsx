@@ -70,9 +70,9 @@ export default function Client() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <ClientDownloadButton />
               <Button variant="secondary" asChild>
-                <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
+                <Link href="/resources/parallax-client">
                   <BookOpen />
-                  Setup guide
+                  Quick start
                 </Link>
               </Button>
               <Button variant="secondary" asChild>

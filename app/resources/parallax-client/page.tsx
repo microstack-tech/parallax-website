@@ -6,6 +6,8 @@ import { CircleSlash, ExternalLink, Hexagon, Info, ShieldCheck, TerminalSquare }
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import ClientDownloadButton from "@/components/client-download-button";
+import ClientQuickStart from "@/components/client-quick-start";
+import ClientReleases from "@/components/client-releases";
 
 const clientFeatures = [
   {
@@ -95,6 +97,10 @@ export default function ParallaxClientPage() {
             </Button>
           </div>
         </div>
+
+        <ClientQuickStart />
+
+        <ClientReleases />
       </section>
     </MainMotion>
   );
