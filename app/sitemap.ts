@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/wallets",
     "/mining-pools",
     "/exchanges",
+    "/compare",
     "/introduction/doctrine",
     "/introduction/getting-started",
     "/introduction/how-it-works",

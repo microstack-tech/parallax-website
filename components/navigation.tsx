@@ -38,6 +38,7 @@ const navItems: NavItem[] = [
       { name: "Individuals", href: "/introduction/parallax-for-individuals" },
       { name: "Businesses", href: "/introduction/parallax-for-businesses" },
       { name: "White paper", href: "/introduction/whitepaper" },
+      { name: "vs Bitcoin & Ethereum", href: "/compare", badge: "New" },
       { name: "###" },
       { name: "Parallax Protocol", href: "/introduction/protocol/overview" },
 

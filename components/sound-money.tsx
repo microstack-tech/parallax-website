@@ -1,5 +1,6 @@
 'use client'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import {
   Scale,
   Zap,
@@ -7,7 +8,9 @@ import {
   CircuitBoard,
   Users,
   ShieldCheck,
+  ArrowRight,
 } from "lucide-react"
+import Link from "next/link"
 import { FadeIn } from "./fade-in"
 
 const primaryFeatures = [
@@ -95,6 +98,26 @@ export function SoundMoney() {
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn>
+          <div className="mt-16 flex flex-col items-center gap-3">
+            <Button
+              asChild
+              variant="outline"
+              className="group border-gold/30 hover:border-gold hover:bg-gold/5 text-foreground px-6 py-5"
+            >
+              <Link href="/compare">
+                <span className="font-mono text-xs uppercase tracking-[0.15em]">
+                  See how Parallax stacks up
+                </span>
+                <ArrowRight className="size-4 ml-1 text-gold transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </Button>
+            <p className="text-xs text-muted-foreground">
+              vs Bitcoin & Ethereum, feature by feature
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

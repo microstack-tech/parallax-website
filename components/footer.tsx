@@ -8,6 +8,7 @@ const footerLinks = {
     { name: "How It Works", href: "/introduction/how-it-works" },
     { name: "Getting Started", href: "/introduction/getting-started" },
     { name: "Protocol Overview", href: "/introduction/protocol/overview" },
+    { name: "vs Bitcoin & Ethereum", href: "/compare" },
   ],
   Resources: [
     { name: "Documentation", href: "https://docs.parallaxprotocol.org", external: true },
