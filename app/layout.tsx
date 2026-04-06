@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 import { ScrollProgress, ScrollToTop } from "@/components/scroll-utilities";
 import { ThemeProvider } from "@/components/theme-provider";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 import "./table.css";
@@ -45,6 +45,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#06070d",
+  colorScheme: "dark",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -79,6 +84,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      className="dark"
+      style={{ colorScheme: "dark", backgroundColor: "#06070d" }}
       suppressHydrationWarning
     >
       <body
