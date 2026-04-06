@@ -104,7 +104,7 @@ export function SoundMoney() {
             <Button
               asChild
               variant="outline"
-              className="group border-gold/30 hover:border-gold hover:bg-gold/5 text-foreground px-6 py-5"
+              className="group border-gold/30 hover:border-gold hover:bg-gold/5 text-foreground px-6 py-5 no-underline hover:no-underline"
             >
               <Link href="/compare">
                 <span className="font-mono text-xs uppercase tracking-[0.15em]">
