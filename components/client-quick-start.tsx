@@ -101,7 +101,7 @@ export default function ClientQuickStart() {
   return (
     <div className="mt-16">
       <div className="flex items-center gap-3 mb-8">
-        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">Quick Start</h3>
+        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">CLI Quick Start</h3>
         <div className="flex-1 h-px bg-border" />
         {detectedLabel && (
           <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
@@ -110,7 +110,7 @@ export default function ClientQuickStart() {
         )}
       </div>
       <p className="text-muted-foreground mb-10 max-w-2xl">
-        After downloading, three steps get you connected to the network. No configuration required.
+        For the command-line client. Three steps get you connected to the network — no configuration required. Desktop App users can skip this section: just install and launch.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border">

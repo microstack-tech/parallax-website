@@ -2,7 +2,7 @@ import MainMotion from "@/components/main-motion";
 import PageHeader from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CircleSlash, ExternalLink, Hexagon, Info, ShieldCheck, TerminalSquare } from "lucide-react";
+import { AppWindow, CircleSlash, ExternalLink, Hexagon, Info, ShieldCheck, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import ClientDownloadButton from "@/components/client-download-button";
@@ -76,13 +76,41 @@ export default function ParallaxClientPage() {
           ))}
         </div>
 
-        <div className="bg-surface-elevated border border-border p-8 sm:p-12 text-center">
-          <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Download Parallax Client</h3>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            The Parallax Client is available for Linux, Windows, and macOS. Download the latest release below or visit our GitHub for source code and instructions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <ClientDownloadButton />
+        <div className="border border-border">
+          <div className="px-6 sm:px-12 pt-10 pb-8 text-center">
+            <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Download Parallax Client</h3>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Two ways to run a Parallax full node — pick whichever fits how you work. Both connect to the same network.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-border">
+            <div className="relative p-8 sm:p-12 border-b md:border-b-0 md:border-r border-border">
+              <div className="absolute top-4 right-4 text-[9px] font-mono uppercase tracking-[0.15em] text-gold border border-gold/40 px-1.5 py-0.5">
+                Recommended
+              </div>
+              <AppWindow className="size-6 text-gold mb-4" />
+              <h4 className="text-base text-foreground mb-2">Desktop App</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                A graphical interface for running a full node. The easiest way to participate — install, launch, and watch the chain sync. No terminal required.
+              </p>
+              <ClientDownloadButton variant="gui" />
+            </div>
+
+            <div className="relative p-8 sm:p-12 bg-surface-elevated/40">
+              <div className="absolute top-4 right-4 text-[9px] font-mono uppercase tracking-[0.15em] text-muted-foreground border border-border px-1.5 py-0.5">
+                Advanced
+              </div>
+              <TerminalSquare className="size-6 text-foreground mb-4" />
+              <h4 className="text-base text-foreground mb-2">Command-Line Client</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                The terminal binary for developers, miners, and operators running headless servers. Configurable, scriptable, and ideal for automation.
+              </p>
+              <ClientDownloadButton variant="cli" prominent={false} />
+            </div>
+          </div>
+
+          <div className="px-6 sm:px-12 py-6 border-t border-border flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center">
             <Button variant="secondary" asChild>
               <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
                 Setup guide

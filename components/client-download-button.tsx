@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Download } from "lucide-react";
+import { Download, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePlatform, type Platform } from "@/hooks/usePlatform";
 
@@ -18,15 +18,31 @@ type Release = {
   assets: ReleaseAsset[];
 };
 
-function findAsset(release: Release, platform: Platform): ReleaseAsset | null {
+export type ClientVariant = "cli" | "gui";
+
+function findAsset(release: Release, platform: Platform, variant: ClientVariant): ReleaseAsset | null {
+  if (variant === "gui") {
+    // GUI builds don't cover every arch, so require an exact match. Otherwise we'd
+    // ship the wrong binary (e.g. amd64 to a 386 user) just because the OS matches.
+    const exact = `parallax-gui-${platform.os}-${platform.arch}.zip`;
+    return release.assets.find((a) => a.name === exact) ?? null;
+  }
   const ext = platform.os === "windows" ? "zip" : "tar.gz";
   const exact = `parallax-${platform.os}-${platform.arch}.${ext}`;
   const match = release.assets.find((a) => a.name === exact);
   if (match) return match;
-  return release.assets.find((a) => a.name.includes(`-${platform.os}-`)) ?? null;
+  // Lenient OS-only fallback for CLI — but exclude GUI assets so we don't grab one by accident.
+  return release.assets.find(
+    (a) => !a.name.startsWith("parallax-gui-") && a.name.includes(`-${platform.os}-`),
+  ) ?? null;
 }
 
-export default function ClientDownloadButton() {
+type Props = {
+  variant?: ClientVariant;
+  prominent?: boolean;
+};
+
+export default function ClientDownloadButton({ variant = "cli", prominent = true }: Props) {
   const { platform, ready: platformReady } = usePlatform();
   const [release, setRelease] = useState<Release | null>(null);
   const [releaseReady, setReleaseReady] = useState(false);
@@ -47,26 +63,48 @@ export default function ClientDownloadButton() {
   }, []);
 
   const ready = platformReady && releaseReady;
-  const asset = ready && platform && release ? findAsset(release, platform) : null;
+  const isMobile = ready && platform?.isMobile === true;
+  const asset = ready && platform && !isMobile && release ? findAsset(release, platform, variant) : null;
   const href = asset?.browser_download_url ?? RELEASES_PAGE;
   const version = release?.tag_name;
 
+  if (isMobile) {
+    return (
+      <div className="inline-flex flex-col items-center gap-2 px-4 py-3 border border-dashed border-border bg-background/40 max-w-xs">
+        <div className="flex items-center gap-2 text-foreground">
+          <Smartphone className="size-4 text-gold" />
+          <span className="text-xs font-mono uppercase tracking-[0.15em]">Desktop only</span>
+        </div>
+        <p className="text-xs text-muted-foreground text-center leading-relaxed">
+          Open this page on Linux, Windows, or macOS to download.
+        </p>
+      </div>
+    );
+  }
+
+  const fallbackLabel = variant === "gui" ? "Download Desktop App" : "Download CLI";
   const label = !ready
-    ? "Download Latest Release"
+    ? fallbackLabel
     : asset && platform
       ? `Download for ${platform.label}`
-      : "Download Latest Release";
+      : variant === "gui"
+        ? "View Desktop App builds"
+        : fallbackLabel;
 
   return (
-    <div className="relative">
-      <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+    <div className="relative inline-flex flex-col items-center">
+      <Button
+        className={prominent ? "bg-gold text-gold-foreground hover:bg-gold/90" : undefined}
+        variant={prominent ? undefined : "secondary"}
+        asChild
+      >
         <Link href={href} target="_blank" rel="noopener">
           <Download className="h-5 w-5" />
           {label}
         </Link>
       </Button>
       {ready && (
-        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
+        <div className="mt-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
           {version && asset ? <span>{version} · </span> : null}
           <Link href={RELEASES_PAGE} target="_blank" rel="noopener" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
             Other platforms

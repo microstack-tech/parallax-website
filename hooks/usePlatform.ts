@@ -10,16 +10,26 @@ export type Platform = {
   osLabel: string;
   archLabel: string;
   label: string;
+  isMobile: boolean;
 };
 
 type UADataPlatform = {
   platform?: string;
+  mobile?: boolean;
   getHighEntropyValues?: (hints: string[]) => Promise<{
     platform?: string;
     architecture?: string;
     bitness?: string;
   }>;
 };
+
+function detectMobile(): boolean {
+  if (typeof navigator === "undefined") return false;
+  const nav = navigator as Navigator & { userAgentData?: UADataPlatform };
+  if (typeof nav.userAgentData?.mobile === "boolean") return nav.userAgentData.mobile;
+  const ua = navigator.userAgent || "";
+  return /Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(ua);
+}
 
 async function detect(): Promise<Platform | null> {
   if (typeof navigator === "undefined") return null;
@@ -70,7 +80,14 @@ async function detect(): Promise<Platform | null> {
   const archLabel =
     arch === "amd64" ? "x86_64" : arch === "arm64" ? "ARM64" : arch === "386" ? "x86" : "ARMv7";
 
-  return { os, arch, osLabel, archLabel, label: `${osLabel} (${archLabel})` };
+  return {
+    os,
+    arch,
+    osLabel,
+    archLabel,
+    label: `${osLabel} (${archLabel})`,
+    isMobile: detectMobile(),
+  };
 }
 
 export function usePlatform(): { platform: Platform | null; ready: boolean } {

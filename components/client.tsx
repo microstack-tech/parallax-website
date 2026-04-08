@@ -1,6 +1,5 @@
 'use client'
-import { Button } from "@/components/ui/button";
-import { BookOpen, Hexagon, CircleSlash } from "lucide-react";
+import { Hexagon, CircleSlash } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FadeIn } from "./fade-in";
@@ -63,24 +62,38 @@ export default function Client() {
         {/* Download CTA banner */}
         <FadeIn delay={0.2}>
           <div className="bg-surface-elevated border border-border rounded-sm p-8 sm:p-12 text-center">
-            <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Download the Parallax Client</h3>
+            <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">Run a Parallax Node</h3>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Available for Linux, Windows, and macOS. Download the latest release or visit GitHub for source code and instructions.
+              The Parallax Desktop App is the easiest way to join the network — install, launch, and start syncing. Available for Linux, Windows, and macOS.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ClientDownloadButton />
-              <Button variant="secondary" asChild>
-                <Link href="/resources/parallax-client">
-                  <BookOpen />
-                  Quick start
-                </Link>
-              </Button>
-              <Button variant="secondary" asChild>
-                <Link href="https://github.com/ParallaxProtocol/parallax" target="_blank" rel="noopener">
-                  <FaGithub />
-                  GitHub
-                </Link>
-              </Button>
+            <div className="flex flex-col items-center">
+              <ClientDownloadButton variant="gui" />
+            </div>
+            <div className="mt-10 pt-6 border-t border-border/60 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
+              <Link
+                href="/resources/parallax-client"
+                className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+              >
+                Command-line client
+                <span aria-hidden="true">→</span>
+              </Link>
+              <span aria-hidden="true" className="text-border">·</span>
+              <Link
+                href="/resources/parallax-client"
+                className="hover:text-foreground transition-colors"
+              >
+                Quick start
+              </Link>
+              <span aria-hidden="true" className="text-border">·</span>
+              <Link
+                href="https://github.com/ParallaxProtocol/parallax"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+              >
+                <FaGithub className="size-3" />
+                GitHub
+              </Link>
             </div>
           </div>
         </FadeIn>
