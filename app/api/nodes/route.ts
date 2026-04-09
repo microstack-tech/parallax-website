@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { getNodes, NODES_TTL_MS, peekCacheStatus } from "@/lib/nodes"
 
-export const revalidate = 1800
+export const revalidate = 300
 
 export async function GET() {
   const cacheStatus = peekCacheStatus()

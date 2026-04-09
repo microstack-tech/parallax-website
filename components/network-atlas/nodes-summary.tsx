@@ -33,7 +33,7 @@ function Stat({ label, value }: { label: string; value: string }) {
 export default function NodesSummary({ totalNodes, countries, updatedAt }: Props) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <Stat label="Reachable nodes" value={totalNodes.toLocaleString()} />
+      <Stat label="Online nodes" value={totalNodes.toLocaleString()} />
       <Stat label="Countries" value={countries.toLocaleString()} />
       <Stat label="Last updated" value={formatRelative(updatedAt)} />
     </div>

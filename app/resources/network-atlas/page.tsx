@@ -1,12 +1,11 @@
 import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
 import CountriesTable from "@/components/network-atlas/countries-table"
-import HostingTable from "@/components/network-atlas/hosting-table"
 import NodesSummary from "@/components/network-atlas/nodes-summary"
 import WorldMap from "@/components/network-atlas/world-map"
 import { getNodes, type NodesPayload } from "@/lib/nodes"
 
-export const revalidate = 1800
+export const revalidate = 300
 
 export default async function NetworkAtlasPage() {
   let data: NodesPayload | null = null
@@ -21,7 +20,7 @@ export default async function NetworkAtlasPage() {
     <MainMotion>
       <PageHeader
         title="Network Atlas"
-        subTitle="A live view of reachable Parallax nodes around the world, discovered through the prlxdisc.org DNS tree and refreshed every 30 minutes."
+        subTitle="A live view of Parallax nodes around the world, discovered through peer connections and refreshed every 5 minutes."
       />
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-16">
         {errored || !data ? (
@@ -43,13 +42,9 @@ export default async function NetworkAtlasPage() {
             <div className="bg-surface-elevated border border-border p-4 sm:p-6">
               <WorldMap nodes={data.nodes} />
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <CountriesTable nodes={data.nodes} />
-              <HostingTable nodes={data.nodes} />
-            </div>
+            <CountriesTable nodes={data.nodes} />
             <p className="text-xs text-muted-foreground text-center">
-              Updated every 30 minutes · Source: <code className="font-mono">all.mainnet.prlxdisc.org</code> ·
-              Geolocation by ip-api.com
+              Updated every 5 minutes · Geolocation by ip-api.com
             </p>
           </div>
         )}
