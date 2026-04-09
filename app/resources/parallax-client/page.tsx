@@ -113,14 +113,20 @@ export default function ParallaxClientPage() {
           <div className="px-6 sm:px-12 py-6 border-t border-border flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center">
             <Button variant="secondary" asChild>
               <Link href="https://docs.parallaxprotocol.org/guides/client/setup" target="_blank" rel="noopener">
-                Setup guide
+                CLI setup guide
                 <ExternalLink />
               </Link>
             </Button>
             <Button variant="secondary" asChild>
               <Link href="https://github.com/ParallaxProtocol/parallax" target="_blank" rel="noopener">
                 <FaGithub />
-                View on GitHub
+                CLI on GitHub
+              </Link>
+            </Button>
+            <Button variant="secondary" asChild>
+              <Link href="https://github.com/ParallaxProtocol/parallax-gui" target="_blank" rel="noopener">
+                <FaGithub />
+                Desktop on GitHub
               </Link>
             </Button>
           </div>

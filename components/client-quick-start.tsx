@@ -1,7 +1,8 @@
 'use client'
 import { useState } from "react";
 import Link from "next/link";
-import { Check, Copy } from "lucide-react";
+import { Check, ChevronDown, Copy } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import { usePlatform, type Os } from "@/hooks/usePlatform";
 
 type StepContent = {
@@ -92,6 +93,7 @@ function CodeBlock({ children }: { children: string }) {
 
 export default function ClientQuickStart() {
   const { platform, ready } = usePlatform();
+  const [open, setOpen] = useState(false);
 
   // Default to linux content during SSR / before detection resolves so the layout is stable.
   const os: Os = platform?.os ?? "linux";
@@ -100,63 +102,82 @@ export default function ClientQuickStart() {
 
   return (
     <div className="mt-16">
-      <div className="flex items-center gap-3 mb-8">
-        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">CLI Quick Start</h3>
+      <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        className="w-full flex items-center gap-3 cursor-pointer group"
+      >
+        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">CLI Quick Start</h3>
         <div className="flex-1 h-px bg-border" />
         {detectedLabel && (
           <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
             Detected · <span className="text-gold">{detectedLabel}</span>
           </span>
         )}
-      </div>
-      <p className="text-muted-foreground mb-10 max-w-2xl">
-        For the command-line client. Three steps get you connected to the network — no configuration required. Desktop App users can skip this section: just install and launch.
-      </p>
+        <ChevronDown className={`size-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border">
-        <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-border">
-          <div className="text-xs font-mono text-gold mb-3">01 / EXTRACT</div>
-          <h4 className="text-base text-foreground mb-3">{content.extractTitle}</h4>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">{content.extractBody}</p>
-          {content.extractCmd && <CodeBlock>{content.extractCmd}</CodeBlock>}
-        </div>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="quick-start-content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="text-muted-foreground mb-10 mt-8 max-w-2xl">
+              For the command-line client. Three steps get you connected to the network — no configuration required. Desktop App users can skip this section: just install and launch.
+            </p>
 
-        <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-border">
-          <div className="text-xs font-mono text-gold mb-3">02 / RUN</div>
-          <h4 className="text-base text-foreground mb-3">{content.runTitle}</h4>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">{content.runBody}</p>
-          {content.runCmd && <CodeBlock>{content.runCmd}</CodeBlock>}
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border">
+              <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-border">
+                <div className="text-xs font-mono text-gold mb-3">01 / EXTRACT</div>
+                <h4 className="text-base text-foreground mb-3">{content.extractTitle}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{content.extractBody}</p>
+                {content.extractCmd && <CodeBlock>{content.extractCmd}</CodeBlock>}
+              </div>
 
-        <div className="p-6 sm:p-8">
-          <div className="text-xs font-mono text-gold mb-3">03 / SYNC</div>
-          <h4 className="text-base text-foreground mb-3">Wait for the chain</h4>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            Your node downloads and verifies the blockchain automatically. Data is stored at:
-          </p>
-          <div className="bg-background border border-border p-3 text-xs font-mono text-foreground break-all">
-            {content.dataDir}
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            Initial sync can take a while depending on your connection.
-          </p>
-        </div>
-      </div>
+              <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-border">
+                <div className="text-xs font-mono text-gold mb-3">02 / RUN</div>
+                <h4 className="text-base text-foreground mb-3">{content.runTitle}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{content.runBody}</p>
+                {content.runCmd && <CodeBlock>{content.runCmd}</CodeBlock>}
+              </div>
 
-      <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-        <p className="text-xs text-muted-foreground">
-          Want to help strengthen the network? Open ports <code className="font-mono text-foreground">32110</code> TCP &amp; UDP on your router.
-        </p>
-        <Link
-          href="https://docs.parallaxprotocol.org/guides/client/setup"
-          target="_blank"
-          rel="noopener"
-          className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
-        >
-          Full setup guide
-          <span aria-hidden="true">→</span>
-        </Link>
-      </div>
+              <div className="p-6 sm:p-8">
+                <div className="text-xs font-mono text-gold mb-3">03 / SYNC</div>
+                <h4 className="text-base text-foreground mb-3">Wait for the chain</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  Your node downloads and verifies the blockchain automatically. Data is stored at:
+                </p>
+                <div className="bg-background border border-border p-3 text-xs font-mono text-foreground break-all">
+                  {content.dataDir}
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Initial sync can take a while depending on your connection.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+              <p className="text-xs text-muted-foreground">
+                Want to help strengthen the network? Open ports <code className="font-mono text-foreground">32110</code> TCP &amp; UDP on your router.
+              </p>
+              <Link
+                href="https://docs.parallaxprotocol.org/guides/client/setup"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Full setup guide
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

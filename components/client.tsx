@@ -74,8 +74,7 @@ export default function Client() {
                 href="/resources/parallax-client"
                 className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
               >
-                Command-line client
-                <span aria-hidden="true">→</span>
+                Parallax CLI
               </Link>
               <span aria-hidden="true" className="text-border">·</span>
               <Link
@@ -86,7 +85,7 @@ export default function Client() {
               </Link>
               <span aria-hidden="true" className="text-border">·</span>
               <Link
-                href="https://github.com/ParallaxProtocol/parallax"
+                href="https://github.com/ParallaxProtocol"
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"

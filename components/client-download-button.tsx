@@ -5,8 +5,16 @@ import { Download, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePlatform, type Platform } from "@/hooks/usePlatform";
 
-const RELEASES_PAGE = "https://github.com/ParallaxProtocol/parallax/releases/latest";
-const LATEST_API = "https://api.github.com/repos/ParallaxProtocol/parallax/releases/latest";
+const REPO = {
+  cli: {
+    releasesPage: "https://github.com/ParallaxProtocol/parallax/releases/latest",
+    latestApi: "https://api.github.com/repos/ParallaxProtocol/parallax/releases/latest",
+  },
+  gui: {
+    releasesPage: "https://github.com/ParallaxProtocol/parallax-gui/releases/latest",
+    latestApi: "https://api.github.com/repos/ParallaxProtocol/parallax-gui/releases/latest",
+  },
+} as const;
 
 type ReleaseAsset = {
   name: string;
@@ -47,9 +55,11 @@ export default function ClientDownloadButton({ variant = "cli", prominent = true
   const [release, setRelease] = useState<Release | null>(null);
   const [releaseReady, setReleaseReady] = useState(false);
 
+  const { releasesPage, latestApi } = REPO[variant];
+
   useEffect(() => {
     let cancelled = false;
-    fetch(LATEST_API, { headers: { Accept: "application/vnd.github+json" } })
+    fetch(latestApi, { headers: { Accept: "application/vnd.github+json" } })
       .then((r) => (r.ok ? (r.json() as Promise<Release>) : null))
       .catch(() => null)
       .then((rel) => {
@@ -60,12 +70,12 @@ export default function ClientDownloadButton({ variant = "cli", prominent = true
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [latestApi]);
 
   const ready = platformReady && releaseReady;
   const isMobile = ready && platform?.isMobile === true;
   const asset = ready && platform && !isMobile && release ? findAsset(release, platform, variant) : null;
-  const href = asset?.browser_download_url ?? RELEASES_PAGE;
+  const href = asset?.browser_download_url ?? releasesPage;
   const version = release?.tag_name;
 
   if (isMobile) {
@@ -106,7 +116,7 @@ export default function ClientDownloadButton({ variant = "cli", prominent = true
       {ready && (
         <div className="mt-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
           {version && asset ? <span>{version} · </span> : null}
-          <Link href={RELEASES_PAGE} target="_blank" rel="noopener" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+          <Link href={releasesPage} target="_blank" rel="noopener" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
             Other platforms
           </Link>
         </div>

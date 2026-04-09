@@ -1,9 +1,23 @@
+'use client'
+
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { AppWindow, ChevronDown, ExternalLink, TerminalSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const RELEASES_API = "https://api.github.com/repos/ParallaxProtocol/parallax/releases?per_page=10";
+const REPOS = {
+  cli: {
+    api: "https://api.github.com/repos/ParallaxProtocol/parallax/releases?per_page=10",
+    allReleases: "https://github.com/ParallaxProtocol/parallax/releases",
+  },
+  gui: {
+    api: "https://api.github.com/repos/ParallaxProtocol/parallax-gui/releases?per_page=10",
+    allReleases: "https://github.com/ParallaxProtocol/parallax-gui/releases",
+  },
+} as const;
+
 const MAX_RELEASES = 4;
 
 type Asset = {
@@ -32,38 +46,18 @@ function formatSize(bytes: number): string {
   return `${mb.toFixed(1)} MB`;
 }
 
-async function fetchReleases(): Promise<Release[] | null> {
-  try {
-    const res = await fetch(RELEASES_API, {
-      headers: { Accept: "application/vnd.github+json" },
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return null;
-    return (await res.json()) as Release[];
-  } catch {
-    return null;
-  }
-}
-
-export default async function ClientReleases() {
-  const releases = await fetchReleases();
-  if (!releases || releases.length === 0) return null;
-
+function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allReleasesUrl: string }) {
   const latestStableIndex = releases.findIndex((r) => !r.prerelease && !r.draft);
   const visible = releases.filter((r) => !r.draft).slice(0, MAX_RELEASES);
 
-  if (visible.length === 0) return null;
+  if (visible.length === 0) {
+    return (
+      <p className="py-8 text-center text-sm text-muted-foreground italic">No releases found.</p>
+    );
+  }
 
   return (
-    <div className="mt-20">
-      <div className="flex items-center gap-3 mb-8">
-        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">Recent Releases</h3>
-        <div className="flex-1 h-px bg-border" />
-      </div>
-      <p className="text-muted-foreground mb-8 max-w-2xl">
-        Recent versions of the Parallax client. Always prefer the latest release unless you have a specific reason to run an older build.
-      </p>
-
+    <>
       <div className="border border-border">
         <div className="hidden sm:grid grid-cols-12 gap-4 px-6 py-3 border-b border-border bg-surface-elevated text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
           <div className="col-span-3">Version</div>
@@ -141,12 +135,102 @@ export default async function ClientReleases() {
 
       <div className="mt-8 flex justify-center">
         <Button variant="secondary" asChild>
-          <Link href="https://github.com/ParallaxProtocol/parallax/releases" target="_blank" rel="noopener">
+          <Link href={allReleasesUrl} target="_blank" rel="noopener">
             <FaGithub />
             View all releases
           </Link>
         </Button>
       </div>
+    </>
+  );
+}
+
+export default function ClientReleases() {
+  const [open, setOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"gui" | "cli">("gui");
+  const [cliReleases, setCliReleases] = useState<Release[] | null>(null);
+  const [guiReleases, setGuiReleases] = useState<Release[] | null>(null);
+
+  useEffect(() => {
+    const headers = { Accept: "application/vnd.github+json" };
+    fetch(REPOS.cli.api, { headers })
+      .then((r) => (r.ok ? (r.json() as Promise<Release[]>) : null))
+      .catch(() => null)
+      .then(setCliReleases);
+    fetch(REPOS.gui.api, { headers })
+      .then((r) => (r.ok ? (r.json() as Promise<Release[]>) : null))
+      .catch(() => null)
+      .then(setGuiReleases);
+  }, []);
+
+  const hasAny =
+    (cliReleases && cliReleases.length > 0) || (guiReleases && guiReleases.length > 0);
+
+  if (cliReleases !== null && guiReleases !== null && !hasAny) return null;
+
+  return (
+    <div className="mt-20">
+      <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        className="w-full flex items-center gap-3 cursor-pointer group"
+      >
+        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">Recent Releases</h3>
+        <div className="flex-1 h-px bg-border" />
+        <ChevronDown className={`size-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="releases-content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="text-muted-foreground mb-8 mt-8 max-w-2xl">
+              Recent versions of the Parallax client. Always prefer the latest release unless you have a specific reason to run an older build.
+            </p>
+
+            <div className="flex gap-2 bg-surface-elevated border border-border p-2 w-fit mb-8">
+              <Button
+                onClick={() => setActiveTab("gui")}
+                className={activeTab === "gui" ? "bg-gold text-gold-foreground hover:bg-gold/90" : ""}
+                variant={activeTab === "gui" ? "default" : "secondary"}
+              >
+                <AppWindow className="size-3.5" />
+                Desktop
+              </Button>
+              <Button
+                onClick={() => setActiveTab("cli")}
+                className={activeTab === "cli" ? "bg-gold text-gold-foreground hover:bg-gold/90" : ""}
+                variant={activeTab === "cli" ? "default" : "secondary"}
+              >
+                <TerminalSquare className="size-3.5" />
+                CLI
+              </Button>
+            </div>
+
+            {activeTab === "gui" && (
+              guiReleases ? (
+                <ReleaseTable releases={guiReleases} allReleasesUrl={REPOS.gui.allReleases} />
+              ) : (
+                <p className="py-8 text-center text-sm text-muted-foreground">Loading…</p>
+              )
+            )}
+
+            {activeTab === "cli" && (
+              cliReleases ? (
+                <ReleaseTable releases={cliReleases} allReleasesUrl={REPOS.cli.allReleases} />
+              ) : (
+                <p className="py-8 text-center text-sm text-muted-foreground">Loading…</p>
+              )
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

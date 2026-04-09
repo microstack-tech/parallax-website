@@ -57,7 +57,7 @@ export default function RunningFullNodePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
-              <Link href="https://github.com/ParallaxProtocol/parallax/releases/latest" target="_blank" rel="noopener">
+              <Link href="/resources/parallax-client">
                 <Download className="mr-2 h-5 w-5" />
                 Download Parallax Client
               </Link>
