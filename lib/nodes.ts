@@ -8,7 +8,6 @@ const RPC_NODES = (process.env.PARALLAX_RPC_NODES ?? "")
 export const NODES_TTL_MS = 5 * 60 * 1000 // 5 minutes
 
 export type Node = {
-  id: string
   lat: number
   lon: number
   country: string
@@ -134,7 +133,6 @@ async function fetchNodes(): Promise<NodesPayload> {
     const g = geo.get(ip)
     if (!g) continue
     nodes.push({
-      id: ip,
       lat: g.lat,
       lon: g.lon,
       country: g.country,

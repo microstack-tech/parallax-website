@@ -7,7 +7,6 @@ import type { FeatureCollection } from "geojson"
 import type { Topology, GeometryCollection } from "topojson-specification"
 
 type Node = {
-  id: string
   lat: number
   lon: number
   country: string
