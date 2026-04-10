@@ -68,7 +68,12 @@ function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allRe
 
         {visible.map((release) => {
           const binaryAssets = release.assets.filter(
-            (a) => a.name.endsWith(".tar.gz") || a.name.endsWith(".zip"),
+            (a) =>
+              a.name.endsWith(".tar.gz") ||
+              a.name.endsWith(".zip") ||
+              a.name.endsWith(".dmg") ||
+              a.name.endsWith(".AppImage") ||
+              a.name.endsWith(".exe"),
           );
           const isLatestStable = releases.indexOf(release) === latestStableIndex;
           return (

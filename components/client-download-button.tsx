@@ -28,12 +28,23 @@ type Release = {
 
 export type ClientVariant = "cli" | "gui";
 
+/** Map internal platform values to the GUI artifact naming convention. */
+const GUI_OS: Record<string, string> = { darwin: "macos", linux: "linux", windows: "windows" };
+const GUI_ARCH: Record<string, string> = { amd64: "x86_64", arm64: "arm64", "386": "x86", armv7: "armv7" };
+const GUI_EXT: Record<string, string> = { darwin: ".dmg", linux: ".AppImage", windows: ".exe" };
+
 function findAsset(release: Release, platform: Platform, variant: ClientVariant): ReleaseAsset | null {
   if (variant === "gui") {
-    // GUI builds don't cover every arch, so require an exact match. Otherwise we'd
-    // ship the wrong binary (e.g. amd64 to a 386 user) just because the OS matches.
-    const exact = `parallax-gui-${platform.os}-${platform.arch}.zip`;
-    return release.assets.find((a) => a.name === exact) ?? null;
+    // GUI artifacts follow: Parallax-Client-{version}-{os}-{arch}.{ext}
+    const os = GUI_OS[platform.os] ?? platform.os;
+    const arch = GUI_ARCH[platform.arch] ?? platform.arch;
+    const ext = GUI_EXT[platform.os] ?? "";
+    const version = release.tag_name.replace(/^v/, "");
+    const exact = `Parallax-Client-${version}-${os}-${arch}${ext}`;
+    return release.assets.find((a) => a.name === exact)
+      // Fallback: match os + arch substring in case the version format changes slightly.
+      ?? release.assets.find((a) => a.name.includes(`-${os}-${arch}`) && !a.name.endsWith("-setup.exe") && !a.name.endsWith(".txt"))
+      ?? null;
   }
   const ext = platform.os === "windows" ? "zip" : "tar.gz";
   const exact = `parallax-${platform.os}-${platform.arch}.${ext}`;
