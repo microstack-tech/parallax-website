@@ -1,39 +1,49 @@
-import { LineChart } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from "@/i18n/navigation"
+import { LineChart } from "lucide-react"
+import { useTranslations } from "next-intl"
+import Image from "next/image"
 
-const footerLinks = {
-  Protocol: [
-    { name: "Doctrine", href: "/introduction/doctrine" },
-    { name: "How It Works", href: "/introduction/how-it-works" },
-    { name: "vs Bitcoin & Ethereum", href: "/compare" },
-    { name: "Whitepaper", href: "/introduction/whitepaper" },
-    { name: "Protocol Overview", href: "/introduction/protocol/overview" },
-    { name: "Getting Started", href: "/introduction/getting-started" },
+type InternalLink = { key: string; href: string }
+type ExternalLink = { key: string; href: string; external: true }
+type FooterLink = InternalLink | ExternalLink
+
+const footerLinks: Record<string, FooterLink[]> = {
+  protocol: [
+    { key: "doctrine", href: "/introduction/doctrine" },
+    { key: "howItWorks", href: "/introduction/how-it-works" },
+    { key: "compare", href: "/compare" },
+    { key: "whitepaper", href: "/introduction/whitepaper" },
+    { key: "protocolOverview", href: "/introduction/protocol/overview" },
+    { key: "gettingStarted", href: "/introduction/getting-started" },
   ],
-  Resources: [
-    { name: "Beginner Guides", href: "/resources/beginner-guides" },
-    { name: "Documentation", href: "https://docs.parallaxprotocol.org", external: true },
-    { name: "Parallax Client", href: "/resources/parallax-client" },
-    { name: "Wallets", href: "/wallets" },
-    { name: "Exchanges", href: "/exchanges" },
-    { name: "Block Explorer", href: "https://explorer.parallaxprotocol.org", external: true },
-    { name: "Network Atlas", href: "/resources/network-atlas" },
-    { name: "Brand Assets", href: "/resources/branding" },
+  resources: [
+    { key: "beginnerGuides", href: "/resources/beginner-guides" },
+    { key: "documentation", href: "https://docs.parallaxprotocol.org", external: true },
+    { key: "parallaxClient", href: "/resources/parallax-client" },
+    { key: "wallets", href: "/wallets" },
+    { key: "exchanges", href: "/exchanges" },
+    { key: "blockExplorer", href: "https://explorer.parallaxprotocol.org", external: true },
+    { key: "networkAtlas", href: "/resources/network-atlas" },
+    { key: "brandAssets", href: "/resources/branding" },
   ],
-  Community: [
-    { name: "GitHub", href: "https://github.com/ParallaxProtocol", external: true },
-    { name: "BitcoinTalk", href: "https://bitcointalk.org/index.php?topic=5560698", external: true },
-    { name: "X / Twitter", href: "https://x.com/prlxchain", external: true },
-    { name: "Discord", href: "https://discord.gg/4Z4R3aAU3B", external: true },
-    { name: "Telegram", href: "https://t.me/parallaxchain", external: true },
+  community: [
+    { key: "github", href: "https://github.com/ParallaxProtocol", external: true },
+    { key: "bitcointalk", href: "https://bitcointalk.org/index.php?topic=5560698", external: true },
+    { key: "twitter", href: "https://x.com/prlxchain", external: true },
+    { key: "discord", href: "https://discord.gg/4Z4R3aAU3B", external: true },
+    { key: "telegram", href: "https://t.me/parallaxchain", external: true },
   ],
 }
 
+function isExternal(link: FooterLink): link is ExternalLink {
+  return "external" in link
+}
+
 export function Footer() {
+  const t = useTranslations("footer")
+
   return (
     <footer className="relative w-full">
-      {/* Top divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
@@ -60,67 +70,85 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
-              A peer-to-peer programmable cash system. Secured by physics, governed by no one.
+              {t("tagline")}
             </p>
           </div>
 
           {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-4">{category}</h4>
+          {Object.entries(footerLinks).map(([section, links]) => (
+            <div key={section}>
+              <h4 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-4">
+                {t(`sections.${section}` as "sections.protocol")}
+              </h4>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      target={'external' in link && link.external ? "_blank" : undefined}
-                      rel={'external' in link && link.external ? "noopener" : undefined}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const label = t(`links.${link.key}` as "links.doctrine")
+                  if (isExternal(link)) {
+                    return (
+                      <li key={link.key}>
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener"
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          {label}
+                        </a>
+                      </li>
+                    )
+                  }
+                  return (
+                    <li key={link.key}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           ))}
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-12 pt-8">
           <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
 
-          {/* Data attribution */}
           <div className="flex items-center justify-center gap-2 mb-6">
             <LineChart className="size-3.5 text-muted-foreground" />
             <p className="text-xs text-muted-foreground">
-              Market data provided by{" "}
-              <Link
-                href="https://www.coingecko.com/en/coins/parallax-2"
-                target="_blank"
-                rel="noopener"
-                className="hover:text-foreground transition-colors underline underline-offset-4"
-              >
-                CoinGecko
-              </Link>
+              {t.rich("marketDataBy", {
+                link: (chunks) => (
+                  <a
+                    href="https://www.coingecko.com/en/coins/parallax-2"
+                    target="_blank"
+                    rel="noopener"
+                    className="hover:text-foreground transition-colors underline underline-offset-4"
+                  >
+                    {chunks}
+                  </a>
+                ),
+              })}
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-muted-foreground">{t("copyright")}</p>
             <p className="text-sm text-muted-foreground">
-              © Parallax Protocol 2026
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Released under{" "}
-              <Link
-                href="https://www.gnu.org/licenses/lgpl-3.0.html"
-                target="_blank"
-                rel="noopener"
-                className="hover:text-foreground transition-colors underline underline-offset-4"
-              >
-                LGPL-3.0
-              </Link>{" "}
-              license.
+              {t.rich("license", {
+                link: (chunks) => (
+                  <a
+                    href="https://www.gnu.org/licenses/lgpl-3.0.html"
+                    target="_blank"
+                    rel="noopener"
+                    className="hover:text-foreground transition-colors underline underline-offset-4"
+                  >
+                    {chunks}
+                  </a>
+                ),
+              })}
             </p>
           </div>
         </div>

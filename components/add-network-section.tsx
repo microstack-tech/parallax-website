@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { addParallaxNetwork, checkParallaxAdded, STORAGE_KEY } from "@/lib/parallax-network";
 import { Check, Plus } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 export default function AddNetworkSection() {
+  const t = useTranslations("addNetworkSection");
   const [state, setState] = useState<"loading" | "not-added" | "added" | "no-wallet">("loading");
   const [status, setStatus] = useState<"idle" | "adding" | "success" | "error">("idle");
 
@@ -40,11 +42,11 @@ export default function AddNetworkSection() {
         <div className="flex items-center justify-center gap-2 mb-2">
           <Check className="h-5 w-5 text-gold" />
           <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">
-            Parallax network connected
+            {t("connectedTitle")}
           </h3>
         </div>
         <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-          The Parallax network is already added to your wallet. You&apos;re ready to go.
+          {t("connectedDescription")}
         </p>
       </div>
     );
@@ -53,10 +55,10 @@ export default function AddNetworkSection() {
   return (
     <div className="bg-surface-elevated border border-border p-8 sm:p-12 text-center mb-8">
       <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">
-        Add Parallax to your wallet
+        {t("title")}
       </h3>
       <p className="text-sm text-muted-foreground mb-6 max-w-xl mx-auto">
-        Automatically add the Parallax network to your wallet with one click.
+        {t("description")}
       </p>
       <div className="flex flex-col items-center gap-3">
         <Button
@@ -66,13 +68,13 @@ export default function AddNetworkSection() {
         >
           <Plus className="mr-2 h-5 w-5" />
           {status === "adding"
-            ? "Waiting for approval..."
+            ? t("adding")
             : status === "success"
-              ? "Network added!"
-              : "Add Parallax Network"}
+              ? t("added")
+              : t("add")}
         </Button>
         {status === "error" && (
-          <p className="text-sm text-destructive">Failed to add network. Please try again.</p>
+          <p className="text-sm text-destructive">{t("error")}</p>
         )}
       </div>
     </div>

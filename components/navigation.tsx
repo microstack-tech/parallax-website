@@ -1,75 +1,78 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { Link, usePathname } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, Moon, Sun, X } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { useTheme } from "next-themes"
 import Image from "next/image"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
+import { FaGithub } from "react-icons/fa"
+import LanguageSwitcher from "./language-switcher"
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger
+  NavigationMenuTrigger,
 } from "./ui/navigation-menu"
 import { Separator } from "./ui/separator"
-import { FaGithub } from "react-icons/fa"
-import { useTheme } from "next-themes"
-import { Moon, Sun } from "lucide-react"
 
-interface NavItem {
-  name: string
-  href?: string
-  subItems?: { name: string; href?: string; badge?: string }[]
+type SubItem = { name: string; href?: string; badge?: string }
+type NavItem = { name: string; href?: string; subItems?: SubItem[] }
+
+function useNavItems(): NavItem[] {
+  const t = useTranslations("nav")
+  const tCommon = useTranslations("common")
+  const badgeNew = tCommon("new")
+
+  return [
+    {
+      name: t("introduction"),
+      subItems: [
+        { name: t("introductionSub.doctrine"), href: "/introduction/doctrine" },
+        { name: t("introductionSub.howItWorks"), href: "/introduction/how-it-works" },
+        { name: t("introductionSub.compare"), href: "/compare", badge: badgeNew },
+        { name: t("introductionSub.individuals"), href: "/introduction/parallax-for-individuals" },
+        { name: t("introductionSub.businesses"), href: "/introduction/parallax-for-businesses" },
+        { name: t("introductionSub.whitepaper"), href: "/introduction/whitepaper" },
+        { name: t("introductionSub.gettingStarted"), href: "/introduction/getting-started" },
+        { name: "###" },
+        { name: t("introductionSub.protocol"), href: "/introduction/protocol/overview" },
+      ],
+    },
+    {
+      name: t("resources"),
+      subItems: [
+        { name: t("resourcesSub.beginnerGuides"), href: "/resources/beginner-guides" },
+        { name: t("resourcesSub.technicalDocumentation"), href: "/resources/technical-documentation" },
+        { name: t("resourcesSub.parallaxClient"), href: "/resources/parallax-client" },
+        { name: t("resourcesSub.wallets"), href: "/wallets" },
+        { name: t("resourcesSub.exchanges"), href: "/exchanges" },
+        { name: t("resourcesSub.community"), href: "/resources/community" },
+        { name: t("resourcesSub.brandAssets"), href: "/resources/branding" },
+        { name: "###" },
+        { name: t("resourcesSub.blockExplorer"), href: "https://explorer.parallaxprotocol.org" },
+        { name: t("resourcesSub.faucet"), href: "https://faucet.parallaxprotocol.org", badge: badgeNew },
+        { name: t("resourcesSub.networkAtlas"), href: "/resources/network-atlas", badge: badgeNew },
+      ],
+    },
+    {
+      name: t("participate"),
+      subItems: [
+        { name: t("participateSub.supportParallax"), href: "/participate/support-parallax" },
+        { name: t("participateSub.runningAFullNode"), href: "/participate/running-a-full-node" },
+        { name: t("participateSub.miningPools"), href: "https://miningpoolstats.stream/parallax" },
+        { name: t("participateSub.development"), href: "/participate/development" },
+      ],
+    },
+    { name: t("faq"), href: "/faq" },
+  ]
 }
-
-const navItems: NavItem[] = [
-  {
-    name: "Introduction",
-    subItems: [
-      { name: "The Parallax Doctrine", href: "/introduction/doctrine" },
-      { name: "How it works", href: "/introduction/how-it-works" },
-      { name: "vs Bitcoin & Ethereum", href: "/compare", badge: "New" },
-      { name: "Individuals", href: "/introduction/parallax-for-individuals" },
-      { name: "Businesses", href: "/introduction/parallax-for-businesses" },
-      { name: "White paper", href: "/introduction/whitepaper" },
-      { name: "Getting Started", href: "/introduction/getting-started" },
-      { name: "###" },
-      { name: "Parallax Protocol", href: "/introduction/protocol/overview" },
-    ],
-  },
-  {
-    name: "Resources",
-    subItems: [
-      { name: "Beginner Guides", href: "/resources/beginner-guides" },
-      { name: "Technical Documentation", href: "/resources/technical-documentation" },
-      { name: "Parallax Client", href: "/resources/parallax-client" },
-      { name: "Wallets", href: "/wallets" },
-      { name: "Exchanges", href: "/exchanges" },
-      { name: "Community", href: "/resources/community" },
-      { name: "Brand Assets", href: "/resources/branding" },
-      { name: "###" },
-      { name: "Block Explorer", href: "https://explorer.parallaxprotocol.org" },
-      { name: "Faucet", href: "https://faucet.parallaxprotocol.org", badge: "New" },
-      { name: "Network Atlas", href: "/resources/network-atlas", badge: "New" },
-    ],
-  },
-  {
-    name: "Participate",
-    subItems: [
-      { name: "Support Parallax", href: "/participate/support-parallax" },
-      { name: "Running a full node", href: "/participate/running-a-full-node" },
-      { name: "Mining Pools", href: "https://miningpoolstats.stream/parallax" },
-      { name: "Development", href: "/participate/development" },
-    ],
-  },
-  { name: "FAQ", href: "/faq" },
-]
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -77,10 +80,11 @@ export function Navigation() {
   const pathname = usePathname()
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const t = useTranslations("nav")
+  const navItems = useNavItems()
 
   useEffect(() => { setMounted(true) }, [])
 
-  // Lock body scroll on mobile sheet
   useEffect(() => {
     const b = document.body
     if (isOpen) {
@@ -106,7 +110,6 @@ export function Navigation() {
 
   const showBg = scrolled || isOpen
   const isHome = pathname === "/"
-  // On the homepage, force white text over the black hole hero until user scrolls
   const heroOverlay = isHome && !scrolled && !isOpen
 
   return (
@@ -147,7 +150,6 @@ export function Navigation() {
                     <NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
                     <NavigationMenuContent className="min-w-[15rem]">
                       {item.subItems.map((sub, i) => {
-
                         if (sub.name === "###") {
                           return (
                             <Separator
@@ -165,8 +167,7 @@ export function Navigation() {
                             badge={sub.badge}
                           />
                         )
-                      }
-                      )}
+                      })}
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 ) : (
@@ -181,14 +182,15 @@ export function Navigation() {
             <div className="flex items-center gap-2 ml-12">
               <Button className="px-8 bg-gold !text-gold-foreground hover:bg-gold/90" asChild>
                 <Link href={"/introduction/getting-started"}>
-                  Get Started
+                  {t("getStarted")}
                 </Link>
               </Button>
               <Button variant={heroOverlay ? "ghost" : "secondary"} className={cn(heroOverlay && "text-white [&_*]:text-white hover:bg-white/10")} style={heroOverlay ? { border: '1px solid rgba(255,255,255,0.15)' } : undefined} asChild>
-                <Link href={'https://github.com/ParallaxProtocol/parallax'} target="_blank">
+                <a href={'https://github.com/ParallaxProtocol/parallax'} target="_blank" rel="noopener">
                   <FaGithub />
-                </Link>
+                </a>
               </Button>
+              <LanguageSwitcher heroOverlay={heroOverlay} />
               <Button
                 variant={heroOverlay ? "ghost" : "secondary"}
                 size="icon"
@@ -198,7 +200,7 @@ export function Navigation() {
               >
                 <Sun className="size-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                 <Moon className="absolute size-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                <span className="sr-only">Toggle theme</span>
+                <span className="sr-only">{t("toggleTheme")}</span>
               </Button>
             </div>
           </NavigationMenu>
@@ -219,11 +221,10 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Sheet via Portal (escapes nav stacking context) */}
+      {/* Mobile Sheet via Portal */}
       {typeof window !== "undefined" && isOpen &&
         createPortal(
           <>
-            {/* Panel */}
             <div
               id="mobile-nav"
               role="dialog"
@@ -247,7 +248,6 @@ export function Navigation() {
                         </div>
                         <div className="flex pl-4 flex-col">
                           {item.subItems.map((sub, i) => {
-
                             if (sub.name === "###") {
                               return (
                                 <Separator
@@ -292,15 +292,16 @@ export function Navigation() {
                   )
                 )}
 
-                {/* Theme toggle */}
-                <div className="mt-6 px-3">
-                  <Separator className="bg-muted-foreground/15 mb-4" />
+                {/* Language + Theme toggle */}
+                <div className="mt-6 px-3 flex flex-col gap-3">
+                  <Separator className="bg-muted-foreground/15 mb-1" />
+                  <LanguageSwitcher mobile />
                   <button
                     className="flex items-center gap-3 px-3 py-2 text-base font-medium text-accent-foreground cursor-pointer"
                     onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
                   >
                     {mounted && resolvedTheme === 'dark' ? <Sun className="size-5 shrink-0" /> : <Moon className="size-5 shrink-0" />}
-                    <span>{mounted && resolvedTheme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+                    <span>{mounted && resolvedTheme === 'dark' ? t("lightMode") : t("darkMode")}</span>
                   </button>
                 </div>
               </div>
@@ -308,7 +309,7 @@ export function Navigation() {
           </>,
           document.body
         )}
-    </nav >
+    </nav>
   )
 }
 
@@ -318,11 +319,20 @@ function ListItem({
   href,
   badge,
 }: React.ComponentPropsWithoutRef<"li"> & { href: string; badge?: string }) {
+  const isExternal = href.startsWith("http")
+  const LinkComponent = isExternal ? "a" : Link
+  const linkProps = isExternal
+    ? { href, target: "_blank", rel: "noopener" }
+    : { href }
+
   return (
     <NavigationMenuLink asChild>
-      <Link href={href} className={cn({
-        "text-foreground/50 pointer-events-none": href === "#"
-      })}>
+      <LinkComponent
+        {...linkProps}
+        className={cn({
+          "text-foreground/50 pointer-events-none": href === "#",
+        })}
+      >
         <div className="text-sm leading-none font-medium flex items-center justify-between gap-2">
           <span className="group-hover/navlink:underline">{title}</span>
           {badge && (
@@ -334,7 +344,7 @@ function ListItem({
         <p className={"text-muted-foreground line-clamp-2 text-sm leading-snug"}>
           {children}
         </p>
-      </Link>
+      </LinkComponent>
     </NavigationMenuLink>
   )
 }

@@ -1,67 +1,29 @@
 'use client'
 import { useState } from "react";
-import Link from "next/link";
 import { Check, ChevronDown, Copy } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePlatform, type Os } from "@/hooks/usePlatform";
+import { useTranslations } from "next-intl";
 
-type StepContent = {
-  extractTitle: string;
-  extractBody: React.ReactNode;
-  extractCmd: string | null;
-  runTitle: React.ReactNode;
-  runBody: React.ReactNode;
-  runCmd: string | null;
-  dataDir: string;
+const EXTRACT_CMDS: Record<Os, string | null> = {
+  darwin: "tar -xzf parallax-darwin-*.tar.gz",
+  linux: "tar -xzf parallax-linux-*.tar.gz",
+  windows: null,
 };
 
-const CONTENT: Record<Os, StepContent> = {
-  darwin: {
-    extractTitle: "Unpack the archive",
-    extractBody: (
-      <>Double-click the downloaded <code className="font-mono text-foreground">.tar.gz</code> in Finder, or run from Terminal:</>
-    ),
-    extractCmd: "tar -xzf parallax-darwin-*.tar.gz",
-    runTitle: (
-      <>Start <code className="font-mono">prlx</code></>
-    ),
-    runBody: (
-      <>Double-click <code className="font-mono text-foreground">prlx</code> in Finder. macOS may warn about an unidentified developer — right-click → Open to bypass it once. A Terminal window opens with sync logs.</>
-    ),
-    runCmd: "./prlx",
-    dataDir: "~/Library/Parallax",
-  },
-  linux: {
-    extractTitle: "Unpack the archive",
-    extractBody: <>From a terminal in your downloads folder:</>,
-    extractCmd: "tar -xzf parallax-linux-*.tar.gz",
-    runTitle: (
-      <>Start <code className="font-mono">prlx</code></>
-    ),
-    runBody: (
-      <>From the extracted folder, make sure the binary is executable and run it:</>
-    ),
-    runCmd: "chmod +x prlx && ./prlx",
-    dataDir: "~/.parallax",
-  },
-  windows: {
-    extractTitle: "Unpack the archive",
-    extractBody: (
-      <>Right-click the downloaded <code className="font-mono text-foreground">.zip</code> in File Explorer and choose <span className="text-foreground">Extract All…</span></>
-    ),
-    extractCmd: null,
-    runTitle: (
-      <>Start <code className="font-mono">prlx.exe</code></>
-    ),
-    runBody: (
-      <>Double-click <code className="font-mono text-foreground">prlx.exe</code> in the extracted folder. Windows SmartScreen may warn the first time — click <span className="text-foreground">More info → Run anyway</span>. A console window opens with sync logs.</>
-    ),
-    runCmd: null,
-    dataDir: "%APPDATA%\\Parallax",
-  },
+const RUN_CMDS: Record<Os, string | null> = {
+  darwin: "./prlx",
+  linux: "chmod +x prlx && ./prlx",
+  windows: null,
 };
 
-function CodeBlock({ children }: { children: string }) {
+const DATA_DIRS: Record<Os, string> = {
+  darwin: "~/Library/Parallax",
+  linux: "~/.parallax",
+  windows: "%APPDATA%\\Parallax",
+};
+
+function CodeBlock({ children, copiedLabel, copyLabel }: { children: string; copiedLabel: string; copyLabel: string }) {
   const [copied, setCopied] = useState(false);
 
   const onCopy = async () => {
@@ -82,7 +44,7 @@ function CodeBlock({ children }: { children: string }) {
       <button
         type="button"
         onClick={onCopy}
-        aria-label={copied ? "Copied" : "Copy command"}
+        aria-label={copied ? copiedLabel : copyLabel}
         className="absolute top-1.5 right-1.5 inline-flex items-center justify-center size-7 text-muted-foreground hover:text-foreground hover:bg-surface-elevated transition-colors cursor-pointer"
       >
         {copied ? <Check className="size-3.5 text-gold" /> : <Copy className="size-3.5" />}
@@ -92,13 +54,69 @@ function CodeBlock({ children }: { children: string }) {
 }
 
 export default function ClientQuickStart() {
+  const t = useTranslations("resources.parallaxClient.quickStart");
   const { platform, ready } = usePlatform();
   const [open, setOpen] = useState(false);
 
   // Default to linux content during SSR / before detection resolves so the layout is stable.
   const os: Os = platform?.os ?? "linux";
-  const content = CONTENT[os];
   const detectedLabel = ready && platform ? platform.label : null;
+  const extractCmd = EXTRACT_CMDS[os];
+  const runCmd = RUN_CMDS[os];
+  const dataDir = DATA_DIRS[os];
+
+  const extractTitle =
+    os === "darwin" ? t("darwin.extractTitle") :
+    os === "linux" ? t("linux.extractTitle") :
+    t("windows.extractTitle");
+
+  const extractBody =
+    os === "darwin" ? (
+      <>
+        {t("darwin.extractBodyPrefix")}
+        <code className="font-mono text-foreground">.tar.gz</code>
+        {t("darwin.extractBodySuffix")}
+      </>
+    ) : os === "linux" ? (
+      <>{t("linux.extractBody")}</>
+    ) : (
+      <>
+        {t("windows.extractBodyPrefix")}
+        <code className="font-mono text-foreground">.zip</code>
+        {t("windows.extractBodyMiddle")}
+        <span className="text-foreground">{t("windows.extractBodySuffix")}</span>
+      </>
+    );
+
+  const runBinary = os === "windows" ? "prlx.exe" : "prlx";
+  const runTitlePrefix =
+    os === "darwin" ? t("darwin.runTitlePrefix") :
+    os === "linux" ? t("linux.runTitlePrefix") :
+    t("windows.runTitlePrefix");
+  const runTitle = (
+    <>
+      {runTitlePrefix}
+      <code className="font-mono">{runBinary}</code>
+    </>
+  );
+
+  const runBody =
+    os === "darwin" ? (
+      <>
+        {t.rich("darwin.runBody", {
+          code: () => <code className="font-mono text-foreground">prlx</code>,
+        })}
+      </>
+    ) : os === "linux" ? (
+      <>{t("linux.runBody")}</>
+    ) : (
+      <>
+        {t.rich("windows.runBody", {
+          code: () => <code className="font-mono text-foreground">prlx.exe</code>,
+          moreInfo: () => <span className="text-foreground">{t("windows.moreInfo")}</span>,
+        })}
+      </>
+    );
 
   return (
     <div className="mt-16">
@@ -107,11 +125,11 @@ export default function ClientQuickStart() {
         onClick={() => setOpen((prev) => !prev)}
         className="w-full flex items-center gap-3 cursor-pointer group"
       >
-        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">CLI Quick Start</h3>
+        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">{t("heading")}</h3>
         <div className="flex-1 h-px bg-border" />
         {detectedLabel && (
           <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
-            Detected · <span className="text-gold">{detectedLabel}</span>
+            {t("detected")} · <span className="text-gold">{detectedLabel}</span>
           </span>
         )}
         <ChevronDown className={`size-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
@@ -128,52 +146,54 @@ export default function ClientQuickStart() {
             className="overflow-hidden"
           >
             <p className="text-muted-foreground mb-10 mt-8 max-w-2xl">
-              For the command-line client. Three steps get you connected to the network — no configuration required. Desktop App users can skip this section: just install and launch.
+              {t("intro")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border">
               <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-border">
-                <div className="text-xs font-mono text-gold mb-3">01 / EXTRACT</div>
-                <h4 className="text-base text-foreground mb-3">{content.extractTitle}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{content.extractBody}</p>
-                {content.extractCmd && <CodeBlock>{content.extractCmd}</CodeBlock>}
+                <div className="text-xs font-mono text-gold mb-3">{t("step1Label")}</div>
+                <h4 className="text-base text-foreground mb-3">{extractTitle}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{extractBody}</p>
+                {extractCmd && <CodeBlock copiedLabel={t("copied")} copyLabel={t("copyCommand")}>{extractCmd}</CodeBlock>}
               </div>
 
               <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-border">
-                <div className="text-xs font-mono text-gold mb-3">02 / RUN</div>
-                <h4 className="text-base text-foreground mb-3">{content.runTitle}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{content.runBody}</p>
-                {content.runCmd && <CodeBlock>{content.runCmd}</CodeBlock>}
+                <div className="text-xs font-mono text-gold mb-3">{t("step2Label")}</div>
+                <h4 className="text-base text-foreground mb-3">{runTitle}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{runBody}</p>
+                {runCmd && <CodeBlock copiedLabel={t("copied")} copyLabel={t("copyCommand")}>{runCmd}</CodeBlock>}
               </div>
 
               <div className="p-6 sm:p-8">
-                <div className="text-xs font-mono text-gold mb-3">03 / SYNC</div>
-                <h4 className="text-base text-foreground mb-3">Wait for the chain</h4>
+                <div className="text-xs font-mono text-gold mb-3">{t("step3Label")}</div>
+                <h4 className="text-base text-foreground mb-3">{t("step3Title")}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  Your node downloads and verifies the blockchain automatically. Data is stored at:
+                  {t("step3Body")}
                 </p>
                 <div className="bg-background border border-border p-3 text-xs font-mono text-foreground break-all">
-                  {content.dataDir}
+                  {dataDir}
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
-                  Initial sync can take a while depending on your connection.
+                  {t("step3Note")}
                 </p>
               </div>
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
               <p className="text-xs text-muted-foreground">
-                Want to help strengthen the network? Open ports <code className="font-mono text-foreground">32110</code> TCP &amp; UDP on your router.
+                {t.rich("portsHint", {
+                  code: (chunks) => <code className="font-mono text-foreground">{chunks}</code>,
+                })}
               </p>
-              <Link
+              <a
                 href="https://docs.parallaxprotocol.org/guides/client/setup"
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
               >
-                Full setup guide
+                {t("fullSetupGuide")}
                 <span aria-hidden="true">→</span>
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

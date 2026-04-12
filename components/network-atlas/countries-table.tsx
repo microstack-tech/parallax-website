@@ -1,4 +1,5 @@
 import type { Node } from "@/lib/nodes"
+import { getTranslations } from "next-intl/server"
 
 type Props = {
   nodes: Node[]
@@ -10,7 +11,7 @@ type Row = {
   count: number
 }
 
-function aggregate(nodes: Node[]): Row[] {
+function aggregate(nodes: Node[], unknownLabel: string): Row[] {
   const map = new Map<string, Row>()
   for (const n of nodes) {
     const key = n.countryCode || "??"
@@ -20,7 +21,7 @@ function aggregate(nodes: Node[]): Row[] {
     } else {
       map.set(key, {
         countryCode: key,
-        country: n.country || "Unknown",
+        country: n.country || unknownLabel,
         count: 1,
       })
     }
@@ -42,15 +43,16 @@ function flagFor(code: string): string {
   return String.fromCodePoint(base + upper.charCodeAt(0), base + upper.charCodeAt(1))
 }
 
-export default function CountriesTable({ nodes }: Props) {
-  const rows = aggregate(nodes)
+export default async function CountriesTable({ nodes }: Props) {
+  const t = await getTranslations("resources.networkAtlas.countriesTable")
+  const rows = aggregate(nodes, t("unknownCountry"))
   const total = nodes.length
 
   return (
     <div className="bg-surface-elevated border border-border">
       <div className="px-6 py-4 border-b border-border">
         <h3 className="text-sm font-mono uppercase tracking-[0.15em] text-foreground">
-          Nodes by country
+          {t("heading")}
         </h3>
       </div>
       <div className="overflow-x-auto">
@@ -58,13 +60,13 @@ export default function CountriesTable({ nodes }: Props) {
           <thead>
             <tr className="text-left text-muted-foreground border-b border-border">
               <th className="px-6 py-3 font-mono text-xs uppercase tracking-wider font-normal">
-                Country
+                {t("country")}
               </th>
               <th className="px-6 py-3 font-mono text-xs uppercase tracking-wider font-normal text-right">
-                Nodes
+                {t("nodes")}
               </th>
               <th className="px-6 py-3 font-mono text-xs uppercase tracking-wider font-normal text-right w-1/3">
-                Share
+                {t("share")}
               </th>
             </tr>
           </thead>

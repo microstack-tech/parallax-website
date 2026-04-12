@@ -1,10 +1,11 @@
 'use client'
+import { Link } from "@/i18n/navigation"
+import { cn } from "@/lib/utils"
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion"
+import { ExternalLink } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { useEffect, useRef, useState } from "react"
 import { FadeIn } from "./fade-in"
-import { cn } from "@/lib/utils"
-import Link from "next/link"
-import { ExternalLink } from "lucide-react"
-import { useInView, useMotionValue, useSpring, motion } from "framer-motion"
 
 type Stats = {
   total_blocks: string
@@ -102,15 +103,23 @@ function AnimatedText({ text }: { text: string }) {
   )
 }
 
+type LabelKey =
+  | "blocks"
+  | "transactions"
+  | "addresses"
+  | "avgBlockTime"
+  | "txnsToday"
+  | "price"
+  | "marketCap"
+  | "volume24h"
+  | "supply"
+
 type StatItem = {
   key: string
-  label: string
-  // Returns the raw number for animation, or null if unavailable
+  labelKey: LabelKey
   rawValue?: (stats: Stats) => number | null
   format: (stats: Stats) => string | null
-  // Format a raw number (for animated counter)
   formatRaw?: (n: number) => string
-  // Whether this item can be count-animated
   animatable?: boolean
   suffix?: (stats: Stats) => React.ReactNode
 }
@@ -118,7 +127,7 @@ type StatItem = {
 const marketItems: StatItem[] = [
   {
     key: "price",
-    label: "LAX Price",
+    labelKey: "price",
     format: (s) => s.price_usd != null ? formatPrice(s.price_usd) : null,
     rawValue: (s) => s.price_usd,
     formatRaw: (n) => formatPrice(n),
@@ -135,7 +144,7 @@ const marketItems: StatItem[] = [
   },
   {
     key: "market_cap",
-    label: "Market Cap",
+    labelKey: "marketCap",
     format: (s) => s.market_cap_usd != null ? formatUsd(s.market_cap_usd) : null,
     rawValue: (s) => s.market_cap_usd,
     formatRaw: (n) => formatUsd(n),
@@ -143,7 +152,7 @@ const marketItems: StatItem[] = [
   },
   {
     key: "volume",
-    label: "24h Volume",
+    labelKey: "volume24h",
     format: (s) => s.total_volume_usd != null ? formatUsd(s.total_volume_usd) : null,
     rawValue: (s) => s.total_volume_usd,
     formatRaw: (n) => formatUsd(n),
@@ -151,7 +160,7 @@ const marketItems: StatItem[] = [
   },
   {
     key: "supply",
-    label: "Circulating Supply",
+    labelKey: "supply",
     format: (s) => s.circulating_supply != null && s.max_supply != null
       ? formatSupply(s.circulating_supply, s.max_supply)
       : null,
@@ -161,7 +170,7 @@ const marketItems: StatItem[] = [
 const networkItems: StatItem[] = [
   {
     key: "total_blocks",
-    label: "Blocks",
+    labelKey: "blocks",
     format: (s) => formatNumber(s.total_blocks),
     rawValue: (s) => parseInt(s.total_blocks, 10) || null,
     formatRaw: (n) => Math.round(n).toLocaleString(),
@@ -169,7 +178,7 @@ const networkItems: StatItem[] = [
   },
   {
     key: "total_transactions",
-    label: "Transactions",
+    labelKey: "transactions",
     format: (s) => formatNumber(s.total_transactions),
     rawValue: (s) => parseInt(s.total_transactions, 10) || null,
     formatRaw: (n) => Math.round(n).toLocaleString(),
@@ -177,7 +186,7 @@ const networkItems: StatItem[] = [
   },
   {
     key: "total_addresses",
-    label: "Addresses",
+    labelKey: "addresses",
     format: (s) => formatNumber(s.total_addresses),
     rawValue: (s) => parseInt(s.total_addresses, 10) || null,
     formatRaw: (n) => Math.round(n).toLocaleString(),
@@ -185,12 +194,12 @@ const networkItems: StatItem[] = [
   },
   {
     key: "average_block_time",
-    label: "Avg Block Time",
+    labelKey: "avgBlockTime",
     format: (s) => formatBlockTime(s.average_block_time),
   },
   {
     key: "transactions_today",
-    label: "Txns Today",
+    labelKey: "txnsToday",
     format: (s) => formatNumber(s.transactions_today),
     rawValue: (s) => parseInt(s.transactions_today, 10) || null,
     formatRaw: (n) => Math.round(n).toLocaleString(),
@@ -199,6 +208,7 @@ const networkItems: StatItem[] = [
 ]
 
 function StatGrid({ items, stats, columns }: { items: StatItem[], stats: Stats, columns: string }) {
+  const t = useTranslations("home.networkStats.labels")
   const visible = items.filter((item) => item.format(stats) != null)
   if (visible.length === 0) return null
 
@@ -225,7 +235,7 @@ function StatGrid({ items, stats, columns }: { items: StatItem[], stats: Stats, 
               {item.suffix?.(stats)}
             </div>
             <span className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">
-              {item.label}
+              {t(item.labelKey)}
             </span>
           </div>
         )
@@ -237,6 +247,7 @@ function StatGrid({ items, stats, columns }: { items: StatItem[], stats: Stats, 
 }
 
 export function NetworkStats() {
+  const t = useTranslations("home.networkStats")
   const [stats, setStats] = useState<Stats | null>(null)
 
   useEffect(() => {
@@ -264,7 +275,7 @@ export function NetworkStats() {
         <div>
           <div className="text-center mb-6">
             <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">
-              Live Network
+              {t("liveNetwork")}
             </p>
           </div>
           <div className="grid gap-px bg-border grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
@@ -290,18 +301,18 @@ export function NetworkStats() {
         <FadeIn>
           <div className="text-center mb-6">
             <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">
-              Live Network
+              {t("liveNetwork")}
             </p>
           </div>
           <StatGrid items={networkItems} stats={stats} columns="grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" />
           <div className="flex justify-center items-center gap-4 mt-4">
-            <Link href="https://explorer.parallaxprotocol.org" target="_blank" rel="noopener" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors inline-flex items-center gap-1.5">
-              Block Explorer
+            <a href="https://explorer.parallaxprotocol.org" target="_blank" rel="noopener" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors inline-flex items-center gap-1.5">
+              {t("blockExplorer")}
               <ExternalLink className="size-3" />
-            </Link>
+            </a>
             <span className="text-xs text-muted-foreground/30" aria-hidden="true">·</span>
             <Link href="/resources/network-atlas" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors">
-              Network Atlas
+              {t("networkAtlas")}
             </Link>
           </div>
         </FadeIn>
@@ -310,15 +321,15 @@ export function NetworkStats() {
           <FadeIn delay={0.1}>
             <div className="text-center mb-6">
               <p className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                Market
+                {t("market")}
               </p>
             </div>
             <StatGrid items={marketItems} stats={stats} columns="grid-cols-2 lg:grid-cols-4" />
             <div className="flex justify-center mt-4">
-              <Link href="https://www.coingecko.com/en/coins/parallax-2" target="_blank" rel="noopener" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors inline-flex items-center gap-1.5">
-                CoinGecko
+              <a href="https://www.coingecko.com/en/coins/parallax-2" target="_blank" rel="noopener" className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors inline-flex items-center gap-1.5">
+                {t("coingecko")}
                 <ExternalLink className="size-3" />
-              </Link>
+              </a>
             </div>
           </FadeIn>
         )}

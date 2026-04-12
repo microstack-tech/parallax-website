@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { feature } from "topojson-client"
 import type { FeatureCollection } from "geojson"
 import type { Topology, GeometryCollection } from "topojson-specification"
+import { useTranslations } from "next-intl"
 
 type Node = {
   lat: number
@@ -47,11 +48,11 @@ type Marker = {
  * Deduplicates segments so "Paris, Île-de-France, France" doesn't repeat
  * if city and region happen to match.
  */
-function locationLabel(node: Node): string {
+function locationLabel(node: Node, unknownLabel: string): string {
   const parts: string[] = []
   if (node.region) parts.push(node.region)
   if (node.country) parts.push(node.country)
-  return parts.join(", ") || "Unknown"
+  return parts.join(", ") || unknownLabel
 }
 
 // Grid cell size in projected (viewBox) units at zoom=1. Pins within the same
@@ -74,7 +75,7 @@ function projectNodes(nodes: Node[], projection: GeoProjection): ProjectedNode[]
  * Cluster projected nodes into a grid whose cell size shrinks with zoom,
  * so nearby pins merge when zoomed out and separate when zoomed in.
  */
-function clusterNodes(projected: ProjectedNode[], zoom: number): Marker[] {
+function clusterNodes(projected: ProjectedNode[], zoom: number, unknownLabel: string): Marker[] {
   const cell = CLUSTER_CELL / zoom
   const buckets = new Map<string, { sumX: number; sumY: number; count: number; locations: Set<string>; countries: Set<string> }>()
 
@@ -82,7 +83,7 @@ function clusterNodes(projected: ProjectedNode[], zoom: number): Marker[] {
     const col = Math.floor(x / cell)
     const row = Math.floor(y / cell)
     const key = `${col}:${row}`
-    const label = locationLabel(node)
+    const label = locationLabel(node, unknownLabel)
     const existing = buckets.get(key)
     if (existing) {
       existing.sumX += x
@@ -121,6 +122,7 @@ const MAX_ZOOM = 16
 const ZOOM_STEP = 1.4
 
 export default function WorldMap({ nodes }: Props) {
+  const t = useTranslations("resources.networkAtlas.map")
   const [topology, setTopology] = useState<Topology | null>(null)
   const [active, setActive] = useState<Marker | null>(null)
   const [zoom, setZoom] = useState(1)
@@ -188,7 +190,8 @@ export default function WorldMap({ nodes }: Props) {
   }, [topology, nodes])
 
   // Re-cluster whenever zoom changes so nearby pins merge/split dynamically.
-  const markers = useMemo(() => clusterNodes(projected, zoom), [projected, zoom])
+  const unknownLabel = t("unknownLocation")
+  const markers = useMemo(() => clusterNodes(projected, zoom, unknownLabel), [projected, zoom, unknownLabel])
 
   // Compute the zoomed + panned viewBox.
   const zoomedW = baseViewBox.w / zoom
@@ -430,7 +433,7 @@ export default function WorldMap({ nodes }: Props) {
         className="w-full h-auto block"
         preserveAspectRatio="xMidYMid meet"
         role="img"
-        aria-label="World map of reachable Parallax nodes"
+        aria-label={t("ariaLabel")}
         style={{ cursor: zoom > 1 ? "grab" : undefined, touchAction: "none" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -488,7 +491,7 @@ export default function WorldMap({ nodes }: Props) {
           onClick={() => handleZoom(1)}
           disabled={zoom >= MAX_ZOOM}
           className="w-7 h-7 flex items-center justify-center rounded border border-border bg-background/90 backdrop-blur-sm text-foreground text-sm font-mono hover:bg-surface-elevated disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-          aria-label="Zoom in"
+          aria-label={t("zoomIn")}
         >
           +
         </button>
@@ -496,7 +499,7 @@ export default function WorldMap({ nodes }: Props) {
           onClick={() => handleZoom(-1)}
           disabled={zoom <= MIN_ZOOM}
           className="w-7 h-7 flex items-center justify-center rounded border border-border bg-background/90 backdrop-blur-sm text-foreground text-sm font-mono hover:bg-surface-elevated disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-          aria-label="Zoom out"
+          aria-label={t("zoomOut")}
         >
           &minus;
         </button>
@@ -504,7 +507,7 @@ export default function WorldMap({ nodes }: Props) {
           <button
             onClick={handleReset}
             className="w-7 h-7 flex items-center justify-center rounded border border-border bg-background/90 backdrop-blur-sm text-muted-foreground text-[10px] font-mono hover:bg-surface-elevated transition-colors"
-            aria-label="Reset zoom"
+            aria-label={t("resetZoom")}
           >
             1:1
           </button>
@@ -520,7 +523,7 @@ export default function WorldMap({ nodes }: Props) {
           }}
         >
           <div className="font-medium text-foreground">
-            {active.count} {active.count === 1 ? "node" : "nodes"}
+            {active.count} {active.count === 1 ? t("nodeSingular") : t("nodePlural")}
           </div>
           {active.locations.length > 1 ? (
             active.countries.length > 0 && (

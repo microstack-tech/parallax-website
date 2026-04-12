@@ -1,6 +1,7 @@
 'use client'
-import { useScroll, useSpring, motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion"
 import { ArrowUp } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 
 export function ScrollProgress() {
@@ -16,6 +17,7 @@ export function ScrollProgress() {
 }
 
 export function ScrollToTop() {
+  const t = useTranslations("common")
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -36,7 +38,7 @@ export function ScrollToTop() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.2 }}
-          aria-label="Scroll to top"
+          aria-label={t("scrollToTop")}
         >
           <ArrowUp className="size-4" />
         </motion.button>

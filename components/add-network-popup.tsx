@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { addParallaxNetwork, checkParallaxAdded, STORAGE_KEY } from "@/lib/parallax-network";
 import { Plus, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 export default function AddNetworkPopup() {
+  const t = useTranslations("popup");
   const [visible, setVisible] = useState(false);
   const [status, setStatus] = useState<"idle" | "adding" | "success" | "error">("idle");
 
@@ -42,16 +44,14 @@ export default function AddNetworkPopup() {
       <button
         onClick={dismiss}
         className="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors"
-        aria-label="Dismiss"
+        aria-label={t("dismiss")}
       >
         <X className="h-4 w-4" />
       </button>
       <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-2">
-        Add Parallax to your wallet
+        {t("title")}
       </h3>
-      <p className="text-sm text-muted-foreground mb-4">
-        Automatically add the Parallax network to your wallet with one click.
-      </p>
+      <p className="text-sm text-muted-foreground mb-4">{t("description")}</p>
       <div className="flex flex-col items-center gap-3">
         <Button
           className="bg-gold text-gold-foreground hover:bg-gold/90 w-full"
@@ -60,13 +60,13 @@ export default function AddNetworkPopup() {
         >
           <Plus className="mr-2 h-5 w-5" />
           {status === "adding"
-            ? "Waiting for approval..."
+            ? t("adding")
             : status === "success"
-              ? "Network added!"
-              : "Add Parallax Network"}
+              ? t("added")
+              : t("add")}
         </Button>
         {status === "error" && (
-          <p className="text-sm text-destructive">Failed to add network. Please try again.</p>
+          <p className="text-sm text-destructive">{t("error")}</p>
         )}
       </div>
     </div>

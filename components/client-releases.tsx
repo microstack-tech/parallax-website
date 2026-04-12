@@ -1,11 +1,11 @@
 'use client'
 
-import Link from "next/link";
 import { AppWindow, ChevronDown, ExternalLink, TerminalSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 const REPOS = {
   cli: {
@@ -36,9 +36,9 @@ type Release = {
   assets: Asset[];
 };
 
-function formatDate(iso: string): string {
+function formatDate(iso: string, locale: string): string {
   const d = new Date(iso);
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+  return d.toLocaleDateString(locale, { year: "numeric", month: "short", day: "numeric" });
 }
 
 function formatSize(bytes: number): string {
@@ -47,12 +47,14 @@ function formatSize(bytes: number): string {
 }
 
 function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allReleasesUrl: string }) {
+  const t = useTranslations("resources.parallaxClient.releases");
+  const locale = useLocale();
   const latestStableIndex = releases.findIndex((r) => !r.prerelease && !r.draft);
   const visible = releases.filter((r) => !r.draft).slice(0, MAX_RELEASES);
 
   if (visible.length === 0) {
     return (
-      <p className="py-8 text-center text-sm text-muted-foreground italic">No releases found.</p>
+      <p className="py-8 text-center text-sm text-muted-foreground italic">{t("noReleases")}</p>
     );
   }
 
@@ -60,10 +62,10 @@ function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allRe
     <>
       <div className="border border-border">
         <div className="hidden sm:grid grid-cols-12 gap-4 px-6 py-3 border-b border-border bg-surface-elevated text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
-          <div className="col-span-3">Version</div>
-          <div className="col-span-3">Released</div>
-          <div className="col-span-4">Assets</div>
-          <div className="col-span-2 text-right">Link</div>
+          <div className="col-span-3">{t("columnVersion")}</div>
+          <div className="col-span-3">{t("columnReleased")}</div>
+          <div className="col-span-4">{t("columnAssets")}</div>
+          <div className="col-span-2 text-right">{t("columnLink")}</div>
         </div>
 
         {visible.map((release) => {
@@ -85,41 +87,41 @@ function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allRe
                 <span className="font-mono text-sm text-foreground">{release.tag_name}</span>
                 {isLatestStable && (
                   <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-gold border border-gold/40 px-1.5 py-0.5">
-                    Latest
+                    {t("latestBadge")}
                   </span>
                 )}
                 {release.prerelease && (
                   <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-gold border border-gold/40 px-1.5 py-0.5">
-                    Pre
+                    {t("preBadge")}
                   </span>
                 )}
               </div>
               <div className="sm:col-span-3 text-sm text-muted-foreground font-mono">
-                {formatDate(release.published_at)}
+                {formatDate(release.published_at, locale)}
               </div>
               <div className="sm:col-span-4 text-xs text-muted-foreground">
                 {binaryAssets.length > 0 ? (
-                  <span>{binaryAssets.length} artifacts</span>
+                  <span>{t("artifactsCount", { count: binaryAssets.length })}</span>
                 ) : (
-                  <span className="italic">source only</span>
+                  <span className="italic">{t("sourceOnly")}</span>
                 )}
               </div>
               <div className="sm:col-span-2 sm:text-right">
-                <Link
+                <a
                   href={release.html_url}
                   target="_blank"
                   rel="noopener"
                   className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  View
+                  {t("view")}
                   <ExternalLink className="size-3" />
-                </Link>
+                </a>
               </div>
               {binaryAssets.length > 0 && (
                 <div className="sm:col-span-12 sm:pl-0 mt-2 sm:mt-3 sm:border-t sm:border-border/50 sm:pt-3">
                   <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                     {binaryAssets.map((asset) => (
-                      <Link
+                      <a
                         key={asset.name}
                         href={asset.browser_download_url}
                         target="_blank"
@@ -128,7 +130,7 @@ function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allRe
                       >
                         {asset.name}
                         <span className="text-muted-foreground/60"> · {formatSize(asset.size)}</span>
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -140,10 +142,10 @@ function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allRe
 
       <div className="mt-8 flex justify-center">
         <Button variant="secondary" asChild>
-          <Link href={allReleasesUrl} target="_blank" rel="noopener">
+          <a href={allReleasesUrl} target="_blank" rel="noopener">
             <FaGithub />
-            View all releases
-          </Link>
+            {t("viewAllReleases")}
+          </a>
         </Button>
       </div>
     </>
@@ -151,6 +153,7 @@ function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allRe
 }
 
 export default function ClientReleases() {
+  const t = useTranslations("resources.parallaxClient.releases");
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"gui" | "cli">("gui");
   const [cliReleases, setCliReleases] = useState<Release[] | null>(null);
@@ -180,7 +183,7 @@ export default function ClientReleases() {
         onClick={() => setOpen((prev) => !prev)}
         className="w-full flex items-center gap-3 cursor-pointer group"
       >
-        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">Recent Releases</h3>
+        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">{t("heading")}</h3>
         <div className="flex-1 h-px bg-border" />
         <ChevronDown className={`size-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
@@ -196,7 +199,7 @@ export default function ClientReleases() {
             className="overflow-hidden"
           >
             <p className="text-muted-foreground mb-8 mt-8 max-w-2xl">
-              Recent versions of the Parallax client. Always prefer the latest release unless you have a specific reason to run an older build.
+              {t("intro")}
             </p>
 
             <div className="flex gap-2 bg-surface-elevated border border-border p-2 w-fit mb-8">
@@ -206,7 +209,7 @@ export default function ClientReleases() {
                 variant={activeTab === "gui" ? "default" : "secondary"}
               >
                 <AppWindow className="size-3.5" />
-                Desktop
+                {t("desktop")}
               </Button>
               <Button
                 onClick={() => setActiveTab("cli")}
@@ -214,7 +217,7 @@ export default function ClientReleases() {
                 variant={activeTab === "cli" ? "default" : "secondary"}
               >
                 <TerminalSquare className="size-3.5" />
-                CLI
+                {t("cli")}
               </Button>
             </div>
 
@@ -222,7 +225,7 @@ export default function ClientReleases() {
               guiReleases ? (
                 <ReleaseTable releases={guiReleases} allReleasesUrl={REPOS.gui.allReleases} />
               ) : (
-                <p className="py-8 text-center text-sm text-muted-foreground">Loading…</p>
+                <p className="py-8 text-center text-sm text-muted-foreground">{t("loading")}</p>
               )
             )}
 
@@ -230,7 +233,7 @@ export default function ClientReleases() {
               cliReleases ? (
                 <ReleaseTable releases={cliReleases} allReleasesUrl={REPOS.cli.allReleases} />
               ) : (
-                <p className="py-8 text-center text-sm text-muted-foreground">Loading…</p>
+                <p className="py-8 text-center text-sm text-muted-foreground">{t("loading")}</p>
               )
             )}
           </motion.div>

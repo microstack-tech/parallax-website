@@ -1,10 +1,11 @@
 'use client'
 import { useStableVh } from "@/hooks/useStableVh"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { Button } from "./ui/button"
 import { motion } from "framer-motion"
 import { useRef } from "react"
 import { ChevronDown } from "lucide-react"
+import { useTranslations } from "next-intl"
 import dynamic from "next/dynamic"
 
 const BlackHoleVisualization = dynamic(() => import("./black-hole"), { ssr: false })
@@ -12,6 +13,7 @@ const BlackHoleVisualization = dynamic(() => import("./black-hole"), { ssr: fals
 export function Hero() {
   useStableVh()
   const containerRef = useRef<HTMLElement>(null)
+  const t = useTranslations("home.hero")
 
   return (
     <section
@@ -67,7 +69,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            A peer-to-peer programmable cash system.
+            {t("subtitle")}
           </motion.p>
         </div>
 
@@ -78,7 +80,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
         >
-          Secured by Physics.
+          {t("securedByPhysics")}
         </motion.p>
 
         {/* Buttons — pinned to bottom */}
@@ -90,13 +92,13 @@ export function Hero() {
         >
           <Button size={"2xl"} className="w-full max-w-[15rem] px-6 bg-gold text-gold-foreground hover:bg-gold/90 text-sm" asChild>
             <Link href={"/participate/running-a-full-node"}>
-              Run a node
+              {t("runNode")}
             </Link>
           </Button>
           <Button size={"2xl"} variant={"secondary"} className="w-full border border-white/20 max-w-[15rem] px-6 bg-white/5 text-white hover:bg-white/10 text-sm" asChild>
-            <Link href={"https://docs.parallaxprotocol.org"}>
-              Read the Docs
-            </Link>
+            <a href={"https://docs.parallaxprotocol.org"} target="_blank" rel="noopener">
+              {t("readDocs")}
+            </a>
           </Button>
         </motion.div>
 

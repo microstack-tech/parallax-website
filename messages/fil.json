@@ -1,0 +1,2277 @@
+{
+  "metadata": {
+    "site": {
+      "titleDefault": "Parallax Protocol",
+      "titleTemplate": "%s | Parallax Protocol",
+      "description": "Open source protocol para sa P2P Programmable Cash System",
+      "ogDescription": "Isang peer-to-peer programmable cash system. Ang monetary discipline ng Bitcoin na nakahalo sa programmability ng Ethereum."
+    },
+    "compare": {
+      "title": "Parallax vs Bitcoin vs Ethereum",
+      "description": "Magkatabing paghahambing ng Parallax, Bitcoin, at Ethereum sa consensus, monetary policy, programmability, settlement, at iba pa."
+    },
+    "faq": {
+      "title": "Mga madalas itanong",
+      "description": "Humanap ng mga sagot sa mga madalas itanong tungkol sa Parallax"
+    },
+    "wallets": {
+      "title": "Mga Wallet",
+      "description": "Mga wallet na sumusuporta sa Parallax network."
+    },
+    "exchanges": {
+      "title": "Mga Exchange",
+      "description": "Mga exchange kung saan ka pwedeng bumili, magbenta, at mag-trade ng Parallax (LAX)."
+    },
+    "introduction": {
+      "doctrine": {
+        "title": "The Parallax Doctrine",
+        "description": "Mga axiom at commentary na nagde-define ng mga constraint kung saan umiiral ang Parallax, hiwalay sa adoption, relevance, o success."
+      },
+      "howItWorks": {
+        "title": "Paano ito gumagana",
+        "description": "Mabilisang paliwanag kung paano gumagana ang Parallax — wallets, transactions, mining, at mga blockchain basics."
+      },
+      "gettingStarted": {
+        "title": "Magsimula",
+        "description": "Madali ang pagsisimula sa Parallax. Alamin kung paano gamitin ang Parallax at kung paano ito tanggapin bilang merchant."
+      },
+      "parallaxForBusinesses": {
+        "title": "Parallax para sa negosyo",
+        "description": "Ang Parallax ay napakaligtas at murang paraan para humawak ng bayad para sa iyong negosyo."
+      },
+      "parallaxForIndividuals": {
+        "title": "Parallax para sa indibidwal",
+        "description": "Ang Parallax ang pinakamadaling paraan para mag-transact sa napakababang gastos."
+      },
+      "whitepaper": {
+        "title": "Whitepaper",
+        "description": "Parallax: Isang bagong perspective sa programmable cash. Ang technical specification para sa Parallax protocol."
+      },
+      "protocol": {
+        "overview": {
+          "title": "Protocol Overview",
+          "description": "Ang base rules ng Parallax protocol — cryptographic primitives, deterministic execution, proof-of-work, at consensus logic."
+        },
+        "architecture": {
+          "title": "Protocol Architecture",
+          "description": "Malalim na pagsusuri sa security model ng Parallax: signatures, PVM, Proof-of-Work, at Nakamoto consensus."
+        },
+        "blockRewardAndHalving": {
+          "title": "Block Reward at Halving",
+          "description": "Ang Bitcoin-inspired emission schedule ng Parallax, coinbase maturity mechanism, at kung paano pinapamahalaan ang block rewards."
+        },
+        "coinbaseMaturity": {
+          "title": "Coinbase Maturity",
+          "description": "Paano nag-eescrow ang Parallax ng miner subsidies hanggang maturity gamit ang deterministic, canonical state updates."
+        },
+        "difficultyAndForkchoice": {
+          "title": "Difficulty at Fork Choice",
+          "description": "Ang kasaysayan ng difficulty adjustment ng Parallax mula BTC-style DAA papunta sa ASERT, at ang cumulative-work fork-choice rule."
+        },
+        "xhash": {
+          "title": "XHash",
+          "description": "Ang memory-hard na Proof-of-Work na ginagamit ng Parallax. Ethash-style Hashimoto na may ASERT-based difficulty at epoch handling ng Parallax."
+        }
+      }
+    },
+    "participate": {
+      "development": {
+        "title": "Development",
+        "description": "Mag-contribute sa Parallax bilang developer. Gumawa ng smart contracts at dApps sa Parallax EVM, pagandahin ang protocol, o i-integrate ang Parallax sa iyong mga proyekto."
+      },
+      "runningAFullNode": {
+        "title": "Pagpapatakbo ng full node",
+        "description": "Magpatakbo ng Parallax full node para tumulong na i-secure ang network, pagandahin ang privacy, at palakasin ang decentralization."
+      },
+      "supportParallax": {
+        "title": "Suportahan ang Parallax",
+        "description": "Mga paraan para suportahan ang Parallax: magpatakbo ng node, mag-mine, mag-build, mag-donate, at tumulong na palaguin ang komunidad."
+      }
+    },
+    "resources": {
+      "beginnerGuides": {
+        "title": "Mga gabay para sa baguhan",
+        "description": "Step-by-step na gabay para magpatakbo ng Parallax node, mag-connect ng wallet, at magsimulang mag-mine."
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "Mga opisyal na Parallax logo at brand assets para sa media, presentations, at integrations."
+      },
+      "community": {
+        "title": "Community",
+        "description": "Sumali sa Parallax community sa mga official at community-run na channel."
+      },
+      "networkAtlas": {
+        "title": "Network Atlas",
+        "description": "Live na world map at country breakdown ng mga Parallax node na natutuklasan sa pamamagitan ng peer connections."
+      },
+      "parallaxClient": {
+        "title": "Parallax Client",
+        "description": "I-download at patakbuhin ang opisyal na Parallax full node software. Desktop App at CLI builds."
+      },
+      "technicalDocumentation": {
+        "title": "Technical Documentation",
+        "description": "Tingnan ang Parallax protocol, architecture, APIs, at developer guides."
+      }
+    }
+  },
+  "common": {
+    "readMore": "Magbasa pa",
+    "getStarted": "Magsimula",
+    "github": "GitHub",
+    "backToHome": "Bumalik sa Home",
+    "readTheDocs": "Basahin ang Docs",
+    "seeLiveNodeMap": "Tingnan ang live node map",
+    "otherPlatforms": "Ibang mga platform",
+    "desktopOnly": "Desktop lang",
+    "desktopOnlyHint": "Buksan ang page na ito sa Linux, Windows, o macOS para mag-download.",
+    "downloadDesktopApp": "I-download ang Desktop App",
+    "downloadCli": "I-download ang CLI",
+    "downloadFor": "I-download para sa {platform}",
+    "viewDesktopBuilds": "Tingnan ang Desktop App builds",
+    "new": "Bago",
+    "dismiss": "Isara",
+    "scrollToTop": "Bumalik sa taas"
+  },
+  "nav": {
+    "introduction": "Introduksyon",
+    "resources": "Resources",
+    "participate": "Sumali",
+    "faq": "FAQ",
+    "getStarted": "Magsimula",
+    "toggleTheme": "I-toggle ang theme",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "language": "Wika",
+    "introductionSub": {
+      "doctrine": "Ang Parallax Doctrine",
+      "howItWorks": "Paano ito gumagana",
+      "compare": "vs Bitcoin & Ethereum",
+      "individuals": "Mga Indibidwal",
+      "businesses": "Mga Negosyo",
+      "whitepaper": "White paper",
+      "gettingStarted": "Magsimula",
+      "protocol": "Parallax Protocol"
+    },
+    "resourcesSub": {
+      "beginnerGuides": "Beginner Guides",
+      "technicalDocumentation": "Technical Documentation",
+      "parallaxClient": "Parallax Client",
+      "wallets": "Mga Wallet",
+      "exchanges": "Mga Exchange",
+      "community": "Komunidad",
+      "brandAssets": "Brand Assets",
+      "blockExplorer": "Block Explorer",
+      "faucet": "Faucet",
+      "networkAtlas": "Network Atlas"
+    },
+    "participateSub": {
+      "supportParallax": "Suportahan ang Parallax",
+      "runningAFullNode": "Magpatakbo ng full node",
+      "miningPools": "Mining Pools",
+      "development": "Development"
+    }
+  },
+  "footer": {
+    "tagline": "Isang peer-to-peer programmable cash system. Protektado ng physics, walang namamahala.",
+    "sections": {
+      "protocol": "Protocol",
+      "resources": "Resources",
+      "community": "Komunidad"
+    },
+    "links": {
+      "doctrine": "Doctrine",
+      "howItWorks": "Paano ito gumagana",
+      "compare": "vs Bitcoin & Ethereum",
+      "whitepaper": "Whitepaper",
+      "protocolOverview": "Protocol Overview",
+      "gettingStarted": "Magsimula",
+      "beginnerGuides": "Beginner Guides",
+      "documentation": "Documentation",
+      "parallaxClient": "Parallax Client",
+      "wallets": "Mga Wallet",
+      "exchanges": "Mga Exchange",
+      "blockExplorer": "Block Explorer",
+      "networkAtlas": "Network Atlas",
+      "brandAssets": "Brand Assets",
+      "github": "GitHub",
+      "bitcointalk": "BitcoinTalk",
+      "twitter": "X / Twitter",
+      "discord": "Discord",
+      "telegram": "Telegram"
+    },
+    "marketDataBy": "Market data mula sa <link>CoinGecko</link>",
+    "copyright": "© Parallax Protocol 2026",
+    "license": "Nakapailalim sa <link>LGPL-3.0</link> license."
+  },
+  "popup": {
+    "title": "Idagdag ang Parallax sa iyong wallet",
+    "description": "Awtomatikong idagdag ang Parallax network sa iyong wallet sa isang click lang.",
+    "add": "Idagdag ang Parallax Network",
+    "adding": "Naghihintay ng approval...",
+    "added": "Naidagdag na ang network!",
+    "error": "Hindi naidagdag ang network. Subukan ulit.",
+    "dismiss": "Isara"
+  },
+  "languageSwitcher": {
+    "label": "Wika",
+    "switchTo": "Lumipat sa {language}"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "Isang peer-to-peer programmable cash system.",
+      "securedByPhysics": "Protektado ng Physics.",
+      "runNode": "Magpatakbo ng node",
+      "readDocs": "Basahin ang Docs"
+    },
+    "networkStats": {
+      "liveNetwork": "Live Network",
+      "market": "Market",
+      "blockExplorer": "Block Explorer",
+      "networkAtlas": "Network Atlas",
+      "coingecko": "CoinGecko",
+      "labels": {
+        "blocks": "Blocks",
+        "transactions": "Transactions",
+        "addresses": "Addresses",
+        "avgBlockTime": "Avg Block Time",
+        "txnsToday": "Txns Today",
+        "price": "LAX Price",
+        "marketCap": "Market Cap",
+        "volume24h": "24h Volume",
+        "supply": "Circulating Supply"
+      }
+    },
+    "parallax": {
+      "eyebrow": "Protocol",
+      "heading": "Parallax Protocol",
+      "subtitle": "Isang monetary system na may legitimacy lamang kung hindi mababaluktot ang mga rules nito.",
+      "imageCaption": "The Death of Socrates — Jacques-Louis David",
+      "body1": "Pinagsasama ng Parallax ang fixed monetary supply at Proof of Work settlement na may buong smart contract programmability. Bawat coin ay kailangang ma-mine. Bawat patakaran ay isinasagawa nang walang diskresyon. Walang premine, walang foundation, walang privileged accounts.",
+      "body2": "Ipinapakita ng The Death of Socrates ang pagtanggi na ipagpalit ang katotohanan para sa kaginhawahan. Tinanggap ni Socrates ang kanyang kapalaran hindi dahil sa pagsunod, kundi dahil ang pag-abandona sa prinsipyo ay magpapabaliwala sa mismong katwiran.",
+      "body3": "Ganito rin ang lohika ng Parallax. Ang isang monetary system ay may legitimacy lamang kung hindi mababaluktot ang mga rules nito ng kapangyarihan o popularidad. Sa halip na trust, mga komite, o narrative consensus, ina-anchor ng Parallax ang halaga sa irreversible physical cost.",
+      "body4": "Kung saan pinili ni Socrates ang katwiran kaysa sa mga pinuno, mas pinipili ng Parallax ang physics kaysa sa mga institusyon.",
+      "cta": "Basahin ang Parallax Doctrine"
+    },
+    "soundMoney": {
+      "eyebrow": "Economics",
+      "heading": "Sound Money Design",
+      "subtitle": "Ang Parallax ay programmable gold, protektado ng physics. Isang fixed supply, Proof of Work settlement layer kung saan ang scarcity ay ipinatutupad ng energy, hindi ng mga komite.",
+      "hardCap": {
+        "title": "Hard Capped Supply",
+        "description": "Isang finite at predictable emission schedule na pareho sa Bitcoin. Walang monetary discretion at walang nakatagong inflation. Ang mga rules para sa supply ay naka-encode sa protocol, hindi itinatakda ng mga komite."
+      },
+      "energySecured": {
+        "title": "Energy Secured Value",
+        "description": "Ang hashrate ay nag-uugnay sa currency sa real world energy at silicon. Ang pag-atake sa chain ay nangangailangan ng pagsunog ng parehong physics na nagpoprotekta nito, na nagbibigay ng anchor sa monetary integrity ng Parallax sa nasusukat na cost imbes na social trust."
+      },
+      "fairLaunch": {
+        "title": "Fair Launch Economics",
+        "description": "Walang premine, walang VC allocation, walang insider advantages. Bawat coin ay kailangang kitain sa ilalim ng parehong mga patakaran."
+      },
+      "settlement": {
+        "title": "Settlement-First Blocks",
+        "description": "Ang sampung minutong blocks ay nagpapanatili ng mababang coordination stress at mataas na decentralization. Dinisenyo para sa matatag na settlement."
+      },
+      "programmable": {
+        "title": "Programmable Gold",
+        "description": "EVM compatible chain na ginagawang native asset ang sound money. Gumawa ng contracts, dApps, at rollups sa PoW."
+      },
+      "credibly": {
+        "title": "Credibly Neutral",
+        "description": "Kahit sino ay pwedeng magpatakbo ng node, mag-mine, o mag-build nang walang approval. Walang pakialam ang protocol kung sino ka."
+      },
+      "cta": "Tingnan kung paano ihinahambing ang Parallax",
+      "ctaSubtitle": "vs Bitcoin & Ethereum, feature by feature"
+    },
+    "client": {
+      "eyebrow": "Software",
+      "heading": "Ang Parallax Client",
+      "subtitle": "I-download at patakbuhin ang reference Parallax node software. Tulungan i-secure ang network at sumali sa consensus.",
+      "decentralized": {
+        "title": "Decentralized",
+        "description": "Ang mga taong nagpapatakbo ng node ang nagpapanatiling decentralized sa Parallax. Sila mismo ang nagpapatakbo ng kanilang sariling Parallax full nodes, at bawat isa sa mga full node na iyon ay hiwalay na sumusunod sa eksaktong parehong mga rules para magpasya kung aling block chain ang valid.",
+        "cta": "Tingnan ang live node map"
+      },
+      "noVoting": {
+        "title": "Walang Botohan",
+        "description": "Walang voting o iba pang corruptible na proseso na kasangkot: meron lang individual software na sumusunod sa magkakaparehong rules—\"math\"—para suriin ang magkakaparehong blocks at makarating sa magkakaparehong konklusyon kung aling block chain ang valid."
+      },
+      "blockquote": "Ang shared agreement na ito (tinatawag na consensus) ay nagpapahintulot sa mga taong tulad mo na tumanggap lamang ng valid na transaksyon, na nagpapatupad sa mga rules ng Parallax kahit sa mga pinakamalalakas na miner.",
+      "runNode": {
+        "title": "Magpatakbo ng Parallax Node",
+        "description": "Ang Parallax Desktop App ang pinakamadaling paraan para sumali sa network — i-install, ilunsad, at magsimulang mag-sync. Available sa Linux, Windows, at macOS."
+      },
+      "cli": "Parallax CLI",
+      "quickStart": "Quick start",
+      "github": "GitHub"
+    },
+    "documentation": {
+      "eyebrow": "Alamin",
+      "heading": "Documentation",
+      "subtitle": "Humanap ng beginner guides at malalim na technical documentation tungkol sa Parallax protocol at reference client.",
+      "beginnerGuides": {
+        "title": "Beginner Guides",
+        "description": "Step-by-step na gabay sa pag-download ng Parallax client, pag-set up ng wallets, at pagsisimula sa mining."
+      },
+      "technicalDocumentation": {
+        "title": "Technical Documentation",
+        "description": "Mga core building blocks, developer stack, at malalim na paksa sa pagpapatakbo at pag-configure ng Parallax client."
+      },
+      "whitepaper": {
+        "title": "Whitepaper",
+        "description": "Ang technical specification para sa Parallax protocol. Monetary design, consensus mechanism, at network architecture."
+      }
+    },
+    "community": {
+      "eyebrow": "Komunidad",
+      "heading": "Open Development",
+      "openSource": {
+        "title": "Open Source",
+        "description": "Lahat ng code ay open source at available sa GitHub. I-review, i-audit, at mag-contribute sa development ng protocol. Ang transparency ay hindi optimism — ito ay resilience."
+      },
+      "communityDriven": {
+        "title": "Community Driven",
+        "description": "Ang Parallax ay walang foundation, walang governing body, at walang privileged contributors. Nasa harap ng lahat ang development. Hindi nagbabago ang mga rules ng protocol dahil sa popular demand."
+      },
+      "join": {
+        "title": "Sumali sa Komunidad",
+        "description": "Makipag-ugnayan sa mga users, developers, miners at pool operators. Humingi ng suporta, magbahagi ng ideya, at manatiling updated."
+      }
+    }
+  },
+  "notFound": {
+    "label": "404",
+    "title": "Hindi nahanap ang page",
+    "description": "Ang page na hinahanap mo ay wala o nailipat na.",
+    "back": "Bumalik sa Home"
+  },
+  "compare": {
+    "title": "Parallax vs Bitcoin vs Ethereum",
+    "subtitle": "Magkatabing pagtingin kung paano ihinahambing ang Parallax sa dalawang nangungunang cryptocurrencies. Parehong hard cap ng Bitcoin, programmability ng Ethereum — pero walang anumang monetary compromises.",
+    "atAGlance": "Sa madaling sabi",
+    "detailedComparison": "Detalyadong paghahambing",
+    "featureByFeature": "Feature by feature",
+    "property": "Property",
+    "thesisLabel": "Ang Parallax Thesis",
+    "thesisBody": "Pinatunayan ng Bitcoin na gumagana ang hard money — pero hindi ito programmable. Pinatunayan ng Ethereum na gumagana ang programmable money — pero inabandona nito ang scarcity at Proof of Work. Ang Parallax ay ang synthesis: ang eksaktong supply schedule at energy-secured settlement ng Bitcoin, kasama ang buong EVM para sa mga builders. Sound money bilang native asset, hindi isang wrapped na afterthought.",
+    "maturity": {
+      "justLaunched": "Kakalunsad pa lang",
+      "oneMonth": "~1 buwan",
+      "months": "~{count} buwan",
+      "years": "~{years} taon"
+    },
+    "chains": {
+      "parallax": "Parallax",
+      "bitcoin": "Bitcoin",
+      "ethereum": "Ethereum"
+    },
+    "summary": [
+      {
+        "title": "Hard Capped Supply",
+        "parallax": "Oo — 21M, kapareho ng Bitcoin",
+        "bitcoin": "Oo — 21M",
+        "ethereum": "Hindi — uncapped issuance"
+      },
+      {
+        "title": "Proof of Work",
+        "parallax": "Oo — XHash",
+        "bitcoin": "Oo — SHA-256",
+        "ethereum": "Hindi — Proof of Stake mula 2022"
+      },
+      {
+        "title": "EVM Smart Contracts",
+        "parallax": "Oo — native",
+        "bitcoin": "Wala",
+        "ethereum": "Oo — native"
+      },
+      {
+        "title": "Fair Launch",
+        "parallax": "Oo — walang premine, walang VCs",
+        "bitcoin": "Oo — walang premine",
+        "ethereum": "Hindi — 72M ETH ang premined"
+      }
+    ],
+    "sections": {
+      "consensus": {
+        "title": "Consensus & Security",
+        "rows": [
+          {
+            "label": "Consensus mechanism",
+            "description": "Paano sumasang-ayon ang network sa kalagayan ng ledger.",
+            "parallax": "Proof of Work",
+            "bitcoin": "Proof of Work",
+            "ethereum": "Proof of Stake"
+          },
+          {
+            "label": "Hashing algorithm",
+            "parallax": "XHash (ASIC-resistant)",
+            "bitcoin": "SHA-256 (ASIC-dominant)",
+            "ethereum": "N/A (validator staking)"
+          },
+          {
+            "label": "Difficulty algorithm",
+            "description": "Paano nire-retarget ng protocol ang proof-of-work difficulty para mapanatili ang block times sa target.",
+            "parallax": "ASERT (per-block, 2-day half-life)",
+            "bitcoin": "2016-block window retarget",
+            "ethereum": "N/A (walang mining)"
+          },
+          {
+            "label": "Coinbase maturity",
+            "description": "Lockup period bago magamit ang bagong mined rewards. Nagbabawas ng insentibo para sa near-tip reorgs na magnakaw ng fees at subsidy.",
+            "parallax": "100 blocks (~16 oras)",
+            "bitcoin": "100 blocks (~16 oras)",
+            "ethereum": "Wala"
+          },
+          {
+            "label": "Security na naka-anchor sa real-world energy",
+            "description": "Ang pag-atake sa chain ay nangangailangan ng pagsunog ng nasusukat na physical cost imbes na pagkuha ng social trust."
+          },
+          {
+            "label": "Permissionless validation",
+            "description": "Pwede bang sumali ang kahit sino sa pag-secure ng network nang walang approval o capital gatekeeping?",
+            "parallax": "Kahit sino pwedeng mag-mine",
+            "bitcoin": "Kahit sino pwedeng mag-mine",
+            "ethereum": "32 ETH para sa solo stake"
+          }
+        ]
+      },
+      "monetary": {
+        "title": "Monetary Policy",
+        "rows": [
+          {
+            "label": "Supply cap",
+            "description": "Naka-fix ba sa protocol ang maximum supply?",
+            "parallax": "21,000,000 (hard cap)",
+            "bitcoin": "21,000,000 (hard cap)",
+            "ethereum": "Uncapped"
+          },
+          {
+            "label": "Predictable emission schedule",
+            "parallax": "Halving kada 210k blocks",
+            "bitcoin": "Halving kada 210k blocks",
+            "ethereum": "Pwedeng baguhin ng governance"
+          },
+          {
+            "label": "Initial block reward at halving",
+            "description": "Ang panimulang block subsidy at gaano kadalas ito hinahati sa kalahati.",
+            "parallax": "50 LAX, naghahati kada 210,000 blocks (~4y)",
+            "bitcoin": "50 BTC, naghahati kada 210,000 blocks (~4y)",
+            "ethereum": "Walang fixed schedule; itinatakda ang issuance ng EIPs"
+          },
+          {
+            "label": "Fair launch",
+            "description": "Walang premine, walang VC allocation, walang insider distribution.",
+            "ethereum": "72M ETH premined (2014 ICO)"
+          },
+          {
+            "label": "Mga pagbabago sa monetary policy",
+            "description": "Pwede bang baguhin ang issuance rules nang walang contentious hard fork?",
+            "parallax": "Naka-encode sa protocol",
+            "bitcoin": "Naka-encode sa protocol",
+            "ethereum": "Pinamamahalaan ng core devs / EIPs"
+          },
+          {
+            "label": "Fee model",
+            "description": "Paano nai-price ang transaction fees at kung may bahagi ba na sinusunog.",
+            "parallax": "Priority auction (gas price, walang burn)",
+            "bitcoin": "Priority auction (sat/vB, walang burn)",
+            "ethereum": "EIP-1559 base fee + tip (sinusunog ang base fee)"
+          }
+        ]
+      },
+      "settlement": {
+        "title": "Settlement & Performance",
+        "rows": [
+          {
+            "label": "Target block time",
+            "parallax": "~10 minuto",
+            "bitcoin": "~10 minuto",
+            "ethereum": "~12 segundo"
+          },
+          {
+            "label": "Settlement-first design",
+            "description": "In-optimize para sa matatag na finality kaysa sa mataas na throughput."
+          },
+          {
+            "label": "Finality model",
+            "parallax": "Probabilistic (PoW)",
+            "bitcoin": "Probabilistic (PoW)",
+            "ethereum": "Economic (checkpoints)"
+          },
+          {
+            "label": "Scaling approach",
+            "description": "Paano lumalawak ang chain lampas sa base-layer throughput nang hindi nakokompromiso ang settlement.",
+            "parallax": "Rollups + payment channels (EVM L2s viable)",
+            "bitcoin": "Lightning + sidechains (Liquid, Rootstock)",
+            "ethereum": "Optimistic & ZK rollups"
+          }
+        ]
+      },
+      "programmability": {
+        "title": "Programmability",
+        "rows": [
+          {
+            "label": "Account model",
+            "description": "Ang pundamental na ledger structure — nakakaapekto sa smart contracts, parallelism, at fee accounting.",
+            "parallax": "Account-based (EVM)",
+            "bitcoin": "UTXO",
+            "ethereum": "Account-based (EVM)"
+          },
+          {
+            "label": "Smart contracts",
+            "parallax": "EVM compatible",
+            "bitcoin": "Script (limitado)",
+            "ethereum": "EVM native"
+          },
+          {
+            "label": "Native token issuance",
+            "description": "Pwede bang mag-deploy ang mga users ng fungible tokens at NFTs bilang first-class protocol objects?",
+            "parallax": "ERC-20 / ERC-721 sa pamamagitan ng EVM",
+            "bitcoin": "Metaprotocols lang (Ordinals, Runes)",
+            "ethereum": "ERC-20 / ERC-721 native"
+          },
+          {
+            "label": "Turing-complete execution"
+          },
+          {
+            "label": "Native support para sa dApps & rollups",
+            "bitcoin": "Sa pamamagitan ng sidechains / L2s"
+          },
+          {
+            "label": "Sound money bilang native asset",
+            "description": "Ang base-layer asset ay isang hard-capped, energy-secured store of value mismo.",
+            "bitcoin": "Pero walang smart contracts"
+          }
+        ]
+      },
+      "governance": {
+        "title": "Decentralization & Governance",
+        "rows": [
+          {
+            "label": "Credibly neutral",
+            "description": "Hindi nag-d-discriminate ang protocol batay sa identity, jurisdiction, o stake size."
+          },
+          {
+            "label": "Foundation / corporate influence",
+            "parallax": "Wala",
+            "bitcoin": "Wala",
+            "ethereum": "Ethereum Foundation"
+          },
+          {
+            "label": "Node hardware requirements",
+            "parallax": "Consumer hardware",
+            "bitcoin": "Consumer hardware",
+            "ethereum": "SSD + staking hardware"
+          },
+          {
+            "label": "Upgrade path",
+            "parallax": "Rough consensus + hard forks",
+            "bitcoin": "Rough consensus + soft forks",
+            "ethereum": "Coordinated hard forks"
+          },
+          {
+            "label": "Network maturity",
+            "description": "Tagal mula sa mainnet launch — magaspang na proxy para sa battle-testing at lalim ng ecosystem."
+          }
+        ]
+      }
+    },
+    "launchDates": {
+      "parallax": "Okt 2025",
+      "bitcoin": "Ene 2009",
+      "ethereum": "Hul 2015"
+    }
+  },
+  "faq": {
+    "title": "Mga madalas itanong",
+    "subtitle": "Humanap ng mga sagot sa mga madalas itanong tungkol sa Parallax",
+    "search": {
+      "placeholder": "Maghanap ng mga tanong...",
+      "resultsOne": "{count} resulta",
+      "resultsOther": "{count} mga resulta",
+      "noResults": "Walang nahanap na resulta",
+      "clear": "I-clear ang search"
+    },
+    "categories": {
+      "general": "General",
+      "technical": "Technical",
+      "mining": "Mining",
+      "economics": "Economics",
+      "governance": "Governance",
+      "development": "Development"
+    },
+    "items": {
+      "general": [
+        {
+          "question": "Ano ang Parallax?",
+          "answer": "Ang Parallax ay isang blockchain protocol na pinagsasama ang napatunayang monetary discipline ng Bitcoin sa programmability ng Ethereum. Pinapanatili nito ang fixed na 21M coin supply ng Bitcoin, 10-minutong blocks, at Proof of Work consensus habang nagdadagdag ng buong EVM compatibility para sa smart contracts."
+        },
+        {
+          "question": "Sino ang gumawa ng Parallax?",
+          "answer": "Ang Parallax ay ginawa ng isang grupo ng mga blockchain developers na nakakita ng pangangailangan para sa isang protocol na nag-uugnay sa sound money principles ng Bitcoin sa smart contract capabilities ng Ethereum. Sumusunod ang proyekto sa fair launch model na walang premine o privileged allocations."
+        },
+        {
+          "question": "Paano naiiba ang Parallax sa Bitcoin at Ethereum?",
+          "answer": "Pinagsasama ng Parallax ang pinakamahuhusay sa parehong mundo: ang monetary policy ng Bitcoin (21M fixed supply, halving cycles, PoW) at ang programmability ng Ethereum (EVM compatibility, smart contracts). Hindi tulad ng Bitcoin, sumusuporta ito sa mga complex applications. Hindi tulad ng Ethereum, pinapanatili nito ang fixed supply at hindi sinusunog ang fees."
+        },
+        {
+          "question": "Bakit Proof of Work imbes na Proof of Stake?",
+          "answer": "Ang Proof of Work ay nag-a-anchor ng security sa external at objective na cost — energy — na hindi pwedeng i-simulate, ibotong umiral, o pag-usapan sa lipunan. Ang Proof of Stake systems ay pinapalitan lang ang isang set ng trusted intermediaries ng iba pa (validators/committees), inililipat lang ang trust imbes na alisin ito. Ang PoW ay nagsisiguro na ang influence ay nakukuha lamang sa pamamagitan ng work, hindi sa pamamagitan ng privilege o identity, kaya ito lang ang consensus mechanism na compatible sa tunay na permissionlessness."
+        }
+      ],
+      "technical": [
+        {
+          "question": "Anong consensus mechanism ang ginagamit ng Parallax?",
+          "answer": "Gumagamit ang Parallax ng Proof of Work (PoW) consensus na may XHash mining algorithm, na ginagawa itong GPU-friendly, hindi tulad ng ASIC-dominated SHA-256 ng Bitcoin. Sinisigurado nito ang mas malawak na partisipasyon sa mining habang pinapanatili ang security benefits ng PoW."
+        },
+        {
+          "question": "Ano ang XHash at bakit ito pinili?",
+          "answer": "Ang XHash ay isang modified Ethash variant na partikular na dinisenyo para gawing obsolete ang existing ASICs at panatilihing accessible ang mining sa commodity hardware tulad ng GPUs. Sa pamamagitan ng paglaban sa ASIC dominance, itinataguyod ng XHash ang miner diversity at mas malawak na partisipasyon sa pag-secure ng network, na pumipigil sa centralization ng hash power na umapekto sa ibang PoW chains."
+        },
+        {
+          "question": "EVM compatible ba ang Parallax?",
+          "answer": "Oo, ang Parallax ay buong EVM compatible, ibig sabihin lahat ng Ethereum smart contracts, tools, at applications ay pwedeng tumakbo sa Parallax nang walang modification. Pwedeng gamitin ng mga developers ang pamilyar na tools tulad ng MetaMask, Remix, at Hardhat."
+        },
+        {
+          "question": "Ano ang block times at transaction fees?",
+          "answer": "Pinapanatili ng Parallax ang 10-minutong block intervals tulad ng Bitcoin para sa stability at predictability. Ang transaction fees ay gumagamit ng first-price auction model kung saan diretso sa miners ang fees, na nagsisiguro ng sustainable mining incentives nang walang fee burning."
+        },
+        {
+          "question": "Bakit 10-minutong blocks imbes na mas mabilis?",
+          "answer": "Ang global agreement ay nangangailangan ng physical delay. Ang mga sistemang nag-mi-minimize ng time-to-finality sa ibaba ng physical limits ay nagpapasok ng nakatagong advantages — proximity sa validators, specialized networking, privileged transaction ordering — na lahat ay nagse-centralize ng consensus. Itinuturing ng Parallax ang oras bilang stabilizing force. Ang finality na nakukuha nang dahan-dahan sa pamamagitan ng accumulated work ay mas matatag kaysa sa finality na ipinapahayag agad sa pamamagitan ng social agreement."
+        },
+        {
+          "question": "Ano ang block gas limit?",
+          "answer": "Gumagamit ang Parallax ng konserbatibong block gas limit na 600 milyong gas, halos kalahati ng throughput ng Ethereum sa humigit-kumulang 1 milyong gas per second. Sinasadya itong design choice: ang pagpapanatili ng konserbatibong throughput sa base layer ay nagsisiguro na nananatiling accessible ang full nodes sa mga indibidwal na nagpapatakbo ng commodity hardware, na inuuna ang decentralization kaysa sa raw speed."
+        },
+        {
+          "question": "Paano pinapangasiwaan ng Parallax ang 51% attacks?",
+          "answer": "Pinagsasama ng security model ng Parallax ang Proof of Work, 10-minutong block intervals, at XHash mining para gawing sobrang mahal ang mga atake. Ang muling pagsusulat ng kasaysayan ay nangangailangan ng mas maraming work kaysa sa honest chain — isang gastos na lumalaki sa bawat block. Ang accessibility ng XHash ay nagtataguyod ng diverse at distributed mining base, na ginagawang mahirap para sa kahit sinong entity na mag-accumulate ng majority hash power. Ang 100-block coinbase maturity period ay pumipigil din sa attackers na agarang gastusin ang mined rewards habang may reorganization attempt."
+        },
+        {
+          "question": "Ano ang coinbase maturity?",
+          "answer": "Ang coinbase maturity ay isang 100-block lockup period (humigit-kumulang 17 oras) bago magamit ang bagong mined block rewards. Pinipigilan nito ang mga miners na gastusin ang rewards mula sa mga blocks na pwedeng mai-reorganize palabas ng chain, nagdadagdag ng karagdagang layer ng security laban sa chain reorganization attacks."
+        },
+        {
+          "question": "Ano ang hardware requirements para magpatakbo ng full node?",
+          "answer": "Ang Parallax ay dinisenyo para makapagpatakbo ang full nodes sa commodity hardware na accessible sa mga indibidwal. Ang konserbatibong block gas limit na 600M gas at 10-minutong block intervals ay pinapanatili ang storage growth, bandwidth, at computation requirements na mapapamahalaan. Ang kahit anong modernong computer na may broadband connection ay pwedeng sumali sa pag-validate ng network."
+        }
+      ],
+      "mining": [
+        {
+          "question": "Paano ako makakapag-mine ng Parallax?",
+          "answer": "Gumagamit ang Parallax ng XHash mining algorithm, kaya pwede kang mag-mine gamit ang CPUs at GPUs gamit ang built-in Parallax client miner o external GPU miner. I-point lang ang iyong miner sa isang Parallax mining pool kasama ang tamang configuration."
+        },
+        {
+          "question": "Ano ang mining reward schedule?",
+          "answer": "Sumusunod ang Parallax sa halving schedule ng Bitcoin. Ang initial block reward ay nagsisimula sa 50 Laxes per block at naghahati humigit-kumulang kada 4 na taon (210,000 blocks). Sinisigurado nito ang parehong scarcity model na napatunayang matagumpay sa Bitcoin."
+        },
+        {
+          "question": "Pwede ko bang gamitin ang Ethereum mining rig ko?",
+          "answer": "Oo! Dahil ang Parallax ay gumagamit ng XHash algorithm na batay sa Ethash, ang existing Ethereum mining rigs ay pwedeng mag-mine ng Parallax nang walang hardware changes. I-update lang ang configuration ng iyong mining software para mag-point sa Parallax pools."
+        }
+      ],
+      "economics": [
+        {
+          "question": "Ano ang total supply ng Parallax?",
+          "answer": "Ang Parallax ay may fixed maximum supply na 21 milyong coins, kapareho ng Bitcoin. Ang hard cap na ito ay nagsisiguro ng scarcity at deflationary monetary policy, na ginagawang store of value ang Laxes habang nagbibigay ng programmable functionality."
+        },
+        {
+          "question": "Paano hina-handle ang transaction fees?",
+          "answer": "Hindi tulad ng fee burning mechanism ng Ethereum, gumagamit ang Parallax ng first-price auction model kung saan diretso sa miners lahat ng transaction fees. Sinisigurado nito ang sustainable mining incentives at pinapanatili ang economic security ng network."
+        },
+        {
+          "question": "Bakit hindi sinusunog ng Parallax ang fees tulad ng Ethereum?",
+          "answer": "Binabawasan ng fee burning ang miner revenue at gumagawa ng dependency sa transaction volume para sa economic security. Sa Parallax, lahat ng fees ay diretso sa miners, na sinisigurado na sila ay nananatiling economically incentivized na i-secure ang network kahit ano pa ang block subsidy levels. Lalo itong mahalaga habang bumababa ang block rewards sa pamamagitan ng halving cycles — ang transaction fees ay nagiging primary incentive ng miners, at ang pagsunog ng kahit anong bahagi nito ay sisira sa long-term na network security."
+        },
+        {
+          "question": "Ano ang mangyayari kapag na-mine na lahat ng 21 milyong coins?",
+          "answer": "Kapag na-mine na lahat ng 21 milyong coins (tinatayang aabutin ng higit sa isang siglo sumusunod sa halving schedule), ang miners ay buong susuportahan na lang ng transaction fees. Dahil hindi sinusunog ng Parallax ang fees, lahat ng transaction fees ay direktang dumadaloy sa miners, na nagbibigay ng pangmatagalang economic incentive para patuloy na i-secure ang network. Sumasalamin ang model na ito sa design ng Bitcoin at sinisigurado na ang network ay nananatiling viable nang hindi umaasa sa walang katapusang coin issuance."
+        },
+        {
+          "question": "May premine o ICO ba?",
+          "answer": "Wala. Sumusunod ang Parallax sa fair launch model na walang premine, walang ICO, at walang privileged allocations. Lahat ng coins ay ipinamamahagi sa pamamagitan ng mining rewards, na sinisigurado ang decentralized at patas na distribution mula sa unang araw."
+        }
+      ],
+      "governance": [
+        {
+          "question": "Paano nagdedesisyon ang protocol upgrades?",
+          "answer": "Sumusunod ang Parallax sa minimal governance philosophy. Ang monetary policy ng protocol — ang 21 milyong supply cap, halving schedule, at PoW consensus — ay itinuturing na immutable at hindi sakop ng governance. Ang protocol upgrades ay limitado sa technical improvements at bug fixes, at hinahatak ng community consensus imbes na ng anumang central foundation o kumpanya. Ang anumang patakaran na nangangailangan ng interpretasyon ay nagpapakilala ng diskresyon, at ang diskresyon ay nagpapakilala ng capture; mas pinipili ng Parallax ang mga rules na deterministically evaluable."
+        },
+        {
+          "question": "May foundation o kumpanya ba sa likod ng Parallax?",
+          "answer": "Ang Parallax ay sa simula ay pinangasiwaan ng MicroStack, pero ang protocol ay dinisenyo para mabuhay nang mas matagal kaysa sa mga gumawa nito. Inililipat ang stewardship sa mas malawak na ecosystem habang lumalago ang proyekto. Walang foundation na kumokontrol sa protocol, walang treasury na pinopondohan ng inflation, at walang privileged governance tokens. Ang protocol ay dapat manatiling tama kahit mawala o magkasalungat ang mga gumawa nito."
+        },
+        {
+          "question": "Susuportahan ba ng Parallax ang Layer 2 solutions?",
+          "answer": "Oo. Ang base layer ay sinasadyang konserbatibo — umiiral ito para mag-settle, hindi para mang-impress. Ang pag-maximize ng throughput at expressiveness sa base layer ay nagpapataas ng pagiging complex at attack surface. Kinukulong ng Parallax ang experimentation sa mas mataas na layers kung saan hindi banta sa settlement ang failure. Ang Layer 2 solutions tulad ng rollups at sidechains ay pwedeng mag-anchor sa secure base layer ng Parallax para sa scalability habang pinapanatili ang security guarantees ng PoW settlement."
+        },
+        {
+          "question": "May bridges ba sa ibang blockchains?",
+          "answer": "Bilang isang buong EVM-compatible chain, ang Parallax ay architecturally compatible sa existing cross-chain bridge protocols. Ang bridge development ay hinahatak ng komunidad at ecosystem participants. Dahil gumagamit ang Parallax ng standard Ethereum tooling at interfaces, ang pag-integrate sa bridge infrastructure ay sumusunod sa parehong patterns ng kahit anong EVM chain."
+        }
+      ],
+      "development": [
+        {
+          "question": "Paano ako makakapag-build sa Parallax?",
+          "answer": "Ang pag-build sa Parallax ay kapareho ng pag-build sa Ethereum. Gamitin ang pamilyar na tools tulad ng Solidity, Remix IDE, Hardhat, o Foundry. Mag-deploy ng contracts gamit ang MetaMask o ibang Web3 wallets sa pamamagitan ng pagkonekta sa Parallax network."
+        },
+        {
+          "question": "May development grants ba na available?",
+          "answer": "Ang Parallax ecosystem ay nag-e-encourage ng community-driven development. Kahit walang central foundation na nagpapamahagi ng grants, aktibong sinusuportahan ng komunidad ang mga promising projects sa pamamagitan ng iba't ibang mechanisms at partnerships."
+        },
+        {
+          "question": "Anong tools at libraries ang sinusuportahan?",
+          "answer": "Lahat ng Ethereum development tools ay gumagana sa Parallax: Web3.js, Ethers.js, MetaMask, Remix, Hardhat, Foundry, OpenZeppelin contracts, at marami pa. Ang buong Ethereum ecosystem ay available sa Parallax developers."
+        }
+      ]
+    }
+  },
+  "addNetworkSection": {
+    "connectedTitle": "Konektado ang Parallax network",
+    "connectedDescription": "Naidagdag na ang Parallax network sa iyong wallet. Ready ka na.",
+    "title": "Idagdag ang Parallax sa iyong wallet",
+    "description": "Awtomatikong idagdag ang Parallax network sa iyong wallet sa isang click lang.",
+    "add": "Idagdag ang Parallax Network",
+    "adding": "Naghihintay ng approval...",
+    "added": "Naidagdag na ang network!",
+    "error": "Hindi naidagdag ang network. Subukan ulit."
+  },
+  "introduction": {
+    "doctrine": {
+      "pageTitle": "The Parallax Doctrine",
+      "pageSubtitle": "Mga axiom at commentary na nagde-define ng mga constraint kung saan umiiral ang Parallax, hiwalay sa adoption, relevance o success.",
+      "buttons": {
+        "canonicalSource": "Canonical source",
+        "axioms": "Mga axiom",
+        "commentary": "Commentary"
+      },
+      "intro": {
+        "heading": "Mga axiom at commentary para sa durable settlement",
+        "date": "Disyembre 2025",
+        "author": "Mula sa mga Parallax contributor",
+        "body1": "Inspirado sa axiomatic style ng <i>The Zurich Axioms</i>, ini-define ng dokumentong ito ang mga non-negotiable na constraint kung saan umiiral ang Parallax, kasama ang commentary na nagpapaliwanag kung bakit kailangan ang mga ito.",
+        "body2Line1": "Ang mga axiom ay declarative at immutable.",
+        "body2Line2": "Ang commentary ay paliwanag lang at hindi authoritative.",
+        "body3": "Kung magkasalungat ang commentary at axiom, ang axiom ang masusunod."
+      },
+      "purpose": {
+        "heading": "Layunin",
+        "body1": "Umiiral ang Parallax Doctrine para gawing malinaw ang mga prinsipyong dapat manatiling totoo, anuman ang adoption, relevance, o success.",
+        "body2Line1": "Hindi ito nakikipag-debate.",
+        "body2Line2": "Hindi ito nanghihikayat.",
+        "body2Line3": "Hindi ito nangangako ng resulta.",
+        "body3": "Ini-define nito ang mga kondisyon kung saan napapanatili ang correctness sa adversarial na environment."
+      },
+      "scope": {
+        "heading": "Tungkol sa scope at intent",
+        "body1": "Hindi inaasumeng matagumpay ang Parallax. Hindi nito ipinagpapalagay ang adoption, relevance, o dominance. Hindi nito tinutukoy ang isang destinasyon, roadmap, o resulta.",
+        "body2": "Umiiral ang doctrine na ito para ipahayag ang mga kondisyon kung saan napapanatili ang correctness, mananalo man o matatalo ang Parallax.",
+        "body3": "Ang sistemang naniniwalang dapat siyang manalo ay magtatangkang mag-intervene mamaya para huwag matalo. Tinatanggihan ng Parallax ang ganitong premise."
+      },
+      "commentaryLabel": "Commentary",
+      "axioms": [
+        {
+          "id": "I",
+          "title": "Ang physical cost ang tanging scalable na depensa laban sa revision",
+          "subtitle": "Anumang sistemang madaling i-rewrite ay tiyak na ire-rewrite.",
+          "commentary": "Hindi nakakatakas ang digital systems sa pisikal na mundo. Ang computation ay kumakain ng energy, ang communication ay tumatawid sa space, at ang verification ay limitado ng hardware. Ina-anchor ng Parallax ang consensus sa Proof-of-Work dahil nagdadala ito ng panlabas, objective na cost na hindi pwedeng i-simulate, i-vote, o pag-usapan sa social na paraan.\n\nLumilikha ng asymmetry ang energy expenditure: ang honest na partisipasyon ay nag-aaccumulate ng work nang paunti-unti, samantalang ang attacks ay nangangailangan ng disproportionate na cost. Hindi ginagarantiyahan ng Proof-of-Work ang correctness, pero ginagarantiyahan nito na mahal ang pag-rewrite ng history. Sa adversarial systems, ang gastos ang credibility."
+        },
+        {
+          "id": "II",
+          "title": "Hindi pwedeng i-compress ang time nang walang centralization",
+          "subtitle": "Kailangan ng delay para sa global agreement. Ang pagtangkang alisin ito ay lumilikha ng advantage.",
+          "commentary": "Hindi computation ang consensus; coordination ito. Ang coordination sa global network ay limitado ng latency, bandwidth, at verification time. Hindi ito mga engineering problem na pwedeng solusyunan, kundi mga physical na limitasyon.\n\nAng mga sistemang nagpapababa ng time-to-finality sa ilalim ng mga limit na ito ay nagdadala ng nakatagong advantage: proximity, specialized networking, privileged ordering, o mga coordination mechanism. Sa paglipas ng panahon, ang mga advantage na ito ay nagiging control. Itinuturing ng Parallax ang time bilang stabilizing force. Ang finality na nakuha nang dahan-dahan ay mas matatag kaysa sa finality na bigla-biglang ipinahayag."
+        },
+        {
+          "id": "III",
+          "title": "Ang trust na pwedeng i-reassign ay hindi naalis",
+          "subtitle": "Ang pagpapalit ng mga institusyon ng committees o validators ay hindi nag-aalis ng trust.",
+          "commentary": "Ang trustlessness ay hindi nangangahulugang walang trust; ang ibig sabihin nito ay minimization ng mga trust assumption. Maraming sistema ang basta ililipat lang ang trust—mula sa banks papunta sa validators, mula sa institusyon papunta sa governance—nang hindi ito tinatanggal.\n\nMinimini-minimize ng Parallax ang trust sa pamamagitan ng pagsisiguro na independent na ma-verify ang validity, mechanical ang enforcement, at hindi nakadepende sa identity o reputation ang correctness. Ang sistema ay trustless hindi dahil mapagkakatiwalaan ang mga participant, kundi dahil hindi na kailangan ang trust."
+        },
+        {
+          "id": "IV",
+          "title": "Anumang patakarang nangangailangan ng interpretation ay made-deadlock",
+          "subtitle": "Kailangang executable ang mga rule nang walang judgment.",
+          "commentary": "Ang interpretation ay nagdadala ng discretion. Ang discretion ay nagdadala ng kapangyarihan. Kung ang isang rule ay nangangailangan ng konteksto, intent, o paliwanag para mai-apply nang tama, ang enforcement ay nakadepende sa human judgment. Ang judgment ay nag-iipon ng authority, at ang authority ay nagiging point of capture.\n\nMas pinipili ng Parallax ang mga rule na ma-evaluate nang deterministically. Ang ambiguity ay hindi flexibility; deferred centralization ito."
+        },
+        {
+          "id": "V",
+          "title": "Ang monetary rules ay hindi dapat tumutugon sa sitwasyon",
+          "subtitle": "Ang flexibility sa pera ay discretion na nakapagkubli.",
+          "commentary": "Bumabagsak ang monetary systems hindi dahil rigid ang rules, kundi dahil negotiable ang mga ito. Ang exception ay nagiging precedent; ang discretion ay nagdadala ng impluwensya.\n\nItinuturing ng Parallax ang monetary rules bilang mga constraint, hindi mga policy. Hindi ito umaadapt sa mga krisis, sentiment, o coordination pressure. Ang predictability ay hindi convenience—ito ang pundasyon ng trust minimization."
+        },
+        {
+          "id": "VI",
+          "title": "Ang permission ay hindi tugma sa ownership",
+          "subtitle": "Ang access na pwedeng bawiin ay hindi ownership.",
+          "commentary": "Ang ownership ay nangangailangan ng irrevocable na access. Kung ang partisipasyon ay nakadepende sa approval, identity, o delegation, conditional ang access. Ang conditional na access ay nagpapahiwatig ng authority na may kakayahang mag-revoke.\n\nHindi nagbibigay ng access ang Parallax. Ini-define nito ang mga constraint na pwedeng matupad ng kahit sino. Ang permissionlessness ay hindi openness; ito ang kawalan ng gatekeeper."
+        },
+        {
+          "id": "VII",
+          "title": "Ang mga sistemang umaasa sa cooperation ay babagsak sa stress",
+          "subtitle": "Ang adversarial na kondisyon ang default, hindi ang exception.",
+          "commentary": "Inaasumeng ng Parallax ang rational self-interest, asymmetric information, at patuloy na incentive na manloko. Ang security ay hindi galing sa goodwill, kundi sa mga constraint na ginagawang ineffective ang misbehavior.\n\nAng sistemang nangangailangan ng cooperation para manatiling secure ay hindi decentralized; fragile ito."
+        },
+        {
+          "id": "VIII",
+          "title": "Ang history ay dapat mahal baguhin, hindi imposibleng pag-usapan",
+          "subtitle": "Ang finality ay galing sa cost, hindi sa decree.",
+          "commentary": "Ang history ay valuable lang kung lumalaban ito sa revision. Hindi ina-claim ng Parallax ang absolute immutability; sinisigurado lang nito na ang pag-rewrite ng history ay nangangailangan ng tunay na expenditure.\n\nBrittle ang absolute immutability. Scalable ang cost-based na immutability. Ang finality ay nag-aaccumulate sa pamamagitan ng work."
+        },
+        {
+          "id": "IX",
+          "title": "Umiiral ang base layer para mag-settle, hindi para magpa-impress",
+          "subtitle": "Ang complexity ay dapat nasa ibabaw ng settlement.",
+          "commentary": "Ini-establish ng base layer ang ordering at finality. Ang pagtatangkang i-maximize ang throughput o expressiveness sa layer na ito ay nagpapalaki ng complexity at attack surface.\n\nKinukulong ng Parallax ang experimentation sa mas mataas na layers, kung saan ang pagkakamali ay hindi nagbabanta sa settlement integrity. Ang base layer ay mananatiling mabagal, conservative, at mahirap baguhin nang sadya."
+        },
+        {
+          "id": "X",
+          "title": "Ang neutral na sistema ay hindi dapat umaayon sa narrative",
+          "subtitle": "Ang preference ay isang anyo ng capture.",
+          "commentary": "Ang neutrality ay hindi moral stance; isa itong architectural requirement. Ina-apply ng Parallax ang parehong rules anuman ang participant, transaction, o context.\n\nAng mga sistemang umaayon sa political, social, o economic narratives ay nagdadala ng discretion. Ang discretion ang ugat ng capture."
+        },
+        {
+          "id": "XI",
+          "title": "Ang mga nakatagong failure mode ay tahimik na umiipon",
+          "subtitle": "Ang hindi nakikita ay hindi maaayos.",
+          "commentary": "Ang mga sistemang nagtatago ng trade-offs, nag-a-abstract ng cost, o nagtatakip sa fragility ay nag-aaccumulate ng nakatagong risk. Umiipon ang failure hanggang sa bumagsak.\n\nMas pinipili ng Parallax ang explicit na cost, visible na attacks, at inaaming limitasyon. Ang transparency ay hindi optimism; resilience ito."
+        },
+        {
+          "id": "XII",
+          "title": "Dapat mas matagal ang protocol kaysa sa mga gumawa nito",
+          "subtitle": "Walang indibidwal o organisasyon ang kinakailangan para sa validity.",
+          "commentary": "Dapat manatiling tama ang Parallax kahit mawala, magkahindian, o malimutan ang mga gumawa nito. Walang silbi ang intent. Walang silbi ang authority.\n\nValidity lang ang mahalaga. Ang sistemang nangangailangan ng stewardship para mabuhay ay hindi neutral infrastructure."
+        },
+        {
+          "id": "XIII",
+          "title": "Nagtatagumpay ang infrastructure sa pagiging invisible",
+          "subtitle": "Longevity, hindi adoption, ang sukatan ng tagumpay.",
+          "commentary": "Hindi dinisenyo ang Parallax para makakuha ng atensyon, mag-optimize ng engagement, o habulin ang relevance. Ang layunin nito ay manatili.\n\nKailangan ng restraint para sa longevity. Kailangan ng constraint para sa restraint. Nagtatagumpay ang infrastructure kapag nawawala ito sa background."
+        }
+      ],
+      "closing": {
+        "heading": "Pangwakas",
+        "body1": "Hindi humihingi ng paniniwala ang Parallax.",
+        "body2": "Kung mali ang anumang axiom, babagsak ang Parallax — at tanggap ang ganitong pagbagsak.",
+        "body3Line1": "Ang reality ang hukom.",
+        "body3Line2": "Ang cost ang signal.",
+        "body3Line3": "Ang time ang filter.",
+        "body4": "Hindi dinisenyo ang Parallax para mahalin, i-upgrade, o ma-govern — para lang manatiling tama."
+      }
+    },
+    "howItWorks": {
+      "pageTitle": "Paano gumagana ang Parallax?",
+      "pageSubtitle": "Madalas na nakakalito ang tanong na ito, kaya heto ang mabilisang paliwanag!",
+      "topics": [
+        {
+          "title": "Mga basics",
+          "description": "Magsimulang gumamit ng Parallax sa pamamagitan ng pag-install ng wallet, pag-generate ng addresses, at pagpadala o pagtanggap ng funds. Kasingdali lang ng email!"
+        },
+        {
+          "title": "Balances at blockchain",
+          "description": "Lahat ng transactions ay naitatala sa Parallax blockchain. Kinakalkula ng wallets ang iyong spendable balance at pinapanatili ng cryptography na secure at transparent ang lahat."
+        },
+        {
+          "title": "Transactions at private keys",
+          "description": "Naglilipat ng value ang transactions sa pagitan ng mga wallet, at pinipirmahan ng iyong private key. Pinapatunayan nito ang ownership at pinapanatiling ligtas ang iyong funds."
+        },
+        {
+          "title": "Processing at mining",
+          "description": "Sinisiguro ng miners ang Parallax sa pamamagitan ng pag-package ng transactions sa mga block at pakikipagkumpitensya gamit ang XHash Proof-of-Work. Pinapanatili nitong fair at decentralized ang network."
+        },
+        {
+          "title": "Pagsisid sa rabbit hole",
+          "description": "Pang-ibabaw lang ang page na ito. Para sa mas malalim na pag-aaral, tingnan ang Parallax white paper, developer docs, at community resources."
+        }
+      ],
+      "learnMore": "Alamin ang higit pa tungkol sa Parallax"
+    },
+    "gettingStarted": {
+      "pageTitle": "Magsimula sa Parallax",
+      "pageSubtitle": "Madali at accessible sa lahat ang paggamit ng Parallax sa transaksyon. Maranasan ang monetary policy ng Bitcoin kasama ang programmability ng Ethereum.",
+      "tabs": {
+        "use": "Paano gamitin ang Parallax",
+        "accept": "Paano tumanggap ng Parallax"
+      },
+      "use": {
+        "inform": {
+          "title": "1. Aralin ang Parallax",
+          "description": "Pinagsasama ng Parallax ang napatunayang monetary policy ng Bitcoin sa smart contract capabilities ng Ethereum. Bago ka magsimulang gumamit ng Parallax, alamin ang mga unique features at security considerations nito.",
+          "cta": "Alamin pa"
+        },
+        "wallet": {
+          "title": "2. Piliin ang iyong wallet",
+          "description": "Libreng available ang Parallax wallets sa lahat ng major operating systems at devices. Pumili ng mobile apps para sa pang-araw-araw na gamit o desktop wallets para sa mas advanced na features.",
+          "cta": "Pumili ng wallet"
+        },
+        "get": {
+          "title": "3. Kumuha ng Parallax",
+          "description": "Pwede kang makakuha ng Parallax sa pagtanggap nito bilang bayad, sa pag-mine, o sa pagbili sa exchanges. Maraming opsyon para sa iyong pangangailangan.",
+          "mining": "Mining",
+          "exchanges": "Exchanges"
+        },
+        "spend": {
+          "title": "4. Gastusin ang Parallax",
+          "description": "Dumarami na ang services at merchants na tumatanggap ng Parallax sa buong mundo. Gumamit ng smart contracts para sa automated payments at complex transactions.",
+          "comingSoon": "Paparating na ang Merchant Directory"
+        }
+      },
+      "accept": {
+        "inform": {
+          "title": "1. Aralin ang Parallax",
+          "description": "Hindi kailangang baguhin ng merchants ang kanilang mga gawi nang malaki. Pero ang pag-unawa sa unique features nito ay tutulong sa iyong samantalahin ang full potential nito para sa iyong negosyo.",
+          "cta": "Alamin pa"
+        },
+        "processing": {
+          "title": "2. Pag-process ng bayad",
+          "description": "I-set up ang Parallax payment processing para sa iyong negosyo. Tamasahin ang mababang fees, mabilis na transactions, at programmable na payment logic.",
+          "comingSoon": "Paparating na ang Payments Guide"
+        },
+        "taxes": {
+          "title": "3. Accounting at buwis",
+          "description": "Unawain ang accounting at tax implications ng pagtanggap ng Parallax. I-access ang tools at resources para sa tamang financial management.",
+          "cta": "Tax Resources"
+        },
+        "visibility": {
+          "title": "4. Magkaroon ng visibility",
+          "description": "I-promote ang iyong negosyo sa Parallax ecosystem. Sumali sa mga directory at komunidad para maabot ang Parallax users sa buong mundo.",
+          "comingSoon": "Paparating na ang Merchant Directory"
+        }
+      },
+      "ready": {
+        "heading": "Handa nang magsimula?",
+        "description": "Sumali sa Parallax network at maranasan ang kinabukasan ng blockchain technology. Pagsamahin ang seguridad ng Bitcoin at ang flexibility ng smart contracts.",
+        "chooseWallet": "Pumili ng wallet",
+        "setupGuide": "Wallet Setup Guide"
+      }
+    },
+    "parallaxForBusinesses": {
+      "pageTitle": "Parallax para sa negosyo",
+      "pageSubtitle": "Napakaligtas at murang paraan ang Parallax para humawak ng bayad.",
+      "topics": [
+        {
+          "title": "Pumili ng sarili mong fees",
+          "description": "Walang fees sa pagtanggap ng Parallax coins, at customizable ang fees kapag nagpapadala. Ang mas mataas na fees ay nakakapagpabilis sa transaction confirmations, at consistent ang fees kahit naglilipat ka ng 1 o 100,000 coins."
+        },
+        {
+          "title": "Proteksyon laban sa fraud",
+          "description": "Hindi na pwedeng baligtarin ang Parallax transactions, secured ng XHash proof-of-work, at inaalis ang panganib ng chargeback fraud habang pinapababa ang gastos para sa merchants kumpara sa credit cards o PayPal."
+        },
+        {
+          "title": "Mabilis na international payments",
+          "description": "Magpadala ng Parallax coins sa buong mundo na kasingdali ng pagpadala lokal, na walang bank delays, walang dagdag na international fees, at walang limit sa transaction amounts."
+        },
+        {
+          "title": "Walang PCI compliance na kailangan",
+          "description": "Tumanggap ng Parallax payments nang walang magastos na PCI compliance checks na kailangan ng credit cards, habang pinapanatili pa ring secure ang iyong wallet at payment requests."
+        },
+        {
+          "title": "Bagong visibility",
+          "description": "Tap-an ang lumalaking market ng Parallax users na gusto nang gastusin ang kanilang coins, at palakasin ang visibility ng iyong negosyo sa pagtanggap ng innovative na paraan ng pagbabayad na ito."
+        },
+        {
+          "title": "Multi-Signature governance",
+          "description": "Gamitin ang multi-signature feature ng Parallax para mangailangan ng maraming approval sa transactions, perfect para sa mga negosyo o board na nangangailangan ng secure at consensual na spending controls."
+        },
+        {
+          "title": "Transparent na accounting",
+          "description": "Samantalahin ang timechain ng Parallax para sa transparent na accounting, na nagbibigay-daan sa verifiable na balances at transactions, perpekto para sa mga negosyo o non-profit na gustong ipakita ang financial clarity."
+        },
+        {
+          "title": "Programmable transactions",
+          "description": "Gamitin ang Parallax Virtual Machine para gumawa ng smart contracts para sa automated payments o decentralized applications, lahat ay sinusuportahan ng fixed na 21M coin supply ng Parallax at Bitcoin-like halving cycles."
+        }
+      ],
+      "cta": "Magsimula sa Parallax"
+    },
+    "parallaxForIndividuals": {
+      "pageTitle": "Parallax para sa indibidwal",
+      "pageSubtitle": "Ang Parallax ang pinakamadaling paraan para mag-transact sa napakababang gastos.",
+      "topics": [
+        {
+          "title": "Madaling mobile payments",
+          "description": "Pinapadali ng Parallax ang scan-and-pay transactions sa mobile devices gamit ang QR codes o NFC, walang signup o PINs na kailangan."
+        },
+        {
+          "title": "Seguridad at kontrol",
+          "description": "Sinisiguro ng cryptographic signatures at XHash proof-of-work ang iyong transactions, na nagbibigay sa iyo ng buong kontrol sa iyong pera kasama ang tamang wallet protection."
+        },
+        {
+          "title": "Gumagana saan man, kailan man",
+          "description": "Magpadala at tumanggap ng Parallax coins sa buong mundo gamit lang ang isang address, at tumatakbo ang network 24/7, kasama ang weekends at holidays."
+        },
+        {
+          "title": "Mabilis na international payments",
+          "description": "Maglipat ng Parallax coins sa ibang bansa nang instant, walang bank delays, walang dagdag na fees, at walang limit sa amount."
+        },
+        {
+          "title": "Pumili ng sarili mong fees",
+          "description": "Walang fees sa pagtanggap ng coins, at customizable ang fees kapag nagpapadala, at ang mas mataas na fees ay mas mabilis ang confirmation anuman ang halaga."
+        },
+        {
+          "title": "Protektahan ang iyong identity",
+          "description": "Mag-transact nang hindi inilalantad ang personal details, parang cash, na may privacy protection measures para sa mas mataas na anonymity."
+        },
+        {
+          "title": "Programmable na pera",
+          "description": "Samantalahin ang Parallax Virtual Machine para gumawa ng smart contracts at i-automate ang payments, sinusuportahan ng fixed na 21M coin supply at Bitcoin-like halving cycles."
+        }
+      ],
+      "cta": "Magsimula sa Parallax"
+    },
+    "whitepaper": {
+      "pageTitle": "Parallax: Isang bagong perspective sa programmable cash",
+      "viewOnGithub": "Tingnan sa GitHub",
+      "sections": {
+        "abstract": {
+          "heading": "Abstract",
+          "body": "Ang Parallax ay isang timechain protocol na pinagsasama ang immutability at monetary discipline ng Bitcoin sa programmability ng Ethereum. Sa ilalim ng fixed rules ng Bitcoin — Proof of Work, sampung-minutong blocks, halving cycles, at capped na 21 milyong supply — pinapalawak ng Parallax ang mga pundasyong ito gamit ang Ethereum Virtual Machine. Sa pag-adopt ng XHash mining — isang modified Ethash variant na dinisenyo para gawing obsolete ang existing ASICs — at sa pagtanggi sa premine o privileged allocations, nailulunsad ito bilang fair at neutral na eksperimento sa programmable cash: scarce, decentralized, at permissionless."
+        },
+        "introduction": {
+          "heading": "1. Introduction",
+          "body1": "Ipinakita ng Bitcoin na posible ang decentralized digital scarcity, na nagbibigay ng secure at immutable ledger na may predictable na monetary policy. Ipinakilala ng Ethereum ang Turing-complete execution layer, na nagbibigay-daan sa decentralized applications at financial primitives. Pero ang adaptive monetary policy ng Ethereum ay magkasalungat sa fixed at discipline-driven na disenyo ng Bitcoin.",
+          "body2": "Pinagdurugtong ng Parallax ang gap na ito. Pinapanatili nito ang monetary rules ng Bitcoin habang ina-adopt ang virtual machine ng Ethereum para sa programmability. Para palakasin pa ang accessibility at decentralization, ginagamit ng Parallax ang XHash Proof of Work function — isang modified Ethash variant na pinapanatili ang memory-hard properties ng Ethash habang ginagawang obsolete ang existing ASICs."
+        },
+        "motivation": {
+          "heading": "2. Motivation at Problem Statement",
+          "body1": "Umiikot ang blockchain ecosystem sa dalawang philosophical pole. Pinapahalagahan ng Bitcoin ang immutability, scarcity, at resistance to change, na nagbigay sa mundo ng unang halimbawa ng digital sound money. Yinakap naman ng Ethereum ang programmability at flexibility, na nagbigay-daan sa buong industriya tulad ng decentralized finance at NFTs, pero sa kapalit ng monetary predictability at long-term stability.",
+          "body2": "Ang divergence sa pagitan ng dalawang model na ito ay nag-iwan ng gap sa ecosystem. Madalas gusto ng users at institusyon ang expressiveness ng Ethereum nang hindi isinasakripisyo ang monetary assurances ng Bitcoin. Dinisenyo ang Parallax para punan ang gap na ito. Ina-apply nito ang fixed rules ng pera ng Bitcoin — capped supply, halving schedule, at secure Proof of Work consensus — habang sinusuportahan ang EVM bilang fully programmable execution environment. Ang resulta ay isang sistemang nagpapatakbo ng decentralized applications sa ibabaw ng monetary base na kasingpredictable at scarce ng Bitcoin mismo.",
+          "body3": "Para maisakatuparan ang synthesis na ito ng scarcity at expressiveness, ini-define ng Parallax ang mga explicit system parameter na sumasalamin sa discipline ng Bitcoin habang sinusuportahan ang Ethereum-level na programmability."
+        },
+        "parameters": {
+          "heading": "3. System Parameters",
+          "columns": {
+            "parameter": "Parameter",
+            "value": "Value"
+          },
+          "rows": [
+            {
+              "param": "Consensus Mechanism",
+              "value": "Proof of Work (XHash, Ethash-derived)"
+            },
+            {
+              "param": "Target Block Interval",
+              "value": "600 seconds (10 minutes)"
+            },
+            {
+              "param": "Difficulty Adjustment Window",
+              "value": "2016 block (~2 weeks)"
+            },
+            {
+              "param": "Initial Block Reward",
+              "value": "50 coins"
+            },
+            {
+              "param": "Halving Interval",
+              "value": "210,000 blocks (~4 years)"
+            },
+            {
+              "param": "Maximum Supply",
+              "value": "21,000,000 coins"
+            },
+            {
+              "param": "Premine",
+              "value": "0 (walang pre-mined coins)"
+            },
+            {
+              "param": "Execution Environment",
+              "value": "Ethereum Virtual Machine (EVM)"
+            },
+            {
+              "param": "Fee Model",
+              "value": "First-price auction (walang burning)"
+            },
+            {
+              "param": "Block Gas Limit",
+              "value": "600M gas (initial), miner-adjustable ng ±0.1% kada block"
+            }
+          ]
+        },
+        "comparative": {
+          "heading": "4. Comparative Analysis",
+          "body1": "Mas malinaw ang natatanging posisyon ng Parallax kapag inihambing sa Bitcoin at Ethereum.",
+          "body2": "Pinapanatili ng Bitcoin ang strict na monetary supply na 21 milyong coins, na ipinapamahagi sa paglipas ng panahon sa pamamagitan ng halving schedule kada 210,000 blocks. Pero ang scripting language nito ay sadyang limitado, kaya hindi ito angkop para sa complex applications. Pinangunahan naman ng Ethereum ang paggamit ng Turing-complete execution environment sa pamamagitan ng EVM. Pinayagan nito ang smart contracts, decentralized exchanges, stablecoins, at DAOs na lumago. Pero ang monetary design ng Ethereum ay magkasalungat sa Bitcoin. Hindi capped ang supply nito, at kasama ng London hard fork (EIP-1559), sinusunog ang isang bahagi ng transaction fees, na nagdadala ng supply dynamics na nakadepende sa usage at governance decisions.",
+          "body3": "Ang Parallax ay nasa pagitan ng dalawang ito. Tulad ng Bitcoin, may fixed na supply itong 21 milyong coins, na may issuance na pinapamahalaan ng halving cycles at immutable na schedule. Tulad ng Ethereum, nag-aalok ito ng Turing-complete execution environment, compatible sa existing developer tools at smart contracts. Pero hindi tulad ng Ethereum, tinatanggihan ng Parallax ang supply burning at adaptive monetary policy, na sinisiguro na ang programmability ay hindi ipinagpapalit sa predictable monetary rules.",
+          "table": {
+            "columns": {
+              "feature": "Feature",
+              "bitcoin": "Bitcoin",
+              "ethereum": "Ethereum",
+              "parallax": "Parallax"
+            },
+            "rows": [
+              {
+                "feature": "Supply Cap",
+                "bitcoin": "21M (fixed)",
+                "ethereum": "Uncapped",
+                "parallax": "21M (fixed)"
+              },
+              {
+                "feature": "Block Interval",
+                "bitcoin": "10 min",
+                "ethereum": "12-15s",
+                "parallax": "10 min"
+              },
+              {
+                "feature": "Consensus",
+                "bitcoin": "PoW (SHA-256)",
+                "ethereum": "PoS (Casper/Beacon)",
+                "parallax": "PoW (XHash)"
+              },
+              {
+                "feature": "Programmability",
+                "bitcoin": "Limited script",
+                "ethereum": "Full EVM",
+                "parallax": "Full EVM"
+              },
+              {
+                "feature": "Fee Model",
+                "bitcoin": "First-price",
+                "ethereum": "EIP-1559",
+                "parallax": "First-price (no burn)"
+              },
+              {
+                "feature": "Fee Model",
+                "bitcoin": "First-price",
+                "ethereum": "EIP-1559",
+                "parallax": "First-price (no burn)"
+              },
+              {
+                "feature": "Coinbase Maturity Threshold",
+                "bitcoin": "100 Blocks",
+                "ethereum": "N/A",
+                "parallax": "100 Blocks"
+              }
+            ]
+          }
+        },
+        "genesis": {
+          "heading": "5. Genesis Block",
+          "body1": "Sadyang minimal ang genesis block ng Parallax. Walang pre-mine, walang foundation allocation, at walang privileged accounts. Ang unang block na na-mine pagkatapos ng genesis ay nag-iisyu ng 50 coins sa successful miner, kaayon ng Bitcoin model. Kasama rin sa genesis state ang base EVM configuration pero walang pre-deployed smart contracts.",
+          "body2": "Para mas masigurado ang fairness at mapatunayang hindi lihim na ginawa ang network bago pa, ang genesis block ay maglalaman ng extra data field na may title ng news article na inilathala sa launch date, mula sa reputable source tulad ng The Times o The New York Times. Ang ganitong timestamping method, inspirado ng genesis block ng Bitcoin, ay nagsisiguro na hindi pwedeng ma-pre-mine o magawa ang genesis bago ang public launch.",
+          "body3": "Pinapatibay ng design choice na ito ang transparency, credibility, at neutrality mula pa lang sa unang block."
+        },
+        "consensus": {
+          "heading": "6. Consensus at Timechain",
+          "blockStructure": {
+            "heading": "Block Structure",
+            "body": "Ina-adopt ng Parallax ang timechain structure ng Bitcoin, modified para isama ang EVM execution payload. Bawat block ay binubuo ng block header na may hash, nonce, Merkle root, at timestamp, sinundan ng transactions at kanilang execution receipts. Ang transactions mismo ay sumusunod sa account-based format ng Ethereum, na nagbibigay-daan sa developers na gamitin ang pamilyar na tools."
+          },
+          "pow": {
+            "heading": "Proof of Work",
+            "body1Before": "Gumagamit ang Parallax ng Nakamoto consensus kasama ang XHash. Ang XHash ay memory-hard at orihinal na dinisenyo para hindi maging sentralisado ang mining sa specialized ASIC hardware. Sa pagpili ng XHash, mas pinapaboran ng Parallax ang mas malawak na partisipasyon gamit ang commodity CPUs at GPUs, lalo na sa mga unang taon nito. Ang valid block ay nangangailangan ng paghanap sa nonce",
+            "body1After": "para sa:",
+            "body2Where": "kung saan ang",
+            "body2Target": "ang current network difficulty target."
+          },
+          "interval": {
+            "heading": "Block Interval at Difficulty Adjustment",
+            "body1": "Kada 2016 blocks, mga dalawang linggo, ina-adjust ang difficulty target sa pamamagitan ng paghahambing ng aktwal na oras na ginugol sa expected interval. Para maiwasan ang sobrang oscillation, ang adjustment ay naka-bound sa factor na apat: ang bagong difficulty ay hindi pwedeng mas mataas o mas mababa nang apat na beses kaysa sa nakaraang difficulty, na sumasalamin sa disenyo ng Bitcoin.",
+            "whereLabel": "kung saan",
+            "oldTargetDesc": "nakaraang difficulty target",
+            "actualTimeDesc": "aktwal na oras na ginugol para i-mine ang huling 2016 blocks",
+            "andLabel": "at",
+            "expectedTimeDesc": "expected na oras para sa 2016 blocks (2016 * 600 seconds)"
+          },
+          "emission": {
+            "heading": "Emission Schedule",
+            "intro": "Nagsisimula ang block subsidy sa 50 coins at hina-halve kada 210,000 blocks:",
+            "whereLabel": "kung saan",
+            "heightDesc": "ang block height. Ang cumulative supply ay umuusad papunta sa hard limit na 21 milyong coins:"
+          },
+          "maturity": {
+            "heading": "Coinbase Maturity",
+            "body": "Ipinapatupad ng Parallax ang coinbase maturity period na katulad ng Bitcoin. Ang bagong na-mine na coins (block rewards) ay hindi pwedeng gastusin hangga't hindi pa nakakadagdag ng 100 karagdagang block sa ibabaw ng block na nag-isyu sa kanila. Sa 10-minutong block interval ng Parallax, katumbas ito ng halos 16–17 oras na confirmation time. Sinisiguro ng rule na ito na nagagastos lang ang rewards kapag napakaliit na ng probability na mag-reorg ang chain at maging invalid ang block. Pinapatibay nito ang network security sa pamamagitan ng pag-align ng miner incentives sa long-term chain stability at pinipigilan ang agarang liquidation ng block rewards habang medyo mataas pa ang reorg risk."
+          }
+        },
+        "execution": {
+          "heading": "7. Execution Layer",
+          "body1": "Ang execution layer ng Parallax ay ang Ethereum Virtual Machine, na nagbibigay ng compatibility sa existing Ethereum smart contracts at developer tools. Pwedeng i-port ng developers ang Solidity at Vyper contracts nang may kaunting modification lang, at pwedeng i-adapt ang existing frameworks tulad ng Hardhat at Foundry para gumana sa Parallax nodes.",
+          "body2": "Naiiba ang Parallax sa Ethereum sa approach nito sa transaction fees. Tinatanggihan nito ang fee-burning model ng EIP-1559 ng London hard fork, dahil ang pagsunog ng supply ay hindi tugma sa fixed na 21 milyong cap. Sa halip, pinapanatili ng Parallax ang simpleng first-price auction para sa gas fees, kung saan ang lahat ng fees ay diretso sa miners.",
+          "body3": "Ina-adjust ang block gas limit para sa mas mahabang block time ng Parallax. Nagpoproseso ang Ethereum ng mga 30 milyong gas kada 15 segundo, o halos 2 milyong gas kada segundo. Kung ie-extrapolate sa 600-segundong interval ng Parallax, magiging 1.2 bilyong gas kada block ito. Ganyang kataas na value ay magdadala ng propagation risks at sobrang state growth. Kaya nag-adopt ang Parallax ng conservative na initial gas limit na 600 milyong gas kada block, na katumbas ng halos 1 milyong gas kada segundo, na kalahati ng throughput ng Ethereum. Ang choice na ito ay nag-uuna sa decentralization at stability kaysa sa maximum throughput. Pwedeng mag-adjust elastically ang gas limit ng ±0.1% kada block, kaayon ng pre-London mechanism ng Ethereum, na nagpapahintulot sa unti-unting pagbabago sa paglipas ng panahon.",
+          "body4": "Pinananatili ng buong Parallax ang account-based state model, na nangangahulugang sinusuportahan nito ang parehong type ng contracts, balances, at execution semantics tulad ng Ethereum, habang nakaugat sa monetary discipline ng Bitcoin."
+        },
+        "tokenomics": {
+          "heading": "8. Tokenomics",
+          "body": "Minamana ng Parallax ang monetary design nito direkta mula sa Bitcoin. Lahat ng coins ay kailangang ma-mine sa pamamagitan ng Proof of Work, walang pre-mine o privileged allocations. Ang block reward schedule ay sumasalamin sa Bitcoin nang eksakto, nagsisimula sa 50 coins at hina-halve kada 210,000 blocks hanggang umabot sa zero ang issuance. Ang transaction fees ay buong-buong ibinibigay sa miners at hindi kailanman sinusunog, na sinisiguro na hindi bababa sa 21 milyon ang total supply. Ang ossified monetary design na ito ang nagpapaiba sa Parallax sa mas adaptive protocols at nagbibigay ng long-term predictability sa users at institusyon."
+        },
+        "security": {
+          "heading": "9. Security Model",
+          "body1": "Nagmumula ang security ng Parallax sa kombinasyon ng Proof of Work, mahabang block intervals, at strict monetary policy. Sinisiguro ng sampung-minutong target ang malalim na finality sa paglipas ng panahon, na ginagawang magastos at impractical ang double-spending attacks. Pinapababa ng mas mahabang block times ang frequency ng chain reorganization, na nag-aambag sa network stability.",
+          "body2": "Pinapatibay ng XHash ang security sa ibang dimensyon sa pamamagitan ng pagsulong ng miner accessibility. Ang memory-hard nature nito ay nangangahulugang pwedeng makipagkumpitensya ang commodity hardware, lalo na ang GPUs. Mas hindi nito pinapadali sa maliit na bilang ng industrial ASIC operators na dominahin ang network, lalo na sa mga unang yugto ng adoption.",
+          "body3": "Ang propagation at block size considerations ay sentral din sa security model ng Parallax. Sa conservative na pag-cap ng throughput sa mga isang milyong gas kada segundo, sinisiguro ng Parallax na nananatiling accessible ang nodes sa indibidwal at maliliit na operators, na pinipigilan ang sobrang centralization pressures. Ang kombinasyon ng fixed supply, cumulative Proof of Work, at fair miner incentives ay bumubuo ng trust-minimized na pundasyon na lumalaban sa governance manipulation.",
+          "energy": {
+            "heading": "Energy Considerations",
+            "body1": "Madalas itinatampok ng mga critic ng Proof of Work ang energy intensity nito. Pero ipinakita ng Bitcoin sa pamamagitan ng empirical studies na ang mayorya ng global hash rate nito ay pinapagana ng renewable o stranded energy sources, dahil natural na pumupunta ang miners sa pinakamurang available na elektrisidad. Sa paglipas ng panahon, ang market-driven incentive structure na ito ay nag-align ng Bitcoin mining sa renewable adoption at grid-balancing functions.",
+            "body2": "Sinusunod ng Parallax ang parehong economic principles. Habang hindi maiiwasan ang energy use sa anumang Proof of Work system, ang long-term maturity ng protocol ay inaasahang magre-replicate sa trajectory ng Bitcoin, kung saan hahanapin ng miners ang renewable at surplus na energy para mabawasan ang operational costs. Ang dynamic na ito ay ginagawang feature ang energy expenditure mula sa pinaghihinalaang drawback, na nag-aanchor ng security sa physical reality, nagpapatibay sa vision ni Satoshi na ang consensus ay dapat nakaugat sa economic incentives, at sabay na nagiincentivize sa paglago ng renewable infrastructure.",
+            "body3": "Sa pag-embed ng security nito sa physical reality habang ina-align ang incentives sa renewable energy, pinapatibay ng Parallax ang decentralization at credibility nito bilang sustainable timechain."
+          }
+        },
+        "useCases": {
+          "heading": "10. Use Cases",
+          "body1": "Ang disenyo ng Parallax ay nagbibigay-daan sa range ng applications na pinagsasama ang sound money at programmability. Pwedeng mag-operate ang DeFi protocols sa scarce at predictable na monetary base, na nag-aalok ng lending, stablecoins, at decentralized exchanges na may credibility na galing sa Bitcoin model. Pwedeng gumawa ng NFTs at DAOs na may katiyakan na ang underlying currency ay hindi sasailalim sa inflation o arbitrary monetary change. Maaaring maging kaakit-akit ang Parallax sa mga institusyong naghahanap ng programmable settlement rails dahil nag-aalok ito ng expressiveness ng Ethereum nang walang kawalan ng katiyakan ng adaptive supply. Sa wakas, pwede ring magsilbi ang Parallax bilang pundasyon para sa rollups at iba pang scaling solutions, na sinasamantala ang long-term credibility nito habang nagbibigay-daan sa high-throughput applications sa secondary layers.",
+          "body2": "Habang umuusbong ang second-layer solutions, nagiging pinakamahalaga ang neutrality sa base layer. Kung walang ossified monetary rules at permissionless consensus, mamana ng Layer 2 systems ang governance at centralization risks. Sa pag-anchor ng programmability sa neutral Proof of Work timechain, hangad ng Parallax na magsilbing settlement layer na may parehong credibility na inaalok ng Bitcoin sa pera."
+        },
+        "governance": {
+          "heading": "11. Governance Philosophy",
+          "body1": "Sumusunod ang Parallax sa minimal-governance approach. Immutable ang monetary policy nito, na sinisiguro na hindi mababago ng community decision o governance vote ang cap na 21 milyong coins. Limitado ang protocol upgrades sa technical improvements at bug fixes. Walang foundation, kompanya, o privileged entity na may control sa supply o emission, na sinisiguro ang neutrality at trust-minimization sa bawat layer ng protocol.",
+          "body2": "Kailangan ng tunay na neutrality ang ossification ng monetary base: hindi pwedeng maging tool ang Parallax para sa discretionary policy o governance capture, dahil hard-coded ang rules nito at immune sa debasement. Ang neutrality ay hindi simpleng design choice kundi credibility mechanism na pumipigil sa capture ng special interests.",
+          "body3": "Habang kasalukuyang dini-develop ang Parallax sa ilalim ng MicroStack name, ang long-term vision ay isang fully community-driven protocol. Kapag umabot na sa sapat na maturity at stability ang codebase at network, ililipat ang stewardship mula sa MicroStack papunta sa mas malawak na ecosystem. Ang development, maintenance, at future upgrades ay ico-coordinate sa open at transparent na paraan ng komunidad, na sinisiguro na walang iisang kompanya o entity na pwedeng magtaglay ng privileged control sa Parallax.",
+          "body4": "Kinikilala ng Parallax ang Bitcoin bilang pinakahuling form ng digital sound money, na may walang kapantay na credibility sa fixed monetary rules at long-term immutability nito. Hindi tungkulin ng Parallax na makipagkumpitensya sa Bitcoin, kundi mag-eksperimento sa pagpapalawak ng monetary discipline ng Bitcoin sa programmable environment. Sa pagsasama ng ethos ng scarcity ng Bitcoin sa expressiveness ng Ethereum, nag-aalok ang Parallax ng complementary system na nag-eeksplora kung ano ang posible kapag pinagsama ang neutrality, decentralization, at programmability."
+        },
+        "powPrimacy": {
+          "heading": "12. Ang Primacy ng Proof of Work",
+          "body1": "Ang pagpapakilala ni Satoshi Nakamoto ng Proof of Work bilang practical solution sa Byzantine Generals Problem ay nananatiling isa sa mga pinakamahalagang imbensyon sa kasaysayan ng tao. Sa pag-anchor ng consensus sa expenditure ng real-world energy, pinatunayan ng Bitcoin na posibleng i-coordinate ang global set ng mga untrusted actor nang walang hingi na permission, identity, o central authority. Ang Proof of Work ay hindi lang basta consensus algorithm; ito ang batong panulok ng permissionless decentralization at ang pundasyon ng unang credible na digital money.",
+          "body2": "Ipinapatupad ng Proof of Work ang radikal na bukas na entry condition: kahit sino, saan man, ay pwedeng makipagkumpitensya para sa block rewards sa pamamagitan ng paggugol ng energy. Walang identity, capital lock-up, o institutional recognition na kailangan. Pinapaganda nito ang equality of access bilang core property ng timechain.",
+          "body3": "Ina-adopt ng Parallax ang prinsipyong ito sa kabuuan. Habang nagdadala ito ng programmability sa pamamagitan ng EVM, hindi ito nagpapakompromiso sa pundasyong nagpapaposible sa decentralization: Nakamoto consensus sa pamamagitan ng Proof of Work. Hindi makakamit ang permissionless timechain sa pamamagitan ng committee signatures, voting schemes, o governance tokens, dahil pinapasok ng mga ito ang mga central point of control.",
+          "body4": "Maraming alternative cryptocurrencies (\"altcoins\") ang humabol sa speed, throughput, o experimental features sa kapalit ng neutrality at decentralization. Habang mukhang kaakit-akit sa short term ang mas mabilis na block times o novel governance models, karaniwan silang umaasa sa centralized consensus mechanisms o privileged validators. Sinasaktan nito ang mismong property na nagpapa-revolusyonaryo sa Bitcoin: ang kakayahang lumahok nang walang permiso at walang trust sa anumang authority.",
+          "body5": "Ang decentralization ng Parallax ay galing sa parehong accessibility ng XHash mining at sa ossified monetary rules. Sa pag-externalize ng attack costs sa physical energy at hardware, lumalaban ang Parallax sa capture ng financial whales o governance cartels. Ang impluwensya ay nakukuha lang sa pamamagitan ng work na ginawa, hindi sa pamamagitan ng privilege o identity.",
+          "body6": "Tinatanggihan ng Parallax ang ganitong mga trade-off. Iginagalang at pinapalawak ng disenyo nito ang vision ni Satoshi sa pamamagitan ng pagpapanatili ng Proof of Work bilang ang tanging credible na pundasyon para sa decentralized at permissionless timechain. Lahat ng programmability, throughput, at application-layer innovations ay dapat mag-operate sa loob ng boundary na ito: decentralization muna, convenience pangalawa. Sa sapat na network maturity, ang mga kawalan ng mabagal na block intervals ay pwedeng mabawasan sa pamamagitan ng paggamit ng Layer 2 settlement solutions, na sinisiguro ang scalability nang hindi isinasakripisyo ang core guarantees ng permissionless decentralization."
+        },
+        "conclusion": {
+          "heading": "13. Conclusion",
+          "body": "Ang Parallax ay isang eksperimento sa pagpapalawak ng monetary ethos ng Bitcoin sa programmable environment. Ang neutrality, ossified monetary policy, at pag-asa sa Proof of Work ay sinisiguro na hindi ito ma-capture o ma-co-opt. Ang kinabukasan ng protocol ay nasa kamay ng komunidad nito — developers, miners, at users — para tuklasin kung ano ang nagiging posible kapag nagtagpo ang scarcity, decentralization, at programmability."
+        },
+        "release": {
+          "intro": "Susundan ng Parallax ang transparent release process para sa fairness at neutrality:",
+          "items": [
+            {
+              "title": "Whitepaper Release:",
+              "body": "Ililathala publiko ang protocol specification at economic model para anyayahan ang community review at diskusyon."
+            },
+            {
+              "title": "Open-Source Code Release at Mainnet Launch:",
+              "body": "Pagkatapos mailathala ang whitepaper, ire-release ang full Parallax client source code. Ilulunsad ang mainnet pagkatapos ng code release, na walang premine, walang privileged allocations, at walang nakatagong mining period. Ang eksaktong mainnet launch date ay iaanunsyo sa aming opisyal na X account at magaganap nang hindi bababa sa dalawang linggo pagkatapos ng lock-in announcement, na sinisiguro na may pantay na oras ang lahat ng participant para maghanda."
+            },
+            {
+              "title": "Genesis Block:",
+              "body": "Magiging minimal ang genesis block, na walang pre-deployed contracts o special accounts. Ang unang miner na maglulutas ng valid block ay tatanggap ng standard block reward na 50 coins."
+            }
+          ],
+          "outro1": "Sinisiguro ng schedule na ito na maaaring maghanda nang maaga ang lahat ng participant—developers, miners, institusyon, at mas malawak na komunidad—habang pinapanatili ang credibility ng fair launch na kaayon ng ethos ng openness at neutrality ng Bitcoin.",
+          "outro2": "Walang premine, walang insider mining, at walang privileged allocations. Lahat ng participant ay nagsisimula sa parehong starting line sa genesis.",
+          "outro3": "Sa diwa ng neutrality ng Bitcoin, ang Parallax ay hindi pag-aari, hindi kontrolado, o pinapatnubayan ng iisang entity — isa itong community experiment sa pagsasama ng scarcity at expressiveness."
+        }
+      }
+    },
+    "protocol": {
+      "overview": {
+        "pageTitle": "Parallax Protocol",
+        "pageSubtitle": "Ipinapaliwanag ng section na ito ang base rules ng Parallax protocol — cryptographic primitives, deterministic execution, proof-of-work (XHash), at ang consensus logic na nagde-define ng canonical history.",
+        "purpose": {
+          "heading": "Layunin ng section na ito",
+          "description": "Pinagsasama ng Parallax ang ossified monetary discipline ng Bitcoin sa Ethereum-style na programmability. Detalyado ng mga dokumentong ito kung paano pinapanatili ng Parallax ang fixed supply at predictable issuance habang ipinapatupad ang deterministic execution at open, work-based consensus.",
+          "bullets": [
+            {
+              "label": "Cryptographic Soundness:",
+              "body": "Inaauthorize ang transactions at state transitions gamit ang ECDSA (secp256k1)."
+            },
+            {
+              "label": "Deterministic Execution:",
+              "body": "Sinasalamin ng PVM ang EVM semantics sa ilalim ng Bitcoin-like na constraints."
+            },
+            {
+              "label": "Proof-of-Work as Time:",
+              "body": "Ginagawa ng XHash ang computation bilang verifiable ordering ng events."
+            },
+            {
+              "label": "Consensus through Work:",
+              "body": "Ang canonical history ay ang valid chain na may pinakamalaking cumulative work."
+            }
+          ],
+          "footer": "Ang mga page na ito ay para sa developers, miners, at researchers na naghahanap ng tumpak na pag-unawa sa Parallax sa protocol layer."
+        },
+        "topics": [
+          {
+            "title": "Protocol Architecture",
+            "description": "Paano pinagsasama ng Parallax ang cryptography, deterministic computation, proof-of-work timekeeping, at Nakamoto consensus sa magkakaugnay na protocol stack."
+          },
+          {
+            "title": "Block Reward at Halving",
+            "description": "Bitcoin-like na issuance: 50 → 25 → 12.5 … kada 210,000 blocks, asymptotically lumalapit sa 21M na may malinaw na visuals at parameters."
+          },
+          {
+            "title": "Coinbase Maturity Scheduling",
+            "description": "Paano nakaescrow on-chain ang miner subsidies at nire-release sa fixed maturity height sa pamamagitan ng lockbox state mechanism."
+          },
+          {
+            "title": "Difficulty Algorithm at Fork-choice",
+            "description": "Epoch-anchored difficulty retargeting at cumulative-work fork selection, kasama ang Median-Time-Past checks at epoch anchors."
+          },
+          {
+            "title": "XHash (Proof-of-Work)",
+            "description": "Memory-hard PoW ng Parallax na base sa Ethash-style Hashimoto na may Parallax-specific seal hash, target mapping, at epoch/DAG handling."
+          }
+        ],
+        "readMore": "Magbasa pa",
+        "exploreDocs": "I-explore ang Technical Documentation"
+      },
+      "architecture": {
+        "pageTitle": "Protocol Architecture",
+        "pageSubtitle": "Malalim na pagsusuri sa security model ng Parallax: signatures para sa authorship, PVM para sa semantics, Proof-of-Work para sa time, at Nakamoto consensus para sa canonical history.",
+        "howItFits": {
+          "title": "Paano nagkakasundo ang mga piyesa",
+          "description": "Hinahabi ng Parallax ang cryptography, deterministic execution, proof-of-work timekeeping, at neutral fork-choice sa iisang verifiable pipeline.",
+          "items": [
+            {
+              "label": "Cryptography",
+              "desc": "Ini-decide ng ECDSA kung sino ang pwedeng kumilos (valid authorship)."
+            },
+            {
+              "label": "Execution (PVM)",
+              "desc": "Ini-define kung ano ang ginagawa ng mga aksyon (state transitions)."
+            },
+            {
+              "label": "Timestamp Server",
+              "desc": "Ini-establish kung kailan nangyayari ang aksyon (in-order ng PoW)."
+            },
+            {
+              "label": "Nakamoto",
+              "desc": "Pinipili kung anong history ang manananaig (heaviest chain)."
+            }
+          ]
+        },
+        "sections": [
+          {
+            "title": "Digital Signatures",
+            "tagline": "Sino ang pwedeng kumilos: ECDSA over secp256k1 ang nag-a-authenticate ng state transitions.",
+            "bullets": [
+              "ECDSA over secp256k1 na katulad ng Bitcoin para sa battle-tested security at tooling.",
+              "Kasama sa transactions ang (r, s, v); narerecover ang sender sa public key → address derivation.",
+              "Tumatakbo ang validation sa execution pipeline, na sinisiguro ang uniform rules sa lahat ng nodes.",
+              "Non-repudiation: ina-bind ng signatures ang intents sa keys; replay protection sa pamamagitan ng chain id at nonce."
+            ],
+            "codeTitle": "Signature verification (conceptual)"
+          },
+          {
+            "title": "Turing-complete Scripting (PVM)",
+            "tagline": "Ano ang ibig sabihin ng aksyon: deterministic EVM-compatible execution sa ilalim ng Bitcoin-like monetary rules.",
+            "bullets": [
+              "Opcode parity sa EVM (CALL/SSTORE/etc.), gas-metered deterministic execution.",
+              "Iniimbak ang state sa Merkle Patricia Trie; nag-co-commit ang block header sa stateRoot at receiptsRoot.",
+              "Programmability sa loob ng scarcity: 21M cap, halving ⇒ minamana ng execution ang hard money.",
+              "Light-client friendly sa pamamagitan ng inclusion proofs at deterministic replay ng blocks."
+            ],
+            "codeTitle": "Block → Execution → Roots"
+          },
+          {
+            "title": "Timestamp Server",
+            "tagline": "Kailan nangyayari ang aksyon: ginagawang cryptographic resource ng PoW ang time at inoorder ang events.",
+            "bullets": [
+              "Bawat block ay nag-co-commit sa previous header hash ⇒ verifiable temporal chain.",
+              "Ina-bind ng Proof-of-Work (XHash) ang cost sa time; ipinapatupad ng recomputation ang arrow of time.",
+              "Objective ordering nang walang trusted clocks; pinipigilan ng median-time-past ang timestamp abuse.",
+              "Lumalaki ang security kasabay ng cumulative difficulty; ang backdating ay nagiging economically infeasible."
+            ],
+            "codeTitle": "Header linkage"
+          },
+          {
+            "title": "Nakamoto Consensus",
+            "tagline": "Anong history ang mananaig: ang heaviest valid chain by cumulative work ay canonical.",
+            "bullets": [
+              "Pinipili ng heaviest-chain rule ang canonical history sa pamamagitan ng cumulative PoW (difficulty sum).",
+              "Probabilistic finality: bumababa nang exponential ang reorg risk sa lalim (k-confirmations).",
+              "Layunin ng difficulty retargeting (XHash) ang ~10-minutong blocks gamit ang median-time-past.",
+              "Economically neutral: walang staking o privileged validators — open PoW lang."
+            ],
+            "codeTitle": "Fork-choice (conceptual)"
+          }
+        ],
+        "pseudocodeBadge": "pseudocode",
+        "pipeline": {
+          "eyebrow": "Pipeline",
+          "heading": "End-to-end na flow",
+          "description": "Ang signed transaction ay pumapasok sa mempool → nagpro-propose ang miner ng block → deterministically nag-e-execute ang PVM → nag-co-commit ang header sa state/receipts → pinapatunayan ng XHash ang work → ina-adopt ng network ang heaviest valid chain. Ang scarcity (21M, halvings) ang sumusuporta sa lahat ng execution.",
+          "steps": [
+            "Sign",
+            "Execute",
+            "Commit",
+            "Prove",
+            "Select"
+          ]
+        },
+        "nav": {
+          "prev": "Protocol Overview",
+          "next": "Block Reward at Halving"
+        }
+      },
+      "blockRewardAndHalving": {
+        "pageTitle": "Block Reward at Halving",
+        "pageSubtitle": "Ipinapaliwanag ng page na ito ang Bitcoin-inspired na emission schedule ng Parallax, ang coinbase maturity mechanism, at kung paano pinapamahalaan ang block rewards sa protocol state.",
+        "params": {
+          "title": "Monetary Parameters",
+          "columns": {
+            "parameter": "Parameter",
+            "symbol": "Symbol",
+            "value": "Value",
+            "notes": "Notes"
+          },
+          "rows": [
+            {
+              "param": "Initial reward",
+              "symbol": "R₀",
+              "value": "50 × 10¹⁸ wei",
+              "notes": "50 LAX kada block"
+            },
+            {
+              "param": "Halving interval",
+              "symbol": "H",
+              "value": "210,000 blocks",
+              "notes": "≈ 4 years sa 10 min intervals"
+            },
+            {
+              "param": "Coinbase maturity",
+              "symbol": "M",
+              "value": "100 blocks",
+              "notes": "Reward unlock delay"
+            },
+            {
+              "param": "Lockbox address",
+              "symbol": "—",
+              "value": "0x0000000000000000000000000000000000000042",
+              "notes": "State location para sa maturity records"
+            }
+          ]
+        },
+        "charts": {
+          "cumulative": {
+            "title": "Cumulative Supply by Epoch",
+            "description": "Sum ng lahat ng issued rewards hanggang sa bawat halving epoch (LAX units).",
+            "valueLabel": "Value",
+            "epochLabel": "Epoch {n}"
+          },
+          "perBlock": {
+            "title": "Per-block Reward (step)",
+            "description": "Reward sa LAX kada block sa bawat epoch.",
+            "rewardLabel": "Reward",
+            "epochLabel": "Epoch {n}"
+          }
+        },
+        "sections": [
+          {
+            "title": "Overview",
+            "tagline": "Sumasalamin ang Parallax monetary schedule sa Bitcoin: 21 milyong total supply, 50 → 25 → 12.5 ... halvings kada 210,000 blocks.",
+            "bullets": [
+              "Initial block reward: 50 LAX (sa wei, 50 × 10¹⁸).",
+              "Halving interval: kada 210,000 blocks (≈ 4 years sa 10-minutong blocks).",
+              "Total theoretical supply: capped sa ~21,000,000 LAX.",
+              "Nagpapatupad ng deflationary issuance model na pareho sa structure ng Bitcoin pero naka-denominate sa wei para sa EVM compatibility."
+            ],
+            "codeTitle": "Reward function (mula sa consensus.go)"
+          },
+          {
+            "title": "Coinbase Maturity Scheduling",
+            "tagline": "Naka-lock ang block rewards hanggang sa maturity — pinipigilan ang instant spend at sinisiguro ang deterministic unlocks.",
+            "bullets": [
+              "Bawat reward ay naka-associate sa unlock height: current_height + 100 blocks.",
+              "Isinusulat ang rewards sa state trie sa ilalim ng special lockbox address (0x...42).",
+              "Kapag umabot ang chain height sa unlock, inililipat ang reward sa address ng miner.",
+              "Sinisiguro ang malinis na separasyon ng pending vs spendable supply sa ledger state."
+            ],
+            "codeTitle": "Reward scheduling (simplified)"
+          },
+          {
+            "title": "Economic Properties",
+            "tagline": "Ipinapatupad ng Parallax ang predictable scarcity at zero pre-mine issuance.",
+            "bullets": [
+              "Bumababa ng 50% ang bagong issuance sa bawat halving epoch.",
+              "Ang cumulative issuance ay umuusad nang asymptotically papunta sa 21M cap pero hindi ito lumalagpas.",
+              "Ipinapamahagi ang rewards exclusively sa miners — walang developer o foundation allocation.",
+              "Hard-coded ang emission curve, na sinisiguro na walang discretionary monetary changes pagkatapos ng launch."
+            ],
+            "codeTitle": "Total issued approximation"
+          },
+          {
+            "title": "State Representation",
+            "tagline": "Reward maturity tracking sa loob ng state trie.",
+            "bullets": [
+              "Dalawang state keys ang ginagamit kada unlock height: schedKeyAddr(height) at schedKeyAmt(height).",
+              "Pareho silang derived gamit ang keccak256(\"maturity:addr:\" + height) at (\"maturity:amt:\" + height).",
+              "Iniimbak ang values sa ilalim ng lockbox address para hiwalayin ang reward metadata sa user accounts.",
+              "Sa payout, kinaclear ang parehong keys sa state para mabawi ang trie space."
+            ],
+            "codeTitle": "State key derivation (mula sa consensus.go)"
+          }
+        ],
+        "pseudocodeBadge": "pseudocode",
+        "summary": {
+          "eyebrow": "Summary",
+          "heading": "Emission Summary",
+          "description": "Fully deterministic ang issuance ng Parallax. Hina-halve ang rewards kada 210,000 blocks hanggang umusad sila papunta sa zero. Bawat coin sa circulation ay matrace sa on-chain mining output, na ginagawang Parallax na fair-launch, work-secured network nang walang premine o nakatagong subsidies."
+        },
+        "nav": {
+          "prev": "Protocol Architecture",
+          "next": "Coinbase Maturity Scheduling"
+        }
+      },
+      "coinbaseMaturity": {
+        "pageTitle": "Coinbase Maturity Scheduling",
+        "pageSubtitle": "Paano nag-eescrow ang Parallax ng miner subsidies hanggang maturity gamit ang deterministic, canonical state updates.",
+        "params": {
+          "title": "Maturity Parameters",
+          "columns": {
+            "parameter": "Parameter",
+            "symbol": "Symbol",
+            "value": "Value / Source",
+            "notes": "Notes"
+          },
+          "rows": [
+            {
+              "param": "Coinbase maturity blocks",
+              "symbol": "M",
+              "value": "100 blocks",
+              "notes": "Bitcoin-like coinbase maturity"
+            },
+            {
+              "param": "Lockbox address",
+              "symbol": "—",
+              "value": "0x0000000000000000000000000000000000000042",
+              "notes": "Reserved system account"
+            },
+            {
+              "param": "Key prefixes",
+              "symbol": "—",
+              "value": "\"maturity:addr:\", \"maturity:amt:\"",
+              "notes": "Keccak256(prefix || big-endian height)"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "title": "Overview",
+            "tagline": "Inie-escrow ng Parallax ang block subsidies hanggang fixed maturity height, at nire-release ang mga ito deterministically mula sa lockbox sa state trie.",
+            "bullets": [
+              "Bawat block ay nagsi-schedule ng sariling coinbase payout para sa height + M blocks, kung saan M = 100 blocks.",
+              "May special lockbox account na nag-iimbak ng \"when\" (height) → (addr, amt) pairs bilang state slots.",
+              "Sa bawat height h, sinusuri ng protocol kung may due payout para sa h at inililipat ito sa naka-recordna address.",
+              "Pinaghihiwalay nito ang pending issuance sa spendable supply at pinaaayos ang reorg handling."
+            ],
+            "codeTitle": "High-level flow"
+          },
+          {
+            "title": "State Keys at Lockbox Address",
+            "tagline": "Dalawang storage slots kada unlock height sa ilalim ng reserved system address.",
+            "bullets": [
+              "Para sa given unlock height H: i-store ang address sa schedKeyAddr(H) at amount sa schedKeyAmt(H).",
+              "Pareho silang derived ng keccak256 ng fixed ASCII prefix kasama ang H na encoded bilang big-endian uint64.",
+              "Naka-key ang presence sa amount slot; inii-clear ng payout ang parehong slots para mabawi ang trie space."
+            ],
+            "codeTitle": "Key derivation (mula sa consensus.go)"
+          },
+          {
+            "title": "Payout Lifecycle",
+            "tagline": "Mula sa block inclusion hanggang matured transfer.",
+            "bullets": [
+              "Na-mine ang Block N → kinacompute ang reward R_N mula sa halving schedule.",
+              "Mag-schedule ng (addr=coinbase_N, amt=R_N) sa unlock height U = N + M.",
+              "Sa height U, binabasa ng node ang (addr_U, amt_U); kung amt_U ≠ 0, nag-credit at nag-clear ng slots.",
+              "Walang spendable subsidy ang Genesis (height 0)."
+            ],
+            "codeTitle": "Timeline (textual diagram)"
+          },
+          {
+            "title": "Validation at Security Properties",
+            "tagline": "Deterministic na unlocks, replay-safe, at reorg-resilient.",
+            "bullets": [
+              "Kinacompute ang unlock logic mula sa canonical height; walang kailangang signatures o off-chain triggers.",
+              "Protocol-computed ang amounts (calcBlockReward) — hindi pwedeng i-inflate ng peers ang payouts.",
+              "Ang presence ng state key ang 'due' indicator; pinipigilan ang double-spend sa pag-clear pagkatapos mag-credit.",
+              "Pina-defer ng maturity ang miner spendability, na nagpapababa sa incentives para sa near-tip reorgs na mahuli kaagad ang fees+subsidy."
+            ],
+            "codeTitle": "Due detection at clearing"
+          },
+          {
+            "title": "Reorg Behavior",
+            "tagline": "Ano ang nangyayari kung mag-reorganize ang chain sa paligid ng unlock heights.",
+            "bullets": [
+              "Sa reorg, kinacompute ulit ang state mula sa bagong canonical chain; sumasalamin ang scheduled entries sa canonical sequence ng blocks.",
+              "Kung naganap ang payout sa height H sa lumang tip pero hindi sa bagong chain, ang state replay ay magkre-credit lang ng due sa bagong history.",
+              "Dahil naka-key ang entries sa height, hindi makakapasa ang \"phantom credits\" sa reorg — sumusunod ang cleared/uncleared status sa canonical execution.",
+              "Sumasalamin ito sa kung paano nag-re-compute ang balances at receipts sa block re-execution."
+            ],
+            "codeTitle": "Conceptual reorg pseudocode"
+          },
+          {
+            "title": "Configuration",
+            "tagline": "Saan nakatira ang maturity parameter at paano ito kinakain ng clients.",
+            "bullets": [
+              "Ang Maturity M ay defined bilang 100 blocks",
+              "Dapat ipakita ng clients ang parehong 'pending' (scheduled) at 'spendable' balances para sa miners.",
+              "Pwedeng ipakita ng explorers ang upcoming unlocks sa pamamagitan ng pag-scan para sa non-zero schedKeyAmt(h).",
+              "Dapat balaan ng wallets ang miners na ang reward UTXOs (account credits) ay hindi available hanggang sa height U."
+            ],
+            "codeTitle": "Explorer hint (pseudo-RPC)"
+          }
+        ],
+        "pseudocodeBadge": "pseudocode",
+        "nav": {
+          "prev": "Block Reward at Halving",
+          "next": "Difficulty Algorithm"
+        }
+      },
+      "difficultyAndForkchoice": {
+        "pageTitle": "Difficulty Algorithm at Fork-choice Rules",
+        "pageSubtitle": "Tumpak na walk-through sa kasaysayan ng difficulty adjustment ng Parallax — BTC-style DAA mula sa genesis, ang ASERT upgrade sa block 17,560 (PIP-0002), at ang Nakamoto fork-choice rule based sa cumulative work.",
+        "params": {
+          "title": "Consensus Parameters",
+          "columns": {
+            "parameter": "Parameter",
+            "symbol": "Symbol",
+            "value": "Value",
+            "notes": "Notes"
+          },
+          "rows": [
+            {
+              "param": "Target block interval",
+              "symbol": "τ",
+              "value": "600 s",
+              "notes": "Bitcoin-like target"
+            },
+            {
+              "param": "Future time drift bound",
+              "symbol": "—",
+              "value": "300 s",
+              "notes": "5 minutes"
+            },
+            {
+              "param": "MTP sample size",
+              "symbol": "—",
+              "value": "11 blocks",
+              "notes": "Median ng huling 11 timestamps"
+            },
+            {
+              "param": "Difficulty algorithm history",
+              "symbol": "—",
+              "value": "BTC-style DAA → ASERT",
+              "notes": "BTC-style 2016-block windows mula genesis–17,559; ASERT (aserti3-2d) para sa blocks ≥ 17,560 (PIP-0002)."
+            }
+          ]
+        },
+        "sections": [
+          {
+            "title": "Overview",
+            "tagline": "Tina-target ng Parallax ang 10-minutong blocks gamit ang XHash Proof of Work at per-block ASERT difficulty algorithm, pagkatapos ng initial BTC-style DAA phase.",
+            "bullets": [
+              "Mula genesis hanggang block 17,559, gumamit ang Parallax ng Bitcoin-style 2016-block difficulty adjustment window (BTC-style DAA).",
+              "Inactivate ng PIP-0002 (Migration mula sa BTC-Style Difficulty Adjustment Algorithm papunta sa ASERT) ang ASERT sa block 17,560.",
+              "Ang ASERT (aserti3-2d, na ginagamit ng Bitcoin Cash) ay nag-a-adjust ng difficulty kada block relative sa fixed anchor, na nag-co-converge nang maayos papunta sa 600 s target sa ilalim ng hashrate shocks.",
+              "Pinapangalagaan ng Median-Time-Past (MTP, median ng huling 11) ang timestamp validity; tinatanggihan ng nodes ang headers na higit sa +300s sa hinaharap at vine-verify ang PoW gamit ang target = ⌊(2^256−1)/D⌋."
+            ],
+            "codeTitle": ""
+          },
+          {
+            "title": "Target ↔ Difficulty",
+            "tagline": "Work threshold mapping na ginagamit ng XHash verification (common sa parehong BTC-DAA at ASERT eras).",
+            "bullets": [
+              "Hayaan ang TWO256M1 = 2^256 − 1. Valid ang header kung XHash(header) ≤ target, kung saan target = ⌊TWO256M1 / D⌋.",
+              "Mas mataas na difficulty D ⇒ mas maliit na target ⇒ mas mahirap na block.",
+              "Dapat katumbas ng Header.MixDigest ang computed digest mula sa hashimoto (light/full paths).",
+              "Dapat strictly positive ang difficulty; invalid ang zero/negative."
+            ],
+            "codeTitle": "Target calculation (conceptual)"
+          },
+          {
+            "title": "Difficulty Adjustment: BTC-Style DAA → ASERT",
+            "tagline": "Historical 2016-block windows, modern per-block ASERT relative sa anchor.",
+            "bullets": [
+              "Genesis → block 17,559: nagpapatupad ang CalcNakamotoDifficulty() ng Bitcoin-style 2016-block window gamit ang epoch anchors.",
+              "Block 17,560 at higit pa: nagpapatupad ang CalcAsertDifficulty() ng aserti3-2d gamit ang fixed anchor {anchorHeight, anchorParentTime, anchorTarget}.",
+              "Gumagamit ang ASERT ng height offset Δh at elapsed time Δt relative sa anchor para itulak ang difficulty papunta sa 600 s target na may 2-day half-life.",
+              "Pinapanatili ng historical blocks ang kanilang orihinal na BTC-style DAA difficulty at vine-validate pa rin sa ilalim ng mga rule na iyon; entirely ASERT-based ang forward-looking adjustment."
+            ],
+            "codeTitle": "Height-dependent difficulty selection (conceptual)"
+          },
+          {
+            "title": "Median-Time-Past (MTP)",
+            "tagline": "Timestamp sanity para sa validity at time-warp resistance.",
+            "bullets": [
+              "MTP(parent) = median ng huling 11 block timestamps na nagtatapos sa parent.",
+              "Ang validity ay nangangailangan ng header.Time > MTP(parent) (strict inequality).",
+              "Future-drift bound: header.Time ≤ now + 300s.",
+              "Sa ilalim ng ASERT, ang elapsed time relative sa anchor ay pinapatakbo ng timestamps na naka-constrain ng MTP, na pumipigil sa classic na long-range time-warp attacks laban sa difficulty algorithm."
+            ],
+            "codeTitle": "MTP computation"
+          },
+          {
+            "title": "Fork Choice Rule",
+            "tagline": "Heaviest valid chain by cumulative work, independent sa active difficulty era.",
+            "bullets": [
+              "Mag-maintain ng ChainWork[tip] = ChainWork[parent] + Work(block).",
+              "Ang Work(block) ay monotone function ng target/difficulty; anumang consistent definition ay nagbibigay ng equivalent ordering.",
+              "Piliin ang valid tip na may pinakamalaking ChainWork; pwedeng buwagin ang ties lexicographically sa pamamagitan ng tip hash.",
+              "Tinatanggal ang invalid headers (time, PoW, BTC-DAA/ASERT rules) bago ang fork choice."
+            ],
+            "codeTitle": "Cumulative work (conceptual)"
+          },
+          {
+            "title": "Reorgs at Probabilistic Finality",
+            "tagline": "Depth-based assurances sa halip na absolute finality.",
+            "bullets": [
+              "Pinapababa ng confirmation depth k ang reorg probability nang exponential sa k.",
+              "Pinipili ng Wallets/UIs ang k by value at risk (e.g., 6-conf defaults para sa high-value).",
+              "Pwedeng mag-implement ang nodes ng practical guards (e.g., max reorg depth) para maiwasan ang DoS mula sa pathological peers.",
+              "Ang mas maayos na per-block difficulty response ng ASERT ay nagpapababa sa incentive para sa oscillation-driven o opportunistic na mahabang reorgs kumpara sa large-window BTC-style DAA."
+            ],
+            "codeTitle": "Reorg handling (conceptual)"
+          },
+          {
+            "title": "Attacks at Mitigations",
+            "tagline": "Mga key vector na relevant sa Parallax difficulty design.",
+            "bullets": [
+              "Time-warp: Strict MTP enforcement plus per-block feedback ng ASERT (walang long static windows) ang nagpapababa sa classic BTC-style 2016-block na time-warp manipulation.",
+              "Future timestamp skew: tinatanggihan ang headers na higit sa +300s mula sa local time.",
+              "MixDigest spoofing: dapat tumugma ang header.MixDigest sa hashimoto output (light/full)."
+            ],
+            "codeTitle": "Header validity subset"
+          }
+        ],
+        "pseudocodeBadge": "pseudocode",
+        "pipeline": {
+          "eyebrow": "Pipeline",
+          "heading": "End-to-end selection flow",
+          "description": "Sinusuri ang headers para sa Extra size, time (MTP at future drift), era-specific difficulty rules (BTC-style DAA para sa mga unang block, ASERT para sa height ≥ 17,560), gas limits/EIPs, height increment, at PoW seal. Pinapalawak ng valid blocks ang ChainWork, at ang heaviest tip ang canonical.",
+          "steps": [
+            "Validate",
+            "Check Anchor / Era",
+            "Compute Difficulty (DAA/ASERT)",
+            "Accumulate Work",
+            "Select Heaviest"
+          ]
+        },
+        "nav": {
+          "prev": "Coinbase Maturity Scheduling",
+          "next": "XHash"
+        }
+      },
+      "xhash": {
+        "pageTitle": "XHash",
+        "pageSubtitle": "Ang memory-hard na Proof-of-Work na ginagamit ng Parallax. Ethash-style Hashimoto na may ASERT-based difficulty, consensus rules, at epoch handling ng Parallax.",
+        "params": {
+          "title": "Consensus-Relevant Details",
+          "description": "Tulad ng nakikita sa <code>xhash/consensus.go</code> at Parallax chain config.",
+          "columns": {
+            "aspect": "Aspect",
+            "value": "Value / Behavior",
+            "notes": "Notes"
+          },
+          "rows": [
+            {
+              "aspect": "Hash function (seal)",
+              "value": "Legacy Keccak-256",
+              "notes": "RLP sa specific header fields"
+            },
+            {
+              "aspect": "Target mapping",
+              "value": "target = ⌊(2^256−1)/D⌋",
+              "notes": "Dapat ≤ target ang result"
+            },
+            {
+              "aspect": "MixDigest",
+              "value": "Dapat katumbas ng computed digest",
+              "notes": "Mismatch ⇒ invalid PoW"
+            },
+            {
+              "aspect": "MTP",
+              "value": "Median ng huling 11",
+              "notes": "Ipinapatupad: Time > MTP(parent); future drift ≤ 300s"
+            },
+            {
+              "aspect": "Epoch length",
+              "value": "Config-defined (e.g., 720 blocks)",
+              "notes": "Dini-determine ang cache/DAG regeneration cadence"
+            },
+            {
+              "aspect": "Difficulty algorithm",
+              "value": "ASERT (per-block, anchor-based)",
+              "notes": "aserti3-2d; kinacompute ng consensus ang D, ipinapatupad ng XHash sa pamamagitan ng PoW"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "title": "Overview",
+            "tagline": "Ang XHash ang Proof-of-Work engine ng Parallax: Ethash-style Hashimoto (light/full) na may Parallax-specific consensus wiring, ASERT-based difficulty mapping, at epoch handling.",
+            "bullets": [
+              "Ina-evaluate ng mining ang Hashimoto sa header seal hash at 64-bit nonce, gamit ang cache (light) o dataset (full).",
+              "Sinusuri ng verification ang MixDigest equality at inihahambing ang result sa target na derived sa difficulty: target = ⌊(2^256−1)/D⌋.",
+              "Gumagamit ang seal hash ng Legacy Keccak-256 sa RLP list ng specific header fields."
+            ],
+            "codeTitle": "SealHash"
+          },
+          {
+            "title": "Mining Loop",
+            "tagline": "Hashimoto-light/full na may 64-bit nonce search at little-endian target compare sa inner loop.",
+            "bullets": [
+              "Iniiterate ng miners ang nonce ∈ [0..2^64−1], na nagcomcompute ng (digest, result) = hashimoto(cache/dataset, sealHash, nonce).",
+              "Dapat tumugma nang eksakto ang MixDigest sa header field; dapat ≤ target ang result.",
+              "Gumagamit ang full miners ng per-epoch dataset; pwedeng mag-validate ang light verifiers/nodes gamit ang caches (walang full DAG).",
+              "Nagre-regenerate ang dataset/cache sa epoch boundaries (e.g., kada 720 blocks)."
+            ],
+            "codeTitle": "Nonce search (pseudocode)"
+          },
+          {
+            "title": "Header Verification",
+            "tagline": "Ano ang sinusuri ng node bago tumanggap ng PoW header.",
+            "bullets": [
+              "Size ng Extra ≤ MaximumExtraDataSize.",
+              "Time ≤ now + 300s at Time > MTP(parent) (median ng huling 11).",
+              "Dapat tumugma ang Difficulty sa consensus difficulty engine (ASERT) para sa given parent at header.",
+              "PoW seal: MixDigest equality at XHash(header) ≤ target(two256m1 / D)."
+            ],
+            "codeTitle": "verifySeal (conceptual)"
+          },
+          {
+            "title": "Epochs, Cache at Dataset (DAG)",
+            "tagline": "Regeneration cadence at miner compatibility notes.",
+            "bullets": [
+              "Ang epoch number ay derived mula sa block height; ang cache/dataset sizes ay nakadepende sa epoch via datasetSize(height).",
+              "Gumagamit ang Parallax ng mas maikling epochs kaysa legacy Ethash (e.g., 720-block epochs) para magkasya ang ~5-day regeneration sa 10-minutong blocks.",
+              "Pinananatili ng nodes ang caches para gawing light ang verification; hindi kailangan ng full DAG para mag-validate ng headers."
+            ],
+            "codeTitle": "Regeneration trigger"
+          },
+          {
+            "title": "Difficulty at Anchors",
+            "tagline": "Interaksyon sa pagitan ng PoW at ASERT difficulty schedule.",
+            "bullets": [
+              "Ang difficulty ay kinacompute ng ASERT scheduler; ipinapatupad lang ng XHash ang napiling difficulty sa pamamagitan ng target check.",
+              "Pinapanatili ng consensus ang ASERT anchor (height, parentTime, target) at gumagamit ng header metadata (e.g., EpochStartTime o dedicated fields) para i-reconstruct ang anchor context.",
+              "Kinacompute ng CalcAsertDifficulty(config, anchor, parent, header) ang expected difficulty para sa header.",
+              "Ipinapatupad ang difficulty at anchor invariants sa header verification bago ang fork-choice."
+            ],
+            "codeTitle": "Difficulty invariants (conceptual)"
+          }
+        ],
+        "pseudocodeBadge": "pseudocode",
+        "nav": {
+          "prev": "Difficulty Algorithm at Fork-choice Rules",
+          "next": "XHash Specification"
+        }
+      }
+    }
+  },
+  "participate": {
+    "development": {
+      "title": "Mga developer",
+      "subtitle": "Ang Parallax ay buong open source at malugod na tumatanggap ng contributions mula sa mga developer ng kahit anong background",
+      "exploreGithub": "I-explore ang GitHub namin",
+      "readDocumentation": "Basahin ang documentation",
+      "topics": [
+        {
+          "title": "Gumawa ng smart contracts at dApps",
+          "description": "Gamitin ang Parallax EVM para gumawa ng decentralized applications, mag-automate ng payments, at i-unlock ang mga bagong financial primitives."
+        },
+        {
+          "title": "Mag-contribute sa protocol development",
+          "description": "Tumulong na pagandahin ang Parallax protocol mismo—security, scalability, at mga bagong features. Welcome lahat ng contributions!"
+        },
+        {
+          "title": "I-integrate ang Parallax sa iyong mga proyekto",
+          "description": "I-connect ang iyong apps, wallets, o services sa Parallax. Gamitin ang aming APIs at libraries para dalhin ang programmable cash sa iyong mga users."
+        },
+        {
+          "title": "Tumulong na pagandahin ang documentation",
+          "description": "Sumulat ng guides, tutorials, at documentation para makatulong sa iba na matuto at mag-build. Gawing accessible ang Parallax para sa lahat."
+        },
+        {
+          "title": "Sumali sa mga community discussions",
+          "description": "Magbahagi ng mga ideya, magtanong, at makipag-collaborate sa ibang mga developer sa aming mga forums at GitHub discussions."
+        }
+      ]
+    },
+    "runningAFullNode": {
+      "title": "Pagpapatakbo ng full node",
+      "subtitle": "Tumulong na i-secure ang Parallax at sumali sa network sa pamamagitan ng pagpapatakbo ng sarili mong node.",
+      "topics": [
+        {
+          "title": "Ano ang full node?",
+          "description": "Ang full node ay independenteng nag-veverify ng lahat ng transactions at blocks, tumutulong na i-secure ang Parallax network at mapanatili ang decentralization."
+        },
+        {
+          "title": "Bakit magpatakbo ng node?",
+          "description": "Ang pagpapatakbo ng node ay nagbibigay sa iyo ng direct access sa network, nagpapabuti ng privacy, at nagpapalakas sa Parallax laban sa censorship at attacks."
+        },
+        {
+          "title": "Kunin ang Parallax Client",
+          "description": "I-download ang opisyal na Parallax Client para sa Linux, Windows, o macOS. Sundin ang mga instructions para i-install at simulan ang iyong node."
+        },
+        {
+          "title": "Kailangan mo ng tulong?",
+          "description": "Maghanap ng setup guides, troubleshooting tips, at community support sa aming documentation at Discord."
+        }
+      ],
+      "getStarted": {
+        "eyebrow": "Magsimula",
+        "description": "Handa nang magpatakbo ng full node? I-download ang Parallax Client at sundin ang aming step-by-step guide.",
+        "download": "I-download ang Parallax Client",
+        "setupGuide": "Setup guide"
+      }
+    },
+    "supportParallax": {
+      "title": "Suportahan ang Parallax",
+      "subtitle": "Ang Parallax ay nagsimula mula sa isang maliit na komunidad at nasa infancy phase pa rin ito. Maraming bagay na pwede mong gawin para suportahan ito at tulungan ang iba na matuto pa",
+      "topics": [
+        {
+          "title": "Paggamit ng Parallax",
+          "description": "Ang pinakamadaling paraan para suportahan ang network ay gamitin ito. Magpadala at tumanggap ng transactions, mag-explore ng dApps, at ituring ang Parallax na parang totoong pera. Bawat interaction ay nagpapalakas sa ecosystem at nagtatayo ng tiwala sa protocol."
+        },
+        {
+          "title": "Maging bahagi ng network",
+          "description": "Tumulong na i-secure at i-decentralize ang Parallax sa pamamagitan ng pagpapatakbo ng full node. Sa paggawa nito, nakakatulong ka sa pag-verify ng blocks, pag-propagate ng transactions, at pagsisiguro na mananatiling censorship-resistant at resilient ang network. Siguraduhin mong bukas ang port 32110 TCP/UDP sa iyong router at firewall para makakonekta sa iyo ang ibang nodes!"
+        },
+        {
+          "title": "Mining",
+          "description": "Sumali bilang miner at magbigay ng computing power na nag-secure sa Parallax. Ang mining ay nagpoprotekta sa network, namamahagi ng mga bagong coins, at nagbibigay sa iyo ng direktang stake sa paglago at seguridad nito."
+        },
+        {
+          "title": "Development",
+          "description": "Mag-contribute sa open-source codebase. Core protocol improvements man, tooling, o dApp development, ang iyong skills ay maaaring humubog sa kinabukasan ng Parallax. Welcome ang contributions sa Go, TypeScript, at iba pa."
+        },
+        {
+          "title": "Ikalat",
+          "description": "Sabihin sa mga tao ang tungkol sa Parallax. Mag-share ng articles, gumawa ng videos, sumulat ng posts, o mag-host ng discussions. Habang mas maraming tao ang nakakaalam tungkol sa Parallax, mas tumitibay ang komunidad."
+        },
+        {
+          "title": "Documentation",
+          "description": "Ang magandang documentation ay nagbibigay ng kapangyarihan sa mga bagong users at developers. Tulungan kaming sumulat, mag-translate, at pagandahin ang mga guides para madaling matutunan ng kahit sino kung paano magpatakbo ng nodes, mag-mine, o mag-build sa Parallax."
+        },
+        {
+          "title": "Makilala ang mga komunidad",
+          "description": "Ang Parallax ay umuunlad dahil sa komunidad. Sumali sa aming forums, Telegram, at social channels para makipag-connect sa iba, magpalitan ng kaalaman, at mag-coordinate ng mga inisyatiba na nagpapalakas sa ecosystem."
+        },
+        {
+          "title": "Magpatakbo ng bootnode",
+          "description": "Ang mga bootnode ay entry points para sa mga bagong participants na sasali sa network. Sa pagpapatakbo ng isa, tumutulong kang masiguro ang stable connectivity at nag-aambag sa kalusugan ng peer-to-peer layer."
+        },
+        {
+          "title": "Magpatakbo ng public RPC",
+          "description": "Ang public RPC endpoints ay nagpapadali ng access sa Parallax para sa mga developers, wallets, at applications. Ang pag-host ng isa ay tumutulong sa paglago ng ecosystem sa pamamagitan ng pagbaba ng barrier to entry para sa kahit sinong nagbu-build sa Parallax."
+        }
+      ],
+      "donations": {
+        "heading": "Mag-donate para suportahan ang Parallax",
+        "intro": "Ang Parallax ay isang community-driven project na walang VC funding, walang premine, at walang kompanya sa likod. Ang mga donations ay tumutulong na panatilihing online ang website, mapanatili ang public infrastructure, at ipagpatuloy ang aktibong protocol development.",
+        "btc": {
+          "title": "Bitcoin (BTC)",
+          "description": "Mga donation sa Bitcoin"
+        },
+        "evm": {
+          "title": "EVM Address",
+          "description": "Anumang token sa EVM-compatible networks"
+        },
+        "patreonIntro": "Ayaw mong gumamit ng crypto?",
+        "patreonIntroLine2": "Pwede mong suportahan ang Parallax via Patreon at mag-contribute gamit ang traditional payment methods.",
+        "patreonCta": "Suportahan sa Patreon"
+      }
+    }
+  },
+  "wallets": {
+    "title": "Mga wallet sa Parallax",
+    "subtitle": "Piliin ang tamang wallet para i-manage ang iyong Laxes, kumonekta sa dapps, at i-explore ang Parallax ecosystem nang ligtas.",
+    "beginnerFriendly": "Para sa baguhan",
+    "getWallet": "Kunin ang {name}",
+    "runClient": {
+      "eyebrow": "Magpatakbo ng sarili mong Parallax client",
+      "description": "Para sa pinakamainam na privacy, inirerekomenda naming magpatakbo ka ng sarili mong Parallax client para sa wallet interactions.",
+      "download": "I-download ang Parallax Client",
+      "setupGuide": "Setup guide"
+    }
+  },
+  "exchanges": {
+    "title": "Mga Parallax exchange",
+    "subtitle": "Mga live market kung saan binibili at tina-trade ang Parallax. Ang data ay galing sa CoinGecko, ina-update kada oras.",
+    "unavailable": {
+      "title": "Hindi available ang live data",
+      "description": "Pansamantalang hindi available ang live exchange data. Pakibalik mamaya, o bisitahin ang Parallax sa CoinGecko diretso para makita ang kasalukuyang markets.",
+      "viewOnCoingecko": "Tingnan sa CoinGecko"
+    },
+    "stats": {
+      "notAvailable": "—",
+      "marketOverview": "Market overview",
+      "volume24h": "24h Volume",
+      "volume24hCaption": "Pinagsamang volume sa lahat ng live markets",
+      "activeMarkets": "Active markets",
+      "activeMarketsCaptionOne": "Exchange na naglilista ng LAX",
+      "activeMarketsCaptionOther": "Mga exchange na naglilista ng LAX",
+      "topMarket": "Top market",
+      "topMarketCaption": "{price} · {volume} 24h"
+    },
+    "card": {
+      "lastPrice": "Huling presyo",
+      "volume24h": "24h Volume",
+      "spread": "Spread"
+    },
+    "activeMarkets": {
+      "eyebrow": "Saan mag-trade",
+      "heading": "Active markets",
+      "description": "I-click ang kahit anong market para buksan ang exchange sa bagong tab. Naka-sort ayon sa 24-hour trading volume."
+    },
+    "disclaimer": {
+      "label": "Disclaimer",
+      "body": "Malaki ang pagkakaiba ng mga exchange pagdating sa safety, security, privacy, at custody practices. Lagi mong gawin ang sarili mong due diligence at gumamit ng mapagkakatiwalaang self-custody wallet para hawakan ang iyong mga coins. <strong>Ang Parallax ay walang kaugnayan sa, at hindi responsable para sa, alinman sa mga exchange na nakalista sa itaas.</strong> Gamitin mo ang mga ito sa sarili mong pagpapasya."
+    },
+    "attribution": {
+      "dataSource": "Data source",
+      "viewOnCoingecko": "Tingnan ang Parallax sa CoinGecko",
+      "note": "Ang live market data ay kinukuha mula sa public API ng CoinGecko at ina-update kada oras. Ang CoinGecko ang source of truth para sa lahat ng listings sa pahinang ito."
+    }
+  },
+  "resources": {
+    "common": {
+      "readMore": "Magbasa pa"
+    },
+    "beginnerGuides": {
+      "title": "Mga gabay para sa baguhan",
+      "subtitle": "Tingnan ang mga madaling sundang gabay kung paano magpatakbo ng Parallax node, mag-connect ng wallet, at magsimulang mag-mine.",
+      "guides": [
+        {
+          "title": "Magpatakbo ng Parallax node",
+          "description": "Step-by-step na gabay sa pag-download at pagpapatakbo ng Parallax client sa iyong computer. Alamin kung paano i-connect ang MetaMask sa iyong local node para makagawa ng mga address, ma-manage ang iyong laxes, at direktang makipag-interact sa network."
+        },
+        {
+          "title": "Wallets",
+          "description": "Alamin kung paano mag-set up at gumamit ng mga wallet sa Parallax. Sakop ng mga gabay na ito ang paggawa at pag-manage ng accounts, pag-connect ng MetaMask, pagpapadala at pagtanggap ng Laxes, pag-verify ng transactions, at pag-iingat sa iyong wallet."
+        },
+        {
+          "title": "Mining",
+          "description": "Alamin kung paano mag-mine ng laxes sa pamamagitan ng aming mga gabay para sa baguhan. Magsimula sa built-in na CPU miner, mag-set up ng GPU mining gamit ang ethminer, at sumali sa isang mining pool para pagsamahin ang iyong hashpower sa iba para sa mas pare-parehong rewards."
+        }
+      ]
+    },
+    "branding": {
+      "title": "Parallax Branding",
+      "subtitle": "I-download ang mga opisyal na Parallax logo para gamitin sa media, presentations, at integrations.",
+      "logos": [
+        {
+          "name": "Parallax Logo - Square"
+        },
+        {
+          "name": "Parallax Logo - Square White"
+        },
+        {
+          "name": "Parallax Logo - Rounded"
+        },
+        {
+          "name": "Parallax Logo - Rounded White"
+        },
+        {
+          "name": "Parallax Logo - Transparent"
+        }
+      ]
+    },
+    "community": {
+      "title": "Parallax Community",
+      "subtitle": "Neutral, bukas, at ginawa ng lahat. Sumali sa amin sa paghubog ng kinabukasan ng programmable cash.",
+      "officialChannelsHeading": "Mga opisyal na channel",
+      "communityChannelsHeading": "Mga community channel",
+      "officialChannels": [
+        {
+          "name": "@prlxchain",
+          "description": "I-follow para sa updates at mga anunsyo."
+        },
+        {
+          "name": "BitcoinTalk",
+          "description": "Sumali sa aming BitcoinTalk thread."
+        },
+        {
+          "name": "GitHub",
+          "description": "Code, issues, at development."
+        }
+      ],
+      "communityChannels": [
+        {
+          "name": "Telegram",
+          "description": "Makipag-chat sa komunidad sa aming TG."
+        },
+        {
+          "name": "r/ParallaxProtocol",
+          "description": "Sumali sa aming Reddit community."
+        },
+        {
+          "name": "Discord",
+          "description": "Makipag-engage sa aming Discord channel."
+        }
+      ],
+      "topics": [
+        {
+          "title": "Bukas at neutral",
+          "description": "Walang nagmamay-ari sa Parallax. Walang foundation, walang kompanya, walang CEO, walang privileged allocations—sound money lang at bukas na partisipasyon."
+        },
+        {
+          "title": "Sumali sa usapan",
+          "description": "Pag-usapan ang protocol design, governance, at mga bagong ideya. Ang iyong boses ang humuhubog sa kinabukasan ng programmable cash."
+        },
+        {
+          "title": "Mag-ambag ng code",
+          "description": "I-develop ang protocol, gumawa ng dApps, o pagbutihin ang documentation. Lahat ng skill level ay welcome—mahalaga ang bawat ambag."
+        },
+        {
+          "title": "Magpatakbo ng node o mag-mine",
+          "description": "Tumulong na i-secure ang network sa pamamagitan ng pagpapatakbo ng node o mining gamit ang commodity hardware. Nagsisimula sa iyo ang decentralization."
+        },
+        {
+          "title": "Palaguin ang ecosystem",
+          "description": "Ibahagi ang Parallax, turuan ang iba, at tumulong magtayo ng patas at permissionless na financial system."
+        },
+        {
+          "title": "Matuto at magturo",
+          "description": "Tingnan ang whitepaper, sumali sa workshops, o gumawa ng educational content. Pinapalakas ng kaalaman ang komunidad."
+        }
+      ]
+    },
+    "networkAtlas": {
+      "title": "Network Atlas",
+      "subtitle": "Live na view ng mga Parallax node sa buong mundo, natutuklasan sa pamamagitan ng peer connections at nire-refresh kada 5 minuto.",
+      "errorTitle": "Pansamantalang hindi available ang node data",
+      "errorBody": "Hindi namin maabot ang discovery tree. Pakisubukan muli sa loob ng ilang minuto.",
+      "footer": "Nire-refresh kada 5 minuto · Geolocation mula sa ip-api.com",
+      "map": {
+        "ariaLabel": "World map ng mga maaabot na Parallax node",
+        "zoomIn": "Zoom in",
+        "zoomOut": "Zoom out",
+        "resetZoom": "I-reset ang zoom",
+        "nodeSingular": "node",
+        "nodePlural": "nodes",
+        "unknownLocation": "Hindi alam"
+      },
+      "summary": {
+        "onlineNodes": "Mga online na node",
+        "countries": "Mga bansa",
+        "lastUpdated": "Huling na-update",
+        "justNow": "ngayon lang",
+        "minutesAgoSingular": "{count} minuto ang nakalipas",
+        "minutesAgoPlural": "{count} minuto ang nakalipas",
+        "hoursAgoSingular": "{count} oras ang nakalipas",
+        "hoursAgoPlural": "{count} oras ang nakalipas",
+        "daysAgoSingular": "{count} araw ang nakalipas",
+        "daysAgoPlural": "{count} araw ang nakalipas"
+      },
+      "countriesTable": {
+        "heading": "Mga node ayon sa bansa",
+        "country": "Bansa",
+        "nodes": "Nodes",
+        "share": "Share",
+        "unknownCountry": "Hindi alam"
+      }
+    },
+    "parallaxClient": {
+      "title": "Parallax Client",
+      "subtitle": "I-download at patakbuhin ang opisyal na Parallax node software. Tumulong na i-secure ang network at sumali sa consensus.",
+      "decentralized": {
+        "heading": "Decentralized",
+        "body": "Ang mga user na ito ang nagpapanatiling decentralized sa Parallax. Indibidwal silang nagpapatakbo ng kanilang sariling Parallax full node, at hiwalay na sinusunod ng bawat full node ang eksaktong parehong rules para magdesisyon kung aling block chain ang valid."
+      },
+      "noVoting": {
+        "heading": "Walang botohan",
+        "body": "Walang botohan o ibang corruptible na proseso na sangkot: indibidwal na software lang na sumusunod sa magkaparehong rules—\"math\"—para suriin ang magkaparehong blocks at magkapareho ang konklusyon kung aling block chain ang valid."
+      },
+      "blockquote": "Ang shared agreement na ito (tinatawag na consensus) ang nagpapahintulot sa mga taong tulad mo na tumanggap lang ng valid transactions, ipinapatupad ang mga rules ng Parallax kahit laban sa pinakamalalakas na miner.",
+      "features": [
+        {
+          "title": "Security at privacy",
+          "description": "Dinisenyo ang Parallax Client para sa matibay na security at privacy, gamit ang cryptographic signatures at decentralized consensus."
+        },
+        {
+          "title": "Full node",
+          "description": "Magpatakbo ng full node para mag-validate ng transactions, mag-mine ng blocks, at tumulong i-secure ang Parallax network."
+        },
+        {
+          "title": "Open source",
+          "description": "Buong open source ang client. I-review, i-audit, at mag-ambag sa codebase sa GitHub."
+        }
+      ],
+      "download": {
+        "heading": "I-download ang Parallax Client",
+        "subtitle": "Dalawang paraan para magpatakbo ng Parallax full node — piliin kung alin ang bagay sa paraan mong magtrabaho. Pareho silang nag-co-connect sa parehong network.",
+        "recommended": "Recommended",
+        "advanced": "Advanced",
+        "desktopTitle": "Desktop App",
+        "desktopDescription": "Isang graphical interface para sa pagpapatakbo ng full node. Ang pinakamadaling paraan para sumali — i-install, i-launch, at panoorin ang chain mag-sync. Hindi kailangan ng terminal.",
+        "cliTitle": "Command-Line Client",
+        "cliDescription": "Ang terminal binary para sa developers, miners, at operators na nagpapatakbo ng headless servers. Configurable, scriptable, at perfect para sa automation.",
+        "cliSetupGuide": "CLI setup guide",
+        "cliOnGithub": "CLI sa GitHub",
+        "desktopOnGithub": "Desktop sa GitHub"
+      },
+      "quickStart": {
+        "heading": "CLI Quick Start",
+        "detected": "Na-detect",
+        "intro": "Para sa command-line client. Tatlong hakbang at konektado ka na sa network — hindi kailangan ng configuration. Maaaring laktawan ng mga gumagamit ng Desktop App ang section na ito: i-install at i-launch lang.",
+        "step1Label": "01 / EXTRACT",
+        "step2Label": "02 / RUN",
+        "step3Label": "03 / SYNC",
+        "step3Title": "Hintayin ang chain",
+        "step3Body": "Awtomatikong dina-download at vinevalidate ng iyong node ang blockchain. Naka-store ang data sa:",
+        "step3Note": "Maaaring tumagal ang initial sync depende sa iyong connection.",
+        "portsHint": "Gusto mong tumulong na palakasin ang network? Buksan ang ports <code>32110</code> TCP at UDP sa iyong router.",
+        "fullSetupGuide": "Buong setup guide",
+        "darwin": {
+          "extractTitle": "I-unpack ang archive",
+          "extractBodyPrefix": "I-double-click ang na-download na ",
+          "extractBodySuffix": " sa Finder, o patakbuhin mula sa Terminal:",
+          "runTitlePrefix": "Simulan ang ",
+          "runBody": "I-double-click ang {code} sa Finder. Maaaring magbigay ng warning ang macOS tungkol sa unidentified developer — right-click → Open para malampasan ito nang isang beses. May Terminal window na bubukas kasama ang sync logs."
+        },
+        "linux": {
+          "extractTitle": "I-unpack ang archive",
+          "extractBody": "Mula sa terminal sa iyong downloads folder:",
+          "runTitlePrefix": "Simulan ang ",
+          "runBody": "Mula sa extracted folder, siguraduhing executable ang binary at patakbuhin ito:"
+        },
+        "windows": {
+          "extractTitle": "I-unpack ang archive",
+          "extractBodyPrefix": "I-right-click ang na-download na ",
+          "extractBodyMiddle": " sa File Explorer at piliin ang ",
+          "extractBodySuffix": "Extract All…",
+          "runTitlePrefix": "Simulan ang ",
+          "runBody": "I-double-click ang {code} sa extracted folder. Maaaring magbigay ng warning ang Windows SmartScreen sa unang pagkakataon — i-click ang {moreInfo}. May console window na bubukas kasama ang sync logs.",
+          "moreInfo": "More info → Run anyway"
+        },
+        "copied": "Na-copy",
+        "copyCommand": "I-copy ang command"
+      },
+      "releases": {
+        "heading": "Mga kamakailang release",
+        "intro": "Mga kamakailang bersyon ng Parallax client. Palaging piliin ang pinakabagong release maliban kung may partikular kang dahilan na magpatakbo ng mas lumang build.",
+        "desktop": "Desktop",
+        "cli": "CLI",
+        "loading": "Naglo-load…",
+        "noReleases": "Walang nakitang releases.",
+        "columnVersion": "Version",
+        "columnReleased": "Released",
+        "columnAssets": "Assets",
+        "columnLink": "Link",
+        "latestBadge": "Latest",
+        "preBadge": "Pre",
+        "artifactsCount": "{count} artifacts",
+        "sourceOnly": "source only",
+        "view": "Tingnan",
+        "viewAllReleases": "Tingnan lahat ng releases"
+      }
+    },
+    "technicalDocumentation": {
+      "title": "Technical Documentation",
+      "subtitle": "Tingnan ang Parallax protocol, architecture, APIs, at developer guides.",
+      "docs": [
+        {
+          "title": "Foundational Topics",
+          "description": "Tingnan ang mga core building block ng Parallax: isang introduction sa protocol at LAX, ang basics ng dapps, ang shift mula Web2 papuntang Web3, at ang mechanics ng blocks, transactions, at accounts. Alamin kung paano gumagana ang Parallax Virtual Machine, paano kinakalkula ang gas at fees, ang papel ng nodes at clients, at ang mga consensus mechanism na nagse-secure sa network."
+        },
+        {
+          "title": "Parallax Stack",
+          "description": "Sumisid sa Parallax developer stack: alamin kung paano binubuo at dini-deploy ang smart contracts, tuklasin ang development networks at frameworks, makipag-interact sa Parallax client APIs, at i-manage ang storage. Sakop din ng section na ito ang IDE setup at best practices para tulungan kang mag-build, mag-test, at i-scale ang dapps sa Parallax."
+        },
+        {
+          "title": "Advanced",
+          "description": "Lumampas sa basics gamit ang mga in-depth na technical topics: cross-chain bridges, mga standard na gumagabay sa interoperability, oracle integrations, ang networking layer na nagpapalakas sa peer-to-peer communication, at ang core data structures at encoding formats na nagdedefine kung paano dumadaloy ang impormasyon sa Parallax."
+        },
+        {
+          "title": "Parallax Client",
+          "description": "Alamin kung paano patakbuhin, i-configure, at makipag-interact sa Parallax client. Sakop ng section na ito ang pagsisimula, core fundamentals, developer tools, monitoring, at FAQs — lahat ng kailangan mo para magpatakbo ng secure at maaasahang Parallax node."
+        }
+      ]
+    }
+  }
+}

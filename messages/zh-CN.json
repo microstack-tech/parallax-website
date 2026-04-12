@@ -1,0 +1,2277 @@
+{
+  "metadata": {
+    "site": {
+      "titleDefault": "Parallax 协议",
+      "titleTemplate": "%s | Parallax 协议",
+      "description": "面向点对点可编程货币系统的开源协议",
+      "ogDescription": "一个点对点的可编程货币系统。融合 Bitcoin 的货币纪律与 Ethereum 的可编程性。"
+    },
+    "compare": {
+      "title": "Parallax vs Bitcoin vs Ethereum",
+      "description": "在共识、货币政策、可编程性、结算等维度上，对 Parallax、Bitcoin 与 Ethereum 进行并排对比。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "description": "查阅关于 Parallax 的常见问题解答"
+    },
+    "wallets": {
+      "title": "钱包",
+      "description": "支持 Parallax 网络的钱包。"
+    },
+    "exchanges": {
+      "title": "交易所",
+      "description": "可以买卖与交易 Parallax（LAX）的交易所。"
+    },
+    "introduction": {
+      "doctrine": {
+        "title": "Parallax 信条",
+        "description": "界定 Parallax 存在所必须遵循的约束的公理与注释，与采纳程度、相关性或成败无关。"
+      },
+      "howItWorks": {
+        "title": "工作原理",
+        "description": "对 Parallax 工作方式的简明解释——钱包、交易、挖矿与区块链基础。"
+      },
+      "gettingStarted": {
+        "title": "快速入门",
+        "description": "上手 Parallax 非常简单。了解如何使用 Parallax，以及作为商家如何接受它。"
+      },
+      "parallaxForBusinesses": {
+        "title": "面向企业的 Parallax",
+        "description": "Parallax 是一种十分安全且低成本的企业支付处理方式。"
+      },
+      "parallaxForIndividuals": {
+        "title": "面向个人的 Parallax",
+        "description": "Parallax 是最便捷且费用极低的交易方式。"
+      },
+      "whitepaper": {
+        "title": "白皮书",
+        "description": "Parallax：可编程货币的全新视角。Parallax 协议的技术规范。"
+      },
+      "protocol": {
+        "overview": {
+          "title": "协议概览",
+          "description": "Parallax 协议的基础规则——密码学原语、确定性执行、工作量证明以及共识逻辑。"
+        },
+        "architecture": {
+          "title": "协议架构",
+          "description": "深入剖析 Parallax 的安全模型：签名、PVM、工作量证明以及 Nakamoto 共识。"
+        },
+        "blockRewardAndHalving": {
+          "title": "区块奖励与减半",
+          "description": "Parallax 受 Bitcoin 启发的发行计划、coinbase 成熟度机制，以及区块奖励的管理方式。"
+        },
+        "coinbaseMaturity": {
+          "title": "Coinbase 成熟度",
+          "description": "Parallax 如何通过确定性、规范化的状态更新，把矿工的区块奖励托管至成熟期满。"
+        },
+        "difficultyAndForkchoice": {
+          "title": "难度与分叉选择",
+          "description": "Parallax 难度调整从 BTC 风格 DAA 到 ASERT 的演变史，以及基于累积工作量的分叉选择规则。"
+        },
+        "xhash": {
+          "title": "XHash",
+          "description": "Parallax 所用的内存难解工作量证明。Ethash 风格的 Hashimoto，结合 Parallax 基于 ASERT 的难度与 epoch 处理。"
+        }
+      }
+    },
+    "participate": {
+      "development": {
+        "title": "开发",
+        "description": "作为开发者参与 Parallax。在 Parallax EVM 上构建智能合约与 dApp、改进协议，或将 Parallax 集成到你的项目中。"
+      },
+      "runningAFullNode": {
+        "title": "运行全节点",
+        "description": "运行 Parallax 全节点，帮助保障网络安全、提升隐私，并增强去中心化。"
+      },
+      "supportParallax": {
+        "title": "支持 Parallax",
+        "description": "支持 Parallax 的方式：运行节点、挖矿、构建、捐赠，并帮助社区成长。"
+      }
+    },
+    "resources": {
+      "beginnerGuides": {
+        "title": "新手指南",
+        "description": "手把手指南，教您运行 Parallax 节点、连接钱包并开始挖矿。"
+      },
+      "branding": {
+        "title": "品牌资源",
+        "description": "用于媒体、演示和集成场景的官方 Parallax 标志与品牌素材。"
+      },
+      "community": {
+        "title": "社区",
+        "description": "通过官方与社区运营的渠道，加入 Parallax 社区。"
+      },
+      "networkAtlas": {
+        "title": "网络图谱",
+        "description": "通过对等连接发现的 Parallax 节点的实时世界地图与各国分布概览。"
+      },
+      "parallaxClient": {
+        "title": "Parallax 客户端",
+        "description": "下载并运行官方 Parallax 全节点软件，包括桌面应用与 CLI 构建版本。"
+      },
+      "technicalDocumentation": {
+        "title": "技术文档",
+        "description": "深入了解 Parallax 协议、架构、API 与开发者指南。"
+      }
+    }
+  },
+  "common": {
+    "readMore": "阅读更多",
+    "getStarted": "开始使用",
+    "github": "GitHub",
+    "backToHome": "返回首页",
+    "readTheDocs": "阅读文档",
+    "seeLiveNodeMap": "查看实时节点地图",
+    "otherPlatforms": "其他平台",
+    "desktopOnly": "仅限桌面端",
+    "desktopOnlyHint": "请在 Linux、Windows 或 macOS 上打开本页面进行下载。",
+    "downloadDesktopApp": "下载桌面应用",
+    "downloadCli": "下载 CLI",
+    "downloadFor": "下载 {platform} 版",
+    "viewDesktopBuilds": "查看桌面应用构建",
+    "new": "新",
+    "dismiss": "关闭",
+    "scrollToTop": "回到顶部"
+  },
+  "nav": {
+    "introduction": "简介",
+    "resources": "资源",
+    "participate": "参与",
+    "faq": "常见问题",
+    "getStarted": "开始使用",
+    "toggleTheme": "切换主题",
+    "lightMode": "浅色模式",
+    "darkMode": "深色模式",
+    "language": "语言",
+    "introductionSub": {
+      "doctrine": "Parallax 信条",
+      "howItWorks": "工作原理",
+      "compare": "对比 Bitcoin 与 Ethereum",
+      "individuals": "个人用户",
+      "businesses": "企业用户",
+      "whitepaper": "白皮书",
+      "gettingStarted": "快速入门",
+      "protocol": "Parallax 协议"
+    },
+    "resourcesSub": {
+      "beginnerGuides": "新手指南",
+      "technicalDocumentation": "技术文档",
+      "parallaxClient": "Parallax 客户端",
+      "wallets": "钱包",
+      "exchanges": "交易所",
+      "community": "社区",
+      "brandAssets": "品牌资源",
+      "blockExplorer": "区块浏览器",
+      "faucet": "水龙头",
+      "networkAtlas": "网络图谱"
+    },
+    "participateSub": {
+      "supportParallax": "支持 Parallax",
+      "runningAFullNode": "运行全节点",
+      "miningPools": "矿池",
+      "development": "开发"
+    }
+  },
+  "footer": {
+    "tagline": "一个点对点的可编程货币系统。由物理法则保障，无人统治。",
+    "sections": {
+      "protocol": "协议",
+      "resources": "资源",
+      "community": "社区"
+    },
+    "links": {
+      "doctrine": "信条",
+      "howItWorks": "工作原理",
+      "compare": "对比 Bitcoin 与 Ethereum",
+      "whitepaper": "白皮书",
+      "protocolOverview": "协议总览",
+      "gettingStarted": "快速入门",
+      "beginnerGuides": "新手指南",
+      "documentation": "文档",
+      "parallaxClient": "Parallax 客户端",
+      "wallets": "钱包",
+      "exchanges": "交易所",
+      "blockExplorer": "区块浏览器",
+      "networkAtlas": "网络图谱",
+      "brandAssets": "品牌资源",
+      "github": "GitHub",
+      "bitcointalk": "BitcoinTalk",
+      "twitter": "X / Twitter",
+      "discord": "Discord",
+      "telegram": "Telegram"
+    },
+    "marketDataBy": "市场数据由 <link>CoinGecko</link> 提供",
+    "copyright": "© Parallax Protocol 2026",
+    "license": "基于 <link>LGPL-3.0</link> 许可证发布。"
+  },
+  "popup": {
+    "title": "将 Parallax 添加到您的钱包",
+    "description": "一键自动将 Parallax 网络添加到您的钱包。",
+    "add": "添加 Parallax 网络",
+    "adding": "等待授权中……",
+    "added": "网络已添加！",
+    "error": "添加网络失败，请重试。",
+    "dismiss": "关闭"
+  },
+  "languageSwitcher": {
+    "label": "语言",
+    "switchTo": "切换为{language}"
+  },
+  "notFound": {
+    "label": "404",
+    "title": "页面未找到",
+    "description": "您要访问的页面不存在或已被移动。",
+    "back": "返回首页"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "一个点对点的可编程货币系统。",
+      "securedByPhysics": "由物理法则保障。",
+      "runNode": "运行节点",
+      "readDocs": "阅读文档"
+    },
+    "networkStats": {
+      "liveNetwork": "实时网络",
+      "market": "市场",
+      "blockExplorer": "区块浏览器",
+      "networkAtlas": "网络图谱",
+      "coingecko": "CoinGecko",
+      "labels": {
+        "blocks": "区块",
+        "transactions": "交易",
+        "addresses": "地址",
+        "avgBlockTime": "平均出块时间",
+        "txnsToday": "今日交易",
+        "price": "LAX 价格",
+        "marketCap": "市值",
+        "volume24h": "24 小时成交量",
+        "supply": "流通量"
+      }
+    },
+    "parallax": {
+      "eyebrow": "协议",
+      "heading": "Parallax 协议",
+      "subtitle": "一套货币系统的合法性，仅在于其规则不可被扭曲。",
+      "imageCaption": "《苏格拉底之死》——雅克-路易·大卫",
+      "body1": "Parallax 将固定的货币供应量、PoW 结算与完整的智能合约可编程性融为一体。每一枚币都必须通过挖矿产生，每一条规则都不留任何裁量空间地执行。没有预挖、没有基金会、没有特权账户。",
+      "body2": "《苏格拉底之死》刻画了一种拒绝以真理换取便利的姿态。苏格拉底接受自己的命运，并非出于服从，而是因为放弃原则便会让理性本身失去意义。",
+      "body3": "Parallax 遵循同样的逻辑。一套货币系统的合法性，仅在于其规则不会被权力或舆论所扭曲。Parallax 不依赖信任、委员会或叙事共识，而是将价值锚定在不可逆的物理成本之上。",
+      "body4": "苏格拉底以理性高于统治者，Parallax 以物理高于机构。",
+      "cta": "阅读 Parallax 信条"
+    },
+    "soundMoney": {
+      "eyebrow": "经济设计",
+      "heading": "硬通货设计",
+      "subtitle": "Parallax 是由物理法则保障的可编程黄金。一个固定供应、PoW 结算的网络层，其稀缺性由能量而非委员会强制执行。",
+      "hardCap": {
+        "title": "固定供应量上限",
+        "description": "与 Bitcoin 完全一致的有限且可预测的发行计划。没有货币裁量权，也没有隐性通胀。供应规则写入协议，而不是由委员会拍板。"
+      },
+      "energySecured": {
+        "title": "由能量保障的价值",
+        "description": "算力将货币与现实世界的能源和硅芯片紧密相连。攻击链就必须燃烧那些保护它的同一份物理资源，使 Parallax 的货币完整性锚定于可量化的成本，而非社会信任。"
+      },
+      "fairLaunch": {
+        "title": "公平启动经济模型",
+        "description": "没有预挖、没有 VC 分配、没有内部人特权。每一枚币都必须在同一套规则下通过努力获得。"
+      },
+      "settlement": {
+        "title": "结算优先的区块",
+        "description": "10 分钟的出块时间将协调压力维持在低位，将去中心化保持在高位。专为长期可靠的结算而设计。"
+      },
+      "programmable": {
+        "title": "可编程的黄金",
+        "description": "EVM 兼容链，将硬通货视为原生资产。在 PoW 之上构建合约、dApp 和 Rollup。"
+      },
+      "credibly": {
+        "title": "可信中立",
+        "description": "任何人都可以无需许可地运行节点、挖矿或构建。协议不在乎你是谁。"
+      },
+      "cta": "查看 Parallax 的全方位对比",
+      "ctaSubtitle": "对比 Bitcoin 与 Ethereum，逐项呈现"
+    },
+    "client": {
+      "eyebrow": "软件",
+      "heading": "Parallax 客户端",
+      "subtitle": "下载并运行 Parallax 参考节点软件。帮助保障网络安全，参与共识。",
+      "decentralized": {
+        "title": "去中心化",
+        "description": "正是运行节点的用户在支撑 Parallax 的去中心化。每个人独立运行自己的 Parallax 全节点，每个全节点又分别遵循完全相同的规则，独立判断哪条区块链才是有效的。",
+        "cta": "查看实时节点地图"
+      },
+      "noVoting": {
+        "title": "不依赖投票",
+        "description": "其中没有投票，也没有任何可被腐化的流程：只有各自独立的软件遵循着同一套规则——也就是「数学」——评估同一批区块，并对哪条链有效得出一致的结论。"
+      },
+      "blockquote": "这种共享一致（即共识）让像您这样的用户只接受有效交易，从而能够对最强大的矿工也强制执行 Parallax 的规则。",
+      "runNode": {
+        "title": "运行 Parallax 节点",
+        "description": "Parallax 桌面应用是加入网络的最简单方式——安装、启动，便会自动开始同步。已支持 Linux、Windows 与 macOS。"
+      },
+      "cli": "Parallax CLI",
+      "quickStart": "快速开始",
+      "github": "GitHub"
+    },
+    "documentation": {
+      "eyebrow": "学习",
+      "heading": "文档",
+      "subtitle": "查阅关于 Parallax 协议与参考客户端的新手指南与深入技术文档。",
+      "beginnerGuides": {
+        "title": "新手指南",
+        "description": "下载 Parallax 客户端、设置钱包以及上手挖矿的分步指南。"
+      },
+      "technicalDocumentation": {
+        "title": "技术文档",
+        "description": "核心构件、开发者技术栈，以及运行与配置 Parallax 客户端的深入主题。"
+      },
+      "whitepaper": {
+        "title": "白皮书",
+        "description": "Parallax 协议的技术规范。涵盖货币设计、共识机制与网络架构。"
+      }
+    },
+    "community": {
+      "eyebrow": "社区",
+      "heading": "开放开发",
+      "openSource": {
+        "title": "开源",
+        "description": "全部代码均已开源并托管在 GitHub 上。欢迎审阅、审计并参与协议开发。透明并非乐观主义——而是韧性所在。"
+      },
+      "communityDriven": {
+        "title": "社区驱动",
+        "description": "Parallax 没有基金会、没有治理实体，也没有特权贡献者。开发完全公开进行。协议规则不会因舆论需求而改变。"
+      },
+      "join": {
+        "title": "加入社区",
+        "description": "与用户、开发者、矿工和矿池运营者建立连接。获取支持、分享想法，紧跟最新动态。"
+      }
+    }
+  },
+  "compare": {
+    "title": "Parallax vs Bitcoin vs Ethereum",
+    "subtitle": "并排展示 Parallax 与两大主流加密货币的对比。与 Bitcoin 相同的固定供应上限，与 Ethereum 相同的可编程性，却没有任何货币设计上的妥协。",
+    "atAGlance": "概览",
+    "detailedComparison": "详细对比",
+    "featureByFeature": "逐项对比",
+    "property": "属性",
+    "thesisLabel": "Parallax 论点",
+    "thesisBody": "Bitcoin 证明了硬通货是可行的——但它不可编程。Ethereum 证明了可编程货币是可行的——但它放弃了稀缺性与 PoW。Parallax 是两者的合成：与 Bitcoin 完全相同的发行计划与由能量保障的结算，同时面向开发者开放完整的 EVM。硬通货作为原生资产，而非被包装的事后补丁。",
+    "maturity": {
+      "justLaunched": "刚刚上线",
+      "oneMonth": "约 1 个月",
+      "months": "约 {count} 个月",
+      "years": "约 {years} 年"
+    },
+    "chains": {
+      "parallax": "Parallax",
+      "bitcoin": "Bitcoin",
+      "ethereum": "Ethereum"
+    },
+    "summary": [
+      {
+        "title": "固定供应量上限",
+        "parallax": "是 —— 2100 万，与 Bitcoin 一致",
+        "bitcoin": "是 —— 2100 万",
+        "ethereum": "否 —— 无供应上限"
+      },
+      {
+        "title": "工作量证明",
+        "parallax": "是 —— XHash",
+        "bitcoin": "是 —— SHA-256",
+        "ethereum": "否 —— 自 2022 年起改为 PoS"
+      },
+      {
+        "title": "EVM 智能合约",
+        "parallax": "是 —— 原生支持",
+        "bitcoin": "否",
+        "ethereum": "是 —— 原生支持"
+      },
+      {
+        "title": "公平启动",
+        "parallax": "是 —— 无预挖、无 VC",
+        "bitcoin": "是 —— 无预挖",
+        "ethereum": "否 —— 预挖 7200 万 ETH"
+      }
+    ],
+    "sections": {
+      "consensus": {
+        "title": "共识与安全",
+        "rows": [
+          {
+            "label": "共识机制",
+            "description": "网络如何就账本状态达成一致。",
+            "parallax": "工作量证明",
+            "bitcoin": "工作量证明",
+            "ethereum": "权益证明"
+          },
+          {
+            "label": "哈希算法",
+            "parallax": "XHash（抗 ASIC）",
+            "bitcoin": "SHA-256（ASIC 主导）",
+            "ethereum": "无（验证者质押）"
+          },
+          {
+            "label": "难度调整算法",
+            "description": "协议如何重新调整 PoW 难度，以维持目标出块时间。",
+            "parallax": "ASERT（逐区块，半衰期 2 天）",
+            "bitcoin": "每 2016 区块窗口调整",
+            "ethereum": "无（不挖矿）"
+          },
+          {
+            "label": "Coinbase 成熟期",
+            "description": "新挖出的奖励在可被花费前的锁定期。降低近链顶重组以攫取手续费与补贴的动机。",
+            "parallax": "100 区块（约 16 小时）",
+            "bitcoin": "100 区块（约 16 小时）",
+            "ethereum": "无"
+          },
+          {
+            "label": "由现实世界能量锚定的安全性",
+            "description": "攻击链需要燃烧可量化的物理成本，而不是获取社会信任。"
+          },
+          {
+            "label": "无需许可的验证",
+            "description": "任何人都能在无需许可、无需资本门槛的情况下参与维护网络吗？",
+            "parallax": "任何人都可挖矿",
+            "bitcoin": "任何人都可挖矿",
+            "ethereum": "单独质押需 32 ETH"
+          }
+        ]
+      },
+      "monetary": {
+        "title": "货币政策",
+        "rows": [
+          {
+            "label": "供应上限",
+            "description": "最大供应量是否由协议固定？",
+            "parallax": "21,000,000（固定上限）",
+            "bitcoin": "21,000,000（固定上限）",
+            "ethereum": "无上限"
+          },
+          {
+            "label": "可预测的发行计划",
+            "parallax": "每 21 万区块减半",
+            "bitcoin": "每 21 万区块减半",
+            "ethereum": "可由治理调整"
+          },
+          {
+            "label": "初始区块奖励与减半",
+            "description": "起始的区块补贴及其减半周期。",
+            "parallax": "50 LAX，每 210,000 区块减半（约 4 年）",
+            "bitcoin": "50 BTC，每 210,000 区块减半（约 4 年）",
+            "ethereum": "无固定计划，发行由 EIP 决定"
+          },
+          {
+            "label": "公平启动",
+            "description": "无预挖、无 VC 分配、无内部人分发。",
+            "ethereum": "预挖 7200 万 ETH（2014 年 ICO）"
+          },
+          {
+            "label": "货币政策可变性",
+            "description": "发行规则能否在不引发争议性硬分叉的情况下被更改？",
+            "parallax": "写入协议",
+            "bitcoin": "写入协议",
+            "ethereum": "由核心开发者 / EIP 治理"
+          },
+          {
+            "label": "手续费模型",
+            "description": "交易手续费如何定价，以及是否有部分被销毁。",
+            "parallax": "优先级竞价（gas price，无销毁）",
+            "bitcoin": "优先级竞价（sat/vB，无销毁）",
+            "ethereum": "EIP-1559 基础费 + 小费（基础费销毁）"
+          }
+        ]
+      },
+      "settlement": {
+        "title": "结算与性能",
+        "rows": [
+          {
+            "label": "目标出块时间",
+            "parallax": "约 10 分钟",
+            "bitcoin": "约 10 分钟",
+            "ethereum": "约 12 秒"
+          },
+          {
+            "label": "结算优先的设计",
+            "description": "为可靠的最终性而优化，而非追求高吞吐量活动。"
+          },
+          {
+            "label": "最终性模型",
+            "parallax": "概率性（PoW）",
+            "bitcoin": "概率性（PoW）",
+            "ethereum": "经济性（检查点）"
+          },
+          {
+            "label": "扩容方式",
+            "description": "在不损害结算的前提下，链如何在基础层之外延展吞吐量。",
+            "parallax": "Rollup + 支付通道（EVM L2 可行）",
+            "bitcoin": "Lightning + 侧链（Liquid、Rootstock）",
+            "ethereum": "Optimistic 与 ZK Rollup"
+          }
+        ]
+      },
+      "programmability": {
+        "title": "可编程性",
+        "rows": [
+          {
+            "label": "账户模型",
+            "description": "底层账本结构——影响智能合约、并行性与手续费记账。",
+            "parallax": "账户模型（EVM）",
+            "bitcoin": "UTXO",
+            "ethereum": "账户模型（EVM）"
+          },
+          {
+            "label": "智能合约",
+            "parallax": "EVM 兼容",
+            "bitcoin": "Script（受限）",
+            "ethereum": "EVM 原生"
+          },
+          {
+            "label": "原生代币发行",
+            "description": "用户能否将同质化代币与 NFT 作为协议一等对象进行部署？",
+            "parallax": "通过 EVM 支持 ERC-20 / ERC-721",
+            "bitcoin": "仅通过元协议（Ordinals、Runes）",
+            "ethereum": "原生 ERC-20 / ERC-721"
+          },
+          {
+            "label": "图灵完备的执行环境"
+          },
+          {
+            "label": "原生支持 dApp 与 Rollup",
+            "bitcoin": "通过侧链 / L2"
+          },
+          {
+            "label": "硬通货作为原生资产",
+            "description": "基础层资产本身就是固定上限、由能量保障的价值存储。",
+            "bitcoin": "但不支持智能合约"
+          }
+        ]
+      },
+      "governance": {
+        "title": "去中心化与治理",
+        "rows": [
+          {
+            "label": "可信中立",
+            "description": "协议不会因身份、司法辖区或持仓规模而区别对待。"
+          },
+          {
+            "label": "基金会 / 公司影响力",
+            "parallax": "无",
+            "bitcoin": "无",
+            "ethereum": "Ethereum 基金会"
+          },
+          {
+            "label": "节点硬件要求",
+            "parallax": "消费级硬件",
+            "bitcoin": "消费级硬件",
+            "ethereum": "SSD + 质押硬件"
+          },
+          {
+            "label": "升级路径",
+            "parallax": "粗略共识 + 硬分叉",
+            "bitcoin": "粗略共识 + 软分叉",
+            "ethereum": "协调一致的硬分叉"
+          },
+          {
+            "label": "网络成熟度",
+            "description": "自主网启动以来的时间——可粗略反映其经受考验的程度与生态深度。"
+          }
+        ]
+      }
+    },
+    "launchDates": {
+      "parallax": "2025 年 10 月",
+      "bitcoin": "2009 年 1 月",
+      "ethereum": "2015 年 7 月"
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "subtitle": "查阅关于 Parallax 的常见问题解答",
+    "search": {
+      "placeholder": "搜索问题……",
+      "resultsOne": "{count} 条结果",
+      "resultsOther": "{count} 条结果",
+      "noResults": "未找到结果",
+      "clear": "清除搜索"
+    },
+    "categories": {
+      "general": "综合",
+      "technical": "技术",
+      "mining": "挖矿",
+      "economics": "经济",
+      "governance": "治理",
+      "development": "开发"
+    },
+    "items": {
+      "general": [
+        {
+          "question": "什么是 Parallax？",
+          "answer": "Parallax 是一种区块链协议，将 Bitcoin 久经考验的货币纪律与 Ethereum 的可编程性融为一体。它沿用 Bitcoin 的 2100 万固定总量、10 分钟出块时间与 PoW 共识，同时新增完整的 EVM 兼容能力以支持智能合约。"
+        },
+        {
+          "question": "Parallax 由谁创建？",
+          "answer": "Parallax 由一支区块链开发者团队创建，他们意识到需要一种协议，能将 Bitcoin 的硬通货原则与 Ethereum 的智能合约能力衔接起来。项目采用公平启动模式，没有预挖，也没有特权分配。"
+        },
+        {
+          "question": "Parallax 与 Bitcoin、Ethereum 有何不同？",
+          "answer": "Parallax 独特地结合了两者的优势：Bitcoin 的货币政策（2100 万固定供应、减半周期、PoW）与 Ethereum 的可编程性（EVM 兼容、智能合约）。与 Bitcoin 不同，它支持复杂应用；与 Ethereum 不同，它保持固定供应，并且不销毁手续费。"
+        },
+        {
+          "question": "为何选择 PoW 而非 PoS？",
+          "answer": "PoW 将安全性锚定在一种外部、客观的成本——能量——之上，这种成本无法被模拟、被投票生成，也无法被社会协商出来。PoS 系统只是用一组可信中介替换了另一组（验证者 / 委员会），不过是把信任挪了个位置，而非真正去除信任。PoW 确保影响力只能通过劳动获得，而非依赖特权或身份，使其成为唯一与真正的无需许可性相兼容的共识机制。"
+        }
+      ],
+      "technical": [
+        {
+          "question": "Parallax 使用什么共识机制？",
+          "answer": "Parallax 采用 PoW 共识，并使用 XHash 挖矿算法。与 Bitcoin 由 ASIC 主导的 SHA-256 不同，XHash 对 GPU 友好。这在保留 PoW 安全优势的同时，让更广泛的群体得以参与挖矿。"
+        },
+        {
+          "question": "什么是 XHash？为何选择它？",
+          "answer": "XHash 是一个改良的 Ethash 变体，专为淘汰现有 ASIC、让挖矿对 GPU 等通用硬件保持开放而设计。通过抵抗 ASIC 主导，XHash 促进矿工多样性以及更广泛的网络维护参与，避免了影响其他 PoW 链的算力集中问题。"
+        },
+        {
+          "question": "Parallax 是否兼容 EVM？",
+          "answer": "是的，Parallax 完全兼容 EVM，这意味着所有 Ethereum 智能合约、工具与应用都可以在 Parallax 上无需修改地运行。开发者可以使用 MetaMask、Remix、Hardhat 等熟悉的工具。"
+        },
+        {
+          "question": "出块时间和交易手续费是多少？",
+          "answer": "Parallax 采用与 Bitcoin 相同的 10 分钟出块间隔，以保证稳定与可预测性。交易手续费使用首价拍卖模型，全部费用直接归矿工所有，从而在不销毁手续费的前提下保证可持续的挖矿激励。"
+        },
+        {
+          "question": "为什么是 10 分钟出块，而不是更快？",
+          "answer": "全球达成一致需要物理上的延迟。把最终性时间压缩到物理极限以下的系统会引入隐性优势——靠近验证者、专用网络、特权交易排序——这些都会让共识趋于中心化。Parallax 把时间视为一种稳定的力量。通过累积工作量缓慢获得的最终性，比通过社会协议快速宣告的最终性更具韧性。"
+        },
+        {
+          "question": "区块的 gas 上限是多少？",
+          "answer": "Parallax 采用保守的区块 gas 上限：6 亿 gas，约为 Ethereum 吞吐量的一半，相当于每秒约 100 万 gas。这是一个有意为之的设计选择：让基础层吞吐量保持保守，确保运行普通硬件的个人也能继续运行全节点，将去中心化置于原始速度之上。"
+        },
+        {
+          "question": "Parallax 如何应对 51% 攻击？",
+          "answer": "Parallax 的安全模型结合了 PoW、10 分钟出块间隔与 XHash 挖矿，使攻击成本高得令人却步。改写历史需要累积比诚实链更多的工作量——而这一成本会随每一个新区块不断增长。XHash 的可访问性促进了多样化、分布式的矿工群体，使任何单一实体都难以掌握过半算力。100 区块的 coinbase 成熟期也防止了攻击者在试图发起重组时立即花费新挖出的奖励。"
+        },
+        {
+          "question": "什么是 coinbase 成熟期？",
+          "answer": "Coinbase 成熟期是新挖出的区块奖励在可被花费前的 100 区块锁定期（约 17 小时）。这可以防止矿工花费那些日后可能被重组移出链外的区块奖励，为防御链重组攻击额外增加了一层安全保障。"
+        },
+        {
+          "question": "运行全节点的硬件要求是什么？",
+          "answer": "Parallax 的设计目标是让全节点能够在个人可负担的通用硬件上运行。保守的 6 亿 gas 区块上限与 10 分钟出块间隔让存储增长、带宽与计算需求都保持在可控范围内。任何具有宽带连接的现代计算机都可以参与到网络验证之中。"
+        }
+      ],
+      "mining": [
+        {
+          "question": "如何挖 Parallax？",
+          "answer": "Parallax 使用 XHash 挖矿算法，因此可以使用 CPU 与 GPU 进行挖矿——通过 Parallax 客户端内置的矿工或外部 GPU 矿工皆可。只需将矿工指向某个 Parallax 矿池并完成相应配置即可。"
+        },
+        {
+          "question": "挖矿奖励的发行计划是怎样的？",
+          "answer": "Parallax 沿用 Bitcoin 的减半计划。初始区块奖励为每区块 50 LAX，约每 4 年（210,000 区块）减半一次。这确保了与 Bitcoin 同样行之有效的稀缺模型。"
+        },
+        {
+          "question": "我可以使用现有的 Ethereum 矿机吗？",
+          "answer": "可以！由于 Parallax 使用的 XHash 算法基于 Ethash，现有的 Ethereum 矿机无需更换硬件即可挖 Parallax。只需更新挖矿软件配置，将其指向 Parallax 矿池即可。"
+        }
+      ],
+      "economics": [
+        {
+          "question": "Parallax 的总供应量是多少？",
+          "answer": "Parallax 的最大供应量固定为 2100 万枚，与 Bitcoin 完全一致。这一固定上限确保稀缺性与通缩型货币政策，使 LAX 在保留可编程功能的同时成为价值存储。"
+        },
+        {
+          "question": "交易手续费如何处理？",
+          "answer": "与 Ethereum 的手续费销毁机制不同，Parallax 采用首价拍卖模型，所有交易手续费直接归矿工所有。这确保了可持续的挖矿激励，并维护了网络的经济安全。"
+        },
+        {
+          "question": "Parallax 为什么不像 Ethereum 那样销毁手续费？",
+          "answer": "销毁手续费会减少矿工收入，让经济安全依赖于交易量。在 Parallax 中，所有手续费都直接归矿工所有，这确保无论区块补贴处于何种水平，矿工都仍然有经济动机来保障网络安全。当区块奖励随减半周期不断减少时，这一点尤为重要——交易手续费会成为矿工的主要激励，销毁其中任何一部分都会损害网络的长期安全。"
+        },
+        {
+          "question": "当 2100 万枚币全部被挖出之后会怎样？",
+          "answer": "一旦 2100 万枚币全部挖出（按减半计划估算需要一个多世纪），矿工的收入将完全由交易手续费维持。由于 Parallax 不销毁手续费，所有交易手续费都直接流向矿工，为持续保障网络安全提供长期经济激励。这一模式与 Bitcoin 设计一致，确保网络无需依赖永久性的代币发行也能维持运转。"
+        },
+        {
+          "question": "是否存在预挖或 ICO？",
+          "answer": "没有。Parallax 采用公平启动模式，没有预挖、没有 ICO，也没有特权分配。所有币都通过挖矿奖励分发，从第一天起就保证了去中心化与公平的分配方式。"
+        }
+      ],
+      "governance": [
+        {
+          "question": "协议升级如何决策？",
+          "answer": "Parallax 奉行最小化治理理念。协议的货币政策——2100 万供应上限、减半计划与 PoW 共识——被视为不可变更，不在治理范围之内。协议升级仅限于技术改进与缺陷修复，由社区共识驱动，而非由任何中心化的基金会或公司主导。任何需要解释的规则都会引入裁量权，而裁量权又会带来被俘获的风险；Parallax 偏好可被确定性评估的规则。"
+        },
+        {
+          "question": "Parallax 背后是否有基金会或公司？",
+          "answer": "Parallax 最初由 MicroStack 维护，但协议的设计目标是比其创造者更长寿。随着项目逐步成熟，维护工作正在向更广泛的生态过渡。没有基金会控制协议，没有由通胀提供资金的金库，也没有特权治理代币。即便其创造者消失或意见分歧，协议依然必须保持正确。"
+        },
+        {
+          "question": "Parallax 是否会支持 Layer 2 方案？",
+          "answer": "会。基础层是有意保持保守的——它的存在是为了结算，而不是为了炫技。在基础层最大化吞吐量与表达能力会增加复杂性与攻击面。Parallax 把实验留给更高的层次，让失败不会威胁到结算。Rollup 与侧链等 Layer 2 方案可以锚定到 Parallax 安全的基础层，在保留 PoW 结算安全保障的同时实现可扩展性。"
+        },
+        {
+          "question": "是否存在与其他区块链的桥？",
+          "answer": "作为完全 EVM 兼容的链，Parallax 在架构上与现有的跨链桥协议兼容。跨链桥的开发由社区与生态参与者推动。由于 Parallax 使用标准的 Ethereum 工具与接口，与跨链桥基础设施的集成方式与任何 EVM 链并无不同。"
+        }
+      ],
+      "development": [
+        {
+          "question": "如何在 Parallax 上构建？",
+          "answer": "在 Parallax 上构建与在 Ethereum 上构建完全相同。可以使用 Solidity、Remix IDE、Hardhat 或 Foundry 等熟悉的工具。通过 MetaMask 或其他 Web3 钱包连接 Parallax 网络，即可部署合约。"
+        },
+        {
+          "question": "是否提供开发资助？",
+          "answer": "Parallax 生态鼓励社区驱动的开发。虽然没有中心化基金会发放资助，但社区通过多种机制与合作积极支持有潜力的项目。"
+        },
+        {
+          "question": "支持哪些工具和库？",
+          "answer": "所有 Ethereum 开发工具均可在 Parallax 上使用：Web3.js、Ethers.js、MetaMask、Remix、Hardhat、Foundry、OpenZeppelin 合约等。完整的 Ethereum 生态都对 Parallax 开发者开放。"
+        }
+      ]
+    }
+  },
+  "addNetworkSection": {
+    "connectedTitle": "已连接 Parallax 网络",
+    "connectedDescription": "Parallax 网络已添加到您的钱包，可以开始使用了。",
+    "title": "将 Parallax 添加到您的钱包",
+    "description": "一键自动将 Parallax 网络添加到您的钱包。",
+    "add": "添加 Parallax 网络",
+    "adding": "等待授权中……",
+    "added": "网络已添加！",
+    "error": "添加网络失败，请重试。"
+  },
+  "introduction": {
+    "doctrine": {
+      "pageTitle": "Parallax 信条",
+      "pageSubtitle": "界定 Parallax 存在所必须遵循的约束的公理与注释，与采纳程度、相关性或成败无关。",
+      "buttons": {
+        "canonicalSource": "权威来源",
+        "axioms": "公理",
+        "commentary": "注释"
+      },
+      "intro": {
+        "heading": "面向持久结算的公理与注释",
+        "date": "2025 年 12 月",
+        "author": "Parallax 贡献者著",
+        "body1": "本文受 <i>The Zurich Axioms</i> 公理化风格启发，先以不可妥协的方式定义 Parallax 存在所依赖的约束，再以注释阐释其必要性。",
+        "body2Line1": "公理是宣告性的，且不可更改。",
+        "body2Line2": "注释是解释性的，不具有权威性。",
+        "body3": "若注释与公理相互冲突，以公理为准。"
+      },
+      "purpose": {
+        "heading": "目的",
+        "body1": "Parallax 信条的存在，是为了明确那些无论采纳程度、相关性或成败如何都必须保持成立的原则。",
+        "body2Line1": "它不进行辩论。",
+        "body2Line2": "它不试图说服。",
+        "body2Line3": "它不承诺结果。",
+        "body3": "它定义的是在对抗性环境中保持正确性所需的条件。"
+      },
+      "scope": {
+        "heading": "关于范围与意图",
+        "body1": "Parallax 不假定自身一定成功。它不预设采纳、相关性或主导地位，也不为自身定义命运、路线图或最终结果。",
+        "body2": "本信条的存在，是为了陈述无论 Parallax 成功与否，正确性得以保持的条件。",
+        "body3": "一个相信自己注定胜利的系统，最终会为了避免失败而合理化干预行为。Parallax 拒绝这一前提。"
+      },
+      "commentaryLabel": "注释",
+      "axioms": [
+        {
+          "id": "I",
+          "title": "物理成本是抵御篡改的唯一可扩展防线",
+          "subtitle": "任何能被廉价改写的系统，终将被改写。",
+          "commentary": "数字系统并未脱离物理世界。计算消耗能量，通信跨越空间，验证受限于硬件。Parallax 将共识锚定于工作量证明，正是因为它引入了一种外部的、客观的成本——这种成本无法被模拟、无法通过投票产生，也无法通过社交协商达成。\n\n能量支出制造了不对称：诚实参与是逐步累积工作的过程，而攻击则需要付出极不对称的代价。工作量证明并不保证正确性，但它保证改写历史是昂贵的。在对抗性系统中，昂贵就是可信。"
+        },
+        {
+          "id": "II",
+          "title": "时间无法在不引入中心化的前提下被压缩",
+          "subtitle": "全局共识需要延迟。试图消除延迟，就是制造优势。",
+          "commentary": "共识不是计算，而是协调。在全球网络中协调，受限于延迟、带宽与验证时间。这些不是工程问题，而是物理极限。\n\n那些将最终性时间压缩到极限以下的系统，会引入隐性优势：地理临近、专用网络、特权排序或协调机制。久而久之，这些优势会累积为控制力。Parallax 把时间视为稳定力量。慢慢赢得的最终性，比仓促宣告的最终性更稳固。"
+        },
+        {
+          "id": "III",
+          "title": "可被重新分配的信任并未被消除",
+          "subtitle": "用委员会或验证者取代机构，并不意味着消除了信任。",
+          "commentary": "无信任并不等于完全没有信任，而是把信任假设降到最低。许多系统只是把信任从银行迁移到验证者、从机构迁移到治理结构，却并未真正消除它。\n\nParallax 通过以下方式最小化信任：使有效性可独立验证、使规则的执行机械化，并使正确性不依赖身份或声誉。一个系统之所以无信任，不是因为参与者值得信任，而是因为根本不需要信任。"
+        },
+        {
+          "id": "IV",
+          "title": "任何需要解释的规则都会被俘获",
+          "subtitle": "规则必须可在无需判断的情况下被执行。",
+          "commentary": "解释引入裁量权。裁量权引入权力。如果一条规则需要上下文、意图或解释才能被正确执行，那么执行就依赖于人的判断。判断会累积权威，权威则会成为被俘获的入口。\n\nParallax 偏好可被确定性求值的规则。模糊不是灵活，而是被推迟的中心化。"
+        },
+        {
+          "id": "V",
+          "title": "货币规则不得因情势而调整",
+          "subtitle": "货币上的灵活性，本质上就是裁量权的伪装。",
+          "commentary": "货币体系之所以失败，并不是因为规则过于刚性，而是因为它们可被协商。例外会变成先例，裁量会吸引影响力。\n\nParallax 把货币规则视为约束，而非政策。它们不会因危机、情绪或协调压力而调整。可预测性不是便利，而是最小化信任的根基。"
+        },
+        {
+          "id": "VI",
+          "title": "许可与所有权不可兼容",
+          "subtitle": "可被撤销的访问权，不是所有权。",
+          "commentary": "所有权必须意味着不可撤销的访问。如果参与依赖于审批、身份或委托，那么访问就是有条件的。有条件的访问意味着背后存在一个有权撤销的权威。\n\nParallax 不授予访问权。它只定义任何人都可满足的约束。无需许可不是开放，而是没有守门人。"
+        },
+        {
+          "id": "VII",
+          "title": "依赖合作的系统会在压力下崩塌",
+          "subtitle": "对抗性条件是默认状态，而非例外。",
+          "commentary": "Parallax 假定参与者具有理性自利、信息不对称以及持续作弊的动机。安全并非源自善意，而是源自让作恶失效的约束。\n\n一个需要靠合作才能维持安全的系统并非去中心化，而是脆弱的。"
+        },
+        {
+          "id": "VIII",
+          "title": "历史必须难以更改，但不必禁止讨论",
+          "subtitle": "最终性源自成本，而非命令。",
+          "commentary": "历史只有在能抵御被改写时才有价值。Parallax 并不主张绝对不可更改，它只确保改写历史需要真正的支出。\n\n绝对的不可更改是脆弱的。基于成本的不可更改是可扩展的。最终性是通过工作累积出来的。"
+        },
+        {
+          "id": "IX",
+          "title": "底层只为结算而存在，不为炫技",
+          "subtitle": "复杂性应当存在于结算之上的层级。",
+          "commentary": "底层负责确立顺序与最终性。试图在底层最大化吞吐量或表达能力，只会增加复杂性与攻击面。\n\nParallax 把实验性内容限制在更高的层级，让失败不至于威胁结算的完整性。底层在设计上就保持缓慢、保守，并难以更改。"
+        },
+        {
+          "id": "X",
+          "title": "中立的系统不得迎合叙事",
+          "subtitle": "偏好就是一种被俘获。",
+          "commentary": "中立不是道德立场，而是一种架构要求。无论参与者、交易或上下文为何，Parallax 都适用同样的规则。\n\n那些迎合政治、社会或经济叙事的系统，必然引入裁量权。而裁量权正是被俘获的根源。"
+        },
+        {
+          "id": "XI",
+          "title": "隐藏的失效模式会在沉默中累积",
+          "subtitle": "无法被观察的，就无法被纠正。",
+          "commentary": "那些隐藏取舍、抽象掉成本或掩盖脆弱性的系统，会不断累积隐性风险。失效会持续叠加，直到系统崩塌。\n\nParallax 偏好显式的成本、可见的攻击面以及被承认的局限。透明不是乐观，而是韧性。"
+        },
+        {
+          "id": "XII",
+          "title": "协议必须比创造者活得更久",
+          "subtitle": "任何个人或组织都不应是有效性的必要条件。",
+          "commentary": "即使 Parallax 的创造者消失、产生分歧或被遗忘，Parallax 也必须依然保持正确。意图无关紧要，权威也无关紧要。\n\n唯一重要的是有效性。一个需要持续看护才能存续的系统，不是中立的基础设施。"
+        },
+        {
+          "id": "XIII",
+          "title": "基础设施靠隐于幕后而成功",
+          "subtitle": "衡量成功的不是采纳程度，而是长寿。",
+          "commentary": "Parallax 的目标不是吸引关注、优化参与度或追逐热点，它的目的只在于持续存在。\n\n长寿需要克制。克制需要约束。当基础设施隐入背景时，它便取得了成功。"
+        }
+      ],
+      "closing": {
+        "heading": "结语",
+        "body1": "Parallax 不要求被信任。",
+        "body2": "如果任何一条公理被证伪，Parallax 将会失败——而这种失败是可以接受的。",
+        "body3Line1": "现实是裁判。",
+        "body3Line2": "成本是信号。",
+        "body3Line3": "时间是过滤器。",
+        "body4": "Parallax 不为讨人喜欢、被升级或被治理而设计——它只为保持正确而存在。"
+      }
+    },
+    "howItWorks": {
+      "pageTitle": "Parallax 是如何运作的？",
+      "pageSubtitle": "这是一个常被误解的问题，下面是一份简明的解释。",
+      "topics": [
+        {
+          "title": "基础知识",
+          "description": "开始使用 Parallax，只需安装钱包、生成地址，然后收发资金。它就像电子邮件一样简单。"
+        },
+        {
+          "title": "余额与区块链",
+          "description": "所有交易都记录在 Parallax 区块链上。钱包会计算出您的可用余额，而密码学则保障一切的安全与透明。"
+        },
+        {
+          "title": "交易与私钥",
+          "description": "交易在钱包之间转移价值，并通过您的私钥进行签名。这既证明了所有权，也保障了资金的安全。"
+        },
+        {
+          "title": "处理与挖矿",
+          "description": "矿工通过将交易打包进区块、并以 XHash 工作量证明展开竞争来保障 Parallax 的安全。这让网络保持公平与去中心化。"
+        },
+        {
+          "title": "深入兔子洞",
+          "description": "本页只是冰山一角。如果想深入了解，请阅读 Parallax 白皮书、开发者文档以及社区资源。"
+        }
+      ],
+      "learnMore": "了解更多关于 Parallax"
+    },
+    "gettingStarted": {
+      "pageTitle": "开始使用 Parallax",
+      "pageSubtitle": "使用 Parallax 进行交易简单易用，人人皆可上手。在这里，您可以体验 Bitcoin 的货币政策与 Ethereum 的可编程性。",
+      "tabs": {
+        "use": "如何使用 Parallax",
+        "accept": "如何接受 Parallax"
+      },
+      "use": {
+        "inform": {
+          "title": "1. 了解 Parallax",
+          "description": "Parallax 将 Bitcoin 经过验证的货币政策与 Ethereum 的智能合约能力结合在一起。在开始使用之前，请先了解它的独特之处与安全注意事项。",
+          "cta": "了解更多"
+        },
+        "wallet": {
+          "title": "2. 选择钱包",
+          "description": "免费的 Parallax 钱包覆盖所有主流操作系统与设备。您既可以选择面向日常使用的移动应用，也可以选择具备进阶功能的桌面钱包。",
+          "cta": "选择钱包"
+        },
+        "get": {
+          "title": "3. 获取 Parallax",
+          "description": "您可以通过收款、挖矿或在交易所购买等方式获得 Parallax。多种途径可供选择，适合不同的需求。",
+          "mining": "挖矿",
+          "exchanges": "交易所"
+        },
+        "spend": {
+          "title": "4. 使用 Parallax",
+          "description": "全球范围内已有越来越多的服务和商家开始接受 Parallax。您还可以使用智能合约实现自动化支付与复杂的交易逻辑。",
+          "comingSoon": "商家目录即将上线"
+        }
+      },
+      "accept": {
+        "inform": {
+          "title": "1. 了解 Parallax",
+          "description": "Parallax 不要求商家显著改变现有习惯。但理解它的独特之处，将有助于您为业务释放它的全部潜能。",
+          "cta": "了解更多"
+        },
+        "processing": {
+          "title": "2. 处理付款",
+          "description": "为您的业务接入 Parallax 收款。低手续费、快速到账以及可编程的支付逻辑都将为您所用。",
+          "comingSoon": "支付指南即将上线"
+        },
+        "taxes": {
+          "title": "3. 会计与税务",
+          "description": "了解接受 Parallax 时的会计与税务影响，并获取相关工具和资源以做好财务管理。",
+          "cta": "税务资源"
+        },
+        "visibility": {
+          "title": "4. 提升曝光",
+          "description": "在 Parallax 生态中宣传您的业务。加入相关目录与社区，让全球的 Parallax 用户都能找到您。",
+          "comingSoon": "商家目录即将上线"
+        }
+      },
+      "ready": {
+        "heading": "准备好开始了吗？",
+        "description": "加入 Parallax 网络，体验区块链技术的未来。把 Bitcoin 的安全性与智能合约的灵活性结合起来。",
+        "chooseWallet": "选择钱包",
+        "setupGuide": "钱包设置指南"
+      }
+    },
+    "parallaxForBusinesses": {
+      "pageTitle": "面向企业的 Parallax",
+      "pageSubtitle": "Parallax 是一种十分安全且低成本的支付处理方式。",
+      "topics": [
+        {
+          "title": "自定义手续费",
+          "description": "接收 Parallax 无需支付手续费，发送时则可自定义费用。提高费用可以加快确认速度；无论转账 1 枚还是 100,000 枚，费率都保持一致。"
+        },
+        {
+          "title": "防范欺诈",
+          "description": "Parallax 交易由 XHash 工作量证明保障，且不可逆转，这消除了拒付欺诈的风险，相比信用卡或 PayPal 也降低了商家的成本。"
+        },
+        {
+          "title": "快速跨境支付",
+          "description": "向全球发送 Parallax 与本地转账一样便捷，没有银行延迟、没有额外的跨境手续费，也没有金额限制。"
+        },
+        {
+          "title": "无需 PCI 合规",
+          "description": "接受 Parallax 付款无需信用卡所需的高成本 PCI 合规检查，同时您的钱包与收款请求依然得到妥善保护。"
+        },
+        {
+          "title": "获得新的曝光",
+          "description": "Parallax 用户群体正在不断壮大，他们正在寻找可以消费的地方。接受这种创新支付方式，能够提升您的业务可见度。"
+        },
+        {
+          "title": "多重签名治理",
+          "description": "借助 Parallax 的多重签名功能，可以要求多人审批后才能完成交易，非常适合需要安全、共识化支出控制的企业或董事会。"
+        },
+        {
+          "title": "透明的会计",
+          "description": "依托 Parallax 的时间链实现透明会计，余额与交易均可被验证，非常适合企业或非营利组织展示财务的清晰可信。"
+        },
+        {
+          "title": "可编程的交易",
+          "description": "利用 Parallax 虚拟机构建智能合约，实现自动化支付或去中心化应用，并以 Parallax 固定的 2100 万供应量与类似 Bitcoin 的减半周期作为坚实后盾。"
+        }
+      ],
+      "cta": "开始使用 Parallax"
+    },
+    "parallaxForIndividuals": {
+      "pageTitle": "面向个人的 Parallax",
+      "pageSubtitle": "Parallax 是最便捷且费用极低的交易方式。",
+      "topics": [
+        {
+          "title": "轻松的移动支付",
+          "description": "通过二维码或 NFC，您可以在移动设备上完成 Parallax 的扫码支付，无需注册账号，也不需要 PIN 码。"
+        },
+        {
+          "title": "安全与自主掌控",
+          "description": "密码学签名与 XHash 工作量证明共同保障您的交易安全。只要妥善保管钱包，您就能完全掌控自己的资金。"
+        },
+        {
+          "title": "随时随地可用",
+          "description": "只需一个地址，就能在全球范围内收发 Parallax。网络全年无休，包括周末与节假日。"
+        },
+        {
+          "title": "快速跨境支付",
+          "description": "Parallax 可在国与国之间即时转账，没有银行延迟、没有额外费用，也没有金额限制。"
+        },
+        {
+          "title": "自定义手续费",
+          "description": "接收无需手续费，发送时则可自定义费用。无论金额大小，提高手续费都能加快确认速度。"
+        },
+        {
+          "title": "保护您的身份",
+          "description": "无需暴露个人信息即可完成交易，体验类似现金，并辅以隐私保护手段以增强匿名性。"
+        },
+        {
+          "title": "可编程的货币",
+          "description": "借助 Parallax 虚拟机构建智能合约、实现自动化支付，背后由固定的 2100 万供应量与类似 Bitcoin 的减半周期作为支撑。"
+        }
+      ],
+      "cta": "开始使用 Parallax"
+    },
+    "whitepaper": {
+      "pageTitle": "Parallax：可编程货币的全新视角",
+      "viewOnGithub": "在 GitHub 上查看",
+      "sections": {
+        "abstract": {
+          "heading": "摘要",
+          "body": "Parallax 是一种时间链协议，将 Bitcoin 的不可篡改性与货币纪律同 Ethereum 的可编程性融合在一起。Parallax 在 Bitcoin 既有的固定规则下运行——工作量证明、十分钟出块、减半周期以及 2100 万的供应上限——并在此基础上引入 Ethereum 虚拟机加以扩展。它采用 XHash 挖矿——一种为淘汰现有 ASIC 而设计的 Ethash 改造变体，并拒绝任何预挖或特权分配，从而以一场公平、中立的实验形式启动这一可编程货币：稀缺、去中心化、无需许可。"
+        },
+        "introduction": {
+          "heading": "1. 引言",
+          "body1": "Bitcoin 证明了去中心化的数字稀缺性是可行的，并提供了一个具备可预测货币政策的安全且不可篡改的账本。Ethereum 则带来了一个图灵完备的执行层，使去中心化应用和金融原语成为可能。然而，Ethereum 那种可调节的货币政策，与 Bitcoin 那种以纪律为核心的固定设计形成了鲜明对比。",
+          "body2": "Parallax 弥合了这一鸿沟。它沿用 Bitcoin 的货币规则，同时引入 Ethereum 虚拟机以获得可编程性。为了进一步增强可访问性与去中心化，Parallax 采用了 XHash 工作量证明函数——这是 Ethash 的改造版本，既保留了 Ethash 的内存难解性质，又使现有 ASIC 失去用武之地。"
+        },
+        "motivation": {
+          "heading": "2. 动机与问题陈述",
+          "body1": "区块链生态围绕两种哲学极端不断演化。Bitcoin 优先追求不可篡改性、稀缺性以及对变化的抵抗力，向世界展示了第一种数字健全货币的范例。Ethereum 则恰恰相反，拥抱可编程性与灵活性，催生了去中心化金融与 NFT 等新兴产业，但这是以牺牲货币的可预测性与长期稳定性为代价的。",
+          "body2": "这两种模式之间的分歧在生态中留下了一处空白。用户和机构往往希望兼得 Ethereum 的表达能力与 Bitcoin 的货币保证。Parallax 正是为填补这一空白而设计：它沿用 Bitcoin 严格的货币规则——固定供应上限、减半计划以及安全的工作量证明共识，同时支持 EVM 作为完整的可编程执行环境。其结果是一个能够承载去中心化应用的系统，而其底层货币基础与 Bitcoin 同样可预测、同样稀缺。",
+          "body3": "为实现稀缺与表达力的统一，Parallax 明确定义了一系列系统参数，既映照 Bitcoin 的纪律，又支持媲美 Ethereum 的可编程性。"
+        },
+        "parameters": {
+          "heading": "3. 系统参数",
+          "columns": {
+            "parameter": "参数",
+            "value": "数值"
+          },
+          "rows": [
+            {
+              "param": "共识机制",
+              "value": "工作量证明（XHash，由 Ethash 派生）"
+            },
+            {
+              "param": "目标出块间隔",
+              "value": "600 秒（10 分钟）"
+            },
+            {
+              "param": "难度调整窗口",
+              "value": "2016 区块（约 2 周）"
+            },
+            {
+              "param": "初始区块奖励",
+              "value": "50 枚"
+            },
+            {
+              "param": "减半间隔",
+              "value": "210,000 区块（约 4 年）"
+            },
+            {
+              "param": "最大供应量",
+              "value": "21,000,000 枚"
+            },
+            {
+              "param": "预挖",
+              "value": "0（无任何预挖币）"
+            },
+            {
+              "param": "执行环境",
+              "value": "Ethereum 虚拟机（EVM）"
+            },
+            {
+              "param": "费用模型",
+              "value": "首价拍卖（不销毁）"
+            },
+            {
+              "param": "区块 Gas 上限",
+              "value": "600M Gas（初始值），矿工每个区块可调整 ±0.1%"
+            }
+          ]
+        },
+        "comparative": {
+          "heading": "4. 对比分析",
+          "body1": "把 Parallax 与 Bitcoin 和 Ethereum 进行对比，更能凸显其独特定位。",
+          "body2": "Bitcoin 严格维持 2100 万枚的货币供应，按照每 210,000 个区块一次的减半计划逐步发行。然而，它的脚本语言被刻意设计得非常有限，难以承载复杂应用。Ethereum 则率先通过 EVM 引入了图灵完备的执行环境，让智能合约、去中心化交易所、稳定币以及 DAO 蓬勃发展。但 Ethereum 的货币设计与 Bitcoin 截然不同：它没有总量上限，并且自伦敦硬分叉（EIP-1559）起会销毁部分交易费，使供应量动态依赖于使用情况和治理决策。",
+          "body3": "Parallax 介于两者之间。和 Bitcoin 一样，它拥有 2100 万枚的固定供应，发行由减半周期与不可更改的时间表共同决定。和 Ethereum 一样，它提供图灵完备的执行环境，并兼容现有的开发者工具与智能合约。但与 Ethereum 不同的是，Parallax 拒绝任何形式的销毁与可调节的货币政策，确保可编程性不会以牺牲可预测的货币规则为代价。",
+          "table": {
+            "columns": {
+              "feature": "特性",
+              "bitcoin": "Bitcoin",
+              "ethereum": "Ethereum",
+              "parallax": "Parallax"
+            },
+            "rows": [
+              {
+                "feature": "供应上限",
+                "bitcoin": "2100 万（固定）",
+                "ethereum": "无上限",
+                "parallax": "2100 万（固定）"
+              },
+              {
+                "feature": "出块间隔",
+                "bitcoin": "10 分钟",
+                "ethereum": "12-15 秒",
+                "parallax": "10 分钟"
+              },
+              {
+                "feature": "共识机制",
+                "bitcoin": "PoW（SHA-256）",
+                "ethereum": "PoS（Casper/Beacon）",
+                "parallax": "PoW（XHash）"
+              },
+              {
+                "feature": "可编程性",
+                "bitcoin": "受限脚本",
+                "ethereum": "完整 EVM",
+                "parallax": "完整 EVM"
+              },
+              {
+                "feature": "费用模型",
+                "bitcoin": "首价拍卖",
+                "ethereum": "EIP-1559",
+                "parallax": "首价拍卖（不销毁）"
+              },
+              {
+                "feature": "费用模型",
+                "bitcoin": "首价拍卖",
+                "ethereum": "EIP-1559",
+                "parallax": "首价拍卖（不销毁）"
+              },
+              {
+                "feature": "Coinbase 成熟度阈值",
+                "bitcoin": "100 区块",
+                "ethereum": "不适用",
+                "parallax": "100 区块"
+              }
+            ]
+          }
+        },
+        "genesis": {
+          "heading": "5. 创世区块",
+          "body1": "Parallax 的创世区块在设计上极尽精简，没有预挖、没有基金会分配、没有特权账户。创世之后挖出的第一个区块按 Bitcoin 模式向成功的矿工发放 50 枚奖励。创世状态包含了基础的 EVM 配置，但没有任何预部署的智能合约。",
+          "body2": "为进一步保证公平，并证明网络并未在私下提前创建，创世区块的额外数据字段中将包含一篇于启动当天发布的新闻报道标题，该报道来自 The Times 或 The New York Times 等权威信源。这种受 Bitcoin 创世区块启发的时间戳方法，确保创世区块不可能被预挖或在公开启动前被构造出来。",
+          "body3": "这一设计选择从第一个区块起就强化了透明、可信与中立。"
+        },
+        "consensus": {
+          "heading": "6. 共识与时间链",
+          "blockStructure": {
+            "heading": "区块结构",
+            "body": "Parallax 沿用 Bitcoin 的时间链结构，并在其中加入了 EVM 执行载荷。每个区块由区块头（包含哈希、nonce、Merkle 根与时间戳）以及随后的交易及其执行回执构成。交易本身采用 Ethereum 的账户模型格式，开发者可以继续使用熟悉的工具。"
+          },
+          "pow": {
+            "heading": "工作量证明",
+            "body1Before": "Parallax 采用基于 XHash 的 Nakamoto 共识。XHash 是内存难解的，最初的设计目标就是抑制专用 ASIC 硬件造成的挖矿中心化。通过选择 XHash，Parallax 在早期阶段尤其鼓励 CPU 与 GPU 等通用硬件参与挖矿，从而扩大参与面。一个有效的区块需要找到一个 nonce，",
+            "body1After": "使得：",
+            "body2Where": "其中",
+            "body2Target": "为当前网络的难度目标。"
+          },
+          "interval": {
+            "heading": "出块间隔与难度调整",
+            "body1": "每经过 2016 个区块（约两周），系统会通过比较实际耗时与预期间隔来调整难度目标。为防止剧烈震荡，调整幅度被限制在 4 倍以内：新的难度不会高于或低于上一次难度的 4 倍，与 Bitcoin 的设计保持一致。",
+            "whereLabel": "其中",
+            "oldTargetDesc": "上一个难度目标",
+            "actualTimeDesc": "上 2016 个区块的实际出块时间",
+            "andLabel": "且",
+            "expectedTimeDesc": "2016 个区块的预期时间（2016 × 600 秒）"
+          },
+          "emission": {
+            "heading": "发行计划",
+            "intro": "区块基础奖励从 50 枚开始，每 210,000 个区块减半一次：",
+            "whereLabel": "其中",
+            "heightDesc": "为区块高度。累计供应量收敛于 2100 万枚的硬上限："
+          },
+          "maturity": {
+            "heading": "Coinbase 成熟度",
+            "body": "Parallax 强制要求与 Bitcoin 完全相同的 coinbase 成熟期。新挖出的币（即区块奖励）必须等到该区块之上再产出 100 个区块之后才能花费。在 Parallax 10 分钟的出块间隔下，这大约相当于 16 至 17 小时的确认时间。这条规则确保了奖励只在区块被链重组所推翻的概率可以忽略不计后才可花费。它通过让矿工的利益与链的长期稳定保持一致来增强网络安全，并防止在链重组风险仍较高时立即变现区块奖励。"
+          }
+        },
+        "execution": {
+          "heading": "7. 执行层",
+          "body1": "Parallax 的执行层是 Ethereum 虚拟机，这使得它能够兼容现有的 Ethereum 智能合约与开发者工具。开发者只需极少的修改即可移植 Solidity 与 Vyper 合约，Hardhat、Foundry 等现有框架也可以经简单适配后与 Parallax 节点配合使用。",
+          "body2": "Parallax 在交易费用处理上与 Ethereum 不同。它拒绝伦敦硬分叉中 EIP-1559 的费用销毁模型，因为销毁供应与 2100 万枚的固定上限并不相容。相反，Parallax 对 Gas 费采用简单的首价拍卖模型，所有费用直接归矿工所有。",
+          "body3": "区块 Gas 上限根据 Parallax 较长的出块时间重新设定。Ethereum 大约每 15 秒处理 3000 万 Gas，约合每秒 200 万 Gas。换算到 Parallax 的 600 秒出块间隔，即每个区块约 12 亿 Gas。这样高的数值会带来传播风险与状态膨胀压力。因此，Parallax 采用更为保守的初始上限：每个区块 6 亿 Gas，约合每秒 100 万 Gas，相当于 Ethereum 吞吐量的一半。这样的取舍把去中心化与稳定性置于最大吞吐量之上。Gas 上限可按每个区块 ±0.1% 的幅度弹性调整，沿用 Ethereum 在伦敦硬分叉之前的机制，从而允许其随时间逐步变化。",
+          "body4": "Parallax 完整保留了基于账户的状态模型，因而支持与 Ethereum 相同类型的合约、余额与执行语义，但同时把它们牢牢锚定在 Bitcoin 的货币纪律之上。"
+        },
+        "tokenomics": {
+          "heading": "8. 代币经济",
+          "body": "Parallax 的货币设计直接继承自 Bitcoin。所有币都必须通过工作量证明挖出，没有任何预挖或特权分配。区块奖励的时间表与 Bitcoin 完全一致：从 50 枚开始，每 210,000 个区块减半一次，直到发行归零。交易费用全部支付给矿工，绝不销毁，从而保证总供应量永远不会低于 2100 万枚。这种凝固化的货币设计将 Parallax 与那些更具适应性的协议区分开来，并为用户与机构提供了长期的可预测性。"
+        },
+        "security": {
+          "heading": "9. 安全模型",
+          "body1": "Parallax 的安全性源自工作量证明、长出块间隔与严格货币政策三者的结合。10 分钟的目标出块时间确保了更深的最终性，使双花攻击代价高昂、难以实施。更长的出块时间也降低了链重组的频率，进一步增强了网络的稳定性。",
+          "body2": "XHash 通过提升矿工的可访问性，从另一个维度强化了安全性。它的内存难解特性意味着以 GPU 为代表的通用硬件可以具备竞争力地参与挖矿。这使得少数工业级 ASIC 矿工很难主导网络，尤其是在协议被广泛采用之前的早期阶段。",
+          "body3": "传播性与区块大小同样是 Parallax 安全模型的核心考量。通过将吞吐量保守地限制在每秒约 100 万 Gas，Parallax 让节点对个人与小型运营者保持可达性，避免过度的中心化压力。固定供应、累积工作量证明与公平的矿工激励三者结合，构成了一个最小化信任、抵御治理操纵的稳固基础。",
+          "energy": {
+            "heading": "能源考量",
+            "body1": "工作量证明的批评者常常强调其能源密集程度。然而，Bitcoin 通过实证研究表明，其全球大部分算力来自可再生能源或本来就被搁置的能源，因为矿工天然会向最便宜的电力靠拢。久而久之，这种由市场驱动的激励结构使 Bitcoin 挖矿与可再生能源的采用以及电网平衡功能形成了协同。",
+            "body2": "Parallax 遵循同样的经济原理。任何工作量证明系统都无法完全避免能源消耗，但随着协议的长期成熟，预计 Parallax 会重现 Bitcoin 的轨迹，矿工会主动寻求可再生能源与富余能源以降低运营成本。这种动态把能源支出从被外界视为缺点的属性，转化为一项特性：它把安全性锚定在物理现实中，呼应中本聪关于共识必须建立在经济激励之上的愿景，同时也激励了可再生能源基础设施的扩张。",
+            "body3": "通过将安全嵌入物理现实，并使激励与可再生能源对齐，Parallax 同时强化了它的去中心化程度，以及作为一条可持续时间链的可信度。"
+          }
+        },
+        "useCases": {
+          "heading": "10. 应用场景",
+          "body1": "Parallax 的设计支持一系列将健全货币与可编程性结合的应用。DeFi 协议可以构建在一个稀缺且可预测的货币基础之上，借鉴 Bitcoin 模型的可信度提供借贷、稳定币与去中心化交易所等服务。NFT 与 DAO 也能够建立在不会通胀、不会受到任意货币变更影响的底层货币之上。寻找可编程结算通道的机构也可能会被 Parallax 吸引，因为它具备 Ethereum 级别的表达能力，却不存在可调节供应所带来的不确定性。最后，Parallax 还可以充当 Rollup 与其他扩展方案的根基，借助其长期的可信度，让高吞吐量应用在二层之上得以运行。",
+          "body2": "随着二层方案不断涌现，底层的中立性变得至关重要。如果没有凝固化的货币规则与无需许可的共识，Layer 2 系统会继承底层的治理与中心化风险。通过把可编程性锚定在一条中立的工作量证明时间链上，Parallax 致力于成为一种结算层，提供与 Bitcoin 在货币领域同等的可信度。"
+        },
+        "governance": {
+          "heading": "11. 治理理念",
+          "body1": "Parallax 采用最小治理的方式。它的货币政策不可更改，2100 万枚的上限不能通过社区决定或治理投票被改变。协议升级仅限于技术改进与漏洞修复。任何基金会、公司或特权实体都不掌控供应或发行，从而在协议的每一层都保证中立与最小化信任。",
+          "body2": "真正的中立要求货币基础被凝固：Parallax 不能被用作任意政策或被治理俘获的工具，因为它的规则被硬编码在协议中，对货币贬值免疫。中立不仅仅是一种设计选择，更是一种防止特殊利益俘获的可信机制。",
+          "body3": "目前 Parallax 由 MicroStack 名义下进行开发，但其长期愿景是成为一个完全由社区驱动的协议。一旦代码库与网络达到足够的成熟度与稳定性，治理职责将从 MicroStack 移交给更广泛的生态。届时，开发、维护与未来升级将由社区以开放、透明的方式协调，确保没有任何单一公司或实体能够对 Parallax 行使特权控制。",
+          "body4": "Parallax 视 Bitcoin 为数字健全货币的终极形态，其固定货币规则与长期不可篡改性的可信度无与伦比。Parallax 的角色不是与 Bitcoin 竞争，而是探索把 Bitcoin 的货币纪律延伸到一个可编程环境中的可能性。把 Bitcoin 的稀缺精神与 Ethereum 的表达能力结合起来，Parallax 提供了一个互补的系统，去探索当中立、去中心化与可编程性汇聚在一起时究竟能成就什么。"
+        },
+        "powPrimacy": {
+          "heading": "12. 工作量证明的优先地位",
+          "body1": "中本聪把工作量证明作为拜占庭将军问题的实用解，依然是人类历史上最重要的发明之一。通过把共识锚定在真实世界的能源支出上，Bitcoin 证明了在没有许可、没有身份、没有中央权威的情况下，协调全球范围内不可信任的参与者是可能的。工作量证明不仅仅是一种共识算法，它是无需许可去中心化的基石，也是第一种可信数字货币的根基。",
+          "body2": "工作量证明确立了一个极度开放的进入条件：任何人、在任何地方都可以通过支出能量来争夺区块奖励，无需身份、无需资本锁仓、无需机构背书。这把访问平等作为一种核心属性写入了时间链。",
+          "body3": "Parallax 完整继承这一原则。即便它通过 EVM 引入了可编程性，也没有在让去中心化得以成立的基石上做出妥协：基于工作量证明的 Nakamoto 共识。一个无需许可的时间链不可能通过委员会签名、投票方案或治理代币实现，因为这些方式都会重新引入中央控制点。",
+          "body4": "许多另类加密货币（即 “altcoin”）以速度、吞吐量或实验性特性为目标，却以牺牲中立与去中心化为代价。更短的出块时间或新颖的治理模型在短期内或许颇具吸引力，但它们通常依赖于中心化的共识机制或特权验证者。这恰恰削弱了 Bitcoin 之所以具有革命性的关键属性：在无需许可、无需信任任何权威的前提下进行参与的能力。",
+          "body5": "Parallax 的去中心化既源自 XHash 挖矿的可访问性，也源自凝固化的货币规则。通过将攻击成本外部化为物理能源与硬件，Parallax 可以抵御金融巨鲸或治理卡特尔的俘获。影响力只能通过实际的工作量获得，绝不能通过特权或身份获得。",
+          "body6": "Parallax 拒绝这些取舍。它的设计尊重并延续中本聪的愿景，把工作量证明作为一条去中心化、无需许可时间链的唯一可信根基。所有可编程性、吞吐量与应用层创新都必须在这一边界内运作：去中心化优先，便利在后。随着网络逐渐成熟，缓慢出块带来的不便可以通过 Layer 2 结算方案来缓解，从而在不牺牲无需许可去中心化核心保证的前提下实现可扩展性。"
+        },
+        "conclusion": {
+          "heading": "13. 结论",
+          "body": "Parallax 是一项把 Bitcoin 的货币精神延伸到可编程环境的实验。它的中立、凝固化的货币政策以及对工作量证明的依赖共同确保了它无法被俘获或被收编。这一协议的未来将交由它的社区——开发者、矿工与用户——共同决定，去发现当稀缺、去中心化与可编程性汇聚在一起时究竟能开启怎样的可能。"
+        },
+        "release": {
+          "intro": "Parallax 将遵循一套透明的发布流程，以确保公平与中立：",
+          "items": [
+            {
+              "title": "白皮书发布：",
+              "body": "协议规范与经济模型将公开发布，供社区审阅与讨论。"
+            },
+            {
+              "title": "开源代码发布与主网启动：",
+              "body": "白皮书发布之后，完整的 Parallax 客户端源代码将随之开源。主网将在代码发布之后启动，没有预挖、没有特权分配，也没有任何隐秘挖矿期。主网启动的具体日期将通过我们的官方 X 账号公布，并将在 lock-in 公告之后至少两周才正式启动，以确保所有参与者都有同等的准备时间。"
+            },
+            {
+              "title": "创世区块：",
+              "body": "创世区块将极尽精简，没有预部署合约，也没有特殊账户。第一位成功挖出有效区块的矿工将获得 50 枚的标准区块奖励。"
+            }
+          ],
+          "outro1": "这一时间表确保所有参与者——开发者、矿工、机构以及更广泛的社区——都能提前做好准备，同时维护与 Bitcoin 开放、中立精神相一致的公平启动可信度。",
+          "outro2": "没有预挖、没有内部挖矿，也没有特权分配。在创世时刻，每一位参与者都站在同一条起跑线上。",
+          "outro3": "本着 Bitcoin 的中立精神，Parallax 不被任何单一实体所拥有、控制或主导——它是一项把稀缺与表达力结合在一起的社区实验。"
+        }
+      }
+    },
+    "protocol": {
+      "overview": {
+        "pageTitle": "Parallax 协议",
+        "pageSubtitle": "本节解释 Parallax 协议的基础规则——密码学原语、确定性执行、工作量证明（XHash），以及定义规范历史的共识逻辑。",
+        "purpose": {
+          "heading": "本节目的",
+          "description": "Parallax 把 Bitcoin 凝固化的货币纪律与 Ethereum 风格的可编程性结合在一起。这些文档详细说明了 Parallax 如何在维持固定供应与可预测发行的同时，强制执行确定性执行与开放的、基于工作量的共识。",
+          "bullets": [
+            {
+              "label": "密码学健全性：",
+              "body": "交易与状态转换通过 ECDSA（secp256k1）进行授权。"
+            },
+            {
+              "label": "确定性执行：",
+              "body": "PVM 在类似 Bitcoin 的约束下镜像 EVM 的语义。"
+            },
+            {
+              "label": "作为时间的工作量证明：",
+              "body": "XHash 把计算转化为可被验证的事件顺序。"
+            },
+            {
+              "label": "通过工作量达成共识：",
+              "body": "规范历史就是累积工作量最大的有效链。"
+            }
+          ],
+          "footer": "本系列页面面向希望在协议层精确理解 Parallax 的开发者、矿工与研究者。"
+        },
+        "topics": [
+          {
+            "title": "协议架构",
+            "description": "Parallax 如何把密码学、确定性计算、工作量证明计时与 Nakamoto 共识统一为一个连贯的协议栈。"
+          },
+          {
+            "title": "区块奖励与减半",
+            "description": "类似 Bitcoin 的发行：50 → 25 → 12.5 ……每 210,000 个区块减半一次，渐近趋向 2100 万的上限，并配以清晰的图示与参数。"
+          },
+          {
+            "title": "Coinbase 成熟度调度",
+            "description": "矿工的区块奖励如何在链上托管，并通过 lockbox 状态机制在固定的成熟高度被释放。"
+          },
+          {
+            "title": "难度算法与分叉选择",
+            "description": "基于 epoch 锚点的难度调整与基于累积工作量的分叉选择，包含 Median-Time-Past 检查与 epoch 锚点。"
+          },
+          {
+            "title": "XHash（工作量证明）",
+            "description": "Parallax 基于 Ethash 风格 Hashimoto 的内存难解 PoW，包含 Parallax 专属的 seal 哈希、目标映射，以及 epoch 与 DAG 的处理。"
+          }
+        ],
+        "readMore": "阅读更多",
+        "exploreDocs": "浏览技术文档"
+      },
+      "architecture": {
+        "pageTitle": "协议架构",
+        "pageSubtitle": "深入剖析 Parallax 的安全模型：用于鉴别作者身份的签名、负责语义的 PVM、提供时间维度的工作量证明，以及决定规范历史的 Nakamoto 共识。",
+        "howItFits": {
+          "title": "各部分如何拼合",
+          "description": "Parallax 把密码学、确定性执行、工作量证明计时与中立的分叉选择，编织成一条可被验证的统一流水线。",
+          "items": [
+            {
+              "label": "密码学",
+              "desc": "ECDSA 决定谁有权行动（合法的作者身份）。"
+            },
+            {
+              "label": "执行（PVM）",
+              "desc": "定义动作的含义（状态转换）。"
+            },
+            {
+              "label": "时间戳服务器",
+              "desc": "确立动作发生的时间（由 PoW 排序）。"
+            },
+            {
+              "label": "Nakamoto",
+              "desc": "决定哪段历史胜出（最重的链）。"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "title": "数字签名",
+            "tagline": "谁有权行动：基于 secp256k1 的 ECDSA 对状态转换进行身份认证。",
+            "bullets": [
+              "采用与 Bitcoin 完全相同的 secp256k1 ECDSA，享有久经考验的安全性与生态工具。",
+              "交易包含 (r, s, v)；通过公钥恢复发送者，再推导出地址。",
+              "签名校验在执行流水线中运行，确保各节点采用统一的规则。",
+              "不可抵赖：签名把意图与密钥绑定；通过链 ID 与 nonce 实现重放保护。"
+            ],
+            "codeTitle": "签名校验（概念）"
+          },
+          {
+            "title": "图灵完备脚本（PVM）",
+            "tagline": "动作的含义：在类似 Bitcoin 的货币规则下，进行兼容 EVM 的确定性执行。",
+            "bullets": [
+              "操作码与 EVM 对齐（CALL/SSTORE 等），由 Gas 计量的确定性执行。",
+              "状态存储在 Merkle Patricia Trie 中；区块头承诺 stateRoot 与 receiptsRoot。",
+              "稀缺中的可编程性：2100 万上限与减半机制 ⇒ 执行层继承硬通货属性。",
+              "通过包含证明与区块的确定性回放，对轻客户端友好。"
+            ],
+            "codeTitle": "区块 → 执行 → 根哈希"
+          },
+          {
+            "title": "时间戳服务器",
+            "tagline": "动作发生的时间：PoW 把时间转化为密码学资源，并对事件进行排序。",
+            "bullets": [
+              "每个区块都承诺前一个区块头的哈希 ⇒ 形成可被验证的时间链。",
+              "工作量证明（XHash）把成本与时间绑定；重新计算等于强制执行时间之矢。",
+              "无需可信时钟即可获得客观顺序；median-time-past 防止时间戳被滥用。",
+              "随着累积难度的增长，安全性持续增强；倒填时间戳变得在经济上不可行。"
+            ],
+            "codeTitle": "区块头链接"
+          },
+          {
+            "title": "Nakamoto 共识",
+            "tagline": "哪段历史胜出：以累积工作量计量的最重有效链就是规范链。",
+            "bullets": [
+              "最重链规则通过累积 PoW（难度之和）选择规范历史。",
+              "概率性最终性：链重组的概率随确认深度 k 呈指数衰减。",
+              "难度调整（XHash）以 median-time-past 为基准，将出块时间维持在约 10 分钟。",
+              "经济中立：没有质押，也没有特权验证者——只有开放的 PoW。"
+            ],
+            "codeTitle": "分叉选择（概念）"
+          }
+        ],
+        "pseudocodeBadge": "伪代码",
+        "pipeline": {
+          "eyebrow": "流水线",
+          "heading": "端到端流程",
+          "description": "已签名的交易进入内存池 → 矿工提议区块 → PVM 进行确定性执行 → 区块头承诺 state/receipts → XHash 证明工作量 → 网络采纳最重的有效链。稀缺性（2100 万上限与减半）支撑着整个执行过程。",
+          "steps": [
+            "签名",
+            "执行",
+            "提交",
+            "证明",
+            "选择"
+          ]
+        },
+        "nav": {
+          "prev": "协议概览",
+          "next": "区块奖励与减半"
+        }
+      },
+      "blockRewardAndHalving": {
+        "pageTitle": "区块奖励与减半",
+        "pageSubtitle": "本页解释 Parallax 受 Bitcoin 启发的发行计划、coinbase 成熟度机制，以及区块奖励在协议状态中的管理方式。",
+        "params": {
+          "title": "货币参数",
+          "columns": {
+            "parameter": "参数",
+            "symbol": "符号",
+            "value": "数值",
+            "notes": "说明"
+          },
+          "rows": [
+            {
+              "param": "初始奖励",
+              "symbol": "R₀",
+              "value": "50 × 10¹⁸ wei",
+              "notes": "每个区块 50 LAX"
+            },
+            {
+              "param": "减半间隔",
+              "symbol": "H",
+              "value": "210,000 区块",
+              "notes": "10 分钟出块间隔下约 4 年"
+            },
+            {
+              "param": "Coinbase 成熟度",
+              "symbol": "M",
+              "value": "100 区块",
+              "notes": "奖励解锁延迟"
+            },
+            {
+              "param": "Lockbox 地址",
+              "symbol": "—",
+              "value": "0x0000000000000000000000000000000000000042",
+              "notes": "成熟度记录的状态存放位置"
+            }
+          ]
+        },
+        "charts": {
+          "cumulative": {
+            "title": "按 epoch 计算的累积供应",
+            "description": "截至每个减半 epoch 的所有已发行奖励之和（单位：LAX）。",
+            "valueLabel": "数值",
+            "epochLabel": "Epoch {n}"
+          },
+          "perBlock": {
+            "title": "每区块奖励（阶梯）",
+            "description": "各 epoch 中每个区块对应的 LAX 奖励。",
+            "rewardLabel": "奖励",
+            "epochLabel": "Epoch {n}"
+          }
+        },
+        "sections": [
+          {
+            "title": "概览",
+            "tagline": "Parallax 的货币时间表与 Bitcoin 完全对应：总量 2100 万，按 50 → 25 → 12.5 …… 每 210,000 个区块减半一次。",
+            "bullets": [
+              "初始区块奖励：50 LAX（以 wei 表示，即 50 × 10¹⁸）。",
+              "减半间隔：每 210,000 个区块（10 分钟出块时约 4 年）。",
+              "理论总供应量：上限约 21,000,000 LAX。",
+              "采用与 Bitcoin 结构一致的通缩发行模型，但以 wei 计量以兼容 EVM。"
+            ],
+            "codeTitle": "奖励函数（来自 consensus.go）"
+          },
+          {
+            "title": "Coinbase 成熟度调度",
+            "tagline": "区块奖励在成熟前会被锁定——既防止即时花费，也保证解锁是确定性的。",
+            "bullets": [
+              "每一笔奖励都会绑定一个解锁高度：current_height + 100 区块。",
+              "奖励被写入状态 trie，存放在一个特殊的 lockbox 地址（0x...42）下。",
+              "当链高度达到解锁高度时，奖励将被转入矿工地址。",
+              "这让待解锁供应与可花费供应在账本状态中清晰分离。"
+            ],
+            "codeTitle": "奖励调度（简化版）"
+          },
+          {
+            "title": "经济属性",
+            "tagline": "Parallax 强制执行可预测的稀缺性，且零预挖发行。",
+            "bullets": [
+              "每个减半 epoch 把新发行量减少 50%。",
+              "累积发行量渐近趋向 2100 万的上限，但永远不会超过它。",
+              "奖励完全分配给矿工——没有任何开发者或基金会份额。",
+              "发行曲线被硬编码，确保上线之后不会出现任何可裁量的货币变更。"
+            ],
+            "codeTitle": "总发行量近似"
+          },
+          {
+            "title": "状态表示",
+            "tagline": "在状态 trie 中追踪奖励的成熟度。",
+            "bullets": [
+              "每个解锁高度使用两个状态键：schedKeyAddr(height) 与 schedKeyAmt(height)。",
+              "二者分别由 keccak256(\"maturity:addr:\" + height) 与 (\"maturity:amt:\" + height) 派生而来。",
+              "数值统一存放在 lockbox 地址下，把奖励元数据与用户账户隔离开来。",
+              "支付完成后，两个键都会从状态中清除以回收 trie 空间。"
+            ],
+            "codeTitle": "状态键派生（来自 consensus.go）"
+          }
+        ],
+        "pseudocodeBadge": "伪代码",
+        "summary": {
+          "eyebrow": "小结",
+          "heading": "发行小结",
+          "description": "Parallax 的发行完全是确定性的。奖励每 210,000 个区块减半一次，最终趋向于零。流通中的每一枚币都可追溯到链上挖矿产出，使 Parallax 成为一个公平启动、由工作量保障的网络，没有任何预挖或隐藏补贴。"
+        },
+        "nav": {
+          "prev": "协议架构",
+          "next": "Coinbase 成熟度调度"
+        }
+      },
+      "coinbaseMaturity": {
+        "pageTitle": "Coinbase 成熟度调度",
+        "pageSubtitle": "Parallax 如何通过确定性、规范化的状态更新，把矿工的区块奖励托管至成熟期满。",
+        "params": {
+          "title": "成熟度参数",
+          "columns": {
+            "parameter": "参数",
+            "symbol": "符号",
+            "value": "数值 / 来源",
+            "notes": "说明"
+          },
+          "rows": [
+            {
+              "param": "Coinbase 成熟区块数",
+              "symbol": "M",
+              "value": "100 区块",
+              "notes": "类似 Bitcoin 的 coinbase 成熟度"
+            },
+            {
+              "param": "Lockbox 地址",
+              "symbol": "—",
+              "value": "0x0000000000000000000000000000000000000042",
+              "notes": "保留的系统账户"
+            },
+            {
+              "param": "键前缀",
+              "symbol": "—",
+              "value": "\"maturity:addr:\"，\"maturity:amt:\"",
+              "notes": "Keccak256(prefix || 大端 height)"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "title": "概览",
+            "tagline": "Parallax 把区块奖励托管至固定的成熟高度，再以确定性的方式从状态 trie 的 lockbox 中释放出来。",
+            "bullets": [
+              "每个区块都会为高度 + M 区块预约自己的 coinbase 支付，其中 M = 100 区块。",
+              "一个特殊的 lockbox 账户以状态槽的形式保存 \"何时\"（高度）→ (地址, 数额) 的映射。",
+              "在每个高度 h，协议会检查是否有应于 h 支付的奖励，并将其转给记录在案的地址。",
+              "这把待发行量与可花费供应分离开来，也让链重组的处理更平滑。"
+            ],
+            "codeTitle": "高层流程"
+          },
+          {
+            "title": "状态键与 Lockbox 地址",
+            "tagline": "保留的系统地址下，每个解锁高度对应两个存储槽。",
+            "bullets": [
+              "对于给定的解锁高度 H：在 schedKeyAddr(H) 处保存地址，在 schedKeyAmt(H) 处保存数额。",
+              "两个键都通过对一个固定的 ASCII 前缀加上以大端 uint64 编码的 H，再做 keccak256 派生而来。",
+              "是否存在以数额槽为依据；支付完成后会清除两个槽，以回收 trie 空间。"
+            ],
+            "codeTitle": "键派生（来自 consensus.go）"
+          },
+          {
+            "title": "支付生命周期",
+            "tagline": "从被打包进区块到成熟后的转账。",
+            "bullets": [
+              "区块 N 被挖出 → 根据减半计划计算奖励 R_N。",
+              "在解锁高度 U = N + M 处预约 (addr=coinbase_N, amt=R_N)。",
+              "在高度 U 时，节点读取 (addr_U, amt_U)；若 amt_U ≠ 0，则记账并清除两个槽。",
+              "创世区块（高度 0）没有可花费的奖励。"
+            ],
+            "codeTitle": "时间线（文字示意）"
+          },
+          {
+            "title": "校验与安全属性",
+            "tagline": "确定性解锁、抗重放，并对链重组具有韧性。",
+            "bullets": [
+              "解锁逻辑由规范高度计算得出；不需要任何签名或链下触发。",
+              "数额由协议自身计算（calcBlockReward）——任何 peer 都无法虚增支付。",
+              "状态键的存在与否是 “应付” 的标志；记账后清除即可防止重复支付。",
+              "成熟期机制延后矿工的可花费时间，降低了在链尾附近通过链重组立刻拿到手续费与区块奖励的动机。"
+            ],
+            "codeTitle": "应付检测与清除"
+          },
+          {
+            "title": "链重组行为",
+            "tagline": "围绕解锁高度发生链重组时会发生什么。",
+            "bullets": [
+              "发生链重组时，状态会从新的规范链重新计算；预约条目会反映规范区块序列的最新状态。",
+              "如果某次支付在旧链尾的高度 H 已经发生但在新链中并未发生，那么状态回放只会按新历史记账应付的数额。",
+              "由于条目以高度作为键，“幻影记账” 不可能在链重组中存活——是否清除完全跟随规范执行。",
+              "这与区块在重新执行时余额和回执被重新计算的方式如出一辙。"
+            ],
+            "codeTitle": "链重组的概念伪代码"
+          },
+          {
+            "title": "配置",
+            "tagline": "成熟度参数的位置以及客户端如何使用它。",
+            "bullets": [
+              "成熟度 M 被定义为 100 区块。",
+              "客户端必须为矿工同时显示 “待解锁”（已预约）与 “可花费” 两类余额。",
+              "区块浏览器可以通过扫描非零的 schedKeyAmt(h) 来展示即将解锁的奖励。",
+              "钱包应当提示矿工：奖励的账户记账要等到高度 U 之后才可用。"
+            ],
+            "codeTitle": "区块浏览器提示（伪 RPC）"
+          }
+        ],
+        "pseudocodeBadge": "伪代码",
+        "nav": {
+          "prev": "区块奖励与减半",
+          "next": "难度算法"
+        }
+      },
+      "difficultyAndForkchoice": {
+        "pageTitle": "难度算法与分叉选择规则",
+        "pageSubtitle": "对 Parallax 难度调整历史的精确梳理——从创世开始的 BTC 风格 DAA、在区块 17,560 处启用的 ASERT 升级（PIP-0002），以及基于累积工作量的 Nakamoto 分叉选择规则。",
+        "params": {
+          "title": "共识参数",
+          "columns": {
+            "parameter": "参数",
+            "symbol": "符号",
+            "value": "数值",
+            "notes": "说明"
+          },
+          "rows": [
+            {
+              "param": "目标出块间隔",
+              "symbol": "τ",
+              "value": "600 秒",
+              "notes": "类似 Bitcoin 的目标"
+            },
+            {
+              "param": "未来时间漂移上限",
+              "symbol": "—",
+              "value": "300 秒",
+              "notes": "5 分钟"
+            },
+            {
+              "param": "MTP 采样数",
+              "symbol": "—",
+              "value": "11 区块",
+              "notes": "最近 11 个时间戳的中位数"
+            },
+            {
+              "param": "难度算法历史",
+              "symbol": "—",
+              "value": "BTC 风格 DAA → ASERT",
+              "notes": "创世至 17,559 区块采用 BTC 风格的 2016 区块窗口；区块 ≥ 17,560 改用 ASERT（aserti3-2d，PIP-0002）。"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "title": "概览",
+            "tagline": "Parallax 以 XHash 工作量证明追求 10 分钟出块；在最初的 BTC 风格 DAA 阶段之后，转为采用每区块更新的 ASERT 难度算法。",
+            "bullets": [
+              "从创世至区块 17,559，Parallax 采用 Bitcoin 风格的 2016 区块难度调整窗口（BTC 风格 DAA）。",
+              "PIP-0002（从 BTC 风格难度调整算法迁移至 ASERT）在区块 17,560 处启用了 ASERT。",
+              "ASERT（aserti3-2d，与 Bitcoin Cash 所用相同）以固定锚点为基准对每个区块调整难度，在算力波动时也能平滑收敛到 600 秒目标。",
+              "Median-Time-Past（MTP，最近 11 个时间戳的中位数）守护时间戳的有效性；节点拒绝时间超出当前 +300 秒的区块头，并以 target = ⌊(2^256−1)/D⌋ 验证 PoW。"
+            ],
+            "codeTitle": ""
+          },
+          {
+            "title": "目标 ↔ 难度",
+            "tagline": "XHash 验证使用的工作量阈值映射（BTC-DAA 与 ASERT 时代通用）。",
+            "bullets": [
+              "记 TWO256M1 = 2^256 − 1。当 XHash(header) ≤ target 时区块头有效，其中 target = ⌊TWO256M1 / D⌋。",
+              "更高的难度 D ⇒ 更小的目标 ⇒ 区块更难被挖出。",
+              "Header.MixDigest 必须等于 hashimoto（light 或 full 路径）所计算出的摘要。",
+              "难度必须严格为正；零或负值都被视为无效。"
+            ],
+            "codeTitle": "目标计算（概念）"
+          },
+          {
+            "title": "难度调整：BTC 风格 DAA → ASERT",
+            "tagline": "历史上的 2016 区块窗口，与现今相对锚点的逐区块 ASERT。",
+            "bullets": [
+              "创世 → 区块 17,559：CalcNakamotoDifficulty() 通过 epoch 锚点实现 Bitcoin 风格的 2016 区块窗口。",
+              "区块 17,560 及以后：CalcAsertDifficulty() 以固定锚点 {anchorHeight, anchorParentTime, anchorTarget} 实现 aserti3-2d。",
+              "ASERT 利用相对锚点的高度偏移 Δh 与流逝时间 Δt，以 2 天的半衰期把难度推向 600 秒的目标。",
+              "历史区块继续保留其原本的 BTC 风格 DAA 难度，并按当时的规则进行验证；面向未来的难度调整完全交由 ASERT 完成。"
+            ],
+            "codeTitle": "依赖高度的难度选择（概念）"
+          },
+          {
+            "title": "Median-Time-Past（MTP）",
+            "tagline": "用于校验时间戳合理性以及抵御时间扭曲攻击。",
+            "bullets": [
+              "MTP(parent) = 以 parent 结尾的最近 11 个区块时间戳的中位数。",
+              "有效性要求 header.Time > MTP(parent)（严格大于）。",
+              "未来漂移上限：header.Time ≤ now + 300 秒。",
+              "在 ASERT 下，相对锚点的流逝时间由受 MTP 约束的时间戳驱动，从而抵御针对难度算法的经典长程时间扭曲攻击。"
+            ],
+            "codeTitle": "MTP 计算"
+          },
+          {
+            "title": "分叉选择规则",
+            "tagline": "以累积工作量计量的最重有效链，与当前所处的难度时代无关。",
+            "bullets": [
+              "维护 ChainWork[tip] = ChainWork[parent] + Work(block)。",
+              "Work(block) 是关于 target/difficulty 的单调函数；任何一致的定义都会得到等价的排序。",
+              "在所有有效链尾中选择 ChainWork 最大者；并列时可按链尾哈希按字典序作为打破平局的方式。",
+              "无效区块头（时间戳、PoW、BTC-DAA/ASERT 规则）会在分叉选择之前被剔除。"
+            ],
+            "codeTitle": "累积工作量（概念）"
+          },
+          {
+            "title": "链重组与概率性最终性",
+            "tagline": "以确认深度为基础的保证，而非绝对最终性。",
+            "bullets": [
+              "确认深度 k 越大，链重组的概率呈指数下降。",
+              "钱包与界面可根据风险价值选择 k（例如对高价值交易默认 6 次确认）。",
+              "节点可以实施一些务实的防护（例如最大重组深度），以避免来自异常 peer 的 DoS。",
+              "相比 BTC 风格 DAA 那样的大窗口，ASERT 更平滑的逐区块难度响应，降低了基于震荡或机会主义的长程链重组动机。"
+            ],
+            "codeTitle": "链重组处理（概念）"
+          },
+          {
+            "title": "攻击与缓解",
+            "tagline": "与 Parallax 难度设计相关的关键攻击向量。",
+            "bullets": [
+              "时间扭曲：严格的 MTP 强制执行加上 ASERT 的逐区块反馈（不再有长时间静态窗口），缓解了经典 BTC 风格的 2016 区块时间扭曲操纵。",
+              "未来时间戳偏差：拒绝时间超出本地时间 +300 秒的区块头。",
+              "MixDigest 伪造：header.MixDigest 必须与 hashimoto（light/full）的输出一致。"
+            ],
+            "codeTitle": "区块头有效性子集"
+          }
+        ],
+        "pseudocodeBadge": "伪代码",
+        "pipeline": {
+          "eyebrow": "流水线",
+          "heading": "端到端选择流程",
+          "description": "区块头会依次通过 Extra 大小、时间（MTP 与未来漂移）、所处时代对应的难度规则（早期采用 BTC 风格 DAA，区块高度 ≥ 17,560 改用 ASERT）、Gas 上限/EIP、高度递增以及 PoW seal 等校验。有效区块会扩展 ChainWork，最重的链尾即为规范链。",
+          "steps": [
+            "校验",
+            "检查锚点 / 时代",
+            "计算难度（DAA/ASERT）",
+            "累积工作量",
+            "选择最重链"
+          ]
+        },
+        "nav": {
+          "prev": "Coinbase 成熟度调度",
+          "next": "XHash"
+        }
+      },
+      "xhash": {
+        "pageTitle": "XHash",
+        "pageSubtitle": "Parallax 所用的内存难解工作量证明。Ethash 风格的 Hashimoto，结合 Parallax 基于 ASERT 的难度、共识规则与 epoch 处理。",
+        "params": {
+          "title": "共识相关细节",
+          "description": "依据 <code>xhash/consensus.go</code> 与 Parallax 链配置。",
+          "columns": {
+            "aspect": "项目",
+            "value": "数值 / 行为",
+            "notes": "说明"
+          },
+          "rows": [
+            {
+              "aspect": "哈希函数（seal）",
+              "value": "Legacy Keccak-256",
+              "notes": "对特定区块头字段进行 RLP 编码"
+            },
+            {
+              "aspect": "目标映射",
+              "value": "target = ⌊(2^256−1)/D⌋",
+              "notes": "结果必须 ≤ target"
+            },
+            {
+              "aspect": "MixDigest",
+              "value": "必须等于计算所得的摘要",
+              "notes": "不一致 ⇒ PoW 无效"
+            },
+            {
+              "aspect": "MTP",
+              "value": "最近 11 个时间戳的中位数",
+              "notes": "强制：Time > MTP(parent)；未来漂移 ≤ 300 秒"
+            },
+            {
+              "aspect": "Epoch 长度",
+              "value": "由配置定义（例如 720 区块）",
+              "notes": "决定 cache/DAG 重建的频率"
+            },
+            {
+              "aspect": "难度算法",
+              "value": "ASERT（基于锚点的逐区块算法）",
+              "notes": "aserti3-2d；共识负责计算 D，XHash 通过 PoW 强制执行"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "title": "概览",
+            "tagline": "XHash 是 Parallax 的工作量证明引擎：Ethash 风格的 Hashimoto（light/full），配以 Parallax 专属的共识接线、基于 ASERT 的难度映射以及 epoch 处理。",
+            "bullets": [
+              "挖矿过程在区块头 seal 哈希与 64 位 nonce 之上对 Hashimoto 求值，可使用 cache（light）或 dataset（full）。",
+              "校验时检查 MixDigest 是否相等，并将结果与由难度推导出的 target 进行比较：target = ⌊(2^256−1)/D⌋。",
+              "Seal 哈希对特定区块头字段做 RLP 编码后再用 Legacy Keccak-256 计算。"
+            ],
+            "codeTitle": "SealHash"
+          },
+          {
+            "title": "挖矿循环",
+            "tagline": "Hashimoto-light/full，在内层循环中以 64 位 nonce 搜索并以小端方式比较 target。",
+            "bullets": [
+              "矿工在 nonce ∈ [0..2^64−1] 范围内迭代，计算 (digest, result) = hashimoto(cache/dataset, sealHash, nonce)。",
+              "MixDigest 必须与区块头字段完全一致；result 必须 ≤ target。",
+              "全节点矿工使用按 epoch 切分的 dataset；轻量验证者与节点可仅凭 cache 完成校验，无需完整 DAG。",
+              "Dataset 与 cache 在 epoch 边界处重建（例如每 720 个区块一次）。"
+            ],
+            "codeTitle": "Nonce 搜索（伪代码）"
+          },
+          {
+            "title": "区块头校验",
+            "tagline": "节点在接受一个 PoW 区块头之前会做哪些检查。",
+            "bullets": [
+              "Extra 字段大小 ≤ MaximumExtraDataSize。",
+              "Time ≤ now + 300 秒，且 Time > MTP(parent)（最近 11 个的中位数）。",
+              "对于给定的 parent 和 header，Difficulty 必须与共识难度引擎（ASERT）一致。",
+              "PoW seal：MixDigest 相等且 XHash(header) ≤ target(two256m1 / D)。"
+            ],
+            "codeTitle": "verifySeal（概念）"
+          },
+          {
+            "title": "Epoch、Cache 与 Dataset（DAG）",
+            "tagline": "重建频率与对矿工兼容性的说明。",
+            "bullets": [
+              "Epoch 编号由区块高度推导而来；cache/dataset 的大小依赖于 epoch，由 datasetSize(height) 决定。",
+              "Parallax 使用比传统 Ethash 更短的 epoch（例如 720 区块），以匹配 10 分钟出块下约 5 天一次的重建节奏。",
+              "节点保留 cache 即可让校验保持轻量；校验区块头并不需要完整 DAG。"
+            ],
+            "codeTitle": "重建触发条件"
+          },
+          {
+            "title": "难度与锚点",
+            "tagline": "PoW 与 ASERT 难度时间表之间的相互作用。",
+            "bullets": [
+              "难度由 ASERT 调度器计算；XHash 只是通过 target 检查来强制执行已选定的难度。",
+              "共识维护一个 ASERT 锚点 (height, parentTime, target)，并通过区块头中的元数据（例如 EpochStartTime 或专用字段）来重建锚点上下文。",
+              "CalcAsertDifficulty(config, anchor, parent, header) 为该区块头推导出预期难度。",
+              "难度与锚点的不变量在分叉选择之前的区块头校验阶段就被强制执行。"
+            ],
+            "codeTitle": "难度不变量（概念）"
+          }
+        ],
+        "pseudocodeBadge": "伪代码",
+        "nav": {
+          "prev": "难度算法与分叉选择规则",
+          "next": "XHash 规范"
+        }
+      }
+    }
+  },
+  "participate": {
+    "development": {
+      "title": "开发者",
+      "subtitle": "Parallax 完全开源，欢迎来自各种背景的开发者参与贡献",
+      "exploreGithub": "浏览我们的 GitHub",
+      "readDocumentation": "阅读文档",
+      "topics": [
+        {
+          "title": "构建智能合约与 dApp",
+          "description": "借助 Parallax EVM 创建去中心化应用、自动化支付流程，并解锁全新的金融原语。"
+        },
+        {
+          "title": "参与协议开发",
+          "description": "帮助改进 Parallax 协议本身——安全性、可扩展性以及新功能。欢迎一切贡献！"
+        },
+        {
+          "title": "将 Parallax 集成到你的项目中",
+          "description": "把你的应用、钱包或服务接入 Parallax。使用我们的 API 和库，将可编程货币带给你的用户。"
+        },
+        {
+          "title": "帮助改进文档",
+          "description": "撰写指南、教程与文档，帮助他人学习与构建，让 Parallax 触手可及。"
+        },
+        {
+          "title": "加入社区讨论",
+          "description": "在我们的论坛和 GitHub 讨论区分享想法、提出问题，并与其他开发者协作。"
+        }
+      ]
+    },
+    "runningAFullNode": {
+      "title": "运行全节点",
+      "subtitle": "通过运行自己的节点，帮助保障 Parallax 安全并参与网络运行。",
+      "topics": [
+        {
+          "title": "什么是全节点？",
+          "description": "全节点会独立验证所有交易和区块，帮助保障 Parallax 网络的安全，并维持去中心化。"
+        },
+        {
+          "title": "为什么要运行节点？",
+          "description": "运行节点可让你直接接入网络、提升隐私，并增强 Parallax 抵抗审查与攻击的能力。"
+        },
+        {
+          "title": "获取 Parallax 客户端",
+          "description": "下载适用于 Linux、Windows 或 macOS 的官方 Parallax 客户端，按照说明完成安装并启动你的节点。"
+        },
+        {
+          "title": "需要帮助？",
+          "description": "在我们的文档与 Discord 中查找安装指南、故障排查技巧以及社区支持。"
+        }
+      ],
+      "getStarted": {
+        "eyebrow": "开始使用",
+        "description": "准备好运行全节点了吗？下载 Parallax 客户端，并跟随我们的分步指南操作。",
+        "download": "下载 Parallax 客户端",
+        "setupGuide": "安装指南"
+      }
+    },
+    "supportParallax": {
+      "title": "支持 Parallax",
+      "subtitle": "Parallax 诞生于一个小型社区，目前仍处于早期阶段。你可以通过许多方式来支持它，并帮助更多人了解它",
+      "topics": [
+        {
+          "title": "使用 Parallax",
+          "description": "支持网络最简单的方式就是使用它。发送和接收交易、探索 dApp，把 Parallax 当作真正的货币来使用。每一次交互都会增强生态、巩固对协议的信任。"
+        },
+        {
+          "title": "成为网络的一部分",
+          "description": "通过运行全节点来帮助保障 Parallax 的安全与去中心化。你将参与验证区块、传播交易，并确保网络保持抗审查与韧性。请记得在路由器和防火墙中开放 32110 TCP/UDP 端口，以便其他节点能与你建立连接！"
+        },
+        {
+          "title": "挖矿",
+          "description": "成为矿工，提供保障 Parallax 安全的算力。挖矿能保护网络、分发新币，并让你在网络的成长与安全中拥有直接的利益。"
+        },
+        {
+          "title": "开发",
+          "description": "为开源代码库做贡献。无论是核心协议改进、工具链还是 dApp 开发，你的技能都能塑造 Parallax 的未来。我们欢迎使用 Go、TypeScript 等语言的贡献。"
+        },
+        {
+          "title": "传播",
+          "description": "把 Parallax 分享给更多人。撰写文章、制作视频、发布帖子或主持讨论。了解 Parallax 的人越多，社区就越强大。"
+        },
+        {
+          "title": "文档",
+          "description": "优秀的文档能让新用户和开发者快速上手。帮助我们撰写、翻译并完善指南，让任何人都能轻松学会运行节点、挖矿或在 Parallax 上构建应用。"
+        },
+        {
+          "title": "结识各地社区",
+          "description": "Parallax 因社区而蓬勃发展。加入我们的论坛、Telegram 和社交渠道，与他人交流、互通知识，共同推动巩固生态的各项行动。"
+        },
+        {
+          "title": "运行引导节点",
+          "description": "引导节点是新参与者加入网络的入口。通过运行一个引导节点，你能帮助保持稳定的连接性，并为点对点网络层的健康做出贡献。"
+        },
+        {
+          "title": "运行公共 RPC",
+          "description": "公共 RPC 端点让开发者、钱包和应用能够便捷地访问 Parallax。托管一个公共 RPC 能降低任何人在 Parallax 上构建的门槛，从而促进生态成长。"
+        }
+      ],
+      "donations": {
+        "heading": "捐赠以支持 Parallax",
+        "intro": "Parallax 是一个由社区驱动的项目，没有 VC 融资、没有预挖、背后也没有任何公司。捐赠帮助我们维持网站在线、维护公共基础设施，并持续推进协议开发。",
+        "btc": {
+          "title": "Bitcoin (BTC)",
+          "description": "接受 Bitcoin 捐赠"
+        },
+        "evm": {
+          "title": "EVM 地址",
+          "description": "可接收 EVM 兼容网络上的任意代币"
+        },
+        "patreonIntro": "不想使用加密货币？",
+        "patreonIntroLine2": "你也可以通过 Patreon 支持 Parallax，使用传统支付方式进行捐助。",
+        "patreonCta": "在 Patreon 上支持"
+      }
+    }
+  },
+  "wallets": {
+    "title": "Parallax 钱包",
+    "subtitle": "选择合适的钱包来管理你的 Lax、连接 dApp，并安全地探索 Parallax 生态。",
+    "beginnerFriendly": "新手友好",
+    "getWallet": "获取 {name}",
+    "runClient": {
+      "eyebrow": "运行你自己的 Parallax 客户端",
+      "description": "为了获得最佳隐私体验，我们建议你运行自己的 Parallax 客户端来与钱包交互。",
+      "download": "下载 Parallax 客户端",
+      "setupGuide": "安装指南"
+    }
+  },
+  "exchanges": {
+    "title": "Parallax 交易所",
+    "subtitle": "Parallax 的实时交易市场。数据来自 CoinGecko，每小时更新一次。",
+    "unavailable": {
+      "title": "实时数据暂不可用",
+      "description": "实时交易所数据暂时无法获取。请稍后再试，或直接前往 CoinGecko 上的 Parallax 页面查看当前市场。",
+      "viewOnCoingecko": "在 CoinGecko 上查看"
+    },
+    "stats": {
+      "notAvailable": "—",
+      "marketOverview": "市场概览",
+      "volume24h": "24 小时成交量",
+      "volume24hCaption": "所有实时市场的合计成交量",
+      "activeMarkets": "活跃市场",
+      "activeMarketsCaptionOne": "家交易所上线 LAX",
+      "activeMarketsCaptionOther": "家交易所上线 LAX",
+      "topMarket": "头部市场",
+      "topMarketCaption": "{price} · 24 小时成交 {volume}"
+    },
+    "card": {
+      "lastPrice": "最新价格",
+      "volume24h": "24 小时成交量",
+      "spread": "买卖价差"
+    },
+    "activeMarkets": {
+      "eyebrow": "在哪里交易",
+      "heading": "活跃市场",
+      "description": "点击任意市场即可在新标签页中打开对应的交易所。按 24 小时交易量排序。"
+    },
+    "disclaimer": {
+      "label": "免责声明",
+      "body": "各交易所在安全性、隐私保护与资产托管等方面差异很大。请始终自行做好尽职调查，并使用可信赖的自托管钱包来保管你的币。<strong>Parallax 与上述任何交易所均无关联，也不对其承担任何责任。</strong>是否使用，请自行斟酌。"
+    },
+    "attribution": {
+      "dataSource": "数据来源",
+      "viewOnCoingecko": "在 CoinGecko 上查看 Parallax",
+      "note": "实时市场数据通过 CoinGecko 公共 API 获取，每小时更新一次。本页面所有上线信息均以 CoinGecko 为准。"
+    }
+  },
+  "resources": {
+    "common": {
+      "readMore": "阅读更多"
+    },
+    "beginnerGuides": {
+      "title": "新手指南",
+      "subtitle": "通过简明易懂的指南，学习如何运行 Parallax 节点、连接钱包并开始挖矿。",
+      "guides": [
+        {
+          "title": "运行 Parallax 节点",
+          "description": "手把手教您下载并在本地运行 Parallax 客户端。学习如何将 MetaMask 连接到本地节点，从而创建地址、管理 LAX 并直接与网络交互。"
+        },
+        {
+          "title": "钱包",
+          "description": "学习如何在 Parallax 上设置和使用钱包。这些指南涵盖账户的创建与管理、连接 MetaMask、收发 LAX、验证交易，以及如何确保钱包安全。"
+        },
+        {
+          "title": "挖矿",
+          "description": "通过新手指南学习如何挖出 LAX。从内置的 CPU 矿工开始，使用 ethminer 配置 GPU 挖矿，并加入矿池与他人合并算力，获得更稳定的奖励。"
+        }
+      ]
+    },
+    "branding": {
+      "title": "Parallax 品牌资源",
+      "subtitle": "下载官方 Parallax 标志，用于媒体、演示和集成场景。",
+      "logos": [
+        {
+          "name": "Parallax 标志 — 方形"
+        },
+        {
+          "name": "Parallax 标志 — 方形白色"
+        },
+        {
+          "name": "Parallax 标志 — 圆角"
+        },
+        {
+          "name": "Parallax 标志 — 圆角白色"
+        },
+        {
+          "name": "Parallax 标志 — 透明"
+        }
+      ]
+    },
+    "community": {
+      "title": "Parallax 社区",
+      "subtitle": "中立、开放，由所有人共同打造。加入我们，一起塑造可编程货币的未来。",
+      "officialChannelsHeading": "官方渠道",
+      "communityChannelsHeading": "社区渠道",
+      "officialChannels": [
+        {
+          "name": "@prlxchain",
+          "description": "关注以获取最新动态和公告。"
+        },
+        {
+          "name": "BitcoinTalk",
+          "description": "在 BitcoinTalk 主题帖中与我们交流。"
+        },
+        {
+          "name": "GitHub",
+          "description": "代码、议题与开发协作。"
+        }
+      ],
+      "communityChannels": [
+        {
+          "name": "Telegram",
+          "description": "在 TG 群组与社区成员畅聊。"
+        },
+        {
+          "name": "r/ParallaxProtocol",
+          "description": "加入我们的 Reddit 社区。"
+        },
+        {
+          "name": "Discord",
+          "description": "在 Discord 频道与大家互动。"
+        }
+      ],
+      "topics": [
+        {
+          "title": "开放与中立",
+          "description": "Parallax 不属于任何人。没有基金会、没有公司、没有 CEO，也没有特权分配——只有健全的货币和开放的参与。"
+        },
+        {
+          "title": "加入讨论",
+          "description": "讨论协议设计、治理与新构想。您的声音正在塑造可编程货币的未来。"
+        },
+        {
+          "title": "贡献代码",
+          "description": "开发协议、构建 dApp 或完善文档。无论技术水平如何都欢迎参与——每一次贡献都至关重要。"
+        },
+        {
+          "title": "运行节点或参与挖矿",
+          "description": "用普通硬件运行节点或挖矿，帮助保护网络安全。去中心化从您开始。"
+        },
+        {
+          "title": "壮大生态",
+          "description": "分享 Parallax，向他人科普，共同构建公平、无需许可的金融系统。"
+        },
+        {
+          "title": "学习与传播",
+          "description": "阅读白皮书、参加研讨会，或创作教育内容。知识让社区更有力量。"
+        }
+      ]
+    },
+    "networkAtlas": {
+      "title": "网络图谱",
+      "subtitle": "实时展示全球范围内的 Parallax 节点，通过对等连接发现并每 5 分钟刷新一次。",
+      "errorTitle": "节点数据暂时不可用",
+      "errorBody": "无法访问发现树，请稍后再试。",
+      "footer": "每 5 分钟更新一次 · 地理位置由 ip-api.com 提供",
+      "map": {
+        "ariaLabel": "可达 Parallax 节点的世界地图",
+        "zoomIn": "放大",
+        "zoomOut": "缩小",
+        "resetZoom": "重置缩放",
+        "nodeSingular": "节点",
+        "nodePlural": "节点",
+        "unknownLocation": "未知"
+      },
+      "summary": {
+        "onlineNodes": "在线节点",
+        "countries": "国家/地区",
+        "lastUpdated": "最近更新",
+        "justNow": "刚刚",
+        "minutesAgoSingular": "{count} 分钟前",
+        "minutesAgoPlural": "{count} 分钟前",
+        "hoursAgoSingular": "{count} 小时前",
+        "hoursAgoPlural": "{count} 小时前",
+        "daysAgoSingular": "{count} 天前",
+        "daysAgoPlural": "{count} 天前"
+      },
+      "countriesTable": {
+        "heading": "各国节点分布",
+        "country": "国家/地区",
+        "nodes": "节点数",
+        "share": "占比",
+        "unknownCountry": "未知"
+      }
+    },
+    "parallaxClient": {
+      "title": "Parallax 客户端",
+      "subtitle": "下载并运行官方 Parallax 节点软件，帮助保护网络并参与共识。",
+      "decentralized": {
+        "heading": "去中心化",
+        "body": "正是这些用户让 Parallax 保持去中心化。他们各自运行自己的 Parallax 全节点，每个全节点都独立遵循完全相同的规则，判断哪条区块链是有效的。"
+      },
+      "noVoting": {
+        "heading": "没有投票",
+        "body": "这里没有投票，也没有任何可被腐化的流程：只有遵循相同规则——即所谓的「数学」——的独立软件，去评估相同的区块，并对哪条区块链有效得出相同的结论。"
+      },
+      "blockquote": "这种共同的认同（即共识）让像您这样的人只接受有效的交易，从而对最强大的矿工也能强制执行 Parallax 的规则。",
+      "features": [
+        {
+          "title": "安全与隐私",
+          "description": "Parallax 客户端通过密码学签名和去中心化共识，专为稳健的安全性与隐私而设计。"
+        },
+        {
+          "title": "全节点",
+          "description": "运行全节点以验证交易、挖出区块，并帮助保护 Parallax 网络。"
+        },
+        {
+          "title": "开源",
+          "description": "客户端完全开源。可在 GitHub 上审阅、审计代码并参与贡献。"
+        }
+      ],
+      "download": {
+        "heading": "下载 Parallax 客户端",
+        "subtitle": "运行 Parallax 全节点有两种方式——任选一种适合您工作习惯的即可。两者都连接到同一个网络。",
+        "recommended": "推荐",
+        "advanced": "进阶",
+        "desktopTitle": "桌面应用",
+        "desktopDescription": "用于运行全节点的图形界面。最简单的参与方式——安装、启动，然后看着链同步即可，无需终端操作。",
+        "cliTitle": "命令行客户端",
+        "cliDescription": "面向开发者、矿工和无界面服务器运维人员的终端版本。可配置、可脚本化，是自动化的理想选择。",
+        "cliSetupGuide": "CLI 安装指南",
+        "cliOnGithub": "GitHub 上的 CLI",
+        "desktopOnGithub": "GitHub 上的桌面应用"
+      },
+      "quickStart": {
+        "heading": "CLI 快速开始",
+        "detected": "已检测到",
+        "intro": "适用于命令行客户端。三步即可连接到网络——无需任何配置。桌面应用用户可跳过本节：安装并启动即可。",
+        "step1Label": "01 / 解压",
+        "step2Label": "02 / 运行",
+        "step3Label": "03 / 同步",
+        "step3Title": "等待区块链同步",
+        "step3Body": "您的节点会自动下载并验证区块链。数据存储位置：",
+        "step3Note": "首次同步耗时取决于您的网络状况，可能需要一段时间。",
+        "portsHint": "想帮助强化网络吗？请在路由器上开放 <code>32110</code> 端口的 TCP 与 UDP。",
+        "fullSetupGuide": "完整安装指南",
+        "darwin": {
+          "extractTitle": "解压压缩包",
+          "extractBodyPrefix": "在 Finder 中双击下载好的 ",
+          "extractBodySuffix": "，或在终端中运行：",
+          "runTitlePrefix": "启动 ",
+          "runBody": "在 Finder 中双击 {code}。macOS 可能会提示开发者身份未经验证——右键点击 → 打开，即可一次性绕过该提示。终端窗口将打开并显示同步日志。"
+        },
+        "linux": {
+          "extractTitle": "解压压缩包",
+          "extractBody": "在下载文件夹的终端中执行：",
+          "runTitlePrefix": "启动 ",
+          "runBody": "进入解压后的文件夹，确认二进制文件具备可执行权限，然后运行："
+        },
+        "windows": {
+          "extractTitle": "解压压缩包",
+          "extractBodyPrefix": "在文件资源管理器中右键点击下载好的 ",
+          "extractBodyMiddle": "，选择 ",
+          "extractBodySuffix": "全部解压…",
+          "runTitlePrefix": "启动 ",
+          "runBody": "在解压后的文件夹中双击 {code}。Windows SmartScreen 首次可能会发出警告——点击 {moreInfo}。控制台窗口将打开并显示同步日志。",
+          "moreInfo": "更多信息 → 仍要运行"
+        },
+        "copied": "已复制",
+        "copyCommand": "复制命令"
+      },
+      "releases": {
+        "heading": "近期版本",
+        "intro": "Parallax 客户端的近期版本。除非您有特定理由使用旧版本，否则建议始终选择最新发布版。",
+        "desktop": "桌面应用",
+        "cli": "CLI",
+        "loading": "加载中…",
+        "noReleases": "未找到任何版本。",
+        "columnVersion": "版本",
+        "columnReleased": "发布时间",
+        "columnAssets": "构建产物",
+        "columnLink": "链接",
+        "latestBadge": "最新",
+        "preBadge": "预发布",
+        "artifactsCount": "{count} 个构建产物",
+        "sourceOnly": "仅源代码",
+        "view": "查看",
+        "viewAllReleases": "查看所有版本"
+      }
+    },
+    "technicalDocumentation": {
+      "title": "技术文档",
+      "subtitle": "深入了解 Parallax 协议、架构、API 和开发者指南。",
+      "docs": [
+        {
+          "title": "基础主题",
+          "description": "了解 Parallax 的核心组件：协议与 LAX 的入门介绍、dApp 基础、从 Web2 到 Web3 的转变，以及区块、交易和账户的运作机制。学习 Parallax 虚拟机的工作原理、Gas 与手续费的计算方式、节点与客户端的角色，以及保护网络安全的共识机制。"
+        },
+        {
+          "title": "Parallax 技术栈",
+          "description": "深入了解 Parallax 开发者技术栈：学习智能合约的构建与部署、探索开发网络与框架、与 Parallax 客户端 API 交互，并管理存储。本节还涵盖 IDE 配置与最佳实践，帮助您在 Parallax 上构建、测试并扩展 dApp。"
+        },
+        {
+          "title": "进阶",
+          "description": "超越基础，深入探索技术议题：跨链桥、保障互操作性的标准、预言机集成、支撑点对点通信的网络层，以及定义 Parallax 信息流转方式的核心数据结构与编码格式。"
+        },
+        {
+          "title": "Parallax 客户端",
+          "description": "学习如何运行、配置 Parallax 客户端并与之交互。本节涵盖快速入门、核心基础、开发者工具、监控以及常见问题——一应俱全，助您稳妥可靠地运营 Parallax 节点。"
+        }
+      ]
+    }
+  }
+}

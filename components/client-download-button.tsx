@@ -1,9 +1,9 @@
 'use client'
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Download, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePlatform, type Platform } from "@/hooks/usePlatform";
+import { Download, Smartphone } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 const REPO = {
   cli: {
@@ -62,6 +62,7 @@ type Props = {
 };
 
 export default function ClientDownloadButton({ variant = "cli", prominent = true }: Props) {
+  const t = useTranslations("common");
   const { platform, ready: platformReady } = usePlatform();
   const [release, setRelease] = useState<Release | null>(null);
   const [releaseReady, setReleaseReady] = useState(false);
@@ -94,22 +95,22 @@ export default function ClientDownloadButton({ variant = "cli", prominent = true
       <div className="inline-flex flex-col items-center gap-2 px-4 py-3 border border-dashed border-border bg-background/40 max-w-xs">
         <div className="flex items-center gap-2 text-foreground">
           <Smartphone className="size-4 text-gold" />
-          <span className="text-xs font-mono uppercase tracking-[0.15em]">Desktop only</span>
+          <span className="text-xs font-mono uppercase tracking-[0.15em]">{t("desktopOnly")}</span>
         </div>
         <p className="text-xs text-muted-foreground text-center leading-relaxed">
-          Open this page on Linux, Windows, or macOS to download.
+          {t("desktopOnlyHint")}
         </p>
       </div>
     );
   }
 
-  const fallbackLabel = variant === "gui" ? "Download Desktop App" : "Download CLI";
+  const fallbackLabel = variant === "gui" ? t("downloadDesktopApp") : t("downloadCli");
   const label = !ready
     ? fallbackLabel
     : asset && platform
-      ? `Download for ${platform.label}`
+      ? t("downloadFor", { platform: platform.label })
       : variant === "gui"
-        ? "View Desktop App builds"
+        ? t("viewDesktopBuilds")
         : fallbackLabel;
 
   return (
@@ -119,17 +120,17 @@ export default function ClientDownloadButton({ variant = "cli", prominent = true
         variant={prominent ? undefined : "secondary"}
         asChild
       >
-        <Link href={href} target="_blank" rel="noopener">
+        <a href={href} target="_blank" rel="noopener">
           <Download className="h-5 w-5" />
           {label}
-        </Link>
+        </a>
       </Button>
       {ready && (
         <div className="mt-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
           {version && asset ? <span>{version} · </span> : null}
-          <Link href={releasesPage} target="_blank" rel="noopener" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
-            Other platforms
-          </Link>
+          <a href={releasesPage} target="_blank" rel="noopener" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+            {t("otherPlatforms")}
+          </a>
         </div>
       )}
     </div>
