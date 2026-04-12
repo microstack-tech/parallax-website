@@ -1,6 +1,6 @@
 # Parallax Website
 
-The official marketing and documentation website for [Parallax](https://parallaxchain.org), built with Next.js.
+The official marketing and documentation website for [Parallax](https://parallaxprotocol.org), built with Next.js.
 
 ## Tech Stack
 
