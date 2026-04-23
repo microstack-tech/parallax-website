@@ -36,7 +36,7 @@ function useNavItems(): NavItem[] {
       subItems: [
         { name: t("introductionSub.doctrine"), href: "/introduction/doctrine" },
         { name: t("introductionSub.howItWorks"), href: "/introduction/how-it-works" },
-        { name: t("introductionSub.compare"), href: "/compare", badge: badgeNew },
+        { name: t("introductionSub.compare"), href: "/compare" },
         { name: t("introductionSub.individuals"), href: "/introduction/parallax-for-individuals" },
         { name: t("introductionSub.businesses"), href: "/introduction/parallax-for-businesses" },
         { name: t("introductionSub.whitepaper"), href: "/introduction/whitepaper" },
@@ -57,8 +57,8 @@ function useNavItems(): NavItem[] {
         { name: t("resourcesSub.brandAssets"), href: "/resources/branding" },
         { name: "###" },
         { name: t("resourcesSub.blockExplorer"), href: "https://explorer.parallaxprotocol.org" },
-        { name: t("resourcesSub.faucet"), href: "https://faucet.parallaxprotocol.org", badge: badgeNew },
-        { name: t("resourcesSub.networkAtlas"), href: "/resources/network-atlas", badge: badgeNew },
+        { name: t("resourcesSub.faucet"), href: "https://faucet.parallaxprotocol.org" },
+        { name: t("resourcesSub.networkAtlas"), href: "/resources/network-atlas" },
       ],
     },
     {
