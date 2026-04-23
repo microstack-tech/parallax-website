@@ -39,9 +39,21 @@ type CacheEntry = { value: NodesPayload; expires: number }
 let cache: CacheEntry | null = null
 let inFlight: Promise<NodesPayload> | null = null
 
+/** Strip the port from an "ip:port" address. Handles IPv4 and bracketed IPv6. */
+function stripPort(addr: string): string {
+  if (addr.startsWith("[")) {
+    const end = addr.indexOf("]")
+    return end > 0 ? addr.slice(1, end) : addr
+  }
+  const colonCount = (addr.match(/:/g) ?? []).length
+  if (colonCount === 1) return addr.slice(0, addr.indexOf(":"))
+  return addr
+}
+
 /**
- * Fetch peer IPs from all configured RPC nodes via net_peers, returning a
- * deduplicated list of IP addresses.
+ * Fetch peer addresses from all configured RPC nodes via net_peers. The RPC
+ * returns "ip:port" strings; we strip the port and return a deduplicated list
+ * of IP addresses.
  */
 async function fetchPeerIps(): Promise<string[]> {
   const allIps = new Set<string>()
@@ -59,7 +71,10 @@ async function fetchPeerIps(): Promise<string[]> {
         if (!res.ok) return
         const json = (await res.json()) as { result?: string[] }
         if (Array.isArray(json.result)) {
-          for (const ip of json.result) allIps.add(ip)
+          for (const addr of json.result) {
+            const ip = stripPort(addr)
+            if (ip) allIps.add(ip)
+          }
         }
       } catch {
         // Skip unreachable nodes.
