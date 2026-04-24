@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 
 const RPC_URL = process.env.PARALLAX_RPC_URL ?? "http://localhost:8545";
-const USER_AGENT =
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36";
 
 export const revalidate = 60;
 
@@ -19,7 +17,7 @@ export async function GET() {
 
     const rpcRes = await fetch(RPC_URL, {
       method: "POST",
-      headers: { "content-type": "application/json", "User-Agent": USER_AGENT },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify(payload),
     });
 
