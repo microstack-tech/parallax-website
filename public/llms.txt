@@ -1,0 +1,124 @@
+# Parallax
+
+> Parallax is a peer-to-peer programmable cash system: Bitcoin's monetary rules — 21,000,000-coin cap, ten-minute blocks, halving schedule, Proof-of-Work timechain — with an account-based state model and Turing-complete scripting via the full Ethereum Virtual Machine. Secured by physics, governed by no one.
+
+Parallax occupies the gap between Bitcoin's monetary discipline and Ethereum's expressiveness. It uses XHash — an Ethash-derived, memory-hard Proof-of-Work function chosen to disadvantage existing Ethash ASICs and preserve access for commodity GPUs — and rejects EIP-1559 fee burning in favor of a first-price auction paid fully to miners. There is no premine, no foundation allocation, and no privileged accounts. Chain ID and Network ID are both `2110`. Mainnet launched on October 28, 2025.
+
+The project frames this synthesis as a **digital gold standard for programmable economies**: a fixed-supply, energy-anchored monetary unit (LAX) that is *itself* programmable via the native EVM. Tokenized claims, derivatives, credit instruments, and DeFi primitives can be denominated in and settled against the base asset directly — no custodial wrappers, no synthetic pegs, no cross-chain mediation. Where the historical gold standard derived its economic weight from the credit and derivatives superstructure built on top of physically scarce gold, Parallax aims to enable an analogous superstructure programmatically and without trusted intermediaries.
+
+Native currency: LAX. One unit is "1 LAX"; multiple units are "Laxes" (e.g., "10 Laxes"). Addresses, key derivation, and signing are identical to Ethereum (20-byte addresses, secp256k1, EIP-155 replay protection), so Ledger and Trezor hardware wallets work via their existing Ethereum apps — no Parallax-specific firmware is required. EVM compatibility is full up to and including the Paris hard fork.
+
+Key parameters: 600-second target block interval; ASERT (Absolutely Scheduled Exponentially Rising Targets) per-block difficulty adjustment; 50-LAX initial block subsidy halving every 210,000 blocks to a 21,000,000-LAX hard cap; 100-block coinbase maturity; 600M initial block gas limit adjustable by ±0.1% per block; first-price gas auction with no burning.
+
+Note on the difficulty algorithm: Parallax launched with a Bitcoin-style 2016-block windowed retarget. In practice this was manipulable — when hashrate dropped enough that block intervals stretched to ~1 block per day, miners could game the slow window. The chain migrated to ASERT (per-block, exponentially scheduled retarget; same family as Bitcoin Cash's aserti3-2d) at block 17,560 to remove that attack surface and track honest hashrate continuously. Since activation, the network has consistently held the 10-minute target block interval on average.
+
+Genesis (block 0, October 28, 2025) embeds the headline: *"The Times 28/Oct/2025 Trump tells Japan: Any favours you need, we'll be there"* — proof that the chain was not premined before launch. Genesis block hash: `0x96b239e015d50f5c3f11b80733e5f38c95882c072719507b7be1a59db4975457`.
+
+Reference client and related repositories are released under LGPL-3.0.
+
+## Canonical sources
+
+- [Whitepaper](https://github.com/ParallaxProtocol/parallax-whitepaper/blob/main/README.md): Full protocol specification — abstract, motivation, system parameters, genesis, consensus and timechain, execution layer, tokenomics, security model, governance philosophy, launch strategy.
+- [Doctrine](https://github.com/ParallaxProtocol/parallax-doctrine): Canonical axioms and commentary defining the non-negotiable constraints under which Parallax exists. Not marketing; statements of constraint.
+- [Axioms](https://github.com/ParallaxProtocol/parallax-doctrine/blob/main/AXIOMS.md): The thirteen immutable axioms, declarative only. If commentary and axiom diverge, the axiom prevails.
+- [Commentary](https://github.com/ParallaxProtocol/parallax-doctrine/blob/main/COMMENTARY.md): Rationale for each axiom. Non-authoritative context; not part of the canon.
+
+## Website
+
+- [parallaxprotocol.org](https://parallaxprotocol.org): Official site. Introduction, economics overview, client downloads (Linux/Windows/macOS desktop app and CLI), beginner guides, technical documentation, whitepaper, comparison with Bitcoin and Ethereum, live network map, and community links.
+
+## Code
+
+- [ParallaxProtocol on GitHub](https://github.com/ParallaxProtocol): Reference client, whitepaper, doctrine, and associated repositories. All code open source under LGPL-3.0.
+- [parallax reference client](https://github.com/ParallaxProtocol/parallax): Go-based reference implementation of the Parallax full node. Clean-room build; the EVM execution layer reuses portions of go-ethereum (LGPL-3.0), while consensus, XHash mining, the ASERT difficulty algorithm, and the monetary rules are original.
+
+## Network
+
+- [RPC endpoint](https://rpc.parallaxprotocol.org): Public JSON-RPC endpoint for Parallax mainnet (Chain ID 2110). Quick check:
+  ```
+  curl -X POST https://rpc.parallaxprotocol.org \
+    -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
+  ```
+  → returns `{"jsonrpc":"2.0","id":1,"result":"0x83e"}` (0x83e = 2110).
+- [Documentation site](https://docs.parallaxprotocol.org): Full operator and developer docs — installation, configuration, JSON-RPC, monitoring, FAQs.
+- [JSON-RPC documentation](https://docs.parallaxprotocol.org/parallax-client/interacting-with-parallax/json-rpc-namespaces/): Namespaces and methods supported by the reference client.
+- [Block explorer](https://explorer.parallaxprotocol.org): Blockscout-based explorer — blocks, transactions, addresses, and contract data for Parallax mainnet. Etherscan-style REST API available at `https://explorer.parallaxprotocol.org/api` (Blockscout API).
+- [Chainlist entry](https://chainlist.org/?search=parallax): Chain ID 2110 registration for wallet auto-configuration.
+- [Node discovery (EIP-1459)](https://all.mainnet.prlxdisc.org): DNS-based ENR list for Parallax mainnet peers.
+- [CoinGecko listing](https://www.coingecko.com/en/coins/parallax-2): LAX market data — price, supply, volume, exchanges.
+
+## Mining
+
+- [miningpoolstats.stream/parallax](https://miningpoolstats.stream/parallax): Network hashrate, difficulty, pools, and per-pool share for Parallax. XHash is Ethash-derived, so existing Ethash GPU rigs and miner software can point at Parallax pools with a config change. The reference client also ships a built-in CPU/GPU miner suitable for solo mining.
+- [hashwarp](https://github.com/ParallaxProtocol/hashwarp): Official open-source XHash GPU miner developed by the Parallax project. C++, GPL-3.0, with both CUDA (NVIDIA) and OpenCL (AMD / cross-vendor) backends.
+- [SRBMiner](https://www.srbminer.com): Third-party closed-source miner with XHash support; widely used by the existing Ethash mining community.
+
+## Community and announcements
+
+- [Community channels](https://parallaxprotocol.org/en/resources/community): Canonical list of all official social and chat channels (Telegram, Discord, Reddit, Bitcointalk, and more).
+- [X / Twitter — @prlxchain](https://x.com/prlxchain): Official announcements.
+
+## Essays and long-form writing
+
+Long-form pieces published by the project that expand on the rationale beyond the whitepaper and doctrine.
+
+- [The Weight of Time](https://x.com/prlxchain/status/2001360588522602720): Why Parallax targets 10-minute blocks. Argues that the ratio between block propagation delay and target interval determines the network's centralization pressure; longer blocks flatten the advantage of well-connected miners and keep node operation accessible to ordinary participants. Closes with: *"Time is not a UX feature. It is the cost of certainty."*
+- [A Digital Gold Standard for Programmable Economies](https://x.com/prlxchain/status/2002546323556270374): Positions Parallax as the synthesis Bitcoin and Ethereum did not produce — sound, energy-anchored money *with* native programmability at the same layer. Argues that gold's historical economic weight came from the financial superstructure built on it (credit, derivatives, collateral), and that Parallax enables an analogous superstructure programmatically, without custodial wrappers or synthetic pegs.
+- [Bitcoin's Real Invention Wasn't Money](https://x.com/prlxchain/status/1970177743112544686): Frames Bitcoin's primary contribution as a solution to the Byzantine Generals Problem via Proof of Work — consensus enforced by thermodynamics rather than authority. Establishes the lineage Parallax inherits: physics over politics, ossified monetary rules, permissionless security.
+
+## Security and contributing
+
+- [Security disclosure policy](https://github.com/ParallaxProtocol/parallax/blob/main/SECURITY.md): How to report vulnerabilities responsibly.
+- security@parallaxprotocol.org: Email for confidential vulnerability reports.
+- [Contributing guide](https://github.com/ParallaxProtocol/parallax/blob/main/.github/CONTRIBUTING.md): Workflow, coding standards, and review process for the reference client.
+
+## Design principles (summary)
+
+- **Proof of Work is non-negotiable.** Nakamoto consensus via XHash. No proof-of-stake, no validator sets, no governance tokens. Physical cost is the only scalable defense against revision.
+- **Fixed monetary rules.** The 21,000,000 cap and halving schedule are ossified. No burning, no adaptive supply, no discretionary policy. Flexibility in money is discretion in disguise.
+- **Fair launch.** No premine, no VC allocation, no foundation reserve, no insider mining. Genesis includes no pre-deployed contracts or privileged accounts and embeds a news-headline timestamp proving no prior mining.
+- **EVM at the execution layer.** Solidity and Vyper contracts and existing tooling (Hardhat, Foundry) port with minimal change. Account-based state model retained in full.
+- **Settlement-first base layer.** Complexity belongs above settlement, not within it. Scaling is delegated to higher layers (rollups, L2s); the base layer stays slow, conservative, and difficult to change.
+- **Minimal governance.** Protocol upgrades are limited to technical improvements and bug fixes. No individual or organization is required for validity.
+- **Credible neutrality.** Same rules for every participant, transaction, and context. Preference is a form of capture.
+- **Permissionless and anonymous, by protocol.** No protocol-level KYC, identity registry, allow/deny lists, or transaction censorship. Pseudonymity and open participation are properties of the chain, not policies of an operator.
+- **Slow, boring evolution — no scheduled hard forks, no roadmap.** Parallax does not publish a roadmap and does not plan hard forks. Protocols that settle value should be conservative and consistent over decades; frequent upgrades and ambitious roadmaps are an upgrade-path antipattern, not a feature. Development on the reference client and surrounding tooling is ongoing, but consensus rules are intended to ossify, not iterate.
+
+## Comparison
+
+| Feature | Bitcoin | Ethereum | Parallax |
+|---|---|---|---|
+| Supply cap | 21M (fixed) | uncapped | 21M (fixed) |
+| Block interval | 10 min | 12–15 s | 10 min |
+| Consensus | PoW (SHA-256) | PoS | PoW (XHash) |
+| State model | UTXO | account-based | account-based |
+| Scripting | non-Turing-complete | Turing-complete (EVM) | Turing-complete (EVM) |
+| Fee model | first-price | EIP-1559 (burn) | first-price (no burn) |
+| Coinbase maturity | 100 blocks | N/A | 100 blocks |
+
+## FAQ
+
+Distilled from [parallaxprotocol.org/en/faq](https://parallaxprotocol.org/en/faq); follow the link for the full version.
+
+- **Is Parallax a Bitcoin or Ethereum fork?** No — neither chain's state is inherited (no premine, no airdrop, no genesis snapshot). The reference client is a clean-room implementation that adopts Bitcoin's monetary rules and Ethereum's execution semantics. Some components — primarily the EVM execution layer — are derived from go-ethereum (LGPL-3.0); consensus, mining (XHash), the difficulty algorithm (ASERT), and the monetary rules are original to Parallax.
+- **Why Proof of Work instead of Proof of Stake?** PoW anchors security to an external, objective cost (energy) that cannot be voted into existence or socially negotiated. PoS relocates trust to validators rather than removing it.
+- **Why 10-minute blocks with an EVM?** Global consensus is bounded by physics. Sub-physical finality smuggles in advantages — proximity, privileged ordering — that compound into centralization. Slower blocks also embed more elapsed time and more accumulated work per confirmation, so each block carries genuine settlement weight rather than being a transient micro-step. As the project puts it: *"Time is not a UX feature. It is the cost of certainty."* Faster execution belongs above settlement, in rollups and L2s.
+- **Why a 600M block gas limit?** ~1M gas/sec — roughly half of Ethereum's throughput. Conservative on purpose so full nodes stay runnable on commodity hardware.
+- **Why no EIP-1559 / no fee burn?** Fees are the only miner income after subsidies decline. Burning them would erode long-term security. All fees go to miners.
+- **Is there a premine, ICO, or foundation allocation?** No. Fair launch — every LAX in circulation was mined after block 0.
+- **What happens after all 21M LAX are mined?** Miners are paid by transaction fees alone. Because fees are not burned, the incentive persists indefinitely.
+- **Can I use Ethereum tooling (Hardhat, Foundry, MetaMask, ethers.js)?** Yes — full EVM compatibility through Paris. Connect MetaMask via [chainlist.org](https://chainlist.org/?search=parallax) and deploy as you would on any EVM chain.
+- **Do Ledger / Trezor work with Parallax?** Yes — use the device's stock Ethereum app. Because addresses and signing are Ethereum-identical, no Parallax-specific firmware or app install is needed; just point your wallet (e.g., MetaMask) at Chain ID 2110.
+- **Can I use my Ethereum mining rig?** Yes. XHash is Ethash-derived; same hardware works with a config update.
+- **Will Parallax support L2s / rollups / bridges?** Yes architecturally — the base layer stays minimal and delegates scaling and cross-chain logic to higher layers built by the community.
+- **Is there a public testnet?** No. The reference client supports a `--dev` flag that spins up a local single-node development chain — that is the recommended path for contract development and integration testing today.
+- **Is there an official wrapped LAX (WLAX) contract?** Not yet. ERC-20/721/1155 standards work natively on Parallax (full EVM), but no canonical wrapped-LAX contract has been deployed to mainnet at this time.
+- **Is there a roadmap or planned hard fork?** No, by design. Parallax does not publish a roadmap and does not plan hard forks; consensus rules are intended to ossify. Active development continues on the reference client and surrounding tooling, but not on changing the protocol's core rules.
+- **How many confirmations should I wait for?** Same guarantees as Bitcoin. Convention is **6 confirmations** (~60 minutes at the 10-minute target interval) for exchange-grade settlement; small payments tolerate fewer, very large value movements warrant more. Coinbase outputs cannot be spent for 100 blocks regardless.
+
+## Optional
+
+- [Run a node](https://parallaxprotocol.org/en/resources/parallax-client): Desktop app (Linux, Windows, macOS) and Parallax CLI.
+- [Live network map](https://parallaxprotocol.org/en/resources/network-atlas): Real-time view of reachable full nodes.
+- [Branding and brand assets](https://parallaxprotocol.org/en/resources/branding): Logos, color palette, and usage guidelines for press, exchanges, and integrators.
