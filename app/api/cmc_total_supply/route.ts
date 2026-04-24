@@ -6,6 +6,8 @@ type CacheEntry<T> = {
 }
 
 const RPC_URL = process.env.PARALLAX_RPC_URL ?? "http://localhost:8545"
+const USER_AGENT =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
 export const revalidate = 60
 
@@ -50,7 +52,7 @@ async function fetchTotalSupplyText(): Promise<string> {
 
   const rpcRes = await fetch(RPC_URL, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json", "User-Agent": USER_AGENT },
     body: JSON.stringify(payload),
     cache: "no-store",
   })
