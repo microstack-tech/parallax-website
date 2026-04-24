@@ -65,6 +65,9 @@ export async function generateMetadata({
       languages: Object.fromEntries(
         routing.locales.map((l) => [l, `/${l}`]),
       ),
+      types: {
+        "text/plain": [{ url: "/llms.txt", title: "llms.txt" }],
+      },
     },
   };
 }
