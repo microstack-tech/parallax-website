@@ -25,6 +25,7 @@ const footerLinks: Record<string, FooterLink[]> = {
     { key: "blockExplorer", href: "https://explorer.parallaxprotocol.org", external: true },
     { key: "networkAtlas", href: "/resources/network-atlas" },
     { key: "brandAssets", href: "/resources/branding" },
+    { key: "llmsTxt", href: "/llms.txt", external: true },
   ],
   community: [
     { key: "github", href: "https://github.com/ParallaxProtocol", external: true },
