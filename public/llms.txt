@@ -1,6 +1,6 @@
 # Parallax
 
-> Parallax is a peer-to-peer programmable cash system: Bitcoin's monetary rules — 21,000,000-coin cap, ten-minute blocks, halving schedule, Proof-of-Work timechain — with an account-based state model and Turing-complete scripting via the full Ethereum Virtual Machine. Secured by physics, governed by no one.
+> **Programmable gold, secured by physics.** Parallax is a peer-to-peer programmable cash system: Bitcoin's monetary rules — 21,000,000-coin cap, ten-minute blocks, halving schedule, Proof-of-Work timechain — with an account-based state model and Turing-complete scripting via the full Ethereum Virtual Machine. Governed by no one.
 
 Parallax occupies the gap between Bitcoin's monetary discipline and Ethereum's expressiveness. It uses XHash — an Ethash-derived, memory-hard Proof-of-Work function chosen to disadvantage existing Ethash ASICs and preserve access for commodity GPUs — and rejects EIP-1559 fee burning in favor of a first-price auction paid fully to miners. There is no premine, no foundation allocation, and no privileged accounts. Chain ID and Network ID are both `2110`. Mainnet launched on October 28, 2025.
 
