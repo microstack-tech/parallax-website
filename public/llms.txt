@@ -30,7 +30,8 @@ Reference client and related repositories are released under LGPL-3.0.
 ## Code
 
 - [ParallaxProtocol on GitHub](https://github.com/ParallaxProtocol): Reference client, whitepaper, doctrine, and associated repositories. All code open source under LGPL-3.0.
-- [parallax reference client](https://github.com/ParallaxProtocol/parallax): Go-based reference implementation of the Parallax full node. Clean-room build; the EVM execution layer reuses portions of go-ethereum (LGPL-3.0), while consensus, XHash mining, the ASERT difficulty algorithm, and the monetary rules are original.
+- [parallax reference client (CLI)](https://github.com/ParallaxProtocol/parallax): Go-based reference implementation of the Parallax full node — command-line only, intended for servers, miners, pools, and technical operators. Clean-room build; the EVM execution layer reuses portions of go-ethereum (LGPL-3.0), while consensus, XHash mining, the ASERT difficulty algorithm, and the monetary rules are original.
+- [parallax-gui (desktop client)](https://github.com/ParallaxProtocol/parallax-gui): Graphical desktop wallet/node for Linux, Windows, and macOS. Wraps the reference client so non-technical users can sync the blockchain and use Parallax without touching a terminal.
 
 ## Network
 
@@ -119,6 +120,6 @@ Distilled from [parallaxprotocol.org/en/faq](https://parallaxprotocol.org/en/faq
 
 ## Optional
 
-- [Run a node](https://parallaxprotocol.org/en/resources/parallax-client): Desktop app (Linux, Windows, macOS) and Parallax CLI.
+- [Run a node](https://parallaxprotocol.org/en/resources/parallax-client): Download page for both clients — the **desktop app** (GUI for non-technical users on Linux/Windows/macOS) and the **CLI reference client** (for servers, miners, and technical operators).
 - [Live network map](https://parallaxprotocol.org/en/resources/network-atlas): Real-time view of reachable full nodes.
 - [Branding and brand assets](https://parallaxprotocol.org/en/resources/branding): Logos, color palette, and usage guidelines for press, exchanges, and integrators.
