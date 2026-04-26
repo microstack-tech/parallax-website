@@ -21,6 +21,8 @@ type NetworkStats = {
 
 const BLOCKSCOUT_URL = "https://explorer.parallaxprotocol.org/api/v2/stats"
 const COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/parallax-2?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false"
+const BROWSER_USER_AGENT =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 const TTL_MS = 60_000
 
 export const revalidate = 60
@@ -40,7 +42,7 @@ function setCache(value: NetworkStats, ttlMs: number) {
 async function fetchStats(): Promise<NetworkStats> {
   const [blockscoutRes, coingeckoRes] = await Promise.allSettled([
     fetch(BLOCKSCOUT_URL, {
-      headers: { Accept: "application/json" },
+      headers: { Accept: "application/json", "User-Agent": BROWSER_USER_AGENT },
       cache: "no-store",
     }),
     fetch(COINGECKO_URL, {
