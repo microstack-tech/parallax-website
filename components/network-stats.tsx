@@ -255,10 +255,38 @@ export function NetworkStats() {
 
     async function load() {
       try {
-        const res = await fetch("/api/network_stats")
-        if (!res.ok) return
-        const data = await res.json()
-        if (!cancelled) setStats(data)
+        const [explorerRes, marketRes] = await Promise.allSettled([
+          fetch("https://explorer.parallaxprotocol.org/api/v2/stats", {
+            headers: { Accept: "application/json" },
+          }),
+          fetch("/api/network_stats"),
+        ])
+
+        if (explorerRes.status !== "fulfilled" || !explorerRes.value.ok) return
+        const explorer = await explorerRes.value.json()
+
+        let market = {
+          price_usd: null,
+          price_change_24h: null,
+          market_cap_usd: null,
+          total_volume_usd: null,
+          circulating_supply: null,
+          max_supply: null,
+        }
+        if (marketRes.status === "fulfilled" && marketRes.value.ok) {
+          market = await marketRes.value.json()
+        }
+
+        if (!cancelled) {
+          setStats({
+            total_blocks: explorer.total_blocks,
+            total_transactions: explorer.total_transactions,
+            total_addresses: explorer.total_addresses,
+            average_block_time: explorer.average_block_time,
+            transactions_today: explorer.transactions_today,
+            ...market,
+          })
+        }
       } catch {
         // silently fail — stats are non-critical
       }
