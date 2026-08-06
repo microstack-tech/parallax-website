@@ -8,7 +8,7 @@ import { FadeIn } from "./fade-in"
 const docs = [
   { key: "beginnerGuides", icon: BookOpenCheck, href: "https://docs.parallaxprotocol.org/guides", external: true },
   { key: "technicalDocumentation", icon: NotebookText, href: "https://docs.parallaxprotocol.org", external: true },
-  { key: "whitepaper", icon: FileText, href: "/introduction/whitepaper", external: false },
+  { key: "whitepaper", icon: FileText, href: "parallax.pdf", external: false },
 ] as const
 
 export function Documentation() {

@@ -39,7 +39,7 @@ function useNavItems(): NavItem[] {
         { name: t("introductionSub.compare"), href: "/compare" },
         { name: t("introductionSub.individuals"), href: "/introduction/parallax-for-individuals" },
         { name: t("introductionSub.businesses"), href: "/introduction/parallax-for-businesses" },
-        { name: t("introductionSub.whitepaper"), href: "/introduction/whitepaper" },
+        { name: t("introductionSub.whitepaper"), href: "parallax.pdf" },
         { name: t("introductionSub.gettingStarted"), href: "/introduction/getting-started" },
         { name: "###" },
         { name: t("introductionSub.protocol"), href: "/introduction/protocol/overview" },

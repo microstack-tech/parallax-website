@@ -14,7 +14,6 @@ const routes = [
   "/introduction/how-it-works",
   "/introduction/parallax-for-individuals",
   "/introduction/parallax-for-businesses",
-  "/introduction/whitepaper",
   "/introduction/protocol/overview",
   "/introduction/protocol/architecture",
   "/introduction/protocol/block-reward-and-halving",
