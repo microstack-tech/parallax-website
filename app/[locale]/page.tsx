@@ -2,6 +2,7 @@
 import Client from "@/components/client";
 import { Community } from "@/components/community";
 import { Documentation } from "@/components/documentation";
+import { GenesisProof } from "@/components/genesis-proof";
 import { Hero } from "@/components/hero";
 import { Parallax } from "@/components/parallax";
 import { NetworkStats } from "@/components/network-stats";
@@ -23,6 +24,8 @@ export default function Home() {
       >
         <Hero />
         <NetworkStats />
+        <SectionDivider />
+        <GenesisProof />
         <SectionDivider />
         <Parallax />
         <SectionDivider />

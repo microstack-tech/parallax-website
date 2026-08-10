@@ -59,7 +59,7 @@ export default function GettingStarted() {
                 {t("use.inform.description")}
                 <div className="inline-flex w-full justify-end mt-8">
                   <Button variant="secondary" asChild className="w-full sm:w-fit">
-                    <Link href={"/introduction/protocol/overview"}>
+                    <Link href={"/introduction/how-it-works"}>
                       {t("use.inform.cta")} <ChevronRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -127,8 +127,10 @@ export default function GettingStarted() {
                   {t("use.spend.description")}
                 </div>
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
-                  <Button variant="secondary" disabled className="w-full sm:w-fit">
-                    {t("use.spend.comingSoon")}
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
+                    <Link href={"/resources/community"}>
+                      {t("use.spend.cta")} <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
               </CardContent>
@@ -149,7 +151,7 @@ export default function GettingStarted() {
                 {t("accept.inform.description")}
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
                   <Button variant="secondary" asChild className="w-full sm:w-fit">
-                    <Link href={"/introduction/protocol/overview"}>
+                    <Link href={"/introduction/how-it-works"}>
                       {t("accept.inform.cta")} <ChevronRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -169,8 +171,10 @@ export default function GettingStarted() {
                   {t("accept.processing.description")}
                 </div>
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
-                  <Button variant="secondary" disabled className="w-full sm:w-fit">
-                    {t("accept.processing.comingSoon")}
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
+                    <Link href={"/wallets"}>
+                      {t("accept.processing.cta")} <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
               </CardContent>
@@ -209,8 +213,10 @@ export default function GettingStarted() {
                   {t("accept.visibility.description")}
                 </div>
                 <div className="inline-flex w-full justify-end mt-8 gap-2">
-                  <Button variant="secondary" disabled className="w-full sm:w-fit">
-                    {t("accept.visibility.comingSoon")}
+                  <Button variant="secondary" asChild className="w-full sm:w-fit">
+                    <Link href={"/resources/community"}>
+                      {t("accept.visibility.cta")} <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
               </CardContent>

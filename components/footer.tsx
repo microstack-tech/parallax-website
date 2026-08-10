@@ -14,6 +14,7 @@ const footerLinks: Record<string, FooterLink[]> = {
     { key: "compare", href: "/compare" },
     { key: "whitepaper", href: "parallax.pdf" },
     { key: "protocolOverview", href: "/introduction/protocol/overview" },
+    { key: "verify", href: "/introduction/verify" },
     { key: "gettingStarted", href: "/introduction/getting-started" },
   ],
   resources: [

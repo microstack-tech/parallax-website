@@ -3,7 +3,7 @@
     "site": {
       "titleDefault": "Parallax Protocol",
       "titleTemplate": "%s | Parallax Protocol",
-      "description": "Protocole open source pour un système de monnaie programmable pair-à-pair",
+      "description": "Un système de monnaie programmable pair-à-pair. La discipline monétaire de Bitcoin rencontre la programmabilité d'Ethereum. Sécurisé par la physique, gouverné par personne.",
       "ogDescription": "Un système de monnaie programmable pair-à-pair. La discipline monétaire de Bitcoin rencontre la programmabilité d'Ethereum."
     },
     "compare": {
@@ -35,17 +35,17 @@
         "title": "Premiers pas",
         "description": "Commencer avec Parallax est facile. Apprenez à l'utiliser et à l'accepter en tant que commerçant."
       },
-      "parallaxForBusinesses": {
-        "title": "Parallax pour les entreprises",
-        "description": "Parallax est un moyen très sûr et peu coûteux de gérer les paiements de votre entreprise."
+      "parallaxForBitcoiners": {
+        "title": "Parallax pour les bitcoiners",
+        "description": "Ce que Parallax conserve de Bitcoin, ce qu'il change et pourquoi, et ce que coûte honnêtement une jeune chaîne — plafond de 21 M, preuve de travail, blocs de dix minutes, plus l'EVM."
       },
-      "parallaxForIndividuals": {
-        "title": "Parallax pour les particuliers",
-        "description": "Parallax est le moyen le plus simple de transiger à très faible coût."
+      "parallaxForDevelopers": {
+        "title": "Parallax pour les développeurs Ethereum",
+        "description": "Chain ID 2110, EVM complète jusqu'à Paris, votre stack Solidity existante — sur une couche de règlement dont les règles ne peuvent pas être retirées à votre contrat par un vote de gouvernance."
       },
-      "whitepaper": {
-        "title": "Livre blanc",
-        "description": "Parallax : une nouvelle perspective sur la monnaie programmable. La spécification technique du protocole Parallax."
+      "verify": {
+        "title": "Vérifiez par vous-même",
+        "description": "Vérifiez les affirmations de Parallax contre la chaîne elle-même : le hash de genèse, le titre de presse du jour du lancement, l'offre sans prémine — avec les commandes pour le faire."
       },
       "protocol": {
         "overview": {
@@ -75,6 +75,10 @@
       }
     },
     "participate": {
+      "mining": {
+        "title": "Minage",
+        "description": "Minez du LAX avec XHash — une preuve de travail memory-hard dérivée d'Ethash. Les rigs GPU de classe Ethash fonctionnent. Pools, minage solo et le calendrier complet des récompenses."
+      },
       "development": {
         "title": "Développement",
         "description": "Contribuez à Parallax en tant que développeur. Construisez des smart contracts et des dApps sur l'EVM Parallax, améliorez le protocole ou intégrez Parallax à vos projets."
@@ -147,8 +151,9 @@
       "doctrine": "La Doctrine Parallax",
       "howItWorks": "Fonctionnement",
       "compare": "vs Bitcoin et Ethereum",
-      "individuals": "Particuliers",
-      "businesses": "Entreprises",
+      "bitcoiners": "Pour les bitcoiners",
+      "developers": "Pour les développeurs Ethereum",
+      "verify": "Vérifiez par vous-même",
       "whitepaper": "Livre blanc",
       "gettingStarted": "Premiers pas",
       "protocol": "Protocole Parallax"
@@ -168,7 +173,7 @@
     "participateSub": {
       "supportParallax": "Soutenir Parallax",
       "runningAFullNode": "Faire tourner un nœud complet",
-      "miningPools": "Pools de minage",
+      "mining": "Minage",
       "development": "Développement"
     }
   },
@@ -185,6 +190,7 @@
       "compare": "vs Bitcoin et Ethereum",
       "whitepaper": "Livre blanc",
       "protocolOverview": "Vue d'ensemble du protocole",
+      "verify": "Vérifiez par vous-même",
       "gettingStarted": "Premiers pas",
       "beginnerGuides": "Guides pour débutants",
       "documentation": "Documentation",
@@ -210,7 +216,7 @@
     "description": "Ajoutez automatiquement le réseau Parallax à votre portefeuille en un clic.",
     "add": "Ajouter le réseau Parallax",
     "adding": "En attente d'approbation...",
-    "added": "Réseau ajouté !",
+    "added": "Réseau ajouté.",
     "error": "Échec de l'ajout du réseau. Veuillez réessayer.",
     "dismiss": "Fermer"
   },
@@ -243,15 +249,23 @@
         "supply": "Offre en circulation"
       }
     },
+    "genesis": {
+      "eyebrow": "Genèse",
+      "headline": "The Times 28/Oct/2025 Trump tells Japan: Any favours you need, we'll be there",
+      "headlineNote": "Le titre de presse du jour du lancement inscrit dans le bloc de genèse — la preuve que la chaîne n'a pas pu être construite avant la nouvelle.",
+      "hashLabel": "Hash de genèse",
+      "supplyNote": "Offre au bloc zéro : 0 LAX. Pas de prémine, pas d'allocations — chaque pièce depuis a été minée selon des règles rendues publiques avant que le premier hash ne soit tenté.",
+      "cta": "Vérifiez par vous-même"
+    },
     "parallax": {
-      "eyebrow": "Protocole",
-      "heading": "Protocole Parallax",
-      "subtitle": "Un système monétaire n'a de légitimité que si ses règles ne peuvent être contournées.",
+      "eyebrow": "Principe",
+      "heading": "Des règles que rien ne peut plier",
+      "subtitle": "Un engagement n'est crédible que s'il coûte quelque chose. C'est toute la Doctrine en une seule image.",
       "imageCaption": "La Mort de Socrate — Jacques-Louis David",
       "body1": "Parallax conjugue une offre monétaire fixe et un règlement par preuve de travail avec une programmabilité complète via les contrats intelligents. Chaque pièce doit être minée. Chaque règle s'exécute sans latitude. Pas de prémine, pas de fondation, pas de comptes privilégiés.",
-      "body2": "La Mort de Socrate traduit le refus d'échanger la vérité contre la commodité. Socrate accepte son destin non par obéissance, mais parce qu'abandonner ses principes reviendrait à invalider la raison elle-même.",
-      "body3": "Parallax suit la même logique. Un système monétaire n'a de légitimité que si ses règles ne peuvent être pliées par le pouvoir ou la popularité. Au lieu de la confiance, des comités ou du consensus narratif, Parallax ancre la valeur dans un coût physique irréversible.",
-      "body4": "Là où Socrate faisait confiance à la raison plutôt qu'aux dirigeants, Parallax fait confiance à la physique plutôt qu'aux institutions.",
+      "body2": "La Mort de Socrate montre un homme à qui l'on offrait la fuite et qui l'a refusée. Ce qui fait durer la scène, ce n'est pas le défi, c'est le prix : Socrate refusait d'échanger ses principes contre la commodité, fût-ce au prix de sa vie — et c'est précisément ce coût qui a rendu son engagement crédible. Les belles paroles ne coûtent rien. La ciguë, si.",
+      "body3": "La preuve de travail obéit à la même logique. Chaque bloc est une dépense irréversible — une énergie qui ne peut être ni falsifiée, ni remboursée, ni créée par un vote. Un système monétaire ne conserve sa légitimité que tant que ses règles ne peuvent être pliées par le pouvoir ou la popularité ; Parallax ancre donc ses règles dans la seule chose que ni l'un ni l'autre ne peut plier : le coût physique.",
+      "body4": "Dans les systèmes adversariaux, la dépense fait la crédibilité. Socrate l'a prouvé une fois ; la timechain le prouve toutes les dix minutes.",
       "cta": "Lire la Doctrine Parallax"
     },
     "soundMoney": {
@@ -406,7 +420,7 @@
           },
           {
             "label": "Algorithme de hachage",
-            "parallax": "XHash (résistant aux ASIC)",
+            "parallax": "XHash (memory-hard, minable par GPU)",
             "bitcoin": "SHA-256 (dominé par les ASIC)",
             "ethereum": "N/A (staking de validateurs)"
           },
@@ -420,8 +434,8 @@
           {
             "label": "Maturité du coinbase",
             "description": "Période de verrouillage avant que les récompenses nouvellement minées ne deviennent dépensables. Réduit l'incitation à des réorganisations en tête de chaîne pour voler frais et subvention.",
-            "parallax": "100 blocs (~16 heures)",
-            "bitcoin": "100 blocs (~16 heures)",
+            "parallax": "100 blocs (~17 heures)",
+            "bitcoin": "100 blocs (~17 heures)",
             "ethereum": "Aucune"
           },
           {
@@ -521,7 +535,7 @@
           },
           {
             "label": "Contrats intelligents",
-            "parallax": "Compatible EVM",
+            "parallax": "EVM (complète jusqu'à Paris)",
             "bitcoin": "Script (limité)",
             "ethereum": "EVM natif"
           },
@@ -567,7 +581,7 @@
           },
           {
             "label": "Voie de mise à jour",
-            "parallax": "Consensus approximatif + hard forks",
+            "parallax": "Réparation technique uniquement ; aucun fork planifié",
             "bitcoin": "Consensus approximatif + soft forks",
             "ethereum": "Hard forks coordonnés"
           },
@@ -610,7 +624,7 @@
         },
         {
           "question": "Qui a créé Parallax ?",
-          "answer": "Parallax a été créé par une équipe de développeurs blockchain qui ont perçu le besoin d'un protocole capable de réunir les principes de monnaie saine de Bitcoin et les capacités de contrats intelligents d'Ethereum. Le projet suit un modèle de lancement équitable, sans prémine ni allocations privilégiées."
+          "answer": "Peu importe — et c'est précisément le but. Le code source était public avant le lancement, la date de lancement avait été annoncée à l'avance et l'offre à la genèse était nulle : chaque participant partait donc de la même ligne de départ. Les auteurs originels ne détiennent aucune clé du protocole, n'ont reçu aucune allocation et ne sont nécessaires à rien ; le réseau ne remarquerait pas leur disparition. Chaque affirmation au sujet de Parallax peut être vérifiée sur la chaîne elle-même : la paternité du code ne confère donc aucune autorité."
         },
         {
           "question": "En quoi Parallax diffère-t-il de Bitcoin et d'Ethereum ?",
@@ -628,11 +642,11 @@
         },
         {
           "question": "Qu'est-ce que XHash et pourquoi ce choix ?",
-          "answer": "XHash est une variante modifiée d'Ethash, spécifiquement conçue pour rendre obsolètes les ASIC existants et garder le minage accessible au matériel courant comme les GPU. En résistant à la domination des ASIC, XHash favorise la diversité des mineurs et une participation plus large à la sécurisation du réseau, évitant la centralisation de la puissance de hachage qui a touché d'autres chaînes en PoW."
+          "answer": "XHash est une variante modifiée d'Ethash : gourmande en mémoire (memory-hard), pour que les GPU grand public restent compétitifs au minage, et altérée précisément pour que le parc existant d'ASIC Ethash ne puisse pas être réutilisé sur Parallax. Un réseau en preuve de travail est le plus fragile durant ses premières années, quand le hashrate total est faible ; XHash garantit que la sécurité de ces années-là soit fournie par du matériel largement répandu plutôt que par quiconque possède les vestiges de la course à l'armement matérielle d'une autre chaîne."
         },
         {
           "question": "Parallax est-il compatible EVM ?",
-          "answer": "Oui, Parallax est entièrement compatible EVM, ce qui signifie que l'ensemble des contrats intelligents, outils et applications Ethereum fonctionnent sur Parallax sans modification. Les développeurs peuvent utiliser les outils habituels comme MetaMask, Remix ou Hardhat."
+          "answer": "Oui — Parallax exécute la machine virtuelle Ethereum, complète jusqu'au fork Paris. Les contrats écrits en Solidity ou Vyper se déploient sans modification, et les outils habituels comme MetaMask, Remix, Hardhat et Foundry fonctionnent en changeant simplement le chain ID (2110). Une réserve : les opcodes introduits après Paris (comme PUSH0, apparu avec Shanghai) ne sont pas disponibles ; réglez donc la version EVM de votre compilateur sur « paris » — Solidity 0.8.20 et versions ultérieures ciblent Shanghai par défaut."
         },
         {
           "question": "Quels sont les temps de bloc et les frais de transaction ?",
@@ -662,21 +676,21 @@
       "mining": [
         {
           "question": "Comment miner Parallax ?",
-          "answer": "Parallax utilise l'algorithme de minage XHash, ce qui vous permet de miner avec des CPU et des GPU via le mineur intégré au client Parallax ou un mineur GPU externe. Il suffit de pointer votre mineur vers un pool Parallax avec la configuration appropriée."
+          "answer": "Parallax utilise l'algorithme de minage XHash. Vous pouvez miner avec un CPU via le mineur intégré au client, ou avec des GPU en utilisant Hashwarp — le mineur officiel open source — ou SRBMiner-Multi. Pointez votre mineur vers un pool Parallax, ou vers votre propre nœud pour le minage en solo."
         },
         {
           "question": "Quel est le calendrier des récompenses de minage ?",
-          "answer": "Parallax suit le calendrier de halving de Bitcoin. La récompense de bloc initiale est de 50 Laxes et est divisée par deux environ tous les 4 ans (210 000 blocs). Cela reproduit le modèle de rareté qui a fait ses preuves avec Bitcoin."
+          "answer": "Parallax suit le calendrier de halving de Bitcoin. La récompense de bloc initiale est de 50 LAX et est divisée par deux environ tous les 4 ans (210 000 blocs). Cela reproduit le modèle de rareté qui a fait ses preuves avec Bitcoin."
         },
         {
           "question": "Puis-je utiliser mon rig de minage Ethereum ?",
-          "answer": "Oui ! Comme Parallax utilise l'algorithme XHash, qui s'appuie sur Ethash, les rigs de minage Ethereum existants peuvent miner Parallax sans changement de matériel. Il vous suffit de mettre à jour la configuration de votre logiciel de minage pour pointer vers les pools Parallax."
+          "answer": "Oui — le matériel reste utilisable. XHash est dérivé d'Ethash et memory-hard, donc les rigs GPU de classe Ethash minent Parallax de manière compétitive sans changement de matériel. Le logiciel, lui, change : les mineurs Ethash existants ne peuvent pas miner XHash — utilisez Hashwarp (le mineur officiel open source) ou SRBMiner-Multi, pointé vers un pool Parallax ou votre propre nœud."
         }
       ],
       "economics": [
         {
           "question": "Quelle est l'offre totale de Parallax ?",
-          "answer": "Parallax a une offre maximale fixe de 21 millions de pièces, identique à Bitcoin. Ce plafond fixe garantit la rareté et une politique monétaire déflationniste, faisant des Laxes une réserve de valeur tout en permettant des fonctionnalités programmables."
+          "answer": "Parallax a une offre maximale fixe de 21 millions de pièces, identique à Bitcoin. Ce plafond fixe garantit la rareté et une politique monétaire déflationniste, faisant de LAX une réserve de valeur tout en permettant des fonctionnalités programmables."
         },
         {
           "question": "Comment les frais de transaction sont-ils gérés ?",
@@ -702,7 +716,7 @@
         },
         {
           "question": "Y a-t-il une fondation ou une entreprise derrière Parallax ?",
-          "answer": "Parallax a d'abord été piloté par MicroStack, mais le protocole est conçu pour survivre à ses créateurs. Cette responsabilité est progressivement transférée à l'écosystème à mesure que le projet mûrit. Il n'y a aucune fondation qui contrôle le protocole, aucune trésorerie alimentée par l'inflation et aucun jeton de gouvernance privilégié. Le protocole doit rester correct même si ses créateurs disparaissent ou sont en désaccord."
+          "answer": "Non. Il n'y a ni fondation, ni entreprise, ni trésorerie, ni conseil, ni jetons de gouvernance privilégiés. Le développement du client se fait au grand jour, et les règles de consensus sont destinées à s'ossifier : les changements se limitent aux réparations techniques, et même une réparation ne devient réelle que par l'adoption volontaire des opérateurs de nœuds, un par un. Les auteurs originels ne détiennent aucune clé et ne sont nécessaires à rien — le protocole doit rester correct même si ses créateurs disparaissent ou sont en désaccord."
         },
         {
           "question": "Parallax prendra-t-il en charge les solutions Layer 2 ?",
@@ -716,7 +730,7 @@
       "development": [
         {
           "question": "Comment développer sur Parallax ?",
-          "answer": "Développer sur Parallax est identique à développer sur Ethereum. Utilisez les outils habituels : Solidity, Remix IDE, Hardhat ou Foundry. Déployez vos contrats avec MetaMask ou d'autres portefeuilles Web3 en vous connectant au réseau Parallax."
+          "answer": "Développer sur Parallax fonctionne comme développer sur Ethereum. Utilisez Solidity, Remix, Hardhat ou Foundry, et déployez avec MetaMask ou n'importe quel portefeuille Web3 connecté au réseau Parallax (chain ID 2110). Réglez evmVersion sur « paris » dans la configuration de votre compilateur — la couche d'exécution est complète jusqu'au fork Paris, et Solidity 0.8.20+ émet sinon des PUSH0, que Parallax ne prend pas en charge."
         },
         {
           "question": "Existe-t-il des subventions pour le développement ?",
@@ -724,7 +738,7 @@
         },
         {
           "question": "Quels outils et bibliothèques sont pris en charge ?",
-          "answer": "Tous les outils de développement Ethereum fonctionnent avec Parallax : Web3.js, Ethers.js, MetaMask, Remix, Hardhat, Foundry, les contrats OpenZeppelin, et bien d'autres. L'écosystème Ethereum au complet est à la disposition des développeurs Parallax."
+          "answer": "Tous les outils de développement Ethereum fonctionnent avec Parallax : Web3.js, Ethers.js, MetaMask, Remix, Hardhat, Foundry, les contrats OpenZeppelin, et bien d'autres. Compilez avec la version EVM « paris » — la couche d'exécution n'inclut pas les opcodes postérieurs à Paris."
         }
       ]
     }
@@ -736,10 +750,79 @@
     "description": "Ajoutez automatiquement le réseau Parallax à votre portefeuille en un clic.",
     "add": "Ajouter le réseau Parallax",
     "adding": "En attente d'approbation...",
-    "added": "Réseau ajouté !",
+    "added": "Réseau ajouté.",
     "error": "Échec de l'ajout du réseau. Veuillez réessayer."
   },
   "participate": {
+    "mining": {
+      "title": "Miner Parallax",
+      "subtitle": "Chaque pièce existante a été minée, et chaque pièce jamais émise le sera. Les mineurs sont le budget de sécurité du réseau — et si vous avez conservé un rig GPU de classe Ethash, il fonctionne toujours.",
+      "rig": {
+        "heading": "Votre ancien rig Ethereum fonctionne",
+        "body": "XHash est dérivé d'Ethash : memory-hard, compétitif sur GPU, et modifié précisément pour que le stock existant d'ASIC Ethash ne puisse pas être réutilisé. Vos GPU restent utilisables — c'est le logiciel qui change : minez avec Hashwarp, le mineur officiel open source, ou avec SRBMiner-Multi. Les époques sont raccourcies à 720 blocs (environ cinq jours par régénération du DAG à blocs de dix minutes).",
+        "hashwarpCta": "Télécharger Hashwarp",
+        "srbminerCta": "SRBMiner-Multi"
+      },
+      "facts": {
+        "heading": "Les chiffres",
+        "rows": [
+          {
+            "label": "Algorithme",
+            "value": "XHash — dérivé d'Ethash, memory-hard"
+          },
+          {
+            "label": "Récompense de bloc",
+            "value": "50 LAX, divisée par deux tous les 210 000 blocs (~4 ans)"
+          },
+          {
+            "label": "Temps de bloc cible",
+            "value": "~10 minutes"
+          },
+          {
+            "label": "Maturité coinbase",
+            "value": "100 blocs (~17 heures) avant que les récompenses soient dépensables"
+          },
+          {
+            "label": "Difficulté",
+            "value": "ASERT — ajustement à chaque bloc, demi-vie de 2 jours"
+          },
+          {
+            "label": "Frais",
+            "value": "Versés intégralement aux mineurs — rien de brûlé"
+          }
+        ]
+      },
+      "start": {
+        "heading": "Premiers pas",
+        "steps": [
+          {
+            "title": "Faire tourner le client",
+            "description": "Téléchargez le client Parallax et synchronisez un nœud complet. Le minage solo en exige un ; les mineurs en pool peuvent pointer leurs rigs directement vers le point d'accès d'un pool."
+          },
+          {
+            "title": "Tester avec le mineur CPU intégré",
+            "description": "Le client embarque un mineur CPU — parfait pour apprendre le fonctionnement sur n'importe quelle machine, pas pour un hashrate significatif."
+          },
+          {
+            "title": "Pointer vos GPU",
+            "description": "Pointez Hashwarp — le mineur GPU officiel open source — ou SRBMiner-Multi vers votre nœud ou un pool, avec votre adresse LAX comme cible de paiement."
+          },
+          {
+            "title": "Rejoindre un pool",
+            "description": "Les blocs en solo sont rares à faible hashrate personnel. Les pools lissent la variance en paiements réguliers — comparez les pools en direct sur l'index des pools."
+          }
+        ]
+      },
+      "economics": {
+        "heading": "Une économie honnête",
+        "body": "Le revenu du minage est la subvention plus les frais, versés intégralement. La rentabilité dépend toujours de votre hashrate, de l'efficacité de votre matériel et du prix de l'électricité — et sur un jeune réseau, le hashrate total (et donc votre part) peut évoluer vite dans les deux sens. La difficulté se réajuste à chaque bloc. Faites les calculs avant d'acheter du matériel ; rien ici ne promet un rendement."
+      },
+      "ctas": {
+        "pools": "Index des pools de minage",
+        "guides": "Guides de minage",
+        "client": "Télécharger le client"
+      }
+    },
     "development": {
       "title": "Développeurs",
       "subtitle": "Parallax est entièrement open source et accueille les contributions de développeurs de tous horizons",
@@ -752,7 +835,7 @@
         },
         {
           "title": "Contribuer au développement du protocole",
-          "description": "Aidez à améliorer le protocole Parallax lui-même — sécurité, scalabilité et nouvelles fonctionnalités. Toutes les contributions sont les bienvenues !"
+          "description": "Aidez à améliorer le protocole Parallax lui-même — sécurité, performance, outillage. Le développement se fait au grand jour, et les contributions sont jugées sur leur justesse, non sur les références de leurs auteurs."
         },
         {
           "title": "Intégrer Parallax à vos projets",
@@ -806,7 +889,7 @@
         },
         {
           "title": "Être le réseau",
-          "description": "Aidez à sécuriser et à décentraliser Parallax en faisant tourner un nœud complet. Ainsi, vous contribuez à la vérification des blocs, à la propagation des transactions et vous garantissez que le réseau reste résistant à la censure et résilient. Pensez à ouvrir le port 32110 TCP/UDP sur votre routeur et votre pare-feu pour que les autres nœuds puissent se connecter à vous !"
+          "description": "Aidez à sécuriser et à décentraliser Parallax en faisant tourner un nœud complet. Ainsi, vous contribuez à la vérification des blocs, à la propagation des transactions et vous garantissez que le réseau reste résistant à la censure et résilient. Pensez à ouvrir le port 32110 TCP/UDP sur votre routeur et votre pare-feu pour que les autres nœuds puissent se connecter à vous."
         },
         {
           "title": "Minage",
@@ -856,7 +939,7 @@
   },
   "wallets": {
     "title": "Portefeuilles sur Parallax",
-    "subtitle": "Choisissez le portefeuille qui vous convient pour gérer vos Laxes, vous connecter aux dApps et explorer l'écosystème Parallax en toute sécurité.",
+    "subtitle": "Choisissez le portefeuille qui vous convient pour gérer vos LAX, vous connecter aux dApps et explorer l'écosystème Parallax en toute sécurité.",
     "beginnerFriendly": "Pour débutants",
     "getWallet": "Obtenir {name}",
     "runClient": {
@@ -915,15 +998,15 @@
       "guides": [
         {
           "title": "Faire tourner un nœud Parallax",
-          "description": "Guides pas à pas pour télécharger et lancer le client Parallax sur votre machine. Apprenez à connecter MetaMask à votre nœud local pour créer des adresses, gérer vos laxes et interagir directement avec le réseau."
+          "description": "Guides pas à pas pour télécharger et lancer le client Parallax sur votre machine. Apprenez à connecter MetaMask à votre nœud local pour créer des adresses, gérer vos LAX et interagir directement avec le réseau."
         },
         {
           "title": "Portefeuilles",
-          "description": "Apprenez à configurer et utiliser des portefeuilles sur Parallax. Ces guides couvrent la création et la gestion de comptes, la connexion à MetaMask, l'envoi et la réception de laxes, la vérification des transactions et la sécurisation de votre portefeuille."
+          "description": "Apprenez à configurer et utiliser des portefeuilles sur Parallax. Ces guides couvrent la création et la gestion de comptes, la connexion à MetaMask, l'envoi et la réception de LAX, la vérification des transactions et la sécurisation de votre portefeuille."
         },
         {
           "title": "Minage",
-          "description": "Apprenez à miner des laxes grâce à nos guides pour débutants. Démarrez avec le mineur CPU intégré, configurez le minage GPU avec ethminer, et rejoignez un pool de minage pour mutualiser votre puissance de hachage et obtenir des récompenses plus régulières."
+          "description": "Apprenez à miner des LAX grâce à nos guides pour débutants. Démarrez avec le mineur CPU intégré, configurez le minage GPU avec Hashwarp ou SRBMiner-Multi, et rejoignez un pool de minage pour mutualiser votre puissance de hachage et obtenir des récompenses plus régulières."
         }
       ]
     },
@@ -950,7 +1033,7 @@
     },
     "community": {
       "title": "La communauté Parallax",
-      "subtitle": "Neutre, ouverte et bâtie par tous. Rejoignez-nous pour façonner l'avenir de la monnaie programmable.",
+      "subtitle": "Neutre, ouverte et bâtie par tous. Les règles du protocole ne changent pas à la demande populaire — tout ce qui les entoure, c'est à vous de le construire.",
       "officialChannelsHeading": "Canaux officiels",
       "communityChannelsHeading": "Canaux communautaires",
       "officialChannels": [
@@ -988,7 +1071,7 @@
         },
         {
           "title": "Rejoignez la conversation",
-          "description": "Discutez de la conception du protocole, de la gouvernance et des nouvelles idées. Votre voix façonne l'avenir de la monnaie programmable."
+          "description": "Discutez des idées, posez vos questions et aidez les autres. L'écosystème — outils, documentation, applications, pédagogie — est façonné par ceux qui se présentent. Le protocole lui-même est la partie qu'aucune voix ne peut faire plier ; c'est ce qui donne tout son intérêt au fait de construire dessus."
         },
         {
           "title": "Contribuez au code",
@@ -1286,11 +1369,11 @@
     },
     "howItWorks": {
       "pageTitle": "Comment fonctionne Parallax ?",
-      "pageSubtitle": "Une question souvent entourée de confusion. Voici une explication rapide.",
+      "pageSubtitle": "Une explication simple des portefeuilles, des transactions, du minage et de la chaîne qui les relie.",
       "topics": [
         {
           "title": "Les bases",
-          "description": "Commencez à utiliser Parallax en installant un portefeuille, en générant des adresses et en envoyant ou recevant des fonds. C'est aussi simple qu'un e-mail."
+          "description": "Installez un portefeuille, générez une adresse, envoyez ou recevez des fonds. Pas de compte, pas d'inscription, pas de permission — si vous savez utiliser un e-mail, vous savez utiliser ceci."
         },
         {
           "title": "Soldes et blockchain",
@@ -1313,7 +1396,7 @@
     },
     "gettingStarted": {
       "pageTitle": "Premiers pas avec Parallax",
-      "pageSubtitle": "Utiliser Parallax pour effectuer des transactions est simple et accessible à tous. Profitez de la politique monétaire de Bitcoin avec la programmabilité d'Ethereum.",
+      "pageSubtitle": "Détenir, dépenser, miner ou accepter. Les règles monétaires de Bitcoin avec la programmabilité d'Ethereum — voici comment commencer, présenté honnêtement.",
       "tabs": {
         "use": "Comment utiliser Parallax",
         "accept": "Comment accepter Parallax"
@@ -1337,8 +1420,8 @@
         },
         "spend": {
           "title": "4. Dépensez vos Parallax",
-          "description": "Un nombre croissant de services et de commerçants acceptent Parallax à travers le monde. Utilisez des contrats intelligents pour des paiements automatisés et des transactions complexes.",
-          "comingSoon": "Annuaire des commerçants bientôt disponible"
+          "description": "L'écosystème marchand est jeune — le réseau a été lancé en octobre 2025 — et grandit avec l'adoption. Les contrats intelligents vous permettent d'automatiser paiements et transactions complexes sans intermédiaire. Demandez sur les canaux communautaires pour trouver les commerçants qui acceptent LAX aujourd'hui.",
+          "cta": "Demander à la communauté"
         }
       },
       "accept": {
@@ -1349,8 +1432,8 @@
         },
         "processing": {
           "title": "2. Traitement des paiements",
-          "description": "Mettez en place le traitement des paiements Parallax pour votre entreprise. Profitez de frais réduits, de transactions rapides et d'une logique de paiement programmable.",
-          "comingSoon": "Guide des paiements bientôt disponible"
+          "description": "Accepter LAX ne demande rien d'autre qu'une adresse : pas de prestataire, pas d'autorisation, pas de rétrofacturation. Générez un portefeuille, partagez l'adresse ou un QR code, et vérifiez vous-même les paiements entrants — avec votre propre nœud si vous ne voulez aucun intermédiaire.",
+          "cta": "Choisir un portefeuille"
         },
         "taxes": {
           "title": "3. Comptabilité et fiscalité",
@@ -1359,325 +1442,203 @@
         },
         "visibility": {
           "title": "4. Gagnez en visibilité",
-          "description": "Mettez votre entreprise en avant dans l'écosystème Parallax. Rejoignez des annuaires et des communautés pour toucher les utilisateurs de Parallax dans le monde entier.",
-          "comingSoon": "Annuaire des commerçants bientôt disponible"
+          "description": "Dites à la communauté que vous acceptez LAX. Les commerçants qui se font connaître sur les canaux communautaires touchent les utilisateurs les plus motivés à dépenser la monnaie qu'ils minent et détiennent.",
+          "cta": "Rejoindre la communauté"
         }
       },
       "ready": {
         "heading": "Prêt à commencer ?",
-        "description": "Rejoignez le réseau Parallax et découvrez l'avenir de la technologie blockchain. Combinez la sécurité de Bitcoin à la flexibilité des contrats intelligents.",
+        "description": "Un portefeuille se crée en une minute et ne demande rien sur vous. Ensuite : recevez, envoyez, minez ou construisez — le réseau ne fait pas la différence entre vous et n'importe qui d'autre, et c'est bien là l'idée.",
         "chooseWallet": "Choisir un portefeuille",
         "setupGuide": "Guide d'installation du portefeuille"
       }
     },
-    "parallaxForBusinesses": {
-      "pageTitle": "Parallax pour les entreprises",
-      "pageSubtitle": "Parallax est un moyen très sûr et peu coûteux de gérer vos paiements.",
-      "topics": [
-        {
-          "title": "Choisissez vos propres frais",
-          "description": "Aucun frais pour recevoir des Parallax, et des frais personnalisables à l'envoi. Des frais plus élevés accélèrent la confirmation des transactions, et ils restent constants que vous transfériez 1 ou 100 000 pièces."
-        },
-        {
-          "title": "Protection contre la fraude",
-          "description": "Les transactions Parallax sont irréversibles et sécurisées par la preuve de travail XHash, ce qui élimine le risque de fraude par rétrofacturation et réduit les coûts pour les commerçants par rapport aux cartes de crédit ou à PayPal."
-        },
-        {
-          "title": "Paiements internationaux rapides",
-          "description": "Envoyez des Parallax à l'international aussi facilement que localement — sans délais bancaires, sans frais internationaux supplémentaires et sans limite sur les montants."
-        },
-        {
-          "title": "Aucune conformité PCI requise",
-          "description": "Acceptez les paiements en Parallax sans les coûteuses vérifications de conformité PCI exigées pour les cartes de crédit, tout en sécurisant votre portefeuille et vos demandes de paiement."
-        },
-        {
-          "title": "Gagnez en visibilité",
-          "description": "Touchez un marché en pleine croissance d'utilisateurs Parallax cherchant à dépenser leurs pièces, et renforcez la visibilité de votre entreprise en acceptant ce moyen de paiement innovant."
-        },
-        {
-          "title": "Gouvernance multi-signatures",
-          "description": "Utilisez la fonction multi-signatures de Parallax pour exiger plusieurs approbations par transaction — idéal pour les entreprises ou les conseils d'administration qui ont besoin d'un contrôle sécurisé et consensuel des dépenses."
-        },
-        {
-          "title": "Comptabilité transparente",
-          "description": "Exploitez la timechain de Parallax pour une comptabilité transparente, avec des soldes et des transactions vérifiables. Parfait pour les entreprises ou les associations souhaitant afficher une clarté financière totale."
-        },
-        {
-          "title": "Transactions programmables",
-          "description": "Utilisez la Parallax Virtual Machine pour créer des contrats intelligents permettant d'automatiser les paiements ou de bâtir des applications décentralisées, le tout adossé à l'offre plafonnée de 21 M de Parallax et à ses cycles de halving à la Bitcoin."
-        }
-      ],
-      "cta": "Commencer avec Parallax"
+    "parallaxForBitcoiners": {
+      "pageTitle": "Parallax pour les bitcoiners",
+      "pageSubtitle": "Tout ce que Bitcoin a réglé, Parallax le conserve : 21 millions de pièces, la preuve de travail, des blocs de dix minutes, un lancement sans prémine. Ce qu'il ajoute est la moitié que Bitcoin a délibérément laissée de côté — des contrats qui se règlent dans l'actif rare lui-même. Voici exactement ce qui a changé, et ce que cela a coûté.",
+      "identical": {
+        "heading": "Ce qui est identique",
+        "tagline": "La constitution monétaire de Bitcoin, adoptée en bloc. Ce sont des constantes, pas des politiques.",
+        "items": [
+          {
+            "title": "21 000 000 de pièces, calendrier de halving compris",
+            "description": "Une subvention de 50 LAX divisée par deux tous les 210 000 blocs, convergeant vers 21 millions — le calendrier de Bitcoin, à la pièce près. Ce calendrier est toute l'histoire monétaire, passée et future. Il ne répond ni à l'adoption, ni à la crise, ni à l'argumentation."
+          },
+          {
+            "title": "La preuve de travail à blocs de dix minutes",
+            "description": "Le consensus Nakamoto avec une cible de 600 secondes. À dix minutes, la propagation représente une fraction négligeable de l'intervalle, les avantages de proximité tendent vers zéro, et une machine modeste sur une connexion résidentielle vérifie la chaîne avec autant d'autorité que n'importe quelle installation industrielle."
+          },
+          {
+            "title": "Un lancement équitable que vous pouvez vérifier",
+            "description": "Code source public avant le lancement, date de lancement annoncée à l'avance, offre à la genèse : zéro. Le bloc de genèse contient un titre de presse du jour du lancement, exactement comme celui de Bitcoin — la chaîne n'a pas pu être construite avant la nouvelle."
+          },
+          {
+            "title": "Maturité coinbase de 100 blocs",
+            "description": "Les pièces nouvellement minées ne sont dépensables qu'après que 100 blocs supplémentaires ont été construits par-dessus. Le revenu d'un mineur est lié à la permanence de la chaîne qu'il prolonge — l'honnêteté par l'arithmétique, pas par l'éthique."
+          },
+          {
+            "title": "Les frais aux mineurs, rien de brûlé",
+            "description": "Une enchère au premier prix, versée intégralement au mineur. Les revenus des frais constituent l'intégralité du budget de sécurité du réseau une fois la subvention éteinte ; un protocole qui brûle les frais achète une rareté présente au prix de sa défense future."
+          }
+        ]
+      },
+      "different": {
+        "heading": "Ce qui est différent — et pourquoi",
+        "tagline": "Quatre écarts délibérés, chacun avec son raisonnement consigné.",
+        "items": [
+          {
+            "title": "L'EVM, complète jusqu'à Paris",
+            "description": "Crédit, échange, séquestre — chaque instrument historiquement bâti sur une monnaie rare peut être construit ici sans dépositaire, sans wrapper, sans peg. Les contrats détiennent, déplacent et règlent directement l'actif de base : des accords qui s'exécutent exactement comme ils sont écrits, contre une monnaie qui ne peut pas être diluée."
+          },
+          {
+            "title": "Des comptes au lieu d'UTXO",
+            "description": "Les soldes vivent sous des clés secp256k1 avec des adresses de style Ethereum, si bien que l'infrastructure de clés existante — signeurs matériels compris — fonctionne sans modification. Le compromis est énoncé sans détour : le modèle de comptes fait de la réutilisation d'adresse le chemin de moindre résistance, et la réutilisation relie les activités. Traitez les adresses comme jetables là où la confidentialité compte."
+          },
+          {
+            "title": "La difficulté ASERT, ajustée à chaque bloc",
+            "description": "Parallax a été lancé avec le réajustement de Bitcoin sur 2016 blocs. Lors d'une chute sévère du hashrate, la fenêtre s'est révélée manipulable, et le réseau a migré vers ASERT au bloc 17 560. La faille et sa réparation sont toutes deux consignées sur la chaîne — un protocole qui cache ses cicatrices demande qu'on lui fasse confiance. Parallax demande seulement qu'on le vérifie."
+          },
+          {
+            "title": "XHash au lieu de SHA-256",
+            "description": "Memory-hard et dérivé d'Ethash, modifié précisément pour que le stock existant d'ASIC Ethash ne puisse pas être réutilisé. Un réseau en preuve de travail est le plus fragile dans ses premières années ; XHash garantit que la sécurité de ces années est fournie par des GPU largement répandus plutôt que par quiconque détient les résidus de la course à l'armement d'une autre chaîne."
+          }
+        ]
+      },
+      "caveats": {
+        "heading": "Ce dont vous devriez douter",
+        "tagline": "Le registre honnête d'une jeune chaîne. Vérifiez tout ; escomptez tout ce que nous ne pouvons pas vous montrer.",
+        "items": [
+          {
+            "title": "Elle est jeune",
+            "description": "Le mainnet a été lancé le 28 octobre 2025. Le hashrate, le nombre de nœuds et la liquidité sont une fraction de ceux de Bitcoin, et les réorganisations sont d'autant moins coûteuses — attendez davantage de confirmations pour les montants importants. Le temps est le filtre, et Parallax n'en a pas encore traversé beaucoup."
+          },
+          {
+            "title": "La provenance, énoncée clairement",
+            "description": "Le consensus, le minage et l'ajustement de difficulté sont un travail original, développé en salle blanche. La couche d'exécution EVM est reprise de go-ethereum — délibérément : un interpréteur éprouvé plutôt qu'un interpréteur inédit. Quiconque affirmerait que Parallax ne partage aucun code avec d'autres chaînes aurait tort ; nous ne l'affirmons donc pas."
+          },
+          {
+            "title": "Pas un remplacement de Bitcoin",
+            "description": "Parallax considère Bitcoin comme la forme ultime de monnaie numérique saine. Ceci est une expérience complémentaire — étendre la discipline monétaire de Bitcoin à un environnement programmable — avec ses propres risques. Si ce que vous voulez est une monnaie au repos, Bitcoin existe déjà."
+          }
+        ]
+      },
+      "ctaVerify": "Vérifier les affirmations sur la chaîne",
+      "ctaCompare": "Comparer fonctionnalité par fonctionnalité"
     },
-    "parallaxForIndividuals": {
-      "pageTitle": "Parallax pour les particuliers",
-      "pageSubtitle": "Parallax est le moyen le plus simple de transiger à très faible coût.",
-      "topics": [
-        {
-          "title": "Le paiement mobile simplifié",
-          "description": "Parallax permet des paiements mobiles en un scan, via QR code ou NFC, sans inscription ni code PIN."
-        },
-        {
-          "title": "Sécurité et contrôle",
-          "description": "Les signatures cryptographiques et la preuve de travail XHash sécurisent vos transactions, vous donnant un contrôle total sur votre argent — à condition de protéger correctement votre portefeuille."
-        },
-        {
-          "title": "Partout, à tout moment",
-          "description": "Envoyez et recevez des Parallax dans le monde entier avec une simple adresse. Le réseau fonctionne 24h/24 et 7j/7, week-ends et jours fériés inclus."
-        },
-        {
-          "title": "Paiements internationaux rapides",
-          "description": "Transférez des Parallax à travers les frontières instantanément, sans délais bancaires, sans frais supplémentaires et sans limite de montant."
-        },
-        {
-          "title": "Choisissez vos propres frais",
-          "description": "Aucun frais pour recevoir des pièces, et des frais personnalisables à l'envoi. Des frais plus élevés permettent des confirmations plus rapides, quel que soit le montant."
-        },
-        {
-          "title": "Protégez votre identité",
-          "description": "Transigez sans révéler vos informations personnelles, comme avec de l'argent liquide, avec des protections renforcées pour plus d'anonymat."
-        },
-        {
-          "title": "Monnaie programmable",
-          "description": "Utilisez la Parallax Virtual Machine pour créer des contrats intelligents et automatiser les paiements, adossés à une offre plafonnée à 21 M de pièces et à des cycles de halving à la Bitcoin."
-        }
-      ],
-      "cta": "Commencer avec Parallax"
-    },
-    "whitepaper": {
-      "pageTitle": "Parallax : une nouvelle perspective sur la monnaie programmable",
-      "viewOnGithub": "Voir sur Github",
-      "sections": {
-        "abstract": {
-          "heading": "Résumé",
-          "body": "Parallax est un protocole de timechain qui réunit l'immuabilité et la discipline monétaire de Bitcoin avec la programmabilité d'Ethereum. Opérant sous les règles fixes de Bitcoin — preuve de travail, blocs de dix minutes, cycles de halving et offre plafonnée à 21 millions — Parallax étend ces fondations grâce à l'Ethereum Virtual Machine. En adoptant le minage XHash — une variante modifiée d'Ethash conçue pour rendre obsolètes les ASIC existants — et en rejetant tout prémine ou allocation privilégiée, Parallax démarre comme une expérience équitable et neutre de monnaie programmable : rare, décentralisée et sans permission."
-        },
-        "introduction": {
-          "heading": "1. Introduction",
-          "body1": "Bitcoin a démontré que la rareté numérique décentralisée est possible, en fournissant un registre sûr et immuable assorti d'une politique monétaire prévisible. Ethereum a introduit une couche d'exécution Turing-complète, rendant possibles applications décentralisées et primitives financières. Cependant, la politique monétaire adaptative d'Ethereum contraste avec la conception fixe et disciplinée de Bitcoin.",
-          "body2": "Parallax comble cet écart. Il préserve les règles monétaires de Bitcoin tout en adoptant la machine virtuelle d'Ethereum pour la programmabilité. Pour renforcer davantage l'accessibilité et la décentralisation, Parallax utilise la fonction de preuve de travail XHash — une variante modifiée d'Ethash qui conserve les propriétés à forte intensité mémoire d'Ethash tout en rendant obsolètes les ASIC existants."
-        },
-        "motivation": {
-          "heading": "2. Motivation et problématique",
-          "body1": "L'écosystème blockchain s'est structuré autour de deux pôles philosophiques. Bitcoin privilégie l'immuabilité, la rareté et la résistance au changement, offrant au monde son premier exemple de monnaie saine numérique. Ethereum, à l'inverse, a embrassé la programmabilité et la flexibilité, permettant l'émergence d'industries entières comme la finance décentralisée et les NFT — mais au prix de la prévisibilité monétaire et de la stabilité à long terme.",
-          "body2": "La divergence entre ces deux modèles a laissé un vide dans l'écosystème. Utilisateurs et institutions souhaitent souvent l'expressivité d'Ethereum sans sacrifier les garanties monétaires de Bitcoin. Parallax est conçu pour combler ce vide. Il applique les règles monétaires fixes de Bitcoin — offre plafonnée, calendrier de halving et consensus sécurisé par preuve de travail — tout en prenant en charge l'EVM comme environnement d'exécution pleinement programmable. Le résultat est un système capable de faire tourner des applications décentralisées sur une base monétaire aussi prévisible et rare que Bitcoin lui-même.",
-          "body3": "Pour concrétiser cette synthèse de rareté et d'expressivité, Parallax définit des paramètres système explicites qui reflètent la discipline de Bitcoin tout en prenant en charge une programmabilité de niveau Ethereum."
-        },
-        "parameters": {
-          "heading": "3. Paramètres du système",
-          "columns": {
-            "parameter": "Paramètre",
-            "value": "Valeur"
+    "parallaxForDevelopers": {
+      "pageTitle": "Parallax pour les développeurs Ethereum",
+      "pageSubtitle": "Votre stack fonctionne — Solidity, Hardhat, Foundry, MetaMask — avec un changement de chain ID et un drapeau de compilateur. Ce qui change, c'est le sol sous votre contrat : des règles monétaires et un consensus qui ne peuvent pas lui être retirés par un vote de gouvernance.",
+      "network": {
+        "heading": "Caractéristiques du réseau",
+        "rows": [
+          {
+            "label": "Chain ID",
+            "value": "2110 (0x83E)"
           },
-          "rows": [
-            {
-              "param": "Mécanisme de consensus",
-              "value": "Preuve de travail (XHash, dérivé d'Ethash)"
-            },
-            {
-              "param": "Intervalle de bloc cible",
-              "value": "600 secondes (10 minutes)"
-            },
-            {
-              "param": "Fenêtre d'ajustement de difficulté",
-              "value": "2016 blocs (~2 semaines)"
-            },
-            {
-              "param": "Récompense de bloc initiale",
-              "value": "50 pièces"
-            },
-            {
-              "param": "Intervalle de halving",
-              "value": "210 000 blocs (~4 ans)"
-            },
-            {
-              "param": "Offre maximale",
-              "value": "21 000 000 pièces"
-            },
-            {
-              "param": "Prémine",
-              "value": "0 (aucune pièce pré-minée)"
-            },
-            {
-              "param": "Environnement d'exécution",
-              "value": "Ethereum Virtual Machine (EVM)"
-            },
-            {
-              "param": "Modèle de frais",
-              "value": "Enchère au premier prix (sans burn)"
-            },
-            {
-              "param": "Limite de gas par bloc",
-              "value": "600M gas (initial), ajustable par les mineurs de ±0,1 % par bloc"
-            }
-          ]
-        },
-        "comparative": {
-          "heading": "4. Analyse comparative",
-          "body1": "La position singulière de Parallax apparaît plus clairement en le comparant à Bitcoin et Ethereum.",
-          "body2": "Bitcoin maintient une offre monétaire stricte de 21 millions de pièces, distribuées dans le temps via un calendrier de halving tous les 210 000 blocs. Son langage de script est cependant volontairement limité, ce qui le rend inadapté aux applications complexes. Ethereum, de son côté, a été pionnier de l'environnement d'exécution Turing-complet grâce à l'EVM. Cela a permis l'essor des contrats intelligents, des bourses décentralisées, des stablecoins et des DAO. Pourtant, la conception monétaire d'Ethereum diverge de celle de Bitcoin. Son offre n'est pas plafonnée et, depuis le hard fork de Londres (EIP-1559), une partie des frais de transaction est brûlée, introduisant des dynamiques d'offre dépendantes de l'usage et des décisions de gouvernance.",
-          "body3": "Parallax se situe entre les deux. Comme Bitcoin, il dispose d'une offre fixe de 21 millions de pièces, avec une émission régie par des cycles de halving et un calendrier immuable. Comme Ethereum, il offre un environnement d'exécution Turing-complet, compatible avec les outils de développement et les contrats intelligents existants. Mais contrairement à Ethereum, Parallax rejette le burn de l'offre et la politique monétaire adaptative, garantissant que la programmabilité ne se fait pas au prix de règles monétaires prévisibles.",
-          "table": {
-            "columns": {
-              "feature": "Caractéristique",
-              "bitcoin": "Bitcoin",
-              "ethereum": "Ethereum",
-              "parallax": "Parallax"
-            },
-            "rows": [
-              {
-                "feature": "Plafond d'offre",
-                "bitcoin": "21M (fixe)",
-                "ethereum": "Non plafonné",
-                "parallax": "21M (fixe)"
-              },
-              {
-                "feature": "Intervalle de bloc",
-                "bitcoin": "10 min",
-                "ethereum": "12-15 s",
-                "parallax": "10 min"
-              },
-              {
-                "feature": "Consensus",
-                "bitcoin": "PoW (SHA-256)",
-                "ethereum": "PoS (Casper/Beacon)",
-                "parallax": "PoW (XHash)"
-              },
-              {
-                "feature": "Programmabilité",
-                "bitcoin": "Script limité",
-                "ethereum": "EVM complet",
-                "parallax": "EVM complet"
-              },
-              {
-                "feature": "Modèle de frais",
-                "bitcoin": "Premier prix",
-                "ethereum": "EIP-1559",
-                "parallax": "Premier prix (sans burn)"
-              },
-              {
-                "feature": "Modèle de frais",
-                "bitcoin": "Premier prix",
-                "ethereum": "EIP-1559",
-                "parallax": "Premier prix (sans burn)"
-              },
-              {
-                "feature": "Seuil de maturité coinbase",
-                "bitcoin": "100 blocs",
-                "ethereum": "N/A",
-                "parallax": "100 blocs"
-              }
-            ]
+          {
+            "label": "Devise",
+            "value": "LAX (18 décimales)"
+          },
+          {
+            "label": "Point d'accès RPC",
+            "value": "https://rpc.parallaxprotocol.org"
+          },
+          {
+            "label": "Explorateur de blocs",
+            "value": "https://explorer.parallaxprotocol.org"
+          },
+          {
+            "label": "Version EVM",
+            "value": "Complète jusqu'à Paris"
+          },
+          {
+            "label": "Temps de bloc cible",
+            "value": "600 secondes"
+          },
+          {
+            "label": "Limite de gas par bloc",
+            "value": "600 M au lancement (~1 M gas/s), ±0,1 % par bloc"
+          },
+          {
+            "label": "Modèle de frais",
+            "value": "Enchère de gas au premier prix — pas de frais de base, pas de burn"
           }
-        },
-        "genesis": {
-          "heading": "5. Bloc genesis",
-          "body1": "Le bloc genesis de Parallax est volontairement minimal. Aucun prémine, aucune allocation à une fondation, aucun compte privilégié. Le premier bloc miné après le genesis émet 50 pièces au mineur qui l'a trouvé, conformément au modèle Bitcoin. L'état genesis inclut également la configuration de base de l'EVM, mais aucun contrat intelligent pré-déployé.",
-          "body2": "Pour garantir davantage l'équité et prouver que le réseau n'a pas été créé secrètement à l'avance, le bloc genesis inclura un champ de données supplémentaire contenant le titre d'un article de presse publié le jour du lancement, provenant d'une source réputée telle que The Times ou The New York Times. Cette méthode d'horodatage, inspirée du bloc genesis de Bitcoin, garantit que le genesis n'a pu être pré-miné ni construit avant le lancement public.",
-          "body3": "Ce choix de conception renforce la transparence, la crédibilité et la neutralité dès le tout premier bloc."
-        },
-        "consensus": {
-          "heading": "6. Consensus et timechain",
-          "blockStructure": {
-            "heading": "Structure des blocs",
-            "body": "Parallax reprend la structure de timechain de Bitcoin, modifiée pour inclure une charge utile d'exécution EVM. Chaque bloc est composé d'un en-tête contenant le hash, le nonce, la racine de Merkle et l'horodatage, suivi des transactions et de leurs reçus d'exécution. Les transactions elles-mêmes suivent le format par compte d'Ethereum, ce qui permet aux développeurs d'utiliser des outils familiers."
+        ]
+      },
+      "config": {
+        "heading": "Configuration du compilateur et du réseau",
+        "tagline": "La seule chose qui vous piégera : Solidity 0.8.20+ cible Shanghai par défaut et émet PUSH0, que Paris ne possède pas. Épinglez la version EVM et tout le reste est ordinaire.",
+        "hardhatTitle": "hardhat.config.ts",
+        "foundryTitle": "foundry.toml"
+      },
+      "differences": {
+        "heading": "Ce qui diffère du mainnet Ethereum",
+        "tagline": "Cinq différences qui changent votre façon de concevoir, aucune qui change votre façon d'écrire du Solidity.",
+        "items": [
+          {
+            "title": "Finalité probabiliste",
+            "description": "La preuve de travail n'a pas de points de contrôle de finalité. Traitez six confirmations (~1 heure) comme un règlement pour les flux de grande valeur, moins pour les petits — et concevez votre UX autour des états en attente."
           },
-          "pow": {
-            "heading": "Preuve de travail",
-            "body1Before": "Parallax utilise le consensus Nakamoto avec XHash. XHash est memory-hard et a été conçu à l'origine pour décourager la centralisation du minage sur du matériel ASIC spécialisé. En choisissant XHash, Parallax favorise une participation plus large via des CPU et GPU grand public, en particulier dans ses premières années. Un bloc valide nécessite de trouver un nonce",
-            "body1After": "tel que :",
-            "body2Where": "où",
-            "body2Target": "est la cible de difficulté actuelle du réseau."
+          {
+            "title": "Des blocs de dix minutes",
+            "description": "L'inclusion prend des minutes, pas des secondes. Regroupez les opérations, précalculez ce que vous pouvez, et appuyez-vous sur les événements avec une UI optimiste. L'UX sous la seconde appartient aux couches construites au-dessus du règlement — que l'EVM rend possibles ici."
           },
-          "interval": {
-            "heading": "Intervalle de bloc et ajustement de difficulté",
-            "body1": "Tous les 2016 blocs, soit environ deux semaines, la cible de difficulté est ajustée en comparant le temps réellement écoulé à l'intervalle attendu. Pour éviter des oscillations extrêmes, l'ajustement est borné par un facteur quatre : la nouvelle difficulté ne peut être ni plus de quatre fois supérieure, ni plus de quatre fois inférieure à la précédente — à l'image de Bitcoin.",
-            "whereLabel": "où",
-            "oldTargetDesc": "cible de difficulté précédente",
-            "actualTimeDesc": "temps réel nécessaire pour miner les 2016 derniers blocs",
-            "andLabel": "et",
-            "expectedTimeDesc": "temps attendu pour 2016 blocs (2016 * 600 secondes)"
+          {
+            "title": "Marché de frais legacy",
+            "description": "Une enchère de gas au premier prix : fixez gasPrice directement. Il n'y a ni frais de base ni estimation EIP-1559 — la logique de frais écrite pour le marché de frais du mainnet a besoin d'un chemin de tarification legacy."
           },
-          "emission": {
-            "heading": "Calendrier d'émission",
-            "intro": "La subvention de bloc commence à 50 pièces et est divisée par deux tous les 210 000 blocs :",
-            "whereLabel": "où",
-            "heightDesc": "est la hauteur du bloc. L'offre cumulée converge vers la limite fixe de 21 millions de pièces :"
+          {
+            "title": "Une EVM de niveau Paris",
+            "description": "Pas de PUSH0, pas de stockage transitoire (EIP-1153), pas de MCOPY, pas de blobs (EIP-4844). Tout ce qui va jusqu'à Paris se comporte exactement comme sur le mainnet — la sémantique contre laquelle vos dépendances auditées ont été écrites à l'origine."
           },
-          "maturity": {
-            "heading": "Maturité coinbase",
-            "body": "Parallax applique une période de maturité coinbase identique à celle de Bitcoin. Les pièces nouvellement minées (récompenses de bloc) ne peuvent être dépensées qu'après l'ajout de 100 blocs supplémentaires au-dessus du bloc qui les a émises. Avec l'intervalle de 10 minutes de Parallax, cela correspond à environ 16 à 17 heures de confirmation. Cette règle garantit que les récompenses ne sont dépensables qu'une fois que la probabilité qu'une réorganisation de chaîne invalide le bloc devient négligeable. Elle renforce la sécurité du réseau en alignant les incitations des mineurs sur la stabilité à long terme de la chaîne, et empêche la liquidation immédiate des récompenses de bloc tant que le risque de réorganisation reste relativement élevé."
+          {
+            "title": "Pas de forks programmés",
+            "description": "Il n'y a ni cadence de mise à niveau ni tapis roulant de dépréciation. L'environnement d'exécution contre lequel vous déployez est destiné à rester — l'ossification est la fonctionnalité, et les hypothèses de votre contrat vieillissent bien parce que le sol ne bouge pas."
           }
-        },
-        "execution": {
-          "heading": "7. Couche d'exécution",
-          "body1": "La couche d'exécution de Parallax est l'Ethereum Virtual Machine, ce qui assure la compatibilité avec les contrats intelligents et les outils de développement Ethereum existants. Les développeurs peuvent porter des contrats Solidity et Vyper avec un minimum de modifications, et les frameworks existants comme Hardhat et Foundry peuvent être adaptés pour fonctionner avec les nœuds Parallax.",
-          "body2": "Parallax diverge d'Ethereum dans son approche des frais de transaction. Il rejette le modèle de burn EIP-1559 du hard fork de Londres, car brûler l'offre est incompatible avec un plafond fixe de 21 millions. À la place, Parallax conserve une simple enchère au premier prix pour les frais de gas, tous les frais allant directement aux mineurs.",
-          "body3": "La limite de gas par bloc est ajustée pour tenir compte du temps de bloc plus long de Parallax. Ethereum traite environ 30 millions de gas toutes les 15 secondes, soit environ 2 millions de gas par seconde. Extrapolé à l'intervalle de 600 secondes de Parallax, cela impliquerait 1,2 milliard de gas par bloc. Une valeur aussi élevée créerait des risques de propagation et une croissance excessive de l'état. Parallax adopte donc une limite initiale prudente de 600 millions de gas par bloc, soit environ 1 million de gas par seconde, c'est-à-dire la moitié du débit d'Ethereum. Ce choix privilégie la décentralisation et la stabilité plutôt que le débit maximal. La limite de gas peut s'ajuster de manière élastique de ±0,1 % par bloc, conformément au mécanisme pré-Londres d'Ethereum, permettant des évolutions graduelles dans le temps.",
-          "body4": "Le modèle d'état par compte est conservé intégralement, ce qui signifie que Parallax prend en charge les mêmes types de contrats, de soldes et de sémantique d'exécution qu'Ethereum, tout en les ancrant dans la discipline monétaire de Bitcoin."
-        },
-        "tokenomics": {
-          "heading": "8. Tokenomics",
-          "body": "Parallax hérite sa conception monétaire directement de Bitcoin. Toutes les pièces doivent être minées par preuve de travail, sans prémine ni allocation privilégiée. Le calendrier des récompenses de bloc est exactement celui de Bitcoin, commençant à 50 pièces et étant divisé par deux tous les 210 000 blocs jusqu'à ce que l'émission atteigne zéro. Les frais de transaction sont versés intégralement aux mineurs et ne sont jamais brûlés, garantissant que l'offre totale ne peut pas descendre sous 21 millions. Cette conception monétaire ossifiée distingue Parallax des protocoles plus adaptatifs et offre une prévisibilité à long terme pour les utilisateurs et les institutions."
-        },
-        "security": {
-          "heading": "9. Modèle de sécurité",
-          "body1": "La sécurité de Parallax émerge de la combinaison entre preuve de travail, longs intervalles de bloc et politique monétaire stricte. La cible de dix minutes assure une finalité profonde dans le temps, rendant les attaques par double dépense coûteuses et impraticables. Des temps de bloc plus longs réduisent la fréquence des réorganisations de chaîne, contribuant à la stabilité du réseau.",
-          "body2": "XHash renforce la sécurité sur un autre plan en favorisant l'accessibilité pour les mineurs. Sa nature memory-hard permet au matériel grand public, notamment les GPU, de participer de manière compétitive. Il devient ainsi plus difficile pour un petit nombre d'opérateurs ASIC industriels de dominer le réseau, en particulier dans les premières phases d'adoption.",
-          "body3": "Les considérations de propagation et de taille de bloc occupent également une place centrale dans le modèle de sécurité de Parallax. En plafonnant prudemment le débit autour d'un million de gas par seconde, Parallax garantit que les nœuds restent accessibles aux particuliers et aux petits opérateurs, prévenant les pressions excessives à la centralisation. La combinaison d'une offre fixe, d'une preuve de travail cumulative et d'incitations équitables pour les mineurs forme une base à confiance minimale, résistante à la manipulation par la gouvernance.",
-          "energy": {
-            "heading": "Considérations énergétiques",
-            "body1": "Les détracteurs de la preuve de travail soulignent souvent son intensité énergétique. Cependant, Bitcoin a démontré au travers d'études empiriques qu'une majorité de son hashrate mondial est alimentée par des sources d'énergie renouvelables ou autrement bloquées, les mineurs gravitant naturellement vers l'électricité la moins chère disponible. Avec le temps, cette structure d'incitation dictée par le marché a aligné le minage de Bitcoin avec l'adoption des renouvelables et des fonctions d'équilibrage du réseau électrique.",
-            "body2": "Parallax suit les mêmes principes économiques. Si l'utilisation d'énergie est inévitable dans tout système à preuve de travail, on peut s'attendre à ce que la maturité à long terme du protocole reproduise la trajectoire de Bitcoin, les mineurs cherchant des sources d'énergie renouvelables et excédentaires pour minimiser leurs coûts opérationnels. Cette dynamique transforme la dépense énergétique, perçue comme un inconvénient, en un atout qui ancre la sécurité dans la réalité physique, renforce la vision de Satoshi selon laquelle le consensus doit reposer sur des incitations économiques, et incite simultanément au développement d'infrastructures renouvelables.",
-            "body3": "En ancrant sa sécurité dans la réalité physique tout en alignant les incitations avec l'énergie renouvelable, Parallax renforce à la fois sa décentralisation et sa crédibilité en tant que timechain durable."
-          }
-        },
-        "useCases": {
-          "heading": "10. Cas d'usage",
-          "body1": "La conception de Parallax rend possible une variété d'applications qui combinent monnaie saine et programmabilité. Les protocoles DeFi peuvent fonctionner sur une base monétaire rare et prévisible, en proposant prêts, stablecoins et bourses décentralisées avec la crédibilité héritée du modèle Bitcoin. NFT et DAO peuvent être créés avec la garantie que la monnaie sous-jacente n'est pas soumise à l'inflation ou à des changements monétaires arbitraires. Les institutions en quête de rails de règlement programmables pourraient trouver Parallax attrayant, puisqu'il offre l'expressivité d'Ethereum sans l'incertitude d'une offre adaptative. Enfin, Parallax peut également servir de fondation à des rollups et autres solutions de scaling, en tirant parti de sa crédibilité à long terme tout en permettant des applications à haut débit sur des couches secondaires.",
-          "body2": "À mesure que les solutions de seconde couche émergent, la neutralité de la couche de base devient primordiale. Sans règles monétaires ossifiées et consensus sans permission, les systèmes de Couche 2 héritent de risques de gouvernance et de centralisation. En ancrant la programmabilité dans une timechain à preuve de travail neutre, Parallax aspire à servir de couche de règlement avec la même crédibilité que Bitcoin offre à la monnaie."
-        },
-        "governance": {
-          "heading": "11. Philosophie de gouvernance",
-          "body1": "Parallax adopte une approche de gouvernance minimale. Sa politique monétaire est immuable : le plafond de 21 millions de pièces ne peut être modifié ni par décision de la communauté ni par vote de gouvernance. Les mises à jour du protocole se limitent aux améliorations techniques et aux corrections de bugs. Aucune fondation, société ou entité privilégiée ne contrôle l'offre ou l'émission, garantissant neutralité et minimisation de la confiance à chaque couche du protocole.",
-          "body2": "Une véritable neutralité exige l'ossification de la base monétaire : Parallax ne peut devenir un outil de politique discrétionnaire ou de capture par la gouvernance, car ses règles sont codées en dur et à l'abri de la dévalorisation. La neutralité n'est pas un simple choix de conception, mais un mécanisme de crédibilité qui empêche la capture par des intérêts particuliers.",
-          "body3": "Bien que Parallax soit actuellement développé sous le nom de MicroStack, la vision à long terme est celle d'un protocole entièrement porté par la communauté. Une fois le code et le réseau suffisamment matures et stables, l'intendance sera transférée de MicroStack à l'écosystème au sens large. Le développement, la maintenance et les futures mises à jour seront alors coordonnés de manière ouverte et transparente par la communauté, garantissant qu'aucune société ou entité unique ne puisse exercer un contrôle privilégié sur Parallax.",
-          "body4": "Parallax reconnaît Bitcoin comme la forme ultime de monnaie saine numérique, à la crédibilité inégalée en matière de règles monétaires fixes et d'immuabilité à long terme. Le rôle de Parallax n'est pas de concurrencer Bitcoin, mais d'explorer l'extension de sa discipline monétaire à un environnement programmable. En combinant l'éthos de rareté de Bitcoin avec l'expressivité d'Ethereum, Parallax propose un système complémentaire qui explore ce qui devient possible lorsque neutralité, décentralisation et programmabilité sont réunies."
-        },
-        "powPrimacy": {
-          "heading": "12. La primauté de la preuve de travail",
-          "body1": "L'introduction par Satoshi Nakamoto de la preuve de travail comme solution pratique au problème des généraux byzantins reste l'une des inventions les plus importantes de l'histoire humaine. En ancrant le consensus dans la dépense d'énergie réelle, Bitcoin a prouvé qu'il était possible de coordonner un ensemble mondial d'acteurs non fiables sans nécessiter permission, identité, ni autorité centrale. La preuve de travail n'est pas qu'un simple algorithme de consensus : elle est la pierre angulaire de la décentralisation sans permission et le fondement de la première monnaie numérique crédible.",
-          "body2": "La preuve de travail impose une condition d'entrée radicalement ouverte : n'importe qui, n'importe où, peut concourir pour obtenir des récompenses de bloc en dépensant de l'énergie. Aucune identité, aucun blocage de capital, aucune reconnaissance institutionnelle ne sont requis. Cela inscrit l'égalité d'accès comme propriété fondamentale de la timechain.",
-          "body3": "Parallax adopte ce principe sans réserve. S'il introduit la programmabilité via l'EVM, il ne fait aucun compromis sur le socle qui rend la décentralisation possible : le consensus Nakamoto par preuve de travail. Une timechain sans permission ne peut être atteinte par des signatures de comité, des schémas de vote ou des jetons de gouvernance, qui réintroduisent tous des points de contrôle centraux.",
-          "body4": "De nombreuses cryptomonnaies alternatives (« altcoins ») ont cherché la vitesse, le débit ou des fonctionnalités expérimentales au détriment de la neutralité et de la décentralisation. Si des temps de bloc plus courts ou des modèles de gouvernance novateurs peuvent paraître séduisants à court terme, ils reposent généralement sur des mécanismes de consensus centralisés ou des validateurs privilégiés. Cela sape la propriété même qui rend Bitcoin révolutionnaire : la capacité à participer sans permission et sans avoir à faire confiance à une quelconque autorité.",
-          "body5": "La décentralisation de Parallax découle à la fois de l'accessibilité du minage XHash et de l'ossification des règles monétaires. En externalisant le coût des attaques vers l'énergie physique et le matériel, Parallax résiste à la capture par les grosses baleines financières ou les cartels de gouvernance. L'influence ne se gagne que par le travail effectué, jamais par le privilège ou l'identité.",
-          "body6": "Parallax rejette de tels compromis. Sa conception respecte et prolonge la vision de Satoshi en préservant la preuve de travail comme seule fondation crédible d'une timechain décentralisée et sans permission. Toute programmabilité, tout débit et toute innovation applicative doivent opérer à l'intérieur de cette limite : décentralisation d'abord, commodité ensuite. Une fois le réseau suffisamment mature, les inconvénients des intervalles de bloc longs peuvent être atténués par l'usage de solutions de règlement en Couche 2, assurant la scalabilité sans sacrifier les garanties fondamentales de la décentralisation sans permission."
-        },
-        "conclusion": {
-          "heading": "13. Conclusion",
-          "body": "Parallax est une expérience visant à étendre l'éthos monétaire de Bitcoin à un environnement programmable. Sa neutralité, sa politique monétaire ossifiée et son recours à la preuve de travail garantissent qu'il ne peut être ni capturé, ni détourné. L'avenir du protocole reposera entre les mains de sa communauté — développeurs, mineurs et utilisateurs — pour découvrir ce qui devient possible lorsque rareté, décentralisation et programmabilité convergent."
-        },
-        "release": {
-          "intro": "Parallax suivra un processus de publication transparent afin d'assurer équité et neutralité :",
-          "items": [
-            {
-              "title": "Publication du livre blanc :",
-              "body": "La spécification du protocole et le modèle économique seront publiés publiquement pour inviter la communauté à les examiner et à en discuter."
-            },
-            {
-              "title": "Publication du code open source et lancement du mainnet :",
-              "body": "Après la publication du livre blanc, le code source complet du client Parallax sera rendu public. Le mainnet sera lancé après la publication du code, sans prémine, sans allocation privilégiée et sans période de minage cachée. La date exacte du lancement du mainnet sera annoncée sur notre compte X officiel et aura lieu au moins deux semaines après l'annonce du lock-in, afin que tous les participants disposent du même temps de préparation."
-            },
-            {
-              "title": "Bloc genesis :",
-              "body": "Le bloc genesis sera minimal, sans contrat pré-déployé ni compte spécial. Le premier mineur à résoudre un bloc valide recevra la récompense de bloc standard de 50 pièces."
-            }
-          ],
-          "outro1": "Ce calendrier assure que tous les participants — développeurs, mineurs, institutions et la communauté au sens large — peuvent se préparer à l'avance, tout en maintenant la crédibilité d'un lancement équitable aligné sur l'éthos d'ouverture et de neutralité de Bitcoin.",
-          "outro2": "Il n'y a ni prémine, ni minage d'initiés, ni allocation privilégiée. Chaque participant démarre sur la même ligne de départ au genesis.",
-          "outro3": "Dans l'esprit de neutralité de Bitcoin, Parallax n'est ni détenu, ni contrôlé, ni orienté par une entité unique — c'est une expérience communautaire visant à unir rareté et expressivité."
-        }
+        ]
+      },
+      "why": {
+        "heading": "Pourquoi construire sur une couche de base en preuve de travail",
+        "body": "Chaque instrument historiquement bâti sur une monnaie rare — crédit, échange, garde, dérivés — se règle quelque part. Sur Parallax, il se règle contre un actif de base à offre fixe, sécurisé par un travail physique, sur une chaîne sans fondation, sans vote de token et sans mécanisme par lequel une transaction pourrait être privilégiée ou refusée. Votre contrat hérite de cette neutralité : personne ne peut être empêché de déployer, et rien de ce qui est déployé ne peut être arrêté."
+      },
+      "ctas": {
+        "docs": "Lire la documentation",
+        "explorer": "Explorateur de blocs",
+        "github": "GitHub"
       }
+    },
+    "verify": {
+      "pageTitle": "Vérifiez par vous-même",
+      "pageSubtitle": "Parallax ne demande aucune croyance. Chaque affirmation de ce site peut être vérifiée contre la chaîne elle-même — voici les commandes.",
+      "genesis": {
+        "heading": "Le bloc de genèse",
+        "body1": "La chaîne a commencé le 28 octobre 2025 avec une genèse minimale : pas de prémine, pas de contrats pré-déployés, pas de comptes privilégiés. Dans son champ extra-data est inscrit un titre de presse du jour du lancement :",
+        "headline": "The Times 28/Oct/2025 Trump tells Japan: Any favours you need, we'll be there",
+        "body2": "Une chaîne construite en secret avant le lancement annoncé ne pourrait pas contenir les nouvelles du jour du lancement. Demandez le bloc zéro à n'importe quel nœud et vérifiez à la fois le hash et le titre :",
+        "hashLabel": "Hash de genèse attendu",
+        "cmdHashLabel": "Récupérer le bloc zéro et son hash",
+        "cmdExtraLabel": "Décoder le titre inscrit"
+      },
+      "supply": {
+        "heading": "L'offre",
+        "body1": "L'offre à la genèse était de zéro. Chaque LAX existant a été miné ensuite à raison de 50 par bloc, divisés par deux tous les 210 000 blocs — si bien que l'offre totale correcte à n'importe quelle hauteur se calcule à la main, et toute déviation serait une violation de consensus que chaque nœud rejette.",
+        "body2": "Ce site expose le calcul sous forme d'API par commodité ; la chaîne reste la source de vérité :",
+        "cmdSupplyLabel": "Offre en circulation à la hauteur actuelle",
+        "cmdEmissionsLabel": "Calendrier d'émission complet"
+      },
+      "rules": {
+        "heading": "Les règles",
+        "body1": "Chain ID 2110. Intervalle cible de dix minutes. Une limite de gas de 600 M ajustable d'au plus ±0,1 % par bloc. Ne croyez pas cette page sur parole — interrogez le réseau :",
+        "cmdChainIdLabel": "Chain ID (attendu : 0x83e)",
+        "cmdBlockLabel": "Dernier bloc — vérifiez l'espacement des timestamps et la limite de gas"
+      },
+      "node": {
+        "heading": "Ne faites pas confiance à cette page",
+        "body1": "Chaque commande ci-dessus pointe vers un point d'accès RPC public par commodité — mais un point d'accès commode est un tiers de confiance. Le client tourne sur n'importe quelle machine ordinaire ; synchronisez votre propre nœud et pointez les mêmes commandes vers localhost. C'est là tout le design : la vérification appartient à quiconque possède un ordinateur modeste, et ce site web ne fait pas partie du modèle de confiance.",
+        "cta": "Faire tourner un nœud complet"
+      },
+      "copy": "Copier",
+      "copied": "Copié"
     },
     "protocol": {
       "overview": {
