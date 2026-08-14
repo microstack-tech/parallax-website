@@ -12,7 +12,7 @@ const footerLinks: Record<string, FooterLink[]> = {
     { key: "doctrine", href: "/introduction/doctrine" },
     { key: "howItWorks", href: "/introduction/how-it-works" },
     { key: "compare", href: "/compare" },
-    { key: "whitepaper", href: "parallax.pdf" },
+    { key: "whitepaper", href: "/parallax.pdf", external: true },
     { key: "protocolOverview", href: "/introduction/protocol/overview" },
     { key: "verify", href: "/introduction/verify" },
     { key: "gettingStarted", href: "/introduction/getting-started" },

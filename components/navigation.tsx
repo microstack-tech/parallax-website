@@ -40,7 +40,7 @@ function useNavItems(): NavItem[] {
         { name: t("introductionSub.bitcoiners"), href: "/introduction/parallax-for-bitcoiners" },
         { name: t("introductionSub.developers"), href: "/introduction/parallax-for-developers" },
         { name: t("introductionSub.verify"), href: "/introduction/verify" },
-        { name: t("introductionSub.whitepaper"), href: "parallax.pdf" },
+        { name: t("introductionSub.whitepaper"), href: "/parallax.pdf" },
         { name: t("introductionSub.gettingStarted"), href: "/introduction/getting-started" },
         { name: "###" },
         { name: t("introductionSub.protocol"), href: "/introduction/protocol/overview" },
@@ -319,7 +319,9 @@ function ListItem({
   href,
   badge,
 }: React.ComponentPropsWithoutRef<"li"> & { href: string; badge?: string }) {
-  const isExternal = href.startsWith("http")
+  // Root-level static assets (e.g. the whitepaper PDF) must bypass the
+  // locale-prefixing i18n Link.
+  const isExternal = href.startsWith("http") || href.endsWith(".pdf")
   const LinkComponent = isExternal ? "a" : Link
   const linkProps = isExternal
     ? { href, target: "_blank", rel: "noopener" }

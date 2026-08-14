@@ -20,7 +20,7 @@ export default function Sub() {
               size="lg"
               asChild
             >
-              <Link href="parallax.pdf" target="_blank">
+              <Link href="/parallax.pdf" target="_blank">
                 Read white paper
                 <ChevronRight />
               </Link>

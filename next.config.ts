@@ -19,6 +19,13 @@ const nextConfig: NextConfig = {
         destination: '/parallax.pdf',
         permanent: true,
       },
+      // The PDF only exists at the site root; catch locale-prefixed or
+      // otherwise nested links to it (e.g. /en/resources/parallax.pdf).
+      {
+        source: '/:path+/parallax.pdf',
+        destination: '/parallax.pdf',
+        permanent: true,
+      },
       // The bitcoin.org-style audience pages were replaced by pages targeting
       // the protocol's actual audiences.
       {
