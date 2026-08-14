@@ -265,15 +265,18 @@
       "supplyNote": "Oferta no bloco zero: 0 LAX. Sem pré-mineração, sem alocações — cada moeda desde então foi minerada sob regras que eram públicas antes da primeira tentativa de hash.",
       "cta": "Verifique você mesmo"
     },
+    "audience": {
+      "eyebrow": "Orientação",
+      "heading": "Dois caminhos de entrada",
+      "subtitle": "Um protocolo, dois pontos de vista. Cada resumo parte do que você já conhece — as regras monetárias do Bitcoin ou a EVM na qual você desenvolve."
+    },
     "parallax": {
       "eyebrow": "Princípio",
       "heading": "Regras que não podem ser dobradas",
       "subtitle": "Um compromisso só é crível quando custa algo. Essa é a Doutrina em uma única imagem.",
       "imageCaption": "A Morte de Sócrates — Jacques-Louis David",
-      "body1": "O Parallax combina uma oferta monetária fixa e liquidação por Prova de Trabalho com total programabilidade de contratos inteligentes. Toda moeda precisa ser minerada. Toda regra é executada sem discricionariedade. Sem pré-mineração, sem fundação, sem contas privilegiadas.",
-      "body2": "A Morte de Sócrates mostra um homem a quem foi oferecida a fuga — e que a recusou. O que faz a cena perdurar não é o desafio, mas o preço: Sócrates não trocaria o princípio pela conveniência nem mesmo ao custo da própria vida — e foi justamente esse custo que tornou seu compromisso crível. Conversa barata é de graça. Cicuta não é.",
-      "body3": "A prova de trabalho opera sob a mesma lógica. Cada bloco é um gasto irreversível — energia que não pode ser falsificada, reembolsada nem criada por votação. Um sistema monetário só mantém sua legitimidade enquanto suas regras não puderem ser dobradas pelo poder ou pela popularidade, e por isso o Parallax ancora suas regras na única coisa que nenhum dos dois pode dobrar: o custo físico.",
-      "body4": "Em sistemas adversariais, o custo é credibilidade. Sócrates provou isso uma vez; a timechain prova a cada dez minutos.",
+      "body1": "A Morte de Sócrates mostra um homem a quem foi oferecida a fuga — e que a recusou. O que faz a cena perdurar não é o desafio, mas o preço: Sócrates não trocaria o princípio pela conveniência nem mesmo ao custo da própria vida — e foi justamente esse custo que tornou seu compromisso crível. Conversa barata é de graça. Cicuta não é.",
+      "body2": "A prova de trabalho opera sob a mesma lógica. Cada bloco é um gasto irreversível — energia que não pode ser falsificada, reembolsada nem criada por votação. Um sistema monetário só mantém sua legitimidade enquanto suas regras não puderem ser dobradas pelo poder ou pela popularidade, e por isso o Parallax ancora suas regras na única coisa que nenhum dos dois pode dobrar: o custo físico. Em sistemas adversariais, o custo é credibilidade. Sócrates provou isso uma vez; a timechain prova a cada dez minutos.",
       "cta": "Leia a Doutrina Parallax"
     },
     "soundMoney": {

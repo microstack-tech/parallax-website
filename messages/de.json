@@ -265,15 +265,18 @@
       "supplyNote": "Angebot bei Block null: 0 LAX. Kein Premine, keine Zuteilungen — jeder Coin seitdem wurde nach Regeln gemint, die öffentlich waren, bevor der erste Hash versucht wurde.",
       "cta": "Überprüfen Sie es selbst"
     },
+    "audience": {
+      "eyebrow": "Orientierung",
+      "heading": "Zwei Zugänge",
+      "subtitle": "Ein Protokoll, zwei Blickwinkel. Jedes Briefing beginnt bei dem, was Sie bereits kennen — den Geldregeln von Bitcoin oder der EVM, auf der Sie entwickeln."
+    },
     "parallax": {
       "eyebrow": "Prinzip",
       "heading": "Regeln, die sich nicht beugen lassen",
       "subtitle": "Bindung ist nur glaubwürdig, wenn sie etwas kostet. Das ist die Doktrin in einem einzigen Bild.",
       "imageCaption": "Der Tod des Sokrates — Jacques-Louis David",
-      "body1": "Parallax verbindet ein festes Geldangebot und Proof-of-Work-Settlement mit voller Smart-Contract-Programmierbarkeit. Jede Münze muss gemined werden. Jede Regel wird ohne Ermessensspielraum ausgeführt. Kein Premine, keine Stiftung, keine privilegierten Konten.",
-      "body2": "„Der Tod des Sokrates“ zeigt einen Mann, dem die Flucht angeboten wurde und der sie ausschlug. Was die Szene überdauern lässt, ist nicht Trotz, sondern der Preis: Sokrates wollte Prinzip nicht gegen Bequemlichkeit tauschen, selbst um den höchsten Preis — und gerade diese Kosten machten seine Haltung glaubwürdig. Billige Worte sind umsonst. Der Schierlingsbecher ist es nicht.",
-      "body3": "Proof-of-Work folgt derselben Logik. Jeder Block ist unumkehrbarer Aufwand — Energie, die sich nicht fälschen, erstatten oder per Abstimmung herbeiführen lässt. Ein Geldsystem behält seine Legitimität nur, solange seine Regeln nicht durch Macht oder Popularität gebeugt werden können; deshalb verankert Parallax seine Regeln in dem Einzigen, das beide nicht beugen können: physischen Kosten.",
-      "body4": "In adversarialen Systemen ist Aufwand Glaubwürdigkeit. Sokrates hat es einmal bewiesen; die Timechain beweist es alle zehn Minuten.",
+      "body1": "„Der Tod des Sokrates“ zeigt einen Mann, dem die Flucht angeboten wurde und der sie ausschlug. Was die Szene überdauern lässt, ist nicht Trotz, sondern der Preis: Sokrates wollte Prinzip nicht gegen Bequemlichkeit tauschen, selbst um den höchsten Preis — und gerade diese Kosten machten seine Haltung glaubwürdig. Billige Worte sind umsonst. Der Schierlingsbecher ist es nicht.",
+      "body2": "Proof-of-Work folgt derselben Logik. Jeder Block ist unumkehrbarer Aufwand — Energie, die sich nicht fälschen, erstatten oder per Abstimmung herbeiführen lässt. Ein Geldsystem behält seine Legitimität nur, solange seine Regeln nicht durch Macht oder Popularität gebeugt werden können; deshalb verankert Parallax seine Regeln in dem Einzigen, das beide nicht beugen können: physischen Kosten. In adversarialen Systemen ist Aufwand Glaubwürdigkeit. Sokrates hat es einmal bewiesen; die Timechain beweist es alle zehn Minuten.",
       "cta": "Die Parallax-Doktrin lesen"
     },
     "soundMoney": {

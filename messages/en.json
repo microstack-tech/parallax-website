@@ -265,15 +265,18 @@
       "supplyNote": "Supply at block zero: 0 LAX. No premine, no allocations — every coin since has been mined under rules that were public before the first hash was tried.",
       "cta": "Verify it yourself"
     },
+    "audience": {
+      "eyebrow": "Orientation",
+      "heading": "Two Ways In",
+      "subtitle": "One protocol, two vantage points. Each briefing starts from what you already know — Bitcoin's monetary rules, or the EVM you build on."
+    },
     "parallax": {
       "eyebrow": "Principle",
       "heading": "Rules That Cannot Be Bent",
       "subtitle": "Commitment is credible only when it costs something. That is the Doctrine in one image.",
       "imageCaption": "The Death of Socrates — Jacques-Louis David",
-      "body1": "Parallax combines a fixed monetary supply and Proof of Work settlement with full smart contract programmability. Every coin must be mined. Every rule is executed without discretion. No premine, no foundation, no privileged accounts.",
-      "body2": "The Death of Socrates shows a man who was offered escape and declined it. What makes the scene endure is not defiance but price: Socrates would not trade principle for convenience even at terminal cost — and it is precisely the cost that made his commitment believable. Cheap talk is free. Hemlock is not.",
-      "body3": "Proof-of-work runs on the same logic. Every block is irreversible expenditure — energy that cannot be faked, refunded, or voted into existence. A monetary system keeps its legitimacy only while its rules cannot be bent by power or popularity, so Parallax anchors its rules in the one thing neither can bend: physical cost.",
-      "body4": "In adversarial systems, expense is credibility. Socrates proved it once; the timechain proves it every ten minutes.",
+      "body1": "The Death of Socrates shows a man who was offered escape and declined it. What makes the scene endure is not defiance but price: Socrates would not trade principle for convenience even at terminal cost — and it is precisely the cost that made his commitment believable. Cheap talk is free. Hemlock is not.",
+      "body2": "Proof-of-work runs on the same logic. Every block is irreversible expenditure — energy that cannot be faked, refunded, or voted into existence. A monetary system keeps its legitimacy only while its rules cannot be bent by power or popularity, so Parallax anchors its rules in the one thing neither can bend: physical cost. In adversarial systems, expense is credibility. Socrates proved it once; the timechain proves it every ten minutes.",
       "cta": "Read the Parallax Doctrine"
     },
     "soundMoney": {

@@ -265,15 +265,18 @@
       "supplyNote": "Offre au bloc zéro : 0 LAX. Pas de prémine, pas d'allocations — chaque pièce depuis a été minée selon des règles rendues publiques avant que le premier hash ne soit tenté.",
       "cta": "Vérifiez par vous-même"
     },
+    "audience": {
+      "eyebrow": "Orientation",
+      "heading": "Deux portes d'entrée",
+      "subtitle": "Un protocole, deux points de vue. Chaque présentation part de ce que vous connaissez déjà : les règles monétaires de Bitcoin, ou l'EVM sur laquelle vous développez."
+    },
     "parallax": {
       "eyebrow": "Principe",
       "heading": "Des règles que rien ne peut plier",
       "subtitle": "Un engagement n'est crédible que s'il coûte quelque chose. C'est toute la Doctrine en une seule image.",
       "imageCaption": "La Mort de Socrate — Jacques-Louis David",
-      "body1": "Parallax conjugue une offre monétaire fixe et un règlement par preuve de travail avec une programmabilité complète via les contrats intelligents. Chaque pièce doit être minée. Chaque règle s'exécute sans latitude. Pas de prémine, pas de fondation, pas de comptes privilégiés.",
-      "body2": "La Mort de Socrate montre un homme à qui l'on offrait la fuite et qui l'a refusée. Ce qui fait durer la scène, ce n'est pas le défi, c'est le prix : Socrate refusait d'échanger ses principes contre la commodité, fût-ce au prix de sa vie — et c'est précisément ce coût qui a rendu son engagement crédible. Les belles paroles ne coûtent rien. La ciguë, si.",
-      "body3": "La preuve de travail obéit à la même logique. Chaque bloc est une dépense irréversible — une énergie qui ne peut être ni falsifiée, ni remboursée, ni créée par un vote. Un système monétaire ne conserve sa légitimité que tant que ses règles ne peuvent être pliées par le pouvoir ou la popularité ; Parallax ancre donc ses règles dans la seule chose que ni l'un ni l'autre ne peut plier : le coût physique.",
-      "body4": "Dans les systèmes adversariaux, la dépense fait la crédibilité. Socrate l'a prouvé une fois ; la timechain le prouve toutes les dix minutes.",
+      "body1": "La Mort de Socrate montre un homme à qui l'on offrait la fuite et qui l'a refusée. Ce qui fait durer la scène, ce n'est pas le défi, c'est le prix : Socrate refusait d'échanger ses principes contre la commodité, fût-ce au prix de sa vie — et c'est précisément ce coût qui a rendu son engagement crédible. Les belles paroles ne coûtent rien. La ciguë, si.",
+      "body2": "La preuve de travail obéit à la même logique. Chaque bloc est une dépense irréversible — une énergie qui ne peut être ni falsifiée, ni remboursée, ni créée par un vote. Un système monétaire ne conserve sa légitimité que tant que ses règles ne peuvent être pliées par le pouvoir ou la popularité ; Parallax ancre donc ses règles dans la seule chose que ni l'un ni l'autre ne peut plier : le coût physique. Dans les systèmes adversariaux, la dépense fait la crédibilité. Socrate l'a prouvé une fois ; la timechain le prouve toutes les dix minutes.",
       "cta": "Lire la Doctrine Parallax"
     },
     "soundMoney": {

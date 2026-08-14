@@ -1,4 +1,5 @@
 'use client'
+import { AudienceRouter } from "@/components/audience-router";
 import Client from "@/components/client";
 import { Community } from "@/components/community";
 import { Documentation } from "@/components/documentation";
@@ -26,6 +27,8 @@ export default function Home() {
         <NetworkStats />
         <SectionDivider />
         <GenesisProof />
+        <SectionDivider />
+        <AudienceRouter />
         <SectionDivider />
         <Parallax />
         <SectionDivider />

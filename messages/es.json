@@ -265,15 +265,18 @@
       "supplyNote": "Suministro en el bloque cero: 0 LAX. Sin premine, sin asignaciones — cada moneda desde entonces se ha minado bajo reglas que eran públicas antes de que se probara el primer hash.",
       "cta": "Verifícalo tú mismo"
     },
+    "audience": {
+      "eyebrow": "Orientación",
+      "heading": "Dos caminos de entrada",
+      "subtitle": "Un protocolo, dos puntos de vista. Cada informe parte de lo que ya conoces: las reglas monetarias de Bitcoin o la EVM sobre la que construyes."
+    },
     "parallax": {
       "eyebrow": "Principio",
       "heading": "Reglas que no pueden doblegarse",
       "subtitle": "Un compromiso solo es creíble cuando cuesta algo. Esa es la Doctrina en una sola imagen.",
       "imageCaption": "La Muerte de Sócrates — Jacques-Louis David",
-      "body1": "Parallax combina un suministro monetario fijo y liquidación por Proof of Work con plena programabilidad de contratos inteligentes. Cada moneda debe minarse. Cada regla se ejecuta sin discrecionalidad. Sin preminado, sin fundación, sin cuentas privilegiadas.",
-      "body2": "La Muerte de Sócrates muestra a un hombre al que se le ofreció escapar y lo rechazó. Lo que hace perdurar la escena no es el desafío sino el precio: Sócrates no cambiaría el principio por la conveniencia ni siquiera a un coste terminal — y es precisamente ese coste lo que hizo creíble su compromiso. Las palabras baratas salen gratis. La cicuta no.",
-      "body3": "La prueba de trabajo opera con la misma lógica. Cada bloque es un gasto irreversible — energía que no puede falsificarse, reembolsarse ni votarse a la existencia. Un sistema monetario conserva su legitimidad solo mientras sus reglas no puedan ser doblegadas por el poder o la popularidad, así que Parallax ancla sus reglas en lo único que ninguno de los dos puede doblegar: el coste físico.",
-      "body4": "En sistemas adversariales, el gasto es credibilidad. Sócrates lo demostró una vez; la timechain lo demuestra cada diez minutos.",
+      "body1": "La Muerte de Sócrates muestra a un hombre al que se le ofreció escapar y lo rechazó. Lo que hace perdurar la escena no es el desafío sino el precio: Sócrates no cambiaría el principio por la conveniencia ni siquiera a un coste terminal — y es precisamente ese coste lo que hizo creíble su compromiso. Las palabras baratas salen gratis. La cicuta no.",
+      "body2": "La prueba de trabajo opera con la misma lógica. Cada bloque es un gasto irreversible — energía que no puede falsificarse, reembolsarse ni votarse a la existencia. Un sistema monetario conserva su legitimidad solo mientras sus reglas no puedan ser doblegadas por el poder o la popularidad, así que Parallax ancla sus reglas en lo único que ninguno de los dos puede doblegar: el coste físico. En sistemas adversariales, el gasto es credibilidad. Sócrates lo demostró una vez; la timechain lo demuestra cada diez minutos.",
       "cta": "Lee la Doctrina Parallax"
     },
     "soundMoney": {

@@ -265,15 +265,18 @@
       "supplyNote": "Supply sa block zero: 0 LAX. Walang premine, walang mga alokasyon — bawat coin mula noon ay minina sa ilalim ng mga panuntunang pampubliko na bago pa masubukan ang unang hash.",
       "cta": "I-verify mo mismo"
     },
+    "audience": {
+      "eyebrow": "Oryentasyon",
+      "heading": "Dalawang Daan Papasok",
+      "subtitle": "Isang protocol, dalawang pananaw. Ang bawat gabay ay nagsisimula sa alam mo na — ang mga panuntunang pananalapi ng Bitcoin, o ang EVM na ginagamit mo sa pagbuo."
+    },
     "parallax": {
       "eyebrow": "Prinsipyo",
       "heading": "Mga Rules na Hindi Mababaluktot",
       "subtitle": "Nagiging kapani-paniwala lamang ang commitment kapag may kapalit itong halaga. Iyan ang Doctrine sa iisang larawan.",
       "imageCaption": "The Death of Socrates — Jacques-Louis David",
-      "body1": "Pinagsasama ng Parallax ang fixed monetary supply at Proof of Work settlement na may buong smart contract programmability. Bawat coin ay kailangang ma-mine. Bawat patakaran ay isinasagawa nang walang diskresyon. Walang premine, walang foundation, walang privileged accounts.",
-      "body2": "Ipinapakita ng The Death of Socrates ang isang taong inalok ng pagtakas ngunit tumanggi. Ang nagpapanatili sa eksenang ito ay hindi ang pagsuway kundi ang presyo: hindi ipinagpalit ni Socrates ang prinsipyo para sa kaginhawahan, kahit kamatayan pa ang kapalit — at ang mismong halagang binayaran niya ang nagpaniwala sa kanyang commitment. Libre ang cheap talk. Ang hemlock, hindi.",
-      "body3": "Ganito rin ang lohika ng proof-of-work. Bawat block ay gastos na hindi na mababawi — enerhiyang hindi mapepeke, hindi mare-refund, at hindi maibobotong maging totoo. Nananatili ang legitimacy ng isang monetary system hangga't hindi nababaluktot ang mga rules nito ng kapangyarihan o popularidad, kaya ina-anchor ng Parallax ang mga rules nito sa tanging bagay na hindi kayang baluktutin ng alinman sa dalawa: ang physical cost.",
-      "body4": "Sa mga adversarial system, ang gastos ang credibility. Pinatunayan iyon ni Socrates nang minsan; pinapatunayan iyon ng timechain tuwing sampung minuto.",
+      "body1": "Ipinapakita ng The Death of Socrates ang isang taong inalok ng pagtakas ngunit tumanggi. Ang nagpapanatili sa eksenang ito ay hindi ang pagsuway kundi ang presyo: hindi ipinagpalit ni Socrates ang prinsipyo para sa kaginhawahan, kahit kamatayan pa ang kapalit — at ang mismong halagang binayaran niya ang nagpaniwala sa kanyang commitment. Libre ang cheap talk. Ang hemlock, hindi.",
+      "body2": "Ganito rin ang lohika ng proof-of-work. Bawat block ay gastos na hindi na mababawi — enerhiyang hindi mapepeke, hindi mare-refund, at hindi maibobotong maging totoo. Nananatili ang legitimacy ng isang monetary system hangga't hindi nababaluktot ang mga rules nito ng kapangyarihan o popularidad, kaya ina-anchor ng Parallax ang mga rules nito sa tanging bagay na hindi kayang baluktutin ng alinman sa dalawa: ang physical cost. Sa mga adversarial system, ang gastos ang credibility. Pinatunayan iyon ni Socrates nang minsan; pinapatunayan iyon ng timechain tuwing sampung minuto.",
       "cta": "Basahin ang Parallax Doctrine"
     },
     "soundMoney": {
