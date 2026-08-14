@@ -7,26 +7,36 @@ type InternalLink = { key: string; href: string }
 type ExternalLink = { key: string; href: string; external: true }
 type FooterLink = InternalLink | ExternalLink
 
+// Mirrors the main navigation menus (plus the social links column).
 const footerLinks: Record<string, FooterLink[]> = {
   protocol: [
     { key: "doctrine", href: "/introduction/doctrine" },
     { key: "howItWorks", href: "/introduction/how-it-works" },
     { key: "compare", href: "/compare" },
-    { key: "whitepaper", href: "/parallax.pdf", external: true },
-    { key: "protocolOverview", href: "/introduction/protocol/overview" },
+    { key: "bitcoiners", href: "/introduction/parallax-for-bitcoiners" },
+    { key: "developers", href: "/introduction/parallax-for-developers" },
     { key: "verify", href: "/introduction/verify" },
+    { key: "whitepaper", href: "/parallax.pdf", external: true },
     { key: "gettingStarted", href: "/introduction/getting-started" },
+    { key: "protocolOverview", href: "/introduction/protocol/overview" },
   ],
   resources: [
     { key: "beginnerGuides", href: "/resources/beginner-guides" },
-    { key: "documentation", href: "https://docs.parallaxprotocol.org", external: true },
+    { key: "technicalDocumentation", href: "/resources/technical-documentation" },
     { key: "parallaxClient", href: "/resources/parallax-client" },
     { key: "wallets", href: "/wallets" },
     { key: "exchanges", href: "/exchanges" },
+    { key: "community", href: "/resources/community" },
+    { key: "brandAssets", href: "/resources/branding" },
     { key: "blockExplorer", href: "https://explorer.parallaxprotocol.org", external: true },
     { key: "networkAtlas", href: "/resources/network-atlas" },
-    { key: "brandAssets", href: "/resources/branding" },
-    { key: "llmsTxt", href: "/llms.txt", external: true },
+    { key: "faq", href: "/faq" },
+  ],
+  participate: [
+    { key: "supportParallax", href: "/participate/support-parallax" },
+    { key: "runningAFullNode", href: "/participate/running-a-full-node" },
+    { key: "mining", href: "/participate/mining" },
+    { key: "development", href: "/participate/development" },
   ],
   community: [
     { key: "github", href: "https://github.com/ParallaxProtocol", external: true },
@@ -49,7 +59,7 @@ export function Footer() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-3">
