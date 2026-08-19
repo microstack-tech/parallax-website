@@ -321,7 +321,10 @@ export function NetworkStats() {
     </section>
   )
 
-  const hasMarket = marketItems.some((item) => item.format(stats) != null)
+  // Market stats hidden 2026-08-19 (owner call: market data unflattering right
+  // now). Flip to true to bring the section back — data plumbing is intact.
+  const showMarket = false as boolean
+  const hasMarket = showMarket && marketItems.some((item) => item.format(stats) != null)
 
   return (
     <section className="py-16 px-6 sm:px-8">
