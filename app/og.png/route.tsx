@@ -1,81 +1,200 @@
-import { GEIST_LIGHT, GEIST_SEMIBOLD, LOGO_MARK } from "@/lib/brand"
+import {
+  GEIST_LIGHT,
+  GEIST_SEMIBOLD,
+  LOGO_MARK,
+  OG_BLACKHOLE_CENTER,
+  OG_BLACKHOLE_RIGHT,
+} from "@/lib/brand"
 import { ImageResponse } from "next/og"
+import type { NextRequest } from "next/server"
 
-/** One static brand card for the whole site, built at compile time. */
-export const dynamic = "force-static"
+/**
+ * The Open Graph card, set over a still of the hero's black hole (see
+ * assets/og/README.md). Without a query it renders the site-wide brand card —
+ * hole centered, tagline in the core, as on the homepage. With `?title=` it
+ * renders a per-page variant: hole on the right, title in the dark space left
+ * of it. Rendered per request (the CDN caches each URL), hence no
+ * `force-static`.
+ */
+export const dynamic = "force-dynamic"
 
 const SIZE = { width: 1200, height: 630 }
 
-const BACKGROUND = "#06070d"
-// A faint wash in the mark's own two colours, well under the text contrast floor.
-const BACKGROUND_IMAGE = [
-  "radial-gradient(760px 420px at 32% 24%, rgba(0,255,128,0.07), transparent 65%)",
-  "radial-gradient(900px 520px at 70% 64%, rgba(0,128,255,0.10), transparent 68%)",
-  "linear-gradient(150deg, #080b14 0%, #06070d 60%)",
-].join(", ")
 const FOREGROUND = "#f2f0ec"
-const MUTED = "#9a99a3"
-const DIM = "#6e6d76"
-const HAIRLINE = "rgba(255,255,255,0.12)"
+const MUTED = "rgba(242, 240, 236, 0.55)"
+const DIM = "rgba(242, 240, 236, 0.38)"
 
-export function GET() {
-  return new ImageResponse(
-    (
+// One year: the title is part of the URL, so a card never changes in place.
+const CACHE_CONTROL = "public, max-age=31536000, immutable"
+
+const FONTS = [
+  { name: "Geist", data: GEIST_SEMIBOLD, weight: 600 as const, style: "normal" as const },
+  { name: "Geist", data: GEIST_LIGHT, weight: 300 as const, style: "normal" as const },
+]
+
+function background(src: string) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      width={SIZE.width}
+      height={SIZE.height}
+      alt=""
+      style={{ position: "absolute", top: 0, left: 0 }}
+    />
+  )
+}
+
+function wordmark() {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 44,
+        left: 56,
+        display: "flex",
+        alignItems: "center",
+        gap: 16,
+      }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={LOGO_MARK} width={44} height={44} alt="" />
+      <div style={{ fontFamily: "Geist", fontWeight: 600, fontSize: 32, color: FOREGROUND }}>
+        Parallax
+      </div>
+    </div>
+  )
+}
+
+function brandCard() {
+  return (
+    <div style={{ width: "100%", height: "100%", display: "flex", background: "#000" }}>
+      {background(OG_BLACKHOLE_CENTER)}
+      {wordmark()}
+
+      {/* The hero's tagline, centered in the hole's dark core. */}
       <div
         style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: BACKGROUND,
-          backgroundImage: BACKGROUND_IMAGE,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={LOGO_MARK} width={140} height={140} alt="" />
-          <div style={{ fontFamily: "Geist", fontWeight: 600, fontSize: 104, color: FOREGROUND }}>
-            Parallax
-          </div>
-        </div>
-
-        <div style={{ display: "flex", width: 380, height: 1, background: HAIRLINE, marginTop: 56 }} />
-
         <div
           style={{
             fontFamily: "Geist",
             fontWeight: 300,
-            fontSize: 34,
-            letterSpacing: 6,
+            fontSize: 21,
+            letterSpacing: 7,
             color: MUTED,
-            marginTop: 40,
+            // Nudge left: letter-spacing trails the last glyph, and the hole's
+            // dark core sits a touch left of the frame's center.
+            marginLeft: -12,
           }}
         >
-          Secured by physics
-        </div>
-
-        <div
-          style={{
-            fontFamily: "Geist",
-            fontWeight: 300,
-            fontSize: 22,
-            letterSpacing: 1,
-            color: DIM,
-            marginTop: 26,
-          }}
-        >
-          An open source, censorship-resistant, peer-to-peer, immutable network
+          SECURED BY PHYSICS.
         </div>
       </div>
-    ),
-    {
-      ...SIZE,
-      fonts: [
-        { name: "Geist", data: GEIST_SEMIBOLD, weight: 600, style: "normal" },
-        { name: "Geist", data: GEIST_LIGHT, weight: 300, style: "normal" },
-      ],
-    },
+
+      <div
+        style={{
+          position: "absolute",
+          bottom: 44,
+          right: 56,
+          fontFamily: "Geist",
+          fontWeight: 300,
+          fontSize: 21,
+          letterSpacing: 1,
+          color: DIM,
+        }}
+      >
+        parallaxprotocol.org
+      </div>
+    </div>
   )
+}
+
+function titleCard(title: string) {
+  const fontSize = title.length > 70 ? 36 : title.length > 40 ? 44 : 54
+
+  return (
+    <div style={{ width: "100%", height: "100%", display: "flex", background: "#000" }}>
+      {background(OG_BLACKHOLE_RIGHT)}
+      {wordmark()}
+
+      {/* Title in the dark field left of the hole. */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 56,
+          width: 500,
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <div
+          style={{
+            fontFamily: "Geist",
+            fontWeight: 600,
+            fontSize,
+            lineHeight: 1.2,
+            color: FOREGROUND,
+          }}
+        >
+          {title}
+        </div>
+      </div>
+
+      <div
+        style={{
+          position: "absolute",
+          bottom: 44,
+          left: 56,
+          fontFamily: "Geist",
+          fontWeight: 300,
+          fontSize: 19,
+          letterSpacing: 4,
+          color: MUTED,
+        }}
+      >
+        SECURED BY PHYSICS.
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 44,
+          right: 56,
+          fontFamily: "Geist",
+          fontWeight: 300,
+          fontSize: 19,
+          letterSpacing: 1,
+          color: DIM,
+        }}
+      >
+        parallaxprotocol.org
+      </div>
+    </div>
+  )
+}
+
+export function GET(request: NextRequest) {
+  // The card renders whatever it is given, so keep it to one plain short line.
+  const title = (request.nextUrl.searchParams.get("title") ?? "")
+    .replace(/[\u0000-\u001f\u007f]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 120)
+
+  return new ImageResponse(title ? titleCard(title) : brandCard(), {
+    ...SIZE,
+    fonts: FONTS,
+    headers: { "Cache-Control": CACHE_CONTROL },
+  })
 }

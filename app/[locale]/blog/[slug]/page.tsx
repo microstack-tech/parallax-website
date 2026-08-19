@@ -5,7 +5,7 @@ import MainMotion from "@/components/main-motion"
 import { Link } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { formatPostDate, getAdjacentPosts, getPost, getPostSlugs, tagSlug } from "@/lib/blog"
-import { blogAlternates, OG_IMAGE } from "@/lib/seo"
+import { blogAlternates, pageOgImage } from "@/lib/seo"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
@@ -27,7 +27,9 @@ export async function generateMetadata({
   if (!post) return {}
 
   const t = await getTranslations({ locale, namespace: "metadata.blog" })
-  const image = post.cover ? { url: post.cover, alt: post.coverAlt ?? post.title } : OG_IMAGE
+  const image = post.cover
+    ? { url: post.cover, alt: post.coverAlt ?? post.title }
+    : pageOgImage(post.title)
 
   return {
     title: post.title,

@@ -15,6 +15,16 @@ export const OG_IMAGE = {
   alt: "Parallax Protocol — secured by physics",
 }
 
+/** Per-page social card: the brand card carrying this page's title. */
+export function pageOgImage(title: string) {
+  return {
+    url: `/og.png?title=${encodeURIComponent(title)}`,
+    width: OG_IMAGE.width,
+    height: OG_IMAGE.height,
+    alt: `${title} — Parallax Protocol`,
+  }
+}
+
 /**
  * Open Graph wants language_TERRITORY, which our routing codes only supply for
  * the two that already carry a region.
@@ -104,6 +114,7 @@ export async function pageMetadata({
   const t = await getTranslations({ locale, namespace: "metadata.site" })
   const ogTitle = t("titleTemplate").replace("%s", title)
   const resolved = alternates ?? alternatesFor(locale, path)
+  const image = pageOgImage(title)
 
   return {
     title,
@@ -117,13 +128,13 @@ export async function pageMetadata({
       url: `${BASE_URL}${resolved?.canonical ?? pathFor(locale, path)}`,
       locale: ogLocale(locale),
       alternateLocale: ogAlternateLocales(locale),
-      images: [OG_IMAGE],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
       description,
-      images: [OG_IMAGE.url],
+      images: [image.url],
     },
   }
 }

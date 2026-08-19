@@ -2,9 +2,10 @@ import { readFileSync } from "node:fs"
 import { join } from "node:path"
 
 /**
- * Brand assets for the generated images (Open Graph card, icons). Everything is
- * read from disk and inlined, so the routes render at build time with no network
- * fetch. Only ever imported by `force-static` route handlers.
+ * Brand assets for the generated images (Open Graph cards, icons). Everything
+ * is read from disk once at module load and inlined, so the routes render with
+ * no network fetch — at build time for the static icon routes, per request for
+ * the OG card.
  */
 const asset = (...parts: string[]) => readFileSync(join(process.cwd(), ...parts))
 
@@ -13,6 +14,17 @@ const dataUri = (file: string) =>
 
 /** The mark alone, in its original gradient — for dark surfaces. */
 export const LOGO_MARK = dataUri("new_parallax_logo_transparent.svg")
+
+// Still frames of the hero's black hole, captured from the live WebGL scene
+// and cropped for the 1200×630 Open Graph canvas (see assets/og/README.md).
+const jpegDataUri = (...parts: string[]) =>
+  `data:image/jpeg;base64,${asset(...parts).toString("base64")}`
+
+/** Hole centered — background for the site-wide brand card. */
+export const OG_BLACKHOLE_CENTER = jpegDataUri("assets", "og", "blackhole.jpg")
+
+/** Hole in the right two-thirds — background for per-page title cards. */
+export const OG_BLACKHOLE_RIGHT = jpegDataUri("assets", "og", "blackhole-right.jpg")
 
 /** The mark on its black rounded plate — for icons and light surfaces. */
 export const LOGO_SQUARE = dataUri("new_parallax_logo_square.svg")
