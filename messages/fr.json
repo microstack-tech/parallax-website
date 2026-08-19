@@ -1107,7 +1107,7 @@
       "subtitle": "Une vue en direct des nœuds Parallax dans le monde, découverts via les connexions entre pairs et actualisée toutes les 5 minutes.",
       "errorTitle": "Données des nœuds temporairement indisponibles",
       "errorBody": "Impossible de joindre l'arbre de découverte. Veuillez réessayer dans quelques minutes.",
-      "footer": "Actualisé toutes les 5 minutes · Géolocalisation par ip-api.com",
+      "footer": "Actualisé toutes les 5 minutes · Géolocalisation par ip-api.com · Les pairs Tor et sans localisation sont comptés mais non cartographiés",
       "map": {
         "ariaLabel": "Carte mondiale des nœuds Parallax accessibles",
         "zoomIn": "Zoom avant",
@@ -1120,14 +1120,10 @@
       "summary": {
         "onlineNodes": "Nœuds en ligne",
         "countries": "Pays",
-        "lastUpdated": "Dernière mise à jour",
-        "justNow": "à l'instant",
-        "minutesAgoSingular": "il y a {count} min",
-        "minutesAgoPlural": "il y a {count} min",
-        "hoursAgoSingular": "il y a {count} heure",
-        "hoursAgoPlural": "il y a {count} heures",
-        "daysAgoSingular": "il y a {count} jour",
-        "daysAgoPlural": "il y a {count} jours"
+        "transport": "Transport",
+        "transportAria": "Transport des pairs : {clearnet} en clearnet, {tor} via Tor",
+        "clearnet": "Clearnet",
+        "tor": "Tor"
       },
       "countriesTable": {
         "heading": "Nœuds par pays",

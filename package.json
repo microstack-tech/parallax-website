@@ -28,6 +28,7 @@
     "next-themes": "^0.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-globe.gl": "^2.38.0",
     "react-icons": "^5.5.0",
     "react-super-responsive-table": "^6.0.2",
     "recharts": "^3.2.1",

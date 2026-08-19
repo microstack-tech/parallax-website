@@ -38,6 +38,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-atlas-clearnet: var(--atlas-clearnet);
+  --color-atlas-tor: var(--atlas-tor);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
   --color-gold-muted: var(--gold-muted);
@@ -71,6 +73,11 @@
   --ring: oklch(0.708 0 0);
   --gold: #f7931a;
   --gold-foreground: oklch(1 0 0);
+  /* Network Atlas transport split. Two categorical hues, stepped per mode
+     against the surface-elevated tile rather than flipped automatically.
+     Amber sits with the gold accent; violet is Tor's own hue. */
+  --atlas-clearnet: #eda100;
+  --atlas-tor: #4a3aa7;
   --gold-muted: rgb(247 147 26 / 15%);
   --glow-purple: oklch(0.5573 0.2543 283.67 / 20%);
   --surface-elevated: oklch(0.94 0.005 80);
@@ -111,6 +118,8 @@
   --ring: oklch(0.556 0 0);
   --gold: #f7931a;
   --gold-foreground: oklch(0.15 0.03 60);
+  --atlas-clearnet: #c98500;
+  --atlas-tor: #9085e9;
   --gold-muted: rgb(247 147 26 / 15%);
   --glow-purple: oklch(0.5573 0.2543 283.67 / 20%);
   --surface-elevated: oklch(0.14 0.015 265);

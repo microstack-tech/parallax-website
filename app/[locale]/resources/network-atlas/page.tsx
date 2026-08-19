@@ -2,7 +2,7 @@ import MainMotion from "@/components/main-motion"
 import PageHeader from "@/components/page-header"
 import CountriesTable from "@/components/network-atlas/countries-table"
 import NodesSummary from "@/components/network-atlas/nodes-summary"
-import WorldMap from "@/components/network-atlas/world-map"
+import AtlasGlobe from "@/components/network-atlas/atlas-globe"
 import { getNodes, type NodesPayload } from "@/lib/nodes"
 import { getTranslations } from "next-intl/server"
 
@@ -36,15 +36,16 @@ export default async function NetworkAtlasPage() {
           </div>
         ) : (
           <div className="flex flex-col gap-10">
-            <NodesSummary
-              totalNodes={data.totalNodes}
-              countries={data.countries}
-              updatedAt={data.updatedAt}
-            />
-            <div className="bg-surface-elevated border border-border p-4 sm:p-6">
-              <WorldMap nodes={data.nodes} />
+            <AtlasGlobe nodes={data.nodes} />
+            {/* Stacked above the globe canvas, which bleeds past its layout box. */}
+            <div className="relative z-10 flex flex-col gap-10">
+              <NodesSummary
+                totalPeers={data.totalPeers}
+                countries={data.countries}
+                torPeers={data.torPeers}
+              />
+              <CountriesTable nodes={data.nodes} />
             </div>
-            <CountriesTable nodes={data.nodes} />
             <p className="text-xs text-muted-foreground text-center">
               {t("footer")}
             </p>

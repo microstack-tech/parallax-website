@@ -2099,7 +2099,7 @@
       "subtitle": "A live view of Parallax nodes around the world, discovered through peer connections and refreshed every 5 minutes.",
       "errorTitle": "Node data temporarily unavailable",
       "errorBody": "We couldn't reach the discovery tree. Please try again in a few minutes.",
-      "footer": "Updated every 5 minutes · Geolocation by ip-api.com",
+      "footer": "Updated every 5 minutes · Geolocation by ip-api.com · Tor and unlocated peers are counted but not mapped",
       "map": {
         "ariaLabel": "World map of reachable Parallax nodes",
         "zoomIn": "Zoom in",
@@ -2112,14 +2112,10 @@
       "summary": {
         "onlineNodes": "Online nodes",
         "countries": "Countries",
-        "lastUpdated": "Last updated",
-        "justNow": "just now",
-        "minutesAgoSingular": "{count} min ago",
-        "minutesAgoPlural": "{count} mins ago",
-        "hoursAgoSingular": "{count} hour ago",
-        "hoursAgoPlural": "{count} hours ago",
-        "daysAgoSingular": "{count} day ago",
-        "daysAgoPlural": "{count} days ago"
+        "transport": "Transport",
+        "transportAria": "Peer transport: {clearnet} clearnet, {tor} over Tor",
+        "clearnet": "Clearnet",
+        "tor": "Tor"
       },
       "countriesTable": {
         "heading": "Nodes by country",

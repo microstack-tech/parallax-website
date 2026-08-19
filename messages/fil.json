@@ -2099,7 +2099,7 @@
       "subtitle": "Live na view ng mga Parallax node sa buong mundo, natutuklasan sa pamamagitan ng peer connections at nire-refresh kada 5 minuto.",
       "errorTitle": "Pansamantalang hindi available ang node data",
       "errorBody": "Hindi namin maabot ang discovery tree. Pakisubukan muli sa loob ng ilang minuto.",
-      "footer": "Nire-refresh kada 5 minuto · Geolocation mula sa ip-api.com",
+      "footer": "Nire-refresh kada 5 minuto · Geolocation mula sa ip-api.com · Binibilang ang mga peer sa Tor at walang lokasyon ngunit hindi ipinapakita sa mapa",
       "map": {
         "ariaLabel": "World map ng mga maaabot na Parallax node",
         "zoomIn": "Zoom in",
@@ -2112,14 +2112,10 @@
       "summary": {
         "onlineNodes": "Mga online na node",
         "countries": "Mga bansa",
-        "lastUpdated": "Huling na-update",
-        "justNow": "ngayon lang",
-        "minutesAgoSingular": "{count} minuto ang nakalipas",
-        "minutesAgoPlural": "{count} minuto ang nakalipas",
-        "hoursAgoSingular": "{count} oras ang nakalipas",
-        "hoursAgoPlural": "{count} oras ang nakalipas",
-        "daysAgoSingular": "{count} araw ang nakalipas",
-        "daysAgoPlural": "{count} araw ang nakalipas"
+        "transport": "Transport",
+        "transportAria": "Transport ng mga peer: {clearnet} clearnet, {tor} sa Tor",
+        "clearnet": "Clearnet",
+        "tor": "Tor"
       },
       "countriesTable": {
         "heading": "Mga node ayon sa bansa",

@@ -2099,7 +2099,7 @@
       "subtitle": "ピア接続を通じて発見された世界中のParallaxノードのライブビュー。5分ごとに更新されます。",
       "errorTitle": "ノードデータを一時的に取得できません",
       "errorBody": "ディスカバリーツリーに到達できませんでした。数分後にもう一度お試しください。",
-      "footer": "5分ごとに更新 · ジオロケーションは ip-api.com を利用",
+      "footer": "5分ごとに更新 · ジオロケーションは ip-api.com を利用 · Tor 経由および位置不明のピアは集計のみで地図には表示されません",
       "map": {
         "ariaLabel": "到達可能なParallaxノードの世界地図",
         "zoomIn": "ズームイン",
@@ -2112,14 +2112,10 @@
       "summary": {
         "onlineNodes": "オンラインノード",
         "countries": "国",
-        "lastUpdated": "最終更新",
-        "justNow": "たった今",
-        "minutesAgoSingular": "{count}分前",
-        "minutesAgoPlural": "{count}分前",
-        "hoursAgoSingular": "{count}時間前",
-        "hoursAgoPlural": "{count}時間前",
-        "daysAgoSingular": "{count}日前",
-        "daysAgoPlural": "{count}日前"
+        "transport": "接続経路",
+        "transportAria": "ピアの接続経路: クリアネット {clearnet}、Tor 経由 {tor}",
+        "clearnet": "クリアネット",
+        "tor": "Tor"
       },
       "countriesTable": {
         "heading": "国別ノード数",

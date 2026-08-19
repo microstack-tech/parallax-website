@@ -2099,7 +2099,7 @@
       "subtitle": "实时展示全球范围内的 Parallax 节点，通过对等连接发现并每 5 分钟刷新一次。",
       "errorTitle": "节点数据暂时不可用",
       "errorBody": "无法访问发现树，请稍后再试。",
-      "footer": "每 5 分钟更新一次 · 地理位置由 ip-api.com 提供",
+      "footer": "每 5 分钟更新一次 · 地理位置由 ip-api.com 提供 · Tor 节点和无位置信息的节点计入统计但不在地图上显示",
       "map": {
         "ariaLabel": "可达 Parallax 节点的世界地图",
         "zoomIn": "放大",
@@ -2112,14 +2112,10 @@
       "summary": {
         "onlineNodes": "在线节点",
         "countries": "国家/地区",
-        "lastUpdated": "最近更新",
-        "justNow": "刚刚",
-        "minutesAgoSingular": "{count} 分钟前",
-        "minutesAgoPlural": "{count} 分钟前",
-        "hoursAgoSingular": "{count} 小时前",
-        "hoursAgoPlural": "{count} 小时前",
-        "daysAgoSingular": "{count} 天前",
-        "daysAgoPlural": "{count} 天前"
+        "transport": "连接方式",
+        "transportAria": "节点连接方式：明网 {clearnet} 个，Tor {tor} 个",
+        "clearnet": "明网",
+        "tor": "Tor"
       },
       "countriesTable": {
         "heading": "各国节点分布",

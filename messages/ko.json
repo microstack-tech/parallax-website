@@ -2099,7 +2099,7 @@
       "subtitle": "피어 연결을 통해 발견된 전 세계 Parallax 노드를 실시간으로 보여주며, 5분마다 갱신됩니다.",
       "errorTitle": "노드 데이터를 일시적으로 가져올 수 없습니다",
       "errorBody": "디스커버리 트리에 연결할 수 없습니다. 잠시 후 다시 시도해 주세요.",
-      "footer": "5분마다 업데이트 · 위치 정보는 ip-api.com 제공",
+      "footer": "5분마다 업데이트 · 위치 정보는 ip-api.com 제공 · Tor 및 위치 미상 피어는 집계되지만 지도에는 표시되지 않습니다",
       "map": {
         "ariaLabel": "연결 가능한 Parallax 노드의 세계 지도",
         "zoomIn": "확대",
@@ -2112,14 +2112,10 @@
       "summary": {
         "onlineNodes": "온라인 노드",
         "countries": "국가",
-        "lastUpdated": "마지막 업데이트",
-        "justNow": "방금 전",
-        "minutesAgoSingular": "{count}분 전",
-        "minutesAgoPlural": "{count}분 전",
-        "hoursAgoSingular": "{count}시간 전",
-        "hoursAgoPlural": "{count}시간 전",
-        "daysAgoSingular": "{count}일 전",
-        "daysAgoPlural": "{count}일 전"
+        "transport": "전송 경로",
+        "transportAria": "피어 전송 경로: 클리어넷 {clearnet}개, Tor {tor}개",
+        "clearnet": "클리어넷",
+        "tor": "Tor"
       },
       "countriesTable": {
         "heading": "국가별 노드",

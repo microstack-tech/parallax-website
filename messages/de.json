@@ -2099,7 +2099,7 @@
       "subtitle": "Eine Live-Ansicht der Parallax-Nodes weltweit, entdeckt über Peer-Verbindungen und alle 5 Minuten aktualisiert.",
       "errorTitle": "Node-Daten vorübergehend nicht verfügbar",
       "errorBody": "Der Discovery-Tree ist gerade nicht erreichbar. Bitte versuchen Sie es in wenigen Minuten erneut.",
-      "footer": "Alle 5 Minuten aktualisiert · Geolokalisierung von ip-api.com",
+      "footer": "Alle 5 Minuten aktualisiert · Geolokalisierung von ip-api.com · Tor-Peers und Peers ohne Standort werden gezählt, aber nicht kartiert",
       "map": {
         "ariaLabel": "Weltkarte erreichbarer Parallax-Nodes",
         "zoomIn": "Vergrößern",
@@ -2112,14 +2112,10 @@
       "summary": {
         "onlineNodes": "Online-Nodes",
         "countries": "Länder",
-        "lastUpdated": "Zuletzt aktualisiert",
-        "justNow": "gerade eben",
-        "minutesAgoSingular": "vor {count} Min.",
-        "minutesAgoPlural": "vor {count} Min.",
-        "hoursAgoSingular": "vor {count} Stunde",
-        "hoursAgoPlural": "vor {count} Stunden",
-        "daysAgoSingular": "vor {count} Tag",
-        "daysAgoPlural": "vor {count} Tagen"
+        "transport": "Transport",
+        "transportAria": "Peer-Transport: {clearnet} Clearnet, {tor} über Tor",
+        "clearnet": "Clearnet",
+        "tor": "Tor"
       },
       "countriesTable": {
         "heading": "Nodes nach Land",

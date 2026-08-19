@@ -2099,7 +2099,7 @@
       "subtitle": "Uma visão ao vivo dos nós Parallax pelo mundo, descobertos por meio de conexões entre pares e atualizada a cada 5 minutos.",
       "errorTitle": "Dados dos nós temporariamente indisponíveis",
       "errorBody": "Não conseguimos acessar a árvore de descoberta. Tente novamente em alguns minutos.",
-      "footer": "Atualizado a cada 5 minutos · Geolocalização por ip-api.com",
+      "footer": "Atualizado a cada 5 minutos · Geolocalização por ip-api.com · Os pares por Tor e sem localização são contados, mas não aparecem no mapa",
       "map": {
         "ariaLabel": "Mapa-múndi dos nós Parallax alcançáveis",
         "zoomIn": "Aumentar zoom",
@@ -2112,14 +2112,10 @@
       "summary": {
         "onlineNodes": "Nós online",
         "countries": "Países",
-        "lastUpdated": "Última atualização",
-        "justNow": "agora mesmo",
-        "minutesAgoSingular": "há {count} min",
-        "minutesAgoPlural": "há {count} min",
-        "hoursAgoSingular": "há {count} hora",
-        "hoursAgoPlural": "há {count} horas",
-        "daysAgoSingular": "há {count} dia",
-        "daysAgoPlural": "há {count} dias"
+        "transport": "Transporte",
+        "transportAria": "Transporte dos pares: {clearnet} em clearnet, {tor} por Tor",
+        "clearnet": "Clearnet",
+        "tor": "Tor"
       },
       "countriesTable": {
         "heading": "Nós por país",
