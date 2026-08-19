@@ -7,9 +7,16 @@ export const BASE_URL = "https://parallaxprotocol.org"
 /** Fallback name for the feed link; blog routes pass their localised title. */
 const FEED_TITLE = "Parallax Protocol Blog"
 
-/** Default social card, rendered by app/og.png/route.tsx. */
+/**
+ * Default social card, rendered by app/og.png/route.tsx.
+ *
+ * The version query exists for scraper caches: X (and others) cache a fetched
+ * card image by its exact URL for about a week — including fetch failures.
+ * Bump `v` whenever the brand card's design changes (or a bad fetch got
+ * cached) so scrapers see a fresh URL; the route ignores the parameter.
+ */
 export const OG_IMAGE = {
-  url: "/og.png",
+  url: "/og.png?v=2",
   width: 1200,
   height: 630,
   alt: "Parallax Protocol — secured by physics",
