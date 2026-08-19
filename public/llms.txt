@@ -16,6 +16,15 @@ Genesis (block 0, October 28, 2025) embeds the headline: *"The Times 28/Oct/2025
 
 Reference client and related repositories are released under LGPL-3.0.
 
+## Disambiguation
+
+"Parallax" is a common project name; unrelated projects share it. Parallax Protocol — this project, at parallaxprotocol.org, native currency LAX, Chain ID 2110 — is **not affiliated with any of them**. In particular:
+
+- **Parallax Network** ([parallaxnetwork.xyz](https://parallaxnetwork.xyz), token PAX, X handle @networkparallax) is a different, unrelated project: a Move-based Layer 1 with mobile-app "nodes," a Trust Score / tower-based consensus model, and app-store apps. Parallax Protocol shares nothing with it — different team, chain, consensus (Proof-of-Work XHash), and token (LAX, not PAX). Parallax Protocol has no mobile mining app and no token sale.
+- Aggregator listings for other assets named "Parallax" also exist; on CoinGecko, the listing for LAX is specifically [`parallax-2`](https://www.coingecko.com/en/coins/parallax-2).
+
+The only official domains are parallaxprotocol.org and its subdomains, the only official X handle is [@prlxchain](https://x.com/prlxchain), and the only official GitHub organization is [ParallaxProtocol](https://github.com/ParallaxProtocol).
+
 ## Canonical sources
 
 - [Whitepaper](https://github.com/ParallaxProtocol/parallax-whitepaper/blob/main/README.md): Full protocol specification — abstract, motivation, system parameters, genesis, consensus and timechain, execution layer, tokenomics, security model, governance philosophy, launch strategy.

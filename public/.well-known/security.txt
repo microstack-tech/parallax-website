@@ -1,0 +1,6 @@
+# Parallax Protocol security contact (RFC 9116)
+Contact: mailto:security@parallaxprotocol.org
+Policy: https://github.com/ParallaxProtocol/parallax/blob/main/SECURITY.md
+Canonical: https://parallaxprotocol.org/.well-known/security.txt
+Preferred-Languages: en
+Expires: 2027-08-18T00:00:00.000Z

@@ -10,6 +10,10 @@ export const routing = defineRouting({
   defaultLocale: "en",
   localePrefix: "always",
   localeDetection: true,
+  // No Link headers from the middleware: they disagree with the HTML meta
+  // tags on x-default (bare root vs /en). The per-page meta tags built in
+  // lib/seo.ts are the single source of hreflang truth.
+  alternateLinks: false,
 });
 
 export type Locale = (typeof routing.locales)[number];
