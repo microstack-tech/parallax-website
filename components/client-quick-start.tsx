@@ -38,7 +38,7 @@ function CodeBlock({ children, copiedLabel, copyLabel }: { children: string; cop
 
   return (
     <div className="relative group">
-      <pre className="bg-background border border-border p-3 pr-10 text-xs font-mono text-muted-foreground overflow-x-auto">
+      <pre className="bg-background border border-border rounded-lg p-3 pr-10 text-xs font-mono text-muted-foreground overflow-x-auto">
         <code>{children}</code>
       </pre>
       <button
@@ -170,7 +170,7 @@ export default function ClientQuickStart() {
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {t("step3Body")}
                 </p>
-                <div className="bg-background border border-border p-3 text-xs font-mono text-foreground break-all">
+                <div className="bg-background border border-border rounded-lg p-3 text-xs font-mono text-foreground break-all">
                   {dataDir}
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">

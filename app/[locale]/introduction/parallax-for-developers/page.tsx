@@ -41,7 +41,7 @@ function CodeCard({ title, code }: { title: string; code: string }) {
         <CardTitle className="font-mono text-sm">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <pre className="overflow-x-auto bg-muted rounded-sm p-4 text-xs leading-relaxed font-mono text-foreground/90">
+        <pre className="overflow-x-auto bg-muted rounded-lg p-4 text-xs leading-relaxed font-mono text-foreground/90">
           {code}
         </pre>
       </CardContent>

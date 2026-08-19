@@ -70,7 +70,7 @@ function CommandBlock({
           {copied ? copiedLabel : copyLabel}
         </button>
       </div>
-      <pre className="overflow-x-auto bg-muted rounded-sm border border-border p-4 text-xs leading-relaxed font-mono text-foreground/90">
+      <pre className="overflow-x-auto bg-muted rounded-lg border border-border p-4 text-xs leading-relaxed font-mono text-foreground/90">
         {command}
       </pre>
     </div>

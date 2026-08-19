@@ -67,7 +67,7 @@ export function Doctrine() {
           title={t("pageTitle")}
           subTitle={t("pageSubtitle")}
         />
-        <section className="flex flex-col gap-4 bg-card/50 backdrop-blur-sm max-w-7xl border border-border rounded-sm font-sans text-foreground/90 px-8 py-12 mx-auto items-start">
+        <section className="flex flex-col gap-4 bg-card/50 backdrop-blur-sm max-w-7xl border border-border rounded-xl font-sans text-foreground/90 px-8 py-12 mx-auto items-start">
           <div className="mx-auto">
             <header className="text-center">
               <div className="flex flex-wrap items-center justify-center gap-3">

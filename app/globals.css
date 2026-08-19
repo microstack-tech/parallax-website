@@ -45,19 +45,24 @@
   --color-brand-muted: var(--brand-muted);
   --color-glow-purple: var(--glow-purple);
   --color-surface-elevated: var(--surface-elevated);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 2px);
+  --shadow-overlay: var(--elevation-overlay);
 }
 
 :root {
-  --radius: 0.625rem;
+  /* Machined corners: 4px on interactive controls (buttons, tabs, badges,
+     menu items); structural surfaces — cards, plates, tables — stay square. */
+  --radius: 0.25rem;
   --background: oklch(0.98 0.005 80);
   --foreground: oklch(0.145 0 0);
   --card: oklch(0.96 0.005 80);
   --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(0.98 0.005 80);
+  /* Popovers float, so they separate by being lighter than the ground and
+     casting the overlay shadow — unlike cards, which sit in the page. */
+  --popover: oklch(1 0.002 80);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.5573 0.2543 283.67);
   --primary-foreground: oklch(0.985 0 0);
@@ -70,7 +75,13 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0 0 0 / 10%);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* Focus rings take the brand hue so keyboard focus reads as intent,
+     not as a leftover grey outline. */
+  --ring: var(--brand);
+  /* Floating surfaces (menus, popovers, the add-network popup) cast a
+     two-layer shadow: a tight contact layer plus a wide ambient one — a
+     single blur reads flat. In-page surfaces cast nothing. */
+  --elevation-overlay: 0 4px 8px oklch(0 0 0 / 6%), 0 16px 40px oklch(0 0 0 / 12%);
   /* The brand accent is sampled from the logo gradient. --brand is the
      gradient's midpoint hue, for everything alpha modifiers and small text
      need; --brand-gradient is the gradient itself, reserved for filled brand
@@ -130,7 +141,11 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: var(--brand);
+  /* Shadows barely register on a near-black ground, so the dark overlay
+     leans on stronger opacities; the lighter popover surface still does
+     most of the separating. */
+  --elevation-overlay: 0 4px 10px oklch(0 0 0 / 55%), 0 20px 48px oklch(0 0 0 / 55%);
   --brand: var(--brand-on-dark);
   --brand-foreground: var(--brand-foreground-on-dark);
   --brand-gradient: var(--brand-gradient-on-dark);
@@ -193,3 +208,4 @@
 .brand-gradient {
   background-image: var(--brand-gradient);
 }
+

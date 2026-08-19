@@ -63,7 +63,7 @@ export default function Client() {
 
         {/* Download CTA banner */}
         <FadeIn delay={0.2}>
-          <div className="bg-surface-elevated border border-border rounded-sm p-8 sm:p-12 text-center">
+          <div className="bg-surface-elevated border border-border rounded-xl p-8 sm:p-12 text-center">
             <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground mb-3">{t("runNode.title")}</h3>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
               {t("runNode.description")}

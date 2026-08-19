@@ -25,7 +25,7 @@ export function Parallax() {
           {/* Image */}
           <FadeIn>
             <figure className="mx-auto w-full lg:mx-0">
-              <div className="relative aspect-[1000/652] w-full overflow-hidden rounded-sm">
+              <div className="relative aspect-[1000/652] w-full overflow-hidden rounded-xl">
                 <Image
                   src="/the-death-of-socrates.png"
                   alt="The Death of Socrates"

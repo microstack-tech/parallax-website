@@ -93,7 +93,7 @@ export default async function Page() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex justify-center mb-4">
-                    <Image src={wallet.image} alt={wallet.name} width={200} height={200} className="rounded-2xl" />
+                    <Image src={wallet.image} alt={wallet.name} width={200} height={200} className="rounded-lg" />
                   </div>
                   <div className="flex gap-4 justify-center">
                     <span className="inline-flex items-center text-base text-muted-foreground group-hover:text-foreground transition-colors">

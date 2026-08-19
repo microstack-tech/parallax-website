@@ -40,7 +40,7 @@ export default function AddNetworkPopup() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-80 bg-surface-elevated border border-border p-6 shadow-lg animate-in slide-in-from-bottom-4 fade-in duration-300">
+    <div className="fixed bottom-6 right-6 z-50 w-80 bg-surface-elevated border border-border rounded-xl p-6 shadow-overlay animate-in slide-in-from-bottom-4 fade-in duration-300">
       <button
         onClick={dismiss}
         className="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors"
