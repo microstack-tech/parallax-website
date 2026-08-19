@@ -22,10 +22,13 @@ const SIZE = { width: 1200, height: 630 }
 
 const FOREGROUND = "#f2f0ec"
 const MUTED = "rgba(242, 240, 236, 0.55)"
-const DIM = "rgba(242, 240, 236, 0.38)"
 
-// One year: the title is part of the URL, so a card never changes in place.
-const CACHE_CONTROL = "public, max-age=31536000, immutable"
+// Titled cards: the title is part of the URL, so a card never changes in
+// place — cache for a year. The bare brand card CAN change in place (its
+// content is edited without the URL changing), so give it a day instead;
+// a redesign then rolls out on its own instead of needing an edge purge.
+const CACHE_CONTROL_TITLED = "public, max-age=31536000, immutable"
+const CACHE_CONTROL_BRAND = "public, max-age=86400"
 
 const FONTS = [
   { name: "Geist", data: GEIST_SEMIBOLD, weight: 600 as const, style: "normal" as const },
@@ -58,8 +61,8 @@ function wordmark() {
       }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={LOGO_MARK} width={44} height={44} alt="" />
-      <div style={{ fontFamily: "Geist", fontWeight: 600, fontSize: 32, color: FOREGROUND }}>
+      <img src={LOGO_MARK} width={66} height={66} alt="" />
+      <div style={{ fontFamily: "Geist", fontWeight: 600, fontSize: 47, color: FOREGROUND }}>
         Parallax
       </div>
     </div>
@@ -89,45 +92,65 @@ function brandCard() {
           style={{
             fontFamily: "Geist",
             fontWeight: 300,
-            fontSize: 21,
-            letterSpacing: 7,
+            fontSize: 16,
+            letterSpacing: 5,
             color: MUTED,
             // Nudge left: letter-spacing trails the last glyph, and the hole's
             // dark core sits a touch left of the frame's center.
-            marginLeft: -12,
+            marginLeft: -9,
           }}
         >
           SECURED BY PHYSICS.
         </div>
       </div>
 
+      {/* The hero's subtitle over two lines. The domain is omitted — social
+          platforms display it next to the card anyway. */}
       <div
         style={{
           position: "absolute",
           bottom: 44,
           right: 56,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end",
           fontFamily: "Geist",
           fontWeight: 300,
-          fontSize: 21,
+          fontSize: 19,
+          lineHeight: 1.55,
           letterSpacing: 1,
-          color: DIM,
+          color: "rgba(242, 240, 236, 0.72)",
         }}
       >
-        parallaxprotocol.org
+        <div>An open source, censorship-resistant,</div>
+        <div>peer-to-peer, immutable network</div>
       </div>
     </div>
   )
 }
 
 function titleCard(title: string) {
-  const fontSize = title.length > 70 ? 36 : title.length > 40 ? 44 : 54
+  // Largest size whose estimated wrapped height keeps the centered block
+  // below the wordmark (block ≤ 394px → top ≥ 118). The 0.55em average glyph
+  // width is measured from Geist SemiBold renders of these cards.
+  const fontSize = (() => {
+    for (const size of [84, 76, 68, 62, 56, 50, 44]) {
+      const charsPerLine = Math.max(1, Math.floor(500 / (0.55 * size)))
+      const lines = Math.ceil(title.length / charsPerLine)
+      if (lines * 1.2 * size <= 394) return size
+    }
+    return 40
+  })()
 
   return (
     <div style={{ width: "100%", height: "100%", display: "flex", background: "#000" }}>
       {background(OG_BLACKHOLE_RIGHT)}
       {wordmark()}
 
-      {/* Title in the dark field left of the hole. */}
+      {/* Title in the dark field left of the hole, centered on the card's
+          full height. The column is capped at 500px (the hole's glow starts
+          at ~600px) and the font tiers keep even a max-length title short
+          enough to clear the wordmark, so a wrapped title reaches neither. */}
       <div
         style={{
           position: "absolute",
@@ -141,45 +164,19 @@ function titleCard(title: string) {
       >
         <div
           style={{
+            maxWidth: 500,
             fontFamily: "Geist",
             fontWeight: 600,
             fontSize,
             lineHeight: 1.2,
             color: FOREGROUND,
+            wordBreak: "break-word",
           }}
         >
           {title}
         </div>
       </div>
 
-      <div
-        style={{
-          position: "absolute",
-          bottom: 44,
-          left: 56,
-          fontFamily: "Geist",
-          fontWeight: 300,
-          fontSize: 19,
-          letterSpacing: 4,
-          color: MUTED,
-        }}
-      >
-        SECURED BY PHYSICS.
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          bottom: 44,
-          right: 56,
-          fontFamily: "Geist",
-          fontWeight: 300,
-          fontSize: 19,
-          letterSpacing: 1,
-          color: DIM,
-        }}
-      >
-        parallaxprotocol.org
-      </div>
     </div>
   )
 }
@@ -195,6 +192,6 @@ export function GET(request: NextRequest) {
   return new ImageResponse(title ? titleCard(title) : brandCard(), {
     ...SIZE,
     fonts: FONTS,
-    headers: { "Cache-Control": CACHE_CONTROL },
+    headers: { "Cache-Control": title ? CACHE_CONTROL_TITLED : CACHE_CONTROL_BRAND },
   })
 }
