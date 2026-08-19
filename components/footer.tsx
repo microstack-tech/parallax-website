@@ -31,6 +31,7 @@ const footerLinks: Record<string, FooterLink[]> = {
     { key: "blockExplorer", href: "https://explorer.parallaxprotocol.org", external: true },
     { key: "networkAtlas", href: "/resources/network-atlas" },
     { key: "faq", href: "/faq" },
+    { key: "blog", href: "/blog" },
   ],
   participate: [
     { key: "supportParallax", href: "/participate/support-parallax" },

@@ -7,6 +7,12 @@
       "description": "一个点对点可编程现金系统。Bitcoin 的货币纪律与 Ethereum 的可编程性相结合。由物理定律保障安全，不受任何人治理。",
       "ogDescription": "一个点对点的可编程货币系统。融合 Bitcoin 的货币纪律与 Ethereum 的可编程性。"
     },
+    "blog": {
+      "title": "博客",
+      "description": "Parallax Protocol 项目的笔记、公告与技术文章。",
+      "tagTitle": "标记为 {tag} 的文章",
+      "tagDescription": "Parallax Protocol 博客中关于 {tag} 的文章。"
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "在共识、货币政策、可编程性、结算等维度上，对 Parallax、Bitcoin 与 Ethereum 进行并排对比。"
@@ -143,6 +149,7 @@
     "resources": "资源",
     "participate": "参与",
     "faq": "常见问题",
+    "blog": "博客",
     "getStarted": "开始使用",
     "toggleTheme": "切换主题",
     "lightMode": "浅色模式",
@@ -206,6 +213,7 @@
       "blockExplorer": "区块浏览器",
       "networkAtlas": "网络图谱",
       "faq": "常见问题",
+      "blog": "博客",
       "supportParallax": "支持 Parallax",
       "runningAFullNode": "运行全节点",
       "mining": "挖矿",
@@ -2243,5 +2251,22 @@
         }
       ]
     }
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "Parallax 项目的笔记、公告与技术文章。",
+    "englishOnly": "文章仅以英文发布。",
+    "topics": "主题",
+    "empty": "暂无文章。",
+    "readPost": "阅读文章",
+    "minRead": "阅读约 {minutes} 分钟",
+    "by": "作者：{author}",
+    "backToBlog": "返回博客",
+    "updatedOn": "更新于 {date}",
+    "olderPost": "上一篇",
+    "newerPost": "下一篇",
+    "rss": "RSS 订阅",
+    "taggedWith": "标记：{tag}",
+    "taggedSubtitle": "{count, plural, =0 {暂无文章} other {# 篇文章}}"
   }
 }

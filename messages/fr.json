@@ -7,6 +7,12 @@
       "description": "Un système de monnaie programmable pair-à-pair. La discipline monétaire de Bitcoin rencontre la programmabilité d'Ethereum. Sécurisé par la physique, gouverné par personne.",
       "ogDescription": "Un système de monnaie programmable pair-à-pair. La discipline monétaire de Bitcoin rencontre la programmabilité d'Ethereum."
     },
+    "blog": {
+      "title": "Blog",
+      "description": "Notes, annonces et articles techniques du projet Parallax Protocol.",
+      "tagTitle": "Articles étiquetés {tag}",
+      "tagDescription": "Articles du blog Parallax Protocol à propos de {tag}."
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "Une comparaison côte à côte de Parallax, Bitcoin et Ethereum : consensus, politique monétaire, programmabilité, règlement et bien plus."
@@ -143,6 +149,7 @@
     "resources": "Ressources",
     "participate": "Participer",
     "faq": "FAQ",
+    "blog": "Blog",
     "getStarted": "Commencer",
     "toggleTheme": "Changer de thème",
     "lightMode": "Mode clair",
@@ -206,6 +213,7 @@
       "blockExplorer": "Explorateur de blocs",
       "networkAtlas": "Atlas du réseau",
       "faq": "FAQ",
+      "blog": "Blog",
       "supportParallax": "Soutenir Parallax",
       "runningAFullNode": "Faire tourner un nœud complet",
       "mining": "Minage",
@@ -2243,5 +2251,22 @@
         }
       }
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Notes, annonces et articles techniques du projet Parallax.",
+    "englishOnly": "Les articles sont publiés uniquement en anglais.",
+    "topics": "Thèmes",
+    "empty": "Aucun article pour le moment.",
+    "readPost": "Lire l'article",
+    "minRead": "{minutes} min de lecture",
+    "by": "Par {author}",
+    "backToBlog": "Retour au blog",
+    "updatedOn": "Mis à jour le {date}",
+    "olderPost": "Article précédent",
+    "newerPost": "Article suivant",
+    "rss": "Flux RSS",
+    "taggedWith": "Étiquette : {tag}",
+    "taggedSubtitle": "{count, plural, =0 {Aucun article} one {# article} other {# articles}}"
   }
 }

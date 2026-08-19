@@ -7,6 +7,12 @@
       "description": "Ein Peer-to-Peer-System für programmierbares Bargeld. Bitcoins monetäre Disziplin trifft auf Ethereums Programmierbarkeit. Gesichert durch Physik, regiert von niemandem.",
       "ogDescription": "Ein Peer-to-Peer-System für programmierbares Bargeld. Die monetäre Disziplin von Bitcoin trifft auf die Programmierbarkeit von Ethereum."
     },
+    "blog": {
+      "title": "Blog",
+      "description": "Notizen, Ankündigungen und technische Beiträge aus dem Parallax-Protocol-Projekt.",
+      "tagTitle": "Beiträge mit dem Schlagwort {tag}",
+      "tagDescription": "Beiträge im Parallax-Protocol-Blog über {tag}."
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "Ein direkter Vergleich von Parallax, Bitcoin und Ethereum in Bezug auf Konsens, Geldpolitik, Programmierbarkeit, Settlement und mehr."
@@ -143,6 +149,7 @@
     "resources": "Ressourcen",
     "participate": "Mitmachen",
     "faq": "FAQ",
+    "blog": "Blog",
     "getStarted": "Loslegen",
     "toggleTheme": "Design wechseln",
     "lightMode": "Heller Modus",
@@ -206,6 +213,7 @@
       "blockExplorer": "Block Explorer",
       "networkAtlas": "Netzwerk-Atlas",
       "faq": "FAQ",
+      "blog": "Blog",
       "supportParallax": "Parallax unterstützen",
       "runningAFullNode": "Full Node betreiben",
       "mining": "Mining",
@@ -2243,5 +2251,22 @@
         }
       ]
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Notizen, Ankündigungen und technische Beiträge aus dem Parallax-Projekt.",
+    "englishOnly": "Beiträge erscheinen ausschließlich auf Englisch.",
+    "topics": "Themen",
+    "empty": "Noch keine Beiträge.",
+    "readPost": "Beitrag lesen",
+    "minRead": "{minutes} Min. Lesezeit",
+    "by": "Von {author}",
+    "backToBlog": "Zurück zum Blog",
+    "updatedOn": "Aktualisiert am {date}",
+    "olderPost": "Älterer Beitrag",
+    "newerPost": "Neuerer Beitrag",
+    "rss": "RSS-Feed",
+    "taggedWith": "Schlagwort: {tag}",
+    "taggedSubtitle": "{count, plural, =0 {Keine Beiträge} one {# Beitrag} other {# Beiträge}}"
   }
 }

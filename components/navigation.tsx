@@ -70,6 +70,7 @@ function useNavItems(): NavItem[] {
         { name: t("participateSub.development"), href: "/participate/development" },
       ],
     },
+    { name: t("blog"), href: "/blog" },
     { name: t("faq"), href: "/faq" },
   ]
 }

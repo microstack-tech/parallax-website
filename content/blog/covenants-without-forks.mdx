@@ -1,0 +1,145 @@
+---
+title: "Covenants Without Forks"
+date: 2026-08-19
+summary: "Bitcoin has debated covenant opcodes for years because enabling them means a soft fork. On Parallax, the same functionality — vaults, templates, channels, pools — is a contract deployment."
+author: "Parallax Protocol"
+tags: ["bitcoin", "covenants", "evm"]
+cover: /blog/covenants-without-forks/cover.png
+coverAlt: "Faded Bitcoin covenant opcodes beside a deployed LaxVault contract, separated by a vault dial"
+draft: false
+---
+Since 2019, Bitcoin has debated whether to enable a class of functionality
+called covenants. The debate is genuinely hard, because on Bitcoin, enabling
+covenants means changing consensus rules — a soft fork, with all the
+coordination cost, political friction, and irreversibility that implies. On
+Parallax, the same functionality is a contract deployment. No fork, no client
+update, no signaling period.
+This post explains what covenants are, walks through the major Bitcoin
+proposals, shows how each one maps to something you can already build on
+Parallax, and sets out what that trade-off costs.
+
+## What a covenant is
+
+Bitcoin Script today answers one question: *is this spend authorized?*
+Signatures, timelocks, hashlocks — all of it gates permission. Once the
+conditions are met, the coins can go anywhere. A covenant adds a second
+question: *where are these coins allowed to go?* A covenant-encumbered output
+can restrict the outputs of the transaction that spends it — "these coins may
+only move to this recovery address," or "this spend must match this exact
+template."
+That one capability unlocks vaults, payment pools, congestion control,
+non-interactive channels, and most of the Layer 2 designs Bitcoin developers
+have sketched over the last decade. Which is exactly why the debate is so
+heated: the upside is large, and so is the surface area of a mistake baked into
+consensus forever.
+
+## The proposals, and their Parallax equivalents
+
+**OP_CHECKTEMPLATEVERIFY (BIP-119).** CTV lets an output commit to the exact
+transaction that spends it. Use cases: congestion control trees, vault
+constructions, payment pools. On Parallax, a contract that only releases funds
+to hardcoded destinations and amounts is a few dozen lines of Solidity.
+Committing to a fixed set of outputs is the simplest thing contract logic can
+express.
+
+**OP_CHECKSIGFROMSTACK (BIP-348).** CSFS verifies a signature over an
+arbitrary message, not just the spending transaction. It enables delegation and
+oracle-signed conditions. The EVM has shipped this since 2015 as the
+`ecrecover` precompile. Every oracle design, every signed-message authorization
+pattern, every meta-transaction relies on it daily.
+
+**OP_CAT (BIP-347) and transaction introspection.** Restoring CAT would let
+Bitcoin Script carry state across spends and inspect the spending transaction —
+clever, constrained, and the subject of enormous research effort. Contracts
+have persistent storage and full environmental introspection natively; what
+Script reaches for through construction, the EVM provides directly.
+
+**SIGHASH_ANYPREVOUT (BIP-118) and Eltoo.** APO enables rebindable signatures,
+the missing piece for LN-Symmetry — payment channels where only the latest
+state matters and toxic old states disappear. Contract-based channels with
+monotonic state numbers and challenge periods achieve the same property, and
+it's how every EVM state channel and rollup fraud-proof system already works.
+
+**OP_VAULT (BIP-345).** The most user-facing proposal: reactive self-custody.
+Coins in a vault can only be withdrawn through a trigger transaction that
+starts a visible delay window, during which the owner can sweep everything to a
+pre-committed recovery path if the withdrawal wasn't theirs. Bitcoin needs a
+new opcode plus CTV to express that pattern. On Parallax it is an ordinary
+contract — trigger, timelocked withdrawal, always-available clawback,
+watchtower-friendly events — and deploying it immutably makes the rules as
+fixed as an opcode's.
+
+**Drivechains (BIPs 300/301).** Two-way pegged sidechains require miners to
+validate withdrawal bundles — a consensus change Bitcoin has debated since
+2015. On an EVM chain, a bridge is a contract, and its security model is a
+design choice: multisig, light-client verification, or ZK proofs, upgradeable
+in the open as the state of the art improves.
+
+**OP_CHECKCONTRACTVERIFY (BIP-443).** The MATT proposal: carrying merkleized
+state in UTXOs and settling disputes with fraud proofs. It arrives at
+commitments to contract state and fraud-proof dispute resolution — the same
+ground the account model covers by construction, reached from the other side.
+
+## What doesn't map
+
+Not everything on Bitcoin's wishlist is a contract away. Changes to the
+signature schemes themselves — say, post-quantum verification — require a
+precompile, which is a fork on Parallax just as it is on Bitcoin. Mempool
+policy, block structure, and mining-layer changes live below the contract layer
+on any chain. Covenants are the special case where Bitcoin's constraint is
+script expressiveness, and script expressiveness is exactly what an EVM
+provides.
+<Callout title="Note">
+  Covenant emulation on other chains often relies on wrapped assets, which
+  reintroduces custodial risk. On Parallax, native LAX held in a contract is
+  still native LAX — a vault contract protects the base asset directly.
+</Callout>
+
+## The trade
+
+Bitcoin's script restrictions are deliberate. A minimal consensus surface is
+easier to audit exhaustively, harder to exploit, and slower to ossify around a
+mistake. When Bitcoin finally ships a covenant opcode, every full node on Earth
+will enforce it on native coins with a specification small enough to hold in
+your head. That is a real property, and Bitcoin's caution is the reason it has
+it.
+
+Parallax made the opposite bet on the execution layer: we accept the EVM's
+larger surface in exchange for expressiveness, while keeping Bitcoin's monetary
+and consensus discipline — proof of work, a 21M cap, a fair launch, ten-minute
+blocks. Contract-layer enforcement is consensus enforcement too; the EVM *is*
+our consensus. But the failure modes are not symmetric: a flaw in a consensus
+rule is a chain-wide event that everyone notices and coordinates around, while
+a flaw in a contract is a silent, permanent loss for whoever trusted it, with
+no fork to coordinate a fix. That is the cost of moving expressiveness up the
+stack, and it is why a custody contract should be immutable and adversarially
+reviewed before it holds anything. The verification effort does not disappear.
+It moves from the fork-coordination layer to the contract layer.
+What that buys is a chain where the last decade of Bitcoin's Layer 2 research —
+vaults, pools, channels, covenant-based custody — is available to build against
+today, and where arguing about whether one of those designs should exist is an
+argument about a particular contract rather than about consensus itself.
+
+## References
+
+- [BIP-119: OP_CHECKTEMPLATEVERIFY](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki)
+  — Jeremy Rubin, 2019
+- [BIP-348: OP_CHECKSIGFROMSTACK](https://github.com/bitcoin/bips/blob/master/bip-0348.md)
+  — Brandon Black, Jeremy Rubin, 2024
+- [BIP-347: OP_CAT in Tapscript](https://github.com/bitcoin/bips/blob/master/bip-0347.mediawiki)
+  — Ethan Heilman, Armin Sabouri
+- [BIP-118: SIGHASH_ANYPREVOUT](https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki)
+  — Christian Decker, Anthony Towns
+- [eltoo: A Simple Layer2 Protocol for Bitcoin](https://blockstream.com/eltoo.pdf)
+  — Decker, Russell, Osuntokun, 2018
+- [BIP-345: OP_VAULT](https://github.com/bitcoin/bips/blob/master/bip-0345.mediawiki)
+  — James O'Beirne, Greg Sanders, Anthony Towns
+- [BIP-300](https://github.com/bitcoin/bips/blob/master/bip-0300.mediawiki) /
+  [BIP-301](https://github.com/bitcoin/bips/blob/master/bip-0301.mediawiki):
+  Drivechains — Paul Sztorc, CryptAxe
+- [BIP-443: OP_CHECKCONTRACTVERIFY](https://github.com/bitcoin/bips/blob/master/bip-0443.mediawiki)
+  — Salvatore Ingala (the MATT proposal)
+- [Bitcoin Covenants](https://maltemoeser.de/paper/covenants.pdf)
+  — Möser, Eyal, Sirer, 2016 — the paper that named the concept
+- [ecrecover precompile](https://ethereum.github.io/yellowpaper/paper.pdf)
+  — Ethereum Yellow Paper, Appendix E

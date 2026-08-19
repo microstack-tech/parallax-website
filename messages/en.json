@@ -7,6 +7,12 @@
       "description": "A peer-to-peer programmable cash system. Bitcoin's monetary discipline meets Ethereum's programmability. Secured by physics, governed by no one.",
       "ogDescription": "A peer-to-peer programmable cash system. Bitcoin's monetary discipline meets Ethereum's programmability."
     },
+    "blog": {
+      "title": "Blog",
+      "description": "Notes, announcements, and technical write-ups from the Parallax Protocol project.",
+      "tagTitle": "Posts tagged {tag}",
+      "tagDescription": "Parallax Protocol blog posts about {tag}."
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "A side-by-side comparison of Parallax, Bitcoin, and Ethereum across consensus, monetary policy, programmability, settlement, and more."
@@ -143,6 +149,7 @@
     "resources": "Resources",
     "participate": "Participate",
     "faq": "FAQ",
+    "blog": "Blog",
     "getStarted": "Get Started",
     "toggleTheme": "Toggle theme",
     "lightMode": "Light mode",
@@ -206,6 +213,7 @@
       "blockExplorer": "Block Explorer",
       "networkAtlas": "Network Atlas",
       "faq": "FAQ",
+      "blog": "Blog",
       "supportParallax": "Support Parallax",
       "runningAFullNode": "Running a full node",
       "mining": "Mining",
@@ -2243,5 +2251,22 @@
         }
       ]
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Notes, announcements, and technical write-ups from the Parallax project.",
+    "englishOnly": "Posts are published in English only.",
+    "topics": "Topics",
+    "empty": "No posts yet.",
+    "readPost": "Read post",
+    "minRead": "{minutes} min read",
+    "by": "By {author}",
+    "backToBlog": "Back to the blog",
+    "updatedOn": "Updated {date}",
+    "olderPost": "Older post",
+    "newerPost": "Newer post",
+    "rss": "RSS feed",
+    "taggedWith": "Tagged: {tag}",
+    "taggedSubtitle": "{count, plural, =0 {No posts} one {# post} other {# posts}}"
   }
 }

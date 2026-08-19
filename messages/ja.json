@@ -7,6 +7,12 @@
       "description": "ピアツーピアのプログラマブル・キャッシュ・システム。Bitcoinの金融規律と、Ethereumのプログラマビリティを融合。物理法則に守られ、誰にも支配されません。",
       "ogDescription": "ピアツーピアのプログラマブル・キャッシュ・システム。Bitcoinの金融規律と、Ethereumのプログラマビリティを融合。"
     },
+    "blog": {
+      "title": "ブログ",
+      "description": "Parallax Protocol プロジェクトのメモ、お知らせ、技術記事。",
+      "tagTitle": "{tag} のタグが付いた記事",
+      "tagDescription": "{tag} に関する Parallax Protocol ブログの記事。"
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "Parallax、Bitcoin、Ethereumをコンセンサス、金融政策、プログラマビリティ、決済などの観点から比較します。"
@@ -143,6 +149,7 @@
     "resources": "リソース",
     "participate": "参加する",
     "faq": "FAQ",
+    "blog": "ブログ",
     "getStarted": "はじめる",
     "toggleTheme": "テーマを切り替え",
     "lightMode": "ライトモード",
@@ -206,6 +213,7 @@
       "blockExplorer": "ブロックエクスプローラー",
       "networkAtlas": "ネットワーク・アトラス",
       "faq": "FAQ",
+      "blog": "ブログ",
       "supportParallax": "Parallaxを支援する",
       "runningAFullNode": "フルノードの運用",
       "mining": "マイニング",
@@ -2243,5 +2251,22 @@
         }
       ]
     }
+  },
+  "blog": {
+    "title": "ブログ",
+    "subtitle": "Parallax プロジェクトのメモ、お知らせ、技術記事。",
+    "englishOnly": "記事は英語のみで公開されます。",
+    "topics": "トピック",
+    "empty": "まだ記事はありません。",
+    "readPost": "記事を読む",
+    "minRead": "約 {minutes} 分で読めます",
+    "by": "著者: {author}",
+    "backToBlog": "ブログに戻る",
+    "updatedOn": "{date} に更新",
+    "olderPost": "前の記事",
+    "newerPost": "次の記事",
+    "rss": "RSS フィード",
+    "taggedWith": "タグ: {tag}",
+    "taggedSubtitle": "{count, plural, =0 {記事はありません} other {# 件の記事}}"
   }
 }

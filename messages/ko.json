@@ -7,6 +7,12 @@
       "description": "P2P 프로그래머블 현금 시스템. Bitcoin의 통화 규율과 Ethereum의 프로그래머빌리티가 만나는 지점입니다. 물리 법칙으로 보호되고, 누구에게도 지배받지 않습니다.",
       "ogDescription": "P2P 프로그래머블 현금 시스템. Bitcoin의 통화 규율과 Ethereum의 프로그래머빌리티가 만나는 지점입니다."
     },
+    "blog": {
+      "title": "블로그",
+      "description": "Parallax Protocol 프로젝트의 기록, 공지, 기술 문서.",
+      "tagTitle": "{tag} 태그가 붙은 글",
+      "tagDescription": "{tag}에 관한 Parallax Protocol 블로그 글."
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "합의, 통화 정책, 프로그래머빌리티, 결제 등 여러 항목에 걸쳐 Parallax, Bitcoin, Ethereum을 한눈에 비교합니다."
@@ -143,6 +149,7 @@
     "resources": "리소스",
     "participate": "참여하기",
     "faq": "FAQ",
+    "blog": "블로그",
     "getStarted": "시작하기",
     "toggleTheme": "테마 전환",
     "lightMode": "라이트 모드",
@@ -206,6 +213,7 @@
       "blockExplorer": "블록 익스플로러",
       "networkAtlas": "네트워크 아틀라스",
       "faq": "FAQ",
+      "blog": "블로그",
       "supportParallax": "Parallax 지원하기",
       "runningAFullNode": "풀 노드 운영하기",
       "mining": "채굴",
@@ -2243,5 +2251,22 @@
         }
       ]
     }
+  },
+  "blog": {
+    "title": "블로그",
+    "subtitle": "Parallax 프로젝트의 기록, 공지, 기술 문서.",
+    "englishOnly": "글은 영어로만 게시됩니다.",
+    "topics": "주제",
+    "empty": "아직 글이 없습니다.",
+    "readPost": "글 읽기",
+    "minRead": "읽는 데 {minutes}분",
+    "by": "글쓴이: {author}",
+    "backToBlog": "블로그로 돌아가기",
+    "updatedOn": "{date}에 업데이트",
+    "olderPost": "이전 글",
+    "newerPost": "다음 글",
+    "rss": "RSS 피드",
+    "taggedWith": "태그: {tag}",
+    "taggedSubtitle": "{count, plural, =0 {글 없음} other {# 개의 글}}"
   }
 }

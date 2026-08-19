@@ -7,6 +7,12 @@
       "description": "Um sistema de dinheiro programável peer-to-peer. A disciplina monetária do Bitcoin encontra a programabilidade do Ethereum. Protegido pela física, governado por ninguém.",
       "ogDescription": "Um sistema de dinheiro programável peer-to-peer. A disciplina monetária do Bitcoin encontra a programabilidade do Ethereum."
     },
+    "blog": {
+      "title": "Blog",
+      "description": "Notas, anúncios e artigos técnicos do projeto Parallax Protocol.",
+      "tagTitle": "Publicações marcadas com {tag}",
+      "tagDescription": "Publicações do blog do Parallax Protocol sobre {tag}."
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "Uma comparação lado a lado entre Parallax, Bitcoin e Ethereum em consenso, política monetária, programabilidade, liquidação e muito mais."
@@ -143,6 +149,7 @@
     "resources": "Recursos",
     "participate": "Participe",
     "faq": "FAQ",
+    "blog": "Blog",
     "getStarted": "Comece agora",
     "toggleTheme": "Alternar tema",
     "lightMode": "Modo claro",
@@ -206,6 +213,7 @@
       "blockExplorer": "Explorador de blocos",
       "networkAtlas": "Atlas da rede",
       "faq": "FAQ",
+      "blog": "Blog",
       "supportParallax": "Apoie o Parallax",
       "runningAFullNode": "Rodando um nó completo",
       "mining": "Mineração",
@@ -2243,5 +2251,22 @@
         }
       ]
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Notas, anúncios e artigos técnicos do projeto Parallax.",
+    "englishOnly": "As publicações são divulgadas apenas em inglês.",
+    "topics": "Tópicos",
+    "empty": "Ainda não há publicações.",
+    "readPost": "Ler publicação",
+    "minRead": "{minutes} min de leitura",
+    "by": "Por {author}",
+    "backToBlog": "Voltar ao blog",
+    "updatedOn": "Atualizado em {date}",
+    "olderPost": "Publicação anterior",
+    "newerPost": "Publicação seguinte",
+    "rss": "Feed RSS",
+    "taggedWith": "Marcado: {tag}",
+    "taggedSubtitle": "{count, plural, =0 {Nenhuma publicação} one {# publicação} other {# publicações}}"
   }
 }

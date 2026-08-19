@@ -7,6 +7,12 @@
       "description": "Un sistema de dinero programable entre pares. La disciplina monetaria de Bitcoin se une a la programabilidad de Ethereum. Asegurado por la física, gobernado por nadie.",
       "ogDescription": "Un sistema de dinero programable entre pares. La disciplina monetaria de Bitcoin se encuentra con la programabilidad de Ethereum."
     },
+    "blog": {
+      "title": "Blog",
+      "description": "Notas, anuncios y artículos técnicos del proyecto Parallax Protocol.",
+      "tagTitle": "Entradas etiquetadas con {tag}",
+      "tagDescription": "Entradas del blog de Parallax Protocol sobre {tag}."
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "Una comparación lado a lado entre Parallax, Bitcoin y Ethereum en consenso, política monetaria, programabilidad, liquidación y más."
@@ -143,6 +149,7 @@
     "resources": "Recursos",
     "participate": "Participa",
     "faq": "FAQ",
+    "blog": "Blog",
     "getStarted": "Empezar",
     "toggleTheme": "Cambiar tema",
     "lightMode": "Modo claro",
@@ -206,6 +213,7 @@
       "blockExplorer": "Explorador de Bloques",
       "networkAtlas": "Atlas de la Red",
       "faq": "FAQ",
+      "blog": "Blog",
       "supportParallax": "Apoya a Parallax",
       "runningAFullNode": "Ejecutar un nodo completo",
       "mining": "Minería",
@@ -2243,5 +2251,22 @@
         }
       ]
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Notas, anuncios y artículos técnicos del proyecto Parallax.",
+    "englishOnly": "Las entradas se publican únicamente en inglés.",
+    "topics": "Temas",
+    "empty": "Todavía no hay entradas.",
+    "readPost": "Leer entrada",
+    "minRead": "{minutes} min de lectura",
+    "by": "Por {author}",
+    "backToBlog": "Volver al blog",
+    "updatedOn": "Actualizado el {date}",
+    "olderPost": "Entrada anterior",
+    "newerPost": "Entrada siguiente",
+    "rss": "Fuente RSS",
+    "taggedWith": "Etiqueta: {tag}",
+    "taggedSubtitle": "{count, plural, =0 {Ninguna entrada} one {# entrada} other {# entradas}}"
   }
 }

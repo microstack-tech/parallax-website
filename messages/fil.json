@@ -7,6 +7,12 @@
       "description": "Isang peer-to-peer programmable cash system. Ang monetary discipline ng Bitcoin na nakahalo sa programmability ng Ethereum. Sine-secure ng physics, hindi pinamamahalaan ng kahit sino.",
       "ogDescription": "Isang peer-to-peer programmable cash system. Ang monetary discipline ng Bitcoin na nakahalo sa programmability ng Ethereum."
     },
+    "blog": {
+      "title": "Blog",
+      "description": "Mga tala, anunsyo, at teknikal na artikulo mula sa proyektong Parallax Protocol.",
+      "tagTitle": "Mga post na may tag na {tag}",
+      "tagDescription": "Mga post sa blog ng Parallax Protocol tungkol sa {tag}."
+    },
     "compare": {
       "title": "Parallax vs Bitcoin vs Ethereum",
       "description": "Magkatabing paghahambing ng Parallax, Bitcoin, at Ethereum sa consensus, monetary policy, programmability, settlement, at iba pa."
@@ -143,6 +149,7 @@
     "resources": "Resources",
     "participate": "Sumali",
     "faq": "FAQ",
+    "blog": "Blog",
     "getStarted": "Magsimula",
     "toggleTheme": "I-toggle ang theme",
     "lightMode": "Light mode",
@@ -206,6 +213,7 @@
       "blockExplorer": "Block Explorer",
       "networkAtlas": "Network Atlas",
       "faq": "FAQ",
+      "blog": "Blog",
       "supportParallax": "Suportahan ang Parallax",
       "runningAFullNode": "Magpatakbo ng full node",
       "mining": "Mining",
@@ -2243,5 +2251,22 @@
         }
       ]
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Mga tala, anunsyo, at teknikal na artikulo mula sa proyektong Parallax.",
+    "englishOnly": "Ang mga post ay nailalathala sa Ingles lamang.",
+    "topics": "Mga paksa",
+    "empty": "Wala pang post.",
+    "readPost": "Basahin ang post",
+    "minRead": "{minutes} min na pagbasa",
+    "by": "Ni {author}",
+    "backToBlog": "Bumalik sa blog",
+    "updatedOn": "Na-update noong {date}",
+    "olderPost": "Naunang post",
+    "newerPost": "Susunod na post",
+    "rss": "RSS feed",
+    "taggedWith": "Tag: {tag}",
+    "taggedSubtitle": "{count, plural, =0 {Walang post} one {# post} other {# na post}}"
   }
 }

@@ -1,4 +1,5 @@
 import { routing } from "@/i18n/routing"
+import { getAllPosts, getAllTags } from "@/lib/blog"
 import type { MetadataRoute } from "next"
 
 const BASE_URL = "https://parallaxprotocol.org"
@@ -31,6 +32,7 @@ const routes = [
   "/participate/mining",
   "/participate/development",
   "/participate/support-parallax",
+  "/blog",
 ]
 
 function normalize(path: string): string {
@@ -61,6 +63,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       })
     }
+  }
+
+  // Blog posts are English-only: one URL each, under the default locale, with
+  // no language alternates (post pages set their canonical to the same URL).
+  for (const post of getAllPosts()) {
+    entries.push({
+      url: `${BASE_URL}/${routing.defaultLocale}/blog/${post.slug}`,
+      lastModified: new Date(`${post.updated ?? post.date}T00:00:00Z`),
+      changeFrequency: "yearly",
+      priority: 0.7,
+    })
+  }
+
+  for (const tag of getAllTags()) {
+    entries.push({
+      url: `${BASE_URL}/${routing.defaultLocale}/blog/tag/${tag.slug}`,
+      changeFrequency: "weekly",
+      priority: 0.4,
+    })
   }
 
   return entries

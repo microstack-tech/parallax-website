@@ -1,0 +1,80 @@
+/* Styles for rendered blog post bodies (see components/blog/mdx.tsx).
+   Everything that can be expressed as a Tailwind class lives on the MDX
+   component map; this file covers markup produced by rehype plugins. */
+
+/* Headings clear the fixed navigation when linked to by anchor. */
+.post-body :is(h1, h2, h3, h4) {
+  scroll-margin-top: 7rem;
+}
+
+/* Heading anchors (rehype-autolink-headings, behavior: "wrap"). */
+.post-body .heading-anchor {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-body .heading-anchor:hover::after {
+  content: "#";
+  margin-left: 0.4em;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+/* Fenced code blocks (rehype-pretty-code). */
+.post-body [data-rehype-pretty-code-figure] {
+  margin: 2rem 0;
+}
+
+.post-body [data-rehype-pretty-code-title] {
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--surface-elevated);
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.post-body [data-rehype-pretty-code-title] + pre {
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.post-body pre {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-elevated);
+  padding: 1.25rem 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.post-body pre code {
+  display: grid;
+  font-family: var(--font-mono);
+}
+
+.post-body pre code > [data-line] {
+  padding: 0 1.25rem;
+  border-left: 2px solid transparent;
+}
+
+/* ```js {2-3} — highlighted lines. */
+.post-body pre code > [data-highlighted-line] {
+  border-left-color: var(--gold);
+  background: var(--gold-muted);
+}
+
+/* Dual-theme tokens: rehype-pretty-code emits both, the mode picks one. */
+.post-body [data-theme],
+.post-body [data-theme] span {
+  color: var(--shiki-light);
+}
+
+.dark .post-body [data-theme],
+.dark .post-body [data-theme] span {
+  color: var(--shiki-dark);
+}

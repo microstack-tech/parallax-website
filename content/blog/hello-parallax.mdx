@@ -1,0 +1,107 @@
+---
+title: "How to write a post"
+date: 2026-08-19
+summary: "Every feature the blog supports, in one file: frontmatter, markdown, images, video, embeds, callouts, and code."
+author: "Parallax Protocol"
+tags: ["meta"]
+cover: /the-death-of-socrates.png
+coverAlt: "The Death of Socrates, by Jacques-Louis David"
+draft: true
+---
+
+This file is a draft. Drafts render on the dev server and are excluded from
+production builds, so this page exists as a reference without ever being
+published. Copy it, delete the `draft: true` line, and write.
+
+## Frontmatter
+
+Every post starts with a frontmatter block. `title`, `date`, and `summary` are
+required — a build fails loudly if one is missing, naming the file at fault.
+
+| Field      | Required | Notes                                              |
+| ---------- | -------- | -------------------------------------------------- |
+| `title`    | yes      | Shown as the page heading and the browser title.     |
+| `date`     | yes      | `YYYY-MM-DD`. Sets the ordering of the index.        |
+| `summary`  | yes      | Card text, meta description, and RSS description.    |
+| `author`   | no       | Defaults to no byline.                               |
+| `tags`     | no       | Each tag gets its own page at `/blog/tag/<tag>`.      |
+| `cover`    | no       | Path under `public/`, e.g. `/blog/my-post/cover.png`. |
+| `coverAlt` | no       | Alt text for the cover.                              |
+| `updated`  | no       | `YYYY-MM-DD`. Shown at the foot of the post.          |
+| `draft`    | no       | `true` keeps the post out of production builds.       |
+
+## Markdown
+
+The usual markdown works: **bold**, *italic*, `inline code`, [links to other
+pages](/introduction/protocol/overview) and [links off-site](https://github.com/ParallaxProtocol)
+— internal links keep the reader's locale, external ones open in a new tab.
+
+> Block quotes are set in the serif face against a gold rule.
+
+- Bullet lists
+- Numbered lists
+- Tables, footnotes, and strikethrough via GitHub-flavoured markdown
+
+## Images
+
+Reference an image by its path under `public/`. The optional quoted title
+becomes the caption, and the intrinsic size is read at build time so the page
+never shifts as images load.
+
+![The Death of Socrates, by Jacques-Louis David](/the-death-of-socrates.png "Costly commitment: cheap talk is free, hemlock is not.")
+
+## Video
+
+Self-hosted video sits next to the post's images in `public/blog/<slug>/`:
+
+```mdx
+<Video
+  src="/blog/my-post/demo.mp4"
+  poster="/blog/my-post/demo-poster.png"
+  caption="A caption under the player."
+/>
+```
+
+YouTube embeds load nothing from Google until the reader presses play — until
+then the page shows a thumbnail, so a post costs no third-party requests:
+
+```mdx
+<YouTube id="dQw4w9WgXcQ" title="Video title" caption="Optional caption." />
+```
+
+Anything else with an embed URL — Vimeo, a hosted player, a dashboard — goes
+through `Embed`:
+
+```mdx
+<Embed src="https://player.vimeo.com/video/76979871" title="Vimeo" />
+```
+
+## Callouts
+
+<Callout title="Note">
+  Use a callout for an aside the reader can skip. Pass `type="warning"` for a
+  caveat that changes what they should do.
+</Callout>
+
+## Code
+
+Fenced blocks are highlighted at build time — no JavaScript ships to the
+reader. Add a title and highlight lines with the fence metadata:
+
+```bash title="Run a node"
+parallax --http --http.api eth,net,web3
+```
+
+```js title="Chain configuration" {2-3}
+const parallax = {
+  chainId: 2110,
+  currency: "LAX",
+  rpc: "https://rpc.parallaxprotocol.org",
+}
+```
+
+## Publishing
+
+Drop the file in `content/blog/`, put its media in `public/blog/<slug>/`, and
+commit. The index page, the tag pages, the RSS feed at `/blog/rss.xml`, and the
+sitemap all pick it up from the file itself.
