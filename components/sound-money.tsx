@@ -11,6 +11,7 @@ import {
   Users,
   Zap,
 } from "lucide-react"
+import { LucideChevronRight } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { FadeIn } from "./fade-in"
 
@@ -90,18 +91,14 @@ export function SoundMoney() {
 
         <FadeIn>
           <div className="mt-16 flex flex-col items-center gap-3">
-            <Button
-              asChild
-              variant="outline"
-              className="group border-brand/30 hover:border-brand hover:bg-brand/5 text-foreground px-6 py-5 no-underline hover:no-underline"
-            >
-              <Link href="/compare">
-                <span className="font-mono text-xs uppercase tracking-[0.15em]">
-                  {t("cta")}
-                </span>
-                <ArrowRight className="size-4 ml-1 text-brand transition-transform group-hover:translate-x-0.5" />
+
+            <Button className="w-full sm:w-fit brand-gradient text-brand-foreground hover:opacity-90" asChild>
+              <Link href={"/compare"}>
+                {t("cta")}
+                <LucideChevronRight />
               </Link>
             </Button>
+
             <p className="text-xs text-muted-foreground">{t("ctaSubtitle")}</p>
           </div>
         </FadeIn>

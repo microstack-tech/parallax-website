@@ -54,7 +54,7 @@ export function Hero() {
       {/* Content */}
       <div className="absolute flex flex-col h-full w-full px-6 sm:px-8 items-center z-[3]">
         {/* Title group — pinned to top area, above the black hole */}
-        <div className="flex flex-col items-center w-full max-w-7xl pt-[18vh] sm:pt-[15vh]">
+        <div className="flex flex-col items-center w-full max-w-7xl pt-[12vh] sm:pt-[10vh]">
           <motion.h1
             className="text-4xl md:text-6xl lg:text-8xl font-semibold tracking-tight text-center text-white font-sans"
             initial={{ opacity: 0, y: 20 }}

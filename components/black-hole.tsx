@@ -40,7 +40,7 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
     scene.fog = new THREE.FogExp2(0x000000, 1);
 
     const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 4000);
-    camera.position.set(-8, 5.0, 8);
+    camera.position.set(-18, 5.0, 18);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
     renderer.setSize(width, height);
