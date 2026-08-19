@@ -19,7 +19,7 @@ import { useTranslations } from "next-intl"
 import MainMotion from "./main-motion"
 import PageHeader from "./page-header"
 import { Button } from "./ui/button"
-import { FadeIn } from "./fade-in"
+import { FadeIn, Hairline } from "./fade-in"
 
 type RawAxiom = {
   id: string
@@ -106,7 +106,7 @@ export function Doctrine() {
               </div>
             </header>
 
-            <div className="mt-12 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+            <Hairline className="mt-12" />
 
             <section className="mt-12 space-y-10">
               <div className="space-y-4">
@@ -125,7 +125,7 @@ export function Doctrine() {
                 </p>
               </div>
 
-              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+              <Hairline />
 
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">{t("purpose.heading")}</h3>
@@ -142,7 +142,7 @@ export function Doctrine() {
                 </p>
               </div>
 
-              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+              <Hairline />
 
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-foreground">{t("scope.heading")}</h3>
@@ -157,7 +157,7 @@ export function Doctrine() {
                 </p>
               </div>
 
-              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+              <Hairline />
 
               <div className="space-y-16">
                 {axioms.map(({ id, title, subtitle, commentary }) => {
@@ -190,7 +190,7 @@ export function Doctrine() {
                           </div>
                         </div>
 
-                        <div className="mt-16 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                        <Hairline className="mt-16" />
                       </article>
                     </FadeIn>
                   )

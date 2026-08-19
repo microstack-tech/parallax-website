@@ -48,7 +48,7 @@ export default function GettingStarted() {
 
         {activeTab === "use" && (
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+            <Card className="group transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-4">
                   <BookOpen className="size-6 text-brand" />
@@ -67,7 +67,7 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+            <Card className="group transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <Wallet className="size-6 text-brand" />
@@ -88,7 +88,7 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+            <Card className="group transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <HandCoins className="size-6 text-brand" />
@@ -115,7 +115,7 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+            <Card className="group transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <Store className="size-6 text-brand" />
@@ -140,7 +140,7 @@ export default function GettingStarted() {
 
         {activeTab === "accept" && (
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+            <Card className="group transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <BookOpen className="size-6 text-brand" />
@@ -159,7 +159,7 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+            <Card className="group transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <Building className="size-6 text-brand" />
@@ -180,7 +180,7 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+            <Card className="group transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <Scale className="size-6 text-brand" />
@@ -201,7 +201,7 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+            <Card className="group transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <Eye className="size-6 text-brand" />

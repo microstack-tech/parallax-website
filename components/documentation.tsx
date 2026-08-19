@@ -39,7 +39,7 @@ export function Documentation() {
             return (
               <FadeIn key={doc.key} delay={i * 0.1}>
                 <LinkComponent {...linkProps} className="group block h-full">
-                  <Card className="h-full transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+                  <Card className="h-full transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
                     <CardHeader>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">

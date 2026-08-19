@@ -2,6 +2,7 @@
 
 import { AppWindow, ChevronDown, ExternalLink, TerminalSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { FaGithub } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -202,22 +203,44 @@ export default function ClientReleases() {
               {t("intro")}
             </p>
 
-            <div className="flex gap-2 bg-surface-elevated border border-border p-2 w-fit mb-8">
+            <div className="flex gap-2 bg-surface-elevated border border-border rounded-lg p-2 w-fit mb-8">
+              {/* The active plate is one shared element that glides between
+                  the two buttons (layoutId) instead of snapping. */}
               <Button
                 onClick={() => setActiveTab("gui")}
-                className={activeTab === "gui" ? "brand-gradient text-brand-foreground hover:opacity-90" : ""}
-                variant={activeTab === "gui" ? "default" : "secondary"}
+                variant="ghost"
+                className={cn("relative", activeTab === "gui" ? "text-brand-foreground hover:bg-transparent" : "text-muted-foreground")}
               >
-                <AppWindow className="size-3.5" />
-                {t("desktop")}
+                {activeTab === "gui" && (
+                  <motion.span
+                    layoutId="releases-tab-plate"
+                    aria-hidden
+                    className="absolute inset-0 rounded-lg brand-gradient"
+                    transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                  />
+                )}
+                <span className="relative flex items-center gap-2">
+                  <AppWindow className="size-3.5" />
+                  {t("desktop")}
+                </span>
               </Button>
               <Button
                 onClick={() => setActiveTab("cli")}
-                className={activeTab === "cli" ? "brand-gradient text-brand-foreground hover:opacity-90" : ""}
-                variant={activeTab === "cli" ? "default" : "secondary"}
+                variant="ghost"
+                className={cn("relative", activeTab === "cli" ? "text-brand-foreground hover:bg-transparent" : "text-muted-foreground")}
               >
-                <TerminalSquare className="size-3.5" />
-                {t("cli")}
+                {activeTab === "cli" && (
+                  <motion.span
+                    layoutId="releases-tab-plate"
+                    aria-hidden
+                    className="absolute inset-0 rounded-lg brand-gradient"
+                    transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                  />
+                )}
+                <span className="relative flex items-center gap-2">
+                  <TerminalSquare className="size-3.5" />
+                  {t("cli")}
+                </span>
               </Button>
             </div>
 

@@ -1,17 +1,57 @@
+"use client"
+
 import * as React from "react"
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+// Degrees of tilt toward the pointer at the card's edge. A nudge, not a flip:
+// the plate should feel mounted on a pivot, still reading as a flat surface.
+const MAX_TILT = 1.5
+
+// motion.div's drag/animation callbacks collide with the DOM's, so those
+// native handlers can't pass through.
+type CardProps = Omit<
+  React.ComponentProps<"div">,
+  "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart"
+>
+
+function Card({ className, children, ...props }: CardProps) {
+  const reduceMotion = useReducedMotion()
+  // Pointer position within the card, 0..1 on each axis; 0.5 is rest.
+  const px = useMotionValue(0.5)
+  const py = useMotionValue(0.5)
+  const spring = { stiffness: 300, damping: 30 } as const
+  const rotateX = useSpring(useTransform(py, [0, 1], [MAX_TILT, -MAX_TILT]), spring)
+  const rotateY = useSpring(useTransform(px, [0, 1], [-MAX_TILT, MAX_TILT]), spring)
+
+  function onPointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType !== "mouse") return
+    const rect = e.currentTarget.getBoundingClientRect()
+    px.set((e.clientX - rect.left) / rect.width)
+    py.set((e.clientY - rect.top) / rect.height)
+  }
+
+  function onPointerLeave() {
+    px.set(0.5)
+    py.set(0.5)
+  }
+
   return (
-    <div
+    <motion.div
       data-slot="card"
+      onPointerMove={reduceMotion ? undefined : onPointerMove}
+      onPointerLeave={reduceMotion ? undefined : onPointerLeave}
+      style={reduceMotion ? undefined : { rotateX, rotateY, transformPerspective: 1000 }}
       className={cn(
-        "bg-card text-card-foreground flex flex-col rounded-none border py-2 justify-between",
+        "bg-card text-card-foreground flex flex-col rounded-none border py-2 justify-between relative group/card transition-colors duration-300 hover:border-foreground/20",
         className
       )}
       {...props}
-    />
+    >
+      <span aria-hidden className="plate-brackets group-hover/card:opacity-100" />
+      {children}
+    </motion.div>
   )
 }
 

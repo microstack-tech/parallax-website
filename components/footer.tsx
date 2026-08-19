@@ -1,3 +1,4 @@
+import { Hairline } from "@/components/fade-in"
 import { Link } from "@/i18n/navigation"
 import { LineChart } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -57,7 +58,7 @@ export function Footer() {
 
   return (
     <footer className="relative w-full">
-      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <Hairline />
 
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
@@ -127,7 +128,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
+          <Hairline className="mb-8" />
 
           <div className="flex items-center justify-center gap-2 mb-6">
             <LineChart className="size-3.5 text-muted-foreground" />

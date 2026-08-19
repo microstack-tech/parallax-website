@@ -34,7 +34,7 @@ export function AudienceRouter() {
             return (
               <FadeIn key={audience.key} delay={i * 0.1}>
                 <Link href={audience.href} className="group block h-full">
-                  <Card className="h-full transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
+                  <Card className="h-full transition-[border-color,box-shadow] duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
                     <CardHeader>
                       <div className="flex items-center gap-4">
                         <Icon className="size-6 shrink-0 text-muted-foreground group-hover:text-brand transition-colors" />

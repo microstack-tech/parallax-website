@@ -209,3 +209,38 @@
   background-image: var(--brand-gradient);
 }
 
+/* Instrument corner brackets: four brand ticks that surface over a plate's
+   corners on hover — the observatory "target acquired" mark. Rendered as a
+   decorative overlay by ui/card.tsx; inset -1px sits them on the border. */
+.plate-brackets {
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  background-image:
+    linear-gradient(var(--brand), var(--brand)),
+    linear-gradient(var(--brand), var(--brand)),
+    linear-gradient(var(--brand), var(--brand)),
+    linear-gradient(var(--brand), var(--brand)),
+    linear-gradient(var(--brand), var(--brand)),
+    linear-gradient(var(--brand), var(--brand)),
+    linear-gradient(var(--brand), var(--brand)),
+    linear-gradient(var(--brand), var(--brand));
+  background-repeat: no-repeat;
+  background-size:
+    10px 1px, 1px 10px,
+    10px 1px, 1px 10px,
+    10px 1px, 1px 10px,
+    10px 1px, 1px 10px;
+  background-position:
+    left top, left top,
+    right top, right top,
+    left bottom, left bottom,
+    right bottom, right bottom;
+}
+@media (prefers-reduced-motion: reduce) {
+  .plate-brackets {
+    transition: none;
+  }
+}

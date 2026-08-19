@@ -114,7 +114,7 @@ export default function Page() {
   const pipelineSteps = t.raw("pipeline.steps") as string[];
 
   const ParamsTable = () => (
-    <Card className="hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300">
+    <Card className="hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-[border-color,box-shadow] duration-300">
       <CardHeader>
         <ChevronRight className="text-brand" />
         <CardTitle>{t("params.title")}</CardTitle>
@@ -186,7 +186,7 @@ export default function Page() {
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card className="hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300">
+            <Card className="hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-[border-color,box-shadow] duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
                   <s.Icon className="size-6 text-brand" />

@@ -80,7 +80,7 @@ function ExchangeCard({
       rel="noopener"
       className="block h-full"
     >
-      <Card className="group relative h-full border-l-2 border-l-brand/30 hover:border-l-brand hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300 cursor-pointer">
+      <Card className="group relative h-full border-l-2 border-l-brand/30 hover:border-l-brand hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-[border-color,box-shadow] duration-300 cursor-pointer">
         <CardHeader>
           <div className="flex items-start justify-between gap-4 w-full">
             <div className="flex flex-col gap-2">

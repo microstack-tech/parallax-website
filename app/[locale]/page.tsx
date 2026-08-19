@@ -9,9 +9,10 @@ import { Parallax } from "@/components/parallax";
 import { NetworkStats } from "@/components/network-stats";
 import { SoundMoney } from "@/components/sound-money";
 import { motion } from "framer-motion";
+import { Hairline } from "@/components/fade-in";
 
 function SectionDivider() {
-  return <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+  return <Hairline />
 }
 
 export default function Home() {

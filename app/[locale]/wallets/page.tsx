@@ -82,7 +82,7 @@ export default async function Page() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {wallets.map((wallet) => (
             <a key={wallet.name} href={wallet.url} target="_blank" rel="noopener" className="block">
-              <Card className="group relative h-full hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300 cursor-pointer">
+              <Card className="group relative h-full hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-[border-color,box-shadow] duration-300 cursor-pointer">
                 {"recommended" in wallet && wallet.recommended && (
                   <Badge className="absolute top-3 right-3 bg-brand/15 text-brand border-brand/30 hover:bg-brand/20 text-[0.65rem] font-medium">
                     {t("beginnerFriendly")}
