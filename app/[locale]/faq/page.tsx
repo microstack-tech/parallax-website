@@ -64,7 +64,7 @@ export default function FAQPage() {
                   placeholder={t("search.placeholder")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-9 py-2.5 text-sm bg-background border border-border rounded-md focus:outline-none focus:ring-1 focus:ring-gold/50 focus:border-gold/50 placeholder:text-muted-foreground/60"
+                  className="w-full pl-10 pr-9 py-2.5 text-sm bg-background border border-border rounded-md focus:outline-none focus:ring-1 focus:ring-brand/50 focus:border-brand/50 placeholder:text-muted-foreground/60"
                 />
                 {searchQuery && (
                   <button
@@ -87,7 +87,7 @@ export default function FAQPage() {
                     }}
                     variant={"ghost"}
                     className={`w-full text-base py-5 cursor-pointer justify-start text-left ${!isSearching && activeCategory === category.id
-                      ? "bg-gold/10 text-gold font-semibold hover:bg-gold/15 hover:text-gold border-l-2 border-gold"
+                      ? "bg-brand/10 text-brand font-semibold hover:bg-brand/15 hover:text-brand border-l-2 border-brand"
                       : ""
                       }`}
                   >
@@ -116,7 +116,7 @@ export default function FAQPage() {
                   {searchResults?.map((faq, index) => (
                     <div key={`search-${index}`} className="overflow-hidden">
                       <h3 className="inline-flex items-center gap-4 px-4 py-4 font-semibold text-foreground text-balance text-lg">
-                        <LucideChevronRight className="text-gold" />
+                        <LucideChevronRight className="text-brand" />
                         {faq.question}
                       </h3>
                       <div className="px-6 pb-4 border-t border-border">
@@ -138,7 +138,7 @@ export default function FAQPage() {
                   {faqData[activeCategory].map((faq, index) => (
                     <div key={`${activeCategory}-${index}`} className="overflow-hidden">
                       <h3 className="inline-flex items-center gap-4 px-4 py-4 font-semibold text-foreground text-balance text-lg">
-                        <LucideChevronRight className="text-gold" />
+                        <LucideChevronRight className="text-brand" />
                         {faq.question}
                       </h3>
                       <div className="px-6 pb-4 border-t border-border">

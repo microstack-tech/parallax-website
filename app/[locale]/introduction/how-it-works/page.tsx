@@ -29,7 +29,7 @@ export default function ParallaxHowItWorks() {
       <GridView items={topics} />
       <div className="mb-8 text-center">
         <div className="flex justify-center gap-4 mb-8 px-6">
-          <Button className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+          <Button className="w-full sm:w-fit brand-gradient text-brand-foreground hover:opacity-90" asChild>
             <Link href={'/introduction/protocol/overview'}>
               {t("learnMore")}
               <ChevronRight />

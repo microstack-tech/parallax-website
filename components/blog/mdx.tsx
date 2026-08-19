@@ -70,7 +70,7 @@ function PostImage({ src, alt, title }: ElementProps<"img">) {
 function PostLink({ href, children, ...props }: ElementProps<"a">) {
   const target = typeof href === "string" ? href : ""
   const linkClass =
-    "text-foreground underline decoration-gold/40 underline-offset-4 transition-colors hover:decoration-gold"
+    "text-foreground underline decoration-brand/40 underline-offset-4 transition-colors hover:decoration-brand"
 
   // Heading anchors added by rehype-autolink-headings, and in-page jumps.
   if (target.startsWith("#")) {
@@ -117,15 +117,15 @@ const components = {
   a: PostLink,
   img: PostImage,
   ul: (props: ElementProps<"ul">) => (
-    <ul className="my-6 ml-5 list-disc space-y-2 text-lg text-muted-foreground marker:text-gold" {...props} />
+    <ul className="my-6 ml-5 list-disc space-y-2 text-lg text-muted-foreground marker:text-brand" {...props} />
   ),
   ol: (props: ElementProps<"ol">) => (
-    <ol className="my-6 ml-5 list-decimal space-y-2 text-lg text-muted-foreground marker:text-gold" {...props} />
+    <ol className="my-6 ml-5 list-decimal space-y-2 text-lg text-muted-foreground marker:text-brand" {...props} />
   ),
   li: (props: ElementProps<"li">) => <li className="leading-relaxed pl-1" {...props} />,
   blockquote: (props: ElementProps<"blockquote">) => (
     <blockquote
-      className="my-8 border-l-2 border-gold pl-6 text-lg italic text-foreground [&>p]:text-foreground"
+      className="my-8 border-l-2 border-brand pl-6 text-lg italic text-foreground [&>p]:text-foreground"
       {...props}
     />
   ),

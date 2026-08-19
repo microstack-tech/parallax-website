@@ -16,7 +16,7 @@
 .post-body .heading-anchor:hover::after {
   content: "#";
   margin-left: 0.4em;
-  color: var(--gold);
+  color: var(--brand);
   font-weight: 400;
 }
 
@@ -64,8 +64,8 @@
 
 /* ```js {2-3} — highlighted lines. */
 .post-body pre code > [data-highlighted-line] {
-  border-left-color: var(--gold);
-  background: var(--gold-muted);
+  border-left-color: var(--brand);
+  background: var(--brand-muted);
 }
 
 /* Dual-theme tokens: rehype-pretty-code emits both, the mode picks one. */

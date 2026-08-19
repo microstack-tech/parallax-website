@@ -168,7 +168,7 @@ export function Doctrine() {
                         <div className="flex items-start gap-4">
                           <div className="min-w-0">
                             <h4 className="text-xl font-semibold leading-snug text-foreground">
-                              <span className="text-2xl font-serif text-gold mr-2">
+                              <span className="text-2xl font-serif text-brand mr-2">
                                 {id}
                               </span>
                               {title}
@@ -176,10 +176,10 @@ export function Doctrine() {
 
                             <p className="mt-3 text-base text-foreground/90 leading-relaxed">{subtitle}</p>
 
-                            <div className="mt-6 border-l-2 border-gold bg-card/50 p-6">
+                            <div className="mt-6 border-l-2 border-brand bg-card/50 p-6">
                               <div className="flex items-center gap-2 text-sm font-medium text-foreground">
                                 <span className="inline-flex size-6 items-center justify-center">
-                                  <Icon className="size-4 text-gold" />
+                                  <Icon className="size-4 text-brand" />
                                 </span>
                                 {t("commentaryLabel")}
                               </div>

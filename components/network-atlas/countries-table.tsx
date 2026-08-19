@@ -91,7 +91,7 @@ export default async function CountriesTable({ nodes }: Props) {
                     <div className="flex items-center gap-3 justify-end">
                       <div className="relative h-1 w-full max-w-[160px] bg-border/60">
                         <div
-                          className="absolute inset-y-0 left-0 bg-gold"
+                          className="absolute inset-y-0 left-0 bg-brand"
                           style={{ width: `${pct}%` }}
                         />
                       </div>

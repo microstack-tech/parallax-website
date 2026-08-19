@@ -13,9 +13,9 @@ export default function PageHeader({
   return (
     <div className="relative mt-24 py-23.5 px-4 md:px-0 text-center">
       <div className="flex flex-col gap-8 max-w-4xl items-center mx-auto">
-        {/* Gold accent line */}
+        {/* Brand accent rule */}
         <motion.div
-          className="w-12 h-0.5 bg-gold"
+          className="w-12 h-0.5 brand-gradient"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}

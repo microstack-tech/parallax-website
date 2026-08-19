@@ -42,16 +42,16 @@ export function SoundMoney() {
           </div>
         </FadeIn>
 
-        {/* Primary features — large cards with gold accent */}
+        {/* Primary features — large cards with brand accent */}
         <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2">
           {primaryFeatures.map((feature, i) => {
             const Icon = feature.icon
             return (
               <FadeIn key={feature.key} delay={i * 0.1}>
-                <Card className="border-l-2 border-l-gold bg-card/50 backdrop-blur-sm">
+                <Card className="border-l-2 border-l-brand bg-card/50 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center gap-4">
-                      <Icon className="size-7 text-gold" />
+                      <Icon className="size-7 text-brand" />
                       <CardTitle className="text-sm font-medium font-mono uppercase tracking-[0.15em]">
                         {t(`${feature.key}.title` as "hardCap.title")}
                       </CardTitle>
@@ -93,13 +93,13 @@ export function SoundMoney() {
             <Button
               asChild
               variant="outline"
-              className="group border-gold/30 hover:border-gold hover:bg-gold/5 text-foreground px-6 py-5 no-underline hover:no-underline"
+              className="group border-brand/30 hover:border-brand hover:bg-brand/5 text-foreground px-6 py-5 no-underline hover:no-underline"
             >
               <Link href="/compare">
                 <span className="font-mono text-xs uppercase tracking-[0.15em]">
                   {t("cta")}
                 </span>
-                <ArrowRight className="size-4 ml-1 text-gold transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="size-4 ml-1 text-brand transition-transform group-hover:translate-x-0.5" />
               </Link>
             </Button>
             <p className="text-xs text-muted-foreground">{t("ctaSubtitle")}</p>

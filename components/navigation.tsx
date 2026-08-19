@@ -181,7 +181,7 @@ export function Navigation() {
               )}
             </NavigationMenuList>
             <div className="flex items-center gap-2 ml-12">
-              <Button className="px-8 bg-gold !text-gold-foreground hover:bg-gold/90" asChild>
+              <Button className="px-8 brand-gradient !text-brand-foreground hover:opacity-90" asChild>
                 <Link href={"/introduction/getting-started"}>
                   {t("getStarted")}
                 </Link>
@@ -263,13 +263,13 @@ export function Navigation() {
                                 key={`mob_sub_${item.name}_${sub.name}`}
                                 href={sub.href ?? "#"}
                                 className={cn("ml-2 px-4 py-2 text-base font-medium text-accent-foreground/70 hover:text-foreground hover:bg-muted transition-colors border-l flex items-center justify-between", {
-                                  "bg-gold text-gold-foreground": sub.href === pathname,
+                                  "bg-brand text-brand-foreground": sub.href === pathname,
                                 })}
                                 onClick={() => setIsOpen(false)}
                               >
                                 {sub.name}
                                 {sub.badge && (
-                                  <span className="inline-flex bg-gold px-1.5 py-0.5 text-[10px] font-sans font-semibold leading-none text-gold-foreground uppercase">
+                                  <span className="inline-flex bg-brand px-1.5 py-0.5 text-[10px] font-sans font-semibold leading-none text-brand-foreground uppercase">
                                     {sub.badge}
                                   </span>
                                 )}
@@ -284,7 +284,7 @@ export function Navigation() {
                       key={`mob_${item.name}`}
                       href={item.href ?? "#"}
                       className={cn("flex items-center gap-2 px-3 py-2 text-base font-medium text-accent-foreground hover:text-foreground hover:bg-muted transition-colors", {
-                        "bg-gold text-gold-foreground": item.href === pathname,
+                        "bg-brand text-brand-foreground": item.href === pathname,
                       })}
                       onClick={() => setIsOpen(false)}
                     >
@@ -339,7 +339,7 @@ function ListItem({
         <div className="text-sm leading-none font-medium flex items-center justify-between gap-2">
           <span className="group-hover/navlink:underline">{title}</span>
           {badge && (
-            <span className="bg-gold px-1.5 py-0.5 text-[10px] font-sans font-semibold leading-none text-gold-foreground uppercase inline-block">
+            <span className="bg-brand px-1.5 py-0.5 text-[10px] font-sans font-semibold leading-none text-brand-foreground uppercase inline-block">
               {badge}
             </span>
           )}

@@ -40,7 +40,7 @@ export default function AddNetworkSection() {
     return (
       <div className="bg-surface-elevated border border-border p-8 sm:p-12 text-center mb-8">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <Check className="h-5 w-5 text-gold" />
+          <Check className="h-5 w-5 text-brand" />
           <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">
             {t("connectedTitle")}
           </h3>
@@ -62,7 +62,7 @@ export default function AddNetworkSection() {
       </p>
       <div className="flex flex-col items-center gap-3">
         <Button
-          className="bg-gold text-gold-foreground hover:bg-gold/90"
+          className="brand-gradient text-brand-foreground hover:opacity-90"
           onClick={handleAdd}
           disabled={status === "adding" || status === "success"}
         >

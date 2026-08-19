@@ -19,14 +19,14 @@ export function GenesisProof() {
           <p className="mt-4 text-sm text-muted-foreground max-w-xl mx-auto">{t("headlineNote")}</p>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <div className="mt-8 border border-border border-l-2 border-l-gold bg-card/50 px-4 py-3 text-left">
+          <div className="mt-8 border border-border border-l-2 border-l-brand bg-card/50 px-4 py-3 text-left">
             <p className="text-xs font-mono uppercase tracking-[0.15em] text-muted-foreground">{t("hashLabel")}</p>
             <p className="mt-1 font-mono text-xs sm:text-sm text-foreground/80 break-all">{GENESIS_HASH}</p>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">{t("supplyNote")}</p>
           <Link
             href="/introduction/verify"
-            className="mt-6 inline-flex items-center gap-1 text-sm text-gold hover:text-gold/80 transition-colors"
+            className="mt-6 inline-flex items-center gap-1 text-sm text-brand hover:text-brand/80 transition-colors"
           >
             {t("cta")}
             <LucideChevronRight className="size-4" />

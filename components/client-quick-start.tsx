@@ -47,7 +47,7 @@ function CodeBlock({ children, copiedLabel, copyLabel }: { children: string; cop
         aria-label={copied ? copiedLabel : copyLabel}
         className="absolute top-1.5 right-1.5 inline-flex items-center justify-center size-7 text-muted-foreground hover:text-foreground hover:bg-surface-elevated transition-colors cursor-pointer"
       >
-        {copied ? <Check className="size-3.5 text-gold" /> : <Copy className="size-3.5" />}
+        {copied ? <Check className="size-3.5 text-brand" /> : <Copy className="size-3.5" />}
       </button>
     </div>
   );
@@ -125,11 +125,11 @@ export default function ClientQuickStart() {
         onClick={() => setOpen((prev) => !prev)}
         className="w-full flex items-center gap-3 cursor-pointer group"
       >
-        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">{t("heading")}</h3>
+        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-brand transition-colors">{t("heading")}</h3>
         <div className="flex-1 h-px bg-border" />
         {detectedLabel && (
           <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
-            {t("detected")} · <span className="text-gold">{detectedLabel}</span>
+            {t("detected")} · <span className="text-brand">{detectedLabel}</span>
           </span>
         )}
         <ChevronDown className={`size-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
@@ -151,21 +151,21 @@ export default function ClientQuickStart() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border">
               <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-border">
-                <div className="text-xs font-mono text-gold mb-3">{t("step1Label")}</div>
+                <div className="text-xs font-mono text-brand mb-3">{t("step1Label")}</div>
                 <h4 className="text-base text-foreground mb-3">{extractTitle}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{extractBody}</p>
                 {extractCmd && <CodeBlock copiedLabel={t("copied")} copyLabel={t("copyCommand")}>{extractCmd}</CodeBlock>}
               </div>
 
               <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-border">
-                <div className="text-xs font-mono text-gold mb-3">{t("step2Label")}</div>
+                <div className="text-xs font-mono text-brand mb-3">{t("step2Label")}</div>
                 <h4 className="text-base text-foreground mb-3">{runTitle}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{runBody}</p>
                 {runCmd && <CodeBlock copiedLabel={t("copied")} copyLabel={t("copyCommand")}>{runCmd}</CodeBlock>}
               </div>
 
               <div className="p-6 sm:p-8">
-                <div className="text-xs font-mono text-gold mb-3">{t("step3Label")}</div>
+                <div className="text-xs font-mono text-brand mb-3">{t("step3Label")}</div>
                 <h4 className="text-base text-foreground mb-3">{t("step3Title")}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {t("step3Body")}

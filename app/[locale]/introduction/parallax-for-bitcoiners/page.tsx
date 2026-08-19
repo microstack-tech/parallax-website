@@ -27,7 +27,7 @@ function Section({
     <section className="mx-auto max-w-7xl px-6 sm:px-8 xl:px-0 py-10">
       <FadeIn>
         <div className="max-w-2xl">
-          <div className="w-12 h-0.5 bg-gold mb-6" />
+          <div className="w-12 h-0.5 bg-brand mb-6" />
           <h2 className="text-2xl sm:text-3xl text-foreground">{heading}</h2>
           <p className="mt-3 text-muted-foreground">{tagline}</p>
         </div>
@@ -37,7 +37,7 @@ function Section({
           <FadeIn key={item.title} delay={i * 0.05}>
             <Card className="h-full">
               <CardHeader className="flex justify-start items-center gap-4">
-                <Icon className="size-6 shrink-0 text-gold" />
+                <Icon className="size-6 shrink-0 text-brand" />
                 <CardTitle>{item.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-muted-foreground">
@@ -86,7 +86,7 @@ export default function ParallaxForBitcoiners() {
       />
       <div className="mb-16 mt-6 text-center">
         <div className="flex flex-col sm:flex-row justify-center gap-4 px-6">
-          <Button className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+          <Button className="w-full sm:w-fit brand-gradient text-brand-foreground hover:opacity-90" asChild>
             <Link href={"/introduction/verify"}>
               {t("ctaVerify")}
               <ChevronRight />

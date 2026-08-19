@@ -86,12 +86,12 @@ function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allRe
               <div className="sm:col-span-3 flex items-center gap-2">
                 <span className="font-mono text-sm text-foreground">{release.tag_name}</span>
                 {isLatestStable && (
-                  <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-gold border border-gold/40 px-1.5 py-0.5">
+                  <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-brand border border-brand/40 px-1.5 py-0.5">
                     {t("latestBadge")}
                   </span>
                 )}
                 {release.prerelease && (
-                  <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-gold border border-gold/40 px-1.5 py-0.5">
+                  <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-brand border border-brand/40 px-1.5 py-0.5">
                     {t("preBadge")}
                   </span>
                 )}
@@ -126,7 +126,7 @@ function ReleaseTable({ releases, allReleasesUrl }: { releases: Release[]; allRe
                         href={asset.browser_download_url}
                         target="_blank"
                         rel="noopener"
-                        className="text-[11px] font-mono text-muted-foreground hover:text-gold transition-colors"
+                        className="text-[11px] font-mono text-muted-foreground hover:text-brand transition-colors"
                       >
                         {asset.name}
                         <span className="text-muted-foreground/60"> · {formatSize(asset.size)}</span>
@@ -183,7 +183,7 @@ export default function ClientReleases() {
         onClick={() => setOpen((prev) => !prev)}
         className="w-full flex items-center gap-3 cursor-pointer group"
       >
-        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">{t("heading")}</h3>
+        <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-brand transition-colors">{t("heading")}</h3>
         <div className="flex-1 h-px bg-border" />
         <ChevronDown className={`size-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
@@ -205,7 +205,7 @@ export default function ClientReleases() {
             <div className="flex gap-2 bg-surface-elevated border border-border p-2 w-fit mb-8">
               <Button
                 onClick={() => setActiveTab("gui")}
-                className={activeTab === "gui" ? "bg-gold text-gold-foreground hover:bg-gold/90" : ""}
+                className={activeTab === "gui" ? "brand-gradient text-brand-foreground hover:opacity-90" : ""}
                 variant={activeTab === "gui" ? "default" : "secondary"}
               >
                 <AppWindow className="size-3.5" />
@@ -213,7 +213,7 @@ export default function ClientReleases() {
               </Button>
               <Button
                 onClick={() => setActiveTab("cli")}
-                className={activeTab === "cli" ? "bg-gold text-gold-foreground hover:bg-gold/90" : ""}
+                className={activeTab === "cli" ? "brand-gradient text-brand-foreground hover:opacity-90" : ""}
                 variant={activeTab === "cli" ? "default" : "secondary"}
               >
                 <TerminalSquare className="size-3.5" />

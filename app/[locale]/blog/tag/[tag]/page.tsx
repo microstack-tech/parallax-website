@@ -54,7 +54,7 @@ export default async function BlogTagPage({
       <section className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 xl:px-0">
         <Link
           href="/blog"
-          className="mb-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-gold"
+          className="mb-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-brand"
         >
           <ArrowLeft className="size-4" />
           {t("backToBlog")}

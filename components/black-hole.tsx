@@ -167,7 +167,7 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
       uniforms: { uTime: { value: 0 }, uCameraPosition: { value: camera.position } },
       vertexShader: `varying vec3 vNormal; varying vec3 vPosition; void main(){ vNormal=normalize(normalMatrix*normal); vPosition=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
       fragmentShader: `
-        uniform float uTime; uniform vec3 uCameraPosition; varying vec3 vNormal; varying vec3 vPosition; void main(){ vec3 viewDirection=normalize(uCameraPosition - vPosition); float fresnel=1.0 - abs(dot(vNormal,viewDirection)); fresnel=pow(fresnel,2.5); vec3 glowColor=vec3(1.0,0.5,0.15); float pulse=sin(uTime*2.5)*0.15+0.85; gl_FragColor=vec4(glowColor*fresnel*pulse, fresnel*0.4); }
+        uniform float uTime; uniform vec3 uCameraPosition; varying vec3 vNormal; varying vec3 vPosition; void main(){ vec3 viewDirection=normalize(uCameraPosition - vPosition); float fresnel=1.0 - abs(dot(vNormal,viewDirection)); fresnel=pow(fresnel,2.5); vec3 glowColor=vec3(0.15,0.5,1.0); float pulse=sin(uTime*2.5)*0.15+0.85; gl_FragColor=vec4(glowColor*fresnel*pulse, fresnel*0.4); }
       `,
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -188,11 +188,19 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
     const diskMaterial = new THREE.ShaderMaterial({
       uniforms: {
         uTime: { value: 0.0 },
-        uColorHot: { value: new THREE.Color(0xfff8ee) },
-        uColorMid1: { value: new THREE.Color(0xffcc66) },
-        uColorMid2: { value: new THREE.Color(0xdd7733) },
-        uColorMid3: { value: new THREE.Color(0x993311) },
-        uColorOuter: { value: new THREE.Color(0x331100) },
+        /* The ramp walks the logo gradient outward: the names read
+           inside-out, since uColorOuter lands at normalizedRadius 0 (the
+           inner rim) where brightness peaks at 4x, and uColorHot at the
+           outer rim where it falls to 0.5x. Multiplied through, that gives
+           saturated azure hugging the horizon, cyan and spring green
+           through the body of the disk, and a pale mint at the rim. Each
+           colour keeps roughly the luminance of the amber it replaces, so
+           the brightness and pulse maths land the same. */
+        uColorHot: { value: new THREE.Color(0xeefff8) },
+        uColorMid1: { value: new THREE.Color(0x66ffcc) },
+        uColorMid2: { value: new THREE.Color(0x33aadd) },
+        uColorMid3: { value: new THREE.Color(0x1144aa) },
+        uColorOuter: { value: new THREE.Color(0x001133) },
         uNoiseScale: { value: 2.5 },
         uFlowSpeed: { value: 0.22 },
         uDensity: { value: 1.3 },

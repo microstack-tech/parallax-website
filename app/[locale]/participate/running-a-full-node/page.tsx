@@ -28,7 +28,7 @@ export default async function RunningFullNodePage() {
           {nodeTopics.map((topic) => (
             <Card key={topic.title}>
               <CardHeader>
-                <topic.icon className="size-6 text-gold" />
+                <topic.icon className="size-6 text-brand" />
                 <CardTitle>{topic.title}</CardTitle>
               </CardHeader>
               <CardContent>
@@ -44,7 +44,7 @@ export default async function RunningFullNodePage() {
             {t("getStarted.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+            <Button className="brand-gradient text-brand-foreground hover:opacity-90" asChild>
               <Link href="/resources/parallax-client">
                 <Download className="mr-2 h-5 w-5" />
                 {t("getStarted.download")}

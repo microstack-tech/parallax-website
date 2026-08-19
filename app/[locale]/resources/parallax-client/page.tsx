@@ -27,7 +27,7 @@ export default async function ParallaxClientPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
           <div className="pr-0 sm:pr-10 sm:border-r border-border pb-8 sm:pb-0">
             <div className="flex items-center gap-3 mb-4">
-              <Hexagon className="size-5 text-gold" />
+              <Hexagon className="size-5 text-brand" />
               <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">{t("decentralized.heading")}</h3>
             </div>
             <p className="text-base text-muted-foreground leading-relaxed">
@@ -36,7 +36,7 @@ export default async function ParallaxClientPage() {
           </div>
           <div className="pl-0 sm:pl-10 pt-8 sm:pt-0 border-t sm:border-t-0 border-border">
             <div className="flex items-center gap-3 mb-4">
-              <CircleSlash className="size-5 text-gold" />
+              <CircleSlash className="size-5 text-brand" />
               <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">{t("noVoting.heading")}</h3>
             </div>
             <p className="text-base text-muted-foreground leading-relaxed">
@@ -45,7 +45,7 @@ export default async function ParallaxClientPage() {
           </div>
         </div>
 
-        <blockquote className="my-16 border-l-2 border-gold pl-8 py-2">
+        <blockquote className="my-16 border-l-2 border-brand pl-8 py-2">
           <p className="text-lg italic text-muted-foreground leading-relaxed">
             {t("blockquote")}
           </p>
@@ -57,7 +57,7 @@ export default async function ParallaxClientPage() {
             return (
               <Card key={feature.title}>
                 <CardHeader>
-                  <Icon className="size-6 text-gold" />
+                  <Icon className="size-6 text-brand" />
                   <CardTitle>{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -78,10 +78,10 @@ export default async function ParallaxClientPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-border">
             <div className="relative p-8 sm:p-12 border-b md:border-b-0 md:border-r border-border">
-              <div className="absolute top-4 right-4 text-[9px] font-mono uppercase tracking-[0.15em] text-gold border border-gold/40 px-1.5 py-0.5">
+              <div className="absolute top-4 right-4 text-[9px] font-mono uppercase tracking-[0.15em] text-brand border border-brand/40 px-1.5 py-0.5">
                 {t("download.recommended")}
               </div>
-              <AppWindow className="size-6 text-gold mb-4" />
+              <AppWindow className="size-6 text-brand mb-4" />
               <h4 className="text-base text-foreground mb-2">{t("download.desktopTitle")}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 {t("download.desktopDescription")}

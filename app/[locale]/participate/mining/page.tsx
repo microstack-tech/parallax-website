@@ -26,9 +26,9 @@ export default function MiningPage() {
       <div className="mx-auto max-w-7xl px-6 sm:px-8 xl:px-0 flex flex-col gap-16 pb-16">
         {/* The hook: your rig works */}
         <FadeIn>
-          <div className="border border-border border-l-2 border-l-gold bg-card/50 p-6 sm:p-8">
+          <div className="border border-border border-l-2 border-l-brand bg-card/50 p-6 sm:p-8">
             <div className="flex items-center gap-3">
-              <Cpu className="size-6 text-gold shrink-0" />
+              <Cpu className="size-6 text-brand shrink-0" />
               <h2 className="text-xl sm:text-2xl text-foreground">{t("rig.heading")}</h2>
             </div>
             <p className="mt-4 text-muted-foreground leading-relaxed">{t("rig.body")}</p>
@@ -52,7 +52,7 @@ export default function MiningPage() {
         {/* Facts */}
         <section>
           <FadeIn>
-            <div className="w-12 h-0.5 bg-gold mb-6" />
+            <div className="w-12 h-0.5 bg-brand mb-6" />
             <h2 className="text-2xl sm:text-3xl text-foreground">{t("facts.heading")}</h2>
           </FadeIn>
           <FadeIn delay={0.05}>
@@ -74,7 +74,7 @@ export default function MiningPage() {
         {/* Steps */}
         <section>
           <FadeIn>
-            <div className="w-12 h-0.5 bg-gold mb-6" />
+            <div className="w-12 h-0.5 bg-brand mb-6" />
             <h2 className="text-2xl sm:text-3xl text-foreground">{t("start.heading")}</h2>
           </FadeIn>
           <ol className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -83,7 +83,7 @@ export default function MiningPage() {
                 <li className="h-full">
                   <Card className="h-full">
                     <CardHeader>
-                      <p className="font-mono text-xs tracking-[0.2em] text-gold">
+                      <p className="font-mono text-xs tracking-[0.2em] text-brand">
                         {String(i + 1).padStart(2, "0")}
                       </p>
                       <CardTitle>{step.title}</CardTitle>
@@ -100,9 +100,9 @@ export default function MiningPage() {
 
         {/* Economics */}
         <FadeIn>
-          <div className="border border-border border-l-2 border-l-gold bg-card/50 p-6 sm:p-8">
+          <div className="border border-border border-l-2 border-l-brand bg-card/50 p-6 sm:p-8">
             <div className="flex items-center gap-3">
-              <Scale className="size-6 text-gold shrink-0" />
+              <Scale className="size-6 text-brand shrink-0" />
               <h2 className="text-xl sm:text-2xl text-foreground">{t("economics.heading")}</h2>
             </div>
             <p className="mt-4 text-muted-foreground leading-relaxed">{t("economics.body")}</p>
@@ -111,7 +111,7 @@ export default function MiningPage() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+          <Button className="w-full sm:w-fit brand-gradient text-brand-foreground hover:opacity-90" asChild>
             <Link href={"/resources/parallax-client"}>
               {t("ctas.client")}
               <ChevronRight />

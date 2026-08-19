@@ -26,7 +26,7 @@ export default function Client() {
           <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 gap-0">
             <div className="pr-0 sm:pr-10 sm:border-r border-border pb-8 sm:pb-0">
               <div className="flex items-center gap-3 mb-4">
-                <Hexagon className="size-5 text-gold" />
+                <Hexagon className="size-5 text-brand" />
                 <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">{t("decentralized.title")}</h3>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed">
@@ -42,7 +42,7 @@ export default function Client() {
             </div>
             <div className="pl-0 sm:pl-10 pt-8 sm:pt-0 border-t sm:border-t-0 border-border">
               <div className="flex items-center gap-3 mb-4">
-                <CircleSlash className="size-5 text-gold" />
+                <CircleSlash className="size-5 text-brand" />
                 <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">{t("noVoting.title")}</h3>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed">
@@ -54,7 +54,7 @@ export default function Client() {
 
         {/* Blockquote */}
         <FadeIn delay={0.15}>
-          <blockquote className="my-16 border-l-2 border-gold pl-8 py-2">
+          <blockquote className="my-16 border-l-2 border-brand pl-8 py-2">
             <p className="text-lg italic text-muted-foreground leading-relaxed">
               {t("blockquote")}
             </p>

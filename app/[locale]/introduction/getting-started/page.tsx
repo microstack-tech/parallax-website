@@ -27,7 +27,7 @@ export default function GettingStarted() {
               size={"xl"}
               onClick={() => setActiveTab("use")}
               className={activeTab === "use"
-                ? "bg-gold text-gold-foreground hover:bg-gold/90"
+                ? "brand-gradient text-brand-foreground hover:opacity-90"
                 : ""}
               variant={activeTab === "use" ? "default" : "secondary"}
             >
@@ -37,7 +37,7 @@ export default function GettingStarted() {
               size={"xl"}
               onClick={() => setActiveTab("accept")}
               className={activeTab === "accept"
-                ? "bg-gold text-gold-foreground hover:bg-gold/90"
+                ? "brand-gradient text-brand-foreground hover:opacity-90"
                 : ""}
               variant={activeTab === "accept" ? "default" : "secondary"}
             >
@@ -48,10 +48,10 @@ export default function GettingStarted() {
 
         {activeTab === "use" && (
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <BookOpen className="size-6 text-gold" />
+                  <BookOpen className="size-6 text-brand" />
                   <CardTitle>{t("use.inform.title")}</CardTitle>
                 </div>
               </CardHeader>
@@ -67,10 +67,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Wallet className="size-6 text-gold" />
+                  <Wallet className="size-6 text-brand" />
                   <CardTitle>{t("use.wallet.title")}</CardTitle>
                 </div>
               </CardHeader>
@@ -88,10 +88,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <HandCoins className="size-6 text-gold" />
+                  <HandCoins className="size-6 text-brand" />
                   <CardTitle>{t("use.get.title")}</CardTitle>
                 </div>
               </CardHeader>
@@ -115,10 +115,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Store className="size-6 text-gold" />
+                  <Store className="size-6 text-brand" />
                   <CardTitle>{t("use.spend.title")}</CardTitle>
                 </div>
               </CardHeader>
@@ -140,10 +140,10 @@ export default function GettingStarted() {
 
         {activeTab === "accept" && (
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <BookOpen className="size-6 text-gold" />
+                  <BookOpen className="size-6 text-brand" />
                   <CardTitle>{t("accept.inform.title")}</CardTitle>
                 </div>
               </CardHeader>
@@ -159,10 +159,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Building className="size-6 text-gold" />
+                  <Building className="size-6 text-brand" />
                   <CardTitle>{t("accept.processing.title")}</CardTitle>
                 </div>
               </CardHeader>
@@ -180,10 +180,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Scale className="size-6 text-gold" />
+                  <Scale className="size-6 text-brand" />
                   <CardTitle>{t("accept.taxes.title")}</CardTitle>
                 </div>
               </CardHeader>
@@ -201,10 +201,10 @@ export default function GettingStarted() {
               </CardContent>
             </Card>
 
-            <Card className="group transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+            <Card className="group transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Eye className="size-6 text-gold" />
+                  <Eye className="size-6 text-brand" />
                   <CardTitle>{t("accept.visibility.title")}</CardTitle>
                 </div>
               </CardHeader>
@@ -230,7 +230,7 @@ export default function GettingStarted() {
             {t("ready.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+            <Button className="brand-gradient text-brand-foreground hover:opacity-90" asChild>
               <Link href={"/wallets"}>
                 {t("ready.chooseWallet")}
                 <ChevronRight />

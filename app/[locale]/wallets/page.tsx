@@ -82,9 +82,9 @@ export default async function Page() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {wallets.map((wallet) => (
             <a key={wallet.name} href={wallet.url} target="_blank" rel="noopener" className="block">
-              <Card className="group relative h-full hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300 cursor-pointer">
+              <Card className="group relative h-full hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300 cursor-pointer">
                 {"recommended" in wallet && wallet.recommended && (
-                  <Badge className="absolute top-3 right-3 bg-gold/15 text-gold border-gold/30 hover:bg-gold/20 text-[0.65rem] font-medium">
+                  <Badge className="absolute top-3 right-3 bg-brand/15 text-brand border-brand/30 hover:bg-brand/20 text-[0.65rem] font-medium">
                     {t("beginnerFriendly")}
                   </Badge>
                 )}
@@ -112,7 +112,7 @@ export default async function Page() {
             {t("runClient.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+            <Button className="brand-gradient text-brand-foreground hover:opacity-90" asChild>
               <Link href="/resources/parallax-client">
                 <Download className="mr-2 h-5 w-5" />
                 {t("runClient.download")}

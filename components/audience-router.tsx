@@ -34,10 +34,10 @@ export function AudienceRouter() {
             return (
               <FadeIn key={audience.key} delay={i * 0.1}>
                 <Link href={audience.href} className="group block h-full">
-                  <Card className="h-full transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+                  <Card className="h-full transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
                     <CardHeader>
                       <div className="flex items-center gap-4">
-                        <Icon className="size-6 shrink-0 text-muted-foreground group-hover:text-gold transition-colors" />
+                        <Icon className="size-6 shrink-0 text-muted-foreground group-hover:text-brand transition-colors" />
                         <CardTitle>{tIntro(`${audience.key}.pageTitle` as "parallaxForBitcoiners.pageTitle")}</CardTitle>
                       </div>
                     </CardHeader>
@@ -45,7 +45,7 @@ export function AudienceRouter() {
                       <p className="text-base text-muted-foreground">
                         {tIntro(`${audience.key}.pageSubtitle` as "parallaxForBitcoiners.pageSubtitle")}
                       </p>
-                      <div className="flex items-center gap-2 mt-6 text-sm font-medium text-foreground group-hover:text-gold transition-colors">
+                      <div className="flex items-center gap-2 mt-6 text-sm font-medium text-foreground group-hover:text-brand transition-colors">
                         {tCommon("readMore")}
                         <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                       </div>

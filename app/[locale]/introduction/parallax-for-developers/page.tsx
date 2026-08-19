@@ -65,7 +65,7 @@ export default function ParallaxForDevelopers() {
         {/* Network facts */}
         <section>
           <FadeIn>
-            <div className="w-12 h-0.5 bg-gold mb-6" />
+            <div className="w-12 h-0.5 bg-brand mb-6" />
             <h2 className="text-2xl sm:text-3xl text-foreground">{t("network.heading")}</h2>
           </FadeIn>
           <FadeIn delay={0.05}>
@@ -87,7 +87,7 @@ export default function ParallaxForDevelopers() {
         {/* Compiler config */}
         <section>
           <FadeIn>
-            <div className="w-12 h-0.5 bg-gold mb-6" />
+            <div className="w-12 h-0.5 bg-brand mb-6" />
             <h2 className="text-2xl sm:text-3xl text-foreground">{t("config.heading")}</h2>
             <p className="mt-3 max-w-3xl text-muted-foreground">{t("config.tagline")}</p>
           </FadeIn>
@@ -104,7 +104,7 @@ export default function ParallaxForDevelopers() {
         {/* Differences */}
         <section>
           <FadeIn>
-            <div className="w-12 h-0.5 bg-gold mb-6" />
+            <div className="w-12 h-0.5 bg-brand mb-6" />
             <h2 className="text-2xl sm:text-3xl text-foreground">{t("differences.heading")}</h2>
             <p className="mt-3 max-w-3xl text-muted-foreground">{t("differences.tagline")}</p>
           </FadeIn>
@@ -127,7 +127,7 @@ export default function ParallaxForDevelopers() {
         {/* Why */}
         <section>
           <FadeIn>
-            <div className="border border-border border-l-2 border-l-gold bg-card/50 p-6 sm:p-8">
+            <div className="border border-border border-l-2 border-l-brand bg-card/50 p-6 sm:p-8">
               <h2 className="text-xl sm:text-2xl text-foreground">{t("why.heading")}</h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">{t("why.body")}</p>
             </div>
@@ -136,7 +136,7 @@ export default function ParallaxForDevelopers() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+          <Button className="w-full sm:w-fit brand-gradient text-brand-foreground hover:opacity-90" asChild>
             <a href="https://docs.parallaxprotocol.org" target="_blank" rel="noopener">
               {t("ctas.docs")}
               <ChevronRight />

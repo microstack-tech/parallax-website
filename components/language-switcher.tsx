@@ -47,7 +47,7 @@ export default function LanguageSwitcher({ heroOverlay, mobile }: Props) {
               onClick={() => switchLocale(l)}
               className={cn(
                 "flex items-center justify-between px-3 py-2 text-base font-medium text-accent-foreground/80 hover:text-foreground hover:bg-muted transition-colors cursor-pointer",
-                l === locale && "text-gold",
+                l === locale && "text-brand",
               )}
             >
               <span>{localeNames[l]}</span>
@@ -81,7 +81,7 @@ export default function LanguageSwitcher({ heroOverlay, mobile }: Props) {
             onSelect={() => switchLocale(l)}
             className={cn(
               "flex items-center justify-between gap-4 cursor-pointer",
-              l === locale && "text-gold",
+              l === locale && "text-brand",
             )}
           >
             <span>{localeNames[l]}</span>

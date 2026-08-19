@@ -101,8 +101,8 @@ export function YouTube({
               className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
             />
             <span className="absolute inset-0 flex items-center justify-center bg-background/30">
-              <span className="flex size-16 items-center justify-center rounded-full border border-gold/40 bg-background/80 backdrop-blur-sm transition-colors duration-300 group-hover:border-gold group-hover:bg-background">
-                <Play className="size-6 translate-x-0.5 fill-gold text-gold" />
+              <span className="flex size-16 items-center justify-center rounded-full border border-brand/40 bg-background/80 backdrop-blur-sm transition-colors duration-300 group-hover:border-brand group-hover:bg-background">
+                <Play className="size-6 translate-x-0.5 fill-brand text-brand" />
               </span>
             </span>
           </button>
@@ -165,7 +165,7 @@ export function Callout({
     <aside
       className={cn(
         "my-8 rounded-lg border-l-2 bg-surface-elevated px-6 py-5 text-base leading-relaxed",
-        type === "warning" ? "border-l-destructive" : "border-l-gold",
+        type === "warning" ? "border-l-destructive" : "border-l-brand",
       )}
     >
       {title && (

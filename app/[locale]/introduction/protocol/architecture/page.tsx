@@ -84,9 +84,9 @@ export default function Page() {
   const pipelineSteps = t.raw("pipeline.steps") as string[];
 
   const HowItFits = () => (
-    <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
+    <Card className="hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300">
       <CardHeader>
-        <ChevronRight className="size-6 text-gold" />
+        <ChevronRight className="size-6 text-brand" />
         <CardTitle>{t("howItFits.title")}</CardTitle>
       </CardHeader>
       <CardDescription>
@@ -148,9 +148,9 @@ export default function Page() {
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24 min-w-0"
           >
-            <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
+            <Card className="hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300">
               <CardHeader>
-                <s.Icon className="size-6 text-gold" />
+                <s.Icon className="size-6 text-brand" />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>
@@ -190,7 +190,7 @@ export default function Page() {
 
       {/* Interplay Diagram (textual) */}
       <div className="mt-10 grid min-w-0 gap-4 border border-border p-6">
-        <span className="font-mono text-xs uppercase tracking-widest text-gold">{t("pipeline.eyebrow")}</span>
+        <span className="font-mono text-xs uppercase tracking-widest text-brand">{t("pipeline.eyebrow")}</span>
         <h2 className="text-xl font-semibold">{t("pipeline.heading")}</h2>
         <p className="text-muted-foreground">
           {t("pipeline.description")}
@@ -213,7 +213,7 @@ export default function Page() {
             {t("nav.prev")}
           </Link>
         </Button>
-        <Button asChild className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90">
+        <Button asChild className="w-full sm:w-fit brand-gradient text-brand-foreground hover:opacity-90">
           <Link href="/introduction/protocol/block-reward-and-halving">
             {t("nav.next")}
             <ChevronRight />

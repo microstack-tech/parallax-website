@@ -45,11 +45,11 @@ export function Parallax() {
 
           {/* Text */}
           <FadeIn delay={0.15}>
-            <div className="mx-auto text-justify text-base leading-relaxed text-foreground/60 sm:leading-8 lg:mx-0 lg:text-left lg:text-md lg:leading-9 space-y-4 bg-card/50 backdrop-blur-sm border border-border border-l-2 border-l-gold p-4 sm:p-8">
+            <div className="mx-auto text-justify text-base leading-relaxed text-foreground/60 sm:leading-8 lg:mx-0 lg:text-left lg:text-md lg:leading-9 space-y-4 bg-card/50 backdrop-blur-sm border border-border border-l-2 border-l-brand p-4 sm:p-8">
               <p>{t("body1")}</p>
               <p>{t("body2")}</p>
               <div className="flex w-full justify-end mt-8">
-                <Button className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90" asChild>
+                <Button className="w-full sm:w-fit brand-gradient text-brand-foreground hover:opacity-90" asChild>
                   <Link href={"/introduction/doctrine"}>
                     {t("cta")}
                     <LucideChevronRight />

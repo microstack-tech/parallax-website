@@ -52,7 +52,10 @@ interface NodeGlobeProps {
   followTheme?: boolean
 }
 
-const GOLD_FALLBACK = "#f7931a"
+/* The globe's own accent, used before the CSS token resolves. Defaults to the
+   dark-surface brand because the globe renders on a dark sphere unless
+   followTheme puts it on the page background. */
+const BRAND_FALLBACK = "#23c9c9"
 
 const DEFAULT_ALTITUDE = { desktop: 2.2, mobile: 3.0 }
 const MIN_ALTITUDE = 0.7
@@ -313,7 +316,7 @@ export default function NodeGlobe({
   const [size, setSize] = useState({ width: 0, height: 0 })
   const [land, setLand] = useState<FeatureCollection | null>(null)
   const [ready, setReady] = useState(false)
-  const [gold, setGold] = useState(GOLD_FALLBACK)
+  const [brand, setBrand] = useState(BRAND_FALLBACK)
   // Seeded from the resting camera altitude so the first paint matches the
   // band the camera actually starts in.
   const [level, setLevel] = useState<DetailLevel>(() => detailLevel(altitude.desktop))
@@ -330,11 +333,15 @@ export default function NodeGlobe({
     return () => observer.disconnect()
   }, [])
 
-  // Resolve the design-system gold token; WebGL can't read CSS variables.
+  // Resolve the design-system brand token; WebGL can't read CSS variables.
+  // Mirrors the palette choice above: a globe that ignores the theme sits on
+  // the dark sphere in both modes, so it wants the full-strength stops rather
+  // than light mode's darkened brand.
   useEffect(() => {
-    const value = getComputedStyle(document.documentElement).getPropertyValue("--gold").trim()
-    if (value) setGold(value)
-  }, [])
+    const token = palette === LIGHT_PALETTE ? "--brand" : "--brand-on-dark"
+    const value = getComputedStyle(document.documentElement).getPropertyValue(token).trim()
+    if (value) setBrand(value)
+  }, [palette])
 
   useEffect(() => {
     let cancelled = false
@@ -439,7 +446,7 @@ export default function NodeGlobe({
           backgroundColor="rgba(0,0,0,0)"
           globeMaterial={globeMaterial}
           showAtmosphere
-          atmosphereColor={gold}
+          atmosphereColor={brand}
           atmosphereAltitude={0.12}
           hexPolygonsData={landFeatures}
           hexPolygonResolution={3}
@@ -449,7 +456,7 @@ export default function NodeGlobe({
           pointsData={points}
           pointLat="lat"
           pointLng="lng"
-          pointColor={() => gold}
+          pointColor={() => brand}
           pointAltitude={0.012}
           pointRadius={(obj: object) => {
             const p = obj as ClusterPoint

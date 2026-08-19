@@ -18,7 +18,7 @@ export default function GridView({ items }: { items: GridViewItem[] }) {
             <FadeIn key={item.title} delay={i * 0.05}>
               <Card className="h-full">
                 <CardHeader className="flex justify-start items-center gap-4">
-                  <item.icon className="size-6 text-gold" />
+                  <item.icon className="size-6 text-brand" />
                   <CardTitle>{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>

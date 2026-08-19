@@ -39,11 +39,11 @@ export function Documentation() {
             return (
               <FadeIn key={doc.key} delay={i * 0.1}>
                 <LinkComponent {...linkProps} className="group block h-full">
-                  <Card className="h-full transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+                  <Card className="h-full transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
                     <CardHeader>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                          <Icon className="size-6 text-muted-foreground group-hover:text-gold transition-colors" />
+                          <Icon className="size-6 text-muted-foreground group-hover:text-brand transition-colors" />
                           <CardTitle>{title}</CardTitle>
                         </div>
                         {doc.external ? (
@@ -53,7 +53,7 @@ export function Documentation() {
                     </CardHeader>
                     <CardContent className="flex flex-col justify-between flex-1">
                       <p className="text-base text-muted-foreground">{description}</p>
-                      <div className="flex items-center gap-2 mt-6 text-sm font-medium text-foreground group-hover:text-gold transition-colors">
+                      <div className="flex items-center gap-2 mt-6 text-sm font-medium text-foreground group-hover:text-brand transition-colors">
                         {tCommon("readMore")}
                         <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                       </div>

@@ -46,7 +46,7 @@ export default async function CommunityPage() {
           {officialChannels.map((ch, i) => {
             const Icon = OFFICIAL_CHANNELS[i].icon;
             return (
-              <Button key={ch.name} variant={"outline"} size={"2xl"} className="hover:border-gold/30 hover:text-gold transition-all" asChild>
+              <Button key={ch.name} variant={"outline"} size={"2xl"} className="hover:border-brand/30 hover:text-brand transition-all" asChild>
                 <a href={OFFICIAL_CHANNELS[i].href} target="_blank" rel="noopener" className="block">
                   <Icon className="size-6 mr-4" />
                   {ch.name}
@@ -65,7 +65,7 @@ export default async function CommunityPage() {
           {communityChannels.map((ch, i) => {
             const Icon = COMMUNITY_CHANNELS[i].icon;
             return (
-              <Button key={ch.name} variant={"outline"} size={"2xl"} className="hover:border-gold/30 hover:text-gold transition-all" asChild>
+              <Button key={ch.name} variant={"outline"} size={"2xl"} className="hover:border-brand/30 hover:text-brand transition-all" asChild>
                 <a href={COMMUNITY_CHANNELS[i].href} target="_blank" rel="noopener" className="block">
                   <Icon className="size-6 mr-4" />
                   {ch.name}
@@ -84,7 +84,7 @@ export default async function CommunityPage() {
               <Card key={topic.title}>
                 <CardHeader>
                   <div className="flex flex-row items-center gap-4">
-                    <Icon className="size-6 text-gold" />
+                    <Icon className="size-6 text-brand" />
                     <CardTitle className="text-lg text-center">{topic.title}</CardTitle>
                   </div>
                 </CardHeader>

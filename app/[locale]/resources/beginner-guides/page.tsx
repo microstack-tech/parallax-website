@@ -35,16 +35,16 @@ export default async function BeginnerGuidesPage() {
               rel="noopener"
               className="group block h-full"
             >
-              <Card className="h-full transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]">
+              <Card className="h-full transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <Icon className="size-6 text-gold" />
+                    <Icon className="size-6 text-brand" />
                     <CardTitle>{guide.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="flex flex-col justify-between h-full">
                   <div>{guide.description}</div>
-                  <div className="flex items-center gap-2 mt-6 text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-gold transition-colors">
+                  <div className="flex items-center gap-2 mt-6 text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground group-hover:text-brand transition-colors">
                     {tCommon("readMore")}
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                   </div>

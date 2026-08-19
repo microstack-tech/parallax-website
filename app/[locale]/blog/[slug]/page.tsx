@@ -107,14 +107,14 @@ export default async function BlogPostPage({
       <article className="mx-auto max-w-3xl px-6 pt-32 sm:px-8">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-gold"
+          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-brand"
         >
           <ArrowLeft className="size-4" />
           {t("backToBlog")}
         </Link>
 
         <header className="mt-8 flex flex-col gap-6 border-b border-border pb-10">
-          <div className="h-0.5 w-12 bg-gold" />
+          <div className="h-0.5 w-12 bg-brand" />
           <h1 className="text-4xl text-foreground text-pretty sm:text-5xl">{post.title}</h1>
           <p className="text-xl text-muted-foreground text-pretty">{post.summary}</p>
           <PostMeta post={post} locale={locale} />
@@ -124,7 +124,7 @@ export default async function BlogPostPage({
                 <li key={tagSlug(tag)}>
                   <Link
                     href={`/blog/tag/${tagSlug(tag)}`}
-                    className="rounded-full border border-border px-3 py-1 font-mono text-[0.7rem] uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:border-gold/40 hover:text-foreground"
+                    className="rounded-full border border-border px-3 py-1 font-mono text-[0.7rem] uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:border-brand/40 hover:text-foreground"
                   >
                     {tag}
                   </Link>
@@ -158,7 +158,7 @@ export default async function BlogPostPage({
             {older && (
               <Link
                 href={`/blog/${older.slug}`}
-                className="group flex flex-col gap-2 rounded-lg border border-border p-5 transition-colors hover:border-gold/30"
+                className="group flex flex-col gap-2 rounded-lg border border-border p-5 transition-colors hover:border-brand/30"
               >
                 <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
                   <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
@@ -170,7 +170,7 @@ export default async function BlogPostPage({
             {newer && (
               <Link
                 href={`/blog/${newer.slug}`}
-                className="group flex flex-col gap-2 rounded-lg border border-border p-5 transition-colors hover:border-gold/30 sm:col-start-2 sm:items-end sm:text-right"
+                className="group flex flex-col gap-2 rounded-lg border border-border p-5 transition-colors hover:border-brand/30 sm:col-start-2 sm:items-end sm:text-right"
               >
                 <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
                   {t("newerPost")}

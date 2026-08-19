@@ -92,9 +92,9 @@ export default function Page() {
   const paramRows = t.raw("params.rows") as ParamRow[];
 
   const ParamsTable = () => (
-    <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
+    <Card className="hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300">
       <CardHeader>
-        <ChevronRight className="text-gold" />
+        <ChevronRight className="text-brand" />
         <CardTitle className="text-xl">{t("params.title")}</CardTitle>
       </CardHeader>
       <CardContent>
@@ -170,9 +170,9 @@ export default function Page() {
             transition={{ duration: 0.35, delay: i * 0.03 }}
             className="scroll-mt-24"
           >
-            <Card className="hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300">
+            <Card className="hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300">
               <CardHeader>
-                <s.Icon className="text-gold" />
+                <s.Icon className="text-brand" />
                 <CardTitle>{s.title}</CardTitle>
               </CardHeader>
               <CardDescription>{s.tagline}</CardDescription>
@@ -216,7 +216,7 @@ export default function Page() {
             {t("nav.prev")}
           </Link>
         </Button>
-        <Button asChild className="w-full sm:w-fit bg-gold text-gold-foreground hover:bg-gold/90">
+        <Button asChild className="w-full sm:w-fit brand-gradient text-brand-foreground hover:opacity-90">
           <Link href="/introduction/protocol/difficulty-and-forkchoice">
             {t("nav.next")}
             <ChevronRight />

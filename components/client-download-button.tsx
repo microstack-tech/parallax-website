@@ -94,7 +94,7 @@ export default function ClientDownloadButton({ variant = "cli", prominent = true
     return (
       <div className="inline-flex flex-col items-center gap-2 px-4 py-3 border border-dashed border-border bg-background/40 max-w-xs">
         <div className="flex items-center gap-2 text-foreground">
-          <Smartphone className="size-4 text-gold" />
+          <Smartphone className="size-4 text-brand" />
           <span className="text-xs font-mono uppercase tracking-[0.15em]">{t("desktopOnly")}</span>
         </div>
         <p className="text-xs text-muted-foreground text-center leading-relaxed">
@@ -116,7 +116,7 @@ export default function ClientDownloadButton({ variant = "cli", prominent = true
   return (
     <div className="relative inline-flex flex-col items-center">
       <Button
-        className={prominent ? "bg-gold text-gold-foreground hover:bg-gold/90" : undefined}
+        className={prominent ? "brand-gradient text-brand-foreground hover:opacity-90" : undefined}
         variant={prominent ? undefined : "secondary"}
         asChild
       >

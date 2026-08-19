@@ -54,7 +54,7 @@ export default function AddNetworkPopup() {
       <p className="text-sm text-muted-foreground mb-4">{t("description")}</p>
       <div className="flex flex-col items-center gap-3">
         <Button
-          className="bg-gold text-gold-foreground hover:bg-gold/90 w-full"
+          className="brand-gradient text-brand-foreground hover:opacity-90 w-full"
           onClick={handleAdd}
           disabled={status === "adding"}
         >

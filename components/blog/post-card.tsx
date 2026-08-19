@@ -83,7 +83,7 @@ export async function PostCard({
       <Link
         href={`/blog/${post.slug}`}
         className={cn(
-          "flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)]",
+          "flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)]",
           featured && "md:flex-row",
         )}
       >
@@ -126,7 +126,7 @@ export async function PostCard({
             </ul>
           )}
 
-          <span className="mt-auto flex items-center gap-2 pt-2 font-mono text-xs font-medium uppercase tracking-[0.15em] text-foreground transition-colors group-hover:text-gold">
+          <span className="mt-auto flex items-center gap-2 pt-2 font-mono text-xs font-medium uppercase tracking-[0.15em] text-foreground transition-colors group-hover:text-brand">
             {t("readPost")}
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </span>

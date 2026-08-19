@@ -40,9 +40,9 @@
   --color-card: var(--card);
   --color-atlas-clearnet: var(--atlas-clearnet);
   --color-atlas-tor: var(--atlas-tor);
-  --color-gold: var(--gold);
-  --color-gold-foreground: var(--gold-foreground);
-  --color-gold-muted: var(--gold-muted);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-muted: var(--brand-muted);
   --color-glow-purple: var(--glow-purple);
   --color-surface-elevated: var(--surface-elevated);
   --radius-sm: calc(var(--radius) - 4px);
@@ -71,14 +71,29 @@
   --border: oklch(0 0 0 / 10%);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --gold: #f7931a;
-  --gold-foreground: oklch(1 0 0);
+  /* The brand accent is sampled from the logo gradient. --brand is the
+     gradient's midpoint hue, for everything alpha modifiers and small text
+     need; --brand-gradient is the gradient itself, reserved for filled brand
+     surfaces.
+
+     The -on-dark trio carries the logo's own stops at full strength. Dark
+     mode takes it as-is, and so do the surfaces that stay dark in both
+     themes. Light mode instead pulls the whole sweep down to a depth that
+     clears 4.5:1 on the background and under white foreground text — the
+     spring green cannot survive that darkening as spring green, so the
+     light rendition reads deep green to deep blue. */
+  --brand-on-dark: #23c9c9;
+  --brand-foreground-on-dark: oklch(0.15 0.03 200);
+  --brand-gradient-on-dark: linear-gradient(135deg, #00ff80 0%, #0080ff 100%);
+  --brand: #007c7d;
+  --brand-foreground: oklch(1 0 0);
+  --brand-gradient: linear-gradient(135deg, #00861d 0%, #0065cd 100%);
   /* Network Atlas transport split. Two categorical hues, stepped per mode
      against the surface-elevated tile rather than flipped automatically.
-     Amber sits with the gold accent; violet is Tor's own hue. */
-  --atlas-clearnet: #eda100;
+     Teal sits with the brand accent; violet is Tor's own hue. */
+  --atlas-clearnet: #0e8f8f;
   --atlas-tor: #4a3aa7;
-  --gold-muted: rgb(247 147 26 / 15%);
+  --brand-muted: rgb(0 124 125 / 15%);
   --glow-purple: oklch(0.5573 0.2543 283.67 / 20%);
   --surface-elevated: oklch(0.94 0.005 80);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -116,11 +131,12 @@
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --gold: #f7931a;
-  --gold-foreground: oklch(0.15 0.03 60);
-  --atlas-clearnet: #c98500;
+  --brand: var(--brand-on-dark);
+  --brand-foreground: var(--brand-foreground-on-dark);
+  --brand-gradient: var(--brand-gradient-on-dark);
+  --atlas-clearnet: #2bbfbf;
   --atlas-tor: #9085e9;
-  --gold-muted: rgb(247 147 26 / 15%);
+  --brand-muted: rgb(35 201 201 / 15%);
   --glow-purple: oklch(0.5573 0.2543 283.67 / 20%);
   --surface-elevated: oklch(0.14 0.015 265);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -160,4 +176,20 @@
 .nav-hero-overlay [data-slot="navigation-menu-list"] > [data-slot="navigation-menu-item"] > [data-slot="navigation-menu-link"],
 .nav-hero-overlay > div > div:last-child button {
   color: white;
+}
+
+/* Surfaces that stay dark whatever the theme — the hero, and the navigation
+   while it overlays the hero — take the full-strength stops rather than light
+   mode's darkened ones. */
+.on-dark-surface,
+.nav-hero-overlay {
+  --brand: var(--brand-on-dark);
+  --brand-foreground: var(--brand-foreground-on-dark);
+  --brand-gradient: var(--brand-gradient-on-dark);
+}
+
+/* The logo's own gradient, for filled brand surfaces (primary buttons, the
+   page-header rule). Everything else takes the solid --brand. */
+.brand-gradient {
+  background-image: var(--brand-gradient);
 }

@@ -104,7 +104,7 @@ function CellDisplay({ cell }: { cell: Cell }) {
   if (cell.kind === "yes") {
     return (
       <div className="flex items-start gap-2">
-        <Check className="size-4 text-gold shrink-0 mt-0.5" />
+        <Check className="size-4 text-brand shrink-0 mt-0.5" />
         {cell.label && <span className="text-sm text-foreground">{cell.label}</span>}
       </div>
     )
@@ -205,16 +205,16 @@ export default function ComparePage() {
               const Icon = SUMMARY_ICONS[i]
               return (
                 <FadeIn key={item.title} delay={i * 0.08}>
-                  <div className="border-l-2 border-l-gold bg-card/50 backdrop-blur-sm border border-border p-6 h-full">
+                  <div className="border-l-2 border-l-brand bg-card/50 backdrop-blur-sm border border-border p-6 h-full">
                     <div className="flex items-center gap-3 mb-5">
-                      <Icon className="size-5 text-gold" />
+                      <Icon className="size-5 text-brand" />
                       <h3 className="text-xs font-medium font-mono uppercase tracking-[0.15em] text-foreground">
                         {item.title}
                       </h3>
                     </div>
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between gap-4 border-b border-border/60 pb-2">
-                        <span className="font-mono uppercase tracking-wider text-xs text-gold">
+                        <span className="font-mono uppercase tracking-wider text-xs text-brand">
                           {t("chains.parallax")}
                         </span>
                         <span className="text-foreground text-right">{item.parallax}</span>
@@ -256,7 +256,7 @@ export default function ComparePage() {
             <FadeIn key={section.key} delay={si * 0.05}>
               <div className="mb-16">
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
-                  <section.icon className="size-5 text-gold" />
+                  <section.icon className="size-5 text-brand" />
                   <h3 className="text-sm font-medium font-mono uppercase tracking-[0.15em] text-foreground">
                     {section.title}
                   </h3>
@@ -273,7 +273,7 @@ export default function ComparePage() {
                         key={c.key}
                         className={cn(
                           "text-xs font-mono uppercase tracking-[0.15em]",
-                          c.highlight ? "text-gold" : "text-muted-foreground"
+                          c.highlight ? "text-brand" : "text-muted-foreground"
                         )}
                       >
                         {c.name}
@@ -296,7 +296,7 @@ export default function ComparePage() {
                           </div>
                         )}
                       </div>
-                      <div className="border-l-2 pl-4 border-l-gold/40">
+                      <div className="border-l-2 pl-4 border-l-brand/40">
                         <CellDisplay cell={row.parallax} />
                       </div>
                       <div>
@@ -328,7 +328,7 @@ export default function ComparePage() {
                             <span
                               className={cn(
                                 "text-[10px] font-mono uppercase tracking-[0.15em]",
-                                c.highlight ? "text-gold" : "text-muted-foreground"
+                                c.highlight ? "text-brand" : "text-muted-foreground"
                               )}
                             >
                               {c.name}
@@ -350,10 +350,10 @@ export default function ComparePage() {
       <section className="mt-16 px-6 sm:px-8">
         <div className="mx-auto max-w-4xl">
           <FadeIn>
-            <div className="border-l-2 border-l-gold pl-6 py-4">
+            <div className="border-l-2 border-l-brand pl-6 py-4">
               <div className="flex items-center gap-2 mb-3">
-                <GitBranch className="size-4 text-gold" />
-                <span className="text-xs font-mono uppercase tracking-[0.15em] text-gold">
+                <GitBranch className="size-4 text-brand" />
+                <span className="text-xs font-mono uppercase tracking-[0.15em] text-brand">
                   {t("thesisLabel")}
                 </span>
               </div>

@@ -22,7 +22,7 @@ export function Hero() {
                   min-h-[calc(var(--vh,1vh)*100)]
                   pt-[env(safe-area-inset-top)]
                   pb-[env(safe-area-inset-bottom)]
-                  bg-black"
+                  bg-black on-dark-surface"
     >
       {/* Black hole background */}
       <BlackHoleVisualization interactive={false} />
@@ -90,7 +90,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.0 }}
         >
-          <Button size={"2xl"} className="w-full max-w-[15rem] px-6 bg-gold text-gold-foreground hover:bg-gold/90 text-sm" asChild>
+          <Button size={"2xl"} className="w-full max-w-[15rem] px-6 brand-gradient text-brand-foreground hover:opacity-90 text-sm" asChild>
             <Link href={"/participate/running-a-full-node"}>
               {t("runNode")}
             </Link>

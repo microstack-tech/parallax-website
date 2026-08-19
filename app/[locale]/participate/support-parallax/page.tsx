@@ -23,7 +23,7 @@ function DonationsSection() {
       </p>
 
       <div className="space-y-6">
-        <div className="flex flex-col items-center justify-center p-6 border border-border bg-card/50 backdrop-blur-sm border-l-2 border-l-gold">
+        <div className="flex flex-col items-center justify-center p-6 border border-border bg-card/50 backdrop-blur-sm border-l-2 border-l-brand">
           <h3 className="text-xl font-medium text-foreground">{t("btc.title")}</h3>
           <p className="text-sm text-muted-foreground">{t("btc.description")}</p>
           <code className="flex w-fit mt-8 bg-surface-elevated border border-border p-4 text-sm text-muted-foreground break-all font-mono">
@@ -31,7 +31,7 @@ function DonationsSection() {
           </code>
         </div>
 
-        <div className="flex flex-col items-center justify-center p-6 border border-border bg-card/50 backdrop-blur-sm border-l-2 border-l-gold">
+        <div className="flex flex-col items-center justify-center p-6 border border-border bg-card/50 backdrop-blur-sm border-l-2 border-l-brand">
           <h3 className="text-xl font-medium text-foreground">{t("evm.title")}</h3>
           <p className="text-sm text-muted-foreground">{t("evm.description")}</p>
           <code className="flex w-fit mt-8 bg-surface-elevated border border-border p-4 text-sm text-muted-foreground break-all font-mono">
@@ -48,7 +48,7 @@ function DonationsSection() {
 
       <Button
         size={"xl"}
-        className="bg-gold text-gold-foreground hover:bg-gold/90"
+        className="brand-gradient text-brand-foreground hover:opacity-90"
         asChild
       >
         <a

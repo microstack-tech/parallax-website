@@ -49,9 +49,9 @@ function StatCard({
   caption?: string
 }) {
   return (
-    <Card className="border-l-2 border-l-gold bg-card/50 backdrop-blur-sm">
+    <Card className="border-l-2 border-l-brand bg-card/50 backdrop-blur-sm">
       <CardHeader>
-        <Icon className="size-5 text-gold" />
+        <Icon className="size-5 text-brand" />
         <CardTitle>{label}</CardTitle>
       </CardHeader>
       <CardContent>
@@ -80,7 +80,7 @@ function ExchangeCard({
       rel="noopener"
       className="block h-full"
     >
-      <Card className="group relative h-full border-l-2 border-l-gold/30 hover:border-l-gold hover:border-gold/30 hover:shadow-[0_0_20px_-5px_var(--gold-muted)] transition-all duration-300 cursor-pointer">
+      <Card className="group relative h-full border-l-2 border-l-brand/30 hover:border-l-brand hover:border-brand/30 hover:shadow-[0_0_20px_-5px_var(--brand-muted)] transition-all duration-300 cursor-pointer">
         <CardHeader>
           <div className="flex items-start justify-between gap-4 w-full">
             <div className="flex flex-col gap-2">
@@ -94,7 +94,7 @@ function ExchangeCard({
                 {exchange.pair}
               </Badge>
             </div>
-            <ArrowUpRight className="size-5 text-gold opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+            <ArrowUpRight className="size-5 text-brand opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
           </div>
         </CardHeader>
         <CardContent>
@@ -157,9 +157,9 @@ export default async function ExchangePage() {
         <section className="py-24 px-6 sm:px-8">
           <div className="mx-auto max-w-3xl">
             <FadeIn>
-              <Card className="border-l-2 border-l-gold bg-card/50 backdrop-blur-sm">
+              <Card className="border-l-2 border-l-brand bg-card/50 backdrop-blur-sm">
                 <CardHeader>
-                  <ShieldAlert className="size-5 text-gold" />
+                  <ShieldAlert className="size-5 text-brand" />
                   <CardTitle>{t("unavailable.title")}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -171,7 +171,7 @@ export default async function ExchangePage() {
                       href={COINGECKO_COIN_URL}
                       target="_blank"
                       rel="noopener"
-                      className="inline-flex items-center gap-2 text-gold hover:underline underline-offset-4"
+                      className="inline-flex items-center gap-2 text-brand hover:underline underline-offset-4"
                     >
                       <span className="font-mono text-xs uppercase tracking-[0.15em]">
                         {t("unavailable.viewOnCoingecko")}
@@ -268,10 +268,10 @@ export default async function ExchangePage() {
           <section className="py-24 px-6 sm:px-8">
             <div className="mx-auto max-w-4xl flex flex-col gap-12">
               <FadeIn>
-                <div className="border-l-2 border-l-gold pl-6 py-2">
+                <div className="border-l-2 border-l-brand pl-6 py-2">
                   <div className="flex items-center gap-2 mb-3">
-                    <ShieldAlert className="size-4 text-gold" />
-                    <span className="text-xs font-mono uppercase tracking-[0.15em] text-gold">
+                    <ShieldAlert className="size-4 text-brand" />
+                    <span className="text-xs font-mono uppercase tracking-[0.15em] text-brand">
                       {t("disclaimer.label")}
                     </span>
                   </div>
@@ -294,7 +294,7 @@ export default async function ExchangePage() {
                     href={COINGECKO_COIN_URL}
                     target="_blank"
                     rel="noopener"
-                    className="inline-flex items-center gap-2 text-foreground hover:text-gold transition-colors"
+                    className="inline-flex items-center gap-2 text-foreground hover:text-brand transition-colors"
                   >
                     <span className="text-base font-medium">
                       {t("attribution.viewOnCoingecko")}

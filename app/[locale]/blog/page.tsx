@@ -38,7 +38,7 @@ export default async function BlogPage({
               <Link
                 key={tag.slug}
                 href={`/blog/tag/${tag.slug}`}
-                className="rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:border-gold/40 hover:text-foreground"
+                className="rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:border-brand/40 hover:text-foreground"
               >
                 {tag.tag}
                 <span className="ml-2 text-border">{tag.count}</span>
@@ -60,7 +60,7 @@ export default async function BlogPage({
 
         <a
           href="/blog/rss.xml"
-          className="mt-12 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-gold"
+          className="mt-12 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-brand"
         >
           <Rss className="size-4" />
           {t("rss")}
