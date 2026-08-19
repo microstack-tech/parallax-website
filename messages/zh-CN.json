@@ -2,6 +2,7 @@
   "metadata": {
     "site": {
       "titleDefault": "Parallax 协议",
+      "titleHome": "Parallax 协议 - 一种点对点的电子现金系统",
       "titleTemplate": "%s | Parallax 协议",
       "description": "一个点对点可编程现金系统。Bitcoin 的货币纪律与 Ethereum 的可编程性相结合。由物理定律保障安全，不受任何人治理。",
       "ogDescription": "一个点对点的可编程货币系统。融合 Bitcoin 的货币纪律与 Ethereum 的可编程性。"

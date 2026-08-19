@@ -2,6 +2,7 @@
   "metadata": {
     "site": {
       "titleDefault": "Parallax Protocol",
+      "titleHome": "Parallax Protocol - A Peer-to-Peer Electronic Cash System",
       "titleTemplate": "%s | Parallax Protocol",
       "description": "A peer-to-peer programmable cash system. Bitcoin's monetary discipline meets Ethereum's programmability. Secured by physics, governed by no one.",
       "ogDescription": "A peer-to-peer programmable cash system. Bitcoin's monetary discipline meets Ethereum's programmability."

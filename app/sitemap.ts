@@ -42,18 +42,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of routing.locales) {
     for (const route of routes) {
+      // No lastModified: stamping every URL with the build time is a signal
+      // crawlers discount. Blog posts below carry real dates.
       entries.push({
         url: `${BASE_URL}/${locale}${normalize(route)}`,
-        lastModified: new Date(),
         changeFrequency: route === "/" ? "daily" : "weekly",
         priority: route === "/" ? 1 : 0.8,
         alternates: {
-          languages: Object.fromEntries(
-            routing.locales.map((l) => [
-              l,
-              `${BASE_URL}/${l}${normalize(route)}`,
-            ]),
-          ),
+          languages: {
+            ...Object.fromEntries(
+              routing.locales.map((l) => [
+                l,
+                `${BASE_URL}/${l}${normalize(route)}`,
+              ]),
+            ),
+            "x-default": `${BASE_URL}/${routing.defaultLocale}${normalize(route)}`,
+          },
         },
       })
     }

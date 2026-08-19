@@ -2,6 +2,7 @@
   "metadata": {
     "site": {
       "titleDefault": "Parallax Protocol",
+      "titleHome": "Parallax Protocol - Un sistema de efectivo electrónico entre pares",
       "titleTemplate": "%s | Parallax Protocol",
       "description": "Un sistema de dinero programable entre pares. La disciplina monetaria de Bitcoin se une a la programabilidad de Ethereum. Asegurado por la física, gobernado por nadie.",
       "ogDescription": "Un sistema de dinero programable entre pares. La disciplina monetaria de Bitcoin se encuentra con la programabilidad de Ethereum."

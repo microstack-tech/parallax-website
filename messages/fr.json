@@ -2,6 +2,7 @@
   "metadata": {
     "site": {
       "titleDefault": "Parallax Protocol",
+      "titleHome": "Parallax Protocol - Un système de paiement électronique pair-à-pair",
       "titleTemplate": "%s | Parallax Protocol",
       "description": "Un système de monnaie programmable pair-à-pair. La discipline monétaire de Bitcoin rencontre la programmabilité d'Ethereum. Sécurisé par la physique, gouverné par personne.",
       "ogDescription": "Un système de monnaie programmable pair-à-pair. La discipline monétaire de Bitcoin rencontre la programmabilité d'Ethereum."

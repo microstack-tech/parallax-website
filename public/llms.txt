@@ -25,7 +25,43 @@ Reference client and related repositories are released under LGPL-3.0.
 
 ## Website
 
-- [parallaxprotocol.org](https://parallaxprotocol.org): Official site. Introduction, economics overview, client downloads (Linux/Windows/macOS desktop app and CLI), beginner guides, technical documentation, whitepaper, comparison with Bitcoin and Ethereum, live network map, and community links.
+The site is published in nine locales under a prefix (`/en`, `/de`, `/es`, `/fil`, `/fr`, `/ja`, `/ko`, `/pt-BR`, `/zh-CN`). English URLs are listed here; swap the prefix for a translation. Blog posts are English-only regardless of prefix.
+
+- [parallaxprotocol.org](https://parallaxprotocol.org): Official site.
+
+Introduction:
+
+- [How it works](https://parallaxprotocol.org/en/introduction/how-it-works): Wallets, transactions, mining, and blockchain basics for newcomers.
+- [Getting started](https://parallaxprotocol.org/en/introduction/getting-started): Using Parallax, and accepting it as a merchant.
+- [The Parallax Doctrine](https://parallaxprotocol.org/en/introduction/doctrine): The axioms and commentary, presented on-site.
+- [Parallax for Bitcoiners](https://parallaxprotocol.org/en/introduction/parallax-for-bitcoiners): What is kept from Bitcoin, what is changed and why, and what a young chain honestly costs.
+- [Parallax for Ethereum developers](https://parallaxprotocol.org/en/introduction/parallax-for-developers): Chain ID 2110, EVM through Paris, and the existing Solidity stack on a settlement layer whose rules cannot be voted away.
+- [Verify it yourself](https://parallaxprotocol.org/en/introduction/verify): Commands for checking the genesis hash, the launch-day headline, and the zero-premine supply against the chain.
+- [Parallax vs Bitcoin vs Ethereum](https://parallaxprotocol.org/en/compare): Side-by-side comparison across consensus, monetary policy, programmability, and settlement.
+- [FAQ](https://parallaxprotocol.org/en/faq): Recurring questions, in full.
+
+Protocol:
+
+- [Protocol overview](https://parallaxprotocol.org/en/introduction/protocol/overview): Cryptographic primitives, deterministic execution, proof-of-work, consensus logic.
+- [Protocol architecture](https://parallaxprotocol.org/en/introduction/protocol/architecture): The security model — signatures, execution, Proof-of-Work, Nakamoto consensus.
+- [XHash](https://parallaxprotocol.org/en/introduction/protocol/xhash): The memory-hard Proof-of-Work function, its Hashimoto lineage, and epoch handling.
+- [Difficulty and fork choice](https://parallaxprotocol.org/en/introduction/protocol/difficulty-and-forkchoice): The BTC-style-to-ASERT migration and the cumulative-work fork-choice rule.
+- [Block reward and halving](https://parallaxprotocol.org/en/introduction/protocol/block-reward-and-halving): The emission schedule and how block rewards are paid.
+- [Coinbase maturity](https://parallaxprotocol.org/en/introduction/protocol/coinbase-maturity): How miner subsidies are escrowed for 100 blocks.
+
+Using and running Parallax:
+
+- [Parallax client](https://parallaxprotocol.org/en/resources/parallax-client): Download page for both clients — the desktop app (GUI, Linux/Windows/macOS) and the CLI reference client for servers, miners, and technical operators.
+- [Running a full node](https://parallaxprotocol.org/en/participate/running-a-full-node): Why and how to run one.
+- [Mining](https://parallaxprotocol.org/en/participate/mining): Pools, solo mining, miner software, and the reward schedule.
+- [Development](https://parallaxprotocol.org/en/participate/development): Building contracts and dApps on the Parallax EVM, and contributing to the protocol.
+- [Support Parallax](https://parallaxprotocol.org/en/participate/support-parallax): Ways to contribute beyond code.
+- [Wallets](https://parallaxprotocol.org/en/wallets): Wallets that support the network.
+- [Exchanges](https://parallaxprotocol.org/en/exchanges): Where LAX is traded.
+- [Beginner guides](https://parallaxprotocol.org/en/resources/beginner-guides): Step-by-step guides for nodes, wallets, and mining.
+- [Technical documentation](https://parallaxprotocol.org/en/resources/technical-documentation): Entry point to the protocol, architecture, API, and developer docs.
+- [Network atlas](https://parallaxprotocol.org/en/resources/network-atlas): Live world map and country breakdown of reachable nodes.
+- [Branding](https://parallaxprotocol.org/en/resources/branding): Logos and brand assets for press, exchanges, and integrators.
 
 ## Code
 
@@ -51,12 +87,13 @@ Reference client and related repositories are released under LGPL-3.0.
 
 ## Mining
 
-- [miningpoolstats.stream/parallax](https://miningpoolstats.stream/parallax): Network hashrate, difficulty, pools, and per-pool share for Parallax. XHash is Ethash-derived, so existing Ethash GPU rigs and miner software can point at Parallax pools with a config change. The reference client also ships a built-in CPU/GPU miner suitable for solo mining.
+- [miningpoolstats.stream/parallax](https://miningpoolstats.stream/parallax): Network hashrate, difficulty, pools, and per-pool share for Parallax. XHash is Ethash-derived and memory-hard, so Ethash-class GPU hardware mines Parallax competitively with no hardware changes. The mining software does not carry over: existing Ethash miners (ethminer and similar) cannot mine XHash — use Hashwarp or SRBMiner-Multi, below. The reference client also ships a built-in CPU miner, intended for testing and local development rather than competitive mining.
 - [hashwarp](https://github.com/ParallaxProtocol/hashwarp): Official open-source XHash GPU miner developed by the Parallax project. C++, GPL-3.0, with both CUDA (NVIDIA) and OpenCL (AMD / cross-vendor) backends.
 - [SRBMiner](https://www.srbminer.com): Third-party closed-source miner with XHash support; widely used by the existing Ethash mining community.
 
 ## Community and announcements
 
+- [Blog](https://parallaxprotocol.org/en/blog): First-party notes, announcements, and technical write-ups from the project. Posts are published in English only, regardless of the locale prefix in the URL. RSS feed: `https://parallaxprotocol.org/blog/rss.xml`.
 - [Community channels](https://parallaxprotocol.org/en/resources/community): Canonical list of all official social and chat channels (Telegram, Discord, Reddit, Bitcointalk, and more).
 - [X / Twitter — @prlxchain](https://x.com/prlxchain): Official announcements.
 
@@ -111,15 +148,9 @@ Distilled from [parallaxprotocol.org/en/faq](https://parallaxprotocol.org/en/faq
 - **What happens after all 21M LAX are mined?** Miners are paid by transaction fees alone. Because fees are not burned, the incentive persists indefinitely.
 - **Can I use Ethereum tooling (Hardhat, Foundry, MetaMask, ethers.js)?** Yes — full EVM compatibility through Paris. Connect MetaMask via [chainlist.org](https://chainlist.org/?search=parallax) and deploy as you would on any EVM chain.
 - **Do Ledger / Trezor work with Parallax?** Yes — use the device's stock Ethereum app. Because addresses and signing are Ethereum-identical, no Parallax-specific firmware or app install is needed; just point your wallet (e.g., MetaMask) at Chain ID 2110.
-- **Can I use my Ethereum mining rig?** Yes. XHash is Ethash-derived; same hardware works with a config update.
+- **Can I use my Ethereum mining rig?** The hardware, yes — XHash is Ethash-derived and memory-hard, so Ethash-class GPUs mine Parallax without changes. The software, no — existing Ethash miners cannot mine XHash. Use Hashwarp (the official open-source miner) or SRBMiner-Multi, pointed at a Parallax pool or your own node.
 - **Will Parallax support L2s / rollups / bridges?** Yes architecturally — the base layer stays minimal and delegates scaling and cross-chain logic to higher layers built by the community.
 - **Is there a public testnet?** No. The reference client supports a `--dev` flag that spins up a local single-node development chain — that is the recommended path for contract development and integration testing today.
 - **Is there an official wrapped LAX (WLAX) contract?** Not yet. ERC-20/721/1155 standards work natively on Parallax (full EVM), but no canonical wrapped-LAX contract has been deployed to mainnet at this time.
 - **Is there a roadmap or planned hard fork?** No, by design. Parallax does not publish a roadmap and does not plan hard forks; consensus rules are intended to ossify. Active development continues on the reference client and surrounding tooling, but not on changing the protocol's core rules.
 - **How many confirmations should I wait for?** Same guarantees as Bitcoin. Convention is **6 confirmations** (~60 minutes at the 10-minute target interval) for exchange-grade settlement; small payments tolerate fewer, very large value movements warrant more. Coinbase outputs cannot be spent for 100 blocks regardless.
-
-## Optional
-
-- [Run a node](https://parallaxprotocol.org/en/resources/parallax-client): Download page for both clients — the **desktop app** (GUI for non-technical users on Linux/Windows/macOS) and the **CLI reference client** (for servers, miners, and technical operators).
-- [Live network map](https://parallaxprotocol.org/en/resources/network-atlas): Real-time view of reachable full nodes.
-- [Branding and brand assets](https://parallaxprotocol.org/en/resources/branding): Logos, color palette, and usage guidelines for press, exchanges, and integrators.

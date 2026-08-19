@@ -2,6 +2,7 @@
   "metadata": {
     "site": {
       "titleDefault": "Parallax Protocol",
+      "titleHome": "Parallax Protocol - P2P 전자 화폐 시스템",
       "titleTemplate": "%s | Parallax Protocol",
       "description": "P2P 프로그래머블 현금 시스템. Bitcoin의 통화 규율과 Ethereum의 프로그래머빌리티가 만나는 지점입니다. 물리 법칙으로 보호되고, 누구에게도 지배받지 않습니다.",
       "ogDescription": "P2P 프로그래머블 현금 시스템. Bitcoin의 통화 규율과 Ethereum의 프로그래머빌리티가 만나는 지점입니다."

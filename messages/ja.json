@@ -2,6 +2,7 @@
   "metadata": {
     "site": {
       "titleDefault": "Parallax Protocol",
+      "titleHome": "Parallax Protocol - ピアツーピア電子キャッシュシステム",
       "titleTemplate": "%s | Parallax Protocol",
       "description": "ピアツーピアのプログラマブル・キャッシュ・システム。Bitcoinの金融規律と、Ethereumのプログラマビリティを融合。物理法則に守られ、誰にも支配されません。",
       "ogDescription": "ピアツーピアのプログラマブル・キャッシュ・システム。Bitcoinの金融規律と、Ethereumのプログラマビリティを融合。"

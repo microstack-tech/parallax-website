@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata({
   params,
@@ -8,10 +9,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: "metadata.participate.supportParallax" })
-  return {
+  return pageMetadata({
+    locale,
+    path: "/participate/support-parallax",
     title: t("title"),
     description: t("description"),
-  }
+  })
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -2,6 +2,7 @@
   "metadata": {
     "site": {
       "titleDefault": "Parallax Protocol",
+      "titleHome": "Parallax Protocol - Ein Peer-to-Peer-System für elektronisches Bargeld",
       "titleTemplate": "%s | Parallax Protocol",
       "description": "Ein Peer-to-Peer-System für programmierbares Bargeld. Bitcoins monetäre Disziplin trifft auf Ethereums Programmierbarkeit. Gesichert durch Physik, regiert von niemandem.",
       "ogDescription": "Ein Peer-to-Peer-System für programmierbares Bargeld. Die monetäre Disziplin von Bitcoin trifft auf die Programmierbarkeit von Ethereum."
