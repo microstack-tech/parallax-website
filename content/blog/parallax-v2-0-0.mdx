@@ -1,0 +1,205 @@
+---
+title: "Parallax v2.0.0 Release"
+date: 2026-08-19
+summary: "The biggest release since launch changes almost nothing you can see. It rebuilds the part of the network nobody thinks about until it fails: how thousands of independent computers find each other, and how they avoid being fooled."
+author: "Parallax Protocol"
+tags: ["release", "networking"]
+draft: false
+---
+
+[Parallax v2.0.0](https://github.com/ParallaxProtocol/parallax/releases/tag/v2.0.0)
+is out, and almost none of it is visible.
+
+The money didn't change. There are still twenty-one million LAX, still a block
+roughly every ten minutes, still no premine and no foundation allocation. Your
+balance is your balance. What changed is the layer underneath all of that: the
+way the thousands of computers running Parallax find each other, decide who to
+talk to, and figure out which version of history is the real one.
+
+That sounds like housekeeping. It isn't. It's most of what decides whether a
+network can be attacked.
+
+## The problem with having nobody in charge
+
+A network with no central authority has a hard problem hiding inside it.
+
+Your computer doesn't know what's true. It has no way to look up the real
+state of the chain, because there's no official copy to look it up in. All it
+can do is ask other computers, compare their answers, and assemble a picture
+from what comes back. That works beautifully when the computers it happens to
+be talking to are a fair sample of the network.
+
+It stops working if someone gets to choose who you're talking to.
+
+Imagine waking up in a town where every single person you meet is an actor,
+hired to tell you the same false story. You do everything right. You ask
+around, you check with several people, you look for disagreement. There isn't
+any, because there's nobody real left to disagree. This is called an eclipse
+attack, and against a cryptocurrency node it's genuinely dangerous: someone
+who controls every connection you have can show you a payment that never
+happened and let you ship the goods.
+
+The defense isn't clever cryptography. It's the unglamorous business of being
+careful about who you connect to and how you heard about them. Bitcoin has
+spent about fifteen years getting that right, mostly in public, mostly under
+real attack, and mostly in code that nobody writes headlines about.
+
+Parallax inherited its money rules from Bitcoin. Until this release, it
+inherited this layer from Ethereum, which was built for different assumptions.
+v2.0.0 replaces it with Bitcoin's, ported carefully rather than reinvented.
+
+## An address book with a memory
+
+The centerpiece is something deeply boring: a better address book.
+
+The old one was close to a list of places to try. The new one, taken from
+Bitcoin Core, remembers *how* it learned about each address. A peer you were
+told about by a stranger is filed differently from one you connected to
+yourself, which is filed differently again from one you typed in by hand. That
+distinction is the whole game. An attacker's cheapest move is to flood you
+with thousands of addresses they control until your address book is mostly
+theirs. An address book that knows a thousand suggestions all arrived from the
+same source can decline to be impressed by them.
+
+Around that sit a handful of rules, each unremarkable alone:
+
+New addresses arrive on a strict budget. There's a hard limit on how fast a
+peer can push suggestions at you, so nobody can drown your address book by
+talking quickly. When your node passes an address along, it picks who to tell
+using a pattern that reshuffles daily, so an observer can't map the network by
+watching where gossip travels.
+
+Your node keeps a couple of its connections across restarts. Restarting used
+to be a small opportunity for an attacker, because you'd let go of everyone
+and pick a fresh set from an address book they may have been quietly poisoning
+in the meantime. Now a few relationships survive the reboot, and the reboot
+stops being an opening.
+
+When your node is full and someone new knocks, it decides who to drop based on
+who's actually been useful: who responds quickly, who has been sending real
+blocks and transactions, who showed up early. It doesn't just evict whoever is
+most recent, which is exactly the behavior an attacker would want to
+exploit by knocking repeatedly.
+
+And it spreads its connections out. If every peer you have sits in the same
+data center or on the same handful of networks, one operator can quietly see
+or interfere with all of them at once. Your node now actively refuses to let
+that happen.
+
+Every one of these is a small thing. Together they're the difference between a
+network that's expensive to isolate someone on and one that isn't.
+
+## You don't have to trust the messenger
+
+Connections between nodes are now set up with fresh keys negotiated on the
+spot, thrown away when the connection ends. If someone records your traffic
+today and breaks into your machine next year, the recording is still useless
+to them.
+
+It's worth being straight about what this doesn't do. It does not hide the
+fact that you're running Parallax from your internet provider, and it can't
+tell you for certain that the computer answering is the one you meant to
+reach. We're not going to claim otherwise, because the code doesn't do it and
+saying so would be the kind of security promise that gets people hurt.
+
+The reason that's survivable is that the protocol never needed you to trust
+whoever handed you a block. Every block carries the proof of the work spent to
+make it, and your own computer checks that proof itself. A liar can't forge
+one. They'd have to actually do the work, which costs real electricity, which
+is the entire point of proof of work. The messenger can be a stranger, because
+the message proves itself.
+
+## What this opens up
+
+There is a second reason the connection layer was rebuilt this way, and it
+matters more than anything shipping in this release.
+
+The old design couldn't really live behind Tor. Connecting to a peer meant
+knowing its permanent cryptographic identity ahead of time, and the discovery
+system leaned on a kind of network traffic that Tor can't carry at all. Both
+assumptions quietly required your node to be reachable at a real internet
+address, which is to say: at a place that can be traced back to you.
+
+Neither assumption survives in v2.0.0. A connection is now made to whoever
+answers at a given address, with keys agreed on the spot and no permanent
+identity needed in advance, and discovery runs over ordinary connections of
+the kind Tor carries perfectly well. That doesn't sound like much. It's the
+difference between Tor being impossible and Tor being straightforward.
+
+Full Tor support is the next thing being built on top of it, and it's already
+well underway. The goal is a node that runs entirely as a hidden service: it
+finds peers, accepts incoming connections, and publishes its own address
+without your real IP ever appearing anywhere on the network. Not obscured, not
+proxied on the way out while still exposed on the way in. Simply never
+revealed.
+
+That's a serious jump in anonymity, and it's the reason the plumbing was worth
+tearing out. You can run a Parallax node today. Soon you'll be able to run one
+without telling anyone where you are.
+
+## Simpler to run
+
+The software you actually install got tidier. There's a daemon that runs the
+node, a command-line tool to talk to it, and a wallet tool that works offline.
+Running in the background is now a proper supported mode rather than something
+you rig up yourself, and Docker is a first-class way to install, with official
+images published for multiple processor types.
+
+```sh title="Run a node in the background"
+parallaxd --datadir ~/.parallax --daemon
+parallax-cli --datadir ~/.parallax info
+```
+
+That second command prints the state of the chain, the network, and the
+pending-transaction queue in one shot. Nearly everything an operator does day
+to day now lives in that one tool.
+
+<Callout title="Note">
+  This release also picked up security fixes from several libraries Parallax
+  depends on, including one that could crash a node through a malformed login
+  header. Routine, but worth upgrading for on its own.
+</Callout>
+
+## Things we deleted
+
+A lot came out of this release. A "light" mode that let you run a stripped-down
+node is gone. It worked by asking other people's servers for answers instead of
+checking things yourself, which meant trusting them, and there were never
+really enough of those servers to make that trust comfortable. Verifying
+everything yourself is the point of running a node at all. Modern sync gets a
+fully self-verifying node running quickly enough that the trade isn't worth it
+anymore.
+
+We also deleted a decade of accumulated build machinery inherited from
+upstream: half a dozen retired build services, packaging for platforms nobody
+targets, and mobile bindings nothing used. None of it was doing anything
+except making the project harder to read and harder to audit.
+
+## If you run a node
+
+The old `prlx` command is now `parallaxd`. Remove any flags in your startup
+scripts that this release dropped, and the node will tell you if it finds one
+it no longer recognizes. If you were running the light mode, switch to a normal
+node. If you build software against Parallax as a library, every import path
+moved, and that's the single biggest reason this is version 2.0.0 rather than
+1.3.0.
+
+Downloads, checksums, and the complete technical notes are on the
+[v2.0.0 release page](https://github.com/ParallaxProtocol/parallax/releases/tag/v2.0.0),
+and the operator documentation lives at
+[docs.parallaxprotocol.org](https://docs.parallaxprotocol.org).
+
+## The boring work is the work
+
+Arguments about cryptocurrency are almost always arguments about issuance:
+how many coins, how fast, to whom. Those are the rules worth caring about, and
+Parallax's are settled and unchanging by design.
+
+But rules only matter if they hold up when somebody attacks them, and attacks
+don't arrive at the issuance schedule. They arrive at the plumbing. They look
+like being quietly surrounded, or fed a version of history that suits someone
+else, or squeezed off the network by whoever runs the pipes.
+
+Bitcoin figured most of this out the slow way, over fifteen years, at real
+cost. Porting that work is less exciting than inventing something, and much
+more likely to be right. That's what v2.0.0 is.
