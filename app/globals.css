@@ -244,3 +244,63 @@
     transition: none;
   }
 }
+
+/* --- Entrance animations ---------------------------------------------
+   Mount-time entrances must be CSS, not framer-motion: framer serializes
+   its `initial` styles into the SSR HTML, so pages arrived at opacity 0
+   and only painted after the JS bundle hydrated — which pushed mobile LCP
+   past 6s site-wide (Search Console, 2026-08). CSS animations start at
+   first paint instead. Scroll-triggered effects (whileInView) may keep
+   using framer-motion; they sit below the fold. */
+@keyframes enter-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+@keyframes enter-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes enter-scale-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes enter-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+.enter-fade-up,
+.enter-fade,
+.enter-scale-x {
+  animation: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  animation-delay: var(--enter-delay, 0s);
+}
+.enter-fade-up {
+  animation-name: enter-fade-up;
+}
+.enter-fade {
+  animation-name: enter-fade;
+  animation-duration: 0.8s;
+}
+.enter-scale-x {
+  animation-name: enter-scale-x;
+}
+.enter-bob {
+  animation: enter-bob 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .enter-fade-up,
+  .enter-fade,
+  .enter-scale-x,
+  .enter-bob {
+    animation: none;
+  }
+}

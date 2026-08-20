@@ -1,6 +1,6 @@
-'use client'
-import { motion } from "framer-motion"
-
+/* Server component on purpose: the entrances run as CSS animations (see
+   "Entrance animations" in globals.css) so the title — usually the page's
+   LCP element — paints without waiting for hydration. */
 export default function PageHeader({
   title,
   subTitle,
@@ -14,29 +14,14 @@ export default function PageHeader({
     <div className="relative mt-24 py-23.5 px-4 md:px-0 text-center">
       <div className="flex flex-col gap-8 max-w-4xl items-center mx-auto">
         {/* Brand accent rule */}
-        <motion.div
-          className="w-12 h-0.5 brand-gradient"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        />
-        <motion.h2
-          className="text-4xl text-foreground sm:text-5xl"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-        >
+        <div className="w-12 h-0.5 brand-gradient enter-scale-x" />
+        <h2 className="text-4xl text-foreground sm:text-5xl enter-fade-up" style={{ "--enter-delay": "0.1s" } as React.CSSProperties}>
           {title}
-        </motion.h2>
+        </h2>
         {subTitle && (
-          <motion.p
-            className="text-xl text-muted-foreground max-w-2xl text-pretty"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
-          >
+          <p className="text-xl text-muted-foreground max-w-2xl text-pretty enter-fade-up" style={{ "--enter-delay": "0.25s" } as React.CSSProperties}>
             {subTitle}
-          </motion.p>
+          </p>
         )}
         {children}
       </div>

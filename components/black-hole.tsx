@@ -250,6 +250,7 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
     const clock = new THREE.Clock();
     const blackHoleScreenPosVec3 = new THREE.Vector3();
     let rafId = 0;
+    let observer: IntersectionObserver | undefined;
 
     if (prefersReducedMotion && !interactive) {
       // Render a single static frame
@@ -309,13 +310,31 @@ export default function BlackHoleVisualization({ interactive = true }: BlackHole
         accretionDisk.rotation.z += deltaTime * 0.005;
         composer.render(deltaTime);
       };
-      animate();
+
+      // Only render while the hero is on screen: the loop is the single
+      // heaviest main-thread consumer on the page, and it was running for
+      // the whole visit even with the hero scrolled away.
+      const startLoop = () => {
+        if (rafId) return;
+        clock.getDelta(); // swallow the pause so rotations don't jump
+        rafId = requestAnimationFrame(animate);
+      };
+      const stopLoop = () => {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      };
+      observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) startLoop();
+        else stopLoop();
+      });
+      observer.observe(containerRef.current);
     }
 
     // ----- Cleanup -----
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
+      observer?.disconnect();
       cancelAnimationFrame(rafId);
       controls.dispose();
       composer.passes.forEach((p) => p && p.dispose && p.dispose());
