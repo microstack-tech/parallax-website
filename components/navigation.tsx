@@ -128,7 +128,7 @@ export function Navigation() {
         <div className="flex items-center">
           <Link href="/" className="cursor-pointer flex items-center gap-3">
             <Image
-              src={mounted && (resolvedTheme === 'dark' || heroOverlay) ? "/new_parallax_logo_transparent.svg" : "/new_parallax_logo_transparent.svg"}
+              src="/new_parallax_logo_transparent.svg"
               className="size-8 md:size-10 w-auto"
               width={200}
               height={200}
