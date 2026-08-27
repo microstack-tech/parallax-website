@@ -124,6 +124,10 @@
         "title": "Technical Documentation",
         "description": "Tingnan ang Parallax protocol, architecture, APIs, at developer guides."
       }
+    },
+    "privacy": {
+      "title": "Privacy",
+      "description": "Paano pinangangasiwaan ng parallaxprotocol.org ang datos: walang account, walang analytics, walang tracking — isang functional na cookie lamang."
     }
   },
   "common": {
@@ -226,7 +230,8 @@
     },
     "marketDataBy": "Market data mula sa <link>CoinGecko</link>",
     "copyright": "© Parallax Protocol 2026",
-    "license": "Nakapailalim sa <link>LGPL-3.0</link> license."
+    "license": "Nakapailalim sa <link>LGPL-3.0</link> license.",
+    "privacy": "Privacy"
   },
   "popup": {
     "title": "Idagdag ang Parallax sa iyong wallet",
@@ -2268,5 +2273,30 @@
     "rss": "RSS feed",
     "taggedWith": "Tag: {tag}",
     "taggedSubtitle": "{count, plural, =0 {Walang post} one {# post} other {# na post}}"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "subtitle": "Ginawa ang site na ito para malaman ang pinakakaunti tungkol sa iyo hangga't maaari.",
+    "updated": "Huling na-update: Agosto 27, 2026",
+    "intro": "Ang parallaxprotocol.org ay isang informational na site. Wala itong user account, hindi nagpapatakbo ng analytics o advertising, hindi nagse-set ng tracking cookies, at hindi kailanman nagbebenta o nagbabahagi ng datos ng bisita — hindi naman ito kinokolekta sa simula pa lang. Ito rin ang dahilan kung bakit walang cookie banner: walang anuman sa site na ito ang nangangailangan ng pahintulot. Inilalarawan ng pahinang ito ang kaunting nangyayari kapag bumisita ka.",
+    "sections": {
+      "browser": {
+        "title": "Ano ang iniimbak ng iyong browser",
+        "body": "Nagse-set ang site ng iisang cookie, NEXT_LOCALE, para tandaan ang iyong wika upang mag-load ang mga pahina sa tamang wika. Gumagamit din ito ng local storage ng browser para sa maliliit na kagustuhan sa interface — halimbawa, ang pagtanda na na-dismiss mo na ang wallet-network prompt. Wala sa dalawa ang tumutukoy sa iyo o sumusubaybay sa iyo sa ibang mga site, at maaari mong burahin ang pareho sa mga setting ng browser anumang oras."
+      },
+      "hosting": {
+        "title": "Hosting at mga server log",
+        "body": "Inihahatid ang site sa pamamagitan ng content delivery network ng Cloudflare. Tulad ng anumang web server, pansamantala nitong pinoproseso ang karaniwang teknikal na datos — ang iyong IP address, ang hiniling na URL, at mga browser header — para maihatid ang mga pahina at maprotektahan laban sa pang-aabuso. Walang analytics na tumatakbo sa datos na ito."
+      },
+      "external": {
+        "title": "Panlabas na nilalaman",
+        "body1": "Ang market data ay kinukuha ng aming mga server, kaya hindi kailanman nakikipag-ugnayan ang iyong browser sa CoinGecko. Ang live na network statistics ay nilo-load mula sa aming sariling block explorer sa explorer.parallaxprotocol.org.",
+        "body2": "Ang mga naka-embed na YouTube video ay click-to-play: hangga't hindi mo pinipindot ang play, isang static na thumbnail lamang ang nilo-load mula sa mga server ng Google. Ang pagpindot ng play ay maglo-load ng video sa privacy-enhanced mode ng YouTube, at sa puntong iyon ay nalalapat na ang patakaran sa privacy ng Google."
+      },
+      "contact": {
+        "title": "Mga tanong",
+        "body": "Kung may mga tanong ka tungkol sa paunawang ito, makipag-ugnayan sa amin sa alinman sa mga <link>channel ng komunidad</link>."
+      }
+    }
   }
 }

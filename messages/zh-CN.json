@@ -124,6 +124,10 @@
         "title": "技术文档",
         "description": "深入了解 Parallax 协议、架构、API 与开发者指南。"
       }
+    },
+    "privacy": {
+      "title": "隐私",
+      "description": "parallaxprotocol.org 如何处理数据：无账户、无分析、无跟踪——仅一个功能性 Cookie。"
     }
   },
   "common": {
@@ -226,7 +230,8 @@
     },
     "marketDataBy": "市场数据由 <link>CoinGecko</link> 提供",
     "copyright": "© Parallax Protocol 2026",
-    "license": "基于 <link>LGPL-3.0</link> 许可证发布。"
+    "license": "基于 <link>LGPL-3.0</link> 许可证发布。",
+    "privacy": "隐私"
   },
   "popup": {
     "title": "将 Parallax 添加到您的钱包",
@@ -2268,5 +2273,30 @@
     "rss": "RSS 订阅",
     "taggedWith": "标记：{tag}",
     "taggedSubtitle": "{count, plural, =0 {暂无文章} other {# 篇文章}}"
+  },
+  "privacy": {
+    "title": "隐私",
+    "subtitle": "本网站的设计原则是尽可能少地了解您。",
+    "updated": "最后更新：2026年8月27日",
+    "intro": "parallaxprotocol.org 是一个信息类网站。它没有用户账户，不运行任何分析或广告，不设置跟踪 Cookie，也从不出售或共享访客数据——这类数据从一开始就没有被收集。这也是本站没有 Cookie 横幅的原因：本站没有任何内容需要征得同意。本页面说明您访问时实际发生的少量处理。",
+    "sections": {
+      "browser": {
+        "title": "您的浏览器存储的内容",
+        "body": "本站仅设置一个 Cookie（NEXT_LOCALE），用于记住您的语言，使页面以正确的语言加载。本站还使用浏览器的本地存储保存少量界面偏好——例如记住您已关闭钱包网络提示。两者都不会识别您的身份，也不会跨网站跟踪您，您可以随时在浏览器设置中清除它们。"
+      },
+      "hosting": {
+        "title": "托管与服务器日志",
+        "body": "本站通过 Cloudflare 的内容分发网络提供服务。与任何 Web 服务器一样，它会临时处理标准技术数据——您的 IP 地址、请求的 URL 和浏览器标头——用于交付页面和防御滥用。这些数据之上不运行任何分析。"
+      },
+      "external": {
+        "title": "外部内容",
+        "body1": "行情数据由我们的服务器获取，因此您的浏览器不会与 CoinGecko 通信。实时网络统计数据来自我们自己的区块浏览器 explorer.parallaxprotocol.org。",
+        "body2": "嵌入的 YouTube 视频为点击播放：在您按下播放之前，仅从 Google 服务器加载一张静态缩略图。按下播放后，视频将以 YouTube 隐私增强模式加载，此时适用 Google 的隐私政策。"
+      },
+      "contact": {
+        "title": "问题咨询",
+        "body": "如对本声明有任何疑问，请通过任一<link>社区渠道</link>与我们联系。"
+      }
+    }
   }
 }

@@ -150,6 +150,12 @@ export function Footer() {
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">{t("copyright")}</p>
+            <Link
+              href="/privacy"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t("privacy")}
+            </Link>
             <p className="text-sm text-muted-foreground">
               {t.rich("license", {
                 link: (chunks) => (

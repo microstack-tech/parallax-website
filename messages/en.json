@@ -124,6 +124,10 @@
         "title": "Technical Documentation",
         "description": "Explore the Parallax protocol, architecture, APIs, and developer guides."
       }
+    },
+    "privacy": {
+      "title": "Privacy",
+      "description": "How parallaxprotocol.org handles data: no accounts, no analytics, no tracking — one functional cookie."
     }
   },
   "common": {
@@ -226,7 +230,8 @@
     },
     "marketDataBy": "Market data provided by <link>CoinGecko</link>",
     "copyright": "© Parallax Protocol 2026",
-    "license": "Released under <link>LGPL-3.0</link> license."
+    "license": "Released under <link>LGPL-3.0</link> license.",
+    "privacy": "Privacy"
   },
   "popup": {
     "title": "Add Parallax to your wallet",
@@ -2268,5 +2273,30 @@
     "rss": "RSS feed",
     "taggedWith": "Tagged: {tag}",
     "taggedSubtitle": "{count, plural, =0 {No posts} one {# post} other {# posts}}"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "subtitle": "This site is built to know as little about you as possible.",
+    "updated": "Last updated: August 27, 2026",
+    "intro": "parallaxprotocol.org is an informational site. It has no user accounts, runs no analytics or advertising, sets no tracking cookies, and never sells or shares visitor data — nothing of the kind is collected in the first place. That is also why there is no cookie banner: nothing on this site requires consent. This page describes the little that does happen when you visit.",
+    "sections": {
+      "browser": {
+        "title": "What your browser stores",
+        "body": "The site sets a single cookie, NEXT_LOCALE, to remember your language so pages load in the right one. It also uses your browser's local storage for small interface preferences — for example, remembering that you already dismissed the wallet-network prompt. Neither identifies you nor tracks you across sites, and you can clear both in your browser settings at any time."
+      },
+      "hosting": {
+        "title": "Hosting and server logs",
+        "body": "The site is served through Cloudflare's content delivery network. Like any web server, it transiently processes standard technical data — your IP address, the requested URL, and browser headers — to deliver pages and defend against abuse. No analytics run on top of this data."
+      },
+      "external": {
+        "title": "External content",
+        "body1": "Market data is fetched by our servers, so your browser never contacts CoinGecko. Live network statistics load from our own block explorer at explorer.parallaxprotocol.org.",
+        "body2": "Embedded YouTube videos are click-to-play: until you press play, only a static thumbnail image is loaded from Google's servers. Pressing play loads the video in YouTube's privacy-enhanced mode, at which point Google's privacy policy applies."
+      },
+      "contact": {
+        "title": "Questions",
+        "body": "If you have questions about this notice, reach out through any of the <link>community channels</link>."
+      }
+    }
   }
 }

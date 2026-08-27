@@ -124,6 +124,10 @@
         "title": "Documentação técnica",
         "description": "Explore o protocolo Parallax, sua arquitetura, APIs e guias para desenvolvedores."
       }
+    },
+    "privacy": {
+      "title": "Privacidade",
+      "description": "Como o parallaxprotocol.org lida com dados: sem contas, sem analytics, sem rastreamento — um único cookie funcional."
     }
   },
   "common": {
@@ -226,7 +230,8 @@
     },
     "marketDataBy": "Dados de mercado fornecidos pela <link>CoinGecko</link>",
     "copyright": "© Parallax Protocol 2026",
-    "license": "Distribuído sob a licença <link>LGPL-3.0</link>."
+    "license": "Distribuído sob a licença <link>LGPL-3.0</link>.",
+    "privacy": "Privacidade"
   },
   "popup": {
     "title": "Adicione o Parallax à sua carteira",
@@ -2268,5 +2273,30 @@
     "rss": "Feed RSS",
     "taggedWith": "Marcado: {tag}",
     "taggedSubtitle": "{count, plural, =0 {Nenhuma publicação} one {# publicação} other {# publicações}}"
+  },
+  "privacy": {
+    "title": "Privacidade",
+    "subtitle": "Este site foi feito para saber o mínimo possível sobre você.",
+    "updated": "Última atualização: 27 de agosto de 2026",
+    "intro": "O parallaxprotocol.org é um site informativo. Não tem contas de usuário, não executa analytics nem publicidade, não define cookies de rastreamento e nunca vende ou compartilha dados de visitantes — nada disso é coletado, para começo de conversa. É também por isso que não há banner de cookies: nada neste site exige consentimento. Esta página descreve o pouco que de fato acontece quando você o visita.",
+    "sections": {
+      "browser": {
+        "title": "O que o seu navegador armazena",
+        "body": "O site define um único cookie, NEXT_LOCALE, para lembrar o seu idioma e carregar as páginas no idioma certo. Também usa o armazenamento local do navegador para pequenas preferências de interface — por exemplo, lembrar que você já dispensou o aviso de rede da carteira. Nenhum dos dois identifica você nem o rastreia entre sites, e ambos podem ser apagados nas configurações do navegador a qualquer momento."
+      },
+      "hosting": {
+        "title": "Hospedagem e logs de servidor",
+        "body": "O site é servido pela rede de distribuição de conteúdo da Cloudflare. Como qualquer servidor web, ele processa de forma transitória dados técnicos padrão — seu endereço IP, a URL solicitada e os cabeçalhos do navegador — para entregar as páginas e se defender contra abusos. Nenhuma ferramenta de analytics roda sobre esses dados."
+      },
+      "external": {
+        "title": "Conteúdo externo",
+        "body1": "Os dados de mercado são buscados pelos nossos servidores, então o seu navegador nunca contata a CoinGecko. As estatísticas de rede ao vivo são carregadas do nosso próprio explorador de blocos em explorer.parallaxprotocol.org.",
+        "body2": "Os vídeos do YouTube incorporados são click-to-play: até você apertar o play, apenas uma miniatura estática é carregada dos servidores do Google. Ao apertar o play, o vídeo é carregado no modo de privacidade aprimorada do YouTube, momento em que a política de privacidade do Google passa a valer."
+      },
+      "contact": {
+        "title": "Dúvidas",
+        "body": "Se tiver dúvidas sobre este aviso, fale conosco por qualquer um dos <link>canais da comunidade</link>."
+      }
+    }
   }
 }

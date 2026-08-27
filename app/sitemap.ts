@@ -10,6 +10,7 @@ const routes = [
   "/wallets",
   "/exchanges",
   "/compare",
+  "/privacy",
   "/introduction/doctrine",
   "/introduction/getting-started",
   "/introduction/how-it-works",
