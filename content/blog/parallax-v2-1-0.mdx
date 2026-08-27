@@ -1,0 +1,173 @@
+---
+title: "Parallax v2.1.0: No Fixed Address"
+date: 2026-08-27
+summary: "The last release ended with a promise: soon you'd be able to run a node without telling anyone where you are. v2.1.0 keeps it. Native Tor support, modeled on Bitcoin Core's — up to and including a node that lives entirely inside the onion."
+author: "Parallax Protocol"
+tags: ["release", "networking", "privacy"]
+cover: /blog/parallax-v2-1-0/cover.png
+coverAlt: "A bright node sheltered at the center of concentric onion rings, visible to the network but impossible to place"
+draft: false
+---
+
+[Parallax v2.1.0](https://github.com/ParallaxProtocol/parallax/releases/tag/v2.1.0)
+is out. The last release ended with a promise: that soon you'd be able to run
+a node without telling anyone where you are. This is that release.
+
+## The last thing your node gives away
+
+Parallax asks almost nothing of you. No account, no sign-up, no permission.
+You install the software, it checks every block for itself, and nobody gets a
+vote on whether you're allowed to participate.
+
+But until now it did take one thing, because every peer-to-peer network takes
+it: your address. To connect to other computers you have to tell them where
+you are, and on the internet, where you are is very nearly who you are. An IP
+address maps to a country, a city, an internet provider, and — one records
+request later — a person. Every peer your node talks to learns it. Anyone who
+runs a few nodes and listens can, over time, assemble a fairly good map of
+who runs the network and from where.
+
+For most people, most of the time, that's a tolerable trade. But a network
+meant to carry money should not have "a map of everyone who holds it" as a
+structural property. Some of the people who most need money that no one can
+freeze or forbid are exactly the people for whom that map is dangerous.
+
+## An address that isn't a place
+
+Tor's onion services turn the assumption around. An onion address is not a
+location — it's a cryptographic key. When two computers connect through one,
+they meet in the middle, each arriving through its own encrypted tunnel, and
+neither ever learns where the other actually is. The address proves you've
+reached the right party, mathematically, without ever saying where that
+party lives.
+
+Bitcoin nodes have been running this way for over a decade, and Bitcoin
+Core's Tor integration has been refined the whole time under real adversarial
+pressure. As with the peer-management rebuild in
+[v2.0.0](/blog/parallax-v2-0-0), Parallax ports that design rather than
+inventing a new one. The same flags, the same defaults, the same carefully
+chosen behaviors — because in privacy code, novelty is a cost, not a
+feature.
+
+## It works without being asked
+
+If a Tor daemon is running on your machine with its control port enabled,
+the node does everything itself. Enable the control port in `/etc/tor/torrc`:
+
+```sh title="/etc/tor/torrc"
+ControlPort 9051
+CookieAuthentication 1
+CookieAuthFileGroupReadable 1
+```
+
+restart Tor, and start the node as usual. No new flags. On startup it finds
+the Tor daemon, creates a v3 onion service pointing at its own listener, asks
+Tor where its proxy lives, and starts dialing onion peers through it. Your
+node is now reachable from inside Tor — with no port forwarding, no firewall
+configuration, nothing — and it announces its onion address to the network
+the same way it would announce an IP.
+
+The onion identity is a small key file in your data directory, so your node
+keeps the same onion address across restarts. Other operators can add it to
+their peer lists like any other address.
+
+<Callout title="Note">
+  Treat `onion_v3_private_key` in your data directory like the node key it
+  is: back it up if you want to keep the address, protect it because whoever
+  holds it can impersonate your node's onion service.
+</Callout>
+
+## Fully dark
+
+The default setup is dual-stack: your node is reachable both at its IP and
+at its onion address. That's good for the network — it bridges both worlds —
+but it publicly links the two, so it adds reachability, not anonymity. For
+anonymity there's one more step:
+
+```sh title="A node that never reveals its IP"
+parallaxd --onlynet=onion
+```
+
+This runs the node entirely inside Tor. It never opens the UDP discovery
+socket, never touches DNS, never asks your router to open a port. It finds
+its first peers from onion addresses shipped with the client, then learns
+more from gossip, all of it through Tor. And it will not advertise an IP
+address over a Tor circuit even when it knows one — the code refuses,
+unconditionally, because an anonymity system with a "just this once"
+exception is not an anonymity system.
+
+A node run this way finds peers, accepts incoming connections, and publishes
+its own address without its IP ever appearing anywhere on the network. Not
+obscured. Never revealed.
+
+## The small rules, again
+
+The v2.0.0 post made the case that security lives in unglamorous details.
+Privacy does too, so v2.1.0 is full of small rules:
+
+Every peer gets its own Tor circuit, so no single relay sees enough of your
+connections to correlate them. Onion services always advertise the network's
+standard port, whatever port you actually listen on, so an unusual port
+choice can't fingerprint you. If you route clearnet traffic through a proxy,
+the node silently switches off every side channel that would betray your
+address anyway — the discovery socket, system DNS, the router protocols that
+announce your presence. Peers that reach you through Tor are anonymous to
+you too: your node sees that someone connected, and by design nothing more.
+
+None of these would be worth a headline. Together they're the difference
+between a node that's hidden and a node that merely feels hidden.
+
+## What this doesn't do
+
+Being straight about limits is a habit worth keeping.
+
+Tor hides your node, not your transactions. The chain is public; every
+payment on it is as visible as it ever was. What v2.1.0 conceals is your
+participation — the fact that this machine, at this address, is running a
+node — not what any address on the chain is doing.
+
+Your internet provider can still see that you use Tor, even though it can no
+longer see what for. In most places that's unremarkable. Where it isn't, Tor
+bridges exist, and they work for Parallax the same as for anything else.
+
+And routing ordinary clearnet connections through Tor's exit relays works,
+but only about one circuit in six reaches a Parallax port — most exits don't
+carry non-standard ports; Bitcoin has the same property. Onion-to-onion
+connections don't use exits at all and connect reliably in seconds. Inside
+Tor, the network is first-class; through Tor's edge, it's a fallback.
+
+## Nothing to coordinate
+
+No fork, no flag day, no vote. The wire format already carried onion
+addresses the way Bitcoin's does; nodes that can't dial them pass them
+along anyway, so onion addresses spread through the whole network even
+where most nodes never use them. Tor connectivity simply grows as
+individual operators switch it on — each one making the map of the network
+a little less complete.
+
+## If you run a node
+
+Upgrade normally; nothing changes unless you opt in. If Tor happens to be
+running with its control port open, your node will quietly become reachable
+as an onion service — that's the intended default, and the startup log will
+say so. If you build software against Parallax as a library, the Go module
+path moved to `/v2`, as Go requires for a v2 release.
+
+Downloads, checksums, and the complete technical notes are on the
+[v2.1.0 release page](https://github.com/ParallaxProtocol/parallax/releases/tag/v2.1.0).
+The operator guide — including the fully-dark setup and troubleshooting —
+is "Running over Tor" at
+[docs.parallaxprotocol.org](https://docs.parallaxprotocol.org).
+
+## Where you are is your business
+
+There are twenty-one million LAX, a block roughly every ten minutes, and no
+one who can change either. v2.0.0 made it expensive to lie to a node about
+what the network believes. v2.1.0 makes it expensive to find the node at
+all.
+
+A network nobody can map is harder to pressure, harder to intimidate, and
+harder to quietly switch off — not because its operators have something to
+hide, but because a system built to need no permission shouldn't leak a
+list of people to ask. You can run a Parallax node today, and where you run
+it is nobody's business but yours.
